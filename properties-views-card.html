@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peptech Town</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .PseudoTupleRevamp__tupleWrap {
+            margin-top: 10px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            border-radius: 16px;
+            box-shadow: 0px 1px 4px 0px rgba(31, 92, 163, .2) !important;
+            width: 100%;
+            padding-left: 16px;
+            padding-top: 16px;
+            position: relative;
+            height: 230px;
+        }
+
+        .PseudoTupleRevamp__innerCont {
+            display: flex;
+        }
+
+        .tupleNew__premium {
+            max-height: 258px !important;
+            object-fit: cover;
+        }
+
+        .tupleNew__imgWrap {
+            white-space: nowrap;
+            cursor: pointer;
+            box-sizing: border-box;
+            background: 0 0;
+            line-height: normal;
+            outline: 0;
+            margin: 0;
+            padding: 0;
+            border: 0;
+            vertical-align: baseline;
+            font-weight: inherit;
+            font-size: inherit;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-family: "Open Sans";
+            border-radius: 8px !important;
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .tupleNew__topLeftItems {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            z-index: 1;
+        }
+
+        .ImgItem__shortlistBtnWrap {
+            margin: 8px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ImgItem__shortlistImage {
+            width: 30px;
+            height: 30px;
+            transition: all .1s ease-in-out;
+        }
+
+        .tupleNew__bottomRightOffer {
+            position: absolute;
+            bottom: 36px;
+            left: 12px;
+            z-index: 1;
+        }
+
+        .tupleNew__bottom {
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(5px);
+            width: 100%;
+            height: 28px !important;
+            bottom: 0;
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .tupleNew__fomoOuter {
+            width: 86%;
+        }
+
+        .ImgItem__fomoWrap {
+            color: #fff;
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .PseudoTupleRevamp__contentWrap {
+            background-color: #fff !important;
+            white-space: nowrap;
+            cursor: pointer;
+            box-sizing: border-box;
+            background: 0 0;
+            line-height: normal;
+            outline: 0;
+            margin: 0;
+            border: 0;
+            vertical-align: baseline;
+            font-weight: inherit;
+            font-size: inherit;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            font-family: "Open Sans";
+            position: relative;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .PseudoTupleRevamp__pH12 {
+            padding: 0px 0 8px 16px;
+        }
+
+        .PseudoTupleRevamp__headContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .PseudoTupleRevamp__heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #010c1f;
+        }
+
+        .PseudoTupleRevamp__headNrating {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 70%;
+        }
+
+        .PseudoTupleRevamp__ribbon {
+            width: 105px;
+            height: 18px;
+            background: #d6efff;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, calc(100% - 92px) 50%);
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 16px;
+            text-transform: uppercase;
+            color: #091e42;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 12px;
+            padding-left: 19px;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .ImgItem__colorN200 {
+            color: #f4f5f7;
+        }
+
+        .ImgItem__m12 {
+            margin-left: 12px;
+        }
+
+        .PseudoTupleRevamp__subHeading {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #091e42;
+            width: 95%;
+            align-items: center;
+            margin-top: 8px;
+        }
+
+        .PseudoTupleRevamp__FW6 {
+            font-weight: 600;
+        }
+
+        .PseudoTupleRevamp__w400Ml4 {
+            font-weight: 400;
+        }
+
+
+        .configs__configCards {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .configs__configCards {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .cc__CarouselContainer {
+            position: relative;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .cc__CarouselBox {
+                overflow-x: hidden;
+            }
+        }
+
+        .cc__CarouselBox {
+            color: #333;
+            width: 100%;
+            overflow: hidden;
+            overflow-x: auto;
+        }
+
+        .cc__CarouselBox .cc__slidingBox {
+            display: flex;
+            width: auto;
+            transition: all .3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .cc__CarouselBox .cc__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .configs__ccl1 {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #091e42;
+        }
+
+        .cc__CarouselBox .cc__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .tupleNew__scrollableHighlights {
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            margin-bottom: 8px;
+            white-space: nowrap;
+        }
+
+
+        .tupleNew__highlightsWrap {
+            display: flex;
+            flex-wrap: nowrap;
+            /* overflow-x: auto; */
+            overflow-x: hidden;
+            /* max-width: 417px; */
+            align-items: center;
+        }
+
+        .tupleNew__onlyHighlight {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: hidden;
+            /* max-width: 417px; */
+            align-items: center;
+        }
+
+        .tupleNew__highligtsHeading {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 12px;
+            color: #091e42;
+            margin-right: 6px;
+        }
+
+        .tupleNew__unitHighlight1 {
+            background: #f4f5f7;
+            border-radius: 4px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 8px 4px 8px;
+            white-space: nowrap;
+            max-width: max-content;
+        }
+
+        .tupleNew__unitHighlightTxt {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #091e42;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tupleNew__unitHighlight2 {
+            margin-left: 6px;
+            background: #f4f5f7;
+            border-radius: 4px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 8px 4px 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        .tupleNew__unitHighlightTxt {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #091e42;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tupleNew__unitHighlight2 {
+            margin-left: 6px;
+            background: #f4f5f7;
+            border-radius: 4px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 4px 8px 4px 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            /* text-overflow: ellipsis; */
+            max-width: 100%;
+        }
+
+        .tupleNew__unitHighlightTxtLast {
+            font-family: "Open Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #091e42;
+        }
+
+        .tupleNew__mt16 {
+            margin-top: 0px;
+        }
+
+        .tupleNew__moreLessWrapper {
+            line-height: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-right: 16px;
+        }
+
+        .tupleNew__descText {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            color: #42526e;
+        }
+
+        .has-webp .iconS_srpMob_20.icon_dropdown {
+            background-position: -220px -20px;
+        }
+
+        .PseudoTupleRevamp__contactWrap {
+            display: flex;
+            justify-content: space-between;
+            background: linear-gradient(71.83deg, #f4f5f7 0%, rgba(244, 245, 247, 0.4) 38.43%, #f4f5f7 75.29%);
+            align-items: center;
+            border-radius: 0 0 12px 12px;
+            margin-top: 13px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding-left: 376px;
+            padding-bottom: 16px;
+            padding-top: 13px;
+            height: 69px;
+            height: 72px;
+        }
+
+        .PseudoTupleRevamp__builderInfo {
+            width: 34%;
+            flex-direction: column;
+            display: flex;
+            height: 66px;
+            justify-content: center;
+        }
+
+        .PseudoTupleRevamp__contactHeading {
+            color: var(--neutral-colours-n-500, #42526E);
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        .PseudoTupleRevamp__contactSubheading {
+            color: var(--neutral-colours-n-500, #42526E);
+            font-family: Open Sans;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 16px;
+        }
+
+        .PseudoTupleRevamp__contactDetails {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 8px 12px;
+            gap: 6px;
+            width: 100%;
+            height: 52px;
+            border-radius: 0 0 12px 12px;
+            background: linear-gradient(71.83deg, #F4F5F7 0%, rgba(244, 245, 247, 0.4) 38.43%, #F4F5F7 75.29%);
+            max-width: 308px;
+            padding-right: 16px;
+        }
+
+        .PseudoTupleRevamp__brochure {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 20px;
+            gap: 4px;
+            width: 137px;
+            height: 36px;
+            background: #fff;
+            border: 1px solid #0076d6;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            color: #0076d6;
+        }
+
+        .PseudoTupleRevamp__viewNumber {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 20px;
+            gap: 4px;
+            width: 138px;
+            height: 36px;
+            background: #0076d6;
+            border: 1px solid #0076d6;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 18px;
+            color: #fff;
+        }
+
+        .PseudoTupleRevamp__outerTupleWrap {
+
+            align-items: center;
+            margin: auto;
+            padding-bottom: 0px;
+            background-color: #f4f5f7;
+            width: "100%";
+        }
+
+        .ImgItem__tag {
+            margin-right: 4px;
+        }
+
+        .tupleNew__topRightItems {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .tupleNew__priceAreaWrap {
+            display: flex;
+        }
+
+        .cc__CarouselContainer {
+            position: relative;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .cc__CarouselBox {
+                overflow-x: hidden;
+            }
+        }
+
+        .cc__CarouselBox {
+            color: #333;
+            width: 100%;
+            overflow: hidden;
+            /* overflow-x: auto; */
+        }
+
+        .cc__CarouselBox .cc__slidingBox {
+            width: auto;
+            transition: all .3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .tupleNew__priceWrap {
+            min-width: fit-content;
+            padding-right: 16px;
+            display: flex;
+            gap: 4px;
+            flex-direction: column;
+        }
+
+        .cc__CarouselBox .cc__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .tupleNew__priceValWrap {
+            display: inline-block;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: #010c1f;
+            margin-bottom: 4px;
+            white-space: initial;
+        }
+
+        .tupleNew__perSqftWrap {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #091e42;
+        }
+
+        .tupleNew__areaWrap {
+            border-left: 1px solid #ebecf0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding-right: 16px;
+            padding-left: 16px;
+            margin-top: 3px;
+        }
+
+        .tupleNew__totolAreaWrap {
+            display: flex;
+            align-items: flex-end;
+            column-gap: 4px;
+        }
+
+        .tupleNew__area1Type {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #010c1f;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .tupleNew__area2Type {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #091e42;
+            margin-left: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tupleNew__totolAreaWrap {
+            display: flex;
+            align-items: flex-end;
+            column-gap: 4px;
+        }
+
+        .tupleNew__area1Type {
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            color: #010c1f;
+        }
+
+        .proil {
+            height: 44px;
+            width: 44px;
+            border: 1px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+            /* Ensure the image stays within the circular border */
+        }
+
+        .proil img {
+            width: 100%;
+            /* Make the image fill the container */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <!-- <div class="col-3">
+            <img src="assets/img/offer/01.jpg">
+        </div> -->
+        <div class="col-9">
+            <section>
+                <div class="PseudoTupleRevamp__outerTupleWrap">
+                    <div class="PseudoTupleRevamp__tupleWrap">
+                        <div class="PseudoTupleRevamp__innerCont">
+                            <div class="tupleNew__imgWrap tupleNew__premium">
+                                <div class="tupleNew__topLeftItems">
+                                    <div style="display: flex;">
+                                        <div><img alt="Rera-Tag" class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/rera.png"
+                                                style="width: 52px; height: 20px;"><img alt="No-Brokerage-Tag"
+                                                class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/NBZ.png"
+                                                style="width: 101px; height: 20px;"></div>
+                                    </div>
+                                    <div class="ImgItem__tag"><img alt="Seen-Tag"
+                                            src="https://static.99acres.com/universalapp/img/Activity.png"
+                                            style="width: 37px; height: 20px;">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__topRightItems">
+                                    <div data-label="SHORTLIST" class="ImgItem__shortlistBtnWrap">
+                                        <img class="ImgItem__shortlistImage" alt="Shortlist-Button"
+                                            src="https://static.99acres.com/universalapp/img/Shortlist.png">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__bottomRightOffer"></div>
+                                <div class="tupleNew__bottom ">
+                                    <div class="tupleNew__fomoOuter">
+                                        <div class="ImgItem__fomoWrap"><span
+                                                class="ImgItem__m12 ImgItem__colorN200 ellipsis">Ready To Move · <span
+                                                    style="font-weight: 600;">Since Mar, 2024</span></span></div>
+                                    </div>
+                                </div><img
+                                    src="https://img.freepik.com/free-photo/3d-room-interior-with-classic-design-furniture_23-2150895581.jpg?t=st=1714980684~exp=1714984284~hmac=29a31168b6ed79f5ab0f8fec0844f6864cd5b6c9914c008739a08dd612058dcc"
+                                    alt="PROJECT-IMAGE" class="" fetchpriority="high" decoding="async"
+                                    style="width: 344px; height: 220px; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="PseudoTupleRevamp__contentWrap">
+                                <div class="PseudoTupleRevamp__pH12">
+                                    <div class="PseudoTupleRevamp__headContainer">
+                                        <div class="PseudoTupleRevamp__heading">
+                                            <div class="PseudoTupleRevamp__headNrating"><a class="ellipsis"
+                                                    href="https://www.99acres.com/peptech-town-muwasi-chhatarpur-npxid-r291873"
+                                                    title="Peptech Town">South DElhi</a></div>
+                                            <div class="PseudoTupleRevamp__ribbon">
+                                                <div>SALE Props</div>
+                                            </div>
+                                        </div>
+                                        <h2
+                                            class="PseudoTupleRevamp__subHeading ellipsis PseudoTupleRevamp__projectHeading">
+                                            <span class="PseudoTupleRevamp__FW6">3 BHK Villa </span><span
+                                                class="PseudoTupleRevamp__w400Ml4">in <span> Muwasi,
+                                                    Chhatarpur</span></span>
+                                        </h2>
+                                    </div>
+                                    <div class="configs__configCardsWrap">
+                                        <div class="configs__configCards" id="projectConfigurationCards_291873">
+                                            <div class="cc__CarouselContainer">
+                                                <div class="cc__CarouselBox">
+                                                    <div compattr="projectConfigurationCards_291873"
+                                                        class="cc__slidingBox  cc__inlineFlexStyle">
+                                                        <div class="configs__configCard">
+                                                            <div class="configs__ccl2">₹59.21</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tupleNew__scrollableHighlights">
+                                        <div class="tupleNew__highlightsWrap">
+                                            <div class="tupleNew__onlyHighlight">
+                                                <div class="tupleNew__highligtsHeading">Nearby :</div>
+                                                <div class="tupleNew__unitHighlight1"><span
+                                                        class="tupleNew__unitHighlightTxt">Behs Sumati Academy</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2">
+                                                    <span class="tupleNew__unitHighlightTxt">S.B. College</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2">
+                                                    <span class="tupleNew__unitHighlightTxt">S.B. College</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2">
+                                                    <span class="tupleNew__unitHighlightTxt">S.B. College</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2">
+                                                    <span class="tupleNew__unitHighlightTxt">S.B. College</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="tupleNew__moreLessWrapper  tupleNew__mt16"
+                                            id="srp_tuple_description">
+                                            <p class="descPtag_undefined tupleNew__descText "
+                                                style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; text-overflow: ellipsis; white-space: normal;">
+                                                Peptech Town is one of the well-known housing society, offering 3 BHK
+                                                Villa for
+                                                sale in Muwasi. Peptech Town is a Ready To Move project . Villas size in
+                                                Peptech
+                                                Town varies from 1,850</p>
+                                            <div data-label="SEE_MORE"><i class="iconS_srpMob_20 icon_dropdown"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PseudoTupleRevamp__contactWrap">
+                            <div class="proil">
+                                <img src="assets/img/client-face2.png" alt="Profile Image">
+                            </div>
+                            <div class="PseudoTupleRevamp__builderInfo">
+                                <div class="PseudoTupleRevamp__contactHeading">Builder</div>
+                                <div class="PseudoTupleRevamp__contactSubheading">Shera Builders</div>
+                            </div>
+                            <div class="PseudoTupleRevamp__contactDetails">
+                                <div class="pageComponent PseudoTupleRevamp__brochure" data-label="DOWNLOAD_BROCHURE">
+                                    Inquery now</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="PseudoTupleRevamp__outerTupleWrap">
+                    <div class="PseudoTupleRevamp__tupleWrap">
+                        <div class="PseudoTupleRevamp__innerCont">
+                            <div class="tupleNew__imgWrap tupleNew__premium">
+                                <div class="tupleNew__topLeftItems">
+                                    <div style="display: flex;">
+                                        <div><img alt="Rera-Tag" class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/rera.png"
+                                                style="width: 52px; height: 20px;"><img alt="No-Brokerage-Tag"
+                                                class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/NBZ.png"
+                                                style="width: 101px; height: 20px;"></div>
+                                    </div>
+                                    <div class="ImgItem__tag"><img alt="Seen-Tag"
+                                            src="https://static.99acres.com/universalapp/img/Activity.png"
+                                            style="width: 37px; height: 20px;">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__topRightItems">
+                                    <div data-label="SHORTLIST" class="ImgItem__shortlistBtnWrap">
+                                        <img class="ImgItem__shortlistImage" alt="Shortlist-Button"
+                                            src="https://static.99acres.com/universalapp/img/Shortlist.png">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__bottomRightOffer"></div>
+                                <div class="tupleNew__bottom ">
+                                    <div class="tupleNew__fomoOuter">
+                                        <div class="ImgItem__fomoWrap"><span
+                                                class="ImgItem__m12 ImgItem__colorN200 ellipsis">Ready To Move · <span
+                                                    style="font-weight: 600;">Since Mar, 2024</span></span></div>
+                                    </div>
+                                </div><img
+                                    src="https://img.freepik.com/premium-photo/modernist-house-with-glass-walls-open-floor-plan_604472-37477.jpg"
+                                    alt="PROJECT-IMAGE" class="" fetchpriority="high" decoding="async"
+                                    style="width: 344px; height: 220px; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="PseudoTupleRevamp__contentWrap">
+                                <div class="PseudoTupleRevamp__pH12">
+                                    <div class="PseudoTupleRevamp__headContainer">
+                                        <div class="PseudoTupleRevamp__heading">
+                                            <div class="PseudoTupleRevamp__headNrating"><a class="ellipsis"
+                                                    href="https://www.99acres.com/peptech-town-muwasi-chhatarpur-npxid-r291873"
+                                                    title="Peptech Town">South DElhi</a></div>
+                                            <div class="PseudoTupleRevamp__ribbon">
+                                                <div>SALE Props</div>
+                                            </div>
+                                        </div>
+                                        <h2
+                                            class="PseudoTupleRevamp__subHeading ellipsis PseudoTupleRevamp__projectHeading">
+                                            <span class="PseudoTupleRevamp__FW6">3 BHK Villa </span><span
+                                                class="PseudoTupleRevamp__w400Ml4">in <span> Muwasi,
+                                                    Chhatarpur</span></span>
+                                        </h2>
+                                    </div>
+                                    <div class="configs__configCardsWrap">
+                                        <div class="configs__configCards" id="projectConfigurationCards_291873">
+                                            <div class="cc__CarouselContainer">
+                                                <div class="cc__CarouselBox">
+                                                    <div compattr="projectConfigurationCards_291873"
+                                                        class="cc__slidingBox  cc__inlineFlexStyle">
+                                                        <div class="configs__configCard">
+                                                            <div class="configs__ccl2">₹59.21</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tupleNew__scrollableHighlights">
+                                        <div class="tupleNew__highlightsWrap">
+                                            <div class="tupleNew__onlyHighlight">
+                                                <div class="tupleNew__highligtsHeading">Nearby :</div>
+                                                <div class="tupleNew__unitHighlight1"><span
+                                                        class="tupleNew__unitHighlightTxt">Behs Sumati Academy</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2"><span
+                                                        class="tupleNew__unitHighlightTxt">S.B. College</span></div>
+                                            </div>
+                                            <div class="tupleNew__unitHighlight2">
+                                                <div class="tupleNew__unitHighlightTxtLast">+3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="tupleNew__moreLessWrapper  tupleNew__mt16"
+                                            id="srp_tuple_description">
+                                            <p class="descPtag_undefined tupleNew__descText "
+                                                style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; text-overflow: ellipsis; white-space: normal;">
+                                                Peptech Town is one of the well-known housing society, offering 3 BHK
+                                                Villa for
+                                                sale in Muwasi. Peptech Town is a Ready To Move project . Villas size in
+                                                Peptech
+                                                Town varies from 1,850</p>
+                                            <div data-label="SEE_MORE"><i class="iconS_srpMob_20 icon_dropdown"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PseudoTupleRevamp__contactWrap">
+                            <div class="PseudoTupleRevamp__builderInfo">
+                                <div class="PseudoTupleRevamp__contactHeading">1 Week</div>
+                                <div class="PseudoTupleRevamp__contactHeading">Builder</div>
+                                <div class="PseudoTupleRevamp__contactSubheading">Shera Builders</div>
+                            </div>
+                            <div class="PseudoTupleRevamp__contactDetails">
+                                <div class="pageComponent PseudoTupleRevamp__brochure" data-label="DOWNLOAD_BROCHURE">
+                                    View
+                                    Number</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="PseudoTupleRevamp__outerTupleWrap">
+                    <div class="PseudoTupleRevamp__tupleWrap">
+                        <div class="PseudoTupleRevamp__innerCont">
+                            <div class="tupleNew__imgWrap tupleNew__premium">
+                                <div class="tupleNew__topLeftItems">
+                                    <div style="display: flex;">
+                                        <div><img alt="Rera-Tag" class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/rera.png"
+                                                style="width: 52px; height: 20px;"><img alt="No-Brokerage-Tag"
+                                                class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/NBZ.png"
+                                                style="width: 101px; height: 20px;"></div>
+                                    </div>
+                                    <div class="ImgItem__tag"><img alt="Seen-Tag"
+                                            src="https://static.99acres.com/universalapp/img/Activity.png"
+                                            style="width: 37px; height: 20px;">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__topRightItems">
+                                    <div data-label="SHORTLIST" class="ImgItem__shortlistBtnWrap">
+                                        <img class="ImgItem__shortlistImage" alt="Shortlist-Button"
+                                            src="https://static.99acres.com/universalapp/img/Shortlist.png">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__bottomRightOffer"></div>
+                                <div class="tupleNew__bottom ">
+                                    <div class="tupleNew__fomoOuter">
+                                        <div class="ImgItem__fomoWrap"><span
+                                                class="ImgItem__m12 ImgItem__colorN200 ellipsis">Ready To Move · <span
+                                                    style="font-weight: 600;">Since Mar, 2024</span></span></div>
+                                    </div>
+                                </div><img
+                                    src="https://img.freepik.com/premium-photo/modern-green-house-woods_604472-18161.jpg"
+                                    alt="PROJECT-IMAGE" class="" fetchpriority="high" decoding="async"
+                                    style="width: 344px; height: 220px; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="PseudoTupleRevamp__contentWrap">
+                                <div class="PseudoTupleRevamp__pH12">
+                                    <div class="PseudoTupleRevamp__headContainer">
+                                        <div class="PseudoTupleRevamp__heading">
+                                            <div class="PseudoTupleRevamp__headNrating"><a class="ellipsis"
+                                                    href="https://www.99acres.com/peptech-town-muwasi-chhatarpur-npxid-r291873"
+                                                    title="Peptech Town">South Delhi</a></div>
+                                            <div class="PseudoTupleRevamp__ribbon">
+                                                <div>SALE Props</div>
+                                            </div>
+                                        </div>
+                                        <h2
+                                            class="PseudoTupleRevamp__subHeading ellipsis PseudoTupleRevamp__projectHeading">
+                                            <span class="PseudoTupleRevamp__FW6">3 BHK Villa </span><span
+                                                class="PseudoTupleRevamp__w400Ml4">in <span> Muwasi,
+                                                    Chhatarpur</span></span>
+                                        </h2>
+                                    </div>
+                                    <div class="configs__configCardsWrap">
+                                        <div class="configs__configCards" id="projectConfigurationCards_291873">
+                                            <div class="cc__CarouselContainer">
+                                                <div class="cc__CarouselBox">
+                                                    <div compattr="projectConfigurationCards_291873"
+                                                        class="cc__slidingBox  cc__inlineFlexStyle">
+                                                        <div class="configs__configCard">
+                                                            <div class="configs__ccl2">₹59.21</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tupleNew__scrollableHighlights">
+                                        <div class="tupleNew__highlightsWrap">
+                                            <div class="tupleNew__onlyHighlight">
+                                                <div class="tupleNew__highligtsHeading">Nearby :</div>
+                                                <div class="tupleNew__unitHighlight1"><span
+                                                        class="tupleNew__unitHighlightTxt">Behs Sumati Academy</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2"><span
+                                                        class="tupleNew__unitHighlightTxt">S.B. College</span></div>
+                                            </div>
+                                            <div class="tupleNew__unitHighlight2">
+                                                <div class="tupleNew__unitHighlightTxtLast">+3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="tupleNew__moreLessWrapper  tupleNew__mt16"
+                                            id="srp_tuple_description">
+                                            <p class="descPtag_undefined tupleNew__descText "
+                                                style="overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; text-overflow: ellipsis; white-space: normal;">
+                                                Peptech Town is one of the well-known housing society, offering 3 BHK
+                                                Villa for
+                                                sale in Muwasi. Peptech Town is a Ready To Move project . Villas size in
+                                                Peptech
+                                                Town varies from 1,850</p>
+                                            <div data-label="SEE_MORE"><i class="iconS_srpMob_20 icon_dropdown"></i>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PseudoTupleRevamp__contactWrap">
+                            <div class="PseudoTupleRevamp__builderInfo">
+                                <div class="PseudoTupleRevamp__contactHeading">1 Week</div>
+                                <div class="PseudoTupleRevamp__contactHeading">Builder</div>
+                                <div class="PseudoTupleRevamp__contactSubheading">Shera Builders</div>
+                            </div>
+                            <div class="PseudoTupleRevamp__contactDetails">
+                                <div class="pageComponent PseudoTupleRevamp__brochure" data-label="DOWNLOAD_BROCHURE">
+                                    View
+                                    Number</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="PseudoTupleRevamp__outerTupleWrap">
+                    <div class="PseudoTupleRevamp__tupleWrap">
+                        <div class="PseudoTupleRevamp__innerCont">
+                            <div class="tupleNew__imgWrap tupleNew__premium">
+                                <div class="tupleNew__topLeftItems">
+                                    <div style="display: flex;">
+                                        <div><img alt="Rera-Tag" class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/rera.png"
+                                                style="width: 52px; height: 20px;"><img alt="No-Brokerage-Tag"
+                                                class="ImgItem__tag"
+                                                src="https://static.99acres.com/universalapp/img/NBZ.png"
+                                                style="width: 101px; height: 20px;"></div>
+                                    </div>
+                                    <div class="ImgItem__tag"><img alt="Seen-Tag"
+                                            src="https://static.99acres.com/universalapp/img/Activity.png"
+                                            style="width: 37px; height: 20px;">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__topRightItems">
+                                    <div data-label="SHORTLIST" class="ImgItem__shortlistBtnWrap">
+                                        <img class="ImgItem__shortlistImage" alt="Shortlist-Button"
+                                            src="https://static.99acres.com/universalapp/img/Shortlist.png">
+                                    </div>
+                                </div>
+                                <div class="tupleNew__bottomRightOffer"></div>
+                                <div class="tupleNew__bottom ">
+                                    <div class="tupleNew__fomoOuter">
+                                        <div class="ImgItem__fomoWrap"><span
+                                                class="ImgItem__m12 ImgItem__colorN200 ellipsis">Ready To Move · <span
+                                                    style="font-weight: 600;">Since Mar, 2024</span></span></div>
+                                    </div>
+                                </div><img
+                                    src="https://newprojects.99acres.com/projects/unknown//images/vluhjwr_1704364745_465290222_med.jpg"
+                                    alt="PROJECT-IMAGE" class="" fetchpriority="high" decoding="async"
+                                    style="width: 344px; height: 220px; object-fit: cover; border-radius: 8px;">
+                            </div>
+                            <div class="PseudoTupleRevamp__contentWrap">
+                                <div class="PseudoTupleRevamp__pH12">
+                                    <div class="PseudoTupleRevamp__headContainer">
+                                        <div class="PseudoTupleRevamp__heading">
+                                            <div class="PseudoTupleRevamp__headNrating"><a class="ellipsis"
+                                                    href="https://www.99acres.com/peptech-town-muwasi-chhatarpur-npxid-r291873"
+                                                    title="Peptech Town">South Delhi</a></div>
+                                            <div class="PseudoTupleRevamp__ribbon">
+                                                <div>SALE Props</div>
+                                            </div>
+                                        </div>
+                                        <h2
+                                            class="PseudoTupleRevamp__subHeading ellipsis PseudoTupleRevamp__projectHeading">
+                                            <span class="PseudoTupleRevamp__FW6">3 BHK Villa </span><span
+                                                class="PseudoTupleRevamp__w400Ml4">in <span> Muwasi,
+                                                    Chhatarpur</span></span>
+                                        </h2>
+                                    </div>
+                                    <div class="configs__configCardsWrap">
+                                        <div class="configs__configCards" id="projectConfigurationCards_291873">
+                                            <div class="cc__CarouselContainer">
+                                                <div class="cc__CarouselBox">
+                                                    <div compattr="projectConfigurationCards_291873"
+                                                        class="cc__slidingBox  cc__inlineFlexStyle">
+                                                        <div class="configs__configCard">
+                                                            <div class="configs__ccl2">₹59.21</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="tupleNew__scrollableHighlights">
+                                        <div class="tupleNew__highlightsWrap">
+                                            <div class="tupleNew__onlyHighlight">
+                                                <div class="tupleNew__highligtsHeading">Nearby :</div>
+                                                <div class="tupleNew__unitHighlight1"><span
+                                                        class="tupleNew__unitHighlightTxt">Behs Sumati Academy</span>
+                                                </div>
+                                                <div class="tupleNew__unitHighlight2"><span
+                                                        class="tupleNew__unitHighlightTxt">S.B. College</span></div>
+                                            </div>
+                                            <div class="tupleNew__unitHighlight2">
+                                                <div class="tupleNew__unitHighlightTxtLast">+3</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tupleNew__priceAreaWrap">
+                                        <div id="tuplePriceArea_73418959" style="width: 100%;">
+                                            <div class="cc__CarouselContainer">
+                                                <div class="cc__CarouselBox">
+                                                    <div compattr="tuplePriceArea_73418959"
+                                                        class="cc__slidingBox  cc__inlineFlexStyle">
+                                                        <div class="tupleNew__priceWrap">
+                                                            <div class="tupleNew__priceAndPerSqftWrap ">
+                                                                <div class="tupleNew__priceValWrap"><span>₹22.5
+                                                                        Lac</span><span
+                                                                        class="tupleNew__perSqftWrap"></span></div>
+                                                                <div class="tupleNew__perSqftWrap  ellipsis">₹2,812
+                                                                    /sqft</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tupleNew__areaWrap">
+                                                            <div class="tupleNew__totolAreaWrap "><span
+                                                                    class="tupleNew__area1Type">800 sqft</span><span
+                                                                    class="tupleNew__area2Type  ellipsis">(74 sqm)<img
+                                                                        src="https://static.99acres.com/universalapp/img/downArrowNew.png"
+                                                                        height="20" width="20"></span></div>
+                                                            <div class="tupleNew__areaType">Built-up Area</div>
+                                                        </div>
+                                                        <div class="tupleNew__areaWrap">
+                                                            <div class="tupleNew__totolAreaWrap "><span
+                                                                    class="tupleNew__area1Type">2 BHK </span><span
+                                                                    class="tupleNew__area2Type  ellipsis">(2
+                                                                    Baths)</span></div>
+                                                            <div class="tupleNew__possessionBy">Ready To Move</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PseudoTupleRevamp__contactWrap">
+                            <div class="PseudoTupleRevamp__builderInfo">
+                                <div class="PseudoTupleRevamp__contactHeading">Builder</div>
+                                <div class="PseudoTupleRevamp__contactSubheading">Shera Builders</div>
+                            </div>
+                            <div class="PseudoTupleRevamp__contactDetails">
+                                <div class="pageComponent PseudoTupleRevamp__brochure" data-label="DOWNLOAD_BROCHURE">
+                                    View
+                                    Number</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

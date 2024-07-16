@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .property-details-photo {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .property-details-photo-figure {
+            width: 100%;
+            height: 184px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            background-clip: padding-box;
+        }
+
+        .property-details-photo-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-details-photo-thumbnails {
+            width: 100%;
+            padding-top: 4px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .property-details-photo ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 4px;
+        }
+
+        .thumbnail-item {
+            width: 33%;
+            height: 82px;
+            margin-right: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        .thumbnail-item:last-child {
+            margin-right: 0;
+        }
+
+        .thumbnail-count-container {
+            width: 98%;
+            height: 100%;
+            position: absolute;
+            left: -24px;
+            top: -30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .thumbnail-count {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 25px;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 24px 0;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, .7);
+        }
+
+        .thumbnail-count p {
+            margin-left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="property-details-photo">
+        <div class="property-details-photo-figure">
+            <img src="assets/img/property-1/property1.jpg" alt="Property Image" width="450" height="300">
+        </div>
+        <ul class="property-details-photo-thumbnails">
+            <li class="thumbnail-item">
+                <img src="assets/img/property-1/property2.jpg" alt="Thumbnail 1" width="450" height="300">
+            </li>
+            <li class="thumbnail-item">
+                <img src="assets/img/property-1/property3.jpg" alt="Thumbnail 2" width="450" height="300">
+            </li>
+            <li class="thumbnail-item" onclick="redirectToSearchPage()">
+                <div class="thumbnail-count-container">
+                    <span class="thumbnail-count">
+                        <p>+6 Photos</p>
+                    </span>
+                </div>
+                <img src="assets/img/property-1/property4.jpg" alt="Thumbnail 3" width="450" height="300">
+            </li>
+        </ul>
+    </div>
+    <script>
+        function redirectToSearchPage() {
+            window.location.href = 'full-imageshow.html';
+        }
+    </script>
+    <!-- Code injected by live-server -->
+
+</body>
+
+</html>

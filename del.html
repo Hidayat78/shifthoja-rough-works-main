@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Loading Animation</title>
+    <style>
+        .box-empty {
+            width: 600px;
+            height: 500px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 50px auto; /* Centering the box for demonstration */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0; /* Just to visualize the div */
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="box-empty" id="lazyBox">
+    <div class="spinner"></div>
+</div>
+
+</body>
+</html>

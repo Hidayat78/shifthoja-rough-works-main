@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Privacy Policy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 160px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+
+        }
+
+        /* privacy policy css start */
+        .r-bijgke {
+            padding-top: 50px;
+        }
+
+        .r-xovx4i {
+            background-color: rgb(240, 249, 255);
+        }
+
+        .r-eqz5dr {
+            flex-direction: column;
+        }
+
+        .r-1awozwy {
+            align-items: center;
+        }
+
+        .r-6koalj {
+            display: flex;
+        }
+
+        .r-5orghg {
+            width: 34px;
+        }
+
+        .r-25kp3t {
+            min-width: 70px;
+        }
+
+        .r-ero68b {
+            min-height: 80px;
+        }
+
+        .r-eu3ka {
+            height: 40px;
+        }
+
+        .r-417010 {
+            z-index: 0;
+        }
+
+        .r-1mlwlqe {
+            flex-basis: auto;
+        }
+
+        .r-1udh08x {
+            overflow: hidden;
+        }
+
+        .r-1wyyakw {
+            z-index: -1;
+        }
+
+        .r-13qz1uu {
+            width: 100%;
+        }
+
+        .r-ipm5af {
+            top: 0px;
+        }
+
+        .r-zchlnj {
+            right: 0px;
+        }
+
+        .r-u8s1d {
+            position: absolute;
+        }
+
+        .r-1d2f490 {
+            left: 0px;
+        }
+
+        .r-1pi2tsx {
+            height: 100%;
+        }
+
+        .r-1p0dtai {
+            bottom: 0px;
+        }
+
+        .r-4gszlv {
+            background-size: cover;
+        }
+
+        .r-u6sd8q {
+            background-repeat: no-repeat;
+        }
+
+        .r-vvn4in {
+            background-position: center center;
+        }
+
+        .r-1niwhzg {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .r-7sv4c2 {
+            margin-bottom: 19px;
+        }
+
+        .r-1v456y7 {
+            margin-bottom: 35px;
+        }
+
+        .r-37tt59 {
+            line-height: 32px;
+        }
+
+        .r-b88u0q {
+            font-weight: 700;
+        }
+
+        .r-13uqrnb {
+            font-style: normal;
+        }
+
+        .r-1x35g6 {
+            font-size: 24px;
+        }
+
+        .r-98loyc {
+            font-family: "Open Sans";
+        }
+
+        .r-kze2mb {
+            color: rgb(4, 21, 51);
+        }
+
+        .container11 {
+            top: -8px;
+            padding-top: 21px;
+            padding-right: 25px;
+            padding-left: 20px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 0;
+        }
+
+        .container2 {
+            height: 6px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 0;
+        }
+
+        .heading {
+            margin-bottom: 8px;
+            line-height: 28px;
+            font-weight: 600;
+            font-size: 20px;
+            font-style: normal;
+            font-family: "Open Sans";
+            color: rgb(4, 21, 51);
+        }
+
+        .containertrs {
+            height: 6px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 0;
+        }
+
+        .privacy_Vertical {
+            margin: 20px 0px;
+        }
+
+        .order-listss {
+            margin-left: 20px;
+        }
+
+        .contact-get {
+            display: flex;
+            flex-direction: row;
+            gap: 20PX;
+            overflow-x: auto;
+        }
+
+        .contactsetai-one {
+            border-radius: 8px;
+            border: 1px solid rgb(235, 236, 240);
+            margin-bottom: 24px;
+            padding: 20px;
+        }
+
+        .contactsetai-one .heading {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contactsetai-one .call-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .contactsetai-one .icon-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .contactsetai-one .number-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toll-free-numbers {
+            border-radius: 8px;
+            border: 1px solid rgb(235, 236, 240);
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .toll-free-numbers .heading {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .toll-free-numbers .call-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .toll-free-numbers .icon-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .toll-free-numbers .number-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inter-box {
+            width: 274px;
+            height: 100px;
+        }
+
+        .toll-free-numbers {
+            width: 250px;
+        }
+
+        .toll-free-numbers {
+            width: 250px;
+        }
+
+        .gett {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+            border-bottom-style: ridge;
+
+        }
+
+
+        @media (max-width: 480px) {
+            .contactsetai-one .heading {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 14px;
+            }
+
+            .number-info {
+                font-size: 15px;
+            }
+
+            .contactsetai-one .icon-img {
+                width: 36px;
+                height: 37px;
+                margin-right: 10px;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            .contactsetai-one .heading {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 14px;
+            }
+
+            .number-info {
+                font-size: 12px;
+            }
+
+            .contactsetai-one .icon-img {
+                width: 36px;
+                height: 37px;
+                margin-right: 10px;
+            }
+        }
+
+        .privacy__pol p {
+            text-align: justify;
+            font-size: 13px;
+        }
+
+        h4 {
+            font-size: 17px;
+        }
+
+        /* privacy policy css end */
+    </style>
+</head>
+<!-- <div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw"
+                        style="background-image: url({{asset('privacy.png')}});"> -->
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="css-1dbjc4n r-xovx4i r-bijgke">
+        <div class="css-1dbjc4n r-1awozwy r-6koalj r-eqz5dr">
+            <div class="css-1dbjc4n r-eu3ka r-ero68b r-25kp3t r-5orghg">
+                <div class="css-1dbjc4n r-1mlwlqe r-eu3ka r-ero68b r-25kp3t r-1udh08x r-5orghg r-417010">
+                    <div class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw"
+                        style="background-image: url('assets/img/mob-service/privacy.png');"></div>
+                    <img alt="" draggable="false" src="/assets/img/mob-service/privacy.png" class="css-9pa8cd">
+                </div>
+            </div>
+            <div class="css-1dbjc4n r-7sv4c2"></div>
+            <h1 dir="auto" aria-level="1" role="heading"
+                class="css-4rbku5 css-901oao r-kze2mb r-98loyc r-1x35g6 r-13uqrnb r-b88u0q r-37tt59 r-1v456y7">
+                SHIFTHOJA.COM</h1>
+        </div>
+    </div>
+
+    <div class="container11">
+        <div class="container2"></div>
+        <div class="container1" style="margin-bottom:26px">
+            <h2 class="heading">Privacy Policy</h2>
+            <div class="containertrs"></div>
+            <div class="privacy__pol">
+                <p>
+                    A Privacy Policy is a legal document that outlines how a website or app collects, uses, stores, and
+                    protects users' personal information. It typically includes details about the types of data
+                    collected (such as name, email, IP address), how the data is used (for example, to improve user
+                    experience, send promotional offers), and how users can control their information (like opting out
+                    of marketing emails or deleting their account).
+
+                    In essence, a Privacy Policy serves to inform users about their rights regarding their personal data
+                    and helps build trust by demonstrating transparency and compliance with privacy laws. It's essential
+                    to update the Privacy Policy regularly, especially when there are changes in data practices or legal
+                    requirements. Failure to have a compliant Privacy Policy can lead to legal consequences and damage
+                    to the reputation of the website or app.
+                </p>
+                <hr>
+                <p>
+                    Welcome to <b>SHIFTHOJA.COM </b>("Website"). This Privacy Policy is designed to
+                    inform you about how we collect, use, disclose, and safeguard your personal
+                    information when you use our Website. We are committed to protecting your privacy
+                    and ensuring transparency in our data practices.
+                </p>
+                <div class="privacy_Vertical">
+                    <h4>This Privacy Policy is divided into the following headings</h4>
+                    <ol class="order-listss">
+                        <li> Personal Data We Collect</li>
+                        <li> How We Use Your Personal Data</li>
+                        <li> Who We Share Your Personal Data With</li>
+                        <li> Data Storage and Retention</li>
+                        <li> Your Rights</li>
+                        <li> Data Protection Practices</li>
+                        <li> Third-Party Websites, Apps, and Services</li>
+                        <li> Children</li>
+                        <li> Changes to the Privacy Policy</li>
+                        <li> How to Contact Us</li>
+                    </ol>
+                </div>
+                <section>
+                    <h4>1. Personal Data we collect</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We collect personal data that you voluntarily provide to us when using our Website.
+                            This may include information such as your name, email address, mobile number,
+                            location, and any other details necessary for property searching and contact
+                            purposes. We may also automatically collect certain information about your
+                            device and usage of our Website, such as your IP address, browser type, operating
+                            system, pages visited, and interactions with our content.
+                        </p>
+                    </div>
+
+                </section>
+                <section>
+                    <h4>2.How We Use Your Personal Data</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We use the personal data you provide to deliver the services you request, such as
+                            property listings, contact inquiries, and account management. Additionally, we may
+                            use your information to communicate with you about our services, personalize your
+                            experience, and improve our Website's functionality and user experience. We do not
+                            use your personal data for any purposes other than those outlined in this Privacy
+                            Policy without your consent.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>3.Who We Share Your Personal Data With</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We may share your personal data with trusted third-party service providers who assist
+                            us in operating our Website, processing transactions, or providing services on our
+                            behalf. These service providers are contractually obligated to maintain the
+                            confidentiality and security of your information and are only permitted to use
+                            your personal data as necessary to provide the services requested by us.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>4.Data Storage and Retention</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We store and retain your personal data for as long as necessary to fulfill
+                            the purposes outlined in this Privacy Policy, unless a longer retention
+                            period is required or permitted by law. We take reasonable measures to
+                            ensure the security of your personal data during storage and transmission,
+                            including encryption and access controls.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>5.Your Rights</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            You have the right to access, correct, or update your personal data held by us.
+                            You may also request deletion of your information, subject to legal obligations.
+                            Additionally, you have the right to opt-out of receiving promotional communications
+                            from us. If you wish to exercise any of these rights, please contact us using the
+                            details provided in this Privacy Policy.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>6. Data Protection Practices</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We implement industry-standard security measures to protect your personal data
+                            against unauthorized access, disclosure, alteration, or destruction.
+                            These measures include encryption, access controls, regular security audits,
+                            and employee training on data protection best practices. However, please note
+                            that no method of transmission over the internet or electronic storage is 100%
+                            secure, and we cannot guarantee the absolute security of your personal data.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>7. Third-Party Websites, Apps, and Services
+                    </h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            Our Website may contain links to third-party websites, apps, or services that are
+                            not operated by us. We are not responsible for the privacy practices or content
+                            of these third-party sites. We encourage you to review the privacy policies of
+                            any third-party sites you visit to understand how they collect, use, and disclose
+                            your information.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>8.Children</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            Our Website is not directed towards children under the age of 18, and we do not
+                            knowingly collect personal data from children. If you believe that we have
+                            inadvertently collected personal data from a child, please contact us immediately,
+                            and we will take appropriate steps to remove the information from our records.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>9.Changes to the Privacy Policy</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            We reserve the right to update or modify this Privacy Policy at any time.
+                            We will notify you of any material changes by posting the updated Privacy Policy
+                            on our Website. We encourage you to review this Privacy Policy periodically to stay
+                            informed about how we are protecting your personal data.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <h4>10. How to Contact Us</h4>
+                    <div class="privacy_Vertical">
+                        <p class="">
+                            If you have any questions, concerns, or grievances regarding our Privacy Policy or
+                            the handling of your personal data, please contact us <a
+                                href="mailto:support@shifthoja.com">support@shifthoja.com</a>
+                            . We take
+                            privacy seriously and will do our best to address any issues or concerns you may have.
+                            By using our website, you consent to the collection, use, and disclosure of your
+                            personal data as described in this Privacy Policy.
+                        </p>
+                    </div>
+                </section>
+                <section class="privacy__marginVertical">
+                    <div>
+                        <p>Hidayat</p>
+                        <p>Grievance Officer</p>
+                        <p>Shifthoja.com (webpanda.com)</p>
+                        <p>chhatarpur</p>
+                        <p>Email
+                            <a href="mailto:hidayat@shifthoja.com">privacy@shifthoja.com</a>
+                        </p>
+                    </div>
+                </section>
+                <section class="gett">
+                    <h4>Get in touch</h4>
+                </section>
+                <div class="contact-get">
+                    <div class="contactsetai-one">
+                        <div class="inter-box">
+                            <div dir="auto" class="heading">INTERNATIONAL NUMBERS</div>
+                            <div class="number-item">
+                                <div tabindex="0" class="call-icon">
+                                    <div class="icon-container">
+                                        <div class="background-icon"></div>
+                                        <img alt="" draggable="false" src="assets/img/mob-service/callI.png"
+                                            class="icon-img">
+                                    </div>
+                                    <div class="number-info">
+                                        <div dir="auto" class="country">Delhi</div>
+                                        <div dir="auto" class="number">9504245461</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toll-width-box">
+                        <div class="toll-free-numbers">
+                            <div dir="auto" class="heading">TOLL FREE NUMBER</div>
+                            <div tabindex="0" class="number-item">
+                                <div class="call-icon">
+                                    <div class="icon-container">
+                                        <div class="background-icon"></div>
+                                        <img alt="" draggable="false" src="assets/img/mob-service/callI.png"
+                                            class="icon-img">
+                                    </div>
+                                    <div class="number-info">
+                                        <div dir="auto" class="time">9 AM - 8 PM IST</div>
+                                        <div dir="auto" class="number">9504245461</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="toll-width-box">
+                        <div class="toll-free-numbers">
+                            <div dir="auto" class="heading">TOLL FREE NUMBER</div>
+                            <div tabindex="0" class="number-item">
+                                <div class="call-icon">
+                                    <div class="icon-container">
+                                        <div class="background-icon"></div>
+                                        <img alt="" draggable="false" src="assets/img/mob-service/callI.png"
+                                            class="icon-img">
+                                    </div>
+                                    <div class="number-info">
+                                        <div dir="auto" class="time">9 AM - 8 PM IST</div>
+                                        <div dir="auto" class="number">9504245461</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

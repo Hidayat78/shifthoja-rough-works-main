@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .mb-srp__list {
+            width: 1024px;
+            height: auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap
+        }
+
+        .mb-srp__card {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            background-color: #fff;
+            border: 1px solid #d7d7d7;
+            cursor: pointer;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box;
+            -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24), 0 1px 4px 0 rgba(0, 0, 0, .12);
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24), 0 1px 4px 0 rgba(0, 0, 0, .12);
+            -webkit-transition: box-shadow .3s ease;
+            -moz-transition: box-shadow .3s ease;
+            -o-transition: box-shadow .3s ease;
+            transition: box-shadow .3s ease;
+            position: relative
+        }
+
+        .mb-srp__card:hover {
+            border: 1px solid transparent;
+            -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .1), 0 2px 8px 0 rgba(0, 0, 0, .12);
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .1), 0 2px 8px 0 rgba(0, 0, 0, .12)
+        }
+
+        .mb-srp__card:hover .mb-srp__card--title {
+            text-decoration: underline
+        }
+
+        .mb-srp__card.has-other-prop .mb-srp__card__estimate,
+        .mb-srp__card.has-other-prop .mb-srp__card__other-prop--action,
+        .mb-srp__card.has-other-prop .mb-srp__card__other-prop__title--blank {
+            background-color: #dff6f9
+        }
+
+        .mb-srp__card__container {
+            width: calc(100% - 210px);
+            height: auto;
+            padding: 16px 16px 8px;
+            display: flex
+        }
+
+        .card-luxury .mb-srp__card__container {
+            padding-bottom: 16px
+        }
+
+        .mb-srp__card__photo {
+            width: 216px;
+            height: auto
+        }
+
+        .card-luxury .mb-srp__card__photo {
+            width: 256px
+        }
+
+        .mb-srp__card__photo__fig {
+            width: 100%;
+            height: 128px;
+            overflow: hidden;
+            position: relative;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box
+        }
+
+        .card-luxury .mb-srp__card__photo__fig {
+            height: 220px;
+            overflow: visible
+        }
+
+        .card-luxury .mb-srp__card__photo__fig.photo-single {
+            height: 280px;
+            overflow: visible
+        }
+
+        .card-luxury .mb-srp__card__photo__fig.photo-single-no-amenities {
+            height: 248px;
+            overflow: visible
+        }
+
+        .card-luxury .mb-srp__card__photo__fig.photo-multi-no-amenities {
+            height: 188px;
+            overflow: visible
+        }
+
+        .card-coworking .mb-srp__card__photo__fig {
+            height: 168px
+        }
+
+        .mb-srp__card__photo__fig--cat-name {
+            width: auto;
+            height: 22px;
+            padding: 0 4px 0 8px;
+            position: absolute;
+            left: -16px;
+            top: 8px;
+            text-transform: uppercase;
+            color: #303030;
+            font-size: 10px;
+            font-weight: 600;
+            border: 1px solid #ffc72c;
+            border-right: none;
+            background-color: #ffebb3;
+            display: flex;
+            align-items: center
+        }
+
+        .mb-srp__card__photo__fig--cat-name:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 11px;
+            height: 22px;
+            top: -1px;
+            right: -11px;
+            background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -26px -1903px
+        }
+
+        .mb-srp__card__photo__fig--count {
+            width: auto;
+            height: 16px;
+            line-height: 14px;
+            padding: 2px 4px 2px 18px;
+            display: flex;
+            text-align: center;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 400;
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #303030 url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -23px -384px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__photo__fig--count .sign-plus {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            padding-left: 2px
+        }
+
+        .mb-srp__card__photo__fig--request-photo {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(96, 96, 96, .4) url("data:image/jpeg;base64,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") no-repeat
+        }
+
+        .card-luxury .mb-srp__card__photo__fig--request-photo {
+            background: rgba(96, 96, 96, .4) url(https://cdn.staticmb.com/srpstatic/images/request-photos-luxury.jpg) no-repeat 50%/cover;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__photo__fig--graphic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .card-luxury .mb-srp__card__photo__fig--graphic {
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__photo__fig--graphic.object-fit-none {
+            object-fit: none
+        }
+
+        .mb-srp__card__photo__fig--post {
+            width: 100%;
+            height: 18px;
+            line-height: 18px;
+            padding: 0 8px;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 500;
+            background-color: rgba(48, 48, 48, .7);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: left
+        }
+
+        .mb-srp__card__tags {
+            width: 100%;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center
+        }
+
+        .card-luxury .mb-srp__card__tags {
+            padding-bottom: 16px
+        }
+
+        .mb-srp__card__tags span {
+            width: auto;
+            height: 16px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            position: relative;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__tags span:last-child {
+            margin-right: 0
+        }
+
+        .mb-srp__card__tags--tick {
+            color: #009681;
+            padding: 0 4px 0 20px;
+            border: 1px solid #b2dfd8
+        }
+
+        .mb-srp__card__tags--tick:before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 5px;
+            border-left: 2px solid #009681;
+            border-bottom: 2px solid #009681;
+            left: 6px;
+            top: 3px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+
+        .mb-srp__card__tags--tick.no-tick {
+            padding-left: 4px
+        }
+
+        .mb-srp__card__tags--tick.no-tick:before {
+            display: none
+        }
+
+        .mb-srp__card__tags--gray {
+            color: #606060;
+            padding: 0 4px;
+            border: 1px solid #e8e8e8;
+            background: #e8e8e8
+        }
+
+        .mb-srp__card__tags--gray:before {
+            display: none
+        }
+
+        .mb-srp__card__tags--mb-prime {
+            color: #303030;
+            border: 1px solid #d7d7d7;
+            padding: 2px 4px 2px 22px
+        }
+
+        .mb-srp__card__tags--mb-prime:before {
+            position: absolute;
+            display: block;
+            content: "";
+            top: -1px;
+            left: -1px;
+            width: 18px;
+            height: 16px;
+            background: #29313b url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -22px -1619px;
+            -webkit-border-radius: 4px 0 0 4px;
+            -moz-border-radius: 4px 0 0 4px;
+            -o-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card--title {
+            max-width: calc(100% - 95px);
+            color: #303030;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            padding-bottom: 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .card-luxury .mb-srp__card--title {
+            font-size: 16px;
+            font-weight: 600
+        }
+
+        .mb-srp__card__sort--icon {
+            width: 22px;
+            height: 20px;
+            margin-right: 8px;
+            background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -21px -150px;
+            display: block;
+            position: absolute;
+            right: 55px;
+            top: 2px
+        }
+
+        .mb-srp__card__sort--icon:hover {
+            background-position: -50px -150px
+        }
+
+        .mb-srp__card__sort--icon.active {
+            background-position: -21px -186px
+        }
+
+        .mb-srp__card__society {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-bottom: 8px
+        }
+
+        .mb-srp__card__society--label {
+            color: #606060;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            padding-right: 4px
+        }
+
+        .mb-srp__card__society--name {
+            max-width: 390px;
+            color: #606060;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: underline;
+            line-height: 16px;
+            margin-right: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .mb-srp__card__society--name:hover {
+            color: #303030;
+            text-decoration: none
+        }
+
+        .mb-srp__card__society--map {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 400;
+            text-decoration: underline;
+            padding-left: 12px;
+            background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -27px -1279px
+        }
+
+        .mb-srp__card__society--map:hover {
+            text-decoration: none
+        }
+
+        .mb-srp__card__summary {
+            width: 100%;
+            height: auto;
+            display: flex;
+            overflow: hidden;
+            margin: 8px 0 16px;
+            background-color: #f5f5f5;
+            position: relative;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box
+        }
+
+        .card-luxury .mb-srp__card__summary {
+            background-color: transparent;
+            border: 1px solid #e8e8e8
+        }
+
+        .mb-srp__card__summary.open {
+            height: 96px;
+            -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+            box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1)
+        }
+
+        .mb-srp__card__summary.open .mb-srp__card__summary__list {
+            height: auto
+        }
+
+        .mb-srp__card__summary.open .mb-srp__card__summary__action:after {
+            -webkit-transform: rotate(135deg);
+            -moz-transform: rotate(135deg);
+            -ms-transform: rotate(135deg);
+            -o-transform: rotate(135deg);
+            transform: rotate(135deg)
+        }
+
+        .mb-srp__card__summary__list {
+            width: calc(100% - 24px);
+            height: 48px;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap
+        }
+
+        .mb-srp__card__summary__list--item {
+            width: 33.33333%;
+            padding: 0 8px 0 56px;
+            margin: 8px 0;
+            border-right: 1px solid #d7d7d7;
+            position: relative
+        }
+
+        .card-luxury .mb-srp__card__summary__list--item {
+            background-image: unset;
+            padding-left: 16px
+        }
+
+        .mb-srp__card__summary__list--item:nth-child(3n+1) {
+            padding-left: 56px
+        }
+
+        .card-luxury .mb-srp__card__summary__list--item:nth-child(3n+1) {
+            padding-left: 16px
+        }
+
+        .mb-srp__card__summary__list--item:last-child,
+        .mb-srp__card__summary__list--item:nth-child(3n+3) {
+            border-right: none
+        }
+
+        .mb-srp__card__summary__list--item:before {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 30px;
+            height: 30px;
+            left: 14px;
+            top: 0;
+            background: url(https://cdn.staticmb.com/srpstatic/images/srp-summary-icon-sprite-web.svg) no-repeat
+        }
+
+        .summary-luxury .mb-srp__card__summary__list--item:before {
+            display: none
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=occupancy]:before {
+            background-position: -13px -24px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=tenent-preffered]:before {
+            background-position: -12px -80px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=owner-resides]:before {
+            background-position: -19px -1986px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=carpet-area]:before {
+            background-position: -16px -135px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=area]:before,
+        .mb-srp__card__summary__list--item[data-summary=super-area]:before {
+            background-position: -13px -191px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=plot-area]:before {
+            background-position: -18px -250px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=build-area]:before {
+            background-position: -13px -305px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=dimensions]:before {
+            background-position: -15px -361px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=ownership]:before {
+            background-position: -15px -416px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=legal-status]:before {
+            background-position: -15px -473px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=property-age]:before {
+            background-position: -15px -528px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=floor]:before {
+            background-position: -12px -587px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=open-sides]:before {
+            background-position: -14px -640px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=width-road-facing]:before {
+            background-position: -15px -695px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=society]:before {
+            background-position: -14px -752px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=overlooking]:before {
+            background-position: -15px -808px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=boundary]:before {
+            background-position: -13px -860px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=commercial-furnish]:before {
+            background-position: -17px -915px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=furnishing]:before {
+            background-position: -14px -972px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=facing]:before {
+            background-position: -13px -1027px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=parking]:before {
+            background-position: -14px -1086px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=bathroom]:before {
+            background-position: -13px -1137px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=balcony]:before {
+            background-position: -12px -1205px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=washroom]:before {
+            background-position: -12px -1259px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=cabin]:before {
+            background-position: -15px -1314px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=seats]:before {
+            background-position: -14px -1370px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=availability]:before {
+            background-position: -15px -1483px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=assured-returns]:before {
+            background-position: -15px -1538px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=entrance]:before {
+            background-position: -15px -1594px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=lock-period]:before {
+            background-position: -15px -1650px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=parking-ratio]:before {
+            background-position: -14px -1707px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=status]:before {
+            background-position: -14px -1762px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=shopping-mall]:before {
+            background-position: -15px -1869px
+        }
+
+        .mb-srp__card__summary__list--item[data-summary=transaction]:before {
+            background-position: -18px -1926px
+        }
+
+        .mb-srp__card__summary--label {
+            color: #606060;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase
+        }
+
+        .mb-srp__card__summary--label,
+        .mb-srp__card__summary--value {
+            line-height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .mb-srp__card__summary--value {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 500
+        }
+
+        .mb-srp__card__summary__action {
+            width: 24px;
+            height: auto;
+            background: hsla(0, 0%, 91%, .5);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .card-luxury .mb-srp__card__summary__action {
+            background-color: #e8e8e8
+        }
+
+        .card-luxury-no-amenities .mb-srp__card__summary__action {
+            display: none
+        }
+
+        .mb-srp__card__summary__action:after {
+            position: absolute;
+            display: block;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-left: 2px solid #606060;
+            border-bottom: 2px solid #606060;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg)
+        }
+
+        .mb-srp__card__summary-commercial {
+            width: 100%;
+            height: auto;
+            display: flex;
+            margin: 8px 0 16px;
+            position: relative
+        }
+
+        .mb-srp__card__summary-commercial__list {
+            width: 100%;
+            height: auto;
+            padding: 0;
+            display: table;
+            border: 1px solid #e8e8e8;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -o-border-radius: 8px;
+            border-radius: 8px;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__summary-commercial__list--item {
+            width: calc(33.33333% + 1px);
+            padding: 8px 12px 8px 16px;
+            border-right: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e8e8e8;
+            margin: -1px;
+            position: relative;
+            float: left
+        }
+
+        .mb-srp__card__summary-commercial__list--item:nth-child(3n+3) {
+            border-right: none
+        }
+
+        .mb-srp__card__summary-commercial__list--item:nth-child(4),
+        .mb-srp__card__summary-commercial__list--item:nth-child(5),
+        .mb-srp__card__summary-commercial__list--item:nth-child(6) {
+            border-bottom: none
+        }
+
+        .mb-srp__card__summary-commercial__list--item.column-2 {
+            display: flex
+        }
+
+        .mb-srp__card__summary-commercial--column {
+            width: calc(50% - 8px);
+            border-right: 1px solid #e8e8e8;
+            margin-right: 16px
+        }
+
+        .mb-srp__card__summary-commercial--column:last-child {
+            border: none
+        }
+
+        .mb-srp__card__summary-commercial--label {
+            color: #606060;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .mb-srp__card__summary-commercial--value {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 16px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .mb-srp__card--desc--text {
+            display: inline
+        }
+
+        .mb-srp__card--desc--text p {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            display: inline-block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 530px;
+            vertical-align: bottom;
+            word-wrap: break-word
+        }
+
+        .mb-srp__card--desc--text p br {
+            display: none
+        }
+
+        .mb-srp__card--desc--text p.remove-ellipsis {
+            white-space: normal;
+            display: inline
+        }
+
+        .mb-srp__card--desc--text p.remove-ellipsis br {
+            display: block
+        }
+
+        .card-luxury .mb-srp__card--desc--text p {
+            color: #606060
+        }
+
+        .mb-srp__card--desc--text p.plot-desc {
+            width: 300px
+        }
+
+        .mb-srp__card--desc--readmore {
+            color: #303030;
+            font-size: 0;
+            width: 16px;
+            height: 16px;
+            vertical-align: top;
+            font-weight: 400;
+            display: inline-block;
+            margin-top: 3px;
+            position: relative
+        }
+
+        .mb-srp__card--desc--readmore:before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border: solid #303030;
+            border-width: 0 1px 1px 0;
+            transform: rotate(45deg);
+            display: inline-block;
+            position: absolute;
+            top: 3px;
+            left: 3px
+        }
+
+        .card-luxury .mb-srp__card--desc--readmore {
+            color: #606060
+        }
+
+        .mb-srp__card--desc--readmore:hover {
+            text-decoration: none
+        }
+
+        .mb-srp__card--desc--readmore.lesstxt {
+            padding-left: 20px;
+            padding-right: 14px;
+            width: auto;
+            text-decoration: underline;
+            font-size: 12px
+        }
+
+        .mb-srp__card--desc--readmore.lesstxt:before {
+            top: 6px;
+            right: 0;
+            left: auto;
+            transform: rotate(-135deg)
+        }
+
+        .mb-srp__card__estimate {
+            width: 210px;
+            height: auto;
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-flow: column wrap;
+            flex-direction: row;
+            background-color: #f5f5f5;
+            -webkit-border-radius: 0 8px 8px 0;
+            -moz-border-radius: 0 8px 8px 0;
+            -o-border-radius: 0 8px 8px 0;
+            border-radius: 0 8px 8px 0;
+            background-clip: padding-box
+        }
+
+        .mb-srp__card__price-coworking {
+            width: 100%;
+            height: auto;
+            padding: 0 24px
+        }
+
+        .mb-srp__card__price-coworking--label {
+            color: #303030;
+            font-size: 10px;
+            font-weight: 400;
+            text-align: left;
+            padding: 0 0 12px 12px;
+            text-transform: uppercase
+        }
+
+        .mb-srp__card__price-coworking__list {
+            width: 100%;
+            height: auto
+        }
+
+        .mb-srp__card__price-coworking__list--item {
+            width: 100%;
+            height: auto;
+            padding-bottom: 12px;
+            display: flex;
+            align-items: center
+        }
+
+        .mb-srp__card__price-coworking__list--item.flexColmn {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .mb-srp__card__price-coworking__list--item:last-child {
+            padding-bottom: 0
+        }
+
+        .mb-srp__card__price-coworking__list--value {
+            width: 100px;
+            text-align: right;
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400
+        }
+
+        .mb-srp__card__price-coworking__list--value.monthly {
+            font-size: 18px;
+            font-weight: 600
+        }
+
+        .mb-srp__card__price-coworking__list--value.textCenter {
+            text-align: center
+        }
+
+        .mb-srp__card__price-coworking__list--value.price-cut {
+            text-decoration: line-through
+        }
+
+        .mb-srp__card__price-coworking__list--tenure {
+            width: 100px;
+            text-align: left;
+            color: #303030;
+            font-size: 10px;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding-left: 16px
+        }
+
+        .mb-srp__card__price-coworking__list--valueSmall {
+            color: #606060;
+            font-size: 10px;
+            font-weight: 400;
+            text-align: center;
+            padding: 0;
+            margin: 5px 0 0;
+            width: auto
+        }
+
+        .mb-srp__card__price-coworking__list--valueSmall .rupeesSmall {
+            font-family: Arial;
+            font-weight: 400
+        }
+
+        .mb-srp__card__price {
+            width: 100%;
+            height: auto;
+            align-self: flex-start
+        }
+
+        .mb-srp__card__price--offer-label {
+            color: #606060;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            padding-bottom: 4px
+        }
+
+        .mb-srp__card__price--bPrice {
+            text-decoration: line-through;
+            color: #606060;
+            font-size: 14px;
+            padding-bottom: 4px
+        }
+
+        .mb-srp__card__price--amount {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .mb-srp__card__price--ico-info {
+            width: 12px;
+            height: 12px;
+            margin-left: 4px;
+            position: relative;
+            top: 0;
+            background: url(https://cdn.staticmb.com/srpstatic/images/srp-sprite-web.svg) no-repeat -26px -120px
+        }
+
+        .mb-srp__card__price--size {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            padding-top: 2px
+        }
+
+        .mb-srp__card__price--other-charges {
+            color: #303030;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            padding-top: 4px;
+            text-decoration: underline;
+            position: relative
+        }
+
+        .mb-srp__card__price--other-charges:hover {
+            text-decoration: none
+        }
+
+        .mb-srp__card__price__announced {
+            width: 100%;
+            padding: 24px 0;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .mb-srp__card__price__announced--text {
+            color: #606060;
+            font-size: 12px;
+            font-weight: 400
+        }
+
+        .mb-srp__card__price__announced--text .highlight {
+            color: #303030;
+            font-weight: 500
+        }
+
+        .mb-srp__card__action {
+            align-self: flex-end;
+            padding-top: 24px
+        }
+
+        .mb-srp__card__action .mb-srp__action--btn {
+            margin-top: 12px
+        }
+
+        .mb-srp__card__action .mb-srp__action--btn:first-child {
+            margin-top: 0
+        }
+
+        .mb-srp__card__action .mb-srp__action--link {
+            margin-top: 16px
+        }
+
+        .mb-srp__card__action .mb-srp__action--link--nowrap {
+            white-space: nowrap
+        }
+
+        .mb-srp__card__tags {
+            width: 100%;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .mb-srp__card__info.mb-srp__card__info-withoutburger {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="mb-srp__list" id="cardid72487139">
+        <div class="mb-srp__card">
+            <div class="mb-srp__card__container ">
+                <div class="mb-srp__card__photo">
+                    <div class="mb-srp__card__photo__fig"><span class="mb-srp__card__photo__fig--count">9<span
+                                class="sign-plus">+</span></span><img
+                            src="https://img.staticmb.com/mbimages/project/Photo_h310_w462/2023/06/12/Project-Photo-20-Risland-Sky-Mansion-New-Delhi-5129227_600_800_310_462.jpg"
+                            decoding="async" alt="Buy 3 BHK Flat for Sale in Chattarpur New Delhi"
+                            title="Buy 3 BHK Flat for Sale in Chattarpur New Delhi" width="100%" height="100%"
+                            class="mb-srp__card__photo__fig--graphic">
+                        <div class="mb-srp__card__photo__fig--post">Posted: Yesterday</div>
+                    </div>
+                </div>
+                <div class="mb-srp__card__info mb-srp__card__info-withoutburger">
+                    <div class="mb-srp__card__tags"><span class="mb-srp__card__tags--tick ">POPULAR PROJECT</span></div>
+                    <h2 class="mb-srp__card--title"
+                        title="3 BHK Flat  for Sale in Risland Sky Mansion, Chattarpur, New Delhi">3 BHK Flat for Sale
+                        in Risland Sky Mansion, Chattarpur, New Delhi</h2><span class="mb-srp__card__share--icon"
+                        data-ico="ico-share"></span><span class="mb-srp__card__sort--icon"></span><span></span>
+                    <div class="mb-srp__card__society"><a class="mb-srp__card__society--name"
+                            href="https://www.magicbricks.com/risland-sky-mansion-chhattarpur-new-delhi-pdpid-4d4235313239323237"
+                            target="_blank">Risland Sky Mansion</a></div>
+                    <div class="mb-srp__card__summary open" id="propertiesAction72487139">
+                        <div class="mb-srp__card__summary__list">
+                            <div class="mb-srp__card__summary__list--item" data-summary="super-area">
+                                <div class="mb-srp__card__summary--label">Super Area</div>
+                                <div class="mb-srp__card__summary--value">3300 sqft</div>
+                            </div>
+                            <div class="mb-srp__card__summary__list--item" data-summary="transaction">
+                                <div class="mb-srp__card__summary--label">Transaction</div>
+                                <div class="mb-srp__card__summary--value">New Property</div>
+                            </div>
+                            <div class="mb-srp__card__summary__list--item" data-summary="furnishing">
+                                <div class="mb-srp__card__summary--label">Furnishing</div>
+                                <div class="mb-srp__card__summary--value">Unfurnished</div>
+                            </div>
+                            <div class="mb-srp__card__summary__list--item" data-summary="society">
+                                <div class="mb-srp__card__summary--label">Society</div>
+                                <div class="mb-srp__card__summary--value">Risland Sky Mansion</div>
+                            </div>
+                            <div class="mb-srp__card__summary__list--item" data-summary="bathroom">
+                                <div class="mb-srp__card__summary--label">Bathroom</div>
+                                <div class="mb-srp__card__summary--value">4</div>
+                            </div>
+                            <div class="mb-srp__card__summary__list--item" data-summary="balcony">
+                                <div class="mb-srp__card__summary--label">Balcony</div>
+                                <div class="mb-srp__card__summary--value">3</div>
+                            </div>
+                        </div>
+                        <div class="mb-srp__card__summary__action"></div>
+                    </div>
+                    <div class="mb-srp__card__usp-wrap has-offer"></div>
+                    <div class="mb-srp__card--desc remove-truncated">
+                        <div class="mb-srp__card--desc--text">
+                            <p class="">Multistorey Apartment for Sale in Chattarpur, New Delhi. Covered area is 3300.0
+                                Sq-ft. This property belongs to "Risland Sky Mansion" .</p><span
+                                class="mb-srp__card--desc--readmore">Read more</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-srp__card__estimate">
+                <div class="mb-srp__card__price">
+                    <div class="mb-srp__card__price--amount"><span class="rupees">₹</span>5.75 Cr </div>
+                    <div class="mb-srp__card__price--size"><span class="rupees">₹</span>17,424 per sqft </div>
+                </div>
+                <div class="mb-srp__action action--single mb-srp__card__action"><span
+                        class="mb-srp__action--btn medium btn-red">Contact Agent </span><span
+                        class="mb-srp__action--btn medium btn-white">Enquire Now </span></div>
+            </div>
+            <script
+                type="application/ld+json">{"@context":"https://schema.org","@type":"Apartment","@id":"https://www.magicbricks.com/propertyDetails/3-BHK-3300-Sq-ft-Multistorey-Apartment-FOR-Sale-Chhattarpur-in-New-Delhi&id=4d423732343837313339","url":"https://www.magicbricks.com/propertyDetails/3-BHK-3300-Sq-ft-Multistorey-Apartment-FOR-Sale-Chhattarpur-in-New-Delhi&id=4d423732343837313339","numberOfRooms":"3","image":"https://img.staticmb.com/mbimages/project/Photo_h310_w462/2023/06/12/Project-Photo-20-Risland-Sky-Mansion-New-Delhi-5129227_600_800_310_462.jpg","name":"3 BHK Flat  for Sale in Risland Sky Mansion, Chattarpur, New Delhi","geo":{"@type":"GeoCoordinates","latitude":"28.4958944","longitude":"77.1859976"},"potentialAction":{"@type":"BuyAction","seller":{"@type":"RealEstateAgent","name":"Bhanu Dewan"}},"address":{"@type":"PostalAddress","addressLocality":"Chattarpur","addressRegion":"New Delhi","addressCountry":"IN"}}</script>
+        </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+  data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+  data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ShiftHoja</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+    rel="stylesheet" defer>
+  <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/style.css" />
+  <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+  <link rel="stylesheet" defer
+    href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+  <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+  <link rel="stylesheet" defer
+    href="https://ww      w.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Livewire Styles -->
+  <style>
+    button.bi.bi-text-indent-left.navbar-text.text-primary.fs-4.me-3 {
+      background: transparent;
+      border: none;
+      font-size: 35px !important;
+      color: white !important;
+    }
+
+    div#offcanvasRight {
+      width: 250px;
+
+    }
+
+    .hmenu__postYourProperty {
+      display: flex;
+      align-items: center;
+      /* padding-top: 8px; */
+      padding: 10px 8px;
+      flex-wrap: wrap;
+      position: relative;
+      padding-left: 20px;
+      width: auto;
+      background-color: #2299dd;
+      color: white;
+      border-radius: 10px;
+    }
+
+
+
+    .sidebar {
+      position: fixed;
+      right: 0;
+      height: auto;
+      width: 250px;
+      background: #ffff;
+      z-index: 100;
+      transition: all 0.5s ease;
+    }
+
+    .sidebar.close {
+      width: 78px;
+    }
+
+    .sidebar .logo-details {
+      height: 60px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar .logo-details i {
+      font-size: 30px;
+      color: #77619e;
+      height: 50px;
+      min-width: 78px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .sidebar .logo-details .logo_name {
+      font-size: 22px;
+      color: #77619e;
+      font-weight: 600;
+      transition: 0.3s ease;
+      transition-delay: 0.1s;
+    }
+
+    .sidebar.close .logo-details .logo_name {
+      transition-delay: 0s;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar .nav-links {
+      height: 100%;
+      padding: 30px 0 150px 0;
+      overflow: auto;
+    }
+
+    .sidebar.close .nav-links {
+      overflow: visible;
+    }
+
+    .sidebar .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .sidebar .nav-links li {
+      position: relative;
+      list-style: none;
+      transition: all 0.4s ease;
+    }
+
+    .sidebar .nav-links li:hover {
+      background: #f3f1f6;
+    }
+
+    .sidebar .sub-menu li:hover {
+      background: none;
+      color: #77619e;
+    }
+
+    .sidebar .nav-links li .icon-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sidebar.close .nav-links li .icon-link {
+      display: block;
+    }
+
+    .sidebar .nav-links li i {
+      height: 36px;
+      min-width: 78px;
+      text-align: center;
+      line-height: 50px;
+      color: #77619e;
+      font-size: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar .nav-links li.showMenu i.arrow {
+      transform: rotate(-180deg);
+    }
+
+    .sidebar.close .nav-links i.arrow {
+      display: none;
+    }
+
+    .sidebar .nav-links li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .sidebar .nav-links li a .link_name {
+      font-size: 14px;
+      font-weight: 400;
+      color: #77619e;
+      transition: all 0.4s ease;
+    }
+
+    .sidebar.close .nav-links li a .link_name {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar .nav-links li .sub-menu {
+      padding: 6px 6px 14px 80px;
+      margin-top: 0px;
+      background: #fff;
+      padding-left: 10px;
+      display: none;
+    }
+
+    .sidebar .nav-links li.showMenu .sub-menu {
+      display: block;
+    }
+
+    .sidebar .nav-links li .sub-menu a {
+      color: #77619e;
+      font-size: 15px;
+      padding: 5px 90px;
+      white-space: nowrap;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar .nav-links li .sub-menu a:hover {
+      opacity: 1;
+    }
+
+    .sidebar.close .nav-links li .sub-menu {
+      position: absolute;
+      left: 100%;
+      top: -10px;
+      margin-top: 0;
+      padding: 10px 20px;
+      border-radius: 0 6px 6px 0;
+      opacity: 0;
+      display: block;
+      pointer-events: none;
+      transition: 0s;
+    }
+
+    .sidebar.close .nav-links li:hover .sub-menu {
+      top: 0;
+      opacity: 1;
+      pointer-events: auto;
+      transition: all 0.4s ease;
+    }
+
+    .sidebar .nav-links li .sub-menu .link_name {
+      display: none;
+    }
+
+    .sidebar.close .nav-links li .sub-menu .link_name {
+      font-size: 18px;
+      opacity: 1;
+      display: block;
+    }
+
+    .sidebar .nav-links li .sub-menu.blank {
+      opacity: 1;
+      pointer-events: auto;
+      padding: 3px 20px 6px 16px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .sidebar .nav-links li:hover .sub-menu.blank {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .sidebar .profile-details {
+      position: fixed;
+      bottom: 0;
+      width: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f3f1f6;
+      padding: 12px 0;
+      transition: all 0.5s ease;
+    }
+
+    .sidebar.close .profile-details {
+      background: none;
+    }
+
+    .sidebar.close .profile-details {
+      width: 78px;
+    }
+
+    .sidebar .profile-details .profile-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .sidebar .profile-details img {
+      height: 52px;
+      width: 52px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin: 0 14px 0 12px;
+      background: #1d1b31;
+    }
+
+    .sidebar .profile-details .profile_name,
+    .sidebar .profile-details .job {
+      color: #77619e;
+      font-size: 18px;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: all 5s ease;
+    }
+
+    .sidebar.close .profile-details i,
+    .sidebar.close .profile-details .profile_name,
+    .sidebar.close .profile-details .job {
+      display: none;
+    }
+
+    .sidebar .profile-details .job {
+      font-size: 12px;
+    }
+
+    .home-section {
+      position: relative;
+      background: #e4e9f7;
+      height: 100vh;
+      left: 260px;
+      width: calc(100% - 260px);
+      transition: all 0.5s ease;
+    }
+
+    .sidebar.close~.home-section {
+      left: 78px;
+      width: calc(100% - 78px);
+    }
+
+    .home-section .home-content {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .home-section .home-content .bx-menu,
+    .home-section .home-content .text {
+      color: #77619e;
+      font-size: 35px;
+    }
+
+    .home-section .home-content .bx-menu {
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    .home-section .home-content .text {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 400px) {
+      .sidebar.close .nav-links li .sub-menu {
+        display: none;
+      }
+
+      .sidebar {
+        width: 78px;
+      }
+
+      .sidebar.close {
+        width: 0;
+      }
+
+      .home-section {
+        left: 78px;
+        width: calc(100% - 78px);
+        z-index: 100;
+      }
+
+      .sidebar.close~.home-section {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+
+
+    .sidebar-body>a {
+      text-decoration: none;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0px;
+      color: rgb(102, 112, 133);
+    }
+  </style>
+  <style>
+    [wire\:loading][wire\:loading],
+    [wire\:loading\.delay][wire\:loading\.delay],
+    [wire\:loading\.inline-block][wire\:loading\.inline-block],
+    [wire\:loading\.inline][wire\:loading\.inline],
+    [wire\:loading\.block][wire\:loading\.block],
+    [wire\:loading\.flex][wire\:loading\.flex],
+    [wire\:loading\.table][wire\:loading\.table],
+    [wire\:loading\.grid][wire\:loading\.grid],
+    [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+      display: none;
+    }
+
+    [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+    [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+    [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+    [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+    [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+    [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+    [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+    [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+      display: none;
+    }
+
+    [wire\:offline][wire\:offline] {
+      display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+      display: none;
+    }
+
+    :root {
+      --livewire-progress-bar-color: #2299dd;
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+  <style>
+    h4.price-toggle.text-primary.mb-0 {
+      text-decoration: line-through;
+    }
+
+    sup.pricing-currency.mt-3.mb-0.me-1.text-primary {
+      font-size: larger;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <div class="navbar-nav ms-auto">
+          <!-- Offcanvas Button -->
+          <button class="bi bi-text-indent-left navbar-text text-primary fs-4 me-3" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Offcanvas Sidebar -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+
+    <div class="offcanvas-body">
+      <div class="d-flex align-items-center">
+        <img src="assets/img/client-face2.png" alt="Avatar" class="rounded-circle me-2"
+          style="width: 50px; height: 50px;">
+        <span>Login/Sign-up</span>
+      </div>
+      <hr>
+      <div class="hmenu__postYourProperty">
+        <div data-label="LINK" class="pageComponent body_med Ng800"><a class="Ng800 semi">Post
+            Property</a></div>
+      </div>
+      <hr>
+      <div class="sidebar">
+        <ul class="nav-links">
+          <li>
+            <a href="#">
+              <i class='bx bx-grid-alt'></i>
+              <span class="link_name">Dashboard</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Category</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="icon-link">
+              <a href="#">
+                <i class='bx bx-collection'></i>
+                <span class="link_name">Services</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a class="link_name" href="#">Category2</a></li>
+              <li><a href="#">Pay rent</a></li>
+              <li><a href="#">Packers & Movers</a></li>
+              <li><a href="#">Home Cleaners</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="icon-link">
+              <a href="#">
+                <i class='bx bx-book-alt'></i>
+                <span class="link_name">Posts</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a class="link_name" href="#">Posts</a></li>
+              <li><a href="#">Hidsyat</a></li>
+              <li><a href="#">Hidayat</a></li>
+              <li><a href="#">Hidayat</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-pie-chart-alt-2'></i>
+              <span class="link_name">Analytics</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Analytics</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-line-chart'></i>
+              <span class="link_name">Chart</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Chart</a></li>
+            </ul>
+          </li>
+          <!-- <li>
+            <div class="icon-link">
+              <a href="#">
+                <i class='bx bx-plug'></i>
+                <span class="link_name">Plugins</span>
+              </a>
+              <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+              <li><a class="link_name" href="#">Plugins</a></li>
+              <li><a href="#">UI Face</a></li>
+              <li><a href="#">Pigments</a></li>
+              <li><a href="#">Box Icons</a></li>
+            </ul>
+          </li> -->
+          <li>
+            <a href="#">
+              <i class='bx bx-compass'></i>
+              <span class="link_name">Explore</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Explore</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-history'></i>
+              <span class="link_name">History</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">History</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">
+              <i class='bx bx-cog'></i>
+              <span class="link_name">Setting</span>
+            </a>
+            <ul class="sub-menu blank">
+              <li><a class="link_name" href="#">Setting</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="profile-details">
+              <div class="profile-content">
+                <img src="assets/img/client-face2.png" alt="profileImg">
+              </div>
+              <div class="name-job">
+                <div class="profile_name">Hidayat</div>
+                <div class="job">Software Engineer</div>
+              </div>
+              <i class='bx bx-log-out'></i>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+      <div class="sidebar-body">
+        <a class="active" href="#">
+          <div><span>Total Property</span></div><span class="count">45K</span>
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <script>
+    const arrows = document.querySelectorAll(".arrow");
+
+    arrows.forEach((arrow) => {
+      arrow.addEventListener("click", (e) => {
+        const arrowParent = e.target.closest(".arrow").parentElement.parentElement;
+        arrowParent.classList.toggle("showMenu");
+      });
+    });
+
+    const sidebar = document.querySelector(".sidebar");
+    const sidebarBtn = document.querySelector(".bx-menu");
+
+    sidebarBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("close");
+    });
+
+  </script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/js/config.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+  <script>
+    window.addEventListener('swal', function (e) {
+      Swal.fire(e.detail);
+    });
+  </script>
+  <!-- Livewire Scripts -->
+  <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="uUXtYDLlmcUWrfC2UXWqIu9YilunAePkForlOQDP"
+    data-update-uri="/livewire/update" data-navigate-once="true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script>
+    document.addEventListener('livewire:init', () => {
+      Livewire.on('post-created', (event) => {
+        toastr.error(event.title, { timeOut: 10 });
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

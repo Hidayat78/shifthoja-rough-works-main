@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #1d1f20;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        #runaway-container {
+            position: absolute;
+            width: 150px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        #runaway {
+            width: 150px;
+        }
+
+        .yes-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .yes-button button {
+            border: none;
+            background: none;
+            color: inherit;
+            font-size: inherit;
+            cursor: inherit;
+            outline: none;
+        }
+
+        .yes-button:hover {
+            background-color: #ff4942;
+        }
+
+        #runaway-container {
+            display: inline-block;
+        }
+
+        #runaway {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            font-size: 16px;
+            border: 2px solid #dc3545;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #runaway:hover {
+            background-color: #c82333;
+            border-color: #c82333;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            /* Adjust styles for mobile devices */
+            .container {
+                padding: 20px;
+            }
+
+            #runaway-container {
+                position: relative;
+                margin-top: 50px;
+            }
+
+            #runaway {
+                width: 100%;
+            }
+
+            .yes-button {
+                text-align: center;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> Do You Love me Tarannum ?</h1>
+        <div class="yes-button">
+            <button id="yesButton">(a)-YES! I Love You</button>
+        </div>
+        <div id="runaway-container">
+            <button id="runaway">(b)-No</button>
+        </div>
+    </div>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>
+
+        var runawayButton = document.getElementById('runaway');
+        var runawayContainer = document.getElementById('runaway-container');
+
+        runawayButton.addEventListener('mouseenter', function () {
+            moveButton();
+        });
+
+        runawayButton.addEventListener('click', function () {
+            moveButton();
+        });
+
+        function moveButton() {
+            var containerRect = runawayContainer.getBoundingClientRect();
+            var maxX = window.innerWidth - containerRect.width;
+            var maxY = window.innerHeight - containerRect.height;
+            var newLeft = Math.floor(Math.random() * maxX);
+            var newTop = Math.floor(Math.random() * maxY);
+            runawayContainer.style.left = newLeft + 'px';
+            runawayContainer.style.top = newTop + 'px';
+        }
+
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var yesButton = document.getElementById('yesButton');
+
+            yesButton.addEventListener('click', function () {
+                alert('I Love you Too Mera Bacha ');
+            });
+        });
+
+
+
+    </script>
+</body>
+
+</html>

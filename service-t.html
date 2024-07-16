@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+.services-container {
+  display: flex;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+.left-side-services {
+  flex: 1;
+  background: url(assets/img/service-bg-img.jpg) no-repeat center center / cover;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.left-side-services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* .left-side-services::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 20px;
+  border-color: transparent transparent transparent rgb(234, 0, 0);
+  z-index: 2;
+} */
+
+.left-side-services::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -0px; 
+  transform: translateY(-50%) !important;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 20px 0; 
+  border-color: transparent #f8f8f8 transparent transparent;
+  transform: rotate(180deg); 
+  z-index: 2;
+}
+
+.left-side-services h2, .left-side-services p, .left-side-services .explore-btn-services {
+  position: relative;
+  z-index: 2;
+}
+
+.left-side-services h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.left-side-services p {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.explore-btn-services {
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 20px;
+}
+
+.right-side-services {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.service-card-services {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.service-card-services img {
+  width: 60px;
+  height: 60px;
+}
+
+.service-card-services h3 {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.service-card-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-card-services ul li {
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+  font-size: 12px;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .services-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .service-card-services img {
+  width: 40px;
+  height: 40px;
+}
+  .service-card-services{
+    width: 265px;
+  }
+  .left-side-services, .right-side-services {
+    width: 100%;
+  }
+
+  .left-side-services {
+    margin-bottom: 20px;
+  }
+
+  .right-side-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .left-side-services::after {
+    right: -10px; /* Adjust this value to position the triangle */
+  }
+}
+@media (max-width: 479px) {
+  .services-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .service-card-services img {
+  width: 40px;
+  height: 40px;
+}
+  .service-card-services h3 {
+    font-size: 14px;
+  }
+  .left-side-services, .right-side-services {
+    width: auto;
+  }
+
+  .left-side-services {
+    margin-bottom: 20px;
+  }
+
+  .right-side-services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .left-side-services::after {
+    right: -10px; /* Adjust this value to position the triangle */
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="services-container">
+        <div class="left-side-services">
+          <h2>Our Services</h2>
+          <p>And our mission is to be the first choice of our consumers and partners 
+            in discovering, renting, buying, selling, financing a home, and digitally 
+            enabling them throughout their journey. We do that with data, design, 
+            technology, and above all, the passion of our people while delivering 
+            value to our shareholders....</p>
+          <button class="explore-btn-services">Explore All Our Services</button>
+        </div>
+        <div class="right-side-services">
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/ac.png" alt="Enterprise Services">
+            <h3>Enterprise Services</h3>
+            <ul>
+              <li>Mobility</li>
+              <li>Web Development</li>
+              <li>IOT</li>
+            </ul>
+          </div>
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/city.png" alt="Emerging Technologies">
+            <h3>Emerging Technologies</h3>
+            <ul>
+              <li>Blockchain</li>
+              <li>Augmented Reality</li>
+              <li>Virtual Reality</li>
+            </ul>
+          </div>
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/bill.png" alt="Emerging Technologies">
+            <h3>Emerging Technologies</h3>
+            <ul>
+              <li>Blockchain</li>
+              <li>Augmented Reality</li>
+              <li>Virtual Reality</li>
+            </ul>
+          </div>
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/home-services.png" alt="Emerging Technologies">
+            <h3>Emerging Technologies</h3>
+            <ul>
+              <li>Blockchain</li>
+              <li>Augmented Reality</li>
+              <li>Virtual Reality</li>
+            </ul>
+          </div>
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/home-clean.png" alt="Emerging Technologies">
+            <h3>Emerging Technologies</h3>
+            <ul>
+              <li>Blockchain</li>
+              <li>Augmented Reality</li>
+              <li>Virtual Reality</li>
+            </ul>
+          </div>
+          <div class="service-card-services">
+            <img src="assets/img/mob-service/no-paper.png" alt="Emerging Technologies">
+            <h3>Emerging Technologies</h3>
+            <ul>
+              <li>Blockchain</li>
+              <li>Augmented Reality</li>
+              <li>Virtual Reality</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+      
+</body>
+</html>

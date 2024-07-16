@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 160px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+
+            }
+
+        }
+    </style>
+    <style>
+        .agntbanner {
+            background-image: linear-gradient(66deg, rgba(0, 49, 89, .2) 14%, rgba(2, 193, 212, .2) 86%);
+            padding: 40px 0 32px;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff
+        }
+
+        .agntbanner * {
+            box-sizing: border-box
+        }
+
+        .agntbanner__container {
+            max-width: 960px;
+            margin: auto;
+            display: flex
+        }
+
+        .agntbanner__imgsec {
+            width: 177px;
+            margin-right: 30px
+        }
+
+        .agntbanner__figblk {
+            background-image: linear-gradient(34deg, #003159 10%, #02c1d4 59%);
+            padding: 8px;
+            border-radius: 4px
+        }
+
+        .agntbanner__figblk__imgsec {
+            width: 100%;
+            height: 160px;
+            background: #fff
+        }
+
+        .agntbanner__agntimg {
+            width: 100%;
+            height: 100%;
+            border-radius: 4px 4px 0 0;
+            object-fit: contain;
+            object-position: center top
+        }
+
+        .agntbanner__projsec {
+            width: 100%;
+            height: 129px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0 0 4px 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        .agntbanner__projsec__image {
+            max-width: 107px;
+            object-fit: contain;
+            max-height: 82px
+        }
+
+        .agntbanner__callcta {
+            display: block;
+            width: 100%;
+            background-color: #d8232a;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 20px;
+            line-height: 40px;
+            text-decoration: none;
+            margin-top: 12px
+        }
+
+        .agntbanner__callcta:hover {
+            background-color: #c31f25
+        }
+
+        .agntbanner__midsec {
+            width: 390px;
+            margin-right: 48px
+        }
+
+        .agntbanner__agntname {
+            font-size: 20px;
+            font-weight: 600;
+            color: #303030;
+            line-height: 32px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis
+        }
+
+        .agntbanner__projname {
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: 600;
+            color: #303030
+        }
+
+        .agntbanner__reradata {
+            font-size: 14px;
+            line-height: 18px;
+            color: #606060;
+            padding: 0 0 22px
+        }
+
+        .agntbanner__reradata__reraid {
+            padding-right: 10px;
+            margin-right: 5px;
+            position: relative
+        }
+
+        .agntbanner__reradata__reraid:before {
+            content: "";
+            width: 1px;
+            height: 14px;
+            background-color: #606060;
+            right: 0;
+            top: 0;
+            position: absolute
+        }
+
+        .agntbanner__propdata {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-top: 1px solid #d7d7d7;
+            border-bottom: 1px solid #d7d7d7;
+            margin: 0 0 22px
+        }
+
+        .agntbanner__propdata__col {
+            width: 40%;
+            position: relative
+        }
+
+        .agntbanner__propdata__col__val {
+            font-size: 14px;
+            font-weight: 600;
+            color: #303030;
+            display: block
+        }
+
+        .agntbanner__propdata__col__txt {
+            font-size: 12px;
+            color: #303030;
+            line-height: 12px;
+            display: block;
+            max-width: 70px
+        }
+
+        .agntbanner__propdata__col:before {
+            content: "";
+            width: 1px;
+            height: 28px;
+            background-color: #d7d7d7;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 52px;
+            position: absolute
+        }
+
+        .agntbanner__propdata__col:last-child {
+            width: 20%
+        }
+
+        .agntbanner__propdata__col:last-child:before {
+            content: none
+        }
+
+        .agntbanner__blkdata {
+            margin: 0 0 22px
+        }
+
+        .agntbanner__blkdata__heading {
+            font-size: 14px;
+            font-weight: 600;
+            color: #303030;
+            line-height: 20px
+        }
+
+        .agntbanner__blkdata__val {
+            font-size: 14px;
+            color: #303030;
+            line-height: 18px
+        }
+
+        .agntbanner__blkdata__val--truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .agntbanner__blkdata:last-child {
+            margin: 0
+        }
+
+        .agntbanner__tagblk {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto 34px;
+            max-width: 100%;
+            gap: 42px
+        }
+
+        .agntbanner__rightsec {
+            width: 315px
+        }
+
+        .agntbanner__prefagnttag {
+            max-width: 110px;
+            text-align: center
+        }
+
+        .agntbanner__prefagnttag__ic {
+            width: 78px;
+            height: 60px;
+            margin: 0 auto 8px;
+            display: inline-block;
+            background: url(../images/agent-page/agent-srp-sprite.svg) no-repeat 0 0
+        }
+
+        .agntbanner__prefagnttag__txt {
+            font-size: 12px;
+            color: #303030;
+            text-align: center;
+            display: block;
+            line-height: 18px
+        }
+
+        .agntbanner__crisiltag {
+            max-width: 156px;
+            text-align: center
+        }
+
+        .agntbanner__crisiltag__ic {
+            width: 80px;
+            height: 60px;
+            display: inline-block;
+            margin: 0 auto 8px
+        }
+
+        .agntbanner__crisiltag__ic--gold {
+            background: url(../images/agent-page/agent-srp-sprite.svg) no-repeat 0 -72px
+        }
+
+        .agntbanner__crisiltag__ic--silver {
+            background: url(../images/agent-page/agent-srp-sprite.svg) no-repeat 0 -291px
+        }
+
+        .agntbanner__crisiltag__ic--bronz {
+            background: url(../images/agent-page/agent-srp-sprite.svg) no-repeat 0 -359px
+        }
+
+        .agntbanner__crisiltag__txt {
+            font-size: 12px;
+            color: #303030;
+            display: block;
+            text-align: center;
+            line-height: 18px;
+            max-width: 138px
+        }
+
+        .agntbanner__testimonial {
+            border: 1px dashed #909090;
+            border-radius: 8px;
+            padding: 16px;
+            position: relative
+        }
+
+        .agntbanner__testimonial:before {
+            content: "";
+            position: absolute;
+            height: 8px;
+            width: 8px;
+            border: 1px dashed #909090;
+            display: inline-block;
+            bottom: -9px;
+            left: 50%;
+            transform: rotate(45deg) translateX(-50%);
+            border-left: 0;
+            border-top: 0;
+            background: #d9f1f3
+        }
+
+        .agntbanner__testimonial__heading {
+            font-size: 14px;
+            font-weight: 600;
+            color: #303030;
+            padding: 0 0 12px
+        }
+
+        .agntbanner__testimonial__heading--small {
+            display: inline-block;
+            font-size: 10px;
+            color: #303030;
+            font-weight: 400;
+            vertical-align: 2px
+        }
+
+        .agntbanner__testimonial__txt {
+            font-size: 12px;
+            color: #303030;
+            padding: 0 0 8px;
+            line-height: 16px
+        }
+
+        .agntbanner__testimonial__name,
+        .agntbanner__testimonial__name__initial {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            color: #606060;
+            font-weight: 600
+        }
+
+        .agntbanner__testimonial__name__initial {
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            margin-right: 8px;
+            border: 1px solid #009681
+        }
+
+        .agent_heading {
+            font-size: 28px;
+            color: #000;
+            font-weight: 600;
+            padding: 30px 0 40px;
+            position: relative;
+            margin-top: 16px
+        }
+
+        .agent_heading:after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            border-radius: 2px;
+            background-color: #d8232a;
+            left: 0;
+            top: 75px
+        }
+
+        .about {
+            width: 1050px;
+            background-color: #fff;
+            box-shadow: 0 0 4px 0 rgba(0, 0, 0, .2);
+            padding: 25px 30px;
+            font-size: 14px
+        }
+
+        .about__para {
+            line-height: 21px;
+            padding-bottom: 18px
+        }
+
+        .about__para__btnmore {
+            text-decoration: underline;
+            cursor: pointer
+        }
+
+        .about__table {
+            display: table
+        }
+
+        .about__table__row {
+            display: table-row
+        }
+
+        .about__table__col {
+            display: table-cell;
+            padding-bottom: 15px
+        }
+
+        .about__table__col-1 {
+            width: 20%;
+            color: #666
+        }
+
+        .about__table__col-2 {
+            width: 70%
+        }
+
+        .about__table__link {
+            display: inline-block;
+            min-width: 160px;
+            color: #333
+        }
+
+        .about__table__icon {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            margin-right: 5px;
+            vertical-align: -4px
+        }
+
+        .about__table--icon-fb {
+            background: url(../images/agent-page/agnetlandingsprite.svg) no-repeat -17px -171px
+        }
+
+        .about__table--icon-lnkdn {
+            background: url(../images/agent-page/agnetlandingsprite.svg) no-repeat -17px -201px
+        }
+
+        .center-aboutt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+    </style>
+    <style>
+        .sf-home__owner-prop__card {
+            width: 250px;
+            height: 296px;
+            overflow: hidden;
+            border: #d7d7d7 solid 1px;
+            border-radius: 8px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sf-home__owner-prop__card--graphic>img {
+            width: 100%;
+            height: 100%;
+            /*-o-object-fit: cover;*/
+            /*object-fit: cover;*/
+            transition: all 0.35s ease-in;
+        }
+
+        .sf-home__owner-prop__card--graphic {
+            width: 100%;
+            height: 156px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sf-home__owner-prop__card--pic-count {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 6px 0px 22px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #303030;
+            position: absolute;
+            left: 8px;
+            bottom: 12px;
+            border-radius: 4px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card--content {
+            width: 100%;
+            height: calc(100% - 156px);
+            padding: 12px 16px;
+            position: relative;
+            background-color: #fff;
+        }
+
+
+        .sf-home__owner-prop__card--pic-count:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710375018814/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -47px -891px;
+            left: 6px;
+            top: 7px;
+        }
+
+        .sf-home,
+        .sf-home * {
+            box-sizing: border-box;
+        }
+
+        .sf-home__owner-prop__card--type {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 2px;
+            text-transform: capitalize;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sf-home__owner-prop__card--price {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+
+        .sf-home .rupees {
+            font-family: Arial;
+            margin-right: 2px;
+            font-weight: normal;
+        }
+
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #303030;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        .sf-home__owner-prop__card--loc {
+            color: #606060;
+            font-size: 14px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            padding-bottom: 4px;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card .sf-home__action {
+            width: calc(100% - 32px);
+            position: absolute;
+            bottom: -100px;
+            transition: bottom 0.3s ease-out;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__action {
+            bottom: 16px;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--status {
+            opacity: 0;
+        }
+
+        .sf-home__action--btn.btn-red {
+            color: #fff;
+            background-color: #D8232A;
+            border: #D8232A solid 1px;
+            padding: 4px;
+        }
+
+        .sf-home__action--btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 16px;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+        .sf-home__section__title {
+            padding-bottom: 24px;
+        }
+
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home .push-right {
+            float: right;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--graphic>img {
+            transform: scale(1.1);
+        }
+
+        .sf-home__section__title--anchor-see-all:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 11px;
+            right: 0px;
+            top: 4px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710374415922/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -46px -668px;
+            transition: all 0.6s ease;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .sf-homemdkc {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <!-- Top agents start -->
+    <div class="agentrwaper">
+        <div class="agntbanner" id="agentinfoId">
+            <div class="agntbanner__container">
+                <div class="agntbanner__imgsec">
+                    <div class="agntbanner__figblk">
+                        <div class="agntbanner__figblk__imgsec">
+                            <img src="assets/img/shera.jpeg" alt="" class="agntbanner__agntimg">
+                        </div>
+                        <div class="agntbanner__projsec">
+                            <img src="https://img.staticmb.com/mbimages/user/Photo_h75_w75/6381391_companylogo_75_75.jpg"
+                                alt="" class="agntbanner__projsec__image">
+                        </div>
+                    </div>
+                    <a href="javascript://" class="contactBtn6381391 agntbanner__callcta">Contact
+                        Agent</a>
+                    <input type="hidden" name="agentDetailPageContact" id="agentDetailPageContact6381391"
+                        value="AgentProfileContact">
+                </div>
+                <div class="agntbanner__midsec">
+                    <div class="agntbanner__agntname">SHERA</div>
+                    <div class="agntbanner__projname">SHERA Properties</div>
+                    <div class="agntbanner__reradata">
+                        Operating since: 2003
+                    </div>
+                    <div class="agntbanner__propdata">
+                        <div class="agntbanner__propdata__col">
+                            <span class="agntbanner__propdata__col__val">58</span>
+                            <span class="agntbanner__propdata__col__txt">Properties For Sale</span>
+                        </div>
+                        <div class="agntbanner__propdata__col">
+                            <span class="agntbanner__propdata__col__val">1</span>
+                            <span class="agntbanner__propdata__col__txt">Properties For rent</span>
+                        </div>
+                    </div>
+                    <div class="agntbanner__blkdata">
+                        <div class="agntbanner__blkdata__heading">Deals in</div>
+                        <div class="agntbanner__blkdata__val">Rent/Lease , Pre-launch , Original Booking , Resale ,
+                            Others</div>
+                    </div>
+                    <div class="agntbanner__blkdata">
+                        <div class="agntbanner__blkdata__heading">Operates in</div>
+                        <div class="agntbanner__blkdata__val">Chhatarpur,Deep Vihar Rohini, Pocket 5 Sector 22 Rohini,
+                            Sector 7
+                            Rohini, Sector 9 Rohini, Prashant Vihar, Sector 8 Rohini, Sector 3 Rohini, Pocket 4 Sector
+                            25 Rohini, Pocket 40 Sector 13 Rohini, Rohini Institutional Area, Sector 13 Rohini, Sector
+                            23 Rohini, Sector 24 Rohini</div>
+                    </div>
+                </div>
+                <div class="agntbanner__rightsec">
+                    <div class="agntbanner__tagblk">
+                        <div class="agntbanner__prefagnttag">
+                            <span class="agntbanner__prefagnttag__ic"></span>
+                            <span class="agntbanner__prefagnttag__txt">Trusted by Many Users</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="aboutSectionId">
+        <div class="agent_heading">About Shera Properties</div>
+        <div class="center-aboutt">
+            <div class="about">
+                <div class="about__para">
+                    We are property consultants in Chhatarpur New Delhi since 2003 . We are expertise in Best Negotiator
+                    for Buyers
+                    &amp; renting of residential in Chhatarpur New Delhi Our experience enables us to respond to client
+                    needs in
+                    most
+                    efficient and effective manner.
+                </div>
+                <div class="about__table">
+                    <div class="about__table__row">
+                        <div class="about__table__col about__table__col-1">Team Size</div>
+                        <div class="about__table__col about__table__col-2">9 people</div>
+                    </div>
+                    <div class="about__table__row">
+                        <div class="about__table__col about__table__col-1">Address</div>
+                        <div class="about__table__col about__table__col-2">Plot no- 197, opposite metro pillar no. 414,
+                            Pocket D-14, Sector 7, Rohini, Chhatarpur New Delhi - 110085</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top agents end -->
+    <!-- Rent -->
+    <div class="agent_heading"> Shera REnt Properties</div>
+    <div class="sf-homemdkc">
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property1.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property2.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property3.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property4.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Sell properties -->
+    <div class="agent_heading">Shera Sell Properties</div>
+    <div class="sf-homemdkc">
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property4.jpg" alt="">
+                        <span class="sf-home__owner-prop__card--pic-verified">Verfied</span>
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc">Chhatarpur Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property3.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property2.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div>
+            <div class="sf-home__owner-prop__card card-shadow">
+                <a>
+                    <div class="sf-home__owner-prop__card--graphic">
+                        <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property1.jpg" alt="">
+
+                        <span class="sf-home__owner-prop__card--pic-count">8</span>
+                    </div>
+                    <div class="sf-home__owner-prop__card--content">
+                        <div class="sf-home__owner-prop__card--type">
+                        </div>
+                        <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹5000</span>
+                            <span class="sf-home__owner-prop__card--size">4400 sqft</span>
+                        </div>
+                        <div class="sf-home__owner-prop__card--loc"> Chhatarpur New Delhi
+                        </div>
+                        <div class="sf-home__owner-prop__card--status">
+                            Ready to Move
+                        </div>
+                        <div class="sf-home__action">
+                            <span class="sf-home__action--btn btn-red medium">View Details</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

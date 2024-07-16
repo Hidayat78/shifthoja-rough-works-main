@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Preview</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .invoice-preview {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .invoice-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .invoice-header img {
+      height: 30px;
+      width: 150px;
+    }
+
+    .invoice-details {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .invoice-details h5 {
+      margin-bottom: 10px;
+    }
+
+    .invoice-address {
+      margin-bottom: 20px;
+    }
+
+    .invoice-items {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .invoice-items th,
+    .invoice-items td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .invoice-items th {
+      background-color: #f2f2f2;
+    }
+
+    .invoice-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .invoice-note {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="invoice-preview">
+    <div class="invoice-header">
+      <!-- <img src="assets/img/shifthoja_logo.png" alt="Logo"> -->
+      <img src="assets/img/shifthoja_logo.svg" style="height: 40px; width: 200px;">
+      <div>
+        <h4>Invoice #3492</h4>
+        <div>
+          <span>Date Issued:</span>
+          <span>26/04/2024</span>
+        </div>
+        <div>
+          <span>Date Due:</span>
+          <span>29/08/2024</span>
+        </div>
+      </div>
+    </div>
+    <div class="invoice-details">
+      <div class="invoice-address">
+        <h5>Invoice To:</h5>
+        <p>Hidayat</p>
+        <p>Shelby Company Limited</p>
+        <p>Small Heath, B10 0HF Delhi</p>
+        <p>718-986-6062</p>
+        <p>hidayat78@gmail.com</p>
+      </div>
+      <div class="invoice-address">
+        <h5>Bill To:</h5>
+        <table class="invoice-items">
+          <tr>
+            <td>Total Due:</td>
+            <td>₹41000</td>
+          </tr>
+          <tr>
+            <td>Payment:</td>
+            <td>Razor Pay</td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td>Delhi</td>
+          </tr>
+          <tr>
+            <td>PAN:</td>
+            <td>BFRPH9626C</td>
+          </tr>
+          <tr>
+            <td>SWIFT code:</td>
+            <td>BR91905</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="invoice-items">
+      <h5>Invoice Items:</h5>
+      <table class="invoice-items">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Cost</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Preminum Customer</td>
+            <td>Pacakage for 3 months</td>
+            <td>₹32</td>
+            <td>1</td>
+            <td>₹32.00</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+    <div class="invoice-total">
+      <div>
+        <p>Subtotal:</p>
+        <p>Discount:</p>
+        <p>Tax:</p>
+        <p>Total:</p>
+      </div>
+      <div>
+        <p>₹154.25</p>
+        <p>₹00.00</p>
+        <p>₹50.00</p>
+        <p>₹204.25</p>
+      </div>
+    </div>
+    <div class="invoice-note">
+      <h5>Note:</h5>
+      <p>It was a pleasure working with you and your team. We hope you will keep us in mind SHIFTHOJA.COM. Thank You!</p>
+    </div>
+  </div>
+</body>
+
+</html>

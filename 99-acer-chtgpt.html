@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<style>
+    .inPageSearchBox__inPageSearchBox {
+        width: max-content;
+        margin: 0 auto;
+        position: absolute;
+        top: 288px;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+ 
+    .inPageSearchBox__inPageSearchBox .InPageTabs .tab__tabs {
+        background-color: #003159;
+        color: white;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        padding: 6px 0;
+    }
+
+    .inPageSearchBox__inPageSearchBox .InPageTabs .tab__tabs>.tabChild.active {
+        font-weight: 700;
+        color: #ffffff !important;
+    }
+
+    .inPageSearchBox__inPageSearchBox .InPageTabs .tab__tabs .list_header_semiBold {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .inPageSearchBox__inPageSearchBox .InPageTabs .tab__tabs>.tabChild {
+        margin: 0;
+        padding: 16px 32px;
+    }
+    .tab__tabsContent {
+        padding: 0;
+    }
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        background-color: #fff;
+        box-shadow: 0 0 10px 1px rgba(21, 28, 34, 0.5);
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions>.inPageSearchBox__basicFilter {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+        min-width: 0;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions>.inPageSearchBox__basicFilter {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+        min-width: 0;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchDropdown>div {
+        border-right: 1px solid #EBECF0;
+        padding: 25px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchDropdown>div::after {
+        content: '';
+        border: solid #253858;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        margin: 0 0 3px 8px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchField {
+        position: relative;
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchField>div.inPageSearchBox__searchFieldInput {
+        display: flex;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        height: 69px;
+        align-items: flex-start;
+    }
+
+    .has-webp .iconS_Common_20.icon_search {
+        background-position: -20px 0;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchField>div.inPageSearchBox__searchFieldInput>* {
+        margin-right: 8px;
+    }
+
+    .component__DeskSfInput {
+        width: 100%;
+        flex: 1;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchField input {
+        font-size: 14px;
+        width: 98%;
+        outline: none;
+        margin-top: 13px;
+        height: 40px;
+        border: 0;
+        margin-left: 12px;
+        vertical-align: middle;
+        box-shadow: none;
+    }
+
+    .component__suggest {
+        position: absolute;
+        top: 16px;
+        left: 48px;
+        width: 75%;
+        height: 60%;
+        pointer-events: none;
+    }
+
+    .component__suggest:after {
+        line-height: 1.3em;
+        display: block;
+        /* content: "Enter \"City / Locality / Projects / Landmarks...\""; */
+        position: absolute;
+        padding: 5px;
+        font-style: italic;
+        animation: component__animText 15s linear infinite;
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 24px;
+        color: #42526E;
+    }
+
+    .inPageSearchBox__nearMe {
+        position: relative;
+    }
+
+    .inPageSearchBox__nearMe .inPageSearchBox__nearMeTag {
+        display: none;
+        height: 45px;
+        position: absolute;
+        top: 120%;
+        right: 0;
+        z-index: 50;
+        pointer-events: none;
+        box-shadow: 0px 8px 12px rgba(31, 92, 163, 0.2);
+        border-radius: 4px;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__inputFilterOptions .inPageSearchBox__searchBtn {
+        padding: 16px;
+    }
+
+    .buttons__primaryRegular {
+        box-shadow: 0 1px 4px 0 rgba(0, 106, 194, 0.2);
+        background: #0078DB;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        outline: none;
+        margin: 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 0;
+        min-height: auto;
+        padding: 8px 16px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 700;
+        color: #fff;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__searchFilters {
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        padding: 40px 28px 20px;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: -60px;
+        border-radius: 16px;
+        box-shadow: 0 1px 4px 0 rgba(0, 106, 194, 0.2);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .spacer50:after {
+        content: '';
+        display: block;
+        height: 50px;
+        width: 100%;
+        clear: both;
+    }
+
+    .component__suggestor {
+        background-color: #fff;
+        z-index: -1;
+        box-shadow: 0 13px 16px 0 rgba(0, 106, 194, 0.2);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 60px;
+        opacity: 0;
+        /* visibility: hidden; */
+        border: 0;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        animation: component__suggBox 0.3s forwards;
+    }
+
+    .body_small {
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        color: #091E42;
+        display: block;
+        text-align: left;
+    }
+
+    .Ng800 {
+        color: #041533 !important;
+    }
+
+    .component__suggestor ul li {
+        padding: 12px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border-bottom: 1px solid #EBECF0;
+    }
+
+    .component__suggestor ul li span {
+        color: #8993A4;
+        font-size: 14px;
+        /* float: right; */
+        display: inline-block;
+    }
+
+    .tab__tabs .tab__bar {
+        background: #006AC2;
+        height: 6px;
+        position: absolute;
+        padding: 0px;
+        bottom: 8px;
+        left: 4px;
+        display: block;
+        margin: 0;
+        white-space: normal;
+        transition: left .3s ease-in-out;
+    }
+
+    .bodyof-colapse {
+        border: solid 1px #ededed;
+        border-radius: 10px;
+        width: 906px;
+        height: auto;
+        margin-top: 10px;
+        background-color: white;
+    }
+
+    .pageComponent.radio__optionRadio.pageComponent.undefined {
+        width: 33%;
+        display: inline-block;
+        padding: 12px 10px;
+    }
+    .pageComponent.radio__optionRadio.pageComponent.undefined:hover{
+        background-color: #ededed;
+    }
+    .inPageSearchBox__searchTabWrap .inPageSearchBox__searchFilters .inPageSearchBox__primaryFilter .inPageSearchBox__checkboxWrap>* {
+        width: 33%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 12px 12px 0;
+    }
+
+    [design='system'][type='checkbox']:checked,
+    [design='system'][type='checkbox']:not(:checked) {
+        position: absolute;
+        display: none;
+    }
+
+    [design='system'][type='checkbox']:checked+label,
+    [design='system'][type='checkbox']:not(:checked)+label {
+        position: relative;
+        padding-left: 24px;
+        cursor: pointer;
+        line-height: 20px;
+        display: inline-block;
+        color: #42526E;
+        font-size: 14px;
+    }
+
+    .inPageSearchBox__mulLevelWrap label {
+        height: 20px;
+        width: auto;
+    }
+
+    .radio__f12 {
+        font-size: 12px !important;
+    }
+
+    [design='system'][type='checkbox']:checked+label:before {
+        background: url(https://static.99acres.com/universalapp/img/CommonSprite_v35.webp);
+        background-size: 340px 239px;
+        background-position: 0px -42px;
+    }
+
+    [design='system'][type='checkbox']:checked+label:before,
+    [design='system'][type='checkbox']:not(:checked)+label:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 20px;
+        height: 20px;
+        background: url(https://static.99acres.com/universalapp/img/CommonSprite_v35.webp);
+        background-size: 340px 239px;
+        background-position: -40px -42px;
+    }
+
+    [design='system'][type='checkbox']:checked+label:before {
+        background: url(https://static.99acres.com/universalapp/img/CommonSprite_v35.webp);
+        background-size: 340px 239px;
+        background-position: 0px -42px;
+    }
+    div#collapseExample1 {
+    margin-top: 5px;
+}
+.ul-listfor-city li{
+    list-style: none;
+    
+}
+.ul-listfor-city ul li {
+    border-bottom: 1px solid #EBECF0;
+    padding: 10px 12px;
+}
+.ul-listfor-city ul li:hover {
+    background-color:#ededed ;
+}
+
+.ul-listfor-city ul li:first-child {
+    border-top: 1px solid #EBECF0;
+    margin-top: 2px;
+}
+
+.ul-listfor-city ul {
+    max-height: 200px; 
+    overflow-y: auto;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    padding-left: 0px;
+}
+
+.ul-listfor-city ul::-webkit-scrollbar {
+    display: none; 
+}
+.card.card-body.ul-listfor-city {
+    padding: 0px;
+}
+</style>
+<style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 70px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 100px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+
+            }
+
+        }
+
+</style>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <div class="content">
+        <div id="first">
+          <img src="./assets/img/slide1/buy.jpg" alt="first" width="100%"/>
+        </div>
+        <div id="second">
+            <img src="/assets/img/slide1/rent.jpg" alt="second" width="100%"/>
+        </div>
+        <div id="second">
+            <img src="/assets/img/slide1/rent.jpg" alt="second" width="100%"/>
+        </div>
+        <div id="second">
+            <img src="/assets/img/slide1/rent.jpg" alt="second" width="100%"/>
+        </div>
+       
+      </div>
+    <div id="hp-search-form" topmost="true" class="pageComponent inPageSearchBox__inPageSearchBox"
+        data-label="IN_PAGE_SEARCH">
+        <div id="inPageSearchForm" class="InPageTabs">
+
+            <div class="tab__tabs">
+                <div id="inPageSearchForm_0" class="tabChild list_header_semiBold active pageComponent Ng500"
+                    data-label="BUY">
+                    Buy</div>
+                <div id="inPageSearchForm_1" class="tabChild list_header_semiBold  pageComponent Ng500  "
+                    data-label="RENT">
+                    Rent</div>
+                <div id="inPageSearchForm_2"
+                    class="tabChild list_header_semiBold  pageComponent Ng500  tab__relativePos" data-label="NL">
+                    New Launch<div class="tab__redDot"></div>
+                </div>
+                <div id="inPageSearchForm_3" class="tabChild list_header_semiBold  pageComponent Ng500  "
+                    data-label="PG">
+                    PG / Co-living</div>
+                <div id="inPageSearchForm_4" class="tabChild list_header_semiBold  pageComponent Ng500  "
+                    data-label="COMM">
+                    Commercial</div>
+                <div id="inPageSearchForm_5" class="tabChild list_header_semiBold  pageComponent Ng500  "
+                    data-label="PLOTS">
+                    Plots/Land</div>
+                <div id="inPageSearchForm_6" class="tabChild list_header_semiBold  pageComponent Ng500  ">
+                    Projects</div>
+                <div class="tab__bar" style="width: 54px; left: 20px;"></div>
+            </div>
+            <div class="tab__tabsContent">
+                <div class="">
+                    <div class="inPageSearchBox__searchTabWrap">
+                        <div class="inPageSearchBox__inputFilterOptions">
+                            <div class="inPageSearchBox__basicFilter">
+                                <div class="inPageSearchBox__searchDropdown" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseExample" aria-expanded="false"
+                                    aria-controls="collapseExample">
+                                    <div class="">Select ?</div>
+                                </div>
+                                <div class="inPageSearchBox__searchField">
+                                    <div id="d_landmark_inPageSearchBox1" class="pageComponent inPageSearchBox__searchFieldInput">
+                                        <div class="component__DeskSfInput" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+                                            aria-expanded="false" aria-controls="collapseExample1">
+                                            <input type="text" name="keyword1" class="component__searchInput" id="keyword1" value=""
+                                                placeholder="Enter What you want from us">
+                                            <div class="component__suggest"></div>
+                                        </div>
+                                    </div>
+                              
+                                    <!-- <div class="component__suggestor">
+                                        <ul id="suggestions_custom"
+                                            class="body_small Ng800 component__inPageAutoSuggSlide">
+                                            <li id="0" class="pageComponent" title="Sector O Mansarovar, Lucknow">
+                                                Sector O Mansarovar, Lucknow <span>Locality</span>
+                                            </li>
+                                            <li id="1" class="pageComponent">
+                                                O Block Annanagar East, Chennai North <span>Locality</span>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                                
+                            </div>
+
+                            <div class="pageComponent inPageSearchBox__nearMe"
+                                style="cursor: pointer; height: 30px; white-space: nowrap; border-radius: 36px; display: flex; align-items: center; margin-right: 12px;">
+                                <img src="https://www.99acres.com/universalapp/img/nearMeV2.png" width="40"
+                                    height="40"><img src="https://www.99acres.com/universalapp/img/nearMeTag.png"
+                                    class="inPageSearchBox__nearMeTag">
+                            </div>
+                            <div class="pageComponent undefined" data-label="VOICE_SEARCH_HP_DESKTOP" topmost="true">
+                            </div>
+                            <div class="inPageSearchBox__searchBtn"><button type="submit" variant="primaryRegular"
+                                    class="pageComponent buttons__primaryRegular     undefined "
+                                    data-sstheme="_BUTTON_TOP_LEVEL"><span class=" "
+                                        data-sstheme="_BUTTON_SPAN">Search</span></button></div>
+                        </div>
+                        <div class="inPageSearchBox__searchFilters false"></div>
+                        <div class="collapse list-nosy" id="collapseExample1">
+                            <div class="card card-body ul-listfor-city">
+                                <ul>
+                                    <li>Item 1</li>
+                                    <li>Item 2</li>
+                                    <li>Item 3</li>
+                                    <li>Item 4</li>
+                                    <li>Item 5</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse" id="collapseExample">
+                <div class="bodyof-colapse">
+                    <div class="pageComponent inPageSearchBox__checkboxWrap" data-label="RES_PROPERTY">
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="1" name="1" label="Flat/Apartment" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="RES_APARTMENT" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="1">Flat/Apartment</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="4" name="4" label="Independent/Builder Floor" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="INDEPENDENT_FLOOR" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="4">Independent/Builder Floor</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="2" name="2" label="Independent House/Villa" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="HOUSE_VILLA" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="2">Independent House/Villa</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="3" name="3" label="Residential Land" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="RES_LAND" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="3">Residential Land</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="90" name="90" label="1 RK/ Studio Apartment" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="STUDIO_APARTMENT" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12" for="90">1
+                                RK/ Studio Apartment</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="5" name="5" label="Farm House" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="FARM_HOUSE" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="5">Farm House</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="22" name="22" label="Serviced Apartments" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="SERVICED_APARTMENT" labelfont="f12"
+                                design="system" checked=""><label class="pageComponent undefined radio__f12"
+                                for="22">Serviced Apartments</label></div>
+                        <div class="pageComponent radio__optionRadio pageComponent undefined "><input type="checkbox"
+                                id="80" name="80" label="Other" class="pageComponent undefined"
+                                classname2="pageComponent undefined" data-label="" labelfont="f12" design="system"
+                                checked=""><label class="pageComponent undefined radio__f12" for="80">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="inPageSearchBox__overlay"></div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab__tabs .tabChild");
+
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    this.classList.add("active");
+                    const tabBar = document.querySelector(".tab__tabs .tab__bar");
+                    const activeTab = document.querySelector(".tab__tabs .tabChild.active");
+                    tabBar.style.width = `${activeTab.offsetWidth}px`;
+                    tabBar.style.left = `${activeTab.offsetLeft}px`;
+                });
+            });
+        });
+    </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const collapseExample1 = document.getElementById('collapseExample1');
+            const collapseExample = document.getElementById('collapseExample');
+
+            collapseExample1.addEventListener('show.bs.collapse', function () {
+                collapseExample.classList.remove('show');
+            });
+
+            collapseExample.addEventListener('show.bs.collapse', function () {
+                collapseExample1.classList.remove('show');
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+    var bodyOfCollapse = document.querySelector('.bodyof-colapse');
+    var collapseExample1 = document.getElementById('collapseExample1');
+    var collapseExample = document.getElementById('collapseExample');
+    
+    // Check if the clicked element is outside the body of the collapse
+    if (!bodyOfCollapse.contains(event.target)) {
+        // Check if either of the collapse elements is open
+        if (collapseExample1.classList.contains('show')) {
+            collapseExample1.classList.remove('show'); // Close collapseExample1 if open
+        }
+        if (collapseExample.classList.contains('show')) {
+            collapseExample.classList.remove('show'); // Close collapseExample if open
+        }
+    }
+});
+
+
+    </script>
+</body>
+
+</html>

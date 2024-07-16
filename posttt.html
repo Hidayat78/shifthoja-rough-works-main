@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+    data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+    data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>ShiftHoja</title>
+    <meta name="description"
+        content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+
+    <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-laravel-admin-template/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="https://shifthoja.com/public/frontend/assets/images/shifthoja_logo.png" />
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css?id=87122b3a3900320673311cebdeb618da" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d" />
+    <!-- Core CSS -->
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css?id=55b2a9dfaa009c41df62ca8d16e913a8"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css?id=9182924a7b965439eca5e189ba43eba1"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/css/demob77a.css?id=69dfc5e48fce5a4ff55ff7b593cdf93d" />
+    <!-- Vendors CSS -->
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbare482.css?id=73d641bb8db2475ecafc6c68461ed01b" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead05d2.css?id=de339ead5e9c9e36f12e46cbef7aaffd" />
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/styles/index.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+        integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
+        integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.templateCustomizer = new TemplateCustomizer({
+            cssPath: '',
+            themesPath: '',
+            defaultStyle: "light",
+            defaultShowDropdownOnHover: "true",
+            // true/false (for horizontal layout only)
+            displayCustomizer: "true",
+            lang: 'en',
+            pathResolver: function (path) {
+                var resolvedPaths = {
+                    // Core stylesheets
+                    'core.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core.css?id=55b2a9dfaa009c41df62ca8d16e913a8',
+                    'core-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core-dark.css?id=d98ae2a03b5b1b05651411ee58ef81a6',
+                    // Themes
+                    'theme-default.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default.css?id=9182924a7b965439eca5e189ba43eba1',
+                    'theme-default-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default-dark.css?id=ae30991ef3f62e7c03ca6f8930843e80',
+                    'theme-bordered.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered.css?id=a4f95a927b1e2bcdfd57a3bbfb2bd3d9',
+                    'theme-bordered-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered-dark.css?id=2a668deb480284f975db82d0a7277156',
+                    'theme-semi-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark.css?id=9c02fb39c47f91b2d198f343fa8b4df7',
+                    'theme-semi-dark-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark-dark.css?id=c4b1950a14ffd431f752917b97a0ee51',
+                }
+                return resolvedPaths[path] || path;
+            },
+            'controls': ["rtl", "style", "headerType", "contentLayout", "layoutCollapsed", "layoutNavbarOptions", "themes"],
+        });
+    </script>
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <meta name="description"
+        content="Post your property on SHIFTHOJA.COM and connect with potential Buyers and Renters. Our platform makes it simple to showcase your property to the right audience. Whether you're selling, renting, or leasing, SHIFTHOJA.COM is here to help you market your property effectively.">
+    <meta name="keywords"
+        content="SHIFTHOJA.COM, Post property, Housing.com, dream home, listings, professional services">
+    <meta property="og:title" content="SHIFTHOJA.COM | Post Property -">
+    <meta property="og:description"
+        content="Post your property on SHIFTHOJA.COM and connect with potential Buyers and Renters. Our platform makes it simple to showcase your property to the right audience. Whether you're selling, renting, or leasing, SHIFTHOJA.COM is here to help you market your property effectively.">
+    <meta property="og:image" content="https://example.com/your-image.jpg">
+    <meta property="og:url" content="https://shifthoja.com/post-property">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SHIFTHOJA.COM">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            /* background-image: url(assets/img/post-property-bg-img.png); */
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: scale-down;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 0px;
+            color: #fff;
+        }
+
+        .logo img {
+
+            width: 214px;
+            object-fit: cover;
+            height: 50px;
+            padding-top: 10px;
+        }
+
+        .nav-links {
+            margin-left: 0px;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            color: black;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+
+        .style__post {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        b.post {
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+
+            .navbar {
+                display: flex;
+                justify-content: scale-down;
+                align-items: center;
+                background-color: #003159;
+                height: 60px;
+                padding: 0 0px;
+                color: #fff;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .logo img {
+                width: 160px;
+                object-fit: fill;
+                height: 50px;
+            }
+
+            .style__postContainer {
+                width: 130px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+
+            b.post {
+                color: black;
+                padding: 4px;
+                font-size: 11px;
+                font-weight: 600;
+            }
+
+
+
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            .logo img {
+                width: 130px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 130px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+
+            b.post {
+                color: black;
+                padding: 4px;
+                font-size: 11px;
+                font-weight: 600;
+            }
+
+            @media (min-width: 768px) and (max-width: 1400px) {
+                .logo img {
+                    width: 130px;
+                    height: 30px;
+                }
+
+                .style__postContainer {
+                    width: 130px;
+                    height: 32px;
+                }
+
+                .style__post {
+                    font-weight: 500;
+                    font-size: 10px;
+                    line-height: 20px;
+                    color: #041533;
+                    margin-right: 3px;
+                    margin-top: -2px;
+                    font-weight: bold;
+                }
+
+                b.post {
+                    color: black;
+                    padding: 4px;
+                    font-size: 11px;
+                    font-weight: 600;
+                }
+            }
+        }
+    </style>
+
+    <style>
+        .cat {
+            margin: 4px;
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            overflow: hidden;
+            float: left;
+            border-radius: 50px;
+        }
+
+        .cat label {
+            float: left;
+            width: auto;
+            height: 20px;
+            padding: 4px;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+
+
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            /* display: none; */
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .iti,
+        .iti--allow-dropdown {
+            width: 100%;
+        }
+
+
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
+
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
+
+        /* Animation */
+
+
+
+        .cat {
+
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        .cat label {
+            width: 100%;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+
+
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            display: none;
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .label {
+            background: #fff;
+            cursor: pointer;
+            border: 1px solid;
+            font-size: 11px;
+            color: #7f7f7f;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: background 0.1s, color 0.1s;
+        }
+
+        .label:hover {
+            background: #d8d8d8;
+        }
+
+        .label:active {
+            background: #ccc;
+        }
+
+
+
+        .input:checked+.label {
+            background: #003159;
+            color: #fff;
+
+        }
+
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: -12px 0px 5px 0px;
+        }
+
+        .stepstowork {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: #000;
+        }
+
+
+
+        .card {
+
+            background-clip: padding-box;
+            box-shadow: 0 2px 6px 0 rgba(67, 89, 113, .12);
+        }
+
+
+        .top-h3-p h3 {
+            font-size: 14px;
+            background-color: #003159;
+            width: 229px;
+            font-weight: 600;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            letter-spacing: 0.5px;
+        }
+
+        .top-h3-p p {
+            font-size: 14px;
+            background-color: #003159;
+            width: 252px;
+            font-weight: 600;
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        /* FAQ css start */
+
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #ddd;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-top: 5px;
+        }
+
+        .active {
+            display: block !important;
+        }
+
+        .css-1828kiu {
+            color: rgb(34, 34, 34);
+            text-align: center;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 16px auto 6px;
+        }
+
+        @media (max-width: 480px) {
+            .css-1828kiu {
+                font-size: 12;
+                font-weight: bold;
+            }
+
+            .faq-section {
+                display: none;
+            }
+
+            .about-video {
+                display: none;
+            }
+
+            .pe-lg-0.mb-3.col-xl-6.col-md-4.order-md-1 {
+                display: none;
+            }
+
+            h3.h6.fw-bold {
+                margin-bottom: 13px;
+            }
+
+        }
+
+        @media (min-width: 1024px) {
+            .css-1828kiu {
+                margin: 10px auto 16px;
+                font-size: 30px;
+            }
+
+
+        }
+
+        /* FAQ css end */
+        .col-lg-6.video-box.align-self-baseline.position-relative img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+
+
+    <style>
+        .overlay {
+            position: relative;
+            width: 100%;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 163px;
+            width: 100%;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: white;
+            font-size: 17px;
+            z-index: 1000;
+            background: #000;
+            padding: 2px 7px 4px 6px;
+            height: 29px;
+            border-radius: 50px;
+        }
+    </style>
+    <style>
+        .label {
+            background: #fff;
+            cursor: pointer;
+            border: 1px solid rgb(235, 235, 235);
+            font-weight: 500;
+            font-size: 14px;
+            color: rgb(34, 34, 34);
+            border-radius: 8px;
+            transition: background 0.1s, color 0.1s;
+        }
+
+        .label:hover {
+            background: rgb(231, 221, 251);
+        }
+
+        .label:active {
+            background: #ccc;
+        }
+
+        .input:checked+.label {
+            background: rgb(231, 221, 251);
+            color: rgb(94, 35, 220);
+        }
+
+        .label {
+            width: 100%;
+            padding: 12px 3px;
+            text-align: center;
+        }
+
+        .input {
+            position: absolute;
+            opacity: 0;
+            height: 0px;
+            top: 0px;
+        }
+
+        .title {
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.2px;
+            color: rgb(118, 118, 118);
+        }
+
+        .mandatoryMarker {
+            color: red;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 0 3px;
+        }
+
+        .group {
+            margin-top: 30px;
+        }
+
+        .css-14n2nh0 {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            color: rgb(67, 67, 67);
+        }
+
+        .css-14n2nh0::after {
+            position: absolute;
+            content: url("https://shifthoja.comhttps://shifthoja.com/public/frontend/assets/img/services/bottom-line.svg");
+            bottom: 0px;
+            width: 95.932px;
+            height: 6.823px;
+        }
+
+        .css-v8jck {
+            border: 1px solid rgb(225, 226, 232) !important;
+            border-radius: 8px;
+            padding: 0px 20px 25px;
+            width: 100%;
+
+            overflow: hidden scroll;
+        }
+
+        .css-g56yay {
+            background: rgb(228, 229, 240);
+            border: 0px;
+            padding-top: 15px;
+            padding-left: 5px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            width: 100%;
+            height: 48px;
+            font-weight: 500;
+            line-height: 14px;
+            text-align: start;
+            color: rgb(0, 0, 0);
+            margin-top: 24px;
+            bottom: 0px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 1px 0px inset;
+        }
+
+        .error {
+            color: #e02727;
+            font-family: Rubik, Helvetica, sans-serif;
+            padding: 5px 0 0 5px;
+            font-size: 10px;
+        }
+    </style>
+    <style>
+        .css-u4ug1l {
+            background: linear-gradient(191deg, rgb(243, 244, 255) 1.35%, rgb(255, 255, 255) 62.01%, rgb(255, 255, 255) 195.73%);
+            border: 1px solid rgb(225, 226, 232);
+            border-radius: 8px;
+            min-width: 100%;
+            height: 100%;
+            padding: 17px 10px 0px 21px;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+
+        .css-ekfu91 {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 12px;
+            letter-spacing: 0.6px;
+            color: rgb(34, 34, 34);
+            mix-blend-mode: normal;
+            opacity: 0.7;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
+        .css-1wsvv7k {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 20px;
+            color: rgb(67, 67, 67);
+            margin-bottom: 4px;
+        }
+
+        .css-1au84r2 {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.2px;
+            color: rgb(34, 34, 34);
+            mix-blend-mode: normal;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
+        .new-su-progress-bar {
+            font-weight: 500;
+            font-size: 8px;
+            line-height: 12px;
+            color: #767676;
+        }
+
+        .css-uvyn5o {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .css-1sg2lsz {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        .new-su-progress-bar .selfUploadPb {
+            border-radius: 100px;
+            overflow: hidden;
+            height: 8px;
+        }
+
+        .css-1mb7nyv {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+        }
+
+        .css-1onbx3g {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-right: 16px;
+        }
+
+        .css-zhkbv9 {
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+            border: 0px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .tickIcon {
+            content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%2336c991' d='M1024 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z'%3E%3C/path%3E %3Cpath fill='%23fff' d='M764.015 374.514c12.497 12.497 12.497 32.758 0 45.255l-295.219 295.222-153.373-153.37c-12.497-12.497-12.497-32.759 0-45.257s32.758-12.497 45.255 0l108.118 108.117 249.967-249.968c12.497-12.497 32.755-12.497 45.252 0z'%3E%3C/path%3E %3C/svg%3E")
+        }
+
+        .pillStateIcon {
+            width: 30px;
+            height: 30px
+        }
+
+        .pill-state {
+            color: rgb(54, 201, 145);
+            background: rgb(213, 243, 232);
+            border: 0px;
+        }
+
+        .css-1mb7nyv .pill-checkbox {
+            background: rgb(54, 201, 145);
+        }
+
+        .css-s2fxx9 {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+            color: rgb(67, 67, 67);
+            margin-bottom: 3px;
+        }
+
+        .css-1uhdbu5 {
+            background: rgb(255, 255, 255);
+            color: rgb(159, 159, 159);
+            border: 1px solid rgb(225, 226, 232);
+            border-radius: 30px;
+            padding: 5px 10px;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 12px;
+            letter-spacing: 0.6px;
+            width: fit-content;
+        }
+
+        .css-1mb7nyv .pill-state {
+            color: rgb(54, 201, 145);
+            background: rgb(213, 243, 232);
+            border: 0px;
+        }
+
+        .css-1lzmv4j {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+        }
+
+        .css-1onbx3g {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-right: 16px;
+        }
+
+        .css-1lzmv4j .pill-checkbox {
+            border: 1px solid rgb(94, 35, 220);
+            background: rgb(255, 255, 255);
+        }
+
+        .css-zhkbv9 {
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+            border: 0px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .pill-checkbox .radioFilled {
+            content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%235E23DC' d='M512 8.544c-277.344 0-503.456 226.144-503.456 503.456s226.144 503.456 503.456 503.456c277.344 0 503.456-226.144 503.456-503.456s-226.144-503.456-503.456-503.456zM512 972.8c-251.744 0-460.8-209.056-460.8-460.8s209.056-460.8 460.8-460.8 460.8 209.056 460.8 460.8-209.056 460.8-460.8 460.8z'%3E%3C/path%3E %3Cpath fill='%235E23DC' d='M512 145.056c-200.544 0-366.944 166.4-366.944 366.944s166.4 366.944 366.944 366.944c200.544 0 366.944-166.4 366.944-366.944s-166.4-366.944-366.944-366.944z'%3E%3C/path%3E %3C/svg%3E")
+        }
+
+        .css-1htmawk {
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        .css-1onbx3g {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            margin-right: 16px;
+        }
+
+        .css-zhkbv9 {
+            height: 30px;
+            width: 30px;
+            border-radius: 15px;
+            border: 0px;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .pill-checkbox .pendingPill {
+            border-radius: 30px;
+            background: #eae4ff;
+        }
+
+        .pill-checkbox .pillStateIcon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .css-10c1p1k {
+            height: 37px;
+            width: 0px;
+            border: 1px solid rgb(234, 228, 255);
+            margin: 5px 0px;
+        }
+
+        .css-1lzmv4j .pill-state {
+            background: rgb(234, 228, 255);
+            color: rgb(94, 35, 220);
+            border: 0px;
+        }
+
+        .css-6d93px {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .css-17iu5z9 {
+            line-height: 16px;
+            letter-spacing: 0.2px;
+            color: rgb(118, 118, 118);
+            display: flex;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 0px;
+        }
+
+        .menu-horizontal,
+        .layout-menu-fixed-offcanvas .layout-horizontal .layout-page .menu-horizontal {
+            position: fixed;
+        }
+
+        .app-brand-text.demo {
+            font-size: x-large;
+        }
+
+        .first-inesell-rent {
+            font-weight: 500;
+            color: #000;
+            margin-top: 10px;
+        }
+
+        hr {
+            color: #333;
+            height: 2px;
+            width: 100%;
+            border: none;
+            margin: 20px 0;
+            padding: 0;
+            background-color: #333;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 767px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .layout-container {
+                overflow-x: hidden;
+            }
+        }
+
+        label.input-group-text {
+            cursor: pointer;
+        }
+
+        .otp-field {
+            display: flex;
+            gap: 15px;
+            margin-left: 0px;
+        }
+
+        .otp-field input {
+            height: 40px;
+            width: 40px;
+        }
+
+        .ott {
+            text-align: center;
+        }
+
+        .margin-topp {
+            margin-top: 20px;
+        }
+
+        .input-group.input-group-merge {
+            margin-top: 10px;
+        }
+
+        .css-v8jck::-webkit-scrollbar {
+            display: none;
+        }
+
+        .homepage-wrap .homeface-wrap .homedesc {
+            color: #666;
+        }
+
+        .homepage-wrap .homeface-wrap ul.homepoints {
+            padding: 20px 0;
+        }
+
+        /* .homepage-wrap .homeface-wrap ul.homepoints>li:before {
+            content: '✓';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            border-radius: 50%;
+            line-height: 25px;
+            color: #000;
+            background-color: #eee;
+            text-align: center;
+            vertical-align: middle;
+            overflow: hidden;
+        } */
+        .homepoints>li:before {
+            content: '✓';
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            border-radius: 50%;
+            line-height: 25px;
+            color: #000;
+            background-color: #eee;
+            text-align: center;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .homepage-wrap .overview-desc {
+            text-align: justify;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .homepage-wrap .selling-button {
+            width: 200px;
+            text-align: center
+        }
+
+        .homepage-wrap .seller-story-wrap .selling-button {
+            margin-top: 40px
+        }
+
+        .cbtn {
+            padding: 0 20px;
+            border: 1px solid #e81c28;
+            border-radius: 20px;
+            height: 36px;
+            line-height: 34px;
+            width: 140px;
+        }
+
+        .homepage-wrap .homeface-wrap ul.homepoints>li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .col-sm-6.homedesc {
+            /* background-color: white; */
+            padding: 20px;
+            border-radius: 10px;
+            /* border: 1px solid rgb(225, 226, 232); */
+        }
+
+        .homepoints li {
+            margin-bottom: 10px;
+            
+        }
+        .img-end img {
+    animation: flash 5s infinite;
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <div>
+
+
+        <div wire:snapshot="{&quot;data&quot;:{&quot;number&quot;:&quot;91&quot;,&quot;verification&quot;:false,&quot;otp1&quot;:null,&quot;otp2&quot;:null,&quot;otp3&quot;:null,&quot;otp4&quot;:null,&quot;responseMessage&quot;:null,&quot;property&quot;:&quot;&quot;,&quot;list&quot;:&quot;&quot;,&quot;verification_client&quot;:&quot;&quot;,&quot;mobile_no&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;fBiN0AaJlHMEUxTtiH65&quot;,&quot;name&quot;:&quot;frontend.post-property&quot;,&quot;path&quot;:&quot;postproperty&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;6abc7fd7c6b3d2aed205b53f2cd77d7033d7cc95e228d8e87828123ec56315c7&quot;}"
+            wire:effects="{&quot;url&quot;:{&quot;property&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;list&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;verification_client&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;mobile_no&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;name&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;}}}"
+            wire:id="fBiN0AaJlHMEUxTtiH65">
+
+
+            <nav class="navbar">
+                <div class="logo">
+                    <a class="navbar-brand" href="https://shifthoja.com">
+                        <img src="https://shifthoja.com/public/frontend/assets/img/shifthoja_logo.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="">
+                        <div class="style__postContainer">
+                            <div onclick="window.open('userLogin.html')">
+                                <b class="post">Post property</b>
+                            </div>
+                            <div style="width: 36px; height: 15px" class="style__shimmer">
+                                <div class="style__shimmer" style="width: 36px; height: 15px">
+                                    <div class="style__free" style="font-size: 10px">FREE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                            aria-labelledby="offcanvasRightLabel">
+                            <div class="offcanvas-header">
+                                <!--<h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>-->
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="container-fluid flex-grow-1 container-p-y">
+                <div class="row justify-content-center">
+                    <div class="col-md-11 col-12">
+                        <div class="margin-topp">
+                            <div class="row justify-content-center">
+                                <div class="col-sm-6 homedesc">
+                                    <h2 style="color: #000;font-size: 24px;margin-bottom: 40px;line-height: unset;"> <span style="color: #2299dd;"><b>Sell</b></span> or <span style="color: #2299dd;"><b>Rent</b></span> out your Property <span style="color: #2299dd;"> <b>Faster</b></span><br> with our quick and easy solution</h2>
+                                    
+                                    <ul class="homepoints" style="margin-top: -18px;">
+                                        <li><strong>Unlimited</strong>&nbsp; free listings!</li>
+                                        <li><strong>Reach More </strong>&nbsp; Interested Buyers &amp; Renters</li>
+                                        <li><strong>User-friendly</strong>&nbsp; Listing Process</li>
+                                        <li><strong>Access to large number of </strong>&nbsp;Buyers</li>
+                                        <li>Dedicated&nbsp;<strong>Support</strong>&nbsp;Teams</li>
+                                        <li>Expert Real&nbsp;<strong>Estate Advice</strong> </li>
+                                        <li>Exclusive &nbsp;<strong>Deals and Offers</strong> </li>
+                                    </ul>
+                                    <div class="img-end">
+                                        <img src="assets/img/newb1.png" style="width: 640px;">
+                                    </div>
+                                </div>
+                                <div class="col-md-5 col-12">
+                                    <form wire:submit="submit">
+                                        <div class="css-v8jck p-md-5 pt-md-2 card">
+                                            <div>
+                                                <div class="css-14n2nh0">
+                                                    <span style="margin-right: 2px;">Sell or Rent </span> Faster your
+                                                    property Now !
+                                                </div>
+                                                <div class="group">
+                                                    <div class="title no-bottom">You're A ?</div>
+                                                    <div class="tabs pt-2 d-flex gap-3">
+                                                        <div>
+                                                            <input class="input" type="radio" id="customRadioSell-1"
+                                                                name="plPropertysellRent" value="agent"
+                                                                wire:model="list">
+                                                            <label class="label p-2"
+                                                                for="customRadioSell-1">Agent</label>
+                                                        </div>
+                                                        <div>
+                                                            <input class="input" type="radio" id="customRadioSell-2"
+                                                                name="plPropertysellRent" value="owner"
+                                                                wire:model="list">
+                                                            <label class="label p-2"
+                                                                for="customRadioSell-2">Owner</label>
+                                                        </div>
+                                                        <div>
+                                                            <input class="input" type="radio" id="customRadioSell-3"
+                                                                name="plPropertysellRent" value="builder"
+                                                                wire:model="list">
+                                                            <label class="label p-2"
+                                                                for="customRadioSell-3">Builder</label>
+                                                        </div>
+                                                        <div>
+                                                            <input class="input" type="radio" id="customRadioSell-4"
+                                                                name="plPropertysellRent" value="flatmate"
+                                                                wire:model="list">
+                                                            <label class="label p-2"
+                                                                for="customRadioSell-4">Flatmate</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                                                <hr>
+                                                <div class="group">
+                                                    <div class="title no-bottom">Property For ?
+                                                    </div>
+                                                    <div class="tabs pt-2 d-flex gap-3">
+                                                        <div> <input class="input" type="radio" id="proprty_for-1"
+                                                                name="property" value="rent" wire:model="property">
+                                                            <label class="label p-2"
+                                                                for="proprty_for-1">Rent/Lease</label>
+                                                        </div>
+                                                        <div>
+                                                            <input class="input" type="radio" id="proprty_for-2"
+                                                                name="property" value="sell" wire:model="property">
+                                                            <label class="label p-2" for="proprty_for-2">Sell</label>
+                                                        </div>
+                                                        <div>
+                                                            <input class="input" type="radio" id="proprty_for-3"
+                                                                name="property" value="pg co-living"
+                                                                wire:model="property">
+                                                            <label class="label p-2" for="proprty_for-3">PG</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                                                <hr>
+
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="basic-icon-default-phone">Your
+                                                        contact info for tenants ?</label>
+                                                    <div class="input-group input-group-merge clickable"
+                                                        id="toggle-otp">
+                                                        <span id="basic-icon-default-phone2"
+                                                            class="input-group-text">+91</span>
+                                                        <input type="text" class="form-control phone-mask"
+                                                            placeholder="658 799 8941" aria-label="658 799 8941"
+                                                            aria-describedby="basic-icon-default-phone2"
+                                                            wire:model.live="mobile_no">
+
+                                                    </div>
+
+                                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <label class="form-label" for="basic-icon-default-phone">Contact
+                                                        Person</label>
+                                                    <div class="input-group input-group-merge">
+                                                        <input type="text" class="form-control phone-mask"
+                                                            placeholder="Enter Your Name" wire:model="name">
+                                                    </div>
+
+                                                    <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 d-flex justify-content-between mt-4">
+                                                        <button class="btn btn-next w-100 p-2 text-white" type="submit"
+                                                            style="background: rgb(54, 201, 145);"
+                                                            wire:loading.attr="disabled" wire:target="submit">
+                                                            Start Now, it's FREE
+                                                        </button>
+
+                                                        <div wire:loading wire:target="submit">
+                                                            Processing...
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="zpUl9Fg67CpiPYNl6Hylg7H7QpgMcq9dB9Pu5LFJ"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+</body>
+<script>
+    window.addEventListener('swal', function (e) {
+        Swal.fire(e.detail);
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    Livewire.on('post-created', (event) => {
+
+        toastr.error(event.title, { timeOut: 10 });
+    });
+
+</script>
+
+<script>
+    const otpInputs = document.querySelectorAll('.otp-field input');
+
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            if (input.value.length === 1) {
+                if (index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                }
+            } else if (input.value.length === 0) {
+                if (index > 0) {
+                    otpInputs[index - 1].focus();
+                }
+            }
+        });
+
+        // Prevent pasting into input fields
+        input.addEventListener('paste', (e) => {
+            e.preventDefault();
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/wizard/ex-create-deal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 10:50:47 GMT -->
+
+</html>

@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+
+.footer {
+font-size: 18px;
+width: 100%;
+background-color: #333;
+color: #fff;
+padding: 30px 0;
+border-radius: 10px;
+}
+
+.container {
+width: 100%;
+margin: 0 auto;
+padding: 0 50px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: 25% 50% 25%;
+}
+
+
+.footer-menu {
+list-style: none;
+padding: 0;
+margin: 0;
+text-align: center;
+}
+
+.footer-menu li {
+display: inline-block;
+margin-right: 20px;
+}
+
+.footer-menu li:last-child {
+margin-right: 0;
+}
+
+.footer-menu a {
+color: #fff;
+text-decoration: none;
+}
+
+.social-icons {
+list-style: none;
+padding: 0;
+margin: 0;
+}
+
+.social-icons li {
+display: inline-block;
+margin-right: 10px;
+}
+
+.social-icons li:last-child {
+margin-right: 0;
+}
+
+.social-icons a {
+color: #fff;
+text-decoration: none;
+font-size: 20px;
+}
+
+.footer-bottom {
+margin-top: 20px;
+text-align: center;
+}
+
+.footer-bottom p {
+margin: 0;
+}
+
+@media (max-width: 768px) {
+.footer-content {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
+}
+.footer-menu{
+    text-align: left;
+}
+.footer-menu li {
+  display: block;
+  margin-bottom: 10px;
+}
+}
+
+.attribute{
+position: absolute;
+bottom: 10px;
+}
+.para-det{
+text-align: justify;
+font-size: 13px;
+}
+.footer-logo img{
+height: 40px;
+width: 160px;
+}
+</style>
+<style>
+ a {
+     text-decoration: none;
+  }
+  .po {
+     width: 1232px;
+     margin: auto;
+     padding: 28px 0px;
+  }
+  .po__title-container {
+     position: relative;
+     display: inline-block;
+     margin-bottom: 34px;
+  }
+  .po__tab__list-item:hover {
+     color: #003159;
+  }
+  .po__title__type::after {
+     content: '';
+     display: block;
+     position: absolute;
+     width: 8px;
+     height: 8px;
+     border-right: 2px solid #303030;
+     border-bottom: 2px solid #303030;
+     rotate: 45deg;
+     top: 10px;
+     right: 12px;
+     translate: 100% 0;
+  }
+  .po__title {
+     position: relative;
+     font-size: 24px;
+     line-height: 32px;
+     color: #303030;
+  }
+  .po__title::after {
+     content: '';
+     display: block;
+     position: absolute;
+     width: 40px;
+     height: 4px;
+     background-color: #FFC72C;
+     border-radius: 2px;
+     left: 0;
+     bottom: -10px;
+  }
+  .po__title__type {
+     display: inline-block;
+     position: relative;
+     border-bottom: 1px dashed #303030;
+     padding-bottom: 2px;
+     cursor: pointer;
+     padding-right: 20px;
+  }
+  .po__dd {
+     display: none;
+     position: absolute;
+     width: 158px;
+     border-radius: 8px;
+     padding: 8px 0;
+     background-color: #fff;
+     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.12), 0 8px 20px 0 rgba(0,0,0,0.1);
+     right: -96px;
+     bottom: -2px;
+     translate: 0 100%;
+     z-index: 2;
+  }
+  .po__dd-item {
+     position: relative;
+     font-size: 16px;
+     line-height: 40px;
+     color: #303030;
+     padding: 0 40px;
+     cursor: pointer;
+  }
+  .po__dd-item.selected::before {
+     content: '';
+     display: block;
+     position: absolute;
+     width: 5px;
+     height: 10px;
+     border-bottom: 1px solid #303030;
+     border-right: 1px solid #303030;
+     rotate: 45deg;
+     left: 20px;
+     top: 14px;
+  }
+  .po__tab__title {
+     font-size: 14px;
+     line-height: 20px;
+     color: #303030;
+     font-weight: 600;
+     padding-bottom: 16px;
+  }
+  .po__tab__list {
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+  }
+  .swiper-wrapper {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     z-index: 1;
+     display: flex;
+     transition-property: transform;
+  }
+  .po__navSec .po__swiper .swiper-container {
+     position: relative;
+     height: 40px;
+     border-bottom: 1px solid #d7d7d7;
+  }
+  .po__navSec .po__swiper .swiper-slide.selected {
+     font-weight: 600;
+  }
+.mbhome-m a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.po__navSec .po__swiper .swiper-slide {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: auto;
+  font-size: 16px;
+  line-height: 32px;
+  color: #303030;
+  text-decoration: none;
+  flex-shrink: 0;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.po__tab__list-item {
+  min-width: 170px;
+  max-width: 260px;
+  font-size: 12px;
+  line-height: normal;
+  color: #303030;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.po__nav__slide.selected::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #003159;
+  border-radius: 2px;
+  bottom: 0;
+  left: 0;
+}
+.po__tab__hscroll {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  padding: 0 16px;
+  margin: 16px 0 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.po__tab__list-item {
+  min-width: 170px;
+  max-width: 260px;
+  font-size: 12px;
+  line-height: normal;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.po__navSec .po__swiper .swiper-button-next {
+  position: absolute;
+  width: 48px;
+  height: 32px;
+  bottom: 0;
+  background-color: #fff;
+}
+.po__dd.show {
+display: block;
+}
+.po__navSec .po__swiper .swiper-slide.selected::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #003159;
+  border-radius: 2px;
+  left: 0;
+  bottom: 0;
+}
+.po__navSec .po__swiper .swiper-slide::before{
+  background-clip: padding-box;
+  transition: width 0.3s ease-in-out 0s;
+}
+.po__tabSec div[id^='buyTab'], .po__tabSec div[id^='rentTab'] {
+position: relative;
+padding-top: 26px;
+}
+</style>
+</head>
+<body>
+   <div class="po">
+      <div class="po__title-container">
+         <div class="po__title">Property Options in Top Cities for <span class="po__title__type" id="propFor">Rent</span></div>
+         <div class="po__dd" id="propForDd">
+            <div class="po__dd-item ">Buy</div>
+            <div class="po__dd-item selected">Rent</div>
+         </div>
+     </div>
+
+      <div class="po__container" id="propForBuy">
+          <div class="po__navSec">
+             <div class="po__swiper" id="poNavBuy">
+                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="buyNav" aria-disabled="false"></div>
+                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="buyNav" aria-disabled="true"></div>
+                <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                   <div class="swiper-wrapper po__swiper__wrapper" id="buyNav" aria-live="polite">
+                      <a class="swiper-slide po__swiper__slide swiper-slide-active selected" data-tab="buyTab-0"  href="" role="group" aria-label="1 / 13" style="margin-right: 30px;">Chhatarpur</a>
+                      <a class="swiper-slide po__swiper__slide swiper-slide-next " data-tab="buyTab-1"  href="" role="group" aria-label="2 / 13" style="margin-right: 30px;">Gurugram</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-2"  href="" role="group" aria-label="3 / 13" style="margin-right: 30px;">Noida</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-3"  href="" role="group" aria-label="4 / 13" style="margin-right: 30px;">Malvia Nagar</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-4"  href="" role="group" aria-label="5 / 13" style="margin-right: 30px;">Saket</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-5"  href="" role="group" aria-label="6 / 13" style="margin-right: 30px;">New Delhi</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-6"  href="" role="group" aria-label="7 / 13" style="margin-right: 30px;">Hauzkhas</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-7"  href="" role="group" aria-label="8 / 13" style="margin-right: 30px;">Okhla</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-8"  href="" role="group" aria-label="9 / 13" style="margin-right: 30px;">Kolkata</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-9"  href="" role="group" aria-label="10 / 13" style="margin-right: 30px;">Shastri Park</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-10"  href="" role="group" aria-label="11 / 13" style="margin-right: 30px;">Silumpur</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-11"  href="" role="group" aria-label="12 / 13" style="margin-right: 30px;">Batlahouse</a>
+                      <a class="swiper-slide po__swiper__slide" data-tab="buyTab-12"  href="" role="group" aria-label="13 / 13" style="margin-right: 30px;">Others</a>
+                   </div>
+                   <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+             </div>
+          </div>
+          <div class="po__tabSec">
+             <div class="po__swiper hidden" id="buyTab-0">
+                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-b1dd4dd82e4fadba" aria-disabled="false"></div>
+                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-b1dd4dd82e4fadba" aria-disabled="true"></div>
+                <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                   <div class="swiper-wrapper" id="swiper-wrapper-b1dd4dd82e4fadba" aria-live="polite">
+                      <div class="po__tab swiper-slide swiper-slide-active" style="width: 278px; margin-right: 40px;" role="group" aria-label="1 / 5">
+                         <a href="/flats-in-bangalore-for-sale-pppfs">
+                            <div class="po__tab__title">Flats in Chhatarpur</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/flats-in-whitefield-bangalore-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Whitefield</a>
+                            <a href="/flats-in-sarjapur-road-bangalore-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Sarjapur Road</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide swiper-slide-next" style="width: 278px; margin-right: 40px;" role="group" aria-label="2 / 5">
+                         <a href="/independent-house-for-sale-in-bangalore-pppfs">
+                            <div class="po__tab__title">House for Sale in Chhatarpur</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/independent-house-for-sale-in-whitefield-bangalore-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Whitefield</a>
+                            <a href="/independent-house-for-sale-in-hsr-layout-bangalore-pppfs" target="_blank" class="po__tab__list-item">House for Sale in HSR Layout</a>
+                            <a href="/independent-house-for-sale-in-jp-nagar-bangalore-pppfs" target="_blank" class="po__tab__list-item">House for Sale in JP Nagar</a>
+                            <a href="/independent-house-for-sale-in-bellandur-bangalore-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Bellandur</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="3 / 5">
+                         <a href="/property-for-sale-in-bangalore-pppfs">
+                            <div class="po__tab__title">Property in Chhatarpur</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/property-for-sale-in-whitefield-bangalore-pppfs" target="_blank" class="po__tab__list-item">Property in Whitefield</a>
+                            <a href="/property-for-sale-in-sarjapur-road-bangalore-pppfs" target="_blank" class="po__tab__list-item">Property in Sarjapur Road</a>
+                            <a href="/property-for-sale-in-electronic-city-bangalore-pppfs" target="_blank" class="po__tab__list-item">Property in Electronic City</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="4 / 5">
+                         <a href="/residential-plots-land-for-sale-in-bangalore-pppfs">
+                            <div class="po__tab__title">Plots in Chhatarpur</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/residential-plots-land-for-sale-in-whitefield-bangalore-pppfs" target="_blank" class="po__tab__list-item">Plots in Whitefield</a>
+                            <a href="/residential-plots-land-for-sale-in-sarjapur-road-bangalore-pppfs" target="_blank" class="po__tab__list-item">Plots in Sarjapur Road</a>
+                            <a href="/residential-plots-land-for-sale-in-yelahanka-bangalore-pppfs" target="_blank" class="po__tab__list-item">Plots in Yelahanka</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" role="group" aria-label="5 / 5" style="width: 278px; margin-right: 40px;">
+                         <a href="/villa-for-sale-in-bangalore-pppfs">
+                            <div class="po__tab__title">Villas in Chhatarpur</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/villa-for-sale-in-whitefield-bangalore-pppfs" target="_blank" class="po__tab__list-item">Villas in Whitefield</a>
+                            <a href="/villa-for-sale-in-sarjapur-road-bangalore-pppfs" target="_blank" class="po__tab__list-item">Villas in Sarjapur Road</a>
+                            <a href="/villa-for-sale-in-electronic-city-bangalore-pppfs" target="_blank" class="po__tab__list-item">Villas in Electronic City</a>
+                            <a href="/villa-for-sale-in-yelahanka-bangalore-pppfs" target="_blank" class="po__tab__list-item">Villas in Yelahanka</a>
+                         </div>
+                      </div>
+                   </div>
+                   <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+             </div>
+             <div class="po__swiper hidden" id="buyTab-1">
+                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-94e9b59de4fd1710b" aria-disabled="false"></div>
+                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-94e9b59de4fd1710b" aria-disabled="true"></div>
+                <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                   <div class="swiper-wrapper" id="swiper-wrapper-94e9b59de4fd1710b" aria-live="polite">
+                      <div class="po__tab swiper-slide swiper-slide-active" style="width: 278px; margin-right: 40px;" role="group" aria-label="1 / 5">
+                         <a href="/flats-in-mumbai-for-sale-pppfs">
+                            <div class="po__tab__title">Flats Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/flats-in-andheri-east-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Andheri East</a>
+                            <a href="/flats-in-chembur-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Chembur</a>
+                            <a href="/flats-in-borivali-west-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Borivali West</a>
+                            <a href="/flats-in-virar-west-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Virar West</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide swiper-slide-next" style="width: 278px; margin-right: 40px;" role="group" aria-label="2 / 5">
+                         <a href="/independent-house-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">House for Sale in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/independent-house-for-sale-in-bandra-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Bandra West</a>
+                            <a href="/independent-house-for-sale-in-chembur-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Chembur</a>
+                            <a href="/independent-house-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Andheri West</a>
+                            <a href="/independent-house-for-sale-in-borivali-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Borivali West</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="3 / 5">
+                         <a href="/property-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Property in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/property-for-sale-in-mira-road-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Mira Road</a>
+                            <a href="/property-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Andheri West</a>
+                            <a href="/property-for-sale-in-chembur-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Chembur</a>
+                            <a href="/property-for-sale-in-goregaon-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Goregaon East</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="4 / 5">
+                         <a href="/residential-plots-land-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Plots in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/residential-plots-land-for-sale-in-vasai-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Vasai</a>
+                            <a href="/residential-plots-land-for-sale-in-virar-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Virar</a>
+                            <a href="/residential-plots-land-for-sale-in-andheri-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Andheri East</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" role="group" aria-label="5 / 5" style="width: 278px; margin-right: 40px;">
+                         <a href="/villa-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Villas in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/villa-for-sale-in-juhu-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Juhu</a>
+                            <a href="/villa-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Andheri West</a>
+                            <a href="/villa-for-sale-in-andheri-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Andheri East</a>
+                         </div>
+                      </div>
+                   </div>
+                   <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+             </div>
+             <div class="po__swiper hidden" id="buyTab-2">
+                <div class="swiper-button-next" tabindex="2" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-94e9b59de4fd1710b" aria-disabled="false"></div>
+                <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-94e9b59de4fd1710b" aria-disabled="true"></div>
+                <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                   <div class="swiper-wrapper" id="swiper-wrapper-94e9b59de4fd1710b" aria-live="polite">
+                      <div class="po__tab swiper-slide swiper-slide-active" style="width: 278px; margin-right: 40px;" role="group" aria-label="1 / 5">
+                         <a href="/flats-in-mumbai-for-sale-pppfs">
+                            <div class="po__tab__title">Flats Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/flats-in-andheri-east-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Andheri East</a>
+                            <a href="/flats-in-chembur-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Chembur</a>
+                            <a href="/flats-in-borivali-west-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Borivali West</a>
+                            <a href="/flats-in-virar-west-mumbai-for-sale-pppfs" target="_blank" class="po__tab__list-item">Flats in Virar West</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide swiper-slide-next" style="width: 278px; margin-right: 40px;" role="group" aria-label="2 / 5">
+                         <a href="/independent-house-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">House for Sale in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/independent-house-for-sale-in-bandra-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Bandra West</a>
+                            <a href="/independent-house-for-sale-in-chembur-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Chembur</a>
+                            <a href="/independent-house-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Andheri West</a>
+                            <a href="/independent-house-for-sale-in-borivali-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">House for Sale in Borivali West</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="3 / 5">
+                         <a href="/property-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Property in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/property-for-sale-in-mira-road-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Mira Road</a>
+                            <a href="/property-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Andheri West</a>
+                            <a href="/property-for-sale-in-chembur-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Chembur</a>
+                            <a href="/property-for-sale-in-goregaon-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Property in Goregaon East</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="4 / 5">
+                         <a href="/residential-plots-land-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Plots in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/residential-plots-land-for-sale-in-vasai-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Vasai</a>
+                            <a href="/residential-plots-land-for-sale-in-virar-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Virar</a>
+                            <a href="/residential-plots-land-for-sale-in-andheri-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Plots in Andheri East</a>
+                         </div>
+                      </div>
+                      <div class="po__tab swiper-slide" role="group" aria-label="5 / 5" style="width: 278px; margin-right: 40px;">
+                         <a href="/villa-for-sale-in-mumbai-pppfs">
+                            <div class="po__tab__title">Villas in Gurugram</div>
+                         </a>
+                         <div class="po__tab__list">
+                            <a href="/villa-for-sale-in-juhu-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Juhu</a>
+                            <a href="/villa-for-sale-in-andheri-west-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Andheri West</a>
+                            <a href="/villa-for-sale-in-andheri-east-mumbai-pppfs" target="_blank" class="po__tab__list-item">Villas in Andheri East</a>
+                         </div>
+                      </div>
+                   </div>
+                   <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                </div>
+             </div>
+          </div>
+       </div>
+      <div class="po__container " id="propForRent">
+         <div class="po__navSec">
+            <div class="po__swiper" id="poNavRent">
+               <!-- <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="rentNav" aria-disabled="false"></div> -->
+               <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="rentNav" aria-disabled="true"></div>
+               <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                  <div class="swiper-wrapper po__swiper__wrapper" id="rentNav" aria-live="polite">
+                     <a class="swiper-slide po__swiper__slide selected swiper-slide-active" data-tab="rentTab-0"  href="" role="group" aria-label="1 / 13" style="margin-right: 30px;">Chhatarpur</a>
+                     <a class="swiper-slide po__swiper__slide swiper-slide-next" data-tab="rentTab-1"  href="" role="group" aria-label="2 / 13" style="margin-right: 30px;">Gurugram</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-2"  href="" role="group" aria-label="3 / 13" style="margin-right: 30px;">Noida</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-3"  href="" role="group" aria-label="4 / 13" style="margin-right: 30px;">Saket</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-4"  href="" role="group" aria-label="5 / 13" style="margin-right: 30px;">Malvia Nagar</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-5"  href="" role="group" aria-label="6 / 13" style="margin-right: 30px;">Hauzkhas</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-6"  href="" role="group" aria-label="7 / 13" style="margin-right: 30px;">Dwarka</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-9"  href="" role="group" aria-label="10 / 13" style="margin-right: 30px;">Okhla</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-10"  href="" role="group" aria-label="11 / 13" style="margin-right: 30px;">Noida-rent</a>
+                     <a class="swiper-slide po__swiper__slide" data-tab="rentTab-12"  href="" role="group" aria-label="13 / 13" style="margin-right: 30px;">Others-rent</a>
+                  </div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+               </div>
+            </div>          
+         </div>
+        
+         <div class="po__tabSec">
+            <div class="po__swiper hidden show" id="rentTab-0">
+               <!-- <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-3547b91021083a14d" aria-disabled="false"></div> -->
+               <div class="swiper-button-prev swiper-button-disabled" tabindex="-1" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-3547b91021083a14d" aria-disabled="true"></div>
+               <div class="swiper-container po__swiper__container swiper-container-initialized swiper-container-horizontal">
+                  <div class="swiper-wrapper" id="swiper-wrapper-3547b91021083a14d" aria-live="polite">
+                     <div class="po__tab swiper-slide swiper-slide-active" style="width: 278px; margin-right: 40px;" role="group" aria-label="1 / 6">
+                        <a href="/flats-for-rent-in-bangalore-pppfr">
+                           <div class="po__tab__title">Flat for Rent in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/flats-for-rent-in-sarjapur-road-bangalore-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Sarjapur Road</a>
+                           <a href="/flats-for-rent-in-jp-nagar-bangalore-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in JP Nagar</a>
+                           <a href="/flats-for-rent-in-yelahanka-bangalore-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Yelahanka</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide swiper-slide-next" style="width: 278px; margin-right: 40px;" role="group" aria-label="2 / 6">
+                        <a href="/independent-house-for-rent-in-bangalore-pppfr">
+                           <div class="po__tab__title">House for Rent in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/independent-house-for-rent-in-electronic-city-bangalore-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Electronic City</a>
+                           <a href="/independent-house-for-rent-in-k-r-puram-bangalore-pppfr" target="_blank" class="po__tab__list-item">House for Rent in KR Puram</a>
+                           <a href="/independent-house-for-rent-in-yelahanka-bangalore-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Yelahanka</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="3 / 6">
+                        <a href="/property-for-rent-in-bangalore-pppfr">
+                           <div class="po__tab__title">Property for Rent in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/property-for-rent-in-bellandur-bangalore-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Bellandur</a>
+                           <a href="/property-for-rent-in-nandi-hills-bangalore-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Nandi Hills</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="4 / 6">
+                        <a href="/pg-in-bangalore-pppfr">
+                           <div class="po__tab__title">PG in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/pg-in-koramangala-bangalore-pppfr" target="_blank" class="po__tab__list-item">PG in Koramangala</a>
+                           <a href="/pg-in-btm-layout-stage-2-bangalore-pppfr" target="_blank" class="po__tab__list-item">PG in BTM Layout Stage 2</a>
+                           <a href="/pg-in-bommanahalli-bangalore-pppfr" target="_blank" class="po__tab__list-item">PG in Bommanahalli</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide" style="width: 278px; margin-right: 40px;" role="group" aria-label="5 / 6">
+                        <a href="/shops-for-rent-in-bangalore-pppfr">
+                           <div class="po__tab__title">Shop for Rent in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/shops-for-rent-in-yelahanka-new-town-bangalore-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Yelahanka New Town</a>
+                           <a href="/shops-for-rent-in-basaveshwar-nagar-bangalore-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Basaveshwar Nagar</a>
+                           <a href="/shops-for-rent-in-hsr-layout-bangalore-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in HSR Layout</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide" role="group" aria-label="6 / 6" style="width: 278px; margin-right: 40px;">
+                        <a href="/single-room-for-rent-in-bangalore-pppfr">
+                           <div class="po__tab__title">Room for Rent in Chhatarpur</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/single-room-for-rent-in-koramangala-bangalore-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Koramangala</a>
+                           <a href="/single-room-for-rent-in-varthur-bangalore-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Varthur</a>
+                           <a href="/single-room-for-rent-in-rajaji-nagar-bangalore-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Rajaji Nagar</a>
+                        </div>
+                     </div>
+                  </div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+               </div>
+            </div>
+            <div class="po__swiper hidden"  id="rentTab-1">
+               <div class="swiper-button-next"></div>
+               <div class="swiper-button-prev"></div>
+               <div class="swiper-container po__swiper__container">
+                  <div class="swiper-wrapper">
+                     <div class="po__tab swiper-slide">
+                        <a href="/flats-for-rent-in-mumbai-pppfr">
+                           <div class="po__tab__title">Flat for Rent in <br> Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/flats-for-rent-in-malad-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Malad West</a>
+                           <a href="/flats-for-rent-in-borivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Borivali West</a>
+                           <a href="/flats-for-rent-in-goregaon-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Goregaon West</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide">
+                        <a href="/independent-house-for-rent-in-mumbai-pppfr">
+                           <div class="po__tab__title">House for Rent in <br> Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/independent-house-for-rent-in-powai-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Powai</a>
+                           <a href="/independent-house-for-rent-in-chembur-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Chembur</a>
+                           <a href="/independent-house-for-rent-in-goregaon-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Goregaon East</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide">
+                        <a href="/property-for-rent-in-mumbai-pppfr">
+                           <div class="po__tab__title">Property for Rent in <br> Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/property-for-rent-in-goregaon-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Goregaon East</a>
+                           <a href="/property-for-rent-in-borivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Borivali West</a>
+                           <a href="/property-for-rent-in-andheri-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Andheri West</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide">
+                        <a href="/pg-in-mumbai-pppfr">
+                           <div class="po__tab__title">PG in Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/pg-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Bhandup West</a>
+                           <a href="/pg-in-dadar-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Dadar West</a>
+                           <a href="/pg-in-goregaon-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Goregaon West</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide">
+                        <a href="/shops-for-rent-in-mumbai-pppfr">
+                           <div class="po__tab__title">Shop for Rent in <br> Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/shops-for-rent-in-kandivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Kandivali West</a>
+                           <a href="/shops-for-rent-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Bhandup West</a>
+                           <a href="/shops-for-rent-in-andheri-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Andheri East</a>
+                        </div>
+                     </div>
+                     <div class="po__tab swiper-slide">
+                        <a href="/single-room-for-rent-in-mumbai-pppfr">
+                           <div class="po__tab__title">Room for Rent in <br> Gurugram</div>
+                        </a>
+                        <div class="po__tab__list">
+                           <a href="/single-room-for-rent-in-vikhroli-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Vikhroli East</a>
+                           <a href="/single-room-for-rent-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Bhandup West</a>
+                           <a href="/single-room-for-rent-in-andheri-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Andheri West</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="po__swiper hidden"  id="rentTab-2">
+             <div class="swiper-button-next"></div>
+             <div class="swiper-button-prev"></div>
+             <div class="swiper-container po__swiper__container">
+                <div class="swiper-wrapper">
+                   <div class="po__tab swiper-slide">
+                      <a href="/flats-for-rent-in-mumbai-pppfr">
+                         <div class="po__tab__title">Flat for Rent in <br>Noida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/flats-for-rent-in-malad-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Malad West</a>
+                         <a href="/flats-for-rent-in-borivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Borivali West</a>
+                         <a href="/flats-for-rent-in-goregaon-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Flat for Rent in Goregaon West</a>
+                      </div>
+                   </div>
+                   <div class="po__tab swiper-slide">
+                      <a href="/independent-house-for-rent-in-mumbai-pppfr">
+                         <div class="po__tab__title">House for Rent in <br>Noida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/independent-house-for-rent-in-powai-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Powai</a>
+                         <a href="/independent-house-for-rent-in-chembur-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Chembur</a>
+                         <a href="/independent-house-for-rent-in-goregaon-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">House for Rent in Goregaon East</a>
+                      </div>
+                   </div>
+                   <div class="po__tab swiper-slide">
+                      <a href="/property-for-rent-in-mumbai-pppfr">
+                         <div class="po__tab__title">Property for Rent in <br>Noida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/property-for-rent-in-goregaon-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Goregaon East</a>
+                         <a href="/property-for-rent-in-borivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Borivali West</a>
+                         <a href="/property-for-rent-in-andheri-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Property for Rent in Andheri West</a>
+                      </div>
+                   </div>
+                   <div class="po__tab swiper-slide">
+                      <a href="/pg-in-mumbai-pppfr">
+                         <div class="po__tab__title">PG inNoida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/pg-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Bhandup West</a>
+                         <a href="/pg-in-dadar-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Dadar West</a>
+                         <a href="/pg-in-goregaon-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">PG in Goregaon West</a>
+                      </div>
+                   </div>
+                   <div class="po__tab swiper-slide">
+                      <a href="/shops-for-rent-in-mumbai-pppfr">
+                         <div class="po__tab__title">Shop for Rent in <br>Noida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/shops-for-rent-in-kandivali-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Kandivali West</a>
+                         <a href="/shops-for-rent-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Bhandup West</a>
+                         <a href="/shops-for-rent-in-andheri-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Shop for Rent in Andheri East</a>
+                      </div>
+                   </div>
+                   <div class="po__tab swiper-slide">
+                      <a href="/single-room-for-rent-in-mumbai-pppfr">
+                         <div class="po__tab__title">Room for Rent in <br>Noida</div>
+                      </a>
+                      <div class="po__tab__list">
+                         <a href="/single-room-for-rent-in-vikhroli-east-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Vikhroli East</a>
+                         <a href="/single-room-for-rent-in-bhandup-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Bhandup West</a>
+                         <a href="/single-room-for-rent-in-andheri-west-mumbai-pppfr" target="_blank" class="po__tab__list-item">Room for Rent in Andheri West</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+         </div>
+      </div>
+   </div>
+  <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <div><img src="assets/img/shifthoja_logo.png"></div>
+            <div class="para-det">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Quas odit odio numquam animi ducimus sit ex accusantium, 
+              laborum ratione eligendi aperiam in optio asperiores autem 
+              doloremque, voluptatem, labore at laboriosam!</div>
+          </div>
+          <div class="footer-links">
+            <ul class="footer-menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Privacy-policy</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <ul class="social-icons">
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Hidayat. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+   <script>
+      const propFor = document.getElementById('propFor');
+      const dropdown = document.getElementById('propForDd');
+      const buyOption = document.querySelector('.po__dd-item:not(.selected)');
+      const rentOption = document.querySelector('.po__dd-item.selected');
+      const propForBuy = document.getElementById('propForBuy');
+      const propForRent = document.getElementById('propForRent');
+  
+      // Set Rent as default selection
+      rentOption.classList.add('selected');
+      propFor.textContent = rentOption.textContent;
+      propForBuy.style.display = 'none'; // Hide Buy content initially
+  
+      if (propFor && dropdown && buyOption && rentOption && propForBuy && propForRent) {
+          propFor.addEventListener('click', () => {
+              dropdown.classList.toggle('show');
+          });
+  
+          buyOption.addEventListener('click', () => {
+              rentOption.classList.remove('selected');
+              buyOption.classList.add('selected');
+              dropdown.classList.remove('show');
+              propFor.textContent = buyOption.textContent;
+              propForBuy.style.display = 'block'; // Show Buy content
+              propForRent.style.display = 'none'; // Hide Rent content
+          });
+  
+          rentOption.addEventListener('click', () => {
+              buyOption.classList.remove('selected');
+              rentOption.classList.add('selected');
+              dropdown.classList.remove('show');
+              propFor.textContent = rentOption.textContent;
+              propForBuy.style.display = 'none'; // Hide Buy content
+              propForRent.style.display = 'block'; // Show Rent content
+          });
+      }
+  </script>
+
+
+<script>
+const swiperTabs = document.querySelectorAll('.swiper-slide.po__swiper__slide');
+const tabContainers = document.querySelectorAll('.po__tabSec > div');
+
+// Function to handle tab click event
+function handleTabClick(event) {
+ event.preventDefault();
+ const selectedTab = event.target;
+ const selectedTabId = selectedTab.getAttribute('data-tab');
+
+ // Hide all tab containers
+ tabContainers.forEach(container => {
+     container.style.display = 'none';
+ });
+
+ // Show the matching tab container based on the selected tab's data-tab attribute
+ const matchingContainer = document.getElementById(selectedTabId);
+ if (matchingContainer) {
+     matchingContainer.style.display = 'block';
+ }
+
+ // Remove 'selected' class from all tabs
+ swiperTabs.forEach(tab => tab.classList.remove('selected'));
+
+ // Add 'selected' class to the selected tab
+ selectedTab.classList.add('selected');
+}
+
+// Add click event listener to each tab
+swiperTabs.forEach(tab => {
+ tab.addEventListener('click', handleTabClick);
+});
+
+// Function to set initial tab based on location selection
+function setInitialTab(location) {
+ let initialTabId;
+
+ if (location === 'Bangalore') {
+     initialTabId = 'buyTab-0'; // Show Bangalore tab
+ } else if (location === 'Mumbai') {
+     initialTabId = 'rentTab-0'; // Show Mumbai tab
+ }
+
+ const initialTab = document.querySelector(`.swiper-slide.po__swiper__slide[data-tab="${initialTabId}"]`);
+ if (initialTab) {
+     initialTab.click();
+ }
+}
+
+
+// Simulate location selection (Bangalore or Mumbai) and set initial tab
+const selectedLocation = 'Mumbai'; // Change to 'Bangalore' or 'Mumbai'
+setInitialTab(selectedLocation);
+</script> 
+</body>
+</html>

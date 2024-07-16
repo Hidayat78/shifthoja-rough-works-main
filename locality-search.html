@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Roboto", sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Styles for mobile view */
+        @media only screen and (max-width: 600px) {
+
+            .container-mobile {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                background-color: #f0f0f0;
+            }
+
+            .back-btn {
+                color: #000000;
+                font-size: 17px;
+            }
+
+            .city-text {
+                font-size: 14px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .change-city-btn {
+                font-size: 14px;
+                color: #000000;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+
+        .back-btn-city-text {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .search-box-container {
+            border-radius: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e9e1e1;
+            margin-top: 1.5px;
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+
+        .search-box-container {
+            position: relative;
+        }
+
+        .search-input {
+            border-radius: 20px 0px 0px 20px;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            height: 40px;
+            padding: 10px;
+            padding-right: 40px;
+        }
+
+        .suggestion-list {
+            color: black;
+            background-color: #ffffff;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            border: none;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-left: 0px !important;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .search-icon-img {
+            float: right;
+            position: relative;
+            right: -0.5px;
+            top: -1px;
+            border-radius: 3px;
+            height: 40px;
+        }
+
+        .search-icon-img {
+
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .icon-glass {
+            margin-left: -11px;
+            margin-top: 3px;
+        }
+
+        .icon-glass i {
+            font-size: 20px;
+            color: #003159;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .container-mobile-search-box-container {
+            background-color: #f0f0f0;
+            height: 140px;
+        }
+
+        .suggestion-list li {
+            font-size: 13px;
+            padding-top: 5px;
+            border-bottom: 1px solid #0000003b;
+            padding-bottom: 5px;
+        }
+
+        .suggestion-list li:first-child {
+            border-top: 1px solid #0000003b;
+        }
+
+        .suggestion-list li:hover {
+            color: white;
+            background-color: #003159;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+        }
+
+        .popular-heading {
+            margin-left: 40px;
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .locality-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .locality-name {
+            font-size: 13px;
+            font-weight: bold;
+            margin-left: 0px;
+        }
+
+        .locality-price {
+            font-size: 13px;
+            color: #007bff;
+            margin-right: 25px;
+        }
+
+        .bi-plus-circle {
+            color: #007bff;
+        }
+
+
+
+        .locality-containeroverflow {
+            overflow-y: auto;
+            height: 350px;
+            margin-left: 30px;
+        }
+
+        .search-box-container-para p {
+            margin-left: 40px;
+        }
+
+        .search-box-container-para h6 {
+            margin-right: 45px;
+        }
+
+        .changecity-location {
+            display: flex;
+            justify-content: space-between;
+        }
+        .xyz-buy.active,
+  .xyz-rent.active {
+
+    background-color: transparent; 
+    border-bottom: 4px solid green; 
+    color: #000000; 
+    border-radius: 0px;
+   
+  }
+    </style>
+</head>
+
+<body>
+    <div class="container-mobile-search-box-container">
+        <div class="container-mobile">
+            <div class="back-btn-city-text">
+                <div class="back-btn"> <i class="bi bi-arrow-left"></i></div>
+                <!-- <div class="city-text">You're searching in Delhi</div> -->
+            </div>
+            <!-- <div class="change-city-btn">Change City</div> -->
+        </div>
+        <div class="search-box-container-para">
+            <div class="changecity-location">
+                <p>You in Delhi</p>
+                <h6>Change city</h6>
+            </div>
+            <div class="search-box-container">
+                <div class="search-list-mob">
+                    <input type="text" class="search-input " placeholder="Search by locality">
+                    <ul class="suggestion-list">
+                        <!-- <li>Hidyatttt</li>
+                        <li>Hidyatttt</li>
+                        <li>Hidyatttt</li> -->
+                    </ul>
+                    <div class="search-icon-img">
+                        <div class="icon-glass">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+         
+        </div>
+        <ul class="nav nav-pills rent-buy-commercialt mb-3" id="pills-tab" role="tablist" wire:ignore>
+            <li class="nav-item" role="presentation" >
+              <button class="nav-link active xyz-buy" style="background-color: transparent;  color: black;" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true" onclick="toggleActive('sell')"><b>Buy</b></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link xyz-rent" style="background-color: transparent; color: black; font-size: 18px;"  id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" onclick="toggleActive('rent')" >Rent</button>
+            </li>
+        </ul>
+    </div>
+    <div class="popular-heading">Popular Localities <img src="assets/img/mob-service/place.png"
+            style="height: 25px; width: 25px; margin-left: 10px;"></div>
+
+    <!-- Locality and price container -->
+    <div class="locality-containeroverflow">
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+        <div class="locality-container">
+            <div class="locality-name"><span style="margin-right: 5px;"><i
+                        class="bi bi-plus-circle"></i></span>Chhatarpur</div>
+            <div class="locality-price">5.7 K props</div>
+        </div>
+    </div>
+    <section>
+        
+    </section>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link Slick Slider JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Code injected by live-server -->
+
+</body>
+
+</html>

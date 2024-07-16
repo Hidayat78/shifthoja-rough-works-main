@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+  data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+  data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ShiftHoja</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+    rel="stylesheet" defer>
+  <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/style.css" />
+  <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+  <link rel="stylesheet" defer
+    href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+  <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+  <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+  <!-- Livewire Styles -->
+  <style>
+    [wire\:loading][wire\:loading],
+    [wire\:loading\.delay][wire\:loading\.delay],
+    [wire\:loading\.inline-block][wire\:loading\.inline-block],
+    [wire\:loading\.inline][wire\:loading\.inline],
+    [wire\:loading\.block][wire\:loading\.block],
+    [wire\:loading\.flex][wire\:loading\.flex],
+    [wire\:loading\.table][wire\:loading\.table],
+    [wire\:loading\.grid][wire\:loading\.grid],
+    [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+      display: none;
+    }
+
+    [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+    [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+    [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+    [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+    [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+    [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+    [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+    [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+      display: none;
+    }
+
+    [wire\:offline][wire\:offline] {
+      display: none;
+    }
+
+    [wire\:dirty]:not(textarea):not(input):not(select) {
+      display: none;
+    }
+
+    :root {
+      --livewire-progress-bar-color: #2299dd;
+    }
+
+    [x-cloak] {
+      display: none !important;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+  <!-- otp  https://codepen.io/muskkkannnn/pen/qBLbNQO -->
+  <section class="section-py bg-body first-section-pt">
+    <div class="container">
+      <div class="card px-3">
+        <div class="row">
+          <div class="col-lg-7 card-body border-end">
+            <h4 class="mb-2">Checkout</h4>
+            <p class="mb-0">All plans include 40+ advanced tools and features to boost your product. <br>
+              Choose the best plan to fit your needs.</p>
+            <div class="row py-4 my-2">
+              <div class="col-md mb-md-0 mb-2">
+                <div class="form-check custom-option custom-option-basic checked">
+                  <label
+                    class="form-check-label custom-option-content form-check-input-payment d-flex gap-3 align-items-center"
+                    for="customRadioVisa">
+                    <input name="customRadioTemp" class="form-check-input" type="radio" value="credit-card"
+                      id="customRadioVisa" checked="">
+                    <span class="custom-option-body">
+                      <img
+                        src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/payments/visa-light.png"
+                        alt="visa-card" width="58" data-app-light-img="icons/payments/visa-light.png"
+                        data-app-dark-img="icons/payments/visa-dark.png">
+                      <span class="ms-3"> Card</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md mb-md-0 mb-2">
+                <div class="form-check custom-option custom-option-basic">
+                  <label
+                    class="form-check-label custom-option-content form-check-input-payment d-flex gap-3 align-items-center"
+                    for="customRadioPaypal">
+                    <input name="customRadioTemp" class="form-check-input" type="radio" value="paypal"
+                      id="customRadioPaypal">
+                    <span class="custom-option-body">
+                      <img
+                        src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/payments/paypal-light.png"
+                        alt="paypal" width="58" data-app-light-img="icons/payments/paypal-light.png"
+                        data-app-dark-img="icons/payments/paypal-dark.png">
+                      <span class="ms-3">Paypal</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-md mb-md-0 mb-2">
+                <div class="form-check custom-option custom-option-basic">
+                  <label
+                    class="form-check-label custom-option-content form-check-input-payment d-flex gap-3 align-items-center"
+                    for="customRadioPaypal">
+                    <input name="customRadioTemp" class="form-check-input" type="radio" value="paypal"
+                      id="customRadioPaypal">
+                    <span class="custom-option-body">
+                      <img
+                        src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/payments/paypal-light.png"
+                        alt="paypal" width="58" data-app-light-img="icons/payments/paypal-light.png"
+                        data-app-dark-img="icons/payments/paypal-dark.png">
+                      <span class="ms-3">Paypal</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <h4 class="mt-2 mb-4">Billing Details</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="billings-email">Email Address</label>
+                  <input type="email" id="billings-email" class="form-control" placeholder="john.doe@gmail.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="billings-password">Password</label>
+                  <input type="password" id="billings-password" class="form-control" placeholder="Password">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="billings-country">Locality</label>
+                  <select id="billings-country" class="form-select" data-allow-clear="true">
+                    <option value="">Select</option>
+                    <option value="Chhatarpur">Chhatarpur</option>
+                    <option value="Saket">Saket</option>
+                    <option value="Malvia Nagar">Malvia Nagar</option>
+                    <option value="Okhla">Okhla</option>
+                    <option value="Gurugram">Gurugram</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Bawana">Bawana</option>
+                    <option value="Mundka">Mundka</option>
+                    <option value="Batlahouse">Batlahouse</option>
+                    <option value="Saheen bhag">Saheen bhag</option>
+                    <option value="Dwarka">Dwarka</option>
+                    <option value="Shastri">Shastri</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="billings-zip">Billing Zip / Postal Code</label>
+                  <input type="text" id="billings-zip" class="form-control billings-zip-code"
+                    placeholder="Zip / Postal Code">
+                </div>
+              </div>
+            </form>
+            <div id="form-credit-card">
+              <h4 class="mt-4 pt-2">Credit Card Info</h4>
+              <form>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="billings-card-num">Card number</label>
+                    <div class="input-group input-group-merge">
+                      <input type="text" id="billings-card-num" class="form-control billing-card-mask"
+                        placeholder="7465 8374 5837 5067" aria-describedby="paymentCard">
+                      <span class="input-group-text cursor-pointer p-1" id="paymentCard"><span
+                          class="card-type"></span></span>
+
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label" for="billings-card-name">Name</label>
+                    <input type="text" id="billings-card-name" class="form-control" placeholder="John Doe">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label" for="billings-card-date">EXP. Date</label>
+                    <input type="text" id="billings-card-date" class="form-control billing-expiry-date-mask"
+                      placeholder="MM/YY">
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label" for="billings-card-cvv">CVV</label>
+                    <input type="text" id="billings-card-cvv" class="form-control billing-cvv-mask" maxlength="3"
+                      placeholder="965">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-5 card-body">
+            <h4 class="mb-2">Order Summary</h4>
+            <p class="pb-2 mb-0">It can help you manage and service orders before,<br> during and after fulfilment.</p>
+            <div class="bg-lighter p-4 rounded mt-4">
+              <p>A simple start for everyone</p>
+              <div class="d-flex align-items-center">
+                <h1 class="text-heading display-3">$59.99</h1>
+                <sub>/month</sub>
+              </div>
+              <div class="d-grid">
+                <button type="button" data-bs-target="#pricingModal" data-bs-toggle="modal"
+                  class="btn btn-label-primary">Change Plan</button>
+              </div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <p class="mb-0">Subtotal</p>
+                <h6 class="mb-0">$85.99</h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <p class="mb-0">Tax</p>
+                <h6 class="mb-0">$4.99</h6>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between align-items-center mt-3 pb-1">
+                <p class="mb-0">Total</p>
+                <h6 class="mb-0">$90.98</h6>
+              </div>
+              <div class="d-grid mt-3">
+                <button class="btn btn-success">
+                  <span class="me-2">Proceed with Payment</span>
+                  <i class="bx bx-right-arrow-alt scaleX-n1-rtl"></i>
+                </button>
+              </div>
+
+              <p class="mt-4 pt-2">By continuing, you accept to our Terms of Services and Privacy Policy. Please note
+                that payments are non-refundable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/js/config.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+  <script
+    src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+  <script src="https://www.shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+  <!-- Livewire Scripts -->
+  <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="uUXtYDLlmcUWrfC2UXWqIu9YilunAePkForlOQDP"
+    data-update-uri="/livewire/update" data-navigate-once="true"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+</body>
+
+</html>

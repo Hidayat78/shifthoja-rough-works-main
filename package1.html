@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+  --primary-color: #BC1E4A;
+  --body-bg: #16181A;
+  --text-color: #fff;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--body-bg);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.chosen-plan {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+  padding: 1.5rem 0;
+  background-color: var(--primary-color);
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+}
+
+.chosen-plan span:first-of-type {
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 400;
+}
+
+.chosen-plan .plan-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding-inline: 10px;
+  margin-block: 3rem;
+}
+
+.bill-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  gap: 10px;
+}
+
+.bill-type #bill-toggle {
+  display: none;
+}
+
+.bill-type #bill-toggle + label {
+  display: block;
+  width: 60px;
+  height: 32px;
+  border-radius: 20px;
+  background-color: var(--primary-color);
+  position: relative;
+  cursor: pointer;
+}
+
+.bill-type #bill-toggle:checked + label::after {
+  transform: translate(0, -50%);
+}
+
+.bill-type #bill-toggle + label::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100%, -50%);
+  transition: transform 0.2s;
+}
+
+.pricing-table {
+  max-width: 500px;
+  padding-inline: 5vw;
+  margin-inline: auto;
+  margin-block: 40px;
+}
+
+@media screen and (min-width: 920px) {
+  .pricing-table {
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.pricing-table .plan {
+  background-color: #22262C;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 920px) {
+  .pricing-table .plan:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+}
+
+.pricing-table .plan .name {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.pricing-table .plan .price {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.pricing-table .plan .price sub {
+  position: static;
+  font-size: 1.5rem;
+}
+
+.pricing-table .plan.enterprise .price {
+  font-size: 2.5rem;
+}
+
+.pricing-table .plan .maus-options {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-inline: auto;
+}
+
+.pricing-table .plan .maus-options select {
+  background-color: transparent;
+  color: #fff;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.pricing-table .plan .maus-options select + span {
+  font-size: 0.875rem;
+  color: var(--primary-color);
+}
+
+.pricing-table .plan .features {
+  margin-block: 30px;
+}
+
+.pricing-table .plan .features li {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.pricing-table .plan .features li::marker {
+  color: var(--primary-color);
+}
+
+.pricing-table .plan .choose-btn {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin-inline: auto;
+  margin-top: auto;
+  padding: 1rem 1rem;
+  font-weight: 600;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.pricing-table .plan .choose-btn:hover,
+.pricing-table .plan .choose-btn.active {
+  background-color: var(--primary-color);
+}
+
+  </style>
+</head>
+<body>
+  
+  <h1 class="page-title">
+    Choose a plan
+  </h1>
+  
+  <div class="bill-type">
+    <div class="monthly">Billed monthly</div>
+    <div class="bill-toggle">
+      <input type="checkbox" id="bill-toggle" checked>
+      <label for="bill-toggle"></label>
+    </div>
+    <div class="annually">Billed anually</div>
+  </div>
+  
+  <div class="pricing-table">
+    <div class="plan starter">
+      <h2 class="name">Silver Agent Plus</h2>
+      <div class="price">₹19899/</div>
+      <ul class="features">
+        <li>75 Properties</li>
+        <li>Upto 5X</li>
+        <li>Medium Position</li>
+        <li>Unlimited</li>
+        <li>Auto Refresh (every 3 days)</li>
+      </ul>
+      <button class="choose-btn" type="button">
+        Choose Plan
+      </button>
+    </div>
+    
+    <div class="plan pro">
+      <h2 class="name">Gold Agent Plus</h2>
+      <div class="price">₹19899 <sub>3month</sub></div>
+      <!-- <div class="maus-options">
+        <select name="" id="">
+          <option value="">2500 MAUs</option>
+          <option value="">5000 MAUs</option>
+          <option value="">10000 MAUs</option>
+        </select>
+        <span>Monthly active users</span>
+      </div> -->
+      <ul class="features">
+        <li>100 Properties</li>
+        <li>Upto 10X</li>
+        <li>High Position</li>
+        <li>Unlimited</li>
+        <li>Auto Refresh (every 3 days)</li>
+        <li>Verified Agent Tag</li>
+      </ul>
+      <button class="choose-btn active" type="button">
+        Choose Plan
+      </button>
+    </div>
+    
+    <div class="plan pro">
+      <h2 class="name">Premium Agent Plus</h2>
+      <div class="price">₹34899 <sub>3month</sub></div>
+
+      <ul class="features">
+        <li>150 Properties</li>
+        <li>Upto 15X</li>
+        <li>Featured Position</li>
+        <li>Unlimited</li>
+        <li>Certified Agent Tag</li>
+        <li>Auto Refresh (every 3 days)</li>
+        <li>Verified Agent Tag</li>
+      </ul>
+      <button class="choose-btn active" type="button">
+        Choose Plan
+      </button>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Pricing Table bootstrap 5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        .pricing-area {
+	padding: 3% 0;
+	text-align: center;
+}
+.single-pricing {
+	background: #fcfcfc;
+	box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+	transition: all .5s ease;
+}
+.deal-type {
+	background: linear-gradient(to right, #003159, #0f70c0);
+    padding: 10px 0;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.deal-amount {
+	clip-path: polygon(0 0, 100% 0%, 100% 60%, 51% 100%, 0 60%);
+	background: linear-gradient(to right, #003159, #0f70c0);
+	padding: 25px 0;
+	color: #fff;
+}
+.price .money {
+	font-size: 30px;
+	font-weight: 900;
+}
+.price .money sup {
+	font-size: 30px;
+	font-weight: 500;
+}
+.single-deal {
+	padding: 15px 0;
+	list-style: none;
+}
+.single-deal li {
+    font-size: 14px;
+    font-family: montserrat;
+    padding: 5px 0;
+}
+.btn {
+	background: linear-gradient(to right, #003159, #0f70c0);
+	border: none;
+	font-weight: 900;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+	padding: 10px 50px;
+	color: #fff;
+}
+.single-pricing:hover {
+	transform: scale(1.05);
+}
+@media (max-width: 767px) {
+	.single-pricing {
+		margin-bottom: 30px;
+	}
+}
+
+    </style>
+</head>
+<body>
+    <div class="pricing-area">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-pricing">
+                    <div class="deal-type">Silver Agent Plus</div>
+                    <div class="deal-amount">
+                        <div class="price">                            
+                            <span class="money"><sup>₹</sup>19899</span>
+                        </div>
+                        <h4>3month</h4>
+                    </div>
+                    <ul class="single-deal">
+                      <li>75 Properties</li>
+                      <li>Upto 5X</li>
+                      <li>Medium Position</li>
+                      <li>Unlimited</li>
+                      <li>Auto Refresh (every 3 days)</li>
+                    </ul>
+                    <a class="btn">sign up</a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-pricing">
+                    <div class="deal-type">Gold Agent Plus</div>
+                    <div class="deal-amount">
+                        <div class="price">                            
+                            <span class="money"><sup>₹</sup>25899</span>
+                        </div>
+                        <h4>3month</h4>
+                    </div>
+                    <ul class="single-deal">
+                      <li>100 Properties</li>
+                      <li>Upto 10X</li>
+                      <li>High Position</li>
+                      <li>Unlimited</li>
+                      <li>Auto Refresh (every 3 days)</li>
+                      <li>Verified Agent Tag</li>
+                    </ul>
+                    <a class="btn">sign up</a>
+                </div>
+            </div>
+            <div class="col-lg-4">   
+                <div class="single-pricing">
+                    <div class="deal-type">Premium Agent Plus</div>
+                    <div class="deal-amount">
+                        <div class="price">                            
+                            <span class="money"><sup>₹</sup>34899</span>
+                        </div>
+                        <h4>3month</h4>
+                    </div>
+                    <ul class="single-deal">
+                        <li>150 Properties</li>
+                        <li>Upto 15X</li>
+                        <li>Featured Position</li>
+                        <li>Unlimited</li>
+                        <li>Certified Agent Tag</li>
+                        <li>Auto Refresh (every 3 days)</li>
+                        <li>Verified Agent Tag</li>
+                    </ul>
+                    <a class="btn">sign up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Pricing Tables | Hidayat</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper{
+  max-width: 1090px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.wrapper .table{
+  background: #fff;
+  width: calc(33% - 20px);
+  padding: 30px 30px;
+  position: relative;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.table .price-section{
+  display: flex;
+  justify-content: center;
+}
+.table .price-area{
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  padding: 2px;
+}
+.price-area .inner-area{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  line-height: 117px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.price-area .inner-area .text{
+  font-size: 25px;
+  font-weight: 400;
+  position: absolute;
+  top: -10px;
+  left: 17px;
+}
+.price-area .inner-area .price{
+  font-size: 45px;
+  font-weight: 500;
+  margin-left: 16px;
+}
+.table .package-name{
+  width: 100%;
+  height: 2px;
+  margin: 35px 0;
+  position: relative;
+}
+.table .package-name::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 25px;
+  font-weight: 500;
+  background: #fff;
+  padding: 0 15px;
+  transform: translate(-50%, -50%);
+}
+.table .features li{
+  margin-bottom: 15px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.features li .list-name{
+  font-size: 17px;
+  font-weight: 400;
+}
+.features li .icon{
+  font-size: 15px;
+}
+.features li .icon.check{
+  color: #2db94d;
+}
+.features li .icon.cross{
+  color: #cd3241;
+}
+.table .btn{
+  width: 100%;
+  display: flex;
+  margin-top: 35px;
+  justify-content: center;
+}
+.table .btn button{
+  width: 80%;
+  height: 50px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.table .btn button:hover{
+  border-radius: 5px;
+}
+.basic .features li::selection{
+  background: #003159;
+}
+.basic ::selection,
+.basic .price-area,
+.basic .inner-area{
+  background: #003159;
+}
+.basic .btn button{
+  border: 2px solid #003159;
+  background: #fff;
+  color: #003159;
+}
+.basic .btn button:hover{
+  background: #003159;
+  color: #fff;
+}
+.premium ::selection,
+.premium .price-area,
+.premium .inner-area,
+.premium .btn button{
+  background: #003159;
+}
+.premium .btn button:hover{
+  background: #003159;
+}
+.ultimate ::selection,
+.ultimate .price-area,
+.ultimate .inner-area{
+  background: #003159;
+}
+.ultimate .btn button{
+  border: 2px solid #003159;
+  color: #003159;
+  background: #fff;
+}
+.ultimate .btn button:hover{
+  background: #003159;
+  color: #fff;
+}
+.basic .package-name{
+  background: #003159;
+}
+.premium .package-name{
+  background: #003159;
+}
+.ultimate .package-name{
+  background: #003159;
+}
+.basic .package-name::before{
+  content: "Silver Agent Plus";
+  font-size: 11px;
+}
+.premium .package-name::before{
+  content: "Gold Agent Plus";
+  font-size: 12px;
+}
+.ultimate .package-name::before{
+  content: "Premium Agent Plus ";
+  font-size: 12px;
+}
+@media (max-width: 1020px) {
+  .wrapper .table{
+    width: calc(50% - 20px);
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 698px) {
+  .wrapper .table{
+    width: 100%;
+  }
+}
+::selection{
+  color: #fff;
+}
+.table .ribbon{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  overflow: hidden;
+}
+.table .ribbon::before,
+.table .ribbon::after{
+  position: absolute;
+  content: "";
+  z-index: -1;
+  display: block;
+  border: 7px solid #003159;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.table .ribbon::before{
+  top: 0px;
+  right: 15px;
+}
+.table .ribbon::after{
+  bottom: 15px;
+  left: 0px;
+}
+.table .ribbon span{
+  position: absolute;
+  top: 30px;
+  right: 0;
+  transform: rotate(-45deg);
+  width: 200px;
+  background: #003159;
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  font-size: 17px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.12);
+}
+    </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="table basic">
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">29</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">One Selected Template</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">100% Responsive Design</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Credit Remove Permission</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Lifetime Template Updates</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Purchase</button></div>
+    </div>
+    <div class="table premium">
+      <div class="ribbon"><span>Recommend</span></div>
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">59</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">Five Existing Templates</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">100% Responsive Design</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Credit Remove Permission</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Lifetime Template Updates</span>
+          <span class="icon cross"><i class="fas fa-times"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Purchase</button></div>
+    </div>
+    <div class="table ultimate">
+      <div class="price-section">
+        <div class="price-area">
+          <div class="inner-area">
+            <span class="text">$</span>
+            <span class="price">99</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-name"></div>
+      <ul class="features">
+        <li>
+          <span class="list-name">All Existing Templates</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">100% Responsive Design</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Credit Remove Permission</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+        <li>
+          <span class="list-name">Lifetime Template Updates</span>
+          <span class="icon check"><i class="fas fa-check"></i></span>
+        </li>
+      </ul>
+      <div class="btn"><button>Purchase</button></div>
+    </div>
+  </div>
+
+</body>
+</html> -->

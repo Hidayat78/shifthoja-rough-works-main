@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hosting Price List</title>
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+<style type="text/css">
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body
+{
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.info-buy-a-pack {
+         border-radius: 4px;
+         background: #fbe9e9;
+         border: 2px dashed #ee6677;
+         text-align: center;
+         width: 647px;
+         box-sizing: border-box;
+         line-height: 35px;
+         font-size: 24px;
+         font-family: "opensans-semibold";
+         color: #303030;
+         padding: 10px;
+         margin: 0 0 14px 281px;
+         }
+         .plan-info-list {
+         font-size: 12px;
+         margin: 0 0 0 0;
+         padding: 0 10px 10px 10px;
+         text-align: center;
+         }
+         .clearfix:before, .clearfix:after {
+         content: "";
+         display: table;
+         }
+         .plan-info-list {
+         font-size: 12px;
+         margin: 0 0 0 0;
+         padding: 0 10px 10px 10px;
+         text-align: center;
+         }
+         .plan-info-list__head {
+         font-size: 28px;
+         line-height: 28px;
+         color: #303030;
+         text-align: center;
+         padding: 5px 0 10px 0;
+         }
+         .plan-info-list li {
+         margin: 0 12px;
+         padding: 0 0 5px 20px;
+         position: relative;
+         list-style-type: none;
+         text-align: left;
+         display: block;
+         color: #303030;
+         box-sizing: border-box;
+         display: inline-block;
+         font-size: 16px;
+         font-family: "opensans-bold";
+         }
+         .clearfix:after {
+         clear: both;
+         }
+         .plan-info-list li:after {
+         content: '';
+         display: block;
+         border: solid #fff;
+         border-width: 0 2px 2px 0;
+         transform: rotate(45deg);
+         position: absolute;
+         top: 5px;
+         left: 7px;
+         border-color: #24a427;
+         width: 4px;
+         height: 8px;
+         }
+         .plan-info-list ul {
+         margin: 0;
+         padding: 0;
+         }
+.container
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+}
+.box
+{
+	padding:40px 25px;
+	border: .5px solid lightgray;
+	width: 320px;
+	min-height: 600px;
+	background: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transition: 0.5s;
+	margin: 20px 0;
+}
+.box:hover
+{
+	transform: scale(1.02);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.box .oldrate,.box .newrate
+{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 10px;
+}
+.oldrate span
+{
+	color: #767676;
+	margin-right: 5px;
+	text-decoration:line-through;
+}
+.oldrate span:nth-child(2)
+{
+	color: #f00;
+	text-decoration: none;
+	padding: 5px;
+	background:#ff9696;
+	border-radius: 20px;
+}
+.newrate span
+{
+	position: relative;
+	display: flex;
+	font-size: 2em;
+	font-weight: 900;
+	justify-content: center;
+	align-items: flex-start;
+	height: 60px;
+}
+.newrate span:nth-child(2)
+{
+	position: relative;
+	display: flex;
+	font-size: 4em;
+	font-weight: 900;
+	justify-content: center;
+	align-items: center;
+}
+.newrate span:nth-child(4)
+{
+	position: absolute;
+	display: flex;
+	font-size: 1em;
+	font-weight: 100;
+	justify-content: center;
+	align-items: flex-end;
+	bottom: 10px;
+	right: 10px;
+}
+.features
+{
+	width: 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	list-style: none;
+}
+.features li
+{
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	padding: 0 0 15px;
+}
+.features li b
+{
+	margin-right: 5px;
+}
+.features li ion-icon
+{
+	font-size: 1.5em;
+	color: var(--i);
+}
+.features li p
+{
+	font-size: 1.0em;
+	padding-left: 10px;
+	letter-spacing: 1px;
+}
+.allFeature
+{
+	cursor: pointer;
+	letter-spacing: 2px;
+	font-size: 1.1em;
+	font-weight: 100;
+	color: #f00;
+}
+.buy button
+{
+	padding: 10px 30px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	background: #fff;
+	border: 1px solid #ff9696;
+	border-radius: 5px;
+	box-shadow: 0 0 5px #ff9696;
+	cursor: pointer;
+}
+.talk-to-experts__colm3 {
+    width: 283px;
+    float: left;
+    margin-right: 10px;
+}
+.talk-to-experts__left {
+    border: 1px solid #00bd00;
+    background: #e8f6e7;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    width: 160px;
+    height: 166px;
+    font-size: 12px;
+    color: #303030;
+    padding-top: 50px;
+    line-height: 20px;
+}
+.talk-to-experts__no-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #606060;
+    border-radius: 50%;
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.talk-to-experts__no-head {
+    font-family: "opensans-semibold";
+    font-size: 14px;
+}
+.talk-to-experts__form {
+    float: right;
+    width: 1018px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    padding: 40px 0px 0 14px;
+    position: relative;
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__head:after {
+    content: "";
+    background: #fff;
+    width: 20px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: -13px;
+    transform: rotate(24deg);
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__colm1 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+.m-callback__input, .m-callback__textarea, .m-callback__select {
+    display: block;
+    width: 100%;
+    padding: 7px 20px 8px 0px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: none;
+    border-bottom: 1px solid #e2e2e2;
+    outline: none;
+    color: #303030;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    font-family: "open_sansregular";
+}
+.m-callback__label {
+    display: block;
+    font-size: 14px;
+    color: #606060;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    line-height: 35px;
+    transition: all 0.3s ease-in-out;
+    cursor: text;
+}
+.m-callback__error {
+    font-size: 10px;
+    color: #d8232a;
+    position: absolute;
+    width: 100%;
+    display: none;
+    white-space: nowrap;
+}
+.m-callback__btn {
+    width: 164px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    background: #ffe8e9;
+    text-align: center;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none !important;
+    margin-top: 60px;
+}
+.m-callback__input:focus, .m-callback__textarea:focus, .m-callback__select:focus {
+    outline-color: #6b86cb;
+}
+.m-callback__btn:hover {
+    background: #003159;
+    color: #fff;
+}
+.talk-to-experts__colm2 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+
+.talk-to-experts * {
+    box-sizing: border-box;
+}
+.talk-to-experts__colm3 {
+    width: 283px;
+    float: left;
+    margin-right: 10px;
+}
+.m-callback__country-isd {
+    width: 60px;
+    float: left;
+    border-right-width: 0;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 14px;
+    color: #606060;
+    height: 35px;
+    line-height: 35px;
+}
+.m-callback__label-no {
+    left: 60px;
+}
+.m-callback__mobile-no {
+    width: calc(100% - 60px);
+}
+.m-callback__textarea--query {
+    width: 282px;
+    height: 70px;
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    resize: none;
+    overflow: auto;
+    padding: 8px;
+    line-height: 18px;
+}
+.md-popup__table {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    display: table;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+.md-popup__table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.md-popup.md-popup-v2 .md-popup__content {
+    overflow: visible;
+}
+.md-popup__content {
+    width: 308px;
+    padding: 0;
+    margin: 30px auto;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 4px;
+    min-height: 100px;
+}
+.md-popup .md-close.md-close--20px {
+    width: 20px;
+    height: 20px;
+}
+.m-callback__input:not(:focus):valid ~ .m-callback__label, .m-callback__input:valid ~ .m-callback__label, .m-callback__input+.m-callback__label.active, .m-callback__input ~ .m-callback__label.active, .m-callback__label.active {
+    top: -20px;
+    font-size: 12px;
+    color: #909090;
+}
+.label-textarea {
+    font-size: 14px;
+    color: #606060;
+    padding-bottom: 8px;
+}
+
+.WhyUpgrade__benifitsWrap {
+    margin-top: 60px;
+    padding-top: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1215px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    margin-bottom: 133px;
+    background: #fff9f0;
+    height: 315px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap {
+    margin-bottom: 24px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.display_l_bold {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    /* text-align: left; */
+    
+}
+.WhyUpgrade__benifitsList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+.WhyUpgrade__benifitsList li img {
+    width: 49px;
+}
+.title_bold {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    text-align: left;
+}
+.WhyUpgrade__benifitsList li>div {
+    margin-top: 12px;
+}
+.P500 {
+    color: #0078db !important;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__benifitsList li {
+    width: 427px;
+    background: #fff;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 22px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    border: 1px solid #ebecf0;
+    border-radius: 8px;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__hand {
+    cursor: pointer;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.paymentFooter__paymentLogoContainer {
+    padding: 0 20px;
+    margin-top: 60px;
+    background-color: #f4f5f7;
+    height: 159px;
+    display: flex;
+}
+.paymentFooter__paymentLogoContainer>div {
+    max-width: 1200px;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 0 20px;
+}
+.paymentFooter__textWrap {
+    display: flex;
+    align-items: center;
+    margin-right: 52px;
+    min-width: 280px;
+}
+.paymentFooter__textWrap img {
+    width: 48px;
+    margin-right: 20px;
+}
+.caption_strong_medium_semi {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.caption_strong_medium {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 24px;
+    align-items: center;
+    width: calc(100% - 300px);
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div {
+    width: 90px;
+    margin-bottom: 32px;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div img {
+    width: 95px;
+    height: 48px;
+}
+</style>
+</head>
+<body>
+	<div class="info-buy-a-pack">
+		Haven't bought a pack yet?
+		<span>Buy a pack and enjoy all agent benefits on <mark> SHIFTHOJA.COM</mark></span>
+	 </div>
+	 <div class="plan-info-list clearfix">
+		<div class="plan-info-list__head">Choose the plan that's just right for you and your business
+		</div>
+		<ul>
+		   <li>Get instant Visibility</li>
+		   <li>Close more Deals</li>
+		   <li>Maximize your Leads</li>
+		   <li>Grow your Business</li>
+		</ul>
+	 </div>
+	<div class="container">
+	<div class="box">
+		<h3>SILVER AGENT PLUS</h3>
+		<div class="oldrate">
+			<span>$0.00</span>
+			<span>Save 100%</span>
+		</div>
+		<div class="newrate">
+			<span>$</span>
+			<span>0</span>
+			<span>00</span>
+			<span>/mo</span>
+		</div>
+		<ul class="features">
+			<li style="--i:#ff0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>1</b>Websites</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>300 MB</b>Disk Space</p>
+			</li>
+			<li style="--i:#ff0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>Limited</b>Bandwidth(3 GB)</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>No</b>Email Account</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>24/7/365</b>Support</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>Free</b>Domain</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>Weekly</b>Backups</p>
+			</li>
+		</ul>
+		<div class="allFeature">
+			<span>See all features</span>
+		</div>
+		<div class="buy">
+			<button>Free Sign UP</button>
+		</div>
+	</div>
+	<div class="box">
+		<h3>GOLD AGENT PLUS</h3>
+		<div class="oldrate">
+			<span>$9.99</span>
+			<span>Save 80%</span>
+		</div>
+		<div class="newrate">
+			<span>$</span>
+			<span>1</span>
+			<span>99</span>
+			<span>/mo</span>
+		</div>
+		<ul class="features">
+			<li style="--i:#ff0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>1</b>Websites</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>50 GB</b>Disk Space</p>
+			</li>
+			<li style="--i:#ff0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>Limited</b>Bandwidth(100 GB)</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>1</b>Email Account</p>
+			</li>
+			<li style="--i:#ff0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>24/7/365</b>Support</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>Free</b>Domain</p>
+			</li>
+			<li style="--i:#f00;">
+				<ion-icon name="close"></ion-icon>
+				<p><b>Weekly</b>Backups</p>
+			</li>
+		</ul>
+		<div class="allFeature">
+			<span>See all features</span>
+		</div>
+		<div class="buy">
+			<button>Add to cart</button>
+		</div>
+	</div>
+	<div class="box active">
+		<h3>PREMIUM AGENT PLUS</h3>
+		<div class="oldrate">
+			<span>$12.49</span>
+			<span>Save 76%</span>
+		</div>
+		<div class="newrate">
+			<span>$</span>
+			<span>2</span>
+			<span>99</span>
+			<span>/mo</span>
+		</div>
+		<ul class="features">
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>100</b>Websites</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>100 GB</b>Disk Space</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>Unlimited</b>Bandwidth</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>100</b>Email Account</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>24/7/365</b>Support</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>Free</b>Domain</p>
+			</li>
+			<li style="--i:#0f0;">
+				<ion-icon name="checkmark"></ion-icon>
+				<p><b>Weekly</b>Backups</p>
+			</li>
+		</ul>
+		<div class="allFeature">
+			<span>See all features</span>
+		</div>
+		<div class="buy">
+			<button>Add to cart</button>
+		</div>
+	</div>
+	
+</div>
+<div class="talk-to-experts clearfix">
+   <div class="talk-to-experts__left">
+      <div class="talk-to-experts__no-icon">!</div>
+      <div class="talk-to-experts__no-head">Talk to Experts</div>
+      9504245461
+   </div>
+   <div class="talk-to-experts__form">
+      <div class="talk-to-experts__head">Request a Callback</div>
+      <form onsubmit="return false;" name="requestInfoForm" id="requestInfoForm" autocomplete="off" method="post" novalidate="novalidate">
+         <div class="talk-to-experts__colm1">
+            <div class="m-callback__fieldset js-fieldset">
+               <input name="name" id="name" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="name">Name</label>
+               <div class="m-callback__error" id="nameErr">Enter a valid name</div>
+            </div>
+            <div class="m-callback__fieldset m-callback__fieldset--group js-fieldset">
+               <div class="m-callback__country-isd">Ind +91</div>
+               <input name="contactMobile" id="contactMobile" value="" class="m-callback__input m-callback__mobile-no" maxlength="12" required="required" onchange="storeContactFormInput();" placeholder=""> <label class="m-callback__label m-callback__label-no" for="contactMobile">Mobile</label>
+               <div class="m-callback__error" id="contactMobileErr">Enter a valid mobile</div>
+            </div>
+         </div>
+         <div class="talk-to-experts__colm2">
+            <div class="m-callback__fieldset js-fieldset">
+               <input name="email" id="email" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="email">Email</label>
+               <div class="m-callback__error" id="useremailErr">Enter a valid email</div>
+            </div>
+            <div class="m-callback__fieldset js-fieldset">
+               <div class="mb-pg__slide__location js-container js-input-container js-locality-list">
+                  <input class="mb-pg__slide__location__input js-autosuggest m-callback__input" onfocus="$('#localityPrimeErrorDiv').hide();" onkeypress="resetCityVal(this);" autocomplete="false" value="" type="" id="selectedCity" name="selectedCity" required="required" placeholder="">
+                  <label class="m-callback__label" for="selectedCity">City</label>
+                  <div class="m-callback__error" id="cityNameErr"></div>
+                  <div class="mb-pg__slide__location__dropdown js-dropdown" style="display: none;">
+                     <ul id="city_options"></ul>
+                  </div>
+                  <div class="mb-form__error"></div>
+               </div>
+            </div>
+         </div>
+         <div class="talk-to-experts__colm3">
+            <div class="m-callback__fieldset js-fieldset">
+               <div class="label-textarea">Enter your query</div>
+               <textarea maxlength="1000" class="m-callback__textarea m-callback__textarea--query" id="query" name="query" placeholder="Please specify the convenient time to get a callback."></textarea>
+               <div class="m-callback__error" id="queryErr"></div>
+            </div>
+         </div>
+         <div class="talk-to-experts__colm4">
+           <button class="m-callback__btn" id="callback_otp">Get a Callback</button>
+         </div>
+      </form>
+   </div>
+</div>
+<div class="pageComponent WhyUpgrade__benifitsWrap false" data-label="WHY_UPGRADE">
+   <div class="WhyUpgrade__headWrap">
+     <h2 class="display_l_bold">Benefits of upgrading your posting<br><mark>SHIFTHOJA.COM</mark></h2>
+   </div>
+   <ul class="WhyUpgrade__benifitsList">
+     <li>
+       <img src="https://static.99acres.com/universalapp/img/USP-01_bos.png">
+       <div class="title_bold spacer12">
+         <span class="P500">01.&nbsp;</span>
+         <span>Appear higher in searches</span>
+       </div>
+       <div class="WhyUpgrade__subheading">
+         <span>Upgraded postings appear higher in search results giving your posting more views and responses</span>
+       </div>
+     </li>
+     <li>
+       <img src="https://static.99acres.com/universalapp/img/USP-02_bos.png">
+       <div class="title_bold spacer12">
+         <span class="P500">02.&nbsp;</span>
+         <span>Hassle free selling/renting</span>
+       </div>
+       <div class="WhyUpgrade__subheading">
+         <span>Relax and sell faster with our dedicated relationship manager assistance</span>
+       </div>
+     </li>
+     <li>
+       <img src="https://static.99acres.com/universalapp/img/USP-03_bos.png">
+       <div class="title_bold spacer12">
+         <span class="P500">03.&nbsp;</span>
+         <span>Reach users on social media</span>
+       </div>
+       <div class="WhyUpgrade__subheading">
+         <span>Reach more relevant buyers with Facebook and Google marketing</span>
+       </div>
+     </li>
+   </ul>
+   
+ </div>
+ <div class="paymentFooter__paymentLogoContainer">
+   <div style="margin: auto;">
+     <div class="paymentFooter__textWrap">
+       <img src="https://static.99acres.com/universalapp/img/SecurePayment_bos.png">
+       <div>
+         <div class="caption_strong_medium_semi">100% Safe Transactions</div>
+         <div class="caption_strong_medium">We support secure payment methods</div>
+       </div>
+     </div>
+     <div class="paymentFooter__logosWrap">
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_01.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_02.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_03.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_04.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_05.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_06.png">
+       </div>
+       <div>
+         <img src="https://static.99acres.com/universalapp/img/Payment_bos_07.png">
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js">
+</script>
+
+
+</body>
+</html>

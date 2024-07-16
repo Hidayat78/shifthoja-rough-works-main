@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line with Text</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+       .login-cont{
+        width: 800px;
+        height: 500px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+       }
+       .login-container {
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .input-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 300px; 
+        }
+        .input-container img {
+            width: 24px;
+            height: 16px;
+            margin-right: 8px;
+        }
+        .input-container input {
+            padding: 8px;
+            font-size: 16px;
+            font-family: "Open Sans", sans-serif;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container label {
+            margin-bottom: 5px;
+            font-family: "Open Sans", sans-serif;
+        }
+        .login-container input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 300px;
+        }
+        .login-container button {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 300px;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .additional-buttons{
+            display: flex;
+            flex-direction: column;
+        }
+        .additional-buttons button {
+            background-color: #f1f1f1;
+            color: #000;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            font-family: "Open Sans", sans-serif;
+        }
+        .additional-buttons button:hover {
+            background-color: #e1e1e1;
+        }
+        .line-text {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            width: 295px;
+        }
+        .line-text::before,
+        .line-text::after {
+            content: "";
+            flex: 1;
+            border-bottom: 2px solid #000;
+        }
+        .line-text::before {
+            margin-right: 10px;
+        }
+        .line-text::after {
+            margin-left: 10px;
+        }
+        .text-container{
+            width: 378px;
+            border-radius: 10px;
+            max-height: 100%;
+            height: 500px;
+            background-color: #365d96;
+            color: white;
+            box-sizing: border-box;
+        }
+
+  .input-container img {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: auto;
+  }
+
+  .input-container input {
+      width: 100%;
+            padding: 10px 10px 10px 70px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+  }
+  .input-container input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+  .input-container input::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px; 
+    height: 100%;
+    width: 1px;
+    background-color: #ccc;
+  }
+
+  /* ###########################################333 */
+  .container-right{
+    /* margin-left: 10px; */
+    padding: 20px;
+  }
+  h1 {
+    font-size: 24px;
+    letter-spacing: 0.8px;
+    margin: 0;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+}
+
+.highlight1-right {
+    color: white;
+    font-weight:600;
+}
+
+.highlight2-right {
+    color: #FFA500;
+    font-weight:700;
+}
+
+h6 {
+    font-size: 14px;
+    margin: 10px 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+.highlight3-right {
+    color: #FFA500;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+}
+
+.line-right img {
+    width: 233px;
+    max-width: 400px;
+    margin-left: -11px;
+    vertical-align: text-bottom;
+}
+.red-line {
+    display: inline-block;
+    width: 28px;
+    border-radius: 5px;
+    height: 4px;
+    background-color: red;
+    margin-left: 2px;
+    margin-bottom: 7px;
+}
+.line-right {
+    margin-bottom: 19px !important;
+}
+.input-container {
+            position: relative;
+            width: 300px;
+        }
+        .input-container img {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 16px;
+        }
+        .input-container span {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: #000;
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px 10px 10px 70px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+        @media (max-width: 480px) {
+            .container-right{
+                display: none;
+            }
+            .login-cont{
+                width: 400px;
+            }
+            .text-container{
+                display: none;
+            }
+        
+        }
+        @media (min-width: 480px) and (max-width: 767px) {
+            .container-right{
+                display: none;
+            }
+            .login-cont{
+                width: 400px;
+            }
+            .text-container{
+                display: none;
+            }
+        }
+        /* breadcrum */
+        
+
+
+h1 {
+  font-weight: 100;
+  font-size: 32px;
+  padding: 40px;
+  color: #212121;
+}
+.pra-brd{
+    display: flex;
+    justify-content: space-between;
+}
+#breadcrumb {
+  list-style: none;
+  display: inline-block;
+}
+#breadcrumb .fa {
+  font-size: 14px;
+}
+#breadcrumb li {
+  float: left;
+}
+#breadcrumb li a {
+  color: #FFF;
+  display: block;
+  background: #3498db;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 39px;
+}
+#breadcrumb li:nth-child(even) a {
+  background-color: #2980b9;
+}
+#breadcrumb li:nth-child(even) a:before {
+  border-color: #2980b9;
+  border-left-color: transparent;
+}
+#breadcrumb li:nth-child(even) a:after {
+  border-left-color: #2980b9;
+}
+#breadcrumb li:first-child a {
+  padding-left: 15px;
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 0 0 4px;
+}
+#breadcrumb li:first-child a:before {
+  border: none;
+}
+#breadcrumb li:last-child a {
+  padding-right: 15px;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0;
+  border-radius:10px;
+}
+#breadcrumb li:last-child a:after {
+  border: none;
+}
+#breadcrumb li a:before, #breadcrumb li a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 0 solid #3498db;
+  border-width: 20px 10px;
+  width: 0;
+  height: 0;
+}
+#breadcrumb li a:before {
+  left: -20px;
+  border-left-color: transparent;
+}
+#breadcrumb li a:after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: #3498db;
+}
+#breadcrumb li a:hover {
+  background-color: #fc1052;
+}
+#breadcrumb li a:hover:before {
+  border-color: #fc1052;
+  border-left-color: transparent;
+}
+#breadcrumb li a:hover:after {
+  border-left-color: #fc1052;
+}
+#breadcrumb li a:active {
+  background-color: #fc1052;
+}
+#breadcrumb li a:active:before {
+  border-color: #fc1052;
+  border-left-color: transparent;
+}
+#breadcrumb li a:active:after {
+  border-left-color: #fc1052;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="row login-cont">
+          <div class="col">
+                
+            <div class="login-container">
+                <div class="pra-brd">
+                    <p class="paragr">Please login to continue</p>
+                    <ul id="breadcrumb">
+                        <li><a href="#"><span class="fa fa-home"> </span></a></li>
+                    </ul>
+                </div>
+                <form>
+                    <label for="mobile-number">Mobile Number</label>
+                    <div class="input-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png" alt="India Flag">
+                        <span>+91</span>
+                        <input type="number" placeholder="9504245461">
+                    </div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="" placeholder="Password">
+                    <button type="submit">Log in</button>
+                    <div class="line-text">
+                        Log in with
+                    </div>
+                    <div class="additional-buttons">
+                        <button type="button">Log in with OTP</button>
+                        <button type="button">Sign up now!</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+          <div class="col" style="padding-right: 0px;">
+            <div class="text-container">
+                <div class="container-right">
+                    <h1><span class="highlight1-right">SHIFT</span><span class="highlight2-right">HOJA<span style="font-size: 22px;">.COM</span></span><span class="red-line"></span></h1>
+                    <div class="line-right">
+                        <!-- <img src="{{ asset('line.png') }}" alt="Line"> -->
+                         <img src="assets/img/line-lo.png">
+                    </div>
+                    <h6>The largest property search site in India!</h6>
+                    <h6>Discover your <span class="highlight3-right">Dream Home</span> with us!</h6>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

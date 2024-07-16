@@ -1,0 +1,3863 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<title></title>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/searchbox.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css"
+        rel="stylesheet" />
+    <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/slickcss.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/normalize.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/fontello.css" />
+    <link href="https://shifthoja.com/public/frontend/assets/css/animate.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/icheck.min_all.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/price-range.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.theme.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.transitions.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/style.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/mediaQuery.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/random.css" />
+
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/recentpro.css" />
+    <!-- property card link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/vendor/tiny-slider/tiny-slider.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/css-service-slider/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://www.squareyards.com/assets/fonts/home/moonicon-2a65b98ec3.min.css"
+        media="print" onload="this.media='all'">
+    <script src="https://www.squareyards.com/assets/js/jquery-459ee54d12.min.js" defer></script>
+    <script src="https://www.squareyards.com/assets/js/cityhome-common-d66ff13a6e.min.js" defer></script>
+    <script src="https://www.squareyards.com/assets/js/cityhome-e09f7f6c92.min.js" defer></script>
+    <style>
+        .hotSellingProjectsSection {
+
+            overflow: hidden;
+            background: #faf8ff
+        }
+
+        .hotSellingProjectsSection h2 {
+            margin-bottom: 40px;
+            display: block;
+            text-align: center;
+            font-size: 26px;
+            color: #333
+        }
+
+        .hotSellingProjectsBox {
+            display: flex;
+            gap: 15px;
+            height: 365px
+        }
+
+        .hotSellingCardSection {
+            display: block;
+            width: calc(100% - 280px);
+            height: 365px;
+            border-radius: 8px
+        }
+
+        .bestSellersCard {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 295px;
+            height: 365px;
+            background: #fff;
+            box-shadow: 0 4px 18px 0 #0000001a;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            gap: 10px
+        }
+
+        .bestSellersCard figure {
+            width: 150px;
+            height: 82px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: baseline
+        }
+
+        .bestSellersCard figure img {
+            position: relative
+        }
+
+        .bestSellersCard figure .circle {
+            margin: 0 0 0 -60px;
+            width: 120px;
+            height: 120px;
+            border: #5f449b solid 3px;
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            display: block;
+            border-radius: 150px;
+            transition: .5s
+        }
+
+        .bestSellersCard figure .circle:before {
+            content: '';
+            margin: 0 0 0 -44px;
+            position: absolute;
+            bottom: 13px;
+            left: 50%;
+            display: block;
+            border-radius: 150px;
+            width: 88px;
+            height: 88px;
+            border: #5f449b solid 3px
+        }
+
+        .bestSellersCard:hover figure .circle {
+            transform: scale(1.1);
+            transition: .5s
+        }
+
+        .bestSellersCard h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #333
+        }
+
+        .bestSellersCard p {
+            color: #666;
+            font-size: 13px
+        }
+
+        .bestSellersCard .viewBtn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px
+        }
+
+        .bestSellersCard .viewBtn .btn {
+            padding: 0 20px;
+            line-height: 36px;
+            width: 100%;
+            background: #5f449b;
+            color: #fff;
+            font-size: 14px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: .5s
+        }
+
+        .bestSellersCard .viewBtn .btn:hover {
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+            transition: .5s
+        }
+
+        .sliderContainer {
+            position: relative
+        }
+
+        .sliderContainer .slider {
+            width: 100%;
+            height: 100%;
+            position: relative
+        }
+
+        .sliderContainer .single-item {
+            display: flex;
+            overflow: hidden;
+            gap: 15px
+        }
+
+        .sliderContainer .single-item.slick-initialized {
+            overflow: inherit
+        }
+
+        .sliderContainer .slick-list {
+            height: 365px;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .sliderContainer .slick-prev {
+            position: absolute;
+            top: calc(50% - 23px);
+            left: -15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            box-shadow: 0 0 42px 0 #00000029;
+            cursor: pointer
+        }
+
+        .sliderContainer .slick-next {
+            position: absolute;
+            top: calc(50% - 23px);
+            right: -15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            box-shadow: 0 0 42px 0 #00000029;
+            cursor: pointer
+        }
+
+        .sliderContainer .slick-prev:after {
+            content: '\e916';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-family: icomoon;
+            font-size: 13px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .sliderContainer .slick-next:after {
+            content: '\e917';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-family: icomoon;
+            font-size: 13px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .progressBarContainer {
+            position: absolute;
+            top: 12px;
+            width: calc(100% - 30px);
+            left: 15px;
+            display: flex;
+            gap: 10px
+        }
+
+        .progressBarContainer div {
+            width: 100%;
+            cursor: pointer
+        }
+
+        .progressBarContainer div:last-child {
+            margin-right: 0
+        }
+
+        .progressBarContainer div span.progressBar {
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: block;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .progressBarContainer div span.progressBar .inProgress {
+            background-color: rgba(255, 255, 255, 1);
+            width: 0;
+            height: 5px
+        }
+
+        .projectTileItem {
+            height: 365px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            flex: none;
+            width: 100%;
+            padding: 0
+        }
+
+        .projectTileItem figure {
+            width: 100%;
+            height: 100%;
+            background: #f1f1f187;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .projectTileItem figure:after {
+            content: '';
+            background: linear-gradient(270deg, #0000 0%, #000000cc 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 60%
+        }
+
+        .projectTileItem figure img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%
+        }
+
+        .projectTileItem .projectDetails {
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            /* min-height: 285px; */
+            width: 290px;
+            cursor: pointer;
+            box-shadow: 0 2px 14px 0 #0000000f;
+            transition: .5s;
+            opacity: 0
+        }
+
+        .projectTileItem .projectDetails.singleItem {
+            animation: mymove 1s;
+            animation-timing-function: ease;
+            opacity: 1
+        }
+
+
+        @keyframes mymove {
+            from {
+                bottom: -200px
+            }
+
+            to {
+                bottom: 15px
+            }
+        }
+
+        .projectTileItem .projectDetails h3 {
+            font-size: 14px;
+            color: #333;
+            line-height: 18px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center
+        }
+
+        .projectTileItem .projectDetails h3 a {
+            color: #333
+        }
+
+        .projectTileItem .projectDetails:hover h3 a {
+            text-decoration: underline;
+            font-weight: 600
+        }
+
+        .projectTileItem .projectDetails h3 span {
+            display: inline-block;
+            padding: 0 0 0 5px;
+            font-size: 14px;
+            color: #333;
+            line-height: 18px
+        }
+
+        .projectTileItem .projectDetails span {
+            padding-bottom: 5px;
+            font-size: 12px;
+            color: #333;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .projectTileItem .projectDetails .price {
+            padding-bottom: 2px;
+            font-size: 14px;
+            color: #5f449b;
+            line-height: 18px;
+            font-weight: 600
+        }
+
+        .projectTileItem .projectDetails .btn {
+            margin-top: 10px;
+            width: 100%
+        }
+
+        .projectTileItem .projectDetails .tileTagBox {
+            display: flex;
+            display: -webkit-flex;
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            top: -30px
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em {
+            flex: none;
+            height: 24px;
+            display: flex;
+            display: -webkit-flex
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em~em {
+            margin-left: 5px
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em {
+            flex: none;
+            height: 24px;
+            display: flex;
+            display: -webkit-flex
+        }
+
+        .projectTileItem .icon {
+            background: url(https://www.squareyards.com/assets/images/sprite-icon/hot-selling-project.svg) no-repeat left top;
+            display: block
+        }
+
+        .projectTileItem .ico-project-size {
+            background-size: 301px;
+            background-position: -48px -4px
+        }
+
+        .projectTileItem .ico-config {
+            background-size: 301px;
+            background-position: -93px -4px
+        }
+
+        .projectTileItem .ico-exclusive {
+            background-size: 296px;
+            background-position: -4px -47px;
+            width: 92px
+        }
+
+        .projectTileItem .ico-assured {
+            background-size: 294px;
+            background-position: -4px -72px;
+            width: 129px
+        }
+
+        .shortInfoBox {
+            margin-top: 7px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+            border: solid 1px #e5e5e5;
+            background: #fff
+        }
+
+        .shortInfoBox .shortInfoSec {
+            padding: 7px 7px 7px 62px;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            position: relative;
+            min-height: 63px
+        }
+
+        .shortInfoBox .shortInfoSec em {
+            width: 42px;
+            height: 42px;
+            border-radius: 100%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 10px;
+            top: 9px
+        }
+
+        .shortInfoBox .shortInfoSec .shortInfoBody {
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .shortInfoBox .shortInfoSec .label {
+            color: #666;
+            font-size: 13px;
+            display: block;
+            line-height: normal
+        }
+
+        .shortInfoBox .shortInfoSec .value {
+            color: #333;
+            font-size: 12px;
+            display: block;
+            line-height: 18px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li {
+            position: relative;
+            margin-right: 20px;
+            font-size: 11px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li span {
+            padding: 0;
+            font-size: 11px;
+            max-width: 165px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child span {
+            padding: 0;
+            font-size: 11px;
+            max-width: 190px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child {
+            margin-right: 0
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li::before {
+            content: '';
+            background: #c3c3c3;
+            position: absolute;
+            top: 6px;
+            right: -12px;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child::before {
+            display: none
+        }
+
+        .shortInfoBox .shortInfoSec~.shortInfoSec {
+            border-top: 1px solid #e5e5e5
+        }
+
+        .shortInfoBox .shortInfoSec em {
+            width: 42px;
+            height: 42px;
+            border-radius: 100%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 10px;
+            top: 9px
+        }
+
+        .slick-current .projectTileItem .projectDetails {
+            animation: mymove 1s;
+            animation-timing-function: ease;
+            opacity: 1
+        }
+
+
+
+        @media screen and (max-width:1024px) {
+            .hotSellingCardSection {
+                width: 100%
+            }
+
+            .hotSellingProjectsSection {
+                padding: 30px 0 20px !important;
+                min-height: inherit
+            }
+
+            .hotSellingProjectsSection h2 {
+                margin-bottom: 15px;
+                font-size: 16px;
+                text-align: left
+            }
+
+            .sliderContainer .slick-arrow {
+                display: none !important
+            }
+        }
+
+
+
+        @media screen and (max-width:540px) {
+            .hotSellingProjectsBox {
+                height: 465px
+            }
+
+            .hotSellingCardBox,
+            .sliderContainer .slick-list,
+            .projectTileItem {
+                height: 475px
+            }
+
+            .projectTileItem .projectDetails {
+                position: relative;
+                top: -40px;
+                left: 10px;
+                width: calc(100% - 20px)
+            }
+
+            .projectTileItem figure {
+                height: 220px
+            }
+
+            .projectTileItem figure:after {
+                display: none
+            }
+
+            .projectTileItem.bestSellersItem figure {
+                background: #efe8ff url(assets/images/best-sellers-bg.png) no-repeat bottom right
+            }
+
+            .projectTileItem.bestSellersItem h2 {
+                font-size: 20px
+            }
+
+            .projectTileItem.bestSellersItem figure img {
+                width: 95px;
+                height: auto;
+                position: absolute;
+                bottom: 70px;
+                left: 15px
+            }
+
+            .projectTileItem .projectDetails p span {
+                display: inline
+            }
+        }
+
+        .projectTileItem .btnBox {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            width: calc(100% - 30px)
+        }
+
+        @media screen and (max-width:375px) {
+            .shortInfoBox .shortInfoSec ul.value li span {
+                padding: 0;
+                font-size: 11px;
+                max-width: 190px
+            }
+
+            .shortInfoBox .shortInfoSec ul.value li:last-child span {
+                padding: 0;
+                font-size: 11px;
+                max-width: 210px
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 130px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 130px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+
+            b.post {
+                color: black;
+                padding: 4px;
+                font-size: 11px;
+                font-weight: 500;
+            }
+
+
+
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            b.post-phone {
+                color: black;
+                padding: 7px;
+                font-size: 11px;
+                font-weight: 600;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/mobile.css">
+    <style>
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #fff !important;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        /*hotSellingProjectsBox*/
+        .hotSellingProjectsBox {
+            margin-top: 37px;
+            display: flex;
+            gap: 15px;
+            height: 300px
+        }
+
+        .hotSellingCardSection {
+            display: block;
+            height: 365px;
+            border-radius: 8px
+        }
+
+
+        .sliderContainer {
+            position: relative
+        }
+
+        .sliderContainer .slider {
+            width: 100%;
+            height: 100%;
+            position: relative
+        }
+
+        .sliderContainer .single-item {
+            display: flex;
+            overflow: hidden;
+            gap: 15px
+        }
+
+        .sliderContainer .single-item.slick-initialized {
+            overflow: inherit
+        }
+
+        .sliderContainer .slick-list {
+            height: 365px;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .sliderContainer .slick-prev {
+            position: absolute;
+            top: calc(50% - 23px);
+            left: -15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            box-shadow: 0 0 42px 0 #00000029;
+            cursor: pointer
+        }
+
+        .sliderContainer .slick-next {
+            position: absolute;
+            top: calc(50% - 23px);
+            right: -15px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            box-shadow: 0 0 42px 0 #00000029;
+            cursor: pointer
+        }
+
+        .sliderContainer .slick-prev:after {
+            content: '\e916';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-family: icomoon;
+            font-size: 13px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .sliderContainer .slick-next:after {
+            content: '\e917';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-family: icomoon;
+            font-size: 13px;
+            color: #333;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .progressBarContainer {
+            position: absolute;
+            top: 12px;
+            width: calc(100% - 30px);
+            left: 15px;
+            display: flex;
+            gap: 10px
+        }
+
+        .progressBarContainer div {
+            width: 100%;
+            cursor: pointer
+        }
+
+        .progressBarContainer div:last-child {
+            margin-right: 0
+        }
+
+        .progressBarContainer div span.progressBar {
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.4);
+            display: block;
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        .progressBarContainer div span.progressBar .inProgress {
+            background-color: rgba(255, 255, 255, 1);
+            width: 0;
+            height: 5px
+        }
+
+        .projectTileItem {
+            height: 365px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            flex: none;
+            padding: 0
+        }
+
+        .projectTileItem figure {
+            width: 100%;
+            height: 100%;
+            background: #f1f1f187;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative
+        }
+
+        .projectTileItem figure:after {
+            content: '';
+            background: linear-gradient(270deg, #0000 0%, #000000cc 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 60%
+        }
+
+        .projectTileItem figure img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%
+        }
+
+        .projectTileItem .projectDetails {
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            /* min-height: 285px; */
+            width: 290px;
+            cursor: pointer;
+            box-shadow: 0 2px 14px 0 #0000000f;
+            transition: .5s;
+            opacity: 0
+        }
+
+        .projectTileItem .projectDetails.singleItem {
+            animation: mymove 1s;
+            animation-timing-function: ease;
+            opacity: 1
+        }
+
+
+        @keyframes mymove {
+            from {
+                bottom: -200px
+            }
+
+            to {
+                bottom: 15px
+            }
+        }
+
+        .projectTileItem .projectDetails h3 {
+            font-size: 14px;
+            color: #333;
+            line-height: 18px;
+            white-space: nowrap;
+            display: flex;
+            align-items: center
+        }
+
+        .projectTileItem .projectDetails h3 a {
+            color: #333
+        }
+
+        .projectTileItem .projectDetails:hover h3 a {
+            text-decoration: underline;
+            font-weight: 600
+        }
+
+        .projectTileItem .projectDetails h3 span {
+            display: inline-block;
+            padding: 0 0 0 5px;
+            font-size: 14px;
+            color: #333;
+            line-height: 18px
+        }
+
+        .projectTileItem .projectDetails span {
+            padding-bottom: 5px;
+            font-size: 12px;
+            color: #333;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .projectTileItem .projectDetails .price {
+            padding-bottom: 2px;
+            font-size: 14px;
+            color: #5f449b;
+            line-height: 18px;
+            font-weight: 600
+        }
+
+        .projectTileItem .projectDetails .btn {
+            margin-top: 10px;
+            width: 100%
+        }
+
+        .projectTileItem .projectDetails .tileTagBox {
+            display: flex;
+            display: -webkit-flex;
+            overflow: auto;
+            position: absolute;
+            left: 0;
+            top: -30px
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em {
+            flex: none;
+            height: 24px;
+            display: flex;
+            display: -webkit-flex
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em~em {
+            margin-left: 5px
+        }
+
+        .projectTileItem .projectDetails .tileTagBox em {
+            flex: none;
+            height: 24px;
+            display: flex;
+            display: -webkit-flex
+        }
+
+        .projectTileItem .icon {
+            background: url(https://www.squareyards.com/assets/images/sprite-icon/hot-selling-project.svg) no-repeat left top;
+            display: block
+        }
+
+        .projectTileItem .ico-project-size {
+            background-size: 301px;
+            background-position: -48px -4px
+        }
+
+        .projectTileItem .ico-config {
+            background-size: 301px;
+            background-position: -93px -4px
+        }
+
+        .projectTileItem .ico-exclusive {
+            background-size: 296px;
+            background-position: -4px -47px;
+            width: 92px
+        }
+
+        .projectTileItem .ico-assured {
+            background-size: 294px;
+            background-position: -4px -72px;
+            width: 129px
+        }
+
+        .shortInfoBox {
+            margin-top: 7px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+            border: solid 1px #e5e5e5;
+            background: #fff
+        }
+
+        .shortInfoBox .shortInfoSec {
+            padding: 7px 7px 7px 62px;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            position: relative;
+            min-height: 63px
+        }
+
+        .shortInfoBox .shortInfoSec em {
+            width: 42px;
+            height: 42px;
+            border-radius: 100%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 10px;
+            top: 9px
+        }
+
+        .shortInfoBox .shortInfoSec .shortInfoBody {
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .shortInfoBox .shortInfoSec .label {
+            color: #666;
+            font-size: 13px;
+            display: block;
+            line-height: normal
+        }
+
+        .shortInfoBox .shortInfoSec .value {
+            color: #333;
+            font-size: 12px;
+            display: block;
+            line-height: 18px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li {
+            position: relative;
+            margin-right: 20px;
+            font-size: 11px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li span {
+            padding: 0;
+            font-size: 11px;
+            max-width: 165px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child span {
+            padding: 0;
+            font-size: 11px;
+            max-width: 190px
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child {
+            margin-right: 0
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li::before {
+            content: '';
+            background: #c3c3c3;
+            position: absolute;
+            top: 6px;
+            right: -12px;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%
+        }
+
+        .shortInfoBox .shortInfoSec ul.value li:last-child::before {
+            display: none
+        }
+
+        .shortInfoBox .shortInfoSec~.shortInfoSec {
+            border-top: 1px solid #e5e5e5
+        }
+
+        .shortInfoBox .shortInfoSec em {
+            width: 42px;
+            height: 42px;
+            border-radius: 100%;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 10px;
+            top: 9px
+        }
+
+        .slick-current .projectTileItem .projectDetails {
+            animation: mymove 1s;
+            animation-timing-function: ease;
+            opacity: 1
+        }
+
+
+        .sliderContainer .slick-arrow {
+            display: none !important
+        }
+
+
+
+
+        @media screen and (max-width:540px) {
+
+            .projectTileItem .projectDetails {
+                position: relative;
+                top: -40px;
+                left: 10px;
+                width: calc(100% - 20px)
+            }
+
+            .projectTileItem figure {
+                height: 220px
+            }
+
+            .projectTileItem figure:after {
+                display: none
+            }
+
+            .projectTileItem.bestSellersItem figure {
+                background: #efe8ff url(assets/images/best-sellers-bg.png) no-repeat bottom right
+            }
+
+            .projectTileItem.bestSellersItem h2 {
+                font-size: 20px
+            }
+
+            .projectTileItem.bestSellersItem figure img {
+                width: 95px;
+                height: auto;
+                position: absolute;
+                bottom: 70px;
+                left: 15px
+            }
+
+            .projectTileItem .projectDetails p span {
+                display: inline
+            }
+        }
+
+        .projectTileItem .btnBox {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            width: calc(100% - 30px)
+        }
+
+        @media screen and (max-width:375px) {
+            .shortInfoBox .shortInfoSec ul.value li span {
+                padding: 0;
+                font-size: 11px;
+                max-width: 190px
+            }
+
+            .shortInfoBox .shortInfoSec ul.value li:last-child span {
+                padding: 0;
+                font-size: 11px;
+                max-width: 210px
+            }
+        }
+
+        /*end noida hyderabad gurugram*/
+    </style>
+
+    <style>
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .flex-1 {
+            flex: 1 1 0%;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .bg-\[\#41bd6d\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(65 189 109 / var(--tw-bg-opacity));
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .w-10 {
+            width: 3.5rem;
+        }
+
+        .h-10 {
+            height: 3.5rem;
+        }
+
+        .gap-0\.5 {
+            gap: 0.125rem;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .font-medium {
+            font-weight: 600;
+        }
+
+        .text-\[\#593597\] {
+            --tw-text-opacity: 1;
+            color: rgb(89 53 151 / var(--tw-text-opacity));
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .py-0 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .px-1 {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+
+        .bg-\[\#ece0f7\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(236 224 247 / var(--tw-bg-opacity));
+        }
+
+        .text-slate-400 {
+            --tw-text-opacity: 1;
+            color: rgb(148 163 184 / var(--tw-text-opacity));
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .p-1 {
+            padding: 0.25rem;
+        }
+
+
+        .ring-slate-900\/10 {
+            --tw-ring-color: rgb(15 23 42 / 0.1);
+        }
+
+        .ring-1 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var('0px') var('#fff');
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var('0px')) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+
+        .text-slate-900 {
+            --tw-text-opacity: 1;
+            color: rgb(15 23 42 / var(--tw-text-opacity));
+        }
+
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .ring-slate-900\/10 {
+            --tw-ring-color: rgb(15 23 42 / 0.1);
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .bg-\[\#fdf4ec\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(253 244 236 / var(--tw-bg-opacity));
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+
+        .text-slate-500 {
+            --tw-text-opacity: 1;
+            color: rgb(100 116 139 / var(--tw-text-opacity));
+        }
+
+        .bg-\[\#fdf4ec\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(253 244 236 / 1);
+        }
+
+        .text-slate-600 {
+            --tw-text-opacity: 1;
+            color: rgb(71 85 105 / var(--tw-text-opacity));
+        }
+
+        a {
+            color: #000;
+        }
+    </style>
+
+    <style>
+        .sf-home__owner-prop__card {
+            width: 100%;
+            height: 296px;
+            overflow: hidden;
+            border: #d7d7d7 solid 1px;
+            border-radius: 8px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sf-home__owner-prop__card--graphic>img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            transition: all 0.35s ease-in;
+        }
+
+        .sf-home__owner-prop__card--graphic {
+            width: 100%;
+            height: 156px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sf-home__owner-prop__card--pic-count {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 6px 0px 22px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #303030;
+            position: absolute;
+            left: 8px;
+            bottom: 12px;
+            border-radius: 4px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card--content {
+            width: 100%;
+            height: calc(100% - 156px);
+            padding: 12px 16px;
+            position: relative;
+            background-color: #fff;
+        }
+
+
+        .sf-home__owner-prop__card--pic-count:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710375018814/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -47px -891px;
+            left: 6px;
+            top: 7px;
+        }
+
+        .sf-home,
+        .sf-home * {
+            box-sizing: border-box;
+        }
+
+        .sf-home__owner-prop__card--type {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 2px;
+            text-transform: capitalize;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sf-home__owner-prop__card--price {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+
+        .sf-home .rupees {
+            font-family: Arial;
+            margin-right: 2px;
+            font-weight: normal;
+        }
+
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #303030;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        .sf-home__owner-prop__card--loc {
+            color: #606060;
+            font-size: 14px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            padding-bottom: 4px;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card .sf-home__action {
+            width: calc(100% - 32px);
+            position: absolute;
+            bottom: -100px;
+            transition: bottom 0.3s ease-out;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__action {
+            bottom: 16px;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--status {
+            opacity: 0;
+        }
+
+        .sf-home__action--btn.btn-red {
+            color: #fff;
+            background-color: #D8232A;
+            border: #D8232A solid 1px;
+            padding: 4px;
+        }
+
+        .sf-home__action--btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 16px;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+        .sf-home__section__title {
+            padding-bottom: 24px;
+        }
+
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home .push-right {
+            float: right;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--graphic>img {
+            transform: scale(1.1);
+        }
+
+        .sf-home__section__title--anchor-see-all:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 11px;
+            right: 0px;
+            top: 4px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710374415922/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -46px -668px;
+            transition: all 0.6s ease;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
+
+</head>
+
+<body style="overflow: hidden !important">
+    <!-- Body content -->
+    <!-- Navbar Stat-->
+    <nav class="navbar navbar-default">
+        <div class="container1">
+            <a class="navbar-brand" href="https://shifthoja.com">
+                <img src="https://shifthoja.com/public/frontend/assets/img/shifthoja_logo.png" alt="Shifthoja Logo" />
+            </a>
+            <div class="button navbar-right">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                            style="font-size: 12px;"></button>
+                    </div>
+
+                    <div class="offcanvas-body p-0">
+                        <main class="flex flex-col w-100 shadow-xl bg-white rounded-xl example" style="position: sticky;
+         max-height: calc(100vh - 4rem);
+          overflow: scroll;">
+
+
+                            <section class="flex px-4 flex-col pt-3">
+
+                                <a href="https://shifthoja.com"
+                                    class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl" style="   font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></circle>
+                                        <path d="M12 6V12L16 16" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Home
+
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    About
+                                </a>
+
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="    font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></circle>
+                                        <path d="M2 21V17C2 15.8954 2.89543 15 4 15H14C15.1046 15 16 15.8954 16 17V21"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M16 3C16.8604 3.2203 17.623 3.7207 18.1676 4.42231C18.7122 5.12392 19.0078 5.98683 19.0078 6.875C19.0078 7.76317 18.7122 8.62608 18.1676 9.32769C17.623 10.0293 16.8604 10.5297 16 10.75"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M19 15H20C21.1046 15 22 15.8954 22 17V21" stroke="currentColor"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Blogs
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Services
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Rent Pay
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Property Agreement
+                                </a>
+
+                                <a href="https://shifthoja.com/login"
+                                    class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl" style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Login
+                                </a>
+
+                            </section>
+
+
+
+                            <!--<header class="flex flex-col p-4 gap-4">-->
+                            <!--     -->
+                            <!--     <div class="flex flex-1 gap-3">-->
+                            <!--       <button class="inline-flex shadow-sm bg-white w-full justify-center rounded-xl text-sm font-semibold py-3 px-3 text-slate-900 ring-1 ring-slate-900/10 hover:ring-slate-900/20 items-center gap-2" style="font-size: 11px;-->
+                            <!--       border: 1px solid; border: 1px solid #80808075;">-->
+                            <!--         <svg class="text-gray-600 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--           <path d="M12 4V20M4 12H20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--         </svg>-->
+                            <!--         Add New Property</button>-->
+
+                            <!--     </div>-->
+                            <!--   </header>-->
+
+
+
+
+                            <section class="flex px-4 flex-col p-0">
+                                <h5 class="mb-3 fw-normal f6 pb-3 pt-3">Recommended Proprtey</h5>
+
+                                <div style="--swiper-navigation-color: #000; --swiper-pagination-color: #fff"
+                                    class="swiper SideSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+
+                                            <a href="javascript:void(0);">
+                                                <div class="sf-home__owner-prop__card--graphic rounded-3"
+                                                    style="height: 100px;">
+                                                    <img class="swiper-lazy swiper-lazy-loaded"
+                                                        src="http://127.0.0.1:8000/storage/proprty/bedroom/1793497914043500.jpg"
+                                                        width="294" height="156" alt="">
+                                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--content">
+                                                    <div class="sf-home__owner-prop__card--type" style="font-size:10px">
+                                                        1 bhk flat
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--price">
+                                                        <span class="rupees">₹</span>1,000
+                                                        <span class="sf-home__owner-prop__card--size">12 sqft</span>
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--loc">
+                                                        Chhatarpur, New Delhi
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--status">
+                                                        Ready to Move
+                                                    </div>
+
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <a href="javascript:void(0);">
+                                                <div class="sf-home__owner-prop__card--graphic rounded-3"
+                                                    style="height: 100px;">
+                                                    <img class="swiper-lazy swiper-lazy-loaded"
+                                                        src="http://127.0.0.1:8000/storage/proprty/bedroom/1793497914043500.jpg"
+                                                        width="294" height="156" alt="">
+                                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--content">
+                                                    <div class="sf-home__owner-prop__card--type" style="font-size:10px">
+                                                        1 bhk flat
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--price">
+                                                        <span class="rupees">₹</span>1,000
+                                                        <span class="sf-home__owner-prop__card--size">12 sqft</span>
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--loc">
+                                                        Chhatarpur, New Delhi
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--status">
+                                                        Ready to Move
+                                                    </div>
+
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+
+
+                            </section>
+
+                            <!--<div class="flex p-4 mr-4 flex-col gap-2 bg-[#fdf4ec] p-4 rounded-xl mt-3">-->
+                            <!--  <header class="flex items-center justify-between" style="background: transparent;">-->
+                            <!--    <div class="flex gap-2 items-center text-sm font-medium" style="font-size: 11px;">-->
+                            <!--      <svg class="h-5 w-5 text-[#e9953f]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--        <path d="M12 8V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--        <path d="M12 16.0195V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>-->
+                            <!--      </svg>Today offers-->
+                            <!--    </div>-->
+
+
+                            <!--  </header>-->
+
+
+                            <!--</div>-->
+                            <!--<div class="p-3">-->
+                            <!--  <img src="https://shifthoja.com/public/onbrokrage.png" alt="" srcset="" class="w-100 rounded-3">-->
+                            <!--</div>-->
+
+                            <!--<header class="flex flex-col p-4 gap-4">-->
+
+                            <!--  <div class="flex flex-1 gap-3">-->
+                            <!--    <button class="inline-flex shadow-sm bg-white w-full justify-center rounded-xl text-sm font-semibold py-3 px-3 text-slate-900 ring-1 ring-slate-900/10 hover:ring-slate-900/20 items-center gap-2" style="font-size: 11px;-->
+                            <!--    border: 1px solid; border: 1px solid #80808075;">-->
+                            <!--      <svg class="text-gray-600 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--      <path d="M12 4V20M4 12H20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--      </svg>-->
+                            <!--      customer support-->
+                            <!--    </button>-->
+
+                            <!--  </div>-->
+                            <!--</header>-->
+
+
+                        </main>
+                    </div>
+                </div>
+                <!--<button class="navbar-btn nav-button  login" onclick="window.open('login')" data-wow-delay="0.45s">-->
+                <!--  <b>Login</b>-->
+                <!--</button>-->
+                <div class="style__postContainer">
+                    <div onclick="window.open('/postproperty')">
+                        <b class="post">Post property</b>
+                    </div>
+                    <div style="width: 36px; height: 15px" class="style__shimmer">
+                        <div class="style__shimmer" style="width: 36px; height: 20px">
+                            <div class="style__free" style="font-size: 10px">FREE</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="i bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+                <div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div wire:snapshot="{&quot;data&quot;:{&quot;isMobile&quot;:false},&quot;memo&quot;:{&quot;id&quot;:&quot;OfKfTxr7FC3WLUrSGzlV&quot;,&quot;name&quot;:&quot;frontend.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:{&quot;lw-1313735917-0&quot;:[&quot;div&quot;,&quot;EeW2ICQoa7Y4h3Col2AD&quot;]},&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;79e8085f9f1c623dc94fbacf822420231d4feffd704db3e7e0420ec45af2d439&quot;}"
+        wire:effects="[]" wire:id="OfKfTxr7FC3WLUrSGzlV">
+        <!--[if BLOCK]><![endif]-->
+        <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;EeW2ICQoa7Y4h3Col2AD&quot;,&quot;name&quot;:&quot;frontend.mobile.home&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;fb0108865244e69d759a9f9f6a2a6ee43468b9e66e4585adebce5c0ce77aa5d1&quot;}"
+            wire:effects="[]" wire:id="EeW2ICQoa7Y4h3Col2AD">
+            <div class="button navbar-right"></div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="offcanvas-body-parent">
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-bar">
+                <div class="home-plus">
+                    <a href="#demo-modal">
+                        <img src="https://shifthoja.com/public/frontend/mob-service/add.png">
+                    </a>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="icon-mob">
+
+                        </div>
+
+                    </div>
+                    <div class="menu-item">
+                        <div class="icon-mob">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="icon-mob">
+
+                        </div>
+
+                    </div>
+                    <div class="menu-item">
+                        <div class="icon-mob">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mob-serch-bt mt-7ptpu:h-content">
+                <!--<div class="bbroker-free">100% Verified|-->
+                <!--    <span class="font-bold"> &nbsp;Properties </span>-->
+                <!--</div>-->
+                <div class="rent-buy-commercialt">
+                    <div class="buy-srch active" onclick="toggleActive(this)">Buy</div>
+                    <div class="rent-srch" onclick="toggleActive(this)">Rent</div>
+                    <div class="commercial-srch" onclick="toggleActive(this)">Commercial</div>
+                </div>
+                <div class="search-box-container" onclick="redirectToSearchPage()">
+                    <input type="text" class="search-input" placeholder="Search by locality or landmark"
+                        style="height: 45px;" readonly>
+                    <div class="search-icon-img">
+                        <div class="icon-glass">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="tenants-buyers px-3">
+                <div class="cardPackers">
+                    <div class="contentPackers mb-4">
+                        <div class="mt-2 ps-4">
+                            <div class="tent-buy-span">Looking for
+                                <span class="font-bold">Tenants / Buyers ?</span>
+                            </div>
+                            <p class="tent-buy-text">Faster
+                                &amp; Verified Tenants/Buyers</p>
+                            <p class="tent-buy-text">Pay
+                                <span class="font-bold">ZERO</span> brokerage
+                            </p>
+                            <div class="freepostproperty-mob mt-2" onclick="window.open('/postproperty')"
+                                style="margin-left: -16px;">
+                                <a href="#">
+                                    <div class='padtop'>
+                                        <div class="style__postContainer" style="width: 140px; height: 32px;">
+                                            <div onclick="window.open('/postproperty')" class="style__post"
+                                                style="font-size: 11px; margin-top: 0px; font-weight: 500;">
+                                                <b class="post post-phone">Post property</b>
+                                            </div>
+                                            <div class="style__shimmer"
+                                                style="width: 40px; height: 17px; margin-top: 0px;">
+                                                <div class="style__free">FREE</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imagePackers h-100">
+                            <img src="https://shifthoja.com/public/frontend/mob-service/no-img.jpg"
+                                style="border-radius: 13px;">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Services for you start-->
+            <section class="section">
+                <div class="services-container-see">
+                    <div class="services-container-see-bg-py">
+                        <div class="padd-b-padd-l">
+                            <div class="flex justify-between">
+                                <div class="font-bold text-18 text-default-color">Services for you</div>
+                                <div class="seeallbtn">
+                                    See All
+                                </div>
+                            </div>
+                        </div>
+                        <div class="servicesstart8 justify-content-between">
+                            <div class="flex flex-wrap gap-y-2.5">
+                                <div class="px-1 relative" style="width: 25%;">
+                                    <div class="ac-service1">
+                                        <div class="service-img-8">
+                                            <div
+                                                class="w-7.5pe h-fit justify-center flex rounded-full relative pt-2.5p">
+                                                <div title="" role="button" aria-label="animation" tabindex="0"
+                                                    style="width: 100%; height: auto; overflow: hidden; margin: 0px auto; outline: none; transform: scale(1.5);">
+                                                    <img src="https://shifthoja.com/public/frontend/mob-service/ac.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="para-service">AC Service</div>
+                                    </div>
+                                </div>
+                                <!-- 1st services -->
+                                <div class="px-1 relative" style="width: 25%;">
+                                    <div class="rounded-xl flex flex-col items-center h-full py-2 cursor-pointer"
+                                        style="border: 1px solid rgb(235, 235, 235);">
+                                        <div class="service-img-8">
+                                            <div class="w-full h-full">
+                                                <img
+                                                    src="https://shifthoja.com/public/frontend/mob-service/truck-packers.png">
+                                            </div>
+                                        </div>
+                                        <div class="para-service">Packers &amp; Movers</div>
+                                    </div>
+                                </div>
+                                <!-- 2nd services -->
+                                <div class="px-1 relative" style="width: 25%;">
+                                    <div class="rounded-xl flex flex-col items-center h-full py-2 cursor-pointer"
+                                        style="border: 1px solid rgb(235, 235, 235);">
+                                        <div class="service-img-8">
+                                            <div class="w-full h-full">
+                                                <img
+                                                    src="https://shifthoja.com/public/frontend/mob-service/rent-agr.png">
+                                            </div>
+                                        </div>
+                                        <div class="para-service">Rent agreement</div>
+                                    </div>
+                                </div>
+                                <div class="px-1 relative" style="width: 25%;">
+                                    <div class="rounded-xl flex flex-col items-center h-full py-2 cursor-pointer"
+                                        style="border: 1px solid rgb(235, 235, 235);">
+                                        <div class="service-img-8">
+                                            <div class="w-full h-full">
+                                                <img src="https://shifthoja.com/public/frontend/mob-service/rent.png">
+                                            </div>
+                                        </div>
+                                        <div class="para-service">Rent Payment</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Services for you end-->
+
+            <!--Legal Services start-->
+            <section class="section">
+                <span class="title text-18 font-bold">Legal Services</span>
+                <div class="grid-container grid grid-cols-4 mt-5">
+                    <div href="" class="item flex flex-col gap-2 items-center text-center relative">
+                        <div class="icon-container h-14 w-14 rounded-full">
+                            <div class="icon h-14 w-14" style="background-position: -50px -176px;">
+                                <img src="https://shifthoja.com/public/frontend/mob-service/rent.png">
+                            </div>
+                        </div>
+                        <div class="text-service-legal">Rent <br>Agreement</div>
+                    </div>
+                    <div href="" class="item flex flex-col gap-2 items-center text-center relative">
+                        <div class="icon-container h-14 w-14 rounded-full">
+                            <div class="icon h-14 w-14" style="background-position: -106px -178px;">
+                                <img src="https://shifthoja.com/public/frontend/mob-service/verified.png">
+                            </div>
+                        </div>
+                        <div class="text-service-legal">Tenent <br>Verification</div>
+                        <div class="w-max flex justify-center px-1 rounded-lg mx-auto absolute left-0 right-0"></div>
+                    </div>
+                    <div href="" class="item flex flex-col gap-2 items-center text-center relative">
+                        <div class="icon-container h-14 w-14 rounded-full">
+                            <div class="icon h-14 w-14" style="background-position: -161px -178px;">
+                                <img src="https://shifthoja.com/public/frontend/mob-service/sale-agre.png">
+                            </div>
+                        </div>
+                        <div class="text-service-legal">Sale<br>Agreement</div>
+                        <div class="w-max flex justify-center px-1 rounded-lg mx-auto absolute left-0 right-0"></div>
+                    </div>
+                    <div href="" class="item flex flex-col gap-2 items-center text-center relative">
+                        <div class="icon-container h-14 w-14 rounded-full">
+                            <div class="icon h-14 w-14" style="background-position: -214px -174px;">
+                                <img src="https://shifthoja.com/public/frontend/mob-service/legal-ser.png">
+                            </div>
+                        </div>
+                        <div class="text-service-legal">Prooerty <br>Legal Services</div>
+                        <div class="w-max flex justify-center px-1 rounded-lg mx-auto absolute left-0 right-0"></div>
+                    </div>
+                </div>
+            </section>
+            <!--Legal services end-->
+
+            <!--Ever green comming Projects start-->
+            <section class="section">
+                <div class="services-container-see">
+                    <div class="services-container-see-bg-py">
+                        <div class="padd-b-padd-l">
+                            <div class="flex justify-between">
+                                <div class="font-bold text-18 text-default-color">Ever green comming Projects</div>
+                                <div class="seeallbtn">
+                                    See All
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hotSellingProjectsBox">
+                            <div class="hotSellingCardSection">
+                                <div class="sliderContainer">
+                                    <div class="slider single-item" id="hotSellingSlider">
+                                        <div class="projectTileItem">
+                                            <div>
+                                                <figure
+                                                    onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                    <img class="img-responsive lazy"
+                                                        width="globalIsMobileBrowser ? 380 : 750"
+                                                        height="globalIsMobileBrowser ? 220 : 365"
+                                                        data-src="https://shifthoja.com/public/frontend/assets/img/news/mumbai1.jpg"
+                                                        alt="The Prestige City Hyderabad">
+                                                </figure>
+                                                <div class="projectDetails ">
+                                                    <div class="tileTagBox"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        <em class="icon ico-exclusive"></em>
+                                                        <em class="icon ico-assured"></em>
+                                                    </div>
+                                                    <h3><a target="_blank"
+                                                            href="hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html">The
+                                                            Prestige City Delhi</a></h3>
+                                                    <span
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">Chhatarpur
+                                                        , Delhi</span>
+                                                    <div class="price"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        INR 82.99 Lac to 2.58 Cr
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="projectTileItem">
+                                            <div>
+                                                <figure
+                                                    onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                    <img class="img-responsive lazy"
+                                                        width="globalIsMobileBrowser ? 380 : 750"
+                                                        height="globalIsMobileBrowser ? 220 : 365"
+                                                        data-src="https://shifthoja.com/public/frontend/assets/img/news/noida.jpg"
+                                                        alt="The Prestige City Noida">
+                                                </figure>
+                                                <div class="projectDetails ">
+                                                    <div class="tileTagBox"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        <em class="icon ico-exclusive"></em>
+                                                        <em class="icon ico-assured"></em>
+                                                    </div>
+                                                    <h3><a target="_blank"
+                                                            href="hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html">The
+                                                            Prestige City Noida</a></h3>
+                                                    <span
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">sector
+                                                        62, Noida</span>
+                                                    <div class="price"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        INR 82.99 Lac to 2.58 Cr
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="projectTileItem">
+                                            <div>
+                                                <figure
+                                                    onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                    <img class="img-responsive lazy"
+                                                        width="globalIsMobileBrowser ? 380 : 750"
+                                                        height="globalIsMobileBrowser ? 220 : 365"
+                                                        data-src="https://shifthoja.com/public/frontend/assets/img/news/gurugram.jpg"
+                                                        alt="The Prestige City Hyderabad">
+                                                </figure>
+                                                <div class="projectDetails ">
+                                                    <div class="tileTagBox"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        <em class="icon ico-exclusive"></em>
+                                                        <em class="icon ico-assured"></em>
+                                                    </div>
+                                                    <h3><a target="_blank"
+                                                            href="hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html">The
+                                                            Prestige City Gurugram</a></h3>
+                                                    <span
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">Aero
+                                                        City, Gurugram</span>
+                                                    <div class="price"
+                                                        onclick="helperJS.goToURL('hyderabad-residential-property/the-prestige-city-hyderabad/234553/project.html', `_blank`)">
+                                                        INR 91 Lac to 2.58 Cr
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="progressBarContainer">
+                                        <div><span data-slick-index="0" class="progressBar"></span></div>
+                                        <div><span data-slick-index="1" class="progressBar"></span></div>
+                                        <div><span data-slick-index="2" class="progressBar"></span></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Ever green comming Projects end-->
+
+
+            <!--Properties in High Demand-->
+            <section class="section">
+                <div class="padd-b-padd-l">
+                    <div class="flex justify-between">
+                        <div class="font-bold text-18 text-default-color">Properties in High Demand</div>
+                        <div class="seeallbtn">
+                            See All
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper DemandSwiper">
+                    <div class="swiper-wrapper">
+                        <!--[if BLOCK]><![endif]-->
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '39075755604-100-sqft-1-rk-apartment-on-sell-in-chhatarpur-delhi'">
+                                <div class="w-100 card-phd">
+                                    <div class="project-image">
+                                        <div class="image-containerr" style="height: 156px;">
+                                            <div class="overlay"></div>
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1795216221266326.jpg"
+                                                alt="Radhe  39075755604-100-sqft-1-rk-apartment-on-sell-in-chhatarpur-delhi">
+                                        </div>
+                                        <div class="shortlist-icon">
+                                            <div class="icon-container-hhd">
+                                                <img src="https://shifthoja.com/public/frontend/assets/img/Shortlistt.png"
+                                                    alt="Radhe  39075755604-100-sqft-1-rk-apartment-on-sell-in-chhatarpur-delhi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="sf-home__owner-prop__card--type">1 Rk apartment
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--price">
+                                            <span class="rupees">₹</span>10,000
+                                            <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--loc">
+                                            Radhe , Chhatarpur, New Delhi
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--status">
+                                            ready to move
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '66610209743-140-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi'">
+                                <div class="w-100 card-phd">
+                                    <div class="project-image">
+                                        <div class="image-containerr" style="height: 156px;">
+                                            <div class="overlay"></div>
+                                            <img src="https://shifthoja.com/public/storage/proprty/washroom/1795209113080250.jpg"
+                                                alt="Veerendra van society  66610209743-140-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                        </div>
+                                        <div class="shortlist-icon">
+                                            <div class="icon-container-hhd">
+                                                <img src="https://shifthoja.com/public/frontend/assets/img/Shortlistt.png"
+                                                    alt="Veerendra van society  66610209743-140-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--price">
+                                            <span class="rupees">₹</span>7,000,000
+                                            <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--loc">
+                                            Veerendra van society , Chhatarpur, New Delhi
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--status">
+                                            ready to move
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '34751322724-90-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi'">
+                                <div class="w-100 card-phd">
+                                    <div class="project-image">
+                                        <div class="image-containerr" style="height: 156px;">
+                                            <div class="overlay"></div>
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1795116828280730.jpg"
+                                                alt="Aaditty apartment  34751322724-90-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                        </div>
+                                        <div class="shortlist-icon">
+                                            <div class="icon-container-hhd">
+                                                <img src="https://shifthoja.com/public/frontend/assets/img/Shortlistt.png"
+                                                    alt="Aaditty apartment  34751322724-90-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--price">
+                                            <span class="rupees">₹</span>75,000
+                                            <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--loc">
+                                            Aaditty apartment , Chhatarpur, New Delhi
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--status">
+                                            ready to move
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div onclick="location.href = '31088463434-4-sqft-3-bhk-flat-on-sell-in-chhatarpur-delhi'">
+                                <div class="w-100 card-phd">
+                                    <div class="project-image">
+                                        <div class="image-containerr" style="height: 156px;">
+                                            <div class="overlay"></div>
+                                            <img src="https://shifthoja.com/public/storage/proprty/balcony/1794230762670559.jpg"
+                                                alt="Goopi dhaba  31088463434-4-sqft-3-bhk-flat-on-sell-in-chhatarpur-delhi">
+                                        </div>
+                                        <div class="shortlist-icon">
+                                            <div class="icon-container-hhd">
+                                                <img src="https://shifthoja.com/public/frontend/assets/img/Shortlistt.png"
+                                                    alt="Goopi dhaba  31088463434-4-sqft-3-bhk-flat-on-sell-in-chhatarpur-delhi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="sf-home__owner-prop__card--type">3 bhk flat
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--price">
+                                            <span class="rupees">₹</span>750,000
+                                            <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--loc">
+                                            Goopi dhaba , Chhatarpur, New Delhi
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--status">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '12202691160-2-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi'">
+                                <div class="w-100 card-phd">
+                                    <div class="project-image">
+                                        <div class="image-containerr" style="height: 156px;">
+                                            <div class="overlay"></div>
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1793579495683964.jpg"
+                                                alt="Nanda Hospital  12202691160-2-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                        </div>
+                                        <div class="shortlist-icon">
+                                            <div class="icon-container-hhd">
+                                                <img src="https://shifthoja.com/public/frontend/assets/img/Shortlistt.png"
+                                                    alt="Nanda Hospital  12202691160-2-sqft-3-bhk-apartment-on-sell-in-chhatarpur-delhi">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-details">
+                                        <div class="sf-home__owner-prop__card--type">3 bhk apartment
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--price">
+                                            <span class="rupees">₹</span>70,00000
+                                            <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--loc">
+                                            Nanda Hospital , Chhatarpur, New Delhi
+                                        </div>
+                                        <div class="sf-home__owner-prop__card--status">
+                                            ready to move
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--[if ENDBLOCK]><![endif]-->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <!--Properties in High Demand end-->
+
+
+            <!--Newly commercial properties start-->
+            <section class="section ">
+                <div class="prop-show">
+                    <div class="top-prop">Newly Commercial Properties</div>
+                    <div class="seeallbtn">
+                        See All
+                    </div>
+                </div>
+
+                <div class="swiper mySwipersecond">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="card-rental">
+                                <h3>Leasing a rental property</h3>
+                                <div class="image-rental">
+                                    <img src="https://img.freepik.com/premium-photo/singapore-march-26-2017-mandarin-hotel-singapore_36737-506.jpg?w=740"
+                                        alt="rental Property Image-rental">
+                                    <div class="caption-rental">
+                                        <div class="caption-heading-rental">Explore all Commercial leasing options</div>
+
+                                    </div>
+                                </div>
+                                <div class="caption-subheading">Over 96,000 properties | 47,000+ owner listed</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-rental">
+                                <h3>Leasing a rental property</h3>
+                                <div class="image-rental">
+                                    <img src="https://img.freepik.com/premium-photo/skyline-view-buildings-city_259266-335.jpg?w=740"
+                                        alt="rental Property Image-rental">
+                                    <div class="caption-rental">
+                                        <div class="caption-heading-rental">Explore all Commercial leasing options</div>
+
+                                    </div>
+                                </div>
+                                <div class="caption-subheading">Over 96,000 properties | 47,000+ owner listed</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="card-rental">
+                                <h3>Leasing a rental property</h3>
+                                <div class="image-rental">
+                                    <img src="https://img.freepik.com/premium-photo/office-building-integrated-into-mixeduse-development-featuring-retail-spaces_658005-2984.jpg?w=740"
+                                        alt="rental Property Image-rental">
+                                    <div class="caption-rental">
+                                        <div class="caption-heading-rental">Explore all Commercial leasing options</div>
+
+                                    </div>
+                                </div>
+                                <div class="caption-subheading">Over 96,000 properties | 47,000+ owner listed</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <!--Newly commercial properties end-->
+
+            <!--Appartment Vill & more start-->
+            <section class="section ">
+                <div class="prop-show">
+                    <div class="top-prop">Appartment Vill & more.</div>
+                    <div class="seeallbtn">
+                        See All
+                    </div>
+                </div>
+                <div class="swiper mySwipersecond">
+                    <div class="swiper-wrapper">
+                        <!--[if BLOCK]><![endif]-->
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '2091781218-160-sqft-1-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1795217749389989.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">1 BHK apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>10,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    Radhey apartment , Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '51309046067-80-sqft-2-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/balcony/1795121444645000.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">2 BHK apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>22,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    Sant mant ashram , Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '29970222475-80-sqft-2-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1795119920521374.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">2 BHK apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>23,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    Sant mant ashram , Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '31386341328-650-sqft-2-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1795112763542098.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">2 BHK apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>18,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    chattarpur , Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '43728266063-90-sqft-2-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1794573554351566.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">2 BHK apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>25,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    Chattarpur phesh 2 mkan no 240, Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                onclick="location.href = '40489294687-950-sqft-2-bhk-apartment-on-rent-in-chhatarpur-delhi'">
+                                <div class="col-12">
+                                    <div class="categories position-relative overflow-hidden rounded-3 shadow">
+                                        <div style="height: 156px;">
+                                            <img src="https://shifthoja.com/public/storage/proprty/hall/1794398923144908.jpg"
+                                                class="img-fluid" alt="" class="w-100"
+                                                style="height: 600px; object-fit: cover;">
+                                        </div>
+                                        <div class="">
+                                            <div class="project-details">
+                                                <div class="sf-home__owner-prop__card--type text-white">2 bhk apartment
+                                                    rent
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--price text-white">
+                                                    <span class="rupees text-white">₹</span>16,000
+                                                    <span class="sf-home__owner-prop__card--size text-white">
+                                                        sqft</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--loc text-white">
+                                                    Chatterpure Ph-2, Chhatarpur, New Delhi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--[if ENDBLOCK]><![endif]-->
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <!--Appartment Vill & more end-->
+
+
+            <!--Properties in High Demand start-->
+            <section class="section">
+                <div class="padd-b-padd-l">
+                    <div class="flex justify-between">
+                        <div class="font-bold text-18 text-default-color">Properties in High Demand</div>
+                        <div class="seeallbtn">
+                            See All
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div>
+                                <div class="row card-phd">
+                                    <div class="col-12 ">
+                                        <div class="tag-phd">Verified High Demand</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://shifthoja.com/public/frontend/mob-service/phd-image.png"
+                                            alt="Project Image-phd" height="100px" class="image-propertyoo">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="project-name-phd">Folium By Sumadhura Phase 2</div>
+                                        <div class="location-phd">Whitefield, Bangalore East</div>
+                                        <div class="price-phd">₹ 1.96 - 3.5 Cr</div>
+                                        <div class="config-phd">3, 4 BHK Apartment</div>
+                                        <div class="possession-phd">
+                                            <span class="price-increase-phd">23.4%</span>
+                                            <span class="price-change-text-phd">price increase in last 1 year in</span>
+                                            <span class="location-text-phd">Whitefield, Bangalore East</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="dashed-line-container-phd">
+                                            <div class="dashed-line-phd"></div>
+                                            <img src="https://shifthoja.com/public/frontend/mob-service/Dashed_Line.png"
+                                                alt="Dashed Line Image" class="dashed-line-img-phd">
+                                        </div>
+                                        <div class="offer-container-phd">
+                                            <div class="offer-icon-phd">
+                                                <img src="https://shifthoja.com/public/frontend/mob-service/NL_Tag.png"
+                                                    alt="Offer Icon">
+                                            </div>
+                                            <div class="offer-text-phd">
+                                                <span class="offer-description-phd">Get preferred options @zero
+                                                    brokerage</span>
+                                            </div>
+                                            <div class="cta-button-phd">
+                                                <div class="trackGAClick-phd" data-testid="NLP_EOI_CTA"
+                                                    data-galabel="NL_TUPLE.EOI">View
+                                                    Number
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div>
+                                <div class="row card-phdd">
+                                    <div class="col-12 ">
+                                        <div class="tag-phd">Verified High Demand</div>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://shifthoja.com/public/frontend/mob-service/phd-image.png"
+                                            alt="Project Image-phd" height="100px" class="image-propertyoo">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="project-name-phd">Folium By Sumadhura Phase 2</div>
+                                        <div class="location-phd">Whitefield, Bangalore East</div>
+                                        <div class="price-phd">₹ 1.96 - 3.5 Cr</div>
+                                        <div class="config-phd">3, 4 BHK Apartment</div>
+                                        <div class="possession-phd">
+                                            <span class="price-increase-phd">23.4%</span>
+                                            <span class="price-change-text-phd">price increase in last 1 year in</span>
+                                            <span class="location-text-phd">Whitefield, Bangalore East</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="dashed-line-container-phd">
+                                            <div class="dashed-line-phd"></div>
+                                            <img src="https://shifthoja.com/public/frontend/mob-service/Dashed_Line.png"
+                                                alt="Dashed Line Image" class="dashed-line-img-phd">
+                                        </div>
+                                        <div class="offer-container-phd">
+                                            <div class="offer-icon-phd">
+                                                <img src="https://shifthoja.com/public/frontend/mob-service/NL_Tag.png"
+                                                    alt="Offer Icon">
+                                            </div>
+                                            <div class="offer-text-phd">
+                                                <span class="offer-description-phd">Get preferred options @zero
+                                                    brokerage</span>
+                                            </div>
+                                            <div class="cta-button-phd">
+                                                <div class="trackGAClick-phd" data-testid="NLP_EOI_CTA"
+                                                    data-galabel="NL_TUPLE.EOI">View
+                                                    Number
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </section>
+            <!--Properties in High Demand end-->
+
+
+
+
+            <!--Packers and Movers start-->
+            <section class="section ">
+                <div class="containerPackers">
+                    <div class="cardPackers">
+                        <div class="contentPackers">
+                            <div class="infoPackers">
+                                <div class="titlePackers">Packers & Movers</div>
+                                <p class="descriptionPackers">Guaranteed on-time, safe delivery at great prices</p>
+                                <img class="tagPackers"
+                                    src="https://shifthoja.com/public/frontend/mob-service/lowestPrice.png"
+                                    alt="tag-img" height="40px" width="40px">
+                                <div class="explorePackers">
+                                    <span class="textPackers">Explore</span>
+                                    <span class="arrowPackers"></span>
+                                </div>
+                            </div>
+                            <div class="imagePackers">
+                                <img src="https://shifthoja.com/public/frontend/mob-service/image-removebg-preview.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--Packers and Movers end-->
+
+
+
+
+
+            <div class="nobroker-services-container">
+                <div class="nobroker-services-content px-4p py-3p po:p-5" style="border-top: 1px solid #4646463d">
+                    <div class="font-semibold text-22  po:text-18">Shifthoja services</div>
+                    <div class="flex justify-between po:block">
+                        <div class="w-48pe po:w-full">
+                            <div class="heading-6 mb-1.5p">Buy</div>
+                            <div class="flex flex-wrap">
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">Home Loan</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Property Legal Services</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">Interiors</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Sale Agreement</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+
+                                    NoBroker For NRI's</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    New Builder Project</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Home Loan Balance Transfer</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+
+                                    Home Loan Eligibility Check</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Apply Home Loan</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Pre Approved Home Loan</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/home-loan/" target="_blank" rel="noopener"
+                                    aria-label="home-loan">
+                                    Buy / Sell Property Questions</a>
+
+                            </div>
+                        </div>
+                        <div class="w-48pe po:w-full">
+                            <div class="heading-6 mb-1.5p">Rent</div>
+                            <div class="flex flex-wrap">
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Rental Agreement</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Pay Rent</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Refer and Earn</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Home Services</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Packers and Movers</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Property Management in India</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">
+                                    Home Services Questions</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Rent Services Questions</a>
+                                <a class="py-0.5 px-2 no-underline text-defaultcolor rounded-4 cursor-pointer mr-1.5p mb-1.5p"
+                                    style="background-color:#e8e8e8" href="/rental-agreement" target="_blank"
+                                    rel="noopener" aria-label="ra">Online Rent Receipt Generator</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer-container">
+                <div class="bottom-footer-container">
+                    <hr>
+                    <div class="social-icons-container">
+                        <a href="" target="_blank" rel="noopener" aria-label="facebook"><img
+                                src="https://shifthoja.com/public/frontend/mob-service/facebookf.png" alt="facebook"
+                                width="19px" height="19px" loading="lazy"></a>
+                        <a href="" target="_blank" rel="noopener" aria-label="twitter">
+                            <img src="https://shifthoja.com/public/frontend/mob-service/twitter.png" alt="twitter"
+                                width="19px" height="19px" loading="lazy"></a>
+                        <a href="" target="_blank" rel="noopener" aria-label="instagram"><img
+                                src="https://shifthoja.com/public/frontend/mob-service/instagram.png" alt="instagram"
+                                width="19px" height="19px" loading="lazy"></a>
+                        <a href="" target="_blank" rel="noopener" aria-label="linkedin"><img
+                                src="https://shifthoja.com/public/frontend/mob-service/linkedin.png" alt="linkedin"
+                                width="19px" height="19px" loading="lazy"></a>
+                        <a href="" target="_blank" rel="noopener" aria-label="youtube"><img
+                                src="https://shifthoja.com/public/frontend/mob-service/youtube.png" alt="youtube"
+                                width="19px" height="19px" loading="lazy"></a>
+                    </div>
+                    <div class="copyright">© 2024 Shifthoja</div>
+                </div>
+            </div>
+
+        </div>
+        <!--[if ENDBLOCK]><![endif]-->
+
+
+
+    </div>
+
+    <!-- Footer End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        const button = document.querySelector(".btn-top");
+
+        const displayButton = () => {
+            window.addEventListener("scroll", () => {
+                // console.log(window.scrollY);
+
+                if (window.scrollY > 800) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+        };
+
+        const scrollToTop = () => {
+            button.addEventListener("click", () => {
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                });
+                // console.log(event);
+            });
+        };
+
+        displayButton();
+        scrollToTop();
+    </script>
+    <!-- search inputbox recomandation start js -->
+    <script>
+        $(document).ready(function () {
+            $('.client-testimonial-carousel').owlCarousel({
+                items: 1, // Display one item by default
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    768: {
+                        items: 2 // Display two items on tablets
+                    },
+                    992: {
+                        items: 3 // Display three items on laptops
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const locations = [
+            {
+                city: "Delhi",
+                locality_city: [
+                    "Nerela",
+                    "Burari",
+                    "Timarpur",
+                    "Adarsh Nagar",
+                    "Badli",
+                    "Rithala",
+                    "Bawana",
+                    "Mundka",
+                    "Kirari",
+                    "Sultan Pur Majra",
+                    "Nangloi Jat",
+                    "Mangol Puri (SC)",
+                    "Rohini",
+                    "Shalimar Bagh",
+                    "Shakur Basti",
+                    "Tri Nagar",
+                    "Wazirpur",
+                    "Model Town",
+                    "Sadar Bazar",
+                    "Chandni Chowk",
+                    "Matia Mahal",
+                    "Ballimaran",
+                    "Karol Bagh",
+                    "Patel Nagar",
+                    "Moti Nagar",
+                    "Madipur (SC)",
+                    "Rajouri Garden",
+                    "Hari Nagar",
+                    "Tilak Nagar",
+                    "Janakpuri",
+                    "Vikaspuri",
+                    "Uttam Nagar",
+                    "Dwarka",
+                    "Matiala",
+                    "Najafgarh",
+                    "Bijwasan",
+                    "Palam",
+                    "Delhi Cantonment",
+                    "Rajinder Nagar",
+                    "New Delhi",
+                    "Jangpura",
+                    "Kasturba Nagar",
+                    "Malviya Nagar",
+                    "R K Puram",
+                    "Mehrauli",
+                    "Chhatarpur",
+                    "Deoli (SC)",
+                    "Ambedkar Nagar (SC)",
+                    "Sangam Vihar",
+                    "Greater Kailash",
+                    "Kalkaji",
+                    "Tughlakabad",
+                    "Badarpur",
+                    "Okhla",
+                    "Trilokpuri",
+                    "Kondli",
+                    "Patparganj",
+                    "Laxmi Nagar",
+                    "Vishwas Nagar",
+                    "Krishna Nagar",
+                    "Gandhi Nagar",
+                    "Shahdara",
+                    "Seemapuri",
+                    "Rohtas Nagar",
+                    "Seelampur",
+                    "Ghonda",
+                    "Babarpur",
+                    "Gokalpur",
+                    "Mustafabad",
+                    "Karawal Nagar",
+                ],
+            },
+            {
+                city: "Noida",
+                locality_city: [
+                    "Harola Noida Sector 5",
+                    "Jhundpura Noida Sector 11",
+                    "Naya Bans Noida Sector 15",
+                    "Chora Sadatpur & Ragunathpur Noida Sector 22",
+                    "Atta Noida Sector 27",
+                    "Nithari Noida Sector 31",
+                    "Morna Noida Sector 35",
+                    "Agahapur Noida Sector 41",
+                    "Chhalera Banger Noida Sector 44",
+                    "Sadarpur Noida Sector 45",
+                    "Sarai Sadar Noida Sector 46",
+                    "Baraula Noida Sector 49",
+                    "Hoshiarpur Noida Sector 51",
+                    "Gijhaur Noida Sector 53",
+                    "Khora Noida Sector 56",
+                    "Bishanpura Noida Sector 58",
+                    "Rasulpur Nawada Noida Sector 62",
+                    "Chhajarsi Noida Sector 63",
+                    "Mamura Noida Sector 66",
+                    "Garhi Chaukhandi Noida Sector 68",
+                    "Basai Noida Sector 70",
+                    "Sharfabad Noida Sector 72",
+                    "Kakrola Noida Sector 80",
+                    "Yaqubpur Noida Sector 85",
+                    "Allhabans Noida Sector 86",
+                    "Sikandarpur Noida Sector 87",
+                    "Gejah Tallutabad Noida Sector 93",
+                    "Salarpur Noida Sector 102",
+                    "Hazipur Noida Sector 104",
+                    "Bhangel Begampur Noida Sector 110",
+                    "Sorakha Noida Sector 115",
+                    "Parthala Khanjarpur Noida Sector 122",
+                    "Raipur Khadar Noida Sector 126",
+                    "Bakhtawarpur Noida Sector 127",
+                    "Shahpur Govardhanpur & Sultanpur Noida Sector 128",
+                    "Bajidpur Noida Sector 130",
+                    "Asagarpur Noida Sector 131",
+                    "Rohilapur Noida Sector 132",
+                    "Nagali Sakpur Noida Sector 133",
+                    "Harpal ki nagali Noida Sector 134",
+                    "Shahdara Noida Sector 141",
+                    "Nalgadha Noida Sector 145",
+                    "Noida Sector 148",
+                    "Kondli Noida Sector 149",
+                    "Garhi samastpur Noida Sector 150",
+                    "Dalerpur Noida Sector 151",
+                    "Kambakashpur Noida Sector 152",
+                    "Badauli Noida Sector 154",
+                    "Jhatta Noida Sector 159",
+                    "Gulavali Noida Sector 162",
+                    "Mohiyapur Noida Sector 163",
+                    "Dalupura Noida Sector 165",
+                    "Chhaprauli Bangar Noida Sector 167",
+                    "Dostpur Mangroli Noida Sector 168",
+                ],
+            },
+            {
+                city: "Gurugram",
+                locality_city: [
+                    "Aklimpur",
+                    "Babupur",
+                    "Bajghera",
+                    "Basharia",
+                    "Baskushla",
+                    "Bhang Rola",
+                    "Budhera",
+                    "Chandu",
+                    "Dhana",
+                    "Dhankot",
+                    "Dharampur",
+                    "Dhorka",
+                    "Dhumaspur",
+                    "Gairatpurbas",
+                    "Ghasula",
+                    "Gopalpur",
+                    "Hamirpur",
+                    "Harsaru",
+                    "Hayatpur",
+                    "Kankrola",
+                    "Kharki Majra Dhankot",
+                    "Mankrola",
+                    "Medawas",
+                    "Meoka",
+                    "Mohmadheri",
+                    "Nangli Umarpur",
+                    "Nurpur Jharsa",
+                    "Palra",
+                    "Sadhrana",
+                    "Tikampur",
+                    "Tikli",
+                    "Wazirpur",
+                ],
+            },
+        ];
+
+        const searchDropdown = document.getElementById("searchDropdown");
+        const searchInput = document.getElementById("searchInput");
+        const localitiesList = document.getElementById("localitiesList");
+        searchInput.addEventListener("input", function () {
+            const inputValue = searchInput.value.toLowerCase();
+            const selectedCity = searchDropdown.value;
+            const selectedLocation = locations.find(
+                (location) => location.city === selectedCity
+            );
+            const suggestionList = document.getElementById("localitiesList");
+
+            suggestionList.innerHTML = "";
+
+            if (selectedLocation && inputValue.trim() !== "") {
+                const localities = selectedLocation.locality_city;
+                localities.forEach((locality) => {
+                    if (locality.toLowerCase().includes(inputValue)) {
+                        const listItem = document.createElement("li");
+                        listItem.className = "suggestion-item";
+                        listItem.textContent = locality;
+                        listItem.addEventListener("click", function () {
+                            searchInput.value = locality;
+                            suggestionList.innerHTML = "";
+                        });
+                        suggestionList.appendChild(listItem);
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- search inputbox recomandation End js -->
+    <!-- Testomonils start js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Testomonials end -->
+    <!-- property card start -->
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i");
+        const carouselChildrens = [...carousel.children];
+
+        let isDragging = false,
+            isAutoPlay = true,
+            startX,
+            startScrollLeft,
+            timeoutId;
+
+        // Get the number of cards that can fit in the carousel at once
+        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+        // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+        carouselChildrens
+            .slice(-cardPerView)
+            .reverse()
+            .forEach((card) => {
+                carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+            });
+
+        // Insert copies of the first few cards to end of carousel for infinite scrolling
+        carouselChildrens.slice(0, cardPerView).forEach((card) => {
+            carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+        });
+
+        // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+
+        // Add event listeners for the arrow buttons to scroll the carousel left and right
+        arrowBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                carousel.scrollLeft +=
+                    btn.id == "left" ? -firstCardWidth : firstCardWidth;
+            });
+        });
+
+        const dragStart = (e) => {
+            isDragging = true;
+            carousel.classList.add("dragging");
+            // Records the initial cursor and scroll position of the carousel
+            startX = e.pageX;
+            startScrollLeft = carousel.scrollLeft;
+        };
+
+        const dragging = (e) => {
+            if (!isDragging) return; // if isDragging is false return from here
+            // Updates the scroll position of the carousel based on the cursor movement
+            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        };
+
+        const dragStop = () => {
+            isDragging = false;
+            carousel.classList.remove("dragging");
+        };
+
+        const infiniteScroll = () => {
+            // If the carousel is at the beginning, scroll to the end
+            if (carousel.scrollLeft === 0) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+            // If the carousel is at the end, scroll to the beginning
+            else if (
+                Math.ceil(carousel.scrollLeft) ===
+                carousel.scrollWidth - carousel.offsetWidth
+            ) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+
+            // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+            clearTimeout(timeoutId);
+            if (!wrapper.matches(":hover")) autoPlay();
+        };
+
+        const autoPlay = () => {
+            if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+            // Autoplay the carousel after every 2500 ms
+            timeoutId = setTimeout(
+                () => (carousel.scrollLeft += firstCardWidth),
+                2500
+            );
+        };
+        autoPlay();
+
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("scroll", infiniteScroll);
+        wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+        wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+    <!-- propery card end -->
+    <script>
+        let currentIndex = 0;
+
+        const moveSlider = (direction) => {
+            const cardSlider = document.querySelector(".card-slider");
+            const cardWidth = document.querySelector(".card").offsetWidth;
+            const maxIndex = cardSlider.childElementCount - 1;
+
+            currentIndex = Math.max(
+                0,
+                Math.min(currentIndex + direction, maxIndex)
+            );
+            const newPosition = -currentIndex * cardWidth;
+            cardSlider.style.transform = `translateX(${newPosition}px)`;
+        };
+    </script>
+    <script>
+        const showImage = (imageId, imagePath) => {
+            const imageIds = ["first", "second", "third"];
+
+            for (const id of imageIds) {
+                const element = document.getElementById(id);
+                element.style.display = id === imageId ? "block" : "none";
+            }
+
+            // Change the image source based on the imagePath parameter
+            document.getElementById(imageId).querySelector("img").src = imagePath;
+        };
+
+        const BuyImage = () => {
+            // console.log("first");
+            showImage("first", "https://shifthoja.com/public/frontend/assets/img/slide1/buy.jpg");
+        };
+
+        const RentImage = () => {
+            showImage("second", "https://shifthoja.com/public/frontend/assets/img/slide1/rent.jpg");
+        };
+
+        const CommercialImage = () => {
+            showImage("third", "https://shifthoja.com/public/frontend/assets/img/slide1/commercial.jpg");
+        };
+
+        // Call the BuyImage function when the page loads to show the "Buy" image by default
+        document.addEventListener("DOMContentLoaded", () => {
+            BuyImage();
+        });
+    </script>
+    <!-- recent project js  -->
+    <!-- Swiper JS -->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
+    <!--Uncomment this line-->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: "true",
+            fade: "true",
+            grabCursor: "true",
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    </script>
+    <script>
+        var header = document.getElementById("myDIV");
+
+        var btns = header.getElementsByClassName("btn_slider");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active_btn");
+                current[0].className = current[0].className.replace(
+                    " active_btn",
+                    ""
+                );
+                this.className += " active_btn";
+            });
+        }
+    </script>
+    <script>
+        function sticky_relocate() {
+            var window_top = $(window).scrollTop();
+            var div_top = $("#sticky-anchor").offset().top;
+            if (window_top > div_top) {
+                $("#sticky").addClass("stick");
+            } else {
+                $("#sticky").removeClass("stick");
+            }
+        }
+
+        $(function () {
+            $(window).scroll(sticky_relocate);
+            sticky_relocate();
+        });
+    </script>
+    <script>
+        const indicator = document.querySelector(".nav-indicator-wrapper");
+        const items = document.querySelectorAll(".nav-item");
+
+        function handleIndicator(el) {
+            items.forEach((item) => {
+                item.classList.remove("is-active");
+            });
+
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+
+            el.classList.add("is-active");
+        }
+
+        items.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                handleIndicator(item);
+            });
+
+            item.classList.contains("is-active") && handleIndicator(item);
+        });
+    </script>
+
+    <!-- Vendors -->
+    <script src="https://shifthoja.com/public/frontend/assets/vendor/tiny-slider/tiny-slider.js"></script>
+    <!-- ThemeFunctions -->
+    <script src="https://shifthoja.com/public/frontend/assets/js-service-slider/js/functions.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/modernizr-2.6.2.min.js"></script>
+
+    <script src="https://shifthoja.com/public/frontend/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/bootstrap-select.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/bootstrap-hover-dropdown.js"></script>
+
+    <script src="https://shifthoja.com/public/frontend/assets/js/easypiechart.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/jquery.easypiechart.min.js"></script>
+
+    <script src="https://shifthoja.com/public/frontend/assets/js/owl.carousel.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/icheck.min.js"></script>
+    <script src="https://shifthoja.com/public/frontend/assets/js/price-range.js"></script>
+
+    <script src="https://shifthoja.com/public/frontend/assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 3,
+                //      autoplay:false,
+                margin: 30,
+                loop: true,
+                dots: true,
+
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=239a5c52" data-csrf="PtJJo2bkhRLFc73K3USK4azVOe20pMIXgBXplfo9"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+
+        var swiper = new Swiper(".mySwipersecond", {
+            slidesPerView: 1.5,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper(".DemandSwiper", {
+            slidesPerView: 1.4,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#testimonials').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 4000,
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 576,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 1600,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <script>
+        function toggleActive(element) {
+            const options = document.querySelectorAll('.rent-buy-commercialt div');
+            options.forEach(option => option.classList.remove('active'));
+            element.classList.add('active');
+        }
+    </script>
+    <!-- bottom nav display-->
+    <!-- <script>
+    const showImage = (imageId, imagePath) => {
+        const imageIds = ["first", "second", "third"];
+
+        for (const id of imageIds) {
+            const element = document.getElementById(id);
+            element.style.display = id === imageId ? "block" : "none";
+        }
+        
+    };
+    document.addEventListener("DOMContentLoaded", () => {
+        BuyImage();
+    });
+</script> -->
+
+    <script>
+        window.addEventListener('scroll', function () {
+            var bottomBar = document.querySelector('.bottom-bar');
+
+            if (window.scrollY > 100) {
+                bottomBar.style.display = 'flex';
+            } else {
+                bottomBar.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        function redirectToSearchPage() {
+            window.location.href = 'property-real-estate-buy-rent';
+        }
+    </script>
+    <script>window.dataLayer = window.dataLayer || [];</script>
+    <script>
+        let baseUrl = '/';
+        let _CDN_IMAGES_URL = '';
+        let _galaktic_search = 'false';
+        let _galaktic_url = '';
+        let _galaktic_tracking_url = '';
+        let _galaktic_site_id = '1'; let webengage_status = 'false';
+        const getColorNum = (num) => {
+            num %= 100;
+            return num < 33 ? num : parseInt(num / 3);
+        }; let cityFreeze = false; let isfirepixel = true;
+        let gtmBodyScript = ``;
+        let isCdnCgi = false;
+        function isMobileBrowser() {
+            return false;
+        }
+
+
+
+    </script>
+    <script>
+        var phoneNumber = "";
+        window.phoneNumber = phoneNumber;
+        var visitorID = "";
+        window.visitorID = '';
+        var globalIsMobileBrowser = false;
+        var globalIsIpadBrowser = false;
+
+        var cityId = '';
+        var cityName = "";
+
+        window.supercityname = "";
+        var ismetrocity = "";
+        window.ismetrocity = ismetrocity;
+        var s_active = "";
+
+    </script>
+
+
+
+
+    <script>
+        var swiper = new Swiper(".SideSwiper", {
+            zoom: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

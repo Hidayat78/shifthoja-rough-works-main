@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Privacy Policy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 160px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

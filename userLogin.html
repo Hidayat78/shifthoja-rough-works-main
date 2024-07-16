@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Shifthoja ESTATE | Home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="assets/css/searchbox.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/searchbox.css" />
+    <link rel="stylesheet" href="assets/css/slickcss.css" />
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/fontello.css" />
+    <link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/icheck.min_all.css" />
+    <link rel="stylesheet" href="assets/css/price-range.css" />
+    <link rel="stylesheet" href="assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="assets/css/owl.theme.css" />
+    <link rel="stylesheet" href="assets/css/owl.transitions.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/mediaQuery.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <!-- recent css link -->
+    <link rel="stylesheet" href="/assets/css/recentpro.css" />
+    <!-- property card link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css-service-slider/css/style.css" />
+    <!-- Testimonials head -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css" />
+    <!-- Testimonials end -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #003159;
+            height: 70px;
+            z-index: 1000;
+        }
+
+        button.navbar-toggler-icon {
+            margin-right: 34px;
+            margin-top: 9px;
+            margin-left: 8px;
+            font-size: large;
+        }
+
+        .container1>a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar-btn {
+            margin-right: 20px;
+        }
+
+        body {
+            overflow: hidden !important;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-transform: uppercase;
+        }
+
+        .wrapper {
+            /* margin-left: -90px; */
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+        }
+
+        .wrapper i {
+            top: 50%;
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            position: absolute;
+            text-align: center;
+            line-height: 50px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translateY(-50%);
+            transition: transform 0.1s linear;
+            z-index: 1;
+        }
+
+        .wrapper i:active {
+            transform: translateY(-50%) scale(0.85);
+        }
+
+
+
+        .wrapper i:last-child {
+            right: -22px;
+        }
+
+        .wrapper .carousel {
+            display: grid;
+            grid-auto-flow: column;
+            /* grid-auto-columns: calc((100% / 3) - 12px); */
+            grid-auto-columns: calc((100% / 5) - 16px);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            border-radius: 8px;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel.no-transition {
+            scroll-behavior: auto;
+        }
+
+        .carousel.dragging {
+            scroll-snap-type: none;
+            scroll-behavior: auto;
+        }
+
+        .carousel.dragging .card {
+            cursor: grab;
+            user-select: none;
+        }
+
+        .carousel :where(.card, .img) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel .card {
+            scroll-snap-align: start;
+            height: 361px;
+            width: 200px;
+            list-style: none;
+            background: #fff;
+            cursor: pointer;
+            padding-bottom: 15px;
+            flex-direction: column;
+            border-radius: 8px;
+        }
+
+        .carousel .card .img {
+            height: 300px;
+            width: 300px;
+        }
+
+        .card .img img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .carousel .card h2 {
+            font-weight: 500;
+            font-size: 1.56rem;
+            margin: 30px 0 5px;
+        }
+
+        .carousel .card span {
+            color: #6a6d78;
+            font-size: 1.31rem;
+        }
+
+        @media screen and (max-width: 900px) {
+            .wrapper .carousel {
+                grid-auto-columns: calc((100% / 2) - 9px);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .wrapper .carousel {
+                grid-auto-columns: 100%;
+            }
+        }
+
+        /* After change card  */
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            padding-bottom: 15px;
+        }
+
+        /* Testimonials start css */
+        .wrapper-testimonials {
+            position: relative;
+        }
+
+        .carousel-control.left,
+        .carousel-control.right {
+            background: transparent;
+        }
+
+        .imgBox {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .imgBox img {
+            width: 100%;
+        }
+
+        .carousel-inner {
+            background: #fff;
+            border-radius: 25px;
+            margin-bottom: 15px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .carousel-caption {
+            position: static;
+            padding-bottom: 15px;
+            padding-top: 0;
+        }
+
+        .carousel-caption h3 {
+            font-size: 25px;
+            margin-top: 2px;
+            color: #262626;
+            text-shadow: none;
+        }
+
+        .carousel-caption h4 {
+            color: #2b2626;
+            text-shadow: none;
+        }
+
+        .carousel-caption p {
+            font-size: 13px;
+            margin: auto;
+            width: 70%;
+            margin-bottom: 20px;
+            letter-spacing: 0px;
+            text-shadow: none;
+            color: #2b2626;
+        }
+
+        .carousel-indicators li {
+            background-color: #ffffff;
+            width: 50px;
+        }
+
+        .carousel-control {
+            color: #2b2626;
+        }
+
+        .carousel-indicators .active {
+            background-color: #2b2626;
+            width: 20px;
+        }
+
+        .carousel-indicators {
+            bottom: 10px;
+        }
+
+        /* Testimonoals end */
+        /* News searchbox start */
+        .suggestion-list {
+            .suggestion-list {
+                top: 129px;
+                margin-top: 10px;
+                list-style-type: none;
+                position: absolute;
+                width: 40%;
+                background-color: aquamarine;
+                max-height: 150px;
+                overflow-y: auto;
+                color: black;
+                z-index: 1000;
+                border-radius: 21px;
+                font-size: 37px;
+                font-weight: 300;
+            }
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1200px) {
+            .suggestion-item {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .suggestion-item {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .suggestion-item {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 425px) {
+            .suggestion-item {
+                font-size: 12px;
+            }
+        }
+
+        .button.navbar-right {
+            display: flex;
+        }
+
+        #learn-more-container {
+            /* font-family: 'Poppins', sans-serif; */
+            /* font-size: 1rem; */
+            line-height: 1.5;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            margin: 0;
+            /* min-height: 100vh; */
+            /* background: #f3f8fa; */
+        }
+
+        .learn-more {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            text-decoration: none;
+            background: transparent;
+            padding: 0;
+            font-size: inherit;
+            font-family: inherit;
+        }
+
+        .learn-more {
+            width: 12rem;
+        }
+
+        .learn-more .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 4rem;
+            background: #FBC02D;
+            border-radius: 1.625rem;
+        }
+
+        .learn-more .circle .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+        }
+
+        button.learn-more .circle .icon.arrow {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+        }
+
+        button.learn-more .circle .icon.arrow::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+        }
+
+        button.learn-more .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1.15rem 0;
+            margin: 0 0 0 1.85rem;
+            color: #FFC107;
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        button:hover .circle {
+            width: 100%;
+        }
+
+        button:hover .circle .icon.arrow {
+            background: #fff;
+            transform: translate(1rem, 0);
+        }
+
+        button:hover .button-text {
+            color: #fff;
+        }
+
+        /* @supports (display: grid) {
+           body {
+               display: grid;
+               grid-template-columns: repeat(4, 1fr);
+               grid-gap: 0.625rem;
+               grid-template-areas: ". main main ." ". main main .";
+          }
+           #learn-more-container{
+               grid-area: main;
+               align-self: center;
+               justify-self: center;
+          }
+      } */
+        .active_btn {
+            background-color: #FBC02D;
+            border-radius: 10px;
+        }
+
+        .active_btn,
+        .btn:hover {
+            background-color: #fdc600 !important;
+            color: white !important;
+
+        }
+
+        /* News search end */
+        body {
+            background: #003159;
+        }
+
+        .cat {
+            margin: 4px;
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            overflow: hidden;
+            float: left;
+            border-radius: 50px;
+        }
+
+        .cat label {
+            float: left;
+            width: auto;
+            height: 20px;
+            padding: 4px;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            /* display: none; */
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .iti,
+        .iti--allow-dropdown {
+            width: 100%;
+        }
+
+
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
+
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
+
+        /* Animation */
+
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .cat {
+
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        .cat label {
+            width: 100%;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+
+
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            display: none;
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .input {
+            position: absolute;
+            opacity: 0;
+            font-size: medium;
+
+        }
+
+        .label {
+            background: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            color: #7f7f7f;
+            border-radius: 14px;
+            font-weight: 500;
+            /* transition: background 0.1s, color 0.1s; */
+        }
+
+        .label:hover {
+            background: #d8d8d8;
+        }
+
+        .label:active {
+            background: #ccc;
+        }
+
+        .input:checked+.label {
+            background: linear-gradient(271.19deg, #343a40 0%, #003159bd 100%), linear-gradient(271.19deg, #307DF6 0%, #003159 100%);
+            color: #fff;
+        }
+
+        .input.label {
+            font-size: medium;
+        }
+
+        @media (min-width: 600px) {
+            .label {
+                width: auto;
+                padding: 7px;
+            }
+        }
+
+        .form-control {
+            border-radius: 15px;
+        }
+
+        /* login service css start */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .service-image {
+            width: 47px;
+            margin-right: 13px;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: -12px 0px 5px 0px;
+        }
+
+        .service-description {
+            font-size: 12px;
+            color: #000;
+        }
+
+        /* service css end */
+        .pt-xl-5.pe-lg-0.mb-3.col-xl-6.col-md-6.order-md-1 {
+            background-color: rgb(255, 255, 255);
+            margin-top: 15px;
+            border-radius: 23px;
+            width: 37%;
+            margin-left: 0px;
+        }
+
+        .service-login {
+            background-color: white;
+            border-radius: 31px;
+            margin-top: 10px;
+        }
+
+        .card-body {
+            margin: 10px 0px 0px -101px;
+        }
+
+        label.pb-1 {
+            font-weight: 600;
+        }
+
+        button.bi.bi-text-indent-right {
+            background-color: transparent;
+            color: white;
+            font-size: xx-large;
+            margin-right: 21px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    <!-- Body content -->
+    <!-- Navbar Stat-->
+    <nav class="navbar navbar-default">
+        <div class="container1">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/img/shifthoja_logo.png" alt="Shifthoja Logo" />
+            </a>
+            <div class="button navbar-right">
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="offcanvas-body-parent">
+                            <div class="offcanvas-body-home"><a href="index.html">Home</a></div>
+                            <div class="offcanvas-body-about"><a href="#">About</a></div>
+                            <div class="offcanvas-body-blog"><a href="blog.html">Blog</a></div>
+                            <div class="offcanvas-body-contact"><a href="contact.html">Contact</a></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="navbar-btn nav-button  login" onclick="window.open('login.html')" data-wow-delay="0.45s">
+                    Login
+                </button>
+
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+                <div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 service-login">
+                <div class="service-login" style="line-height: 15px;">
+                    <div class="loginservice-ul-bg">
+                        <div class="col-12 p-3">
+                            <div>
+                                <h3>How is Housing.com different ?</h3>
+                                <p>Monthly 15 lakh people visit NestAway in search of houses on rent</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <img src="assets/img/icon/door.png" alt="Service Image 1" class="service-image">
+                                    <div class="service-content">
+                                        <div class="service-title">Guided House Visits</div>
+                                        <div class="service-description">We give guided tour of your house to interested
+                                            tenants.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/icon/paper.png" alt="Service Image 2" class="service-image">
+                                    <div class="service-content">
+                                        <div class="service-title">Zero Paperwork</div>
+                                        <div class="service-description">We do the paperwork for you like agreement
+                                            creation</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/icon/rent.png" alt="Service Image 2" class="service-image">
+                                    <div class="service-content">
+                                        <div class="service-title">Rent On Time</div>
+                                        <div class="service-description">We guarantee rent on time every month.</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="assets/img/icon/safety.png" alt="Service Image 2" class="service-image">
+                                    <div class="service-content">
+                                        <div class="service-title">House Safety</div>
+                                        <div class="service-description">We ensure to keep your house in good condition.
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6">
+                <div>
+                    <div class="card card-lg mt-lg-3"
+                        style="box-shadow: 0 8px 12px rgb(31 92 163 / 20%); border-radius: 33px;">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold pb-4">Start posting your property, it’s free --</h3>
+                            <div id="shifrdstr">
+                                <form id="login-form">
+                                    <div class="control-group form-group">
+                                        <label class="pb-1" style="color:#000;">You’re a ? </label>
+                                        <div class="tabs mt-1 mb-3">
+                                            <input class="input" type="radio" id="name-1" name="post" value="Owner"
+                                                checked>
+                                            <label class="label" for="name-1">Owner</label>
+                                            <input class="input" type="radio" id="name-2" name="post" value="agent">
+                                            <label class="label" for="name-2">Agent</label>
+                                            <input class="input" type="radio" id="name-3" name="post" value="builder">
+                                            <label class="label" for="name-3">Builder</label>
+                                            <input class="input" type="radio" id="name-4" name="post" value="flatmate">
+                                            <label class="label" for="name-4">Flatmate</label>
+                                        </div>
+                                    </div>
+                                    <div class="control-group form-group">
+                                        <label class="pb-1" style="color:#000;">Property For ?</label>
+                                        <div class="tabs mt-1 mb-3">
+                                            <input class="input" type="radio" id="property-2" name="property"
+                                                value="sell" checked>
+                                            <label class="label" for="property-2">Sell</label>
+                                            <input class="input" type="radio" id="property-3" name="property"
+                                                value="Rent/Lease">
+                                            <label class="label" for="property-3">Rent / Lease </label>
+                                            <input class="input" type="radio" id="property-4" name="property"
+                                                value="PG">
+                                            <label class="label" for="property-4">PG</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="pb-1" style="color:#000;">Mobile Number</label>
+                                        <input type="text" id="number" name="phone" class="form-control w-100"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group mb-4">
+                                        <label class="pb-1" style="color:#000;">Enter Yoy Name</label>
+                                        <input id="name" type="text" class="form-control " name="name" value="Name"
+                                            required autocomplete="name" autofocus placeholder="Enter Your Name">
+                                    </div>
+                                </form>
+                                <div class="alert alert-success" id="successAuth" style="display: none;"></div>
+                                <div id="error" style="color:red; display:none;"></div>
+
+
+                                <div class="d-grid text-center mb-3">
+                                    <a href="/post-properties_1.html">
+                                        <button class="btn btn-lg fw-bold text-white" id="startnow" style="border-radius: 10px; font-size:15px; background: linear-gradient(271.19deg,#4433F1 0%,#628EFF 100%),linear-gradient(271.19deg,#307DF6 0%,#14BBBF 100%);
+                                    ">Start Now <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
+                                            </svg></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+    <!-- <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyD-wGjSZm0OB_28P4wK2E7X8btavHIl_r8",
+            authDomain: "shifthoja-59d22.firebaseapp.com",
+            databaseURL: "https://shifthoja-59d22-default-rtdb.firebaseio.com",
+            projectId: "shifthoja-59d22",
+            storageBucket: "shifthoja-59d22.appspot.com",
+            messagingSenderId: "781878980591",
+            appId: "1:781878980591:web:63480cd34fb3cae9c2101a",
+            measurementId: "G-00SCM0QX14"
+        }
+        firebase.initializeApp(firebaseConfig);
+    </script> -->
+
+    <script>
+
+
+        window.onload = function () {
+            render();
+        };
+
+        function render() {
+            window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+            recaptchaVerifier.render();
+        }
+
+        function SendCode() {
+            var number = $("#number").val();
+
+            // Check if the reCAPTCHA checkbox is checked
+            if (isRecaptchaChecked()) {
+                // Show loading indicator
+                $(".loading").show();
+
+                // Proceed with sending the code
+                firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier)
+                    .then(function (confirmationResult) {
+                        window.confirmationResult = confirmationResult;
+                        coderesult = confirmationResult;
+                        $("#sentMessage").text("OTP Send Your Registered Mobile Number!!");
+                        $("#sentMessage").show();
+                        $("#shiftotp").show();
+                        $("#shifrdstr").hide();
+                    })
+                    .catch(function (error) {
+                        $("#error").text(error.message);
+                        $("#error").show();
+                        // $("#shifrdstr").hide();
+                    })
+                    .finally(function () {
+                        // Hide loading indicator regardless of success or failure
+                        $(".loading").hide();
+                    });
+            } else {
+                // reCAPTCHA is not checked, show an alert or message to the user
+                alert("Please check the reCAPTCHA checkbox before proceeding.");
+            }
+        }
+
+
+        function verify() {
+            var code = $("#verification").val();
+
+            // Validate the verification code
+            if (isValidVerificationCode(code)) {
+                // Show loading indicator
+                $(".loading").show();
+
+                coderesult.confirm(code)
+                    .then(function (result) {
+
+
+                        //$('#login-form').submit();
+                        storeFormData();
+
+
+                        var user = result.user;
+                        console.log(user);
+                        $("#successOtpAuth").text("Continue");
+                        $("#successOtpAuth").show();
+                    })
+                    .catch(function (error) {
+                        $("#error2").text(error.message);
+                        $("#error2").show();
+                    })
+                    .finally(function () {
+                        // Hide loading indicator regardless of success or failure
+                        $(".loading").hide();
+                    });
+            } else {
+                // Show an alert or message indicating an invalid verification code
+                alert("Please enter a valid 6 Digit Verification code.");
+            }
+        }
+
+        function isValidVerificationCode(code) {
+            // Validate that the code is not empty and contains exactly 6 digits
+            var isValid = /^\d{6}$/.test(code);
+            return isValid;
+        }
+
+        function isRecaptchaChecked() {
+            // Check if the reCAPTCHA checkbox is checked
+            return grecaptcha.getResponse() !== '';
+        }
+
+        function storeFormData() {
+            var formData = {};
+            formData.name = $("#name").val();
+            formData.number = $("#number").val();
+            formData.listed = $("input[name='post']").val();
+            formData.property = $("input[name='property']").val();
+
+            localStorage.setItem('formData', JSON.stringify(formData));
+
+            // Emit an event to notify the Livewire component
+            Livewire.emit('formDataStored', formData);
+        }
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#startnow").click(function () {
+                let a = $("#name").val();
+                let b = $("#number").val();
+
+                if (!a || !b) {
+                    alert("All fields are Required")
+                } else {
+                    SendCode();
+                }
+            });
+        });
+    </script>
+    <script>
+        var phone_number = window.intlTelInput(document.querySelector("#number"), {
+            separateDialCode: true,
+            preferredCountries: ["in"],
+            hiddenInput: "full",
+            utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
+        });
+
+        $("#startnow").click(function () {
+            var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+            $("input[name='phone'").val(full_number);
+        });
+    </script>
+    <script>
+        document.addEventListener('livewire:load', function () {
+            var formData = getFormDataFromLocalStorage();
+
+            if (formData) {
+                // Emit the 'updateFormData' event with form data to the Livewire component
+                Livewire.emit('updateFormData', formData);
+            } else {
+                Livewire.emit('updateFormData', formData);
+            }
+        });
+
+        // Retrieve form data from local storage
+        function getFormDataFromLocalStorage() {
+            var storedData = localStorage.getItem('formData');
+
+            // Check if there is any stored data
+            if (storedData) {
+                return JSON.parse(storedData);
+            } else {
+                return null; // No stored data found
+            }
+        }
+    </script>
+    <!-- Vendors -->
+    <script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
+    <!-- ThemeFunctions -->
+    <script src="assets/js-service-slider/js/functions.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/modernizr-2.6.2.min.js"></script>
+
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/bootstrap-hover-dropdown.js"></script>
+
+    <script src="assets/js/easypiechart.min.js"></script>
+    <script src="assets/js/jquery.easypiechart.min.js"></script>
+
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- <script src="assets/js/wow.js"></script> -->
+
+    <script src="assets/js/icheck.min.js"></script>
+    <script src="assets/js/price-range.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Include Slick Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- Code injected by live-server -->
+
+</body>
+
+</html>

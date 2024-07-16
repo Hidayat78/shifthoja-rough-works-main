@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search buy rent property Shifthoja</title>
+
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .btn-lg {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+            width: 100%;
+        }
+
+        .bbroker-free {
+            display: flex;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 1.2px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .icon-glass i {
+            font-size: 23px;
+            color: #003159;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-glass {
+            margin-left: -11px;
+            margin-top: 3px;
+        }
+
+        .icon-glass:hover i {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+        .navtop {
+            width: 100%;
+            height: 50px;
+            color: #ffffff;
+            background-color: #003159;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 13px;
+
+        }
+
+        @keyframes bounceInAnimation {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .search-page .search-content {
+            animation: bounceInAnimation 0.5s ease-in-out forwards;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div>
+        <div wire:snapshot="{&quot;data&quot;:{&quot;property&quot;:&quot;residential&quot;,&quot;search&quot;:null,&quot;localitys&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;XBKNpfI6rqOwZNzcubq2&quot;,&quot;name&quot;:&quot;frontend.mobile.search&quot;,&quot;path&quot;:&quot;property-real-estate-buy-rent&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;54488e34608f4cf4da019ffac1293790185778542edefec5512e6eda73d05f8b&quot;}"
+            wire:effects="{&quot;url&quot;:{&quot;property&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;push&quot;,&quot;alwaysShow&quot;:true,&quot;except&quot;:null}}}"
+            wire:id="XBKNpfI6rqOwZNzcubq2">
+            <div>
+                <nav>
+                    <div class="navtop">
+                        <div class="left-arrow-back" onclick="goBackToHomePage()">
+                            <i class="bi bi-arrow-left fs-5"></i>
+                        </div>
+                        <div class="right-brand">
+                            <h3>Shifthoja.COM</h3>
+                        </div>
+                    </div>
+                </nav>
+                <div class="bbroker-free pt-2 fw-bold">Post proprty -/ Prising details|
+                    <span class="font-bold"> &nbsp;Shifthoja.COM </span>
+                </div>
+            </div>
+
+            <!-- input fields start-->
+            <!-- post-prop-step1-rent1 -->
+            <div class="parent-searchbox p-2 m-2" style=" height: auto;">
+                <div class="">
+                    <form>
+                        <div class="row justify-content-center">
+                            <div class="col-md-12 bs-stepper pb-3 pt-3 ">
+                                <div class="bg-white vertical mt-2">
+                                    <div class="col-12">
+                                        <div class="row g-3">
+                                            <div class="col-sm-6">
+                                                <label class="form-label d-block" for="plExpeactedPrice">Monthly
+                                                    Rent</label>
+                                                <div class="input-group input-group-merge">
+                                                    <input type="text" class="form-control"
+                                                        aria-describedby="pl-expeacted-price"
+                                                        wire:model.live="expected_price">
+                                                    <span class="input-group-text" id="pl-expeacted-price">₹</span>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="form-label d-block" for="plExpeactedPrice">Security
+                                                    Deposid</label>
+                                                <select id="plMaintenencePer" class="form-select" wire:model="security">
+                                                    <option value="" hidden>Select Security</option>
+                                                    <option value="None" selected>None</option>
+                                                    <option value="1 month">1 Month</option>
+                                                    <option value="2 month">2 Month</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="form-label" for="plMaintenencePer">Maintenance</label>
+                                                <select id="plMaintenencePer" class="form-select"
+                                                    wire:model="maintenence">
+                                                    <option hidden>salect Maintenance</option>
+                                                    <option value="monthly">Monthly</option>
+                                                    <option value="quarterly">Quarterly</option>
+                                                    <option value="yearly">Yearly</option>
+                                                    <option value="one-time">One-time</option>
+                                                    <option value="per sqft. monthly">Per sqft. Monthly</option>
+                                                    <option value="including With Rent">Including With Rent</option>
+                                                    <option value="excluding with Rent">Excluding with Rent</option>
+                                                    <option value="none">none</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="form-label" for="plMaintenencePer">Lock-in Period</label>
+                                                <select id="plMaintenencePer" class="form-select" wire:model="period">
+                                                    <option hidden>sellct Lock-in Period</option>
+                                                    <option value="None">None</option>
+                                                    <option value="1 month">1 Month</option>
+                                                    <option value="6 month">6 Month</option>
+                                                    <option value="custom">Custom</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-6">
+                                                <label class="form-label">Available From</label>
+                                                <input type="date" class="form-control" wire:model="available">
+                                            </div>
+                                            <div class="col-6">
+                                                <Label class="form-label">Loan Facility ?</Label>
+                                                <select class="form-select" style="border-radius: 0px"
+                                                    wire:model="loan">
+                                                    <option value="yes">yes</option>
+                                                    <option value="no">No</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="form-label">Price includes</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="plCarParking"
+                                                        id="plCarParking" value="Car Parking"
+                                                        wire:model="price_includes">
+                                                    <label class="form-check-label" for="plCarParking">Car
+                                                        Parking</label>
+
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="plClubMembership" id="plClubMembership"
+                                                        value="Club Membership" wire:model="price_includes">
+                                                    <label class="form-check-label" for="plClubMembership">Club
+                                                        Membership</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-between mt-4">
+                            <a href="step2.html"> <button class="btn btn-primary btn-prev" type="button">
+                                    <i class="bi bi-arrow-left"></i>
+                                    <span class="align-middle d-sm-inline-block d-none">Previous</span> </button></a>
+                            <div></div>
+                            <a href="step4.html">
+                                <button class="btn btn-primary btn-next" type="button">
+                                    <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Input fields end -->
+        </div>
+        <!-- previous or next start -->
+        <!-- previous or next end -->
+    </div>
+    </div>
+    </div>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="OPF91wRU6arBNNryE47X8TTcPIBXh2Gttz7VQnun"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3.5,
+            spaceBetween: 15,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

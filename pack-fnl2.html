@@ -1,0 +1,1209 @@
+
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr" data-theme="theme-default" data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/" data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1" data-framework="laravel" data-template="vertical-menu-theme-default-light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <title>ShiftHoja</title>
+  <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
+  <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+ 
+  <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-laravel-admin-template/">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://shifthoja.com/public/frontend/assets/images/shifthoja_logo.png" />
+
+<!-- Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css?id=87122b3a3900320673311cebdeb618da" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d" />
+<!-- Core CSS -->
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css?id=55b2a9dfaa009c41df62ca8d16e913a8" class="template-customizer-core-css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css?id=9182924a7b965439eca5e189ba43eba1" class="template-customizer-theme-css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css?id=69dfc5e48fce5a4ff55ff7b593cdf93d" />
+<!-- Vendors CSS -->
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbare482.css?id=73d641bb8db2475ecafc6c68461ed01b" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead05d2.css?id=de339ead5e9c9e36f12e46cbef7aaffd" />
+
+<!-- Vendor Styles -->
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.css" />
+<link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/styles/index.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  window.templateCustomizer = new TemplateCustomizer({
+    cssPath: '',
+    themesPath: '',
+    defaultStyle: "light",
+    defaultShowDropdownOnHover: "true", 
+    // true/false (for horizontal layout only)
+    displayCustomizer: "true",
+    lang: 'en',
+    pathResolver: function(path) {
+      var resolvedPaths = {
+        // Core stylesheets
+          'core.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core.css?id=55b2a9dfaa009c41df62ca8d16e913a8',
+          'core-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core-dark.css?id=d98ae2a03b5b1b05651411ee58ef81a6',
+        // Themes
+          'theme-default.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default.css?id=9182924a7b965439eca5e189ba43eba1',
+          'theme-default-dark.css':
+          'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default-dark.css?id=ae30991ef3f62e7c03ca6f8930843e80',
+          'theme-bordered.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered.css?id=a4f95a927b1e2bcdfd57a3bbfb2bd3d9',
+          'theme-bordered-dark.css':
+          'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered-dark.css?id=2a668deb480284f975db82d0a7277156',
+          'theme-semi-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark.css?id=9c02fb39c47f91b2d198f343fa8b4df7',
+          'theme-semi-dark-dark.css':
+          'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark-dark.css?id=c4b1950a14ffd431f752917b97a0ee51',
+                }
+      return resolvedPaths[path] || path;
+    },
+    'controls': ["rtl","style","headerType","contentLayout","layoutCollapsed","layoutNavbarOptions","themes"],
+  });
+</script> 
+<!-- Livewire Styles --><style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+
+<link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/searchbox.css" />
+  <link rel="shortcut icon" href="https://is1-3.housingcdn.com/fb15c03b/7b5467febbc97e6f3360e6fc9681b371/v0/thumb.jpg" type="image/x-icon" />
+  <link rel="icon" href="https://is1-3.housingcdn.com/fb15c03b/7b5467febbc97e6f3360e6fc9681b371/v0/thumb.jpg" type="image/x-icon" />
+  <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" />
+  <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/slickcss.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/normalize.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/font-awesome.min.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/fontello.css"  />
+  <link href="https://shifthoja.com/public/frontend/assets/css/animate.css"  rel="stylesheet" media="screen" />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/icheck.min_all.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/price-range.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.carousel.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.theme.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.transitions.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/style.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/mediaQuery.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/responsive.css"  />
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/random.css"  />
+
+  <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/recentpro.css"  />
+    <!-- property card link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+  <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/vendor/tiny-slider/tiny-slider.css" />
+    <!-- Theme CSS -->
+  <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/css-service-slider/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+         <link rel="stylesheet"  href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/css/style.css"/>
+      <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+      <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css"/>
+      <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+   <style>
+    h4.price-toggle.text-primary.mb-0 {
+      text-decoration: line-through;
+  }
+  sup.pricing-currency.mt-3.mb-0.me-1.text-primary {
+      font-size: larger;
+  }
+  .style__postContainer div{
+      font-size:13px !important;
+  }
+  .info-buy-a-pack {
+        margin-top: 20px !important;
+         border-radius: 4px;
+         background: #fbe9e9;
+         border: 2px dashed #ee6677;
+         text-align: center;
+         width: 647px;
+         box-sizing: border-box;
+         line-height: 35px;
+         font-size: 24px;
+         font-family: "opensans-semibold";
+         color: #303030;
+         padding: 10px;
+         margin: 0 0 14px 281px;
+         }
+         .plan-info-list {
+         font-size: 12px;
+         margin: 0 0 0 0;
+         padding: 0 10px 10px 10px;
+         text-align: center;
+         }
+         .clearfix:before, .clearfix:after {
+         content: "";
+         display: table;
+         }
+         .plan-info-list {
+         font-size: 12px;
+         margin: 0 0 0 0;
+         padding: 0 10px 10px 10px;
+         text-align: center;
+         }
+         .plan-info-list__head {
+         font-size: 28px;
+         line-height: 28px;
+         color: #303030;
+         text-align: center;
+         padding: 5px 0 10px 0;
+         }
+         .plan-info-list li {
+         margin: 0 12px;
+         padding: 0 0 5px 20px;
+         position: relative;
+         list-style-type: none;
+         text-align: left;
+         display: block;
+         color: #303030;
+         box-sizing: border-box;
+         display: inline-block;
+         font-size: 16px;
+         font-family: "opensans-bold";
+         }
+         .clearfix:after {
+         clear: both;
+         }
+         .plan-info-list li:after {
+         content: '';
+         display: block;
+         border: solid #fff;
+         border-width: 0 2px 2px 0;
+         transform: rotate(45deg);
+         position: absolute;
+         top: 5px;
+         left: 7px;
+         border-color: #24a427;
+         width: 4px;
+         height: 8px;
+         }
+         .plan-info-list ul {
+         margin: 0;
+         padding: 0;
+         }
+         
+.talk-to-experts__colm3 {
+    width: 283px;
+    float: left;
+    margin-right: 10px;
+}
+.talk-to-experts__left {
+    border: 1px solid #00bd00;
+    background: #e8f6e7;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    width: 160px;
+    height: 166px;
+    font-size: 12px;
+    color: #303030;
+    padding-top: 50px;
+    line-height: 20px;
+}
+.talk-to-experts__no-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #606060;
+    border-radius: 50%;
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.talk-to-experts__no-head {
+    font-family: "opensans-semibold";
+    font-size: 14px;
+}
+.talk-to-experts__form {
+    float: right;
+    width: 1018px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    padding: 40px 0px 0 14px;
+    position: relative;
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__head:after {
+    content: "";
+    background: #fff;
+    width: 20px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: -13px;
+    transform: rotate(24deg);
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__colm1 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+.m-callback__input, .m-callback__textarea, .m-callback__select {
+    display: block;
+    width: 100%;
+    padding: 7px 20px 8px 0px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: none;
+    border-bottom: 1px solid #e2e2e2;
+    outline: none;
+    color: #303030;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    font-family: "open_sansregular";
+}
+.m-callback__label {
+    display: block;
+    font-size: 14px;
+    color: #606060;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    line-height: 35px;
+    transition: all 0.3s ease-in-out;
+    cursor: text;
+}
+.m-callback__error {
+    font-size: 10px;
+    color: #d8232a;
+    position: absolute;
+    width: 100%;
+    display: none;
+    white-space: nowrap;
+}
+.m-callback__btn {
+    width: 164px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    background: #ffe8e9;
+    text-align: center;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none !important;
+    margin-top: 60px;
+}
+.m-callback__input:focus, .m-callback__textarea:focus, .m-callback__select:focus {
+    outline-color: #6b86cb;
+}
+.m-callback__btn:hover {
+    background: #003159;
+    color: #fff;
+}
+.talk-to-experts__colm2 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+
+.talk-to-experts * {
+    box-sizing: border-box;
+}
+.talk-to-experts__colm3 {
+    width: 283px;
+    float: left;
+    margin-right: 10px;
+}
+.m-callback__country-isd {
+    width: 60px;
+    float: left;
+    border-right-width: 0;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 14px;
+    color: #606060;
+    height: 35px;
+    line-height: 35px;
+}
+.m-callback__label-no {
+    left: 60px;
+}
+.m-callback__mobile-no {
+    width: calc(100% - 60px);
+}
+.m-callback__textarea--query {
+    width: 282px;
+    height: 70px;
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    resize: none;
+    overflow: auto;
+    padding: 8px;
+    line-height: 18px;
+}
+.md-popup__table {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    display: table;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+.md-popup__table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.md-popup.md-popup-v2 .md-popup__content {
+    overflow: visible;
+}
+.md-popup__content {
+    width: 308px;
+    padding: 0;
+    margin: 30px auto;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 4px;
+    min-height: 100px;
+}
+.md-popup .md-close.md-close--20px {
+    width: 20px;
+    height: 20px;
+}
+.m-callback__input:not(:focus):valid ~ .m-callback__label, .m-callback__input:valid ~ .m-callback__label, .m-callback__input+.m-callback__label.active, .m-callback__input ~ .m-callback__label.active, .m-callback__label.active {
+    top: -20px;
+    font-size: 12px;
+    color: #909090;
+}
+.label-textarea {
+    font-size: 14px;
+    color: #606060;
+    padding-bottom: 8px;
+}
+
+.WhyUpgrade__benifitsWrap {
+    margin-top: 60px;
+    padding-top: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1215px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    margin-bottom: 133px;
+    background: #fff9f0;
+    height: 315px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap {
+    margin-bottom: 24px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.display_l_bold {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    /* text-align: left; */
+    
+}
+.WhyUpgrade__benifitsList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+.WhyUpgrade__benifitsList li img {
+    width: 49px;
+}
+.title_bold {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    text-align: left;
+}
+.WhyUpgrade__benifitsList li>div {
+    margin-top: 12px;
+}
+.P500 {
+    color: #0078db !important;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__benifitsList li {
+    width: 427px;
+    background: #fff;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 22px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    border: 1px solid #ebecf0;
+    border-radius: 8px;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__hand {
+    cursor: pointer;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.paymentFooter__paymentLogoContainer {
+    padding: 0 20px;
+    margin-top: 60px;
+    background-color: #f4f5f7;
+    height: 159px;
+    display: flex;
+}
+.paymentFooter__paymentLogoContainer>div {
+    max-width: 1200px;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 0 20px;
+}
+.paymentFooter__textWrap {
+    display: flex;
+    align-items: center;
+    margin-right: 52px;
+    min-width: 280px;
+}
+.paymentFooter__textWrap img {
+    width: 48px;
+    margin-right: 20px;
+}
+.caption_strong_medium_semi {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.caption_strong_medium {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 24px;
+    align-items: center;
+    width: calc(100% - 300px);
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div {
+    width: 90px;
+    margin-bottom: 32px;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div img {
+    width: 95px;
+    height: 48px;
+}
+   </style>
+   
+</head>
+<body>
+<div> 
+
+
+<div wire:snapshot="{&quot;data&quot;:{&quot;login&quot;:null,&quot;number&quot;:&quot;91&quot;,&quot;mobile_no&quot;:null,&quot;verification_client&quot;:null,&quot;otp&quot;:null,&quot;key&quot;:&quot;rzp_test_cUXbbDAS1VxEtB&quot;,&quot;total&quot;:&quot;100&quot;,&quot;plan&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;qdUeeRX75PghR0jqKNZ2&quot;,&quot;name&quot;:&quot;frontend.packages&quot;,&quot;path&quot;:&quot;premium-subscription&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;211477a00a115de018568f32c2a4336497dd8a337b9938a725ef193e620e0e79&quot;}" wire:effects="[]" wire:id="qdUeeRX75PghR0jqKNZ2">
+    
+     <!-- Body content -->
+  <!-- Navbar Stat-->
+  <nav class="navbar navbar-default">
+    <div class="container1" style="z-index: 3;">
+      <a class="navbar-brand" href="https://shifthoja.com">
+        <img src="https://shifthoja.com/public/frontend/assets/img/shifthoja_logo.png" alt="Shifthoja Logo" />
+      </a>
+        <div class="button navbar-right">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="font-size: 12px;"></button>
+          </div>
+       
+          <div class="offcanvas-body p-0">
+              <main class="flex flex-col w-100 shadow-xl bg-white rounded-xl example" style="position: sticky;
+                    max-height: calc(100vh - 4rem); overflow: scroll;">
+                <section class="flex px-4 flex-col pt-3">
+                    <div class="head-sidebarr">
+                        <div class="user-img-sidebarr"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?crop=entropy&amp;cs=srgb&amp;fm=jpg&amp;ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTUzMjAyMTh8&amp;ixlib=rb-4.0.3&amp;q=85" alt=""></div>
+                        <div class="user-details-sidebarr" onclick="window.open('/login')">
+                          <div>Login/SignUp</div>
+                          <hr style="height: 1px;">
+                        </div>
+                    </div>
+                    <div class="flex flex-1 gap-3">
+                        <button class="inline-flex shadow-sm style__buttonShimmer-sidebarr w-full justify-center rounded-xl text-sm font-semibold py-2 px-3 text-slate-900 ring-1 ring-slate-900/10 hover:ring-slate-900/20 items-center gap-2" onclick="window.open('/postproperty')">
+                            <svg class="text-gray-600 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4V20M4 12H20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                            Post Your Property
+                        </button>
+                    </div>
+                    <div class="nav-sidebarr">
+                        <div class="menu-sidebarr">
+                           <ul>
+                              <li><a href="#"><i class="icon ph-bold ph-house-simple"></i><span class="text">Dashboard</span></a></li>
+                              <li class="">
+                                 <a href="#"><i class="icon ph-bold ph-user"></i><span class="text">Viewers</span><i class="arrow ph-bold ph-caret-down"></i></a>
+                                 <ul class="sub-menu-sidebarr" style="display: none;">
+                                    <li><a href="#"><span class="text-sidebarr">Users</span></a></li>
+                                    <li><a href="#"><span class="text-sidebarr">Subscribers</span></a></li>
+                                 </ul>
+                              </li>
+                              <li><a href="#"><i class="icon ph-bold ph-calendar-blank"></i><span class="text">Agenda</span></a></li>
+                              <li>
+                                 <a href="#"><i class="icon ph-bold ph-chart-bar"></i><span class="text">Revenue</span><i class="arrow ph-bold ph-caret-down"></i></a>
+                                 <ul class="sub-menu-sidebarr">
+                                    <li><a href="#"><span class="text">Earnings</span></a></li>
+                                    <li><a href="#"><span class="text">Funds</span></a></li>
+                                    <li><a href="#"><span class="text">Declines</span></a></li>
+                                    <li><a href="#"><span class="text">Payouts</span></a></li>
+                                 </ul>
+                              </li>
+                              <li class=""><a href="#"><i class="icon ph-bold ph-file-text"></i><span class="text">Articles</span></a></li>
+                              <li class="">
+                                <a href="#"><i class="icon ph-bold ph-user"></i><span class="text">Pinch-way</span><i class="arrow ph-bold ph-caret-down"></i></a>
+                                <ul class="sub-menu-sidebarr" style="display: none;">
+                                   <li><a href="#"><span class="text-sidebarr">Pinch-way-1</span></a></li>
+                                   <li><a href="#"><span class="text-sidebarr">Pinch-way-2</span></a></li>
+                                </ul>
+                             </li>
+                            </ul>
+                        </div>
+                     </div>
+                </section>
+              </main>
+        </div>
+        </div>
+    
+                   <div class="style__postContainer">
+          <div onclick="window.open('/postproperty')">
+            <b class="post">Post property</b>
+          </div>
+          <div style="width: 36px; height: 15px" class="style__shimmer">
+            <div class="style__shimmer" style="width: 36px; height: 20px">
+              <div class="style__free" style="font-size: 10px">FREE</div>
+            </div>
+          </div>
+        </div>
+               
+        <button class="i bi-text-indent-right" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"></button>
+        <div>
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+   <!--<div class="layout-container pt-5">-->
+   <!--     <div class="container">-->
+       
+   <!--         <div class="row mx-0 gy-3 px-lg-5">-->
+              <!-- Basic -->
+   <!--           <div class="col-lg mb-md-0 mb-4">-->
+   <!--             <div class="card border rounded shadow-none">-->
+   <!--               <div class="card-body">-->
+   <!--                 <div class="my-3 pt-2 text-center">-->
+   <!--                   <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/unicons/bookmark.png" alt="Basic Image" height="80">-->
+   <!--                 </div>-->
+   <!--                 <h3 class="card-title text-center text-capitalize mb-1">Silver Agent Plus</h3>-->
+   <!--                 <p class="text-center">A simple start for everyone</p>-->
+   <!--                 <div class="text-center">-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="pricing-currency mt-3 mb-0 me-1 text-primary">₹</sup>-->
+   <!--                     <h1 class="price-toggle price-yearly text-primary mb-0 d-none">7</h1>-->
+   <!--                     <h4 class="price-toggle text-primary  mb-0">25899/</h4>-->
+                        
+   <!--                   </div>-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="h6 pricing-currency mt-3 mb-0 me-1 text-primary">₹</sup>-->
+   <!--                     <h1 class="display-4 mb-0 text-primary">19899/</h1>-->
+   <!--                     <sub class="h6 pricing-duration mt-auto mb-2 text-muted fw-normal">3month</sub>-->
+   <!--                   </div>-->
+   <!--                 </div>-->
+        
+   <!--                 <ul class="ps-0 my-4 pt-2 circle-bullets">-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>75 Properties for listings</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Upto 5X Leads</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Medium Position</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Unlimited Access to Buyers </li>-->
+   <!--                   <li class="mb-0"><i class="bx bx-radio-circle me-2"></i>Auto Refresh (every 3 days) </li>-->
+                      
+   <!--                 </ul>-->
+   <!--                 <a href="package-payment.html" class="btn btn-label-success d-grid w-100">Your Current Plan</a>-->
+   <!--               </div>-->
+   <!--             </div>-->
+   <!--           </div>-->
+        
+              <!-- Pro -->
+   <!--           <div class="col-lg mb-md-0 mb-4">-->
+   <!--             <div class="card border-primary border shadow-none">-->
+   <!--               <div class="card-body position-relative">-->
+   <!--                 <div class="position-absolute end-0 me-4 top-0 mt-4">-->
+   <!--                   <span class="badge bg-label-primary">Popular</span>-->
+   <!--                 </div>-->
+   <!--                 <div class="my-3 pt-2 text-center">-->
+   <!--                   <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/unicons/wallet-round.png" alt="Standard Image" height="80">-->
+   <!--                 </div>-->
+   <!--                 <h3 class="card-title text-center text-capitalize mb-1">Gold Agent Plus</h3>-->
+   <!--                 <p class="text-center">For small to medium businesses</p>-->
+   <!--                 <div class="text-center">-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="pricing-currency mt-3 mb-0 me-1 text-primary">₹</sup>-->
+   <!--                     <h1 class="price-toggle price-yearly text-primary mb-0 d-none">7</h1>-->
+   <!--                     <h4 class="price-toggle text-primary  mb-0">25899/</h4>-->
+   <!--                   </div>-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="h6 pricing-currency mt-3 mb-0 me-1 text-primary">₹</sup>-->
+   <!--                     <h1 class="price-toggle price-yearly display-4 text-primary mb-0 d-none">7</h1>-->
+   <!--                     <h1 class="price-toggle price-monthly display-4 text-primary mb-0">25899/</h1>-->
+   <!--                     <sub class="h6 text-muted pricing-duration mt-auto mb-2 fw-normal">3month</sub>-->
+   <!--                   </div>-->
+   <!--                   <small class="price-yearly price-yearly-toggle text-muted d-none">₹ 90 / year</small>-->
+   <!--                 </div>-->
+        
+   <!--                 <ul class="ps-0 my-4 pt-2 circle-bullets">-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>100 Properties for listings</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Upto 10X Leads</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>High Position </li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Unlimited Access to Buyers </li>-->
+   <!--                   <li class="mb-0"><i class="bx bx-radio-circle me-2"></i>Auto Refresh (every 3 days)</li>-->
+   <!--                   <li class="mb-0"><i class="bx bx-radio-circle me-2"></i>Verified Agent Tag</li>-->
+   <!--                 </ul>-->
+                    <!--<a href="package-payment.html" class="btn btn-primary d-grid w-100">Upgrade</a>-->
+   <!--                    <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#addNewCCModal"> Upgrade </button>-->
+   <!--               </div>-->
+   <!--             </div>-->
+   <!--           </div>-->
+        
+              <!-- Enterprise -->
+   <!--           <div class="col-lg">-->
+   <!--             <div class="card border rounded shadow-none">-->
+   <!--               <div class="card-body">-->
+        
+   <!--                 <div class="my-3 pt-2 text-center">-->
+   <!--                   <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/icons/unicons/briefcase-round.png" alt="Enterprise Image" height="80">-->
+   <!--                 </div>-->
+   <!--                 <h3 class="card-title text-center text-capitalize mb-1">Premium Agent Plus </h3>-->
+   <!--                 <p class="text-center">Solution for big organizations</p>-->
+        
+   <!--                 <div class="text-center">-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="pricing-currency mt-3 mb-0 me-1 text-primary">₹</sup>-->
+   <!--                     <h1 class="price-toggle price-yearly text-primary mb-0 d-none">7</h4>-->
+   <!--                     <h4 class="price-toggle text-primary  mb-0">25899/</h4>-->
+   <!--                   </div>-->
+   <!--                   <div class="d-flex justify-content-center">-->
+   <!--                     <sup class="h6 text-primary pricing-currency mt-3 mb-0 me-1">₹</sup>-->
+   <!--                     <h1 class="price-toggle price-yearly display-4 text-primary mb-0 d-none">16</h1>-->
+   <!--                     <h1 class="price-toggle price-monthly display-4 text-primary mb-0">34899/</h1>-->
+   <!--                     <sub class="h6 pricing-duration mt-auto mb-2 fw-normal text-muted">3month</sub>-->
+   <!--                   </div>-->
+   <!--                   <small class="price-yearly price-yearly-toggle text-muted d-none">₹ 190 / year</small>-->
+   <!--                 </div>-->
+        
+   <!--                 <ul class="ps-0 my-4 pt-2 circle-bullets">-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>150 Properties for listings</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Upto 15X Leads</li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Featured Position </li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Unlimited Access to Buyers </li>-->
+   <!--                   <li class="mb-2"><i class="bx bx-radio-circle me-2"></i>Certified Agent Tag</li>-->
+   <!--                   <li class="mb-0"><i class="bx bx-radio-circle me-2"></i>Auto Refresh (every 3 days)</li>-->
+   <!--                   <li class="mb-0"><i class="bx bx-radio-circle me-2"></i>Verified Agent Tag</li>-->
+   <!--                 </ul>-->
+        
+   <!--                 <a href="package-payment.html" class="btn btn-label-primary d-grid w-100">Upgrade</a>-->
+   <!--               </div>-->
+   <!--             </div>-->
+   <!--           </div>-->
+   <!--         </div>-->
+   <!--       </div>-->
+      
+   <!--      </div>-->
+
+
+
+   <div class="info-buy-a-pack">
+    Haven't bought a pack yet?
+    <span>Buy a pack and enjoy all agent benefits on <mark> SHIFTHOJA.COM</mark></span>
+ </div>
+ <div class="plan-info-list clearfix">
+    <div class="plan-info-list__head">Choose the plan that's just right for you and your business
+    </div>
+    <ul>
+       <li>Get instant Visibility</li>
+       <li>Close more Deals</li>
+       <li>Maximize your Leads</li>
+       <li>Grow your Business</li>
+    </ul>
+ </div>
+         <section class="section-py pricing-plans-comparison">
+            <div class="container">
+          
+              <div class="row mx-4">
+                <div class="col-12">
+                  <div class="table-responsive border rounded">
+                    <table class="table table-striped text-center mb-0">
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <p class="mb-1">Features</p>
+                            <small class="text-muted fw-normal text-capitalize">Native front features</small>
+                          </th>
+                          <th scope="col">
+                            <p class="mb-1">Silver Agent Plus </p>
+                        
+                          </th>
+                          <th scope="col">
+                            <p class="mb-1 position-relative">Gold Agent Plus
+                              <span class="badge badge-center rounded-pill bg-primary position-absolute mt-n2 ms-1"><i class="bx bx-star" style="margin-left: -3px;"></i></span>
+                            </p>
+                        
+                          </th>
+                          <th scope="col">
+                            <p class="mb-1">Premium Agent Plus </p>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Number of listings</td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">75 Properties</span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">100 Properties</span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">150 Properties</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Monthly Response rate</td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Upto 5X</span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Upto 10X</span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Upto 15X</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Position on search </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Medium Position </span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">High Position</span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Featured Position
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Access to Buyers </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Unlimited 
+                            </span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Unlimited 
+                            </span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Unlimited 
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Certified Agent Tag</td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-secondary">
+                              <i class="bx bx-x" style="
+                                margin-left: -4px;
+                                margin-bottom: 5px;
+                            "></i>
+                            </span>
+                          </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-primary">
+                            <i class="bx bx-x"  style="
+                            margin-left: -4px;
+                            margin-bottom: 5px;
+                        "></i>
+                            </span>
+                          </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-primary">
+                              <i class="bx bx-check"  style="
+                              margin-left: -4px;
+                              margin-bottom: 5px;
+                          "></i>
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Auto Refresh (every 3 days) </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-secondary">
+                            <i class="bx bx-check"  style="
+                            margin-left: -4px;
+                            margin-bottom: 5px;
+                        "></i>
+                            </span>
+                          </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-secondary">
+                            <i class="bx bx-check"  style="
+                            margin-left: -4px;
+                            margin-bottom: 5px;
+                        "></i>
+                            </span>
+                          </td>
+                          <td>
+                            <span class="badge bg-label-primary badge-sm text-uppercase">Featured position
+                            </span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Verified Agent Tag</td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-secondary">
+                            <i class="bx bx-check"  style="
+                            margin-left: -4px;
+                            margin-bottom: 5px;
+                        "></i>
+                            </span>
+                          </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-secondary">
+                            <i class="bx bx-check"  style="
+                            margin-left: -4px;
+                            margin-bottom: 5px;
+                        "></i>
+                            </span>
+                          </td>
+                          <td><span class="badge badge-center rounded-pill w-px-20 h-px-20 bg-label-primary">
+                              
+                              <i class="bx bx-x"  style="
+                              margin-left: -4px;
+                              margin-bottom: 5px;
+                          "></i>
+                            </span>
+                          </td>
+                        </tr>
+                     
+                        <tr>
+                          <td></td>
+                          <td>
+                            <button class="btn text-nowrap btn-label-primary" wire:click="chooseplan('1')">Choose Plan</button>
+                          </td>
+                          <td>
+                            <button class="btn text-nowrap btn-label-primary" wire:click="chooseplan('2')">Choose Plan</button>
+                          </td>
+                          <td>
+                           <button class="btn text-nowrap btn-label-primary" wire:click="chooseplan('3')">Choose Plan</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+         
+         <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+</div>
+
+
+
+</div>
+<div class="talk-to-experts clearfix">
+    <div class="talk-to-experts__left">
+       <div class="talk-to-experts__no-icon">!</div>
+       <div class="talk-to-experts__no-head">Talk to Experts</div>
+       9504245461
+    </div>
+    <div class="talk-to-experts__form">
+       <div class="talk-to-experts__head">Request a Callback</div>
+       <form onsubmit="return false;" name="requestInfoForm" id="requestInfoForm" autocomplete="off" method="post" novalidate="novalidate">
+          <div class="talk-to-experts__colm1">
+             <div class="m-callback__fieldset js-fieldset">
+                <input name="name" id="name" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="name">Name</label>
+                <div class="m-callback__error" id="nameErr">Enter a valid name</div>
+             </div>
+             <div class="m-callback__fieldset m-callback__fieldset--group js-fieldset">
+                <div class="m-callback__country-isd">Ind +91</div>
+                <input name="contactMobile" id="contactMobile" value="" class="m-callback__input m-callback__mobile-no" maxlength="12" required="required" onchange="storeContactFormInput();" placeholder=""> <label class="m-callback__label m-callback__label-no" for="contactMobile">Mobile</label>
+                <div class="m-callback__error" id="contactMobileErr">Enter a valid mobile</div>
+             </div>
+          </div>
+          <div class="talk-to-experts__colm2">
+             <div class="m-callback__fieldset js-fieldset">
+                <input name="email" id="email" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="email">Email</label>
+                <div class="m-callback__error" id="useremailErr">Enter a valid email</div>
+             </div>
+             <div class="m-callback__fieldset js-fieldset">
+                <div class="mb-pg__slide__location js-container js-input-container js-locality-list">
+                   <input class="mb-pg__slide__location__input js-autosuggest m-callback__input" onfocus="$('#localityPrimeErrorDiv').hide();" onkeypress="resetCityVal(this);" autocomplete="false" value="" type="" id="selectedCity" name="selectedCity" required="required" placeholder="">
+                   <label class="m-callback__label" for="selectedCity">City</label>
+                   <div class="m-callback__error" id="cityNameErr"></div>
+                   <div class="mb-pg__slide__location__dropdown js-dropdown" style="display: none;">
+                      <ul id="city_options"></ul>
+                   </div>
+                   <div class="mb-form__error"></div>
+                </div>
+             </div>
+          </div>
+          <div class="talk-to-experts__colm3">
+             <div class="m-callback__fieldset js-fieldset">
+                <div class="label-textarea">Enter your query</div>
+                <textarea maxlength="1000" class="m-callback__textarea m-callback__textarea--query" id="query" name="query" placeholder="Please specify the convenient time to get a callback."></textarea>
+                <div class="m-callback__error" id="queryErr"></div>
+             </div>
+          </div>
+          <div class="talk-to-experts__colm4">
+            <button class="m-callback__btn" id="callback_otp">Get a Callback</button>
+          </div>
+       </form>
+    </div>
+ </div>
+ <div class="pageComponent WhyUpgrade__benifitsWrap false" data-label="WHY_UPGRADE">
+    <div class="WhyUpgrade__headWrap">
+      <h2 class="display_l_bold">Benefits of upgrading your posting<br><mark>SHIFTHOJA.COM</mark></h2>
+    </div>
+    <ul class="WhyUpgrade__benifitsList">
+      <li>
+        <img src="https://static.99acres.com/universalapp/img/USP-01_bos.png">
+        <div class="title_bold spacer12">
+          <span class="P500">01.&nbsp;</span>
+          <span>Appear higher in searches</span>
+        </div>
+        <div class="WhyUpgrade__subheading">
+          <span>Upgraded postings appear higher in search results giving your posting more views and responses</span>
+        </div>
+      </li>
+      <li>
+        <img src="https://static.99acres.com/universalapp/img/USP-02_bos.png">
+        <div class="title_bold spacer12">
+          <span class="P500">02.&nbsp;</span>
+          <span>Hassle free selling/renting</span>
+        </div>
+        <div class="WhyUpgrade__subheading">
+          <span>Relax and sell faster with our dedicated relationship manager assistance</span>
+        </div>
+      </li>
+      <li>
+        <img src="https://static.99acres.com/universalapp/img/USP-03_bos.png">
+        <div class="title_bold spacer12">
+          <span class="P500">03.&nbsp;</span>
+          <span>Reach users on social media</span>
+        </div>
+        <div class="WhyUpgrade__subheading">
+          <span>Reach more relevant buyers with Facebook and Google marketing</span>
+        </div>
+      </li>
+    </ul>
+    
+  </div>
+  <div class="paymentFooter__paymentLogoContainer">
+    <div style="margin: auto;">
+      <div class="paymentFooter__textWrap">
+        <img src="https://static.99acres.com/universalapp/img/SecurePayment_bos.png">
+        <div>
+          <div class="caption_strong_medium_semi">100% Safe Transactions</div>
+          <div class="caption_strong_medium">We support secure payment methods</div>
+        </div>
+      </div>
+      <div class="paymentFooter__logosWrap">
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_01.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_02.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_03.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_04.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_05.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_06.png">
+        </div>
+        <div>
+          <img src="https://static.99acres.com/universalapp/img/Payment_bos_07.png">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- Livewire Scripts -->
+<script src="/livewire/livewire.js?id=6b5eb707"   data-csrf="xhtdfIBPzIKQJ6ZjpGt2mznWO5AMJFuZNDtCjp1o" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+<script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+<script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+<script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+</body>
+<script>
+  window.addEventListener('swal',function(e){
+            Swal.fire(e.detail);
+        });
+</script>
+
+ <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+ 
+<script>
+    Livewire.on('getway', (event) => {
+        var options = {
+            key: window.Livewire.find('qdUeeRX75PghR0jqKNZ2').key,
+            amount: window.Livewire.find('qdUeeRX75PghR0jqKNZ2').total*100, // Amount in paise (e.g., 1000 for ₹10)
+            currency: 'INR',
+            name: 'shiftHoja.com',
+            description: 'Product Description',
+            handler: function(response) {
+                window.Livewire.find('qdUeeRX75PghR0jqKNZ2').emit(response.razorpay_payment_id);
+            }
+        };
+
+        var rzp = new Razorpay(options);
+        rzp.open();
+     
+ });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    Livewire.on('post-success', (event) => {
+        toastr.success(event.title, {timeOut: 10});
+      });
+      
+        Livewire.on('post-created', (event) => {
+        toastr.error(event.title, {timeOut: 10});
+      });
+    
+</script>
+
+
+
+<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/wizard/ex-create-deal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 10:50:47 GMT -->
+</html>

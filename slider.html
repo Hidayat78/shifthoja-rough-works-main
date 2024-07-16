@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/searchbox.css" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css"
+        rel="stylesheet" />
+    <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/slickcss.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/normalize.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/fontello.css" />
+    <link href="https://shifthoja.com/public/frontend/assets/css/animate.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/icheck.min_all.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/price-range.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.carousel.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.theme.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.transitions.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/style.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/mediaQuery.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/responsive.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/random.css" />
+
+    <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/recentpro.css" />
+    <!-- property card link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/vendor/tiny-slider/tiny-slider.css" />
+    <!-- Theme CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://shifthoja.com/public/frontend/assets/css-service-slider/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+
+    <style>
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .swiper-button-next.swiper-button-disabled,
+        .swiper-button-prev.swiper-button-disabled {
+            opacity: .35;
+            cursor: auto;
+            pointer-events: none;
+            display: none;
+        }
+    </style>
+
+    <style>
+        .component__photonLayer {
+            background: #000;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            display: none;
+            left: 0;
+            top: 0;
+            z-index: 11009;
+        }
+
+
+
+        .swiper1 {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        .mySwiper1 {
+            width: 50%;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: cover;
+        }
+
+        .swiper-slide {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySwiper2 {
+            height: 500px;
+            width: 60%;
+            padding: 20px;
+        }
+
+        .mySwiper1 {
+            height: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+
+        .mySwiper1 .swiper-slide {
+            width: 25%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        .mySwiper1 .swiper-slide-thumb-active {
+            opacity: 1;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .property-details-photo {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .property-details-photo-figure {
+            width: 100%;
+            height: auto;
+            position: relative;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            background-clip: padding-box;
+        }
+
+        .property-details-photo-figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-details-photo-thumbnails {
+            width: 100%;
+            padding-top: 4px;
+            /*display: flex;*/
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .property-details-photo ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 4px;
+        }
+
+        .thumbnail-item {
+            width: 100%;
+            margin-right: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .thumbnail-item:last-child {
+            margin-right: 0;
+        }
+
+
+        .thumbnail-count p {
+            margin-top: 6px;
+            font-size: 10px;
+            font-weight: 400;
+        }
+
+        .thumbnail-count {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 24px 0;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, .7);
+        }
+
+        .thumbnail-count p {
+            margin-left: 0px;
+        }
+    </style>
+
+    <style>
+        .shadow-xl {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(0 0 #0000, 0 0 #0000), var(0 0 #0000, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .bg-white {
+            --tw-bg-opacity: 1;
+            background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .rounded-xl {
+            border-radius: 0.75rem;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .gap-4 {
+            gap: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .flex-1 {
+            flex: 1 1 0%;
+        }
+
+        .gap-3 {
+            gap: 0.75rem;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .bg-\[\#41bd6d\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(65 189 109 / var(--tw-bg-opacity));
+        }
+
+        .font-medium {
+            font-weight: 500;
+        }
+
+        .rounded-full {
+            border-radius: 9999px;
+        }
+
+        .justify-center {
+            justify-content: center;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .w-10 {
+            width: 3.5rem;
+        }
+
+        .h-10 {
+            height: 3.5rem;
+        }
+
+        .gap-0\.5 {
+            gap: 0.125rem;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .font-medium {
+            font-weight: 600;
+        }
+
+        .text-\[\#593597\] {
+            --tw-text-opacity: 1;
+            color: rgb(89 53 151 / var(--tw-text-opacity));
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .py-0 {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .px-1 {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+
+        .bg-\[\#ece0f7\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(236 224 247 / var(--tw-bg-opacity));
+        }
+
+        .text-slate-400 {
+            --tw-text-opacity: 1;
+            color: rgb(148 163 184 / var(--tw-text-opacity));
+        }
+
+        .inline-flex {
+            display: inline-flex;
+        }
+
+        .p-1 {
+            padding: 0.25rem;
+        }
+
+
+        .ring-slate-900\/10 {
+            --tw-ring-color: rgb(15 23 42 / 0.1);
+        }
+
+        .ring-1 {
+            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var('0px') var('#fff');
+            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var('0px')) var(--tw-ring-color);
+            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+        }
+
+        .text-slate-900 {
+            --tw-text-opacity: 1;
+            color: rgb(15 23 42 / var(--tw-text-opacity));
+        }
+
+        .shadow-sm {
+            --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+
+        .h-5 {
+            height: 1.25rem;
+        }
+
+        .w-5 {
+            width: 1.25rem;
+        }
+
+        .ring-slate-900\/10 {
+            --tw-ring-color: rgb(15 23 42 / 0.1);
+        }
+
+        .px-4 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .bg-\[\#fdf4ec\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(253 244 236 / var(--tw-bg-opacity));
+        }
+
+        .p-4 {
+            padding: 1rem;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+
+        .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .aspect-square {
+            aspect-ratio: 1 / 1;
+        }
+
+        .text-slate-500 {
+            --tw-text-opacity: 1;
+            color: rgb(100 116 139 / var(--tw-text-opacity));
+        }
+
+        .bg-\[\#fdf4ec\] {
+            --tw-bg-opacity: 1;
+            background-color: rgb(253 244 236 / 1);
+        }
+
+        .text-slate-600 {
+            --tw-text-opacity: 1;
+            color: rgb(71 85 105 / var(--tw-text-opacity));
+        }
+
+        a {
+            color: #000;
+        }
+    </style>
+
+    <style>
+        .sf-home__owner-prop__card {
+            width: 100%;
+            height: 296px;
+            overflow: hidden;
+            border: #d7d7d7 solid 1px;
+            border-radius: 8px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sf-home__owner-prop__card--graphic>img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            transition: all 0.35s ease-in;
+        }
+
+        .sf-home__owner-prop__card--graphic {
+            width: 100%;
+            height: 156px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sf-home__owner-prop__card--pic-count {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 6px 0px 22px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #303030;
+            position: absolute;
+            left: 8px;
+            bottom: 12px;
+            border-radius: 4px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card--content {
+            width: 100%;
+            height: calc(100% - 156px);
+            padding: 12px 16px;
+            position: relative;
+            background-color: #fff;
+        }
+
+
+        .sf-home__owner-prop__card--pic-count:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710375018814/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -47px -891px;
+            left: 6px;
+            top: 7px;
+        }
+
+        .sf-home,
+        .sf-home * {
+            box-sizing: border-box;
+        }
+
+        .sf-home__owner-prop__card--type {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 2px;
+            text-transform: capitalize;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sf-home__owner-prop__card--price {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+
+        .sf-home .rupees {
+            font-family: Arial;
+            margin-right: 2px;
+            font-weight: normal;
+        }
+
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #303030;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        .sf-home__owner-prop__card--loc {
+            color: #606060;
+            font-size: 14px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            padding-bottom: 4px;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card .sf-home__action {
+            width: calc(100% - 32px);
+            position: absolute;
+            bottom: -100px;
+            transition: bottom 0.3s ease-out;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__action {
+            bottom: 16px;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--status {
+            opacity: 0;
+        }
+
+        .sf-home__action--btn.btn-red {
+            color: #fff;
+            background-color: #D8232A;
+            border: #D8232A solid 1px;
+            padding: 4px;
+        }
+
+        .sf-home__action--btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 16px;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+        .sf-home__section__title {
+            padding-bottom: 24px;
+        }
+
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home .push-right {
+            float: right;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--graphic>img {
+            transform: scale(1.1);
+        }
+
+        .sf-home__section__title--anchor-see-all:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 11px;
+            right: 0px;
+            top: 4px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710374415922/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -46px -668px;
+            transition: all 0.6s ease;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .example {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay p {
+            color: white;
+            font-size: 14px;
+            background-color: #000;
+        } */
+        .last-image {
+            width: 98%;
+            height: 100%;
+            position: absolute;
+            left: -24px;
+            top: -30px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .image-counter {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 25px;
+            top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            padding: 24px 0;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, .7);
+        }
+
+        .parent-lgnhm {
+            height: 139px;
+            margin-right: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        a {
+            text-decoration: none;
+        }
+
+        .default-breadcrumb {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+
+        .default-breadcrumb li.crumb {
+            position: relative;
+            margin-bottom: 0.5em;
+            padding: 0.25em;
+            background-color: #eaecf1;
+            color: #8093A7;
+        }
+
+        .default-breadcrumb li.crumb::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            height: 100%;
+            width: 1.5em;
+            background-color: #eaecf1;
+            clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+        }
+
+        .default-breadcrumb li.crumb::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 1px;
+            height: 100%;
+            width: 1.5em;
+            background-color: #eaecf1;
+            clip-path: polygon(100% 0, 100% 100%, 0% 100%, 50% 50%, 0% 0%);
+            transform: translateX(-100%);
+        }
+
+        .default-breadcrumb li.crumb:not(:first-child) {
+            margin-left: 2em;
+        }
+
+        .default-breadcrumb li.crumb:first-child {
+            padding-left: 0.5em;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .default-breadcrumb li.crumb:first-child::before {
+            display: none;
+        }
+
+        .default-breadcrumb li.crumb:last-child {
+            padding-right: 1em;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .default-breadcrumb li.crumb:last-child::after {
+            display: none;
+        }
+
+        .default-breadcrumb li.crumb.active {
+            background-color: #003159;
+            color: #ffffff;
+        }
+
+        .default-breadcrumb li.crumb.active::before,
+        .default-breadcrumb li.crumb.active::after {
+            background-color: #003159;
+        }
+
+        .default-breadcrumb li.crumb .link {
+            max-width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .default-breadcrumb li.crumb a {
+            color: #8093A7;
+        }
+
+        .default-breadcrumb li.crumb a:hover {
+            color: #003159;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden !important">
+    <!-- Body content -->
+    <!-- Navbar Stat-->
+    <nav class="navbar navbar-default">
+        <div class="container1">
+            <a class="navbar-brand" href="https://shifthoja.com">
+                <img src="public/frontend/assets/img/shifthoja_logo.png" alt="Shifthoja Logo" />
+            </a>
+            <div class="button navbar-right">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shifthoja.Com</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                            style="font-size: 12px;"></button>
+                    </div>
+
+                    <div class="offcanvas-body p-0">
+                        <main class="flex flex-col w-100 shadow-xl bg-white rounded-xl example" style="position: sticky;
+         max-height: calc(100vh - 4rem);
+          overflow: scroll;">
+
+
+                            <section class="flex px-4 flex-col pt-3">
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="   font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></circle>
+                                        <path d="M12 6V12L16 16" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Home
+
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="    font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    About
+                                </a>
+
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="    font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.5"
+                                            stroke-linecap="round" stroke-linejoin="round"></circle>
+                                        <path d="M2 21V17C2 15.8954 2.89543 15 4 15H14C15.1046 15 16 15.8954 16 17V21"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M16 3C16.8604 3.2203 17.623 3.7207 18.1676 4.42231C18.7122 5.12392 19.0078 5.98683 19.0078 6.875C19.0078 7.76317 18.7122 8.62608 18.1676 9.32769C17.623 10.0293 16.8604 10.5297 16 10.75"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path d="M19 15H20C21.1046 15 22 15.8954 22 17V21" stroke="currentColor"
+                                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    Blogs
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Services
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Rent Pay
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Property Agreement
+                                </a>
+
+                                <a href="#" class="flex items-center gap-2 hover:bg-[#f5f5f5] p-2 px-3 rounded-xl"
+                                    style="font-size: 12px;
+              font-weight: 500;">
+                                    <svg class="w-5 h-5 text-zinc-800" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.0761 3.16311C10.136 2.50438 10.6883 2 11.3497 2H12.6503C13.3117 2 13.864 2.50438 13.9239 3.16311C13.9731 3.70392 14.3623 4.14543 14.8708 4.336C15.0015 4.38499 15.1307 4.43724 15.2582 4.49263C15.7613 4.71129 16.3531 4.66938 16.7745 4.31818C17.2953 3.8842 18.0611 3.91894 18.5404 4.39829L19.4584 5.31623C19.9154 5.77326 19.9485 6.50338 19.5347 6.99992C19.1901 7.41349 19.158 7.99745 19.3897 8.48341C19.49 8.69386 19.5816 8.90926 19.664 9.12916C19.8546 9.63767 20.2961 10.0269 20.8369 10.0761C21.4956 10.136 22 10.6883 22 11.3497V12.6503C22 13.3117 21.4956 13.864 20.8369 13.9239C20.2961 13.9731 19.8546 14.3623 19.664 14.8708C19.59 15.0682 19.5086 15.262 19.4202 15.4518C19.2053 15.913 19.2401 16.4637 19.5658 16.8546C19.962 17.33 19.9303 18.0291 19.4927 18.4667L18.4667 19.4927C18.0291 19.9303 17.33 19.962 16.8546 19.5658C16.4637 19.2401 15.913 19.2053 15.4518 19.4202C15.262 19.5086 15.0682 19.59 14.8708 19.664C14.3623 19.8546 13.9731 20.2961 13.9239 20.8369C13.864 21.4956 13.3117 22 12.6503 22H11.3497C10.6883 22 10.136 21.4956 10.0761 20.8369C10.0269 20.2961 9.63767 19.8546 9.12917 19.664C8.90927 19.5816 8.69387 19.49 8.48343 19.3897C7.99746 19.158 7.4135 19.1901 6.99992 19.5347C6.50338 19.9485 5.77325 19.9154 5.31622 19.4584L4.39829 18.5404C3.91893 18.0611 3.8842 17.2953 4.31818 16.7745C4.66939 16.3531 4.71129 15.7613 4.49263 15.2582C4.43724 15.1307 4.385 15.0016 4.336 14.8708C4.14544 14.3623 3.70392 13.9731 3.16311 13.9239C2.50438 13.864 2 13.3117 2 12.6503V11.3497C2 10.6883 2.50438 10.136 3.16311 10.0761C3.70393 10.0269 4.14544 9.63768 4.33601 9.12917C4.3936 8.9755 4.45568 8.82402 4.52209 8.67489C4.7571 8.14716 4.71804 7.52257 4.34821 7.07877C3.89722 6.53758 3.93332 5.74179 4.43145 5.24365L5.24364 4.43146C5.74178 3.93332 6.53757 3.89722 7.07876 4.34822C7.52256 4.71805 8.14715 4.7571 8.67488 4.52209C8.82401 4.45568 8.97549 4.3936 9.12916 4.33601C9.63767 4.14544 10.0269 3.70393 10.0761 3.16311Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                        <path
+                                            d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                    Login
+                                </a>
+
+                            </section>
+
+
+
+                            <!--<header class="flex flex-col p-4 gap-4">-->
+                            <!--     -->
+                            <!--     <div class="flex flex-1 gap-3">-->
+                            <!--       <button class="inline-flex shadow-sm bg-white w-full justify-center rounded-xl text-sm font-semibold py-3 px-3 text-slate-900 ring-1 ring-slate-900/10 hover:ring-slate-900/20 items-center gap-2" style="font-size: 11px;-->
+                            <!--       border: 1px solid; border: 1px solid #80808075;">-->
+                            <!--         <svg class="text-gray-600 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--           <path d="M12 4V20M4 12H20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--         </svg>-->
+                            <!--         Add New Property</button>-->
+
+                            <!--     </div>-->
+                            <!--   </header>-->
+
+
+
+
+                            <section class="flex px-4 flex-col p-0">
+                                <h5 class="mb-3 fw-normal f6 pb-3 pt-3">Recommended Proprtey</h5>
+
+                                <div style="--swiper-navigation-color: #000; --swiper-pagination-color: #fff"
+                                    class="swiper SideSwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+
+                                            <a href="javascript:void(0);">
+                                                <div class="sf-home__owner-prop__card--graphic rounded-3"
+                                                    style="height: 100px;">
+                                                    <img class="swiper-lazy swiper-lazy-loaded"
+                                                        src="http://127.0.0.1:8000/storage/proprty/bedroom/1793497914043500.jpg"
+                                                        width="294" height="156" alt="">
+                                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--content">
+                                                    <div class="sf-home__owner-prop__card--type" style="font-size:10px">
+                                                        1 bhk flat
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--price">
+                                                        <span class="rupees">₹</span>1,000
+                                                        <span class="sf-home__owner-prop__card--size">12 sqft</span>
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--loc">
+                                                        Chhatarpur, New Delhi
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--status">
+                                                        Ready to Move
+                                                    </div>
+
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="swiper-slide">
+
+                                            <a href="javascript:void(0);">
+                                                <div class="sf-home__owner-prop__card--graphic rounded-3"
+                                                    style="height: 100px;">
+                                                    <img class="swiper-lazy swiper-lazy-loaded"
+                                                        src="http://127.0.0.1:8000/storage/proprty/bedroom/1793497914043500.jpg"
+                                                        width="294" height="156" alt="">
+                                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                                </div>
+                                                <div class="sf-home__owner-prop__card--content">
+                                                    <div class="sf-home__owner-prop__card--type" style="font-size:10px">
+                                                        1 bhk flat
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--price">
+                                                        <span class="rupees">₹</span>1,000
+                                                        <span class="sf-home__owner-prop__card--size">12 sqft</span>
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--loc">
+                                                        Chhatarpur, New Delhi
+                                                    </div>
+                                                    <div class="sf-home__owner-prop__card--status">
+                                                        Ready to Move
+                                                    </div>
+
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+
+
+                            </section>
+
+                            <!--<div class="flex p-4 mr-4 flex-col gap-2 bg-[#fdf4ec] p-4 rounded-xl mt-3">-->
+                            <!--  <header class="flex items-center justify-between" style="background: transparent;">-->
+                            <!--    <div class="flex gap-2 items-center text-sm font-medium" style="font-size: 11px;">-->
+                            <!--      <svg class="h-5 w-5 text-[#e9953f]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--        <path d="M12 8V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--        <path d="M12 16.0195V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></circle>-->
+                            <!--      </svg>Today offers-->
+                            <!--    </div>-->
+
+
+                            <!--  </header>-->
+
+
+                            <!--</div>-->
+                            <!--<div class="p-3">-->
+                            <!--  <img src="/public/onbrokrage.png" alt="" srcset="" class="w-100 rounded-3">-->
+                            <!--</div>-->
+
+                            <!--<header class="flex flex-col p-4 gap-4">-->
+
+                            <!--  <div class="flex flex-1 gap-3">-->
+                            <!--    <button class="inline-flex shadow-sm bg-white w-full justify-center rounded-xl text-sm font-semibold py-3 px-3 text-slate-900 ring-1 ring-slate-900/10 hover:ring-slate-900/20 items-center gap-2" style="font-size: 11px;-->
+                            <!--    border: 1px solid; border: 1px solid #80808075;">-->
+                            <!--      <svg class="text-gray-600 w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+                            <!--      <path d="M12 4V20M4 12H20" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>-->
+                            <!--      </svg>-->
+                            <!--      customer support-->
+                            <!--    </button>-->
+
+                            <!--  </div>-->
+                            <!--</header>-->
+
+
+                        </main>
+                    </div>
+                </div>
+                <button class="navbar-btn nav-button  login" onclick="window.open('login')" data-wow-delay="0.45s">
+                    <b>Login</b>
+                </button>
+                <div class="style__postContainer">
+                    <div onclick="window.open('/postproperty')">
+                        <b class="post">Post property</b>
+                    </div>
+                    <div style="width: 36px; height: 15px" class="style__shimmer">
+                        <div class="style__shimmer" style="width: 36px; height: 20px">
+                            <div class="style__free" style="font-size: 10px">FREE</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="i bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+                <div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container pt-md-5">
+        <nav aria-label="breadcrumb">
+            <ol class="default-breadcrumb" style="padding-left: 0rem;">
+                <li class="crumb">
+                    <div class="link"><a href="https://shifthoja.com/" class="fa fa-home"></a></div>
+                </li>
+                <li class="crumb">
+                    <div class="link"><a
+                            href="https://shifthoja.com/7042-sqft-1-rk-apartment-on-sell-in-greater-kailash-delhi-11830996292">Page1</a>
+                    </div>
+                </li>
+                <li class="crumb">
+                    <div class="link"><a
+                            href="https://shifthoja.com/property-for-sell/in-delhi/chhatarpur?status=&property=residential&furnished_status=&age=&floors=&parking=&property_type[0]=apartment">Page2</a>
+                    </div>
+                </li>
+                <li class="crumb">
+                    <div class="link"><a
+                            href="https://shifthoja.com/7042-sqft-1-rk-apartment-on-sell-in-greater-kailash-delhi-11830996292">Page3</a>
+                    </div>
+                </li>
+                <li class="crumb active">
+                    <div class="link"><span aria-current="location">Current page</span></div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+    <div wire:snapshot="{&quot;data&quot;:{&quot;proprty&quot;:[null,{&quot;class&quot;:&quot;App\\Models\\Proprty&quot;,&quot;key&quot;:6,&quot;s&quot;:&quot;mdl&quot;}]},&quot;memo&quot;:{&quot;id&quot;:&quot;XBowZ2jut1mbFcVULUTc&quot;,&quot;name&quot;:&quot;frontend.single-view&quot;,&quot;path&quot;:&quot;31088463434-4-sqft-3-bhk-flat-on-sell-in-chhatarpur-delhi&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;5f228bffb280cb2acac99400617efd51e8215c1272cf176ce05dee97bf41f3ab&quot;}"
+        wire:effects="[]" wire:id="XBowZ2jut1mbFcVULUTc">
+        <div id="PhotonComponent" class="component__photonLayer pageComponent " topmost="true" data-label="PHOTON">
+            <div class="border border-1 p-3">
+                <div class="">
+                    <div class="d-flex" style="justify-content:space-between;">
+                        <div class="btn pb-0" style="background: #333">
+                            <h3 class="text-white fs-5 fw-normal">PROPERTY (3)</h3>
+                        </div>
+                        <div class="">
+                            <h class="text-white pt-2">Close</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff " class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+
+                    <!--[if BLOCK]><![endif]-->
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/balcony/1794230762670559.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230763070930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/washroom/1794230763383930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230763794378.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230764111702.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/hall/1794230764437736.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/balcony/1794230764763930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230765150982.jpg" class="w-100" />
+                    </div>
+                    <!--[if ENDBLOCK]><![endif]-->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>0
+            <div thumbsSlider="" class="swiper mySwiper1">
+                <div class="swiper-wrapper">
+                    <!--[if BLOCK]><![endif]-->
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/balcony/1794230762670559.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230763070930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/washroom/1794230763383930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230763794378.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230764111702.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/hall/1794230764437736.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/balcony/1794230764763930.jpg" class="w-100" />
+                    </div>
+
+                    <div class="swiper-slide ">
+
+                        <img src="/public/storage/proprty/bedroom/1794230765150982.jpg" class="w-100" />
+                    </div>
+                    <!--[if ENDBLOCK]><![endif]-->
+                </div>
+            </div>
+
+        </div>
+        <div class="container pt-md-5">
+
+
+            <div class="row justify-conten-center g-4">
+
+                <div class="col-md-10">
+                    <div class="property-details-photo">
+
+
+                        <div class="row g-1">
+                            <div class="col-md-7">
+                                <div class="property-details-photo-figure">
+                                    <img src="https://shifthoja.com/public/storage/proprty/balcony/1794230762670559.jpg"
+                                        alt="Property Image" width="450" height="300" style="height: 288px;"
+                                        class="rounded rounded-3">
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row property-details-photo-thumbnails g-1">
+                                    <div class="col-6">
+                                        <img src="https://shifthoja.com/public/storage/proprty/bedroom/1794230763070930.jpg"
+                                            alt="Thumbnail 2" class="rounded w-100" style="height: 140px; object-position: 100% 50%;
+                                        object-fit: cover;">
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="https://shifthoja.com/public/storage/proprty/washroom/1794230763383930.jpg"
+                                            alt="Thumbnail 3" class="rounded w-100" style="height: 140px; object-position: 100% 50%;
+                                        object-fit: cover;">
+                                    </div>
+                                    <div class="col-6">
+                                        <img src="https://shifthoja.com/public/storage/proprty/bedroom/1794230763794378.jpg"
+                                            alt="Thumbnail 4" class="rounded w-100" style="height: 140px; object-position: 100% 50%;
+                                        object-fit: cover;">
+                                    </div>
+
+
+
+                                    <div class="col">
+                                        <div class="parent-lgnhm">
+                                            <a href="full-imageshow.html">
+                                                <div class="last-image">
+                                                    <div class="image-counter">
+                                                        <p>10+ images</p>
+                                                    </div>
+                                                </div>
+                                                <img src="https://shifthoja.com/public/storage/proprty/bedroom/1794230765150982.jpg"
+                                                    alt="Thumbnail 5" class="rounded w-100"
+                                                    style="width:100%; height: 140px; object-position: 100% 50%;  object-fit: cover;">
+                                            </a>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10">
+
+                    <div class="row g-3">
+                        <div class="col-md-12 p-4 p-md-4 rounded-3 rounded" style="background: #fff6f1;">
+                            <div class="d-flex justify-content-between">
+                                <div class="fw-bold text-dark pb-2" style="font-size:18px; font-family: sans-serif;">
+                                    ₹750,000
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary">Inquiry Now</button>
+                                </div>
+                            </div>
+
+                            <div class="fs-5 fw-bold" style="font-family: sans-serif; text-transform:capitalize;">
+                                3 bhk Flat
+                                <span> for sell in Chhatarpur, Goopi dhaba </span>
+                            </div>
+
+                            <a href="https://shifthoja.com/31088463434-4-sqft-3-bhk-flat-on-sell-in-chhatarpur-delhi">
+                                <p class="small mb-0 fs-6 mt-3 p-0 fw-bold text-primary">Property Highlights</p>
+                            </a>
+                            <div>
+                                <b><img src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> Nearby Metro</b>, <b><img
+                                        src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> Hospital</b>, <b><img
+                                        src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> Airport</b>, <b><img
+                                        src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> schools </b>, <b><img
+                                        src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> bank </b>, <b><img
+                                        src="https://cdn-icons-png.flaticon.com/512/4436/4436481.png"
+                                        style="height:10px;"> Atm </b>,
+                            </div>
+                            <div class="card p-0 mt-3 mb-3" style="align-items: start;">
+                                <div class="card-body w-100">
+                                    <div class="row g-3">
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/686/686648.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">FURNISHING</span> <br>
+                                                <span style="font-size: 12px; font-weight: 600;">Semi furnished</span>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/9278/9278734.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">
+                                                    BUILT UP AREA</span> <br>
+                                                <span class="" style="font-size: 12px;
+    font-weight: 600;"> sq.ft</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/8013/8013799.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+
+                                            <div>
+                                                <span style="font-size: 11px;">
+                                                    BATHROOMS</span> <br>
+                                                <span class="" style="font-size: 12px;
+    font-weight: 600;">3</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/686/686648.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">Age property</span> <br>
+                                                <span style="font-size: 12px; font-weight: 600;">0 </span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/8013/8013799.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+
+                                            <div>
+                                                <span style="font-size: 11px;">
+                                                    Parking </span> <br>
+                                                <span class="" style="font-size: 12px; font-weight: 600;">Car
+                                                    Parking</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/9278/9278734.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">
+                                                    Posted By and On</span> <br>
+                                                <span class="" style="font-size: 12px;
+    font-weight: 600;"> 22,Mar,2024</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/686/686648.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">Balcony</span> <br>
+                                                <span style="font-size: 12px; font-weight: 600;">3</span>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-6 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/686/686648.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">Floor</span> <br>
+                                                <span style="font-size: 12px; font-weight: 600;">3</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4 d-flex gap-3">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/8013/8013799.png"
+                                                class="mt-2" height="10" width="20" style="height:20px;">
+                                            <div>
+                                                <span style="font-size: 11px;">
+                                                    Availability </span> <br>
+                                                <span class="" style="font-size: 12px;
+    font-weight: 600;">2024-04-01</span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12">
+                                <p style="font-size:12px; text-align: justify;">
+
+                                </p>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer area-->
+
+
+
+
+    <!-- Footer End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        const button = document.querySelector(".btn-top");
+
+        const displayButton = () => {
+            window.addEventListener("scroll", () => {
+                // console.log(window.scrollY);
+
+                if (window.scrollY > 800) {
+                    button.style.display = "block";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+        };
+
+        const scrollToTop = () => {
+            button.addEventListener("click", () => {
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: "smooth",
+                });
+                // console.log(event);
+            });
+        };
+
+        displayButton();
+        scrollToTop();
+    </script>
+    <!-- search inputbox recomandation start js -->
+    <script>
+        $(document).ready(function () {
+            $('.client-testimonial-carousel').owlCarousel({
+                items: 1, // Display one item by default
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    768: {
+                        items: 2 // Display two items on tablets
+                    },
+                    992: {
+                        items: 3 // Display three items on laptops
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        const locations = [
+            {
+                city: "Delhi",
+                locality_city: [
+                    "Nerela",
+                    "Burari",
+                    "Timarpur",
+                    "Adarsh Nagar",
+                    "Badli",
+                    "Rithala",
+                    "Bawana",
+                    "Mundka",
+                    "Kirari",
+                    "Sultan Pur Majra",
+                    "Nangloi Jat",
+                    "Mangol Puri (SC)",
+                    "Rohini",
+                    "Shalimar Bagh",
+                    "Shakur Basti",
+                    "Tri Nagar",
+                    "Wazirpur",
+                    "Model Town",
+                    "Sadar Bazar",
+                    "Chandni Chowk",
+                    "Matia Mahal",
+                    "Ballimaran",
+                    "Karol Bagh",
+                    "Patel Nagar",
+                    "Moti Nagar",
+                    "Madipur (SC)",
+                    "Rajouri Garden",
+                    "Hari Nagar",
+                    "Tilak Nagar",
+                    "Janakpuri",
+                    "Vikaspuri",
+                    "Uttam Nagar",
+                    "Dwarka",
+                    "Matiala",
+                    "Najafgarh",
+                    "Bijwasan",
+                    "Palam",
+                    "Delhi Cantonment",
+                    "Rajinder Nagar",
+                    "New Delhi",
+                    "Jangpura",
+                    "Kasturba Nagar",
+                    "Malviya Nagar",
+                    "R K Puram",
+                    "Mehrauli",
+                    "Chhatarpur",
+                    "Deoli (SC)",
+                    "Ambedkar Nagar (SC)",
+                    "Sangam Vihar",
+                    "Greater Kailash",
+                    "Kalkaji",
+                    "Tughlakabad",
+                    "Badarpur",
+                    "Okhla",
+                    "Trilokpuri",
+                    "Kondli",
+                    "Patparganj",
+                    "Laxmi Nagar",
+                    "Vishwas Nagar",
+                    "Krishna Nagar",
+                    "Gandhi Nagar",
+                    "Shahdara",
+                    "Seemapuri",
+                    "Rohtas Nagar",
+                    "Seelampur",
+                    "Ghonda",
+                    "Babarpur",
+                    "Gokalpur",
+                    "Mustafabad",
+                    "Karawal Nagar",
+                ],
+            },
+            {
+                city: "Noida",
+                locality_city: [
+                    "Harola Noida Sector 5",
+                    "Jhundpura Noida Sector 11",
+                    "Naya Bans Noida Sector 15",
+                    "Chora Sadatpur & Ragunathpur Noida Sector 22",
+                    "Atta Noida Sector 27",
+                    "Nithari Noida Sector 31",
+                    "Morna Noida Sector 35",
+                    "Agahapur Noida Sector 41",
+                    "Chhalera Banger Noida Sector 44",
+                    "Sadarpur Noida Sector 45",
+                    "Sarai Sadar Noida Sector 46",
+                    "Baraula Noida Sector 49",
+                    "Hoshiarpur Noida Sector 51",
+                    "Gijhaur Noida Sector 53",
+                    "Khora Noida Sector 56",
+                    "Bishanpura Noida Sector 58",
+                    "Rasulpur Nawada Noida Sector 62",
+                    "Chhajarsi Noida Sector 63",
+                    "Mamura Noida Sector 66",
+                    "Garhi Chaukhandi Noida Sector 68",
+                    "Basai Noida Sector 70",
+                    "Sharfabad Noida Sector 72",
+                    "Kakrola Noida Sector 80",
+                    "Yaqubpur Noida Sector 85",
+                    "Allhabans Noida Sector 86",
+                    "Sikandarpur Noida Sector 87",
+                    "Gejah Tallutabad Noida Sector 93",
+                    "Salarpur Noida Sector 102",
+                    "Hazipur Noida Sector 104",
+                    "Bhangel Begampur Noida Sector 110",
+                    "Sorakha Noida Sector 115",
+                    "Parthala Khanjarpur Noida Sector 122",
+                    "Raipur Khadar Noida Sector 126",
+                    "Bakhtawarpur Noida Sector 127",
+                    "Shahpur Govardhanpur & Sultanpur Noida Sector 128",
+                    "Bajidpur Noida Sector 130",
+                    "Asagarpur Noida Sector 131",
+                    "Rohilapur Noida Sector 132",
+                    "Nagali Sakpur Noida Sector 133",
+                    "Harpal ki nagali Noida Sector 134",
+                    "Shahdara Noida Sector 141",
+                    "Nalgadha Noida Sector 145",
+                    "Noida Sector 148",
+                    "Kondli Noida Sector 149",
+                    "Garhi samastpur Noida Sector 150",
+                    "Dalerpur Noida Sector 151",
+                    "Kambakashpur Noida Sector 152",
+                    "Badauli Noida Sector 154",
+                    "Jhatta Noida Sector 159",
+                    "Gulavali Noida Sector 162",
+                    "Mohiyapur Noida Sector 163",
+                    "Dalupura Noida Sector 165",
+                    "Chhaprauli Bangar Noida Sector 167",
+                    "Dostpur Mangroli Noida Sector 168",
+                ],
+            },
+            {
+                city: "Gurugram",
+                locality_city: [
+                    "Aklimpur",
+                    "Babupur",
+                    "Bajghera",
+                    "Basharia",
+                    "Baskushla",
+                    "Bhang Rola",
+                    "Budhera",
+                    "Chandu",
+                    "Dhana",
+                    "Dhankot",
+                    "Dharampur",
+                    "Dhorka",
+                    "Dhumaspur",
+                    "Gairatpurbas",
+                    "Ghasula",
+                    "Gopalpur",
+                    "Hamirpur",
+                    "Harsaru",
+                    "Hayatpur",
+                    "Kankrola",
+                    "Kharki Majra Dhankot",
+                    "Mankrola",
+                    "Medawas",
+                    "Meoka",
+                    "Mohmadheri",
+                    "Nangli Umarpur",
+                    "Nurpur Jharsa",
+                    "Palra",
+                    "Sadhrana",
+                    "Tikampur",
+                    "Tikli",
+                    "Wazirpur",
+                ],
+            },
+        ];
+
+        const searchDropdown = document.getElementById("searchDropdown");
+        const searchInput = document.getElementById("searchInput");
+        const localitiesList = document.getElementById("localitiesList");
+        searchInput.addEventListener("input", function () {
+            const inputValue = searchInput.value.toLowerCase();
+            const selectedCity = searchDropdown.value;
+            const selectedLocation = locations.find(
+                (location) => location.city === selectedCity
+            );
+            const suggestionList = document.getElementById("localitiesList");
+
+            suggestionList.innerHTML = "";
+
+            if (selectedLocation && inputValue.trim() !== "") {
+                const localities = selectedLocation.locality_city;
+                localities.forEach((locality) => {
+                    if (locality.toLowerCase().includes(inputValue)) {
+                        const listItem = document.createElement("li");
+                        listItem.className = "suggestion-item";
+                        listItem.textContent = locality;
+                        listItem.addEventListener("click", function () {
+                            searchInput.value = locality;
+                            suggestionList.innerHTML = "";
+                        });
+                        suggestionList.appendChild(listItem);
+                    }
+                });
+            }
+        });
+    </script>
+    <!-- search inputbox recomandation End js -->
+    <!-- Testomonils start js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Testomonials end -->
+    <!-- property card start -->
+    <script>
+        const wrapper = document.querySelector(".wrapper");
+        const carousel = document.querySelector(".carousel");
+        const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+        const arrowBtns = document.querySelectorAll(".wrapper i");
+        const carouselChildrens = [...carousel.children];
+
+        let isDragging = false,
+            isAutoPlay = true,
+            startX,
+            startScrollLeft,
+            timeoutId;
+
+        // Get the number of cards that can fit in the carousel at once
+        let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+        // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+        carouselChildrens
+            .slice(-cardPerView)
+            .reverse()
+            .forEach((card) => {
+                carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+            });
+
+        // Insert copies of the first few cards to end of carousel for infinite scrolling
+        carouselChildrens.slice(0, cardPerView).forEach((card) => {
+            carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+        });
+
+        // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+        carousel.classList.add("no-transition");
+        carousel.scrollLeft = carousel.offsetWidth;
+        carousel.classList.remove("no-transition");
+
+        // Add event listeners for the arrow buttons to scroll the carousel left and right
+        arrowBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                carousel.scrollLeft +=
+                    btn.id == "left" ? -firstCardWidth : firstCardWidth;
+            });
+        });
+
+        const dragStart = (e) => {
+            isDragging = true;
+            carousel.classList.add("dragging");
+            // Records the initial cursor and scroll position of the carousel
+            startX = e.pageX;
+            startScrollLeft = carousel.scrollLeft;
+        };
+
+        const dragging = (e) => {
+            if (!isDragging) return; // if isDragging is false return from here
+            // Updates the scroll position of the carousel based on the cursor movement
+            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+        };
+
+        const dragStop = () => {
+            isDragging = false;
+            carousel.classList.remove("dragging");
+        };
+
+        const infiniteScroll = () => {
+            // If the carousel is at the beginning, scroll to the end
+            if (carousel.scrollLeft === 0) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+            // If the carousel is at the end, scroll to the beginning
+            else if (
+                Math.ceil(carousel.scrollLeft) ===
+                carousel.scrollWidth - carousel.offsetWidth
+            ) {
+                carousel.classList.add("no-transition");
+                carousel.scrollLeft = carousel.offsetWidth;
+                carousel.classList.remove("no-transition");
+            }
+
+            // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+            clearTimeout(timeoutId);
+            if (!wrapper.matches(":hover")) autoPlay();
+        };
+
+        const autoPlay = () => {
+            if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+            // Autoplay the carousel after every 2500 ms
+            timeoutId = setTimeout(
+                () => (carousel.scrollLeft += firstCardWidth),
+                2500
+            );
+        };
+        autoPlay();
+
+        carousel.addEventListener("mousedown", dragStart);
+        carousel.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", dragStop);
+        carousel.addEventListener("scroll", infiniteScroll);
+        wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+        wrapper.addEventListener("mouseleave", autoPlay);
+    </script>
+    <!-- propery card end -->
+    <script>
+        let currentIndex = 0;
+
+        const moveSlider = (direction) => {
+            const cardSlider = document.querySelector(".card-slider");
+            const cardWidth = document.querySelector(".card").offsetWidth;
+            const maxIndex = cardSlider.childElementCount - 1;
+
+            currentIndex = Math.max(
+                0,
+                Math.min(currentIndex + direction, maxIndex)
+            );
+            const newPosition = -currentIndex * cardWidth;
+            cardSlider.style.transform = `translateX(${newPosition}px)`;
+        };
+    </script>
+    <script>
+        const showImage = (imageId, imagePath) => {
+            const imageIds = ["first", "second", "third"];
+
+            for (const id of imageIds) {
+                const element = document.getElementById(id);
+                element.style.display = id === imageId ? "block" : "none";
+            }
+
+            // Change the image source based on the imagePath parameter
+            document.getElementById(imageId).querySelector("img").src = imagePath;
+        };
+
+        const BuyImage = () => {
+            // console.log("first");
+            showImage("first", "/public/frontend/assets/img/slide1/buy.jpg");
+        };
+
+        const RentImage = () => {
+            showImage("second", "/public/frontend/assets/img/slide1/rent.jpg");
+        };
+
+        const CommercialImage = () => {
+            showImage("third", "/public/frontend/assets/img/slide1/commercial.jpg");
+        };
+
+        // Call the BuyImage function when the page loads to show the "Buy" image by default
+        document.addEventListener("DOMContentLoaded", () => {
+            BuyImage();
+        });
+    </script>
+    <!-- recent project js  -->
+    <!-- Swiper JS -->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
+    <!--Uncomment this line-->
+    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
+    <script>
+        var swiper = new Swiper(".slide-content", {
+            slidesPerView: 3,
+            spaceBetween: 25,
+            loop: true,
+            centerSlide: "true",
+            fade: "true",
+            grabCursor: "true",
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                520: {
+                    slidesPerView: 2,
+                },
+                950: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    </script>
+    <script>
+        var header = document.getElementById("myDIV");
+
+        var btns = header.getElementsByClassName("btn_slider");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active_btn");
+                current[0].className = current[0].className.replace(
+                    " active_btn",
+                    ""
+                );
+                this.className += " active_btn";
+            });
+        }
+    </script>
+    <script>
+        function sticky_relocate() {
+            var window_top = $(window).scrollTop();
+            var div_top = $("#sticky-anchor").offset().top;
+            if (window_top > div_top) {
+                $("#sticky").addClass("stick");
+            } else {
+                $("#sticky").removeClass("stick");
+            }
+        }
+
+        $(function () {
+            $(window).scroll(sticky_relocate);
+            sticky_relocate();
+        });
+    </script>
+    <script>
+        const indicator = document.querySelector(".nav-indicator-wrapper");
+        const items = document.querySelectorAll(".nav-item");
+
+        function handleIndicator(el) {
+            items.forEach((item) => {
+                item.classList.remove("is-active");
+            });
+
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+
+            el.classList.add("is-active");
+        }
+
+        items.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                handleIndicator(item);
+            });
+
+            item.classList.contains("is-active") && handleIndicator(item);
+        });
+    </script>
+
+    <!-- Vendors -->
+    <script src="/public/frontend/assets/vendor/tiny-slider/tiny-slider.js"></script>
+    <!-- ThemeFunctions -->
+    <script src="/public/frontend/assets/js-service-slider/js/functions.js"></script>
+    <script src="/public/frontend/assets/js/modernizr-2.6.2.min.js"></script>
+
+    <script src="/public/frontend/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="/public/frontend/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/public/frontend/assets/js/bootstrap-select.min.js"></script>
+    <script src="/public/frontend/assets/js/bootstrap-hover-dropdown.js"></script>
+
+    <script src="/public/frontend/assets/js/easypiechart.min.js"></script>
+    <script src="/public/frontend/assets/js/jquery.easypiechart.min.js"></script>
+
+    <script src="/public/frontend/assets/js/owl.carousel.min.js"></script>
+    <script src="/public/frontend/assets/js/icheck.min.js"></script>
+    <script src="/public/frontend/assets/js/price-range.js"></script>
+
+    <script src="/public/frontend/assets/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".owl-carousel").owlCarousel({
+                items: 3,
+                //      autoplay:false,
+                margin: 30,
+                loop: true,
+                dots: true,
+
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="9p0oMzfYc0dc6wY6cvABE0FfacNa7jtYmaqYE560"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "progressbar",
+                clickable: true,
+            },
+
+
+
+
+            // spaceBetween: 30,
+            //   centeredSlides: true,
+            //   autoplay: {
+            //     delay: 2500,
+            //     disableOnInteraction: false,
+            //   },
+
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+    <script>
+        var swiper = new Swiper(".mySwiper1", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 4,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        var swiper2 = new Swiper(".mySwiper2", {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    </script>
+
+
+    <script>
+        var swiper = new Swiper(".SideSwiper", {
+            zoom: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+
+</html>

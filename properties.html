@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>GARO ESTATE | Properties page</title>
+  <meta name="description" content="GARO is a real-estate template">
+  <meta name="author" content="Kimarotec">
+  <meta name="keyword" content="html5, css, bootstrap, property, real-estate theme , bootstrap template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/fontello.css">
+  <link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+  <link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet">
+  <link href="assets/css/animate.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/icheck.min_all.css">
+  <link rel="stylesheet" href="assets/css/price-range.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.css">
+  <link rel="stylesheet" href="assets/css/owl.transitions.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/random.css">
+  <link rel="stylesheet" href="assets/css/mediaQuery.css" />
+</head>
+
+<body>
+
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+
+
+  <nav class="navbar navbar-default">
+    <div class="container1">
+      <a class="navbar-brand" href="index.html"><img src="./assets/img/shifthoja_logo.png" width="200px" height="60px"
+          alt="" /></a>
+      <div class="button navbar-right">
+        <button class="navbar-btn nav-button  login " onclick=" window.open('login.html')">
+          Login
+        </button>
+        <div class="style__postContainer">
+          <div onclick=" window.open('userLogin.html')"><b class="post">Post property</b></div>
+          <div style="width: 36px; height: 15px" class="style__shimmer">
+            <div class="style__shimmer" style="width: 36px; height: 15px">
+              <div class="style__free" style="font-size: 10px;">FREE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- End of nav bar -->
+
+  <div class="row">
+    <div class="col-md-12 clear filternew">
+      <div class="col-xs-10 page-subheader sorting pl0">
+        <ul class="sort-by-list">
+          <li class="active">
+            <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
+              Property Date <i class="fa fa-sort-amount-asc"></i>
+            </a>
+          </li>
+          <li class="">
+            <select id="propertyType" class="form-select">
+              <option value="Property type">Property Type</option>
+              <option value="apartment">Apartment</option>
+              <option value="apartment">Independent House</option>
+            </select>
+          </li>
+          <li>
+            <div class="filter">
+
+              <select id="propertyType" class="form-select">
+                <option value="villa">BHK Type</option>
+                <option value="apartment">1 RK</option>
+                <option value="apartment">1 BHK</option>
+                <option value="apartment">2 BHK</option>
+                <option value="apartment">3 BHK+</option>
+              </select>
+              <div class="">
+                <select id="saleType" class="form-select fs-5">
+                  <option value="sale">For Sale</option>
+                  <option value="rent">For Rent</option>
+                </select>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- <div class="items-per-page">
+          <label for="items_per_page"><b>Property per page :</b></label>
+          <div class="sel">
+            <select id="items_per_page" name="per_page">
+              <option value="3">3</option>
+              <option value="6">6</option>
+              <option value="9">9</option>
+              <option selected="selected" value="12">12</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- property area -->
+  <div class="properties-area recent-property" style="background-color: #FFF;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 clear">
+          <div id="list-type" class="proerty-th property-listing-container">
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-3.jpg"></a>
+                </div>
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <img src="assets/img/demo/property-2.jpg">
+                </div>
+                <div class="item-entry overflow">
+                  <h5>Super nice villa</h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-1.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-3.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-1.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-2.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-3.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-2.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-4 p0">
+              <div class="box-two proerty-item">
+                <div class="item-thumb">
+                  <a href="property-1.html"><img src="assets/img/demo/property-1.jpg"></a>
+                </div>
+
+                <div class="item-entry overflow">
+                  <h5><a href="property-1.html"> Super nice villa </a></h5>
+                  <div class="dot-hr"></div>
+                  <span class="pull-left"><b> Area :</b> 120m </span>
+                  <span class="proerty-price pull-right"> $ 300,000</span>
+                  <p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis
+                    dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+                  <div class="property-icon">
+                    <img src="assets/img/icon/bed.png">(5)|
+                    <img src="assets/img/icon/shawer.png">(2)|
+                    <img src="assets/img/icon/cars.png">(1)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-3">
+          <aside>
+            <img src="assets/img/ads.jpg">
+          </aside>
+        </div>
+        <div class="col-md-12">
+          <div class="pull-center">
+            <div class="pagination">
+              <ul>
+                <li><a href="#">Prev</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">Next</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer area-->
+  <div class="footer-area">
+    <!-- Footer area-->
+    <div class="footer-area">
+      <div class="footer">
+        <div class="container">
+          <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+            <div class="single-footer">
+              <h4>Top Properties</h4>
+              <label for="bhkType" class="form-label fw-bold fs-5">Saket</label>
+              <div class="footer-title-line"></div>
+              <ul class="footer-menu">
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+            <div class="single-footer">
+              <h4>Top Properties</h4>
+              <label for="bhkType" class="form-label fw-bold fs-5">Malvia Nagar</label>
+              <div class="footer-title-line"></div>
+              <ul class="footer-menu">
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+            <div class="single-footer">
+              <h4>for rent</h4>
+              <label for="bhkType" class="form-label fw-bold fs-5">Nagar</label>
+              <div class="footer-title-line"></div>
+              <ul class="footer-menu">
+                <li><a href="#">1 RK for Sell</a></li>
+                <li><a href="#">1 BHK for Sell</a></li>
+                <li><a href="#">2 BHK for Sell</a></li>
+                <li><a href="#">3 BHK for Sell</a></li>
+                <li><a href="#">3+ BHK for Sell</a></li>
+                <li><a href="#">1 RK for Sell</a></li>
+                <li><a href="#">1 BHK for Sell</a></li>
+                <li><a href="#">2 BHK for Sell</a></li>
+                <li><a href="#">3 BHK for Sell</a></li>
+                <li><a href="#">3+ BHK for Sell</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+            <div class="single-footer">
+              <h4>for rent</h4>
+              <label for="bhkType" class="form-label fw-bold fs-5">Chhatarpur</label>
+              <div class="footer-title-line"></div>
+              <ul class="footer-menu">
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+                <li><a href="#">1 RK </a></li>
+                <li><a href="#">1 BHK </a></li>
+                <li><a href="#">2 BHK </a></li>
+                <li><a href="#">3 BHK </a></li>
+                <li><a href="#">3+ BHK </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copy text-center">
+      <div class="container">
+        <div class="row">
+          <div class="pull-left">
+            <span>
+              (C) <a href="#">Hidayat@2024</a> , All rights reserved 2024
+            </span>
+          </div>
+          <div class="bottom-menu pull-right">
+            <ul>
+              <li>
+                <a class="wow fadeInUp animated" href="#" data-wow-delay="0.2s">About-Us</a>
+              </li>
+              <li>
+                <a class="wow fadeInUp animated" href="#" data-wow-delay="0.3s">Property</a>
+              </li>
+              <li>
+                <a class="wow fadeInUp animated" href="#" data-wow-delay="0.4s">Faq</a>
+              </li>
+              <li>
+                <a class="wow fadeInUp animated" href="#" data-wow-delay="0.6s">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer end -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/modernizr-2.6.2.min.js"></script>
+  <script src="assets/js/jquery-1.10.2.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap-select.min.js"></script>
+  <script src="assets/js/bootstrap-hover-dropdown.js"></script>
+  <script src="assets/js/easypiechart.min.js"></script>
+  <script src="assets/js/jquery.easypiechart.min.js"></script>
+  <script src="assets/js/owl.carousel.min.js"></script>
+  <script src="assets/js/wow.js"></script>
+  <script src="assets/js/icheck.min.js"></script>
+  <script src="assets/js/price-range.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

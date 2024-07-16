@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+        }
+        ._2doii0._2doii0 {
+            background-color: #1dd38f;
+        }
+        ._h3i2wt._h3i2wt {
+            margin-top: 6px;
+        }
+
+        ._g31ou6._g31ou6 {
+            line-height: 26px;
+        }
+        ._c81fwx._c81fwx {
+            font-size: 12px;
+        }
+        button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+            cursor: pointer;
+        }
+
+        ._5jyh40 {
+            border-radius: 2px;
+        }
+        ._l881bl {
+            padding: 0 8px;
+        }
+
+        ._3f1szm {
+            border: 1px solid #1dd38f;
+        }
+        ._7lu67f {
+            color: #fff;
+        }
+        .pb-2 {
+            padding-bottom: 0.5rem !important;
+        }
+        .pt-2 {
+            padding-top: 0.5rem !important;
+        }
+        .w-100 {
+            width: 100% !important;
+        }
+        @media (min-width: 1200px) {
+            .fs-4 {
+                font-size: 1.75rem !important;
+            }
+        }
+
+        .fw-normal {
+            font-weight: 500 !important;
+        }
+        .box {
+            width: 99%;
+            height: 450px;
+        }
+        .image-gallery-slider {
+            display: flex;
+            gap: 20px;
+        }
+        .image-gallery-slider img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Style for the left arrow */
+        .bi-chevron-left {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5); /* Optional background */
+            color: white; /* Arrow color */
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Style for the right arrow */
+        .bi-chevron-right {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5); /* Optional background */
+            color: white; /* Arrow color */
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Ensure icons are visible */
+        .bi-chevron-left:before, .slick-next:before {
+            font-size: 24px;
+            line-height: 1;
+            opacity: 1;
+            color: white;
+        }
+
+        /* Custom styling to control opacity */
+        .image-gallery-slider img.dimmed {
+            background-color: black;
+            opacity: 0.5;
+        }
+        /* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 50px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container pt-md-2">
+        <div class="d-flex justify-content-between mb-4">
+            <div>
+                <h2 class="fw-normal fs-4">2 BHK independent floor FLOOR for sell</h2>
+                <div data-q="features" class="css-1am49zs"><span class="css-gkudnx">semi furnished</span> <span class="css-gkudnx">750 sq.ft</span></div>
+                <div data-q="address" class="css-1ty5xzi">birla a1, Chhatarpur, Delhi</div>
+            </div>
+            <div>
+                <h4 class="fs-4">₹ 5,500,000</h4>
+                <div style="font-size:14px;">Added 2 hours ago</div>
+                <button class="T_6c0f7ec1 _5jyh40 _2doii0 _7lu67f _3f1szm _1q731trj _c81fwx _g31ou6 _l881bl _h3i2wt w-100 pt-2 pb-2">Contact Seller</button>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <div class="image-gallery-slider">
+            <div><img src="assets/img/similar/property-1.jpg" alt="Bedroom"></div>
+            <div><img src="assets/img/similar/property-2.jpg" alt="Kitchen1"></div>
+            <div><img src="assets/img/similar/property-3.jpg" alt="Kitchen2"></div>
+            <div><img src="assets/img/similar/property-1.jpg" alt="Bedroom2"></div>
+            <div><img src="assets/img/similar/property-2.jpg" alt="Kitchen3"></div>
+            <div><img src="assets/img/similar/property-3.jpg" alt="Kitchen4"></div>
+            <div><img src="assets/img/similar/property-1.jpg" alt="Bedroom3"></div>
+            <div><img src="assets/img/similar/property-2.jpg" alt="Kitchen5"></div>
+            <div><img src="assets/img/similar/property-3.jpg" alt="Kitchen6"></div>
+        </div>
+    </div>
+    <!-- Modal HTML -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            $('.image-gallery-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<i class="bi bi-chevron-left"></i>',
+                nextArrow: '<i class="bi bi-chevron-right"></i>',
+            });
+        });
+    </script>
+</body>
+</html>

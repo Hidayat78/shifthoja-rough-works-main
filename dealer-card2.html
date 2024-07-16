@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .featuredLocalitiyBox {
+            padding: 50px 20px;
+            position: relative;
+            background: #fff;
+            border-top: 1px solid #f5f5f5
+        }
+
+
+
+        .featuredLocalitiyBox .bxSliderBox {
+            max-width: 1410px;
+            margin: 0 auto
+        }
+
+        .featuredLocalitiyBox .item {
+            padding: 10px 0;
+            margin-right: 15px;
+        }
+
+        .featuredLocalitiyBox .item br {
+            display: none
+        }
+
+        @media screen and (max-width: 1024px) {
+            .featuredLocalitiyBox {
+                padding: 50px 15px
+            }
+
+            .featuredLocalitiyBox .item~.item {
+                margin-left: 15px
+            }
+
+            .featuredLocalitiyBox h2 {
+                padding: 0;
+                text-align: left;
+                font-size: 16px
+            }
+
+            .topDevelopersSection~.featuredLocalitiyBox {
+                border-top: 0 solid #f5f5f5
+            }
+
+            .featuredLocalitiyBox {
+                padding: 30px 0 20px;
+                width: 100%
+            }
+
+            .featuredLocalitiyBox h2 {
+                padding: 0 15px
+            }
+
+            .featuredLocalitiyBox .localitySilder {
+                margin-top: 5px;
+                display: flex;
+                display: -webkit-flex;
+                padding: 0 15px;
+                white-space: nowrap;
+                overflow: hidden;
+                overflow-x: auto
+            }
+        }
+
+        .localityCard {
+            padding: 12px 15px 0;
+            border-radius: 8px;
+            background: #fff;
+            border: 1px solid #e8e8e8;
+            box-shadow: 0 0 14px 0 rgba(0, 0, 0, .06)
+        }
+
+        .localityCard .cardHeadingBox {
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            flex-direction: row-reverse
+        }
+
+        .localityCard .cardImgHead {
+            width: 100%;
+            display: flex;
+            display: -webkit-flex;
+            overflow: hidden
+        }
+
+        .localityCard .cardMap {
+            margin-right: 13px;
+            display: flex;
+            display: -webkit-flex;
+            width: 81px;
+            height: 49px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex: none;
+            cursor: pointer;
+            background: #f4f4f4
+        }
+
+        .localityCard a {
+            text-decoration: none;
+            color: #5f449b
+        }
+
+        .localityCard .cardMap .img-responsive {
+            font-size: 11px;
+            line-height: 14px;
+            white-space: normal
+        }
+
+        .localityCard .cardHeading {
+            width: 100%
+        }
+
+        .localityCard .cardMap~.cardHeading {
+            width: calc(100% - 99px)
+        }
+
+        .localityCard .starRatingBox~.cardImgHead {
+            width: calc(100% - 70px)
+        }
+
+        .localityCard .headingLink {
+            color: #5f449b;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            overflow: hidden;
+            line-height: normal
+        }
+
+        .localityCard .headingLink strong {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            line-height: normal;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .localityCard .headingLink strong a {
+            text-decoration: none;
+            color: #333
+        }
+
+        .localityCard .headingLink em {
+            background-size: 360px;
+            display: block;
+            margin-left: 7px;
+            background-position: -10px -314px;
+            width: 13px;
+            height: 13px;
+            flex: none;
+            position: relative;
+            top: -1px
+        }
+
+        .localityCard .totalProjects {
+            margin-top: 5px;
+            color: #5f449b;
+            font-size: 12px;
+            line-height: normal;
+            line-height: 16px
+        }
+
+        .localityCard .totalProjects a span {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap
+        }
+
+        .localityCard .starRating {
+            line-height: normal;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center
+        }
+
+        .localityCard .totalReview {
+            text-decoration: none;
+            color: #5f449b;
+            font-size: 12px
+        }
+
+        .localityCard .starRating span {
+            margin-right: 5px;
+            color: #333;
+            font-size: 13px;
+            font-weight: 600;
+            position: relative;
+            top: 1px
+        }
+
+        .localityCard .review {
+            background: url(https://www.squareyards.com/assets/images/sprite-icon/review-sprite-icons.svg) no-repeat left top;
+            background-size: 110px
+        }
+
+        .localityCard .icon-rate {
+            background-position: -2px -18.5px
+        }
+
+        .localityCard .icon-rated {
+            background-position: -2px -2px
+        }
+
+        .localityCard .starRating em {
+            width: 14px;
+            height: 14px;
+            display: inline-block
+        }
+
+        .localityCard .starRating em~em {
+            margin-left: 5px
+        }
+
+        .localityCard .cardSecBox {
+            margin: 15px -15px 0 -15px
+        }
+
+        .localityCard .cardSecBox .cardSec {
+            padding: 15px;
+            height: 72px;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: solid 1px #ededed
+        }
+
+        .localityCard .cardSecBox .buyPrice,
+        .localityCard .cardSecBox .totalProperty {
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .localityCard .cardSecBox .totalProperty {
+            max-width: calc(100% - 154px)
+        }
+
+        .localityCard .cardSecBox .totalProperty .detailPrice {
+            width: 100%
+        }
+
+        .localityCard .cardSecBox .buyPrice .iconBox {
+            margin-right: 14px;
+            width: 22px;
+            height: 22px;
+            flex: none
+        }
+
+        .localityCard .cardSecBox .buyPrice {
+            padding-right: 15px;
+            width: 154px;
+            flex: none;
+            white-space: nowrap;
+            justify-content: flex-start
+        }
+
+        .localityCard .cardSecBox .buyPrice .detailPrice span {
+            font-size: 12px;
+            line-height: 18px;
+            color: #666;
+            display: block
+        }
+
+        .localityCard .cardSecBox .buyPrice .detailPrice strong {
+            font-size: 12px;
+            color: #333;
+            line-height: 18px
+        }
+
+        .localityCard .cardSecBox .totalProperty .detailPrice strong {
+            font-size: 12px;
+            color: #333;
+            line-height: 18px;
+            display: block;
+            font-weight: 500
+        }
+
+        .localityCard .cardSecBox .totalProperty .detailPrice span {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-weight: 500
+        }
+
+        .localityCardBox.vertical .localityCard~.localityCard {
+            margin-top: 20px
+        }
+
+        .localityCardBox.horizontal {
+            display: flex;
+            display: -webkit-flex;
+            overflow: auto;
+            overflow-y: hidden;
+        }
+
+        .localityCardBox.horizontal .localityCard~.localityCard {
+            margin-left: 15px
+        }
+
+        .localityCardBox.horizontal .localityCard {
+            flex: none;
+            width: 320px;
+            height: 250px;
+            width: 320px
+        }
+
+        .localityCardBox.horizontal .cardHeadingBox {
+            min-height: 49px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="featuredLocalitiyBox">
+        <div class="bxSliderBox">
+            <div class="localitySilder localityCardBox horizontal scrollBarHide">
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+                <div class="item">
+                    <div class="localityCard">
+                        <div class="cardHeadingBox">
+                            <div class="starRatingBox">
+                                <div class="starRating">
+                                    <span>4.6</span>
+                                    <em><img class="lazy" data-src="assets/img/star.svg" alt="star icon"
+                                            src="assets/img/star.svg"></em>
+                                </div>
+                                <a class="totalReview"
+                                    href="https://www.squareyards.com/reviews/locality/dombivli-east-in-thane/93548"> 47
+                                    Reviews</a>
+                            </div>
+                            <div class="cardImgHead">
+                                <div class="cardMap"><img
+                                        data-src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg"
+                                        width="81" height="49" class="img-responsive lazy"
+                                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                                </div>
+                                <div class="cardHeading">
+                                    <div class="headingLink">
+                                        <strong><a
+                                                href="https://www.squareyards.com/dombivli-east-in-thane-overview-3936">SHERA</a></strong>
+                                    </div>
+                                    <div class="totalProjects">
+                                        <a href="https://www.squareyards.com/projects-in-dombivli-east-thane">2082
+                                            Projects <span>in All over Delhi</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardSecBox">
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/tag-yellow-icon.svg" alt="Sale Icon"
+                                            src="assets/img/tag-yellow-icon.svg"></div>
+
+                                    <div class="detailPrice"> <span>For Buy:</span> <strong>1500 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/sale/property-for-sale-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4014 Properties for Sale <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="cardSec">
+                                <div class="buyPrice">
+                                    <div class="iconBox rentIconBox"><img class="img-responsive lazy"
+                                            data-src="assets/img/rent-dse-icon.svg" alt="Rent Icon"
+                                            src="assets/img/rent-dse-icon.svg">
+                                    </div>
+                                    <div class="detailPrice"> <span> For Rent:</span> <strong>300 Properties</strong>
+                                    </div>
+                                </div>
+                                <a href="https://www.squareyards.com/rent/property-for-rent-in-dombivli-east-thane"
+                                    class="totalProperty">
+                                    <div class="detailPrice">
+                                        <strong>4293 Properties for Rent <span></span></strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

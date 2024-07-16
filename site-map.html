@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Site map</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 160px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 11px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+            }
+
+        }
+
+        .r-bijgke {
+            padding-top: 50px;
+        }
+
+        .r-xovx4i {
+            background-color: rgb(240, 249, 255);
+        }
+
+        .r-1awozwy {
+            align-items: center;
+        }
+
+        .r-6koalj {
+            display: flex;
+        }
+
+        .r-eqz5dr {
+            flex-direction: column;
+        }
+
+        .r-eu3ka {
+            height: 40px;
+        }
+
+        .r-ero68b {
+            min-height: 80px;
+        }
+
+        .r-25kp3t {
+            min-width: 70px;
+        }
+
+        .r-5orghg {
+            width: 34px;
+        }
+
+        .r-1mlwlqe {
+            flex-basis: auto;
+        }
+
+        .r-1udh08x {
+            overflow: hidden;
+        }
+
+        .r-417010 {
+            z-index: 0;
+        }
+
+        .r-1niwhzg {
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .r-vvn4in {
+            background-position: center center;
+        }
+
+        .r-u6sd8q {
+            background-repeat: no-repeat;
+        }
+
+        .r-4gszlv {
+            background-size: cover;
+        }
+
+        .r-1p0dtai {
+            bottom: 0px;
+        }
+
+        .r-1pi2tsx {
+            height: 100%;
+        }
+
+        .r-1d2f490 {
+            left: 0px;
+        }
+
+        .r-u8s1d {
+            position: absolute;
+        }
+
+        .r-zchlnj {
+            right: 0px;
+        }
+
+        .r-ipm5af {
+            top: 0px;
+        }
+
+        .r-13qz1uu {
+            width: 100%;
+        }
+
+        .r-1wyyakw {
+            z-index: -1;
+        }
+
+        .r-kze2mb {
+            color: rgb(4, 21, 51);
+        }
+
+        .r-1x35g6 {
+            font-size: 24px;
+        }
+
+        .r-13uqrnb {
+            font-style: normal;
+        }
+
+        .r-b88u0q {
+            font-weight: 700;
+        }
+
+        .r-37tt59 {
+            line-height: 32px;
+        }
+
+        .r-1v456y7 {
+            margin-bottom: 35px;
+        }
+
+        .site-head {
+            text-align: center;
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .site-head h3 {
+            font-size: 2em;
+            color: #333;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .city-sitemap {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .chhatarpur-site-map {
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .chhatarpur-site-map img {
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .chhatarpur-site-map p {
+            margin-top: 10px !important;
+            font-size: 1em;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .chhatarpur-site-map:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .chhatarpur-site-map img {
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .chhatarpur-site-map:hover img {
+            transform: scale(1.2);
+        }
+
+        .chhatarpur-site-map p {
+            margin: 0;
+            font-size: 1em;
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Tablet view */
+        @media (max-width: 768px) {
+            .site-head {
+                padding: 15px;
+            }
+
+            .site-head h3 {
+                font-size: 1.8em;
+            }
+
+            .site-head p {
+                font-size: 1.1em;
+            }
+        }
+
+        /* Mobile view */
+        @media (max-width: 480px) {
+            .site-head {
+                padding: 10px;
+            }
+
+            .site-head h3 {
+                font-size: 1.5em;
+            }
+
+            .site-head p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h4 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <div class="css-1dbjc4n r-xovx4i r-bijgke">
+        <div class="css-1dbjc4n r-1awozwy r-6koalj r-eqz5dr">
+            <div class="css-1dbjc4n r-eu3ka r-ero68b r-25kp3t r-5orghg">
+                <div class="css-1dbjc4n r-1mlwlqe r-eu3ka r-ero68b r-25kp3t r-1udh08x r-5orghg r-417010">
+                    <div
+                        class="css-1dbjc4n r-1niwhzg r-vvn4in r-u6sd8q r-4gszlv r-1p0dtai r-1pi2tsx r-1d2f490 r-u8s1d r-zchlnj r-ipm5af r-13qz1uu r-1wyyakw">
+                    </div>
+                    <img alt="" draggable="false" src="/assets/img/sitemap.png" class="css-9pa8cd">
+                </div>
+            </div>
+            <div class="css-1dbjc4n r-7sv4c2"></div>
+            <h1 dir="auto" aria-level="1" role="heading"
+                class="css-4rbku5 css-901oao r-kze2mb r-98loyc r-1x35g6 r-13uqrnb r-b88u0q r-37tt59 r-1v456y7">
+                Site-map</h1>
+        </div>
+    </div>
+    <section>
+        <div class="site-head">
+            <h3>Flats & Apartments For Resale</h3>
+            <p>5000+ properties in different locality are available for Re-Sell or Re-Rent</p>
+        </div>
+        <div class="city-sitemap">
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/chhatarpur.png" width="35px" height="35px">
+                <p>Chhatarpur</p>
+            </div>
+
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/saket.png" width="35px" height="35px">
+                <p>Saket</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/nebsarai.png" width="35px" height="35px">
+                <p>Neb Sarai</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/malvia-nagar.png" width="35px" height="35px">
+                <p>Malvia Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/free-dom-fighter.png" width="35px" height="35px">
+                <p>Freedom Fighter</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/vasant-kunj.png" width="35px" height="35px">
+                <p>Vasant kunj</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/mehroliu.png" width="35px" height="35px">
+                <p>Mehroli</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/lajpatnagar.png" width="35px" height="35px">
+                <p>Lajpat Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/qutoob.png" width="35px" height="35px">
+                <p>Qutoob Minar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gurugram.png" width="35px" height="35px">
+                <p>Gurugram</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/sultanpur.png" width="35px" height="35px">
+                <p>Sultanpur</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gitorni.png" width="35px" height="35px">
+                <p>Ghitorni</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/dwarka.png" width="35px" height="35px">
+                <p>Dwarka Mod</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/noida.png" width="35px" height="35px">
+                <p>Noida</p>
+            </div>
+
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/binod-nagar.png" width="35px" height="35px">
+                <p>Binod Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/muradabad.png" width="35px" height="35px">
+                <p>Muradabad</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/ghaziabad.png" width="35px" height="35px">
+                <p>Ghaziabad</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/fatehpur.png" width="35px" height="35px">
+                <p>Fatehpur</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gk.png" width="35px" height="35px">
+                <p>Greater Kailash</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/patel-chock.png" width="35px" height="35px">
+                <p>Patel Chock</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/mand-gaw.png" width="35px" height="35px">
+                <p>Mandi gow</p>
+            </div>
+        </div>
+
+    </section>
+
+    <hr>
+
+    <section>
+        <div class="site-head">
+            <h3>Flats & Apartments are in Under-Construction</h3>
+            <p>Approx 2000+ properties are in under construction</p>
+        </div>
+        <div class="city-sitemap">
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/chhatarpur.png" width="35px" height="35px">
+                <p>Chhatarpur</p>
+            </div>
+
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/saket.png" width="35px" height="35px">
+                <p>Saket</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/nebsarai.png" width="35px" height="35px">
+                <p>Neb Sarai</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/malvia-nagar.png" width="35px" height="35px">
+                <p>Malvia Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/free-dom-fighter.png" width="35px" height="35px">
+                <p>Freedom Fighter</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/vasant-kunj.png" width="35px" height="35px">
+                <p>Vasant kunj</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/mehroliu.png" width="35px" height="35px">
+                <p>Mehroli</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/lajpatnagar.png" width="35px" height="35px">
+                <p>Lajpat Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/qutoob.png" width="35px" height="35px">
+                <p>Qutoob Minar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gurugram.png" width="35px" height="35px">
+                <p>Gurugram</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/sultanpur.png" width="35px" height="35px">
+                <p>Sultanpur</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gitorni.png" width="35px" height="35px">
+                <p>Ghitorni</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/dwarka.png" width="35px" height="35px">
+                <p>Dwarka Mod</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/noida.png" width="35px" height="35px">
+                <p>Noida</p>
+            </div>
+
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/binod-nagar.png" width="35px" height="35px">
+                <p>Binod Nagar</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/muradabad.png" width="35px" height="35px">
+                <p>Muradabad</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/ghaziabad.png" width="35px" height="35px">
+                <p>Ghaziabad</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/fatehpur.png" width="35px" height="35px">
+                <p>Fatehpur</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/gk.png" width="35px" height="35px">
+                <p>Greater Kailash</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/patel-chock.png" width="35px" height="35px">
+                <p>Patel Chock</p>
+            </div>
+            <div class="chhatarpur-site-map">
+                <img src="assets/img/mand-gaw.png" width="35px" height="35px">
+                <p>Mandi gow</p>
+            </div>
+        </div>
+
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

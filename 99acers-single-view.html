@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Slick Theme CSS (optional) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+    <!-- jQuery (required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+
+    <!-- Slick Theme CSS (optional) -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+    <style>
+        .OrderComponent__leftSection {
+            width: 800px !important;
+        }
+
+        .Banner__photonWrap>div {
+            width: 476px;
+            height: 236px;
+            display: inline-block;
+            margin-right: 4px;
+            vertical-align: top;
+        }
+
+        .PhotonCard__photonDisp {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+        }
+
+        .Banner__photonWrap>div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt {
+            position: absolute;
+            bottom: 10px;
+            color: #fff;
+            width: 100%;
+            z-index: 1;
+            padding: 0 12px;
+            font-size: 12px !important;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:first-child {
+            display: inline-block;
+            padding-top: 3px;
+            font-weight: 600;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:last-child {
+            float: right;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i {
+            margin-right: 4px;
+        }
+
+        .iconS_Common_16.icon_squrebar {
+            background-position: -32px 0;
+        }
+
+        .PhotonCard__photonDisp::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            left: 0;
+            display: inline-block;
+            background-image: linear-gradient(0deg, #000000 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i+em {
+            font-style: normal;
+            vertical-align: middle;
+            display: inline-block;
+            float: none;
+        }
+
+        .Banner__photonWrap>div {
+            width: 469px;
+            height: 236px;
+            display: inline-block;
+            margin-right: 4px;
+            vertical-align: top;
+        }
+
+        .Banner__photonWrap>div:last-child {
+            width: 320px;
+            margin: 0;
+        }
+
+        .Banner__photonWrap>div:last-child>div {
+            height: 116px;
+            margin: 0 0 4px;
+        }
+
+        .Banner__photonWrap>div:last-child>div {
+            height: 116px;
+            margin: 0 0 4px;
+        }
+
+        .PhotonCard__photonDisp {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+        }
+
+        .Banner__photonWrap>div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt {
+            position: absolute;
+            bottom: 10px;
+            color: #fff;
+            width: 100%;
+            z-index: 1;
+            padding: 0 12px;
+            font-size: 12px !important;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:first-child {
+            display: inline-block;
+            padding-top: 3px;
+            font-weight: 600;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:last-child {
+            float: right;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i {
+            margin-right: 4px;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i+em {
+            font-style: normal;
+            vertical-align: middle;
+            display: inline-block;
+            float: none;
+        }
+
+        .PhotonCard__photonDisp::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            left: 0;
+            display: inline-block;
+            background-image: linear-gradient(0deg, #000000 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .Banner__photonWrap>div:last-child>div {
+            height: 116px;
+            margin: 0 0 4px;
+        }
+
+        .PhotonCard__photonDisp {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+        }
+
+        .Banner__photonWrap>div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt {
+            position: absolute;
+            bottom: 10px;
+            color: #fff;
+            width: 100%;
+            z-index: 1;
+            padding: 0 12px;
+            font-size: 12px !important;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:first-child {
+            display: inline-block;
+            padding-top: 3px;
+            font-weight: 600;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt span:last-child {
+            float: right;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i {
+            margin-right: 4px;
+        }
+
+        .PhotonCard__photonDisp .PhotonCard__photonSubTxt i+em {
+            font-style: normal;
+            vertical-align: middle;
+            display: inline-block;
+            float: none;
+        }
+
+        .PhotonCard__photonDisp::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            left: 0;
+            display: inline-block;
+            background-image: linear-gradient(0deg, #000000 0%, rgba(255, 255, 255, 0) 100%);
+        }
+
+        .desktopBreadCrumb__brdcrumbContainer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .desktopBreadCrumb__breadCrumbItem {
+            font-size: 14px;
+            display: inline-flex;
+            margin: 10px 8px 0 0;
+            letter-spacing: .2px;
+        }
+
+
+
+        a,
+        a:link,
+        a:visited {
+            text-decoration: none;
+        }
+
+        a,
+        a:link {
+            text-decoration: none;
+        }
+
+        .desktopBreadCrumb__rPin {
+            color: #8993a4;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .desktopBreadCrumb__linkStyle {
+            color: #8993a4 !important;
+            font-size: 10px;
+            font-weight: 400;
+            vertical-align: middle;
+            display: inline-block;
+            margin: 0;
+        }
+
+        .spacer4:after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 100%;
+            clear: both;
+        }
+
+        .ProjectInfo__wrapperWhole {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .ProjectInfo___99DeskProjTitle {
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .ProjectInfo___99DeskProjTitle>.ProjectInfo__imgBox {
+            width: 100px;
+            height: 56px;
+            padding: 8px 0;
+            border-radius: 2px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border: 1px solid #ebecf0;
+        }
+
+        .ProjectInfo___99DeskProjTitle>.ProjectInfo__imgBox>img {
+            width: 100%;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .ProjectInfo__imgBox1:last-of-type {
+            width: auto !important;
+        }
+
+        .ProjectInfo__imgBox1 .ProjectInfo__shortListIcon {
+            margin-left: 12px;
+            vertical-align: text-top !important;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .style__headerShortlistIcon {
+            height: 21px !important;
+            width: 22px !important;
+        }
+
+        .style__shortlistHeartImage {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .spacer4:after {
+            content: "";
+            display: block;
+            height: 4px;
+            width: 100%;
+            clear: both;
+        }
+
+        .caption_subdued_medium {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #8993a4;
+            display: block;
+            text-align: left;
+        }
+
+        .ProjectInfo__imgBox1 .ProjectInfo__imgBox1SubTxt div,
+        .ProjectInfo__imgBox1 .ProjectInfo__imgBox1SubTxt a,
+        .ProjectInfo__imgBox1 .ProjectInfo__imgBox1SubTxt span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .ProjectInfo__statusTags>div {
+            padding: 16px 0 0;
+        }
+
+        .xidStatustag___99XidWrap {
+            background: #fff;
+            width: 100%;
+            /* position: relative; */
+            /* padding: 0 20px 16px; */
+
+        }
+
+        .ProjectInfo__wrapperReraPosStatic {
+            position: static !important;
+        }
+
+        .xidStatustag___99statusTag>div {
+            margin-right: 8px;
+            vertical-align: top;
+            border: rgba(0, 0, 0, 0);
+            background: #fff;
+        }
+
+        .badges__badgesLarge>div,
+        .badges__warningLargeSubtle>div,
+        .badges__successLargeSubtle>div,
+        .badges__secondaryLargeCoWorkingSubtle>div,
+        .badges__secondaryLargeSubtle>div,
+        .badges__primaryLargeSubtle>div,
+        .badges__errorLargeSubtle>div,
+        .badges__accentLargeSubtle>div,
+        .badges__warningLarge>div,
+        .badges__verifiedLarge>div,
+        .badges__topDealerLarge>div,
+        .badges__secondaryLarge>div,
+        .badges__reraLarge>div,
+        .badges__primaryLarge>div,
+        .badges__offerLarge>div,
+        .badges__newPropertyLarge>div,
+        .badges__featuredLarge>div,
+        .badges__errorLarge>div,
+        .badges__accentLarge>div,
+        .badges__freePlan>div {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .xidStatustag___99statusTag .xidStatustag__pointer {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .xidStatustag__reraNewView>div {
+            padding: 2px 4px !important;
+        }
+
+        .badges__reraLarge {
+            border-color: #06afb0;
+            background: #06afb0;
+        }
+
+
+
+        .iconS_Common_12.icon_infoIcn {
+            background-position: -48px -36px;
+        }
+
+        .xidStatustag___99statusTag>span {
+            display: inline-block;
+            background: #f4f5f7;
+            margin-right: 8px;
+            padding: 4px 8px;
+        }
+
+        .xidStatustag___99statusTag>span {
+            display: inline-block;
+            background: #f4f5f7;
+            margin-right: 8px;
+            padding: 4px 8px;
+        }
+
+        .ProjectInfo__pTop {
+            padding-top: 12px;
+        }
+
+        .ProjectInfo__mBottomTop {
+            margin-bottom: 8px;
+        }
+
+        .ProjectInfo__imgBox2 {
+            float: right;
+        }
+
+        a,
+        a:link {
+            text-decoration: none;
+        }
+
+        .buttons__semi {
+            font-weight: 600;
+        }
+
+        .buttons__primaryRegular {
+            box-shadow: 0 1px 4px 0 rgba(0, 106, 194, .2);
+            background: #0078db;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            outline: none;
+            margin: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 0;
+            min-height: auto;
+            padding: 8px 16px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+            color: #fff;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        button>span {
+            margin: 0 !important;
+        }
+
+        .ConstructionStatus__possessionCardContainer {
+            padding: 20px 0px;
+        }
+
+        .ConstructionStatus__invWrap {
+            background-color: #f0f9ff;
+            padding: 12px 12px 12px 8px;
+            border-radius: 10px;
+        }
+
+        .ConstructionStatus__collapsedCard {
+            display: flex;
+            flex-direction: row;
+            margin-left: 13px;
+        }
+
+        .caption_subdued_medium {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #8993a4;
+            display: block;
+            text-align: left;
+        }
+
+        .title_bold {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 700;
+            color: #091e42;
+            display: block;
+            text-align: left;
+        }
+
+        .caption_strong_medium {
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 400;
+            color: #42526e;
+            display: block;
+            text-align: left;
+        }
+
+        .ConstructionStatus__phaseStatusSubtitle {
+            font-weight: 500 !important;
+            font-size: 14px !important;
+            margin-top: 2px;
+        }
+
+        .ConstructionStatus__possesionIconWrapper {
+            margin-left: auto;
+            padding-right: 1%;
+            padding-top: 2.8%;
+        }
+
+        .iconS_Common_32.icon_blueDownArrow {
+            background-position: -352px -160px;
+        }
+
+        .configurationCards__configurationCardContainer {
+            background: #fff;
+            width: 100%;
+            padding: 28px 0 16px;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardTopWrapper {
+            margin-left: 2px;
+        }
+
+        .configurationCards__iconWrapper {
+            background: #fff5e4;
+            width: 32px;
+            height: 32px;
+            border-radius: 20px;
+        }
+
+        .iconS_xid_20.icon_price {
+            background-position: 0 0;
+        }
+
+        .configurationCards__priceAndCTAWrapper {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+        }
+
+        .configurationCards__cardPriceWrapper.configurationCards__cardPriceWrapperExp {
+            max-width: calc(100% - 199px);
+        }
+
+        .configurationCards__cardPriceWrapper {
+            display: flex;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardTopWrapper .configurationCards__configurationCardsHeading {
+            font-size: 24px;
+            line-height: 32px;
+            margin: 5px 0 0px 0;
+            font-weight: 700 !important;
+            color: #041533 !important;
+        }
+
+        .configurationCards__downloadBrochureCTA {
+            height: 40px;
+        }
+
+        .buttons__secondaryRegular {
+            box-shadow: 0 1px 4px 0 rgba(0, 106, 194, .2);
+            background: rgba(0, 0, 0, 0);
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            outline: none;
+            margin: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            min-height: 40px;
+            border: 1px #0078db solid;
+            padding: 8px 16px;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 700;
+            color: #0078db;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        button>span {
+            margin: 0 !important;
+        }
+
+        .iconS_Common_24.icon_downloadBrochure {
+            background-position: -312px -48px;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardTopWrapper .configurationCards__configurationCardPriceHeading {
+            font-size: 12px !important;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardTopWrapper .configurationCards__configurationCardsSubHeading {
+            color: #42526e;
+            margin: 14px 0 10px 0;
+            font-size: 16px !important;
+            line-height: 20px;
+            max-width: 99%;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper {
+            margin-top: 10px;
+        }
+
+        .carousel__CarouselContainer {
+            position: relative;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .carousel__CarouselBox {
+                overflow-x: hidden;
+            }
+        }
+
+        .carousel__CarouselBox {
+            color: #333;
+            width: 100%;
+            overflow: hidden;
+            /* overflow-x: auto; */
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper>div>div>div {
+            margin-left: 3px;
+            margin-bottom: 4px;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardConfigBand {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 7px 4px 7px 16px;
+            height: 36px;
+            left: 12px;
+            top: 10px;
+            border-radius: 8px 8px 0 0;
+            background: #f5f5ff;
+        }
+
+        .list_header_semiBold {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: #091e42;
+            display: block;
+            text-align: left;
+        }
+
+        .configurationCards__configBandLabel {
+            font-weight: 700 !important;
+            color: #3b6585 !important;
+            font-size: 16px !important;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardConfigBand .configurationCards__configBandHeading {
+            font-size: 16px;
+            padding-left: 5px;
+            color: #6683a5 !important;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardAreaTypeStyle {
+            font-size: 11px;
+            margin: 15px 0 0 12px;
+            color: #42526e;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardAreaHeading {
+            margin-left: 12px;
+            display: flex;
+            margin-right: 22px;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardAreaHeading .configurationCards__cardAreaSubHeadingOne {
+            line-height: 20px !important;
+            font-size: 12px;
+            font-weight: 600;
+            color: #42526e;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardAreaHeading .configurationCards__cardAreaSubHeadingTwo {
+            font-size: 12px;
+            padding-left: 5px;
+            line-height: 16px !important;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .has-webp .iconS_Common_16.icon_downArrow,
+        .iconS_Common_16.icon_downArrow {
+            background-position: -192px 0;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardPriceHeadingWrapper {
+            display: flex;
+            margin: 16px 0 0px 12px;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer .configurationCards__cardPriceHeadingWrapper .configurationCards__cardPriceHeading {
+            font-size: 16px;
+            font-weight: 700;
+            color: #010c1f !important;
+            line-height: 24px !important;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .configurationCards__configurationCardContainer .configurationCards__configurationCardsWrapper .configurationCards__cardContainer {
+            width: 305px;
+            background: #fff;
+            border: 1px solid #ebecf0;
+            box-sizing: border-box;
+            border-radius: 8px;
+            padding-bottom: 8px;
+            margin-right: 8px;
+            box-shadow: 0px 1px 4px rgba(31, 92, 163, .2);
+        }
+
+        .ComponentHeading__PageHeadingwrap {
+            display: inline-flex;
+            width: 100%;
+        }
+
+        .ComponentHeading__PageHeadingwrap>div {
+            display: inline-block;
+            width: 100%;
+        }
+
+        .title_bold {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: 700;
+            color: #091e42;
+            display: block;
+            text-align: left;
+        }
+
+        .ellipsis2Lines {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box !important;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+
+        .ComponentHeading__PageHeadingwrap a,
+        .ComponentHeading__PageHeadingwrap i {
+            color: #0078db;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 0 0;
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        .ComponentHeading__PageHeadingwrap a em {
+            font-style: normal;
+            white-space: nowrap;
+        }
+
+        .locAdvantageCarousel__locDescHolder {
+            margin-bottom: 16px;
+            margin-top: 4px;
+        }
+
+        .ReadMoreLess__marginBt_20 {
+            margin-bottom: 20px;
+        }
+
+        .ReadMoreLess__prewrap {
+            white-space: pre-wrap;
+        }
+
+        .descHolder__descText {
+            font-size: 12px;
+            line-height: 16px;
+            color: #8993a4;
+        }
+
+        .ReadMoreLess__prewrap p {
+            display: inline;
+        }
+
+        .ReadMoreLess__showText {
+            color: #0078db;
+            cursor: pointer;
+            margin-left: 3px;
+        }
+
+        .descHolder__dropdownWrapper {
+            padding-left: 5px;
+            display: inline-block;
+        }
+
+        .descHolder__dropdownWrapper .descHolder__dropdown {
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border-left: 4px solid rgba(0, 0, 0, 0);
+            border-right: 4px solid rgba(0, 0, 0, 0);
+            border-top: 4px solid #8993a4;
+            cursor: pointer;
+            margin-bottom: 2px;
+        }
+
+        .ReadMoreLess__hide {
+            display: none;
+        }
+
+        .descHolder__dropdownWrapper {
+            padding-left: 5px;
+            display: inline-block;
+        }
+
+        .descHolder__dropdownWrapper .descHolder__dropdown {
+            width: 0;
+            height: 0;
+            display: inline-block;
+            border-left: 4px solid rgba(0, 0, 0, 0);
+            border-right: 4px solid rgba(0, 0, 0, 0);
+            border-top: 4px solid #8993a4;
+            cursor: pointer;
+            margin-bottom: 2px;
+        }
+
+        .carousel__CarouselContainer {
+            position: relative;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .carousel__CarouselBox {
+                overflow-x: hidden;
+            }
+        }
+
+        .carousel__CarouselBox {
+            color: #333;
+            width: 100%;
+            overflow: hidden;
+            /* overflow-x: auto; */
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox {
+            width: 100%;
+            transition: all .3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox>div {
+            display: inline-block;
+            margin-right: 12px;
+            vertical-align: top;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .icons__iconS_loc_40.icons__icon_school {
+            background-position: -280px 0;
+        }
+
+        .icons__iconS_loc_40 {
+            background: url(https://static.99acres.com/universalapp/img/localitiesIcons.png);
+            width: 40px;
+            height: 40px;
+            background-size: 800px 400px;
+            display: inline-block;
+            vertical-align: middle;
+            font-style: normal;
+            background-repeat: no-repeat;
+            margin-right: 8px;
+        }
+
+        .locAdvantagesCard__locAdCard>div {
+            width: calc(100% - 60px);
+            margin-left: 12px;
+        }
+
+        .locAdvantagesCard__locAdCard>* {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .list_header_semiBold {
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 600;
+            color: #091e42;
+            display: block;
+            text-align: left;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            /* overflow-x: hidden; */
+        }
+
+        .spacer2:after {
+            content: "";
+            display: block;
+            height: 2px;
+            width: 100%;
+            clear: both;
+        }
+
+        .carousel__CarouselBox .carousel__slidingBox div:last-of-type {
+            margin-right: 0;
+        }
+
+        .locAdvantagesCard__locAdCard {
+            padding: 16px;
+        }
+
+        .locAdvantageCarousel__locAdBoxDesktop {
+            border: 1px solid #ebecf0;
+            width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 8px;
+            border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+        }
+
+        .ellipsis {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* Form css */
+
+        .get-in-touch {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+
+        }
+
+        .get-in-touch .title {
+            /* text-align: center; */
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 24px;
+            color: #5543ca;
+            background: #5543ca;
+            background: -moz-linear-gradient(left, #003159 0%, #5543ca 100%) !important;
+            background: -webkit-linear-gradient(left, #003159 0%, #5543ca 100%) !important;
+            background: linear-gradient(to right, #003159 0%, #5543ca 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        .contact-form .form-field {
+            position: relative;
+            margin: 32px 0;
+        }
+
+        .contact-form .input-text {
+            display: block;
+            width: 100%;
+            height: 36px;
+            border-width: 0 0 2px 0;
+            border-color: #5543ca;
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 400;
+        }
+
+        .contact-form .input-text:focus {
+            outline: none;
+        }
+
+        .contact-form .input-text:focus+.label,
+        .contact-form .input-text.not-empty+.label {
+            -webkit-transform: translateY(-24px);
+            transform: translateY(-24px);
+        }
+
+        .contact-form .label {
+            position: absolute;
+            left: 20px;
+            bottom: 11px;
+            font-size: 18px;
+            line-height: 26px;
+            font-weight: 400;
+            color: #5543ca;
+            cursor: text;
+            transition: -webkit-transform .2s ease-in-out;
+            transition: transform .2s ease-in-out;
+            transition: transform .2s ease-in-out,
+                -webkit-transform .2s ease-in-out;
+        }
+
+        .contact-form .submit-btn {
+            display: inline-block;
+            background-color: #000;
+            background-image: linear-gradient(125deg, #003159, #064497);
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 16px;
+            padding: 8px 16px;
+            border: none;
+            width: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="OrderComponent__leftSection">
+        <div>
+            <div class="">
+                <div class="Banner__photonWrap pageComponent" data-label="TOP_GALLERY" topmost="true">
+                    <div data-label="VIEW_ALL" class="pageComponent ">
+                        <div class="PhotonCard__photonDisp"><img alt="Peptech Town Villas"
+                                src="https://newprojects.99acres.com/projects/unknown//images/vluhjwr_1704364745_465290222_large.jpg"
+                                pagename="projectDetailV2">
+                            <div class="PhotonCard__photonSubTxt"><span>All Photos</span><span><i
+                                        class="iconS_Common_16 icon_squrebar"></i><em>8</em></span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div data-label="PHOTO"
+                            data-custominfo="{&quot;custom_object&quot;:{ &quot;section&quot;: &quot;Outdoors&quot; }}"
+                            class="pageComponent">
+                            <div class="PhotonCard__photonDisp"><img alt="Peptech Town Villas"
+                                    src="https://newprojects.99acres.com/projects/unknown//images/fc8huax_1704364745_465290226_large.jpg"
+                                    pagename="projectDetailV2">
+                                <div class="PhotonCard__photonSubTxt"><span>Outdoors</span><span><i
+                                            class="iconS_Common_16 icon_squrebar"></i><em>4</em></span></div>
+                            </div>
+                        </div>
+                        <div data-label="PHOTO"
+                            data-custominfo="{&quot;custom_object&quot;:{ &quot;section&quot;: &quot;Facilities&quot; }}"
+                            class="pageComponent">
+                            <div class="PhotonCard__photonDisp"><img alt="Peptech Town Swimming Pool"
+                                    src="https://newprojects.99acres.com/projects/unknown//images/8lijl70_1704364747_465290242_large.jpg"
+                                    pagename="projectDetailV2">
+                                <div class="PhotonCard__photonSubTxt"><span>Facilities</span><span><i
+                                            class="iconS_Common_16 icon_squrebar"></i><em>2</em></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div id="deskProjBreadCrumb" class="desktopBreadCrumb__brdcrumbContainer">
+                            <div>
+                                <div id="breadCrumbItemWrapper" class="desktopBreadCrumb__breadCrumbItem">
+                                    <div><span><a class="desktopBreadCrumb__linkStyle" href="https://www.99acres.com"
+                                                target="" title="Home" itemprop="url"><span
+                                                    itemprop="title">Home</span></a></span></div><span
+                                        class="desktopBreadCrumb__rPin">›</span>
+                                </div>
+                                <div id="breadCrumbItemWrappercity" class="desktopBreadCrumb__breadCrumbItem">
+                                    <div><span><a class="desktopBreadCrumb__linkStyle"
+                                                href="https://www.99acres.com/new-projects-in-chhatarpur-ffid"
+                                                target="_blank" title="New Projects in Chhatarpur" itemprop="url"><span
+                                                    itemprop="title">Projects in Chhatarpur</span></a></span></div><span
+                                        class="desktopBreadCrumb__rPin">›</span>
+                                </div>
+                                <div id="breadCrumbItemWrapperlocality" class="desktopBreadCrumb__breadCrumbItem">
+                                    <div><span><a class="desktopBreadCrumb__linkStyle"
+                                                href="https://www.99acres.com/new-projects-in-muwasi-chhatarpur-ffid"
+                                                target="_blank" title="New Projects in Muwasi" itemprop="url"><span
+                                                    itemprop="title">Muwasi</span></a></span></div><span
+                                        class="desktopBreadCrumb__rPin">›</span>
+                                </div>
+                                <div id="projectNameTab"
+                                    class="desktopBreadCrumb__breadCrumbItem desktopBreadCrumb__linkStyle">Peptech Town
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="spacer4"></div>
+                    <div class="ProjectInfo__wrapperWhole">
+                        <div>
+                            <div qa-id="xidSummaryLayer" id="project-details"
+                                class="ProjectInfo___99DeskProjTitle pageComponent" data-label="SUMMARY_TABLE"
+                                topmost="true">
+                                <div class="ProjectInfo__imgBox"><img
+                                        src="https://newprojects.99acres.com/projects/unknown//m02udsa_1704365053_465292348.jpg"
+                                        alt="Peptech Town Chhatarpur"></div>
+                                <h1 class="ProjectInfo__imgBox1 title_bold">Chhatarpur <span class="spacer4">
+                                        <div class="ProjectInfo__shortListIcon ProjectInfo__marginTop pageComponent"
+                                            data-label="SHORTLIST_BUTTON">
+                                            <div class="style__headerShortlistIcon"><img
+                                                    class="style__shortlistHeartImage" alt="Shortlist-Button"
+                                                    src="https://static.99acres.com/universalapp/img/PlatinumUnshortlistHeart.png">
+                                            </div>
+                                        </div>
+                                    </span><span class="caption_subdued_medium ProjectInfo__imgBox1SubTxt"><span>
+                                            Muwasi, Chhatarpur</span></span></h1>
+                            </div>
+                            <div class="ProjectInfo__statusTags">
+                                <div
+                                    class="xidStatustag___99XidWrap xidStatustag___99statusTag spacer16 ProjectInfo__wrapperReraPosStatic">
+                                    <span style="color:#317A36;background-color:#D7F2E3"
+                                        class="badges_large_secondary xidStatustag__tagS">
+                                        <span class="">Property Age: 6</span>
+                                    </span>
+                                    <span style="color:#317A36;background-color:#D7F2E3"
+                                        class="badges_large_secondary xidStatustag__tagS">
+                                        <span class="">Parking: 1</span>
+                                    </span>
+                                    <span style="color:#317A36;background-color:#D7F2E3"
+                                        class="badges_large_secondary xidStatustag__tagS">
+                                        <span class="">Possession 4 may-2024</span>
+                                    </span>
+                                    <span style="color:#317A36;background-color:#D7F2E3"
+                                        class="badges_large_secondary xidStatustag__tagS">
+                                        <span class="">Semi Furnished</span>
+                                    </span>
+                                    <span style="color:#317A36;background-color:#D7F2E3"
+                                        class="badges_large_secondary xidStatustag__tagS">
+                                        <span class="">Apartment</span>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ProjectInfo__pTop">
+                            <div class="ProjectInfo__imgBox2 ProjectInfo__mBottomTop"><a><button type="submit"
+                                        variant="primaryRegular" font-style="semi" as="a" href=""
+                                        style="padding:0;padding-top:8px;padding-bottom:8px;width:125px"
+                                        extraclass="trackGAClick pageComponent" data-galabel="SUMMARY_CALLDESK"
+                                        data-label="REQUEST_CALLBACK"
+                                        class="pageComponent buttons__primaryRegular buttons__semi  trackGAClick pageComponent  undefined "
+                                        data-sstheme="_BUTTON_TOP_LEVEL"><span class=" "
+                                            data-sstheme="_BUTTON_SPAN">View Number</span></button></a></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="ConstructionStatus__possessionCardContainer">
+                            <div class="ConstructionStatus__invWrap">
+                                <div class="ConstructionStatus__collapsedCard pageComponent"
+                                    data-label="UNIT_PRICE_TUPLE" topmost="true"><span>
+                                        <div
+                                            class="caption_subdued_medium ProjectInfo__imgBox1SubTxt ConstructionStatus__phaseStatusTitle">
+                                            Construction Status</div>
+                                        <div class="ProjectInfo__imgBox1 title_bold ConstructionStatus__phaseStatus">
+                                            Ready To Move</div>
+                                        <div style="display:flex"><span
+                                                class="caption_strong_medium ConstructionStatus__phaseStatusSubtitle">Since
+                                                Mar, 2024</span></div>
+                                    </span><span class="ConstructionStatus__possesionIconWrapper"><i
+                                            class="iconS_Common_32 icon_blueDownArrow pageComponent"
+                                            data-label="POSSESSION_STATUS"
+                                            data-custominfo="{&quot;custom_object&quot;:{&quot;viewType&quot;:&quot;REGULAR&quot;,&quot;projectId&quot;:&quot;291873&quot;,&quot;resCom&quot;:&quot;R&quot;}}"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-label="UNIT_PRICE_TUPLE" topmost="true"
+                        class="pageComponent configurationCards__configurationCardContainer">
+                        <div class="pageComponent configurationCards__configurationCardTopWrapper">
+                            <div>
+                                <div class="configurationCards__priceAndCTAWrapper">
+                                    <div
+                                        class="configurationCards__cardPriceWrapper configurationCards__cardPriceWrapperExp">
+                                        <h2 class="list_header_semiBold configurationCards__configurationCardsHeading">₹
+                                            <!-- -->59.21 - 89.91 L
+                                        </h2>
+                                    </div><button variant="secondaryRegular"
+                                        extraclass="configurationCards__downloadBrochureCTA pageComponent trackGAClick"
+                                        data-label="DOWNLOAD_BROCHURE" data-gaplabel="DOWNLOAD_BROCHURE"
+                                        class="pageComponent buttons__secondaryRegular   configurationCards__downloadBrochureCTA pageComponent trackGAClick  undefined "
+                                        data-sstheme="_BUTTON_TOP_LEVEL"><span class=" "
+                                            data-sstheme="_BUTTON_SPAN"><span
+                                                class="iconS_Common_24 icon_downloadBrochure"></span>Download
+                                            Brochure</span></button>
+                                </div>
+                            </div><span
+                                class="caption_subdued_medium configurationCards__configurationCardPriceHeading">PRICE
+                                RANGE</span><span
+                                class="ellipsis list_header_semiBold configurationCards__configurationCardsSubHeading">3
+                                BHK Villa</span>
+                        </div>
+                        <div class="pageComponent configurationCards__configurationCardsWrapper">
+                            <div class="carousel__CarouselContainer">
+                                <div class=" carousel__CarouselBox ">
+                                    <div compattr="projectConfigurationCards_291873" class="carousel__slidingBox  ">
+                                        <div id="2_3" class="configurationCards__cardContainer">
+                                            <div class="configurationCards__cardConfigBand"><span
+                                                    class="list_header_semiBold configurationCards__configBandLabel">3
+                                                    BHK</span><span
+                                                    class="caption_subdued_medium configurationCards__configBandHeading">Villa</span>
+                                            </div><span
+                                                class="caption_subdued_medium configurationCards__cardAreaTypeStyle false">Super
+                                                Built-up Area</span>
+                                            <div class="configurationCards__cardAreaHeading "><span
+                                                    class="caption_subdued_medium configurationCards__cardAreaSubHeadingOne">1850
+                                                    - 2870 sq.ft.</span><span
+                                                    class="caption_subdued_medium configurationCards__cardAreaSubHeadingTwo ellipsis">(<!-- -->171.87
+                                                    - 266.63 sq.m.<!-- -->)</span>
+                                                <div ddtype="textDropDown" class="pageComponent" topmost="true"
+                                                    data-label="SUMMARY_TABLE.AREA_UNIT_TOGGLE"
+                                                    data-custominfo="{&quot;custom_object&quot;:{ &quot;current_selection&quot;: &quot;sq.ft.&quot; }}">
+                                                    <div class="configurationCards__dropdownDisplay "><i
+                                                            class="iconS_Common_16 icon_downArrow"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="configurationCards__cardPriceHeadingWrapper false"><span
+                                                    class="list_header_semiBold configurationCards__cardPriceHeading">₹
+                                                    <!-- -->59.21 - 89.91 L</span></div>
+                                        </div>
+                                        <div id="2_3" class="configurationCards__cardContainer">
+                                            <div class="configurationCards__cardConfigBand"><span
+                                                    class="list_header_semiBold configurationCards__configBandLabel">3
+                                                    BHK</span><span
+                                                    class="caption_subdued_medium configurationCards__configBandHeading">Villa</span>
+                                            </div><span
+                                                class="caption_subdued_medium configurationCards__cardAreaTypeStyle false">Super
+                                                Built-up Area</span>
+                                            <div class="configurationCards__cardAreaHeading "><span
+                                                    class="caption_subdued_medium configurationCards__cardAreaSubHeadingOne">1850
+                                                    - 2870 sq.ft.</span><span
+                                                    class="caption_subdued_medium configurationCards__cardAreaSubHeadingTwo ellipsis">(<!-- -->171.87
+                                                    - 266.63 sq.m.<!-- -->)</span>
+                                                <div ddtype="textDropDown" class="pageComponent" topmost="true"
+                                                    data-label="SUMMARY_TABLE.AREA_UNIT_TOGGLE"
+                                                    data-custominfo="{&quot;custom_object&quot;:{ &quot;current_selection&quot;: &quot;sq.ft.&quot; }}">
+                                                    <div class="configurationCards__dropdownDisplay "><i
+                                                            class="iconS_Common_16 icon_downArrow"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="configurationCards__cardPriceHeadingWrapper false"><span
+                                                    class="list_header_semiBold configurationCards__cardPriceHeading">₹
+                                                    <!-- -->59.21 - 89.91 L</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="undefined pageComponent" topmost="true" data-label="LOCATION_HIGHLIGHTS">
+                                <div class="">
+                                    <div class="ComponentHeading__PageHeadingwrap    ">
+                                        <div class="">
+                                            <div class="title_bold  ">
+                                                <h4>
+                                                    <div class="ellipsis2Lines ">Location Advantages </div>
+                                                </h4>
+                                            </div>
+                                        </div><a class="pageComponent" data-label="VIEW_ALL"><em> View All (9)</em></a>
+                                    </div>
+                                </div>
+                                <div class="carousel__CarouselContainer">
+                                    <div class="carousel__CarouselBox">
+                                        <div compattr="locationHighlights" class="carousel__slidingBox"
+                                            style="margin-left: 0px;" id="schoolCarousel">
+                                            <div class="locAdvantageCarousel__locAdBoxDesktop ellipsis">
+                                                <div class="locAdvantagesCard__locAdCard">
+                                                    <i class="icons__iconS_loc_40 icons__icon_school"></i>
+                                                    <div>
+                                                        <div class="list_header_semiBold spacer2 ellipsis">Behs Sumati
+                                                            Academy</div>
+                                                        <div class="caption_subdued_medium ellipsis">850 M</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Add more carousel items here -->
+                                            <div class="locAdvantageCarousel__locAdBoxDesktop ellipsis">
+                                                <div class="locAdvantagesCard__locAdCard">
+                                                    <i class="icons__iconS_loc_40 icons__icon_school"></i>
+                                                    <div>
+                                                        <div class="list_header_semiBold spacer2 ellipsis">Behs Sumati
+                                                            Academy</div>
+                                                        <div class="caption_subdued_medium ellipsis">850 M</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="locAdvantageCarousel__locAdBoxDesktop ellipsis">
+                                                <div class="locAdvantagesCard__locAdCard">
+                                                    <i class="icons__iconS_loc_40 icons__icon_school"></i>
+                                                    <div>
+                                                        <div class="list_header_semiBold spacer2 ellipsis">Behs Sumati
+                                                            Academy</div>
+                                                        <div class="caption_subdued_medium ellipsis">850 M</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Add more carousel items as needed -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <section class="get-in-touch">
+                            <h2 class="title">Get Enquiry</h2>
+                            <form class="contact-form row">
+                                <div class="form-field col-lg-6">
+                                    <input id="name" class="input-text js-input" type="text" required>
+                                    <label class="label" for="name">Name</label>
+                                </div>
+                                <div class="form-field col-lg-6 ">
+                                    <input id="email" class="input-text js-input" type="email" required>
+                                    <label class="label" for="email">E-mail</label>
+                                </div>
+                                <div class="form-field col-lg-6 ">
+                                    <input id="company" class="input-text js-input" type="text" required>
+                                    <label class="label" for="company">Subject</label>
+                                </div>
+                                <div class="form-field col-lg-6 ">
+                                    <input id="phone" class="input-text js-input" type="text" required>
+                                    <label class="label" for="phone">Contact Number</label>
+                                </div>
+                                <div class="form-field col-lg-12">
+                                    <input id="message" class="input-text js-input" type="text" required>
+                                    <label class="label" for="message">Message</label>
+                                </div>
+                                <div class="form-field col-lg-12">
+                                    <input class="submit-btn" type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Slick JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Initialize Slick slider -->
+    <script>
+        $(document).ready(function () {
+            $('#schoolCarousel').slick({
+                slidesToShow: 3, // Number of slides to show at once
+                slidesToScroll: 1, // Number of slides to scroll at a time
+                autoplay: true, // Autoplay the carousel
+                autoplaySpeed: 2000, // Autoplay speed in milliseconds (e.g., 2000 = 2 seconds)
+                dots: true, // Show navigation dots
+                arrows: true // Show navigation arrows
+                // Add more options as needed
+            });
+        });
+    </script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

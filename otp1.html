@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <style>
+        .otp-container {
+            width: 350px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: left;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .otp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .otp-header button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .otp-header .back-arrow {
+            font-size: 1.5rem;
+        }
+        .otp-header .close-btn {
+            font-size: 1.5rem;
+        }
+        .otp-title {
+            width: 207px;
+            margin: 20px 0;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: "Open Sans", sans-serif;
+        }
+        .otp-info {
+            font-size: 13px;
+            margin-bottom: 20px;
+            width: 306px;
+            font-family: "Open Sans", sans-serif;
+        }
+        .otp-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            width: 260px;
+        }
+        .otp-inputs input {
+            width: 40px;
+            height: 40px;
+            border: none;
+            outline: none;
+            border: 2px solid #bab7b7;
+            text-align: center;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+        .otp-confirm {
+            width: 33%;
+            padding: 5px 12px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, border 0.2s, color 0.2s, background-color 0.2s;
+        }
+        .otp-confirm:hover {
+            border: 1px solid #007bff;
+            color: #007bff;
+            background-color: white;
+            transform: scale(1.02);
+        }
+        .otp-resend {
+            margin-top: 20px;
+            font-size: 13px;
+            font-family: "Open Sans", sans-serif;
+        }
+        .otp-resend a {
+            color: #007bff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="otp-container">
+    <div class="otp-header">
+        <button class="back-arrow">&larr;</button>
+        <button class="close-btn">&times;</button>
+    </div>
+    <div class="otp-title">Verification Code</div>
+    <div class="otp-info">
+        We have sent the Verification Code (OTP) to your mobile number +917703934069
+    </div>
+    <div class="otp-inputs">
+        <input type="text" maxlength="1" class="otp-input" autocomplete="one-time-code" autofocus>
+        <input type="text" maxlength="1" class="otp-input" autocomplete="one-time-code">
+        <input type="text" maxlength="1" class="otp-input" autocomplete="one-time-code">
+        <input type="text" maxlength="1" class="otp-input" autocomplete="one-time-code">
+    </div>
+    <button class="otp-confirm">Confirm</button>
+    <div class="otp-resend">
+        Did not receive it, <a href="#">resend now</a>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.otp-input').forEach((input, index, inputs) => {
+        input.addEventListener('input', (e) => {
+            if (e.target.value.length === 1 && index < inputs.length - 1) {
+                inputs[index + 1].focus();
+            }
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Backspace' && e.target.value === '' && index > 0) {
+                inputs[index - 1].focus();
+            }
+        });
+
+        input.addEventListener('paste', (e) => {
+            const data = e.clipboardData.getData('text').split('');
+            inputs.forEach((input, i) => {
+                input.value = data[i] || '';
+                if (i < inputs.length - 1 && data[i]) {
+                    inputs[i + 1].focus();
+                }
+            });
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>

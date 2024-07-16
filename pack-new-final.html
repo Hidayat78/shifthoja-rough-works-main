@@ -1,0 +1,799 @@
+<style>
+    .package-container {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    }
+    .header {
+    display: flex;
+    align-items: center;
+    }
+    .header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    }
+    .header h1 {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    }
+    .cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 60px;
+    width: 640px;
+    }
+    .card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* width: 48%; */
+    max-width: 400px;
+    padding: 20px;
+    }
+    .card .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    .card .header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    }
+    .card .header h2 {
+    font-size: 1.25em; 
+    color: #1e90ff;
+    margin: 0;
+    }
+    .card .header h3 {
+    font-size: 1em;
+    color: #4a4a4a;
+    margin: 10px 0;
+    }
+    .card p {
+    font-size: 11px;
+    color: #4a4a4a;
+    margin-top: 65px;
+
+    }
+    .pricing .original-price {
+    padding-bottom: 0px;
+    text-decoration: line-through;
+    margin: 2px 0;
+    color: #000000;
+    margin-bottom: 2px !important;
+    font-size: 12px;
+    }
+    .pricing .discounted-price {
+    padding-bottom: 0px;
+    margin: 2px 0;
+    color: #000000;
+    font-size: 12px;
+    }
+    .pricing .term {
+    font-size: 0.9em;
+    color: #000000;
+    margin: 2px 0px 2px 0px;
+    }
+    .buy-now {
+    display: block;
+    text-align: center;
+    background-color: #1e90ff;
+    color: #fff;
+    /* font-weight: bold; */
+    font-size: 14px;
+    text-decoration: none;
+    padding: 6px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 36px;
+    width: fit-content;
+    }
+    .features {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    }
+    .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    .features li {
+    font-size: 11px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+    }
+    .features li .circle-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #7ec6c6;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    }
+    .buttonss{
+    display: flex;
+    }
+    @media (max-width: 600px) {
+    .cards {
+    flex-direction: column;
+    align-items: center;
+    }
+    .card {
+    width: 100%;
+    }
+    }
+    a:hover{
+      background-color: #fff !important;
+      border: 2px solid #1e90ff !important;
+      color: #1e90ff !important;
+    }
+ </style>
+ <style>
+    .package-container {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    }
+    .header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+    .header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    }
+    .header h1 {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    }
+    .main-content {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    }
+    .main-content .icon {
+    display: inline-block;
+    margin-right: 10px;
+    }
+    .main-content .icon img {
+    width: 85px;
+    height: 50px;
+    border-radius: 10px;
+    }
+    .main-content h2 {
+    display: inline-block;
+    font-size: 1.25em;
+    color: #3cc807;
+    vertical-align: middle;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    }
+    .main-content h3 {
+    font-size: 12px;
+    color: #4a4a4a;
+    margin: 2px 0px;
+    font-family: "Open Sans", sans-serif;
+    }
+    .main-content p {
+    font-size: 0.9em;
+    color: #4a4a4a;
+    font-family: "Open Sans", sans-serif;
+    }
+    .pricing .original-price {
+    padding-bottom: 0px;
+    text-decoration: line-through;
+    margin: 2px 0;
+    color: #000000;
+    margin-bottom: 2px !important;
+    font-size: 12px;
+    }
+    .pricing .discounted-price {
+    padding-bottom: 0px;
+    margin: 2px 0;
+    color: #000000;
+    font-size: 12px;
+    }
+    .pricing .term {
+    font-size: 0.9em;
+    color: #000000;
+    margin: 2px 0;
+    font-family: "Open Sans", sans-serif;
+    }
+    .buy-now {
+    display: block;
+    text-align: center;
+    background-color: #3cc807;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 20px;
+    border-radius: 10px;
+    margin-top: 36px;
+    margin-left: 10px;
+    width: fit-content;
+    }
+    .features {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    }
+    .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    .features li {
+    font-size: 11px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+    }
+    .features li i {
+    color: #ffffff;
+    }
+    .features li .circle-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #7ec6c6;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    }
+    .buttonss {
+    display: flex;
+    }
+    .hedase-top{
+    display: flex;
+    gap: 10px;
+    margin-bottom: -20px;
+    }
+    .hedase-top h2{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #4a4a4a;
+    }
+ </style>
+ <style>
+    .package-container {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    }
+    .header {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    }
+    .header img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    }
+    .header h2 {
+    font-size: 1.5em;
+    color: #4a4a4a;
+    margin: 0;
+    }
+    .main-content {
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    }
+    .main-content .icon {
+    display: inline-block;
+    margin-right: 10px;
+    }
+    .main-content .icon img {
+    width: 85px;
+    height: 50px;
+    border-radius: 10px;
+    }
+    .main-content h2 {
+    display: inline-block;
+    font-size: 1.25em;
+    color: #ffcc00;
+    vertical-align: middle;
+    margin: 0;
+    }
+    .main-content h3 {
+    font-size: 1em;
+    color: #2c2a2a;
+    margin: -3px 0;
+    }
+    .main-content p {
+    font-size: 0.9em;
+    color: #000000;
+    }
+    .pricing .original-price {
+    padding-bottom: 0px;
+    text-decoration: line-through;
+    margin: 2px 0;
+    color: #000000;
+    margin-bottom: 2px !important;
+    font-size: 12px;
+    }
+    .pricing .discounted-price {
+    padding-bottom: 0px;
+    margin: 2px 0;
+    color: #000000;
+    font-size: 12px;
+    }
+    .pricing .term {
+    font-size: 0.9em;
+    color: #000000;
+    margin: 2px 0;
+    }
+    .buy-now {
+    display: block;
+    text-align: center;
+    background-color: #ffcc00;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 6px 20px;
+    border-radius: 10px;
+    margin-top: 36px;
+    margin-left: 10px;
+    width: fit-content;
+    }
+    .features {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    }
+    .features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    }
+    .features li {
+    margin-bottom: 10px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+    }
+    .features li i {
+    color: #ffffff;
+    }
+    .features li .circle-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: #7ec6c6;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    }
+    .buttonss {
+    display: flex;
+    }
+    .hedase-top{
+    display: flex;
+    gap: 10px;
+    margin-bottom: -20px;
+    }
+    .hedase-top h2{
+    font-family: "Open Sans", sans-serif;
+    }
+    .ulti-agt-adv{
+        width: 420px;
+        margin-left: 100px;
+        margin-top: 28px;
+    }
+    .prm-agt-pckg{
+        width: 420px;
+    }
+ </style>
+ <!DOCTYPE html>
+ <html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr" data-theme="theme-default" data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/" data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1" data-framework="laravel" data-template="vertical-menu-theme-default-light">
+    <head>
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+       <title>ShiftHoja</title>
+       <meta name="description" content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
+       <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+       <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-laravel-admin-template/">
+       <!-- Favicon -->
+       <link rel="icon" type="image/x-icon" href="https://shifthoja.comhttps://shifthoja.com/public/frontend/assets/images/shifthoja_logo.png" />
+       <!-- Fonts -->
+       <link rel="preconnect" href="https://fonts.googleapis.com/">
+       <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+       <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css?id=87122b3a3900320673311cebdeb618da" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d" />
+       <!-- Core CSS -->
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css?id=55b2a9dfaa009c41df62ca8d16e913a8" class="template-customizer-core-css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css?id=9182924a7b965439eca5e189ba43eba1" class="template-customizer-theme-css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css?id=69dfc5e48fce5a4ff55ff7b593cdf93d" />
+       <!-- Vendors CSS -->
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbare482.css?id=73d641bb8db2475ecafc6c68461ed01b" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead05d2.css?id=de339ead5e9c9e36f12e46cbef7aaffd" />
+       <!-- Vendor Styles -->
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.css" />
+       <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/styles/index.min.css" />
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js" integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <script>
+          window.templateCustomizer = new TemplateCustomizer({
+            cssPath: '',
+            themesPath: '',
+            defaultStyle: "light",
+            defaultShowDropdownOnHover: "true", 
+            // true/false (for horizontal layout only)
+            displayCustomizer: "true",
+            lang: 'en',
+            pathResolver: function(path) {
+              var resolvedPaths = {
+                // Core stylesheets
+                  'core.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core.css?id=55b2a9dfaa009c41df62ca8d16e913a8',
+                  'core-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core-dark.css?id=d98ae2a03b5b1b05651411ee58ef81a6',
+                // Themes
+                  'theme-default.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default.css?id=9182924a7b965439eca5e189ba43eba1',
+                  'theme-default-dark.css':
+                  'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default-dark.css?id=ae30991ef3f62e7c03ca6f8930843e80',
+                  'theme-bordered.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered.css?id=a4f95a927b1e2bcdfd57a3bbfb2bd3d9',
+                  'theme-bordered-dark.css':
+                  'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered-dark.css?id=2a668deb480284f975db82d0a7277156',
+                  'theme-semi-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark.css?id=9c02fb39c47f91b2d198f343fa8b4df7',
+                  'theme-semi-dark-dark.css':
+                  'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark-dark.css?id=c4b1950a14ffd431f752917b97a0ee51',
+                        }
+              return resolvedPaths[path] || path;
+            },
+            'controls': ["rtl","style","headerType","contentLayout","layoutCollapsed","layoutNavbarOptions","themes"],
+          });
+       </script> 
+       <!-- Livewire Styles -->
+       <style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+    </head>
+    <body>
+       <div>
+          <link wire:snapshot="{&quot;data&quot;:{&quot;login&quot;:null,&quot;number&quot;:&quot;91&quot;,&quot;mobile_no&quot;:null,&quot;verification_client&quot;:null,&quot;otp&quot;:null,&quot;key&quot;:&quot;rzp_test_cUXbbDAS1VxEtB&quot;,&quot;total&quot;:&quot;100&quot;,&quot;plan&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;rdnzFoO73MeujBDGDZ3i&quot;,&quot;name&quot;:&quot;frontend.packages&quot;,&quot;path&quot;:&quot;premium-subscription&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;1e2f1818241d0c8a5da7c46d50beeeaac621e718d53cbfcc16a01a816114b893&quot;}" wire:effects="[]" wire:id="rdnzFoO73MeujBDGDZ3i" rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/searchbox.css" />
+          <link rel="shortcut icon" href="https://is1-3.housingcdn.com/fb15c03b/7b5467febbc97e6f3360e6fc9681b371/v0/thumb.jpg" type="image/x-icon" />
+          <link rel="icon" href="https://is1-3.housingcdn.com/fb15c03b/7b5467febbc97e6f3360e6fc9681b371/v0/thumb.jpg" type="image/x-icon" />
+          <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" />
+          <link href="https://shifthoja.com/public/frontend/assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet" />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/slickcss.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/normalize.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/font-awesome.min.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/fontello.css"  />
+          <link href="https://shifthoja.com/public/frontend/assets/css/animate.css"  rel="stylesheet" media="screen" />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/icheck.min_all.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/price-range.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.carousel.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.theme.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/owl.transitions.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/style.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/mediaQuery.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/responsive.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/random.css"  />
+          <link rel="stylesheet" href="https://shifthoja.com/public/frontend/assets/css/recentpro.css"  />
+          <!-- property card link -->
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+          <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+          <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/vendor/tiny-slider/tiny-slider.css" />
+          <!-- Theme CSS -->
+          <link rel="stylesheet" type="text/css" href="https://shifthoja.com/public/frontend/assets/css-service-slider/css/style.css" />
+          <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+          <link rel="stylesheet"
+             href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+             integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+          <link rel="stylesheet" type="text/css"
+             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+          <link rel="stylesheet" type="text/css"
+             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+          <link rel="stylesheet"  href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/css/style.css"/>
+          <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+          <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css"/>
+          <link rel="stylesheet" defer href="https://www.shifthoja.comhttps://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+          <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+          <div class="container">
+             <div class="row">
+                <div class="col-sm">
+                   <div class="" style="width: 500px;">
+                      <div class="header">
+                         <img src="https://shifthoja.com/public/frontend/assets/img/icons8-growth-50.png" alt="House Icon">
+                         <h1>Advanced Growth Package</h1>
+                      </div>
+                      <div class="cards" >
+                         <div class="card">
+                            <div class="header">
+                               <img src="https://shifthoja.com/public/frontend/assets/img/Plan3X.png" alt="House Icon">
+                               <div>
+                                  <h2 style="margin: 0px; padding: 0px;">ADVANCED</h2>
+                                  <h3 style="margin: 0px; padding: 0px;">Rental Pro Suite</h3>
+                               </div>
+                            </div>
+                            <p>Up to 120 monthly rental leads with our Rental Pro Suite – Boost your tenant reach today!</p>
+                            <div class="buttonss">
+                               <div class="pricing">
+                                  <p class="original-price">₹ 5,999.00</p>
+                                  <p class="discounted-price">₹ 4,499 / mo</p>
+                                  <p class="term">only with 1 yr term</p>
+                               </div>
+                               <div>
+                                  <a href="#" class="buy-now" style="background-color: #1e90ff;">BUY NOW</a>
+                               </div>
+                            </div>
+                            <div class="features">
+                               <ul>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     Upto 120 high-quality Rental Leads
+                                  </li>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     75 Property Listing
+                                  </li>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     Auto boost every 7 days
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                         <div class="card">
+                            <div class="header">
+                               <img src="https://shifthoja.com/public/frontend/assets/img/Plan3X.png" alt="House Icon">
+                               <div>
+                                  <h2 style="margin: 0px; padding: 0px;">ADVANCED</h2>
+                                  <h3 style="margin: 0px; padding: 0px;">Elite Seller Package</h3>
+                               </div>
+                            </div>
+                            <p>Unlock 5X more buyers with enhanced property visibility on Shifthoja.com and our partner platforms!</p>
+                            <div class="buttonss">
+                               <div class="pricing">
+                                  <p class="original-price">₹ 7,999.00</p>
+                                  <p class="discounted-price">₹ 5,499 / mo</p>
+                                  <p class="term">only with 1 yr term</p>
+                               </div>
+                               <div>
+                                  <a href="#" class="buy-now" style="background-color: #1e90ff;">BUY NOW</a>
+                               </div>
+                            </div>
+                            <div class="features">
+                               <ul>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     Upto 120 high-quality Buyer Leads
+                                  </li>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     75 Property Listing
+                                  </li>
+                                  <li>
+                                     <div class="circle-check"><i class="bi bi-check"></i></div>
+                                     Auto boost every 7 days
+                                  </li>
+                               </ul>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm">
+                   <div class="ulti-agt-adv">
+                      <div class="hedase-top">
+                         <img src="https://shifthoja.com/public/frontend/assets/img/icons8-chart-100.png" alt="House Icon" style="
+                            height: 25px;
+                            width: 25px;
+                            margin-bottom: 28px;
+                            ">
+                         <h2>ULTIMATE AGENT ADVANTAGE</h2>
+                      </div>
+                      <div class="package-container">
+                         <div class="main-content">
+                            <div class="icon">
+                               <img src="https://shifthoja.com/public/frontend/assets/img/Dont (3).png" alt="House Icon">
+                            </div>
+                            <div>
+                               <h2 style="color: #3cc807;">ULTIMATE AGENT</h2>
+                               <h3>Ultimate Property Power Package</h3>
+                            </div>
+                         </div>
+                         <p style="margin-top: 0px;font-size: 11px;">Unlock up to 350 high-quality leads per month guaranteed maximum success!
+                            Reach 5X more buyers by joining our Prime Agent Package to effortlessly list 
+                            properties for sale and rent.
+                         </p>
+                         <div class="buttonss">
+                            <div class="pricing">
+                               <p class="original-price">₹ 16,999.00</p>
+                               <p class="discounted-price">₹ 11,999 / mo</p>
+                               <p class="term">only with 1 yr term</p>
+                            </div>
+                            <div>
+                               <a href="#" class="buy-now" style="background-color: #3cc807;">BUY NOW</a>
+                            </div>
+                         </div>
+                         <div class="features">
+                            <ul>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  Upto 250 high-quality Rental & Buyer Leads
+                               </li>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  120 Property Listing for Sell & Rent
+                               </li>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  Auto boost every 7 days
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-sm">
+                   <div class="prm-agt-pckg">
+                      <div class="hedase-top">
+                         <img src="https://shifthoja.com/public/frontend/assets/img/icons8-combo-chart-64.png" alt="House Icon" style="
+                            height: 25px;
+                            width: 25px;
+                            margin-bottom: 28px;
+                            ">
+                         <h2>PRIME AGENT PACKAGE</h2>
+                      </div>
+                      <div class="package-container">
+                         <div class="main-content">
+                            <div class="icon">
+                               <img src="https://shifthoja.com/public/frontend/assets/img/Dont.png" alt="House Icon">
+                            </div>
+                            <div>
+                               <h2>PRIME AGENT</h2>
+                               <h3>Property Master Combo Package</h3>
+                            </div>
+                         </div>
+                         <p style="margin-top: 0px;font-size: 11px;">Unlock up to 220 high-quality leads per month guaranteed maximum success!
+                            Reach 5X more buyers by joining our Prime Agent Package to effortlessly list 
+                            properties for sale and rent.
+                         </p>
+                         <div class="buttonss">
+                            <div class="pricing">
+                               <p class="original-price">₹ 10,999.00</p>
+                               <p class="discounted-price">₹ 7,499 / mo</p>
+                               <p class="term">only with 1 yr term</p>
+                            </div>
+                            <div>
+                               <a href="#" class="buy-now">BUY NOW</a>
+                            </div>
+                         </div>
+                         <div class="features">
+                            <ul>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  Upto 250 high-quality Rental & Buyer Leads
+                               </li>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  120 Property Listing for Sell & Rent
+                               </li>
+                               <li>
+                                  <div class="circle-check"><i class="bi bi-check"></i></div>
+                                  Auto boost every 7 days
+                               </li>
+                            </ul>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+       <!-- Livewire Scripts -->
+       <script src="/livewire/livewire.js?id=6b5eb707"   data-csrf="h5yptrWwXecWhLVLJvzKXQBHTY5sC3H0wgUXHDOs" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+       <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+       <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+    </body>
+    <script>
+       window.addEventListener('swal',function(e){
+                 Swal.fire(e.detail);
+             });
+    </script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+       Livewire.on('getway', (event) => {
+           var options = {
+               key: window.Livewire.find('rdnzFoO73MeujBDGDZ3i').key,
+               amount: window.Livewire.find('rdnzFoO73MeujBDGDZ3i').total*100, // Amount in paise (e.g., 1000 for ₹10)
+               currency: 'INR',
+               name: 'shiftHoja.com',
+               description: 'Product Description',
+               handler: function(response) {
+                   window.Livewire.find('rdnzFoO73MeujBDGDZ3i').emit(response.razorpay_payment_id);
+               }
+           };
+       
+           var rzp = new Razorpay(options);
+           rzp.open();
+        
+       });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script>
+       Livewire.on('post-success', (event) => {
+           toastr.success(event.title, {timeOut: 10});
+         });
+         
+           Livewire.on('post-created', (event) => {
+           toastr.error(event.title, {timeOut: 10});
+         });
+       
+    </script>
+    <!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/wizard/ex-create-deal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 10:50:47 GMT -->
+ </html>

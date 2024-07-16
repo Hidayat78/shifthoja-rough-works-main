@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003159;
+            height: 60px;
+            padding: 0 20px;
+            color: #fff;
+        }
+
+        .logo img {
+            height: 36px;
+            width: 200px;
+        }
+
+        .nav-links {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar {
+            display: none;
+            background-color: #003159;
+            padding: 20px;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            height: 100%;
+            width: 250px;
+            z-index: 1000;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-toggle button {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Post property button css */
+        .style__postContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 164px;
+            height: 32px;
+            background: #ffffff;
+            border: 1px solid #e5f3fd;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-right: 16px;
+            margin-top: 14px;
+        }
+
+        .style__post {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            color: #041533;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+
+        .style__shimmer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: #219653;
+            border: 1px solid #d7f2e3;
+            border-radius: 4px;
+            overflow: hidden;
+            width: fit-content;
+            height: 20px;
+            animation-name: shimmer-animation;
+            animation-duration: 2s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .style__shimmer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-70deg, transparent 40%, #baddc9 10%, transparent 50%);
+            animation: shimmer-slide 1s linear infinite;
+            /* Adjust the animation duration and timing function as needed */
+        }
+
+        @keyframes shimmer-slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes shimmer-animation {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .style__free {
+            font-weight: 700;
+            line-height: 1.3;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        /* post property css end */
+        button.bi.bi-text-indent-right {
+            outline: none;
+            background: transparent;
+            border: none;
+            font-size: 35px;
+            color: white;
+            margin-top: 4px;
+        }
+
+        div#offcanvasRight {
+            width: 250px;
+        }
+
+        @media (max-width: 480px) {
+            .logo img {
+                width: 160px;
+                height: 30px;
+            }
+
+            .style__postContainer {
+                width: 120px;
+                height: 32px;
+            }
+
+            .style__post {
+                font-weight: 500;
+                font-size: 10px;
+                line-height: 20px;
+                color: #041533;
+                margin-right: 3px;
+                margin-top: -2px;
+                font-weight: bold;
+
+            }
+
+        }
+
+        .row.no-gutters {
+            margin-top: 20px;
+        }
+
+        .row.featurette {
+            height: 250px;
+        }
+
+        .lead {
+            font-size: 12px;
+        }
+
+        .rounded-circle p {
+            font-size: 13px;
+        }
+        .norm-prim-btn{
+            font-size: 14px;
+            height: 35px;
+        }
+       
+            .back-gd-color {
+            background-color: rgba(0, 0, 0, 0.4); 
+            color: white; 
+            padding: 10px;
+            border-radius: 5px; 
+            margin-bottom: 10px;
+        }
+  
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/img/shifthoja_logo.png" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="#">
+                <div class="style__postContainer">
+                    <div onclick="window.open('userLogin.html')" class="style__post">
+                        Post property
+                    </div>
+                    <div class="style__shimmer">
+                        <div class="style__free">FREE</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <button class="bi bi-text-indent-right" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"></button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </nav>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1"
+                aria-current="true"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+                class=""></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+                class=""></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
+                    alt="Mumbai Skyline" width="100%" height="400px">
+                <div class="container">
+                    <div class="carousel-caption text-start">
+                        <div class="back-gd-color">
+                            <h1>Our Vision.</h1>
+                            <p>Some representative placeholder content for the first slide of the carousel.</p>
+                        </div>
+                        
+                        <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Sign up today</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/free-photo/united-states-capitol-washington-dc_181624-52973.jpg?t=st=1714563698~exp=1714567298~hmac=2602b0fac28409fc6a53cdbfb8739818e50a7bc413539a816bdd98c894acab52"
+                    alt="Mumbai Skyline" width="100%" height="400px">
+
+                <div class="container">
+                    <div class="carousel-caption">
+                        <div class="back-gd-color">
+                            <h1>Our Mission.</h1>
+                            <p>Some representative placeholder content for the second slide of the carousel.</p>
+                        </div>
+                        <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Learn more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                    alt="Mumbai Skyline" width="100%" height="400px">
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <div class="back-gd-color">
+                            <h1>Our Strength.</h1>
+                            <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        </div>
+                        <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Browse gallery</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-lg-4 py-3 py-lg-0" style="min-height:400px; background-position: top">
+                <div class="background-holder radius-tl-secondary radius-bl-lg-secondary radius-tr-secondary radius-tr-lg-0"
+                    style="background-image:url(assets/img/boss.jpg);">
+                    <img src="assets/img/boss.jpg" height="400px" width="400px">
+                </div>
+            </div>
+            <div
+                class="col-lg-8 px-5 py-6 my-lg-0 background-white radius-tr-lg-secondary radius-br-secondary radius-bl-secondary radius-bl-lg-0">
+                <div class="d-flex align-items-center">
+                    <div data-zanim-timeline="{}">
+                        <h5 data-zanim="{&quot;delay&quot;:0}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                            Message From CEO</h5>
+                        <p class="my-4" data-zanim="{&quot;delay&quot;:0.1}"
+                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Elixir co-operates with clients in
+                            solving the hardest problems they face in their businesses—and the world. We do this by
+                            channeling the diversity of our people and their thinking. </p><img
+                            data-zanim="{&quot;delay&quot;:0.2}" src="assets/img/sign.png"
+                            style="height: 60px; width: 160px;" alt=""
+                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <h5 class="text-uppercase mt-3 fw-500 mb-1" data-zanim="{&quot;delay&quot;:0.3}"
+                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Hidayat</h5>
+                        <h6 class="color-7 fw-600" data-zanim="{&quot;delay&quot;:0.4}"
+                            style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Uttrakhand office</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-6">
+            <div class="col">
+                <h3 class="text-center fs-2 fs-md-3">Company Overview</h3>
+                <hr class="short">
+            </div>
+            <div class="col-12">
+                <div class="background-white px-3 mt-6 px-0 py-5 px-lg-5 radius-secondary">
+                    <h5>Welcome to SHIFTHOJA.COM</h5>
+                    <p class="mt-3">Founded in 2022 and acquired by HDT India in 2017, SHIFTHOJA.COM is India’s most 
+                        innovative real estate advertising platform for homeowners, landlords, developers, and 
+                        real estate brokers. The company offers listings for new homes, resale homes, rentals, 
+                        plots and co-living spaces in India. Backed by strong research and analytics, the company’s 
+                        experts provide comprehensive real estate services that cover advertising and marketing, 
+                        sales solutions for real estate developers, personalized search, virtual viewing, AR&VR 
+                        content, home loans, end-to-end transaction services, and post-transaction services to 
+                        consumers for both buying and renting.</p>
+                    <blockquote class="blockquote my-5 ml-lg-6" style="max-width: 700px;">
+                        <h5 class="fw-500 ml-3 mb-0">Our vision is changing the way India experiences property…</h5>
+                    </blockquote>
+                    <p class="column-lg-2 dropcap">And our mission is to be the first choice of our consumers and 
+                        partners in discovering, renting, buying, selling, financing a home, and digitally enabling
+                         them throughout their journey. We do that with data, design, technology, and above all,
+                          the passion of our people while delivering value to our shareholders.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle"
+                    src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
+                    alt="Placeholder: 140x140" width="140" height="140">
+
+                <h2>Service</h2>
+                <p>Some representative placeholder content for the three columns of text below the carousel. This is the
+                    first column.</p>
+                <p><a class="btn btn-primary" href="#">View details »</a></p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle"
+                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                    alt="Placeholder: 140x140" width="140" height="140">
+
+                <h2>Service</h2>
+                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
+                    column.</p>
+                <p><a class="btn btn-primary" href="#">View details »</a></p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle"
+                    src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
+                    alt="Placeholder: 140x140" width="140" height="140">
+                <h2>Service</h2>
+                <p>And lastly this, the third column of representative placeholder content. of representative
+                    placeholder content</p>
+                <p><a class="btn btn-primary" href="#">View details »</a></p>
+            </div>
+        </div>
+        <!-- START THE FEATURETTES -->
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                        yourself.</span></h2>
+                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place.Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                    alt="Placeholder: 500x500" width="500" height="250px">
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                        yourself.</span></h2>
+                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place.Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place.</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                    alt="Placeholder: 500x500" width="500" height="250px">
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
+                        yourself.</span></h2>
+                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place.Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place Another featurette? Of course.
+                    More placeholder content here to give you an idea of how
+                    this layout would work with some actual real-world content in place</p>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                    alt="Placeholder: 500x500" width="500" height="250px">
+            </div>
+        </div>
+        <hr class="featurette-divider">
+    </div>
+</body>
+
+</html>

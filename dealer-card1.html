@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .card-parent-dealer {
+            width: 100%;
+        }
+
+
+
+        .card-dealer {
+            height: 338px;
+            width: 320px;
+            background-color: #003159;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            margin: auto;
+            border-radius: 8px;
+            -webkit-box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+            box-shadow: 20px 20px 22px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card-img-dealer {
+            height: 120px;
+            width: 120px;
+            background-color: rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-radius: 50%;
+            position: absolute;
+            margin: 6px auto 0px auto;
+            left: 0;
+            right: 0;
+
+        }
+
+        .card-img-dealer img {
+            height: 86%;
+            border-radius: 50%;
+            margin-left: 7%;
+            margin-top: 7%;
+        }
+
+
+        .desc-dealer {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            top: 130px;
+        }
+
+        .primary-text-dealer {
+            color: #d5d5d5;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.7px;
+        }
+
+        .secondary-text-dealer {
+            color: #c0c0c0;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin: 5px 0;
+        }
+
+        button {
+            background-color: rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: none;
+
+        }
+
+        .details-dealer {
+            display: -ms-grid;
+            display: grid;
+            width: 100%;
+            height: 70px;
+            padding: 5px 0;
+            -ms-grid-columns: auto auto;
+            grid-template-columns: auto auto;
+            background-color: rgba(255, 255, 255, 0.06);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            position: absolute;
+            bottom: 0;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .details-dealer>div {
+            text-align: center;
+        }
+
+        .details-dealer>div:first-child {
+            border-right: 2px solid rgba(255, 255, 255, 0.08);
+        }
+
+        button {
+            width: 80%;
+            padding: 15px 0;
+            position: absolute;
+            left: 10%;
+            top: 205px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+
+
+
+
+
+        .card-parent-dealer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sf-home__section__title-card {
+            padding-bottom: 24px;
+            margin-left: 12px;
+        }
+
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .sf-home__section__title--anchor-see-all:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 11px;
+            right: 0px;
+            top: 4px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710374415922/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -46px -668px;
+            transition: all 0.6s ease;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="sf-home__section__title-card d-flex justify-content-between">
+        <div class="sf-home__section__title--text1 strip-orange">Certified Delears</div>
+        <a href="javascript:void(0);" class="sf-home__section__title--anchor-see-all push-right"
+            onclick="fireDynamicPropSeeAllGTM(event,'Owner properties see all','ownerProp');seeAppPropertiesOpenUrl('ownerProp');"></a>
+    </div>
+    <div class="card-parent-dealer">
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="card-dealer">
+                <div class="card-img-dealer">
+                    <img
+                        src="https://img.freepik.com/premium-photo/handsome-smiling-young-man-with-folded-arms_952516-108.jpg">
+                </div>
+                <div class="desc-dealer">
+                    <h6 class="primary-text-dealer">SHERA</h6>
+                    <h6 class="secondary-text-dealer">Property Dealer</h6>
+                </div>
+                <button class="primary-text-dealer">Prime Agent</button>
+                <div class="details-dealer">
+                    <div class="rating-dealer">
+                        <h6 class="primary-text-dealer"> 86% </h6>
+                        <h6 class="secondary-text-dealer"> SELL </h6>
+                    </div>
+                    <div class="activity-dealer">
+                        <h6 class="primary-text-dealer"> 92% </h6>
+                        <h6 class="secondary-text-dealer"> RENT </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.card-parent-dealerxx').slick({
+                dots: false,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 1024, // Tablets and smaller desktops
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 768, // Tablets and smaller devices
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 576, // Small devices (phones, etc.)
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+
+</html>

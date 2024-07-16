@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr" data-theme="theme-default" data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/" data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1" data-framework="laravel" data-template="vertical-menu-theme-default-light">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ShiftHoja</title>
+      <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" defer>
+      <link rel="stylesheet"  href="https://shifthoja.com/public/admin/assets/css/style.css"/>
+      <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+      <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css"/>
+      <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+      <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+      <!-- Livewire Styles -->
+      <style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+      <style>
+         .overlay {
+         position: relative;
+         width: 100%;
+         }
+         .overlay-text {
+         position: absolute;
+         top: 163px;
+         width: 100%;
+         color: white;
+         font-size: 24px;
+         font-weight: bold;
+         }
+         .close-icon {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         cursor: pointer;
+         color: white;
+         font-size: 17px;
+         z-index: 1000;
+         background: #000;
+         padding: 2px 7px 4px 6px;
+         height: 29px;
+         border-radius: 50px;
+         }
+      </style>
+      <style>
+         .label {
+         background: #fff;
+         cursor: pointer;
+         border: 1px solid rgb(235, 235, 235);
+         font-weight: 500;
+         font-size: 14px;
+         color: rgb(34, 34, 34);
+         border-radius: 8px;
+         transition: background 0.1s, color 0.1s;
+         }
+         .label:hover {
+         background: rgb(231, 221, 251);
+         }
+         .label:active {
+         background: #ccc;
+         }
+         .input:checked+.label {
+         background: rgb(231, 221, 251);
+         color: rgb(94, 35, 220);
+         }
+         .label {
+         width: 100%;
+         padding: 12px 3px;
+         text-align: center;
+         }
+         .input {
+         position: absolute;
+         opacity: 0;
+         height: 0px;
+         top: 0px;
+         }
+         .title {
+         font-weight: 400;
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(118, 118, 118);
+         }
+         .mandatoryMarker {
+         color: red;
+         font-size: 18px;
+         font-weight: 400;
+         padding: 0 3px;
+         }
+         .group {
+         margin-top: 30px;
+         }       
+         .css-14n2nh0 {
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-top: 20px;
+         font-weight: 500;
+         font-size: 16px;
+         line-height: 20px;
+         color: rgb(67, 67, 67);
+         }
+         .css-v8jck {
+         border: 1px solid rgb(225, 226, 232) !important;
+         border-radius: 8px;
+         padding: 0px 20px 100px;
+         width: 100%;
+         height: 100vh;
+         overflow: hidden scroll;
+         }
+         /*.container{*/
+         /*     position: fixed;*/
+         /*}*/
+         .css-g56yay {
+         background: rgb(228, 229, 240);
+         border: 0px;
+         padding-top: 15px;
+         padding-left: 5px;
+         border-top-left-radius: 8px;
+         border-top-right-radius: 8px;
+         width: 100%;
+         height: 48px;
+         font-weight: 500;
+         line-height: 14px;
+         text-align: start;
+         color: rgb(0, 0, 0);
+         margin-top: 24px;
+         bottom: 0px;
+         box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 1px 0px inset;
+         }
+         .error{
+         color: #e02727;
+         font-family: Rubik, Helvetica, sans-serif;
+         padding: 5px 0 0 5px;
+         font-size: 10px;
+         }
+      </style>
+      <style>
+         .css-u4ug1l {
+         background: linear-gradient(191deg, rgb(243, 244, 255) 1.35%, rgb(255, 255, 255) 62.01%, rgb(255, 255, 255) 195.73%);
+         border: 1px solid rgb(225, 226, 232);
+         border-radius: 8px;
+         min-width: 100%;
+         height: 100%;
+         padding: 17px 10px 0px 21px;
+         display: flex;
+         flex-direction: column;
+         -webkit-box-pack: justify;
+         justify-content: space-between;
+         }
+         .css-ekfu91 {
+         font-weight: 500;
+         font-size: 11px;
+         line-height: 12px;
+         letter-spacing: 0.6px;
+         color: rgb(34, 34, 34);
+         mix-blend-mode: normal;
+         opacity: 0.7;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-bottom: 16px;
+         cursor: pointer;
+         }
+         .css-1wsvv7k {
+         font-style: normal;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 20px;
+         color: rgb(67, 67, 67);
+         margin-bottom: 4px;
+         }
+         .css-1au84r2 {
+         font-weight: 400;
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(34, 34, 34);
+         mix-blend-mode: normal;
+         opacity: 0.7;
+         margin-bottom: 10px;
+         }
+         .new-su-progress-bar {
+         font-weight: 500;
+         font-size: 8px;
+         line-height: 12px;
+         color: #767676;
+         }
+         .css-uvyn5o {
+         width: 100%;
+         margin-bottom: 30px;
+         }
+         .css-1sg2lsz {
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         }
+         .new-su-progress-bar .selfUploadPb {
+         border-radius: 100px;
+         overflow: hidden;
+         height: 8px;
+         }
+         .css-1mb7nyv {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .tickIcon {
+         content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%2336c991' d='M1024 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z'%3E%3C/path%3E %3Cpath fill='%23fff' d='M764.015 374.514c12.497 12.497 12.497 32.758 0 45.255l-295.219 295.222-153.373-153.37c-12.497-12.497-12.497-32.759 0-45.257s32.758-12.497 45.255 0l108.118 108.117 249.967-249.968c12.497-12.497 32.755-12.497 45.252 0z'%3E%3C/path%3E %3C/svg%3E")
+         }
+         .pillStateIcon {
+         width: 30px;
+         height: 30px
+         }
+         .pill-state {
+         color: rgb(54, 201, 145);
+         background: rgb(213, 243, 232);
+         border: 0px;
+         }
+         .css-1mb7nyv .pill-checkbox {
+         background: rgb(54, 201, 145);
+         }
+         .css-s2fxx9 {
+         font-weight: 500;
+         font-size: 14px;
+         line-height: 16px;
+         color: rgb(67, 67, 67);
+         margin-bottom: 3px;
+         }
+         .css-1uhdbu5 {
+         background: rgb(255, 255, 255);
+         color: rgb(159, 159, 159);
+         border: 1px solid rgb(225, 226, 232);
+         border-radius: 30px;
+         padding: 5px 10px;
+         font-weight: 400;
+         font-size: 10px;
+         line-height: 12px;
+         letter-spacing: 0.6px;
+         width: fit-content;
+         }
+         .css-1mb7nyv .pill-state {
+         color: rgb(54, 201, 145);
+         background: rgb(213, 243, 232);
+         border: 0px;
+         }
+         .css-1lzmv4j {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-1lzmv4j .pill-checkbox {
+         border: 1px solid rgb(94, 35, 220);
+         background: rgb(255, 255, 255);
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .pill-checkbox .radioFilled {
+         content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%235E23DC' d='M512 8.544c-277.344 0-503.456 226.144-503.456 503.456s226.144 503.456 503.456 503.456c277.344 0 503.456-226.144 503.456-503.456s-226.144-503.456-503.456-503.456zM512 972.8c-251.744 0-460.8-209.056-460.8-460.8s209.056-460.8 460.8-460.8 460.8 209.056 460.8 460.8-209.056 460.8-460.8 460.8z'%3E%3C/path%3E %3Cpath fill='%235E23DC' d='M512 145.056c-200.544 0-366.944 166.4-366.944 366.944s166.4 366.944 366.944 366.944c200.544 0 366.944-166.4 366.944-366.944s-166.4-366.944-366.944-366.944z'%3E%3C/path%3E %3C/svg%3E")
+         }
+         .css-1htmawk {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         pointer-events: none;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .pill-checkbox .pendingPill {
+         border-radius: 30px;
+         background: #eae4ff;
+         }
+         .pill-checkbox .pillStateIcon {
+         width: 30px;
+         height: 30px;
+         }
+         .css-10c1p1k {
+         height: 37px;
+         width: 0px;
+         border: 1px solid rgb(234, 228, 255);
+         margin: 5px 0px;
+         }
+         .css-1lzmv4j .pill-state {
+         background: rgb(234, 228, 255);
+         color: rgb(94, 35, 220);
+         border: 0px;
+         }
+         .css-6d93px {
+         width: 100%;
+         margin-top: 5px;
+         }
+         .css-17iu5z9 {
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(118, 118, 118);
+         display: flex;
+         width: 100%;
+         background: rgba(255, 255, 255, 0.9);
+         padding: 8px 0px;
+         }
+         .menu-horizontal, .layout-menu-fixed-offcanvas .layout-horizontal .layout-page .menu-horizontal {
+         position: fixed;
+         }
+         @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+        }
+        40% {
+            transform: translateY(-10px);
+        }
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+    .input-group-text#pl-total-area {
+        display: inline-block;
+    }
+
+    .input-group-text#pl-total-area > span {
+        display: inline-block;
+        animation: bounce 1s infinite;
+        cursor: pointer;
+    }
+    .no-spinners {
+         -moz-appearance: textfield;
+         appearance: textfield;
+      }
+
+   .no-spinners::-webkit-inner-spin-button,
+      .no-spinners::-webkit-outer-spin-button {
+         -webkit-appearance: none;
+         margin: 0;
+      }
+      </style>
+   </head>
+   <body>
+      <div class="layout-container">
+         <div class="layout-page">
+            <div class="content-wrapper">
+               <div class="container-fluid flex-grow-1 container-p-y">
+                  <div wire:snapshot="{&quot;data&quot;:{&quot;shouldReInitSwiper&quot;:false,&quot;step&quot;:1,&quot;user_id&quot;:25,&quot;property_type&quot;:null,&quot;bhk_type&quot;:null,&quot;furnished_status&quot;:null,&quot;bedrooms&quot;:null,&quot;bathrooms&quot;:null,&quot;floor_no&quot;:null,&quot;total_floor_no&quot;:null,&quot;separate&quot;:null,&quot;balcony&quot;:null,&quot;proprty_age&quot;:null,&quot;state&quot;:1,&quot;district&quot;:null,&quot;land_mark&quot;:null,&quot;pincode&quot;:null,&quot;complete_adress&quot;:null,&quot;expected_price&quot;:null,&quot;price_per_sqft&quot;:null,&quot;maintenance_charge&quot;:null,&quot;maintenence&quot;:null,&quot;show_price_as&quot;:null,&quot;price_includes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;loan&quot;:&quot;no&quot;,&quot;building&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bedroom&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;hall&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;kitchen&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;balconyimg&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;washroom&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;security&quot;:null,&quot;period&quot;:null,&quot;available&quot;:null,&quot;street_number&quot;:null,&quot;house_number&quot;:null,&quot;covered_parking&quot;:null,&quot;open_parking&quot;:null,&quot;tenant_type&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;built_up_area&quot;:null,&quot;carpet_area&quot;:null,&quot;description&quot;:null,&quot;transaction_type&quot;:null,&quot;construction&quot;:null,&quot;properties&quot;:[[&quot;1 Rk&quot;,&quot;1 BHK&quot;,&quot;2 BHK&quot;,&quot;3 BHK&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;complete&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;property&quot;:&quot;residential&quot;,&quot;proprty_for&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;GmlnaUXY4jDA3mLResk4&quot;,&quot;name&quot;:&quot;user.home&quot;,&quot;path&quot;:&quot;user-post&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;025282b643590205686b9d191874542b516f3cf115c00e8fb76cb03956b18562&quot;}" wire:effects="{&quot;url&quot;:{&quot;property&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;proprty_for&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;}}}" wire:id="GmlnaUXY4jDA3mLResk4">
+                     <div class="mt-md-5">
+                        <div class="row justify-content-center">
+                           <div class="col-md-11 col-12">
+                              <div class="card p-3">
+                                 <div class="row justify-content-center">
+                                    <div class="col-md-3 d-none d-md-block">
+                                       <div class="css-u4ug1l">
+                                          <div>
+                                             <div class="css-ekfu91">
+                                                <i class="icon icon-arrow-left css-ale1at"></i>Return to dashboard
+                                             </div>
+                                             <div class="css-1wsvv7k">Add agent details</div>
+                                             <div class="css-1au84r2 mb-3">Sell or rent your property</div>
+                                             <div class="css-3wfbg4">  
+                                                <div class="css-1lzmv4j">
+                                                   <div class="css-1onbx3g">
+                                                      <div class="pill-checkbox css-zhkbv9">
+                                                         <i class="pillStateIcon radioFilled"></i>
+                                                      </div>
+                                                      <div class="pill-line css-10c1p1k"></div>
+                                                   </div>
+                                                   <div class="css-fxwwka">
+                                                      <div class="css-s2fxx9">Agent Details</div>
+                                                      <div class="pill-state css-1uhdbu5">In progress</div>
+                                                   </div>
+                                                </div>    
+                                                <div class="css-1htmawk">
+                                                   <div class="css-1onbx3g">
+                                                      <div class="pill-checkbox css-zhkbv9">
+                                                         <div class="pillStateIcon pendingPill"></div>
+                                                      </div>
+                                                      <div class="pill-line css-10c1p1k"></div>
+                                                   </div>
+                                                   <div class="css-fxwwka">
+                                                      <div class="css-s2fxx9">Address</div>
+                                                      <div class="pill-state css-1uhdbu5">Pending</div>
+                                                   </div>
+                                                </div>  
+                                                <div class="css-1htmawk">
+                                                   <div class="css-1onbx3g">
+                                                      <div class="pill-checkbox css-zhkbv9">
+                                                         <div class="pillStateIcon pendingPill"></div>
+                                                      </div>
+                                                      <div class="pill-line css-10c1p1k"></div>
+                                                   </div>
+                                                   <div class="css-fxwwka">
+                                                      <div class="css-s2fxx9">Documents</div>
+                                                      <div class="pill-state css-1uhdbu5">Pending</div>
+                                                   </div>
+                                                </div>
+                                                <div class="css-1htmawk">
+                                                   <div class="css-1onbx3g">
+                                                      <div class="pill-checkbox css-zhkbv9">
+                                                         <div class="pillStateIcon pendingPill"></div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="css-fxwwka">
+                                                      <div class="css-s2fxx9">Verify</div>
+                                                      <div class="pill-state css-1uhdbu5">Pending</div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                       <form wire:submit.prevent="postProperty">
+                                          <div class="css-v8jck p-md-5 pt-md-2">
+                                              <div>
+                                                  <div>
+                                                      <div class="css-14n2nh0">Verification</div>
+
+                                                      <div class="group">
+                                                          <div class="title no-bottom mb-2">Package holder phone no<span class="mandatoryMarker">*</span></div>
+                                                          <div class="input-group input-group-merge">
+                                                              <span class="input-group-text" id="pl-total-area">+91</span>
+                                                              <input type="number" placeholder="Phone number" class="form-control no-spinners" id="phone_no" name="phone_no" aria-describedby="pl-total-area" wire:model="phone_no" min="10">
+                                                              <span class="input-group-text" id="pl-total-area">
+                                                                  <span>Get OTP</span>
+                                                              </span>
+                                                          </div>
+                                                      </div>
+                                          
+                                                      <div class="group">
+                                                          <div class="title no-bottom">Enter OTP<span class="mandatoryMarker">*</span></div>
+                                                          <div class="tabs row">
+                                                              <div class="col col-md-2">
+                                                                  <div class="group">
+                                                                      <div class="input-group input-group-merge" >
+                                                                          <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1" aria-describedby="pl-total-area" wire:model="otp1" min="1" autofocus>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                              <div class="col col-md-2">
+                                                               <div class="group">
+                                                                   <div class="input-group input-group-merge">
+                                                                       <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1" aria-describedby="pl-total-area" wire:model="otp1" min="1">
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                           <div class="col col-md-2">
+                                                            <div class="group">
+                                                                <div class="input-group input-group-merge">
+                                                                    <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1" aria-describedby="pl-total-area" wire:model="otp1" min="1">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col col-md-2">
+                                                         <div class="group">
+                                                             <div class="input-group input-group-merge">
+                                                                 <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1" aria-describedby="pl-total-area" wire:model="otp1" min="1">
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                              
+                                                          </div>
+                                                          <div class="send-otp-time mt-2 d-flex">
+                                                              <div class="resend text-muted">
+                                                                  Didn't receive OTP? &nbsp;
+                                                              </div>
+                                                              <button class="text-danger btn-sm border bg-transparent border-0 small pt-0"
+                                                                  wire:click="resend" wire:confirm="Are you sure you want to Resend Otp?">Click To Resend
+                                                              </button>
+                                                          </div>
+                                                      </div>
+                                                      <hr>
+                                                      <div class="group">
+                                                         <div class="title no-bottom mb-2">Package holder phone no<span class="mandatoryMarker">*</span></div>
+                                                         <div class="input-group input-group-merge">
+                                                             <input type="email" placeholder="Busisness email" class="form-control" id="email" name="email"  wire:model="phone_no" min="10">
+                                                             <span class="input-group-text" id="pl-total-area">
+                                                                 <span>Get OTP</span>
+                                                             </span>
+                                                         </div>
+                                                     </div>
+                                         
+                                                     <div class="group">
+                                                         <div class="title no-bottom">Enter OTP<span class="mandatoryMarker">*</span></div>
+                                                         <div class="tabs row">
+                                                             <div class="col col-md-2">
+                                                                 <div class="group">
+                                                                     <div class="input-group input-group-merge" >
+                                                                         <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1"  wire:model="otp1" min="1" autofocus>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             <div class="col col-md-2">
+                                                              <div class="group">
+                                                                  <div class="input-group input-group-merge">
+                                                                      <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1"  wire:model="otp1" min="1">
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col col-md-2">
+                                                           <div class="group">
+                                                               <div class="input-group input-group-merge">
+                                                                   <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1"  wire:model="otp1" min="1">
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                       <div class="col col-md-2">
+                                                        <div class="group">
+                                                            <div class="input-group input-group-merge">
+                                                                <input type="number" style="text-align: center;" class="form-control no-spinners" id="otp1" name="otp1"  wire:model="otp1" min="1">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                             
+                                                         </div>
+                                                         <div class="send-otp-time mt-2 d-flex">
+                                                             <div class="resend text-muted">
+                                                                 Didn't receive OTP? &nbsp;
+                                                             </div>
+                                                             <button class="text-danger btn-sm border bg-transparent border-0 small pt-0"
+                                                                 wire:click="resend" wire:confirm="Are you sure you want to Resend Otp?">Click To Resend
+                                                             </button>
+                                                         </div>
+                                                     </div>
+                                                  </div>
+                                          
+                                                  <div class="row">
+                                                      <div class="col-md-12 d-flex justify-content-between mt-4">
+                                                          <button class="btn btn-next w-100 text-white" wire:click="increment" type="button" style="background: rgb(54, 201, 145);">
+                                                              Verification Soon
+                                                          </button>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </form>
+                                      
+                                    </div>
+                                    <div class="col-md-3">
+                                       <div class="mt-3">
+                                          <a href="" target="_blank">
+                                          <img class="edge_hook_banner">
+                                          </a>
+                                       </div>
+                                       <div class="AddCommercialPropertyCard-root">
+                                          <div class="AddCommercialPropertyCard-bannerImageContainer">
+                                             <img class="AddCommercialPropertyCard-bannerImage">
+                                          </div>
+                                          <div class="AddCommercialPropertyCard-content">
+                                             <div class="AddCommercialPropertyCard-heading fw-bold">
+                                                List Commercial Property For Free
+                                             </div>
+                                             <div class="AddCommercialPropertyCard-subheading">Get 100% leads at zero cost</div>
+                                             <div class="AddCommercialPropertyCard-addCommercialPropertyButton AddCommercialPropertyCard-addCommercialPropertyButtonPlain">Add Commercial Property &gt;
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <script>
+         const otpInputs = document.querySelectorAll('.tabs input[type="number"]');
+     
+         otpInputs.forEach((input, index) => {
+             input.addEventListener('input', (e) => {
+                 if (input.value.length === 1) {
+                     if (index < otpInputs.length - 1) {
+                         otpInputs[index + 1].focus();
+                     }
+                 } else if (input.value.length === 0) {
+                     if (index > 0) {
+                         otpInputs[index - 1].focus();
+                     }
+                 }
+             });
+     
+             input.addEventListener('paste', (e) => {
+                 e.preventDefault();
+             });
+         });
+     </script>
+     
+      <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+      <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+      <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+      <script>
+         window.addEventListener('swal',function(e){
+                   Swal.fire(e.detail);
+               });
+      </script>
+      <!-- Livewire Scripts -->
+      <script src="/livewire/livewire.js?id=239a5c52"   data-csrf="cENaqxQNwMjKQ5easHrSAbxVbTJuJjnsAiibUKpb" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      <script>
+         document.addEventListener('livewire:init', () => {
+           Livewire.on('post-created', (event) => {
+             toastr.error(event.title, {timeOut: 10});
+           });
+         });
+         
+         
+         
+         
+         
+      </script>
+      <script>
+         Livewire.hook('request', ({ uri, options, payload, respond, succeed, fail }) => {
+          succeed(({ status, json }) => {
+          window.Livewire.find('GmlnaUXY4jDA3mLResk4').emit();
+         })
+         });
+         
+      </script>
+      <script>
+         document.addEventListener('livewire:init', () => {
+           var swiper = new Swiper(".mySwiper", {
+             slidesPerView: 1.8,
+             spaceBetween: 30,
+             freeMode: true,
+             pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+             },
+                   breakpoints: {
+               "@0.00": {
+                 slidesPerView: 1.8,
+                  spaceBetween: 14,
+               },
+               "@0.75": {
+                 slidesPerView: 2.8,
+               },
+               "@1.00": {
+                 slidesPerView: 3,
+               },
+               "@1.50": {
+                 slidesPerView: 3.3,
+                 spaceBetween: 10,
+               },
+             },
+           });
+           
+           var swiper = new Swiper(".mySwiperbhk", {
+             slidesPerView: 2.6,
+             spaceBetween: 10,
+             freeMode: true,
+             pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+             },
+             
+             breakpoints: {
+               "@0.00": {
+                 slidesPerView: 2.7,
+                  spaceBetween: 10,
+               },
+               "@0.75": {
+                 slidesPerView: 3.8,
+               },
+               "@1.00": {
+                 slidesPerView: 5,
+               },
+               "@1.50": {
+                 slidesPerView: 5,
+               },
+             },
+             
+                 
+           });
+           
+          });
+           
+      </script>
+      <script>
+         // Livewire.hook('request', ({options, payload, respond, succeed }) => {
+          
+         //     succeed(({ status, json }) => {
+         //       console.log('oo');
+         //       bumit();
+         //     })
+             
+         // })
+         
+         
+         // function bumit(){
+             
+             
+         //   $("#state").select2();
+         //   $("#district").select2();
+           
+         //   $('#state').on('change', function(e){
+         // 		  let data = $('#state').select2('val');
+         //       window.Livewire.find('GmlnaUXY4jDA3mLResk4').set('state', data)
+         // 	  });
+         
+         //     $('#district').on('change', function(e){
+         // 		  let data = $('#district').select2('val');
+         //       window.Livewire.find('GmlnaUXY4jDA3mLResk4').set('district', data)
+         // 	  });
+         
+         // };
+         
+      </script>
+   </body>
+</html>

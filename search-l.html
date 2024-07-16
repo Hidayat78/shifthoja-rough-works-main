@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shift | Web</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <!-- Link Slick Slider theme CSS (optional) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .search-box-container {
+            position: relative;
+        }
+
+        .header {
+            color: black;
+            font-size: 14px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            border: none;
+            outline: none;
+            height: 40px;
+            padding-right: 40px;
+        }
+
+        .search-icon-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+
+
+        .show {
+            display: block;
+        }
+
+
+        .btn-lg {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            border-radius: 0.3rem;
+            width: 100%;
+        }
+
+        .mob-serch-bt {
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        .mt-7ptpu {
+            margin-top: 7px;
+        }
+
+
+
+        .rent-buy-commercialt {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            font-weight: normal;
+            text-align: center;
+            position: relative;
+            font-size: 17px;
+            color: rgb(175, 170, 170);
+            text-decoration: none;
+            transition: transform 0.5s ease 0s;
+            width: auto;
+            margin-top: 44px;
+            margin-bottom: 10px;
+            border-radius: 4px 4px 0 0;
+
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+
+        .buy-srch {
+            cursor: pointer;
+            width: 32%;
+            line-height: 11px;
+            border-top-left-radius: 54px;
+            border-right: none;
+        }
+
+        .rent-srch {
+            cursor: pointer;
+            width: 32%;
+            line-height: 40px;
+            border-right: none;
+            border-top-left-radius: 4px;
+        }
+
+        .commercial-srch {
+            cursor: pointer;
+            width: 32%;
+            line-height: 40px;
+            border-right: none;
+            border-top-left-radius: 4px;
+            border: 0;
+            border-style: solid;
+        }
+
+        .rent-buy-commercialt div {
+            cursor: pointer;
+            width: 32%;
+            line-height: 40px;
+            border-right: none;
+            border-top-left-radius: 4px;
+            border-bottom: 4px solid transparent;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .rent-buy-commercialt div.active {
+            border-bottom-color: #003159;
+            font-size: 14px;
+            color: #003159;
+        }
+
+        .bbroker-free {
+            display: flex;
+            font-size: 16px;
+            margin-top: 25px;
+            margin-bottom: 1.2px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-box-container {
+            border-radius: 2px;
+            background-color: #ffffff;
+            border: 1px solid #e9e1e1;
+            margin-top: 1.5px;
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+
+        .search-text {
+            font-size: 16px;
+            line-height: 50px;
+            display: inline-block;
+            margin-left: 1.5px;
+            width: calc(100% - 70px);
+        }
+
+        .search-icon-img {
+            float: right;
+            padding: 10.6px -0.2px;
+            position: relative;
+            right: -0.5px;
+            top: -1px;
+            border-radius: 3px;
+            height: 40px;
+        }
+
+        .icon-glass i {
+            font-size: 23px;
+            color: #003159;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .icon-glass {
+            margin-left: -11px;
+            margin-top: 3px;
+        }
+
+        .icon-glass:hover i {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+
+
+
+        .navtop {
+            width: 100%;
+            height: 50px;
+            color: #ffffff;
+            background-color: #003159;
+            display: flex;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 13px;
+        }
+
+
+
+        @keyframes bounceInAnimation {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .search-page .search-content {
+            animation: bounceInAnimation 0.5s ease-in-out forwards;
+        }
+
+        .search-content {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .containerrr {
+            bottom: 0px;
+        }
+
+        .search-form {
+            width: 100%;
+        }
+
+        .search-form .col-12 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+        }
+
+        .parent-searchbox {
+            background-color: #fff;
+            padding-right: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ccc;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin: 20px;
+        }
+
+        .property-types-mob {
+            font-size: 14px;
+            margin-left: 13px;
+            margin-top: 27px;
+            margin-bottom: 7px;
+        }
+
+        .css-16my406 {
+            color: #ff6600;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .property-type-container {
+            display: none;
+            display: flex;
+            margin-left: 8px;
+            overflow-x: auto;
+            overflow-x: hidden;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .property-type-item {
+            margin: 2px;
+            text-align: center;
+        }
+
+        .property-type-image img {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .property-type-label {
+            margin-top: 7px;
+            font-weight: 600;
+            color: rgba(4, 21, 51, 1.00);
+            line-height: 11px;
+            font-size: 8px;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        .property-types-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            margin-left: 10px;
+        }
+
+        .property-type-item {
+            height: 63px;
+            width: 63px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            padding-top: 10px;
+            font-size: 11px;
+        }
+
+        .property-type-itemm {
+            border: 1px solid #ccc;
+            font-size: 10px;
+            padding: 5px 5px;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .property-type-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .ready-to-move-question {
+            margin-left: 18px;
+            margin-bottom: 10px;
+        }
+
+        .ready-to-move-options {
+            display: flex;
+            margin-left: 10px;
+            margin-bottom: 27px;
+        }
+
+        .option-item {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 10px;
+            transition: background-color 0.3s ease;
+            font-weight: 700;
+        }
+
+        .option-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .property-type-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+
+        .residential {
+            display: none;
+        }
+
+        .parent-searchbox {
+            max-height: 250px;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .parent-searchbox::-webkit-scrollbar {
+            display: none;
+        }
+
+        .serch_cont {
+            width: 100%;
+            position: relative;
+        }
+
+        /* For Search Start */
+
+        .suggestion-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .suggestion-list {
+            margin-top: 50px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            z-index: 1;
+            border: 1px solid #ddd;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+
+        .suggestion-item {
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .suggestion-list {
+            color: black;
+            background-color: #ffffffde;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            border: none;
+            max-height: 150px;
+            overflow-y: auto;
+            margin-left: 0px !important;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        @media (min-width: 1200px) {
+            .suggestion-item {
+                font-size: 18px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .suggestion-item {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .suggestion-item {
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 425px) {
+            .suggestion-item {
+                font-size: 12px;
+            }
+        }
+
+
+
+        /* For Search End */
+    </style>
+</head>
+
+<body class="search-page">
+    <div class="search-content">
+        <nav>
+            <div class="navtop">
+                <div class="left-arrow-back" onclick="goBackToHomePage()">
+                    <i class="bi bi-arrow-left fs-5"></i>
+                </div>
+                <div class="right-brand">
+                    <h3>Shifthoja.COM</h3>
+                </div>
+            </div>
+        </nav>
+        <div class="mob-serch-bt mt-7ptpu:h-content">
+            <div class="bbroker-free">Best Slogan from|
+                <span class="font-bold"> &nbsp;Shifthoja.COM </span>
+            </div>
+            <div class="rent-buy-commercialt">
+                <div class="buy-srch active" onclick="toggleActive('buy')">Buy</div>
+                <div class="rent-srch" onclick="toggleActive('rent')">Rent</div>
+                <div class="commercial-srch" onclick="toggleActive('commercial')">Commercial</div>
+            </div>
+            <div class="search-box-container">
+                <div class="search-list-mob">
+                    <input type="text" class="search-input" placeholder="Search by locality">
+                    <ul class="suggestion-list">
+                    </ul>
+                    <div class="search-icon-img">
+                        <div class="icon-glass">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 99 accers try start -->
+        <div class="parent-searchbox">
+            <div dir="auto" class="property-types-mob">
+                Property types
+            </div>
+            <div class="commercial-scroll" id="commercial-scroll">
+                <div class="property-type-container">
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/readytomove-com.png" alt="readytomove-com">
+                        </div>
+                        <div class="property-type-label">Ready to Move offices</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/villa-house.png" alt="Bare shell Offices">
+                        </div>
+                        <div class="property-type-label">Bare shell Offices</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Ware_house.png" alt="Warehouse">
+                        </div>
+                        <div class="property-type-label">Warehouse</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Factory_new.png" alt="Factory">
+                        </div>
+                        <div class="property-type-label">Factory</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Hotels.png" alt="Hotel/Resorts">
+                        </div>
+                        <div class="property-type-label">Hotel/Resorts</div>
+                    </div>
+                </div>
+                <div class="property-type-container">
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/PlotandLand.png" alt="Plot/Land">
+                        </div>
+                        <div class="property-type-label">Plot/Land</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Retail.png" alt="Shops">
+                        </div>
+                        <div class="property-type-label">Shops</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Cold_Storage.png" alt="Cold Storage">
+                        </div>
+                        <div class="property-type-label">Cold Storage</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Manufacturing.png" alt="Manufacturing">
+                        </div>
+                        <div class="property-type-label">Manufacturing</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/Banquet.shared.png" alt="Banquette-Halls ">
+                        </div>
+                        <div class="property-type-label">Banquette-Halls </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="residential">
+                <div class="property-type-container">
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/flat-apartment.png" alt="Flat/Apartment">
+                        </div>
+                        <div class="property-type-label">Flat/Apartment</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/villa-house.png" alt="House/Villa">
+                        </div>
+                        <div class="property-type-label">House/Villa</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/FarmHouse.png" alt="Farm House">
+                        </div>
+                        <div class="property-type-label">Farm House</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/PlotandLand.png" alt="Plot/Land">
+                        </div>
+                        <div class="property-type-label">Plot/Land</div>
+                    </div>
+                    <div class="property-type-item">
+                        <div class="property-type-image">
+                            <img src="assets/img/mob-service/BuilderFloor.png" alt="Builder Floor">
+                        </div>
+                        <div class="property-type-label">Builder Floor</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="property-types-mob">
+                <div class="label">No. of Bedrooms </div>
+            </div>
+
+            <div class="property-types-container">
+                <div class="property-type-itemm">1 RK/1 BHK</div>
+                <div class="property-type-itemm">2 BHK</div>
+                <div class="property-type-itemm">3 BHK</div>
+                <div class="property-type-itemm">4 BHK</div>
+                <div class="property-type-itemm">4+ BHK</div>
+            </div>
+
+
+
+            <div class="ready-to-move-container">
+                <div class="property-types-mob">Looking for "Ready to Move" properties?</div>
+                <div class="ready-to-move-options">
+                    <div class="option-item">Yes</div>
+                    <div class="option-item">No</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 99 accers try end -->
+
+        <!-- search bar section start -->
+        <div class="containerrr search-form">
+            <div class="col-12">
+                <button type="button" class="btn btn-success btn-lg btn-block">Search</button>
+            </div>
+        </div>
+    </div>
+    <!-- search bar section end -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Link Slick Slider JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Slick Slider for the commercial-scroll container
+            $('#commercial-scroll .property-type-container').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                arrows: false,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 4,
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+
+    <script>
+
+        function toggleActive(type) {
+            document.querySelectorAll('.rent-buy-commercialt div').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector('.' + type + '-srch').classList.add('active');
+        }
+        function goBackToHomePage() {
+            window.location.href = 'mobile.html';
+        }
+    </script>
+
+
+</body>
+
+</html>

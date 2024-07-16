@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <style>
+        body {
+    background: #f5f4f5;
+    }
+    .info-buy-a-pack {
+    border-radius: 4px;
+    background: #fbe9e9;
+    border: 2px dashed #ee6677;
+    text-align: center;
+    width: 647px;
+    box-sizing: border-box;
+    line-height: 35px;
+    font-size: 24px;
+    font-family: "opensans-semibold";
+    color: #303030;
+    padding: 10px;
+    margin: 0 0 14px 281px;
+}
+.plan-info-list {
+    font-size: 12px;
+    margin: 0 0 0 0;
+    padding: 0 10px 10px 10px;
+    text-align: center;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.plan-info-list {
+    font-size: 12px;
+    margin: 0 0 0 0;
+    padding: 0 10px 10px 10px;
+    text-align: center;
+}
+.plan-info-list__head {
+    font-size: 28px;
+    line-height: 28px;
+    
+    color: #303030;
+    text-align: center;
+    padding: 5px 0 10px 0;
+}
+.plan-info-list li {
+    margin: 0 12px;
+    padding: 0 0 5px 20px;
+    position: relative;
+    list-style-type: none;
+    text-align: left;
+    display: block;
+    color: #303030;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "opensans-bold";
+}
+.clearfix:after {
+    clear: both;
+}
+.plan-info-list li:after {
+    content: '';
+    display: block;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    border-color: #24a427;
+    width: 4px;
+    height: 8px;
+}
+.plan-info-list ul {
+    margin: 0;
+    padding: 0;
+}
+.b2b-container {
+    font-family: 'Open Sans', sans-serif;
+    width: 1200px;
+    margin: 0 auto 20px auto;
+}
+
+.b2bPkgTable {
+    border-collapse: collapse;
+    width: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.b2bPkgTable__TR {
+    display: table-row;
+}
+
+.b2bPkgTable__TR + .b2bPkgTable__TR:nth-child(even) .b2bPkgTable__TD:not(:first-child) {
+    background: #f7f7f7;
+}
+
+.b2bPkgTable__TD {
+    display: table-cell;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    color: #909090;
+    width: 181px;
+    text-align: center;
+    background: #fff;
+}
+
+.b2bPkgTable__TD.active {
+    color: #303030;
+    font-family: 'Open Sans SemiBold', sans-serif;
+}
+
+.b2bPkgTable__TD.active .b2bPkg__btn {
+    background: #ea001b;
+    color: #fff;
+}
+
+.b2bPkgTable__TD:nth-child(1) {
+    width: 280px;
+    text-align: left;
+    color: #303030;
+    font-family: 'Open Sans Bold', sans-serif;
+    font-size: 12px;
+}
+
+.b2bPkgTable__blank {
+    background: #f5f4f5;
+    border-left: 1px solid #f5f4f5;
+    border-top: 5px solid #f5f4f5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.b2bPkgTable__Head {
+    height: 224px;
+    position: relative;
+    overflow: hidden;
+    border-top: 0;
+    vertical-align: top;
+}
+
+.b2bPkgTable__Head.active {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.b2bPkgTable__Head--green:after {
+    background: #1bba14;
+    height: 5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.b2bPkgTable__Head--green .animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e8f7e7;
+    top: -100%;
+    transition: all 0.3s ease;
+}
+
+.b2bPkgTable__Head--green .animate.show {
+    top: 0;
+}
+
+.b2bPkgTable__Head--yellow:after {
+    background: #fdce33;
+    height: 5px;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.b2bPkgTable__Head--yellow .animate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fdface;
+    top: -100%;
+    transition: all 0.3s ease;
+}
+
+.b2bPkgTable__Head--yellow .animate.show {
+    top: 0;
+}
+
+.b2bPkgTable__inner {
+    padding: 14px 10px;
+    position: relative;
+}
+
+.b2bPkgTable__mask-TD {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+}
+
+.b2bPkgTable__mask-TD:hover {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
+    cursor: pointer;
+}
+
+.b2bPkgTable__mask-TD.current {
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
+    cursor: pointer;
+}
+
+.b2bPkgTable__mask-TD2 {
+    width: 181px;
+    left: 281px;
+}
+
+.b2bPkgTable__mask-TD3 {
+    width: 181px;
+    left: 463px;
+}
+
+.b2bPkgTable__mask-TD4 {
+    width: 181px;
+    left: 645px;
+}
+
+.b2bPkgTable__mask-TD5 {
+    width: 181px;
+    left: 827px;
+}
+
+.b2bPkgTable__mask-TD6 {
+    width: 181px;
+    left: 1009px;
+}
+
+.tag-recommended {
+    background: #f3ce34;
+    width: 100px;
+    height: 23px;
+    line-height: 23px;
+    text-align: center;
+    position: absolute;
+    left: 40px;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #333;
+    border-radius: 0 0 2px 2px;
+    z-index: 11;
+    top: 0;
+    font-family: 'Open Sans SemiBold', sans-serif;
+    transition: all ease;
+    transform: scale(1);
+}
+
+.tag-recommended.hover {
+    transform: scale(1.1);
+}
+
+.b2bPkg {
+    text-align: center;
+}
+
+.b2bPkg__name {
+    height: 34px;
+    margin-top: 31px;
+    font-size: 16px;
+    color: #606060;
+    font-family: 'Open Sans SemiBold', sans-serif;
+    line-height: 18px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.b2bPkg__price {
+    height: 48px;
+    margin: 0 auto;
+    text-align: right;
+    width: 105px;
+}
+
+.b2bPkg__mrp {
+    text-decoration: line-through;
+    color: #d7232a;
+    font-size: 14px;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.b2bPkg__offer {
+    font-size: 18px;
+    color: #333;
+    line-height: 20px;
+}
+
+.b2bPkg__offer span {
+    font-size: 28px;
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+.b2bPkg__validity {
+    height: 35px;
+    font-size: 12px;
+    color: #606060;
+}
+
+.b2bPkg__btn {
+    height: 32px;
+    line-height: 32px;
+    background-color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    color: #ea001b;
+    border: 1px solid #ea001b;
+    font-family: 'Open Sans SemiBold', sans-serif;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
+    width: 132px;
+    cursor: pointer;
+}
+
+.b2bPkg__btn:hover {
+    background: #ea001b;
+    color: #fff;
+}
+
+.b2bPkg__sample {
+    padding-top: 6px;
+    position: relative;
+    z-index: 99;
+}
+
+.b2bPkg__sample a {
+    color: #666666;
+    font-family: 'Open Sans SemiBold', sans-serif;
+    font-size: 12px;
+}
+
+.icon-nAv {
+    height: 22px;
+    width: 22px;
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid #eb142d;
+    background: #fbe9e9;
+    margin-top: -3px;
+    margin-bottom: -5px;
+}
+
+.icon-nAv:before,
+.icon-nAv:after {
+    content: "";
+    height: 12px;
+    width: 2px;
+    background: #ea001b;
+    transform: rotate(45deg);
+    display: inline-block;
+    vertical-align: baseline;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 1;
+}
+
+.icon-nAv:after {
+    transform: rotate(-45deg);
+}
+
+.active .icon-nAv {
+    background: #ea001b;
+}
+
+.active .icon-nAv:before,
+.active .icon-nAv:after {
+    background: #fff;
+}
+
+.icon-Av {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid #00bd00;
+    background: #e8f7e7;
+    margin-top: -3px;
+    margin-bottom: -5px;
+}
+
+.icon-Av:after {
+    content: "";
+    width: 10px;
+    height: 5px;
+    border: solid 1px #00bd00;
+    border-width: 0 0 2px 2px;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    z-index: 1;
+}
+
+.active .icon-Av {
+    background: #00bd00;
+}
+
+.active .icon-Av:after {
+    border-color: #fff;
+}
+
+.talk-to-experts {
+    padding: 24px 0 0 0;
+    position: relative;
+}
+.talk-to-experts__left {
+    border: 1px solid #00bd00;
+    background: #e8f6e7;
+    border-radius: 4px;
+    text-align: center;
+    float: left;
+    width: 160px;
+    height: 166px;
+    font-size: 12px;
+    color: #303030;
+    padding-top: 50px;
+    line-height: 20px;
+}
+.talk-to-experts__no-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #606060;
+    border-radius: 50%;
+    line-height: 16px;
+    text-align: center;
+    display: inline-block;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.talk-to-experts__no-head {
+    font-family: "opensans-semibold";
+    font-size: 14px;
+}
+.talk-to-experts__form {
+    float: right;
+    width: 1018px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+    padding: 40px 8px 0 14px;
+    position: relative;
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__head:after {
+    content: "";
+    background: #fff;
+    width: 20px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    right: -13px;
+    transform: rotate(24deg);
+}
+.talk-to-experts__head {
+    width: 164px;
+    height: 27px;
+    background: #e8f6e7;
+    border-radius: 4px 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 0 12px;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    color: #303030;
+    line-height: 27px;
+    overflow: hidden;
+}
+.talk-to-experts__colm1 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+.m-callback__input, .m-callback__textarea, .m-callback__select {
+    display: block;
+    width: 100%;
+    padding: 7px 20px 8px 0px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 1.5;
+    border: none;
+    border-bottom: 1px solid #e2e2e2;
+    outline: none;
+    color: #303030;
+    transition: all 0.3s ease-in-out;
+    box-shadow: none;
+    font-family: "open_sansregular";
+}
+.m-callback__label {
+    display: block;
+    font-size: 14px;
+    color: #606060;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    line-height: 35px;
+    transition: all 0.3s ease-in-out;
+    cursor: text;
+}
+.m-callback__error {
+    font-size: 10px;
+    color: #d8232a;
+    position: absolute;
+    width: 100%;
+    display: none;
+    white-space: nowrap;
+}
+.m-callback__btn {
+    width: 164px;
+    height: 36px;
+    line-height: 36px;
+    border: 0;
+    background: #ffe8e9;
+    text-align: center;
+    color: #d7232a;
+    font-family: "opensans-semibold";
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    outline: none !important;
+    margin-top: 60px;
+}
+.m-callback__input:focus, .m-callback__textarea:focus, .m-callback__select:focus {
+    outline-color: #6b86cb;
+}
+.m-callback__btn:hover {
+    background: #003159;
+    color: #fff;
+}
+.talk-to-experts__colm2 {
+    width: 220px;
+    float: left;
+    margin-right: 48px;
+}
+.m-callback__fieldset {
+    position: relative;
+    display: block;
+    padding-bottom: 27px;
+}
+
+.talk-to-experts * {
+    box-sizing: border-box;
+}
+.talk-to-experts__colm3 {
+    width: 283px;
+    float: left;
+    margin-right: 10px;
+}
+.m-callback__country-isd {
+    width: 60px;
+    float: left;
+    border-right-width: 0;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: 14px;
+    color: #606060;
+    height: 35px;
+    line-height: 35px;
+}
+.m-callback__label-no {
+    left: 60px;
+}
+.m-callback__mobile-no {
+    width: calc(100% - 60px);
+}
+.m-callback__textarea--query {
+    width: 282px;
+    height: 70px;
+    border-radius: 2px;
+    border: 1px solid #ededed;
+    resize: none;
+    overflow: auto;
+    padding: 8px;
+    line-height: 18px;
+}
+.md-popup__table {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%;
+    display: table;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+.md-popup__table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.md-popup.md-popup-v2 .md-popup__content {
+    overflow: visible;
+}
+.md-popup__content {
+    width: 308px;
+    padding: 0;
+    margin: 30px auto;
+    text-align: left;
+    position: relative;
+    background: #fff;
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 4px;
+    min-height: 100px;
+}
+.md-popup .md-close.md-close--20px {
+    width: 20px;
+    height: 20px;
+}
+.m-callback__input:not(:focus):valid ~ .m-callback__label, .m-callback__input:valid ~ .m-callback__label, .m-callback__input+.m-callback__label.active, .m-callback__input ~ .m-callback__label.active, .m-callback__label.active {
+    top: -20px;
+    font-size: 12px;
+    color: #909090;
+}
+.label-textarea {
+    font-size: 14px;
+    color: #606060;
+    padding-bottom: 8px;
+}
+
+.WhyUpgrade__benifitsWrap {
+    margin-top: 60px;
+    padding-top: 22px;
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: 1215px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    margin-bottom: 133px;
+    background: #fff9f0;
+    height: 315px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap {
+    margin-bottom: 24px;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.display_l_bold {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    /* text-align: left; */
+    
+}
+.WhyUpgrade__benifitsList {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+}
+.WhyUpgrade__benifitsList li img {
+    width: 49px;
+}
+.title_bold {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #091e42;
+    display: block;
+    text-align: left;
+}
+.WhyUpgrade__benifitsList li>div {
+    margin-top: 12px;
+}
+.P500 {
+    color: #0078db !important;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__benifitsList li {
+    width: 427px;
+    background: #fff;
+    margin-right: 16px;
+    padding-left: 24px;
+    padding-right: 22px;
+    padding-top: 24px;
+    padding-bottom: 20px;
+    border: 1px solid #ebecf0;
+    border-radius: 8px;
+}
+.spacer12:after {
+    content: "";
+    display: block;
+    height: 12px;
+    width: 100%;
+    clear: both;
+}
+.WhyUpgrade__subheading {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #42526e;
+}
+.WhyUpgrade__hand {
+    cursor: pointer;
+}
+.WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap h2, .WhyUpgrade__benifitsWrap .WhyUpgrade__headWrap span {
+    text-align: center;
+}
+.paymentFooter__paymentLogoContainer {
+    padding: 0 20px;
+    margin-top: 60px;
+    background-color: #f4f5f7;
+    height: 159px;
+    display: flex;
+}
+.paymentFooter__paymentLogoContainer>div {
+    max-width: 1200px;
+    align-items: center;
+    display: flex;
+    flex: 1;
+    padding: 0 20px;
+}
+.paymentFooter__textWrap {
+    display: flex;
+    align-items: center;
+    margin-right: 52px;
+    min-width: 280px;
+}
+.paymentFooter__textWrap img {
+    width: 48px;
+    margin-right: 20px;
+}
+.caption_strong_medium_semi {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.caption_strong_medium {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #42526e;
+    display: block;
+    text-align: left;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 24px;
+    align-items: center;
+    width: calc(100% - 300px);
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div {
+    width: 90px;
+    margin-bottom: 32px;
+}
+.paymentFooter__paymentLogoContainer .paymentFooter__logosWrap>div img {
+    width: 95px;
+    height: 48px;
+}
+      </style>
+   </head>
+   <body>
+
+
+    <div class="info-buy-a-pack">
+        Haven't bought a pack yet?
+        <span>Buy a pack and enjoy all agent benefits on <mark> SHIFTHOJA.COM</mark></span>
+    </div>
+    <div class="plan-info-list clearfix">
+        <div class="plan-info-list__head">Choose the plan that's just right for you and your business
+        </div>
+        <ul>
+            <li>Get instant Visibility</li>
+            <li>Close more Deals</li>
+            <li>Maximize your Leads</li>
+            <li>Grow your Business</li>
+        </ul>
+        </div>
+      <div id="b2bPkgTableWrap">
+         <div class="b2bPkgTable b2bPkgTable--colm5 animation-delay" id="b2bPkgTable">
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD b2bPkgTable__Head b2bPkgTable__blank"></div>
+               <div class="b2bPkgTable__TD b2bPkgTable__Head b2bPkgTable__Head--green">
+                  <div class="animate animate--2 show"></div>
+                  <div class="b2bPkgTable__inner">
+                     <div class="b2bPkg__name">Premium Plus</div>
+                     <div class="b2bPkg__price">
+                        <div class="b2bPkg__mrp">₹ 99,200</div>
+                        <div class="b2bPkg__offer">₹ <span>89,280</span></div>
+                     </div>
+                     <div class="b2bPkg__validity">30 Days validity</div>
+                     <div id="b2bBtn-2" class="b2b__listings__package__buy-btn" data-buylink="/bricks/cart/agentbuilderaddpackage.html?utype=A&amp;packageid=308761&amp;groupid=50300&amp;city=2624&amp;campaignid=&amp;vmid=&amp;from=advertise-with-us&amp;source=9935&amp;type=13902"><a href="javascript:void(0);" class="b2bPkg__btn">Buy Now</a></div>
+                     <div class="b2bPkg__sample"><a href="javascript:void(0)" onclick="mbB2B.viewSample('sampleImagePopup', 'https://cdn.staticmb.com/images/b2b-sample-images/308761-web.jpg',850,'auto')">View Sample</a></div>
+                  </div>
+               </div>
+               <div class="b2bPkgTable__TD b2bPkgTable__Head b2bPkgTable__Head--yellow">
+                  <div class="tag-recommended tag-recommended--3">Recommended</div>
+                  <div class="animate animate--3 show"></div>
+                  <div class="b2bPkgTable__inner">
+                     <div class="b2bPkg__name">Certified Agent Plus</div>
+                     <div class="b2bPkg__price">
+                        <div class="b2bPkg__mrp">₹ 62,300</div>
+                        <div class="b2bPkg__offer">₹ <span>56,070</span></div>
+                     </div>
+                     <div class="b2bPkg__validity">30 Days validity</div>
+                     <div id="b2bBtn-3" class="b2b__listings__package__buy-btn" data-buylink="/bricks/cart/agentbuilderaddpackage.html?utype=A&amp;packageid=227627&amp;groupid=50300&amp;city=2624&amp;campaignid=&amp;vmid=&amp;from=advertise-with-us&amp;source=9935&amp;type=13902"><a href="javascript:void(0);" class="b2bPkg__btn">Buy Now</a></div>
+                     <div class="b2bPkg__sample"><a href="javascript:void(0)" onclick="mbB2B.viewSample('sampleImagePopup', 'https://cdn.staticmb.com/images/b2b-sample-images/227627-web.jpg',850,'auto')">View Sample</a></div>
+                  </div>
+               </div>
+               <div class="b2bPkgTable__TD b2bPkgTable__Head b2bPkgTable__Head--green">
+                  <div class="animate animate--4 show"></div>
+                  <div class="b2bPkgTable__inner">
+                     <div class="b2bPkg__name">Premium Plus</div>
+                     <div class="b2bPkg__price">
+                        <div class="b2bPkg__mrp">₹ 58,100</div>
+                        <div class="b2bPkg__offer">₹ <span>52,290</span></div>
+                     </div>
+                     <div class="b2bPkg__validity">90 Days validity</div>
+                     <div id="b2bBtn-4" class="b2b__listings__package__buy-btn" data-buylink="/bricks/cart/agentbuilderaddpackage.html?utype=A&amp;packageid=308735&amp;groupid=50300&amp;city=2624&amp;campaignid=&amp;vmid=&amp;from=advertise-with-us&amp;source=9935&amp;type=13902"><a href="javascript:void(0);" class="b2bPkg__btn">Buy Now</a></div>
+                     <div class="b2bPkg__sample"><a href="javascript:void(0)" onclick="mbB2B.viewSample('sampleImagePopup', 'https://cdn.staticmb.com/images/b2b-sample-images/308735-web.jpg',850,'auto')">View Sample</a></div>
+                  </div>
+               </div>
+               <div class="b2bPkgTable__TD b2bPkgTable__Head b2bPkgTable__Head--yellow">
+                  <div class="animate animate--5 show"></div>
+                  <div class="b2bPkgTable__inner">
+                     <div class="b2bPkg__name">Premium Plus</div>
+                     <div class="b2bPkg__price">
+                        <div class="b2bPkg__mrp">₹ 36,900</div>
+                        <div class="b2bPkg__offer">₹ <span>33,210</span></div>
+                     </div>
+                     <div class="b2bPkg__validity">30 Days validity</div>
+                     <div id="b2bBtn-5" class="b2b__listings__package__buy-btn" data-buylink="/bricks/cart/agentbuilderaddpackage.html?utype=A&amp;packageid=227563&amp;groupid=50300&amp;city=2624&amp;campaignid=&amp;vmid=&amp;from=advertise-with-us&amp;source=9935&amp;type=13902"><a href="javascript:void(0);" class="b2bPkg__btn">Buy Now</a></div>
+                     <div class="b2bPkg__sample"><a href="javascript:void(0)" onclick="mbB2B.viewSample('sampleImagePopup', 'https://cdn.staticmb.com/images/b2b-sample-images/227563-web.jpg',850,'auto')">View Sample</a></div>
+                  </div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Number of listings</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner font-bold">275</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner font-bold">10</div>
+               </div> 
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner font-bold">150</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner font-bold">50</div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Response rate</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Upto 5X more</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Upto 15X more</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Upto 5X more</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Upto 5X more</div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Position on search</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">High</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">High</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">High</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">High</div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Access to Buyers</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Unlimited</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Unlimited</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Unlimited</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Unlimited</div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Certified Agent tag</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-Av"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__TR">
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner">Auto Refresh (every 3 days)</div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-Av"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+               <div class="b2bPkgTable__TD">
+                  <div class="b2bPkgTable__inner"><span class="icon-nAv"></span></div>
+               </div>
+            </div>
+            <div class="b2bPkgTable__mask" id="b2bPkgTable__mask">
+               <div class="b2bPkgTable__mask-TD b2bPkgTable__mask-TD2" data-grid="2" onclick="jqBuyNow('b2bBtn-2')"></div>
+               <div class="b2bPkgTable__mask-TD b2bPkgTable__mask-TD3" data-grid="3" onclick="jqBuyNow('b2bBtn-3')"></div>
+               <div class="b2bPkgTable__mask-TD b2bPkgTable__mask-TD4" data-grid="4" onclick="jqBuyNow('b2bBtn-4')"></div>
+               <div class="b2bPkgTable__mask-TD b2bPkgTable__mask-TD5" data-grid="5" onclick="jqBuyNow('b2bBtn-5')"></div>
+            </div>
+         </div>
+         <div class="talk-to-experts clearfix">
+            <div class="talk-to-experts__left">
+               <div class="talk-to-experts__no-icon">!</div>
+               <div class="talk-to-experts__no-head">Talk to Experts</div>
+               9504245461
+            </div>
+            <div class="talk-to-experts__form">
+               <div class="talk-to-experts__head">Request a Callback</div>
+               <form onsubmit="return false;" name="requestInfoForm" id="requestInfoForm" autocomplete="off" method="post" novalidate="novalidate">
+                  <div class="talk-to-experts__colm1">
+                     <div class="m-callback__fieldset js-fieldset">
+                        <input name="name" id="name" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="name">Name</label>
+                        <div class="m-callback__error" id="nameErr">Enter a valid name</div>
+                     </div>
+                     <div class="m-callback__fieldset m-callback__fieldset--group js-fieldset">
+                        <div class="m-callback__country-isd">Ind +91</div>
+                        <input name="contactMobile" id="contactMobile" value="" class="m-callback__input m-callback__mobile-no" maxlength="12" required="required" onchange="storeContactFormInput();" placeholder=""> <label class="m-callback__label m-callback__label-no" for="contactMobile">Mobile</label>
+                        <div class="m-callback__error" id="contactMobileErr">Enter a valid mobile</div>
+                     </div>
+                  </div>
+                  <div class="talk-to-experts__colm2">
+                     <div class="m-callback__fieldset js-fieldset">
+                        <input name="email" id="email" value="" class="m-callback__input" required="required" placeholder=""> <label class="m-callback__label" for="email">Email</label>
+                        <div class="m-callback__error" id="useremailErr">Enter a valid email</div>
+                     </div>
+                     <div class="m-callback__fieldset js-fieldset">
+                        <div class="mb-pg__slide__location js-container js-input-container js-locality-list">
+                           <input class="mb-pg__slide__location__input js-autosuggest m-callback__input" onfocus="$('#localityPrimeErrorDiv').hide();" onkeypress="resetCityVal(this);" autocomplete="false" value="" type="" id="selectedCity" name="selectedCity" required="required" placeholder="">
+                           <label class="m-callback__label" for="selectedCity">City</label>
+                           <div class="m-callback__error" id="cityNameErr"></div>
+                           <div class="mb-pg__slide__location__dropdown js-dropdown" style="display: none;">
+                              <ul id="city_options"></ul>
+                           </div>
+                           <div class="mb-form__error"></div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="talk-to-experts__colm3">
+                     <div class="m-callback__fieldset js-fieldset">
+                        <div class="label-textarea">Enter your query</div>
+                        <textarea maxlength="1000" class="m-callback__textarea m-callback__textarea--query" id="query" name="query" placeholder="Please specify the convenient time to get a callback."></textarea>
+                        <div class="m-callback__error" id="queryErr"></div>
+                     </div>
+                  </div>
+                  <div class="talk-to-experts__colm4">
+                    <button class="m-callback__btn" id="callback_otp">Get a Callback</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <div class="pageComponent WhyUpgrade__benifitsWrap false" data-label="WHY_UPGRADE">
+        <div class="WhyUpgrade__headWrap">
+          <h2 class="display_l_bold">Benefits of upgrading your posting<br><mark>SHIFTHOJA.COM</mark></h2>
+        </div>
+        <ul class="WhyUpgrade__benifitsList">
+          <li>
+            <img src="https://static.99acres.com/universalapp/img/USP-01_bos.png">
+            <div class="title_bold spacer12">
+              <span class="P500">01.&nbsp;</span>
+              <span>Appear higher in searches</span>
+            </div>
+            <div class="WhyUpgrade__subheading">
+              <span>Upgraded postings appear higher in search results giving your posting more views and responses</span>
+            </div>
+          </li>
+          <li>
+            <img src="https://static.99acres.com/universalapp/img/USP-02_bos.png">
+            <div class="title_bold spacer12">
+              <span class="P500">02.&nbsp;</span>
+              <span>Hassle free selling/renting</span>
+            </div>
+            <div class="WhyUpgrade__subheading">
+              <span>Relax and sell faster with our dedicated relationship manager assistance</span>
+            </div>
+          </li>
+          <li>
+            <img src="https://static.99acres.com/universalapp/img/USP-03_bos.png">
+            <div class="title_bold spacer12">
+              <span class="P500">03.&nbsp;</span>
+              <span>Reach users on social media</span>
+            </div>
+            <div class="WhyUpgrade__subheading">
+              <span>Reach more relevant buyers with Facebook and Google marketing</span>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+      <div class="paymentFooter__paymentLogoContainer">
+        <div style="margin: auto;">
+          <div class="paymentFooter__textWrap">
+            <img src="https://static.99acres.com/universalapp/img/SecurePayment_bos.png">
+            <div>
+              <div class="caption_strong_medium_semi">100% Safe Transactions</div>
+              <div class="caption_strong_medium">We support secure payment methods</div>
+            </div>
+          </div>
+          <div class="paymentFooter__logosWrap">
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_01.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_02.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_03.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_04.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_05.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_06.png">
+            </div>
+            <div>
+              <img src="https://static.99acres.com/universalapp/img/Payment_bos_07.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function() {
+            // Mouse hover animation function
+            $(".b2bPkgTable__mask .b2bPkgTable__mask-TD").mouseenter(function() {
+                var b = $(this).parent(".b2bPkgTable").attr("id");
+                $("#" + b).removeClass("animation-delay");
+                var a = $(this).attr("data-grid");
+                $(".animate--" + a).removeClass("show");
+                $(".tag-recommended--" + a).addClass("hover");
+                $(".b2bPkgTable__TR .b2bPkgTable__TD").removeClass("active");
+                $(".b2bPkgTable__TR").each(function() {
+                $(this).find(".b2bPkgTable__TD:nth-child(" + a + ")").addClass("active")
+                })
+            });
+
+            $(".b2bPkgTable__mask .b2bPkgTable__mask-TD").mouseleave(function() {
+                var a = $(this).attr("data-grid");
+                $(".animate--" + a).addClass("show");
+                $(".tag-recommended--" + a).removeClass("hover");
+                $(".b2bPkgTable__TR .b2bPkgTable__TD").removeClass("active")
+            });
+            $("#callback_otp").click(function() {
+                // Call the validation function when the button is clicked
+                var form = document.getElementById("requestInfoForm");
+                if (form && validateRequestInfoForm(form)) {
+                    form.submit(); // Submit the form if validation passes
+                }
+            });
+                    // Validation function for request info form
+                    function validateRequestInfoForm(b) {
+                    var a = new Rules();
+                    var c = 100;
+                    var g = "IND +91";
+                    var d = validateUserMobile1($("#contactMobile").val(), g);
+                    a.addRule("name", "required", {
+                    args: "",
+                    errorMessage: '<span class="arrow"></span>Compulsory field. Cannot be blank.',
+                    errorDiv: "nameErr",
+                    failedDiv: "",
+                    okDiv: ""
+                    });
+                    a.addRule("name", "minlength", {
+                        args: "3",
+                        errorMessage: '<span class="arrow"></span>Please enter a valid name.',
+                        errorDiv: "nameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("name", "maxlength", {
+                        args: "30",
+                        errorMessage: '<span class="arrow"></span>Please enter a valid name.',
+                        errorDiv: "nameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("name", "validateMBUserName", {
+                        args: "",
+                        errorMessage: "",
+                        errorDiv: "nameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("contactMobile", "required", {
+                        args: "",
+                        errorMessage: '<span class="arrow"></span>Compulsory field. Cannot be blank.',
+                        errorDiv: "contactMobileErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("email", "required", {
+                        args: "",
+                        errorMessage: '<span class="arrow"></span>Compulsory field. Cannot be blank.',
+                        errorDiv: "useremailErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("email", "maxlength", {
+                        args: c,
+                        errorMessage: '<span class="arrow"></span>Your Email ID can have max. ' + c + " characters",
+                        errorDiv: "useremailErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("email", "validateMBUserEmail", {
+                        args: "",
+                        errorMessage: "",
+                        errorDiv: "useremailErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("selectedCity", "required", {
+                        args: "",
+                        errorMessage: '<span class="arrow"></span>Compulsory field. Cannot be blank.',
+                        errorDiv: "cityNameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("selectedCity", "maxlength", {
+                        args: "30",
+                        errorMessage: '<span class="arrow"></span>Max. 30 characters',
+                        errorDiv: "cityNameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("selectedCity", "mask", {
+                        args: "^[a-zA-Z.& ]*$",
+                        errorMessage: '<span class="arrow"></span>Numbers or Special characters not allowed',
+                        errorDiv: "cityNameErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("query", "required", {
+                        args: "",
+                        errorMessage: '<span class="arrow"></span>Compulsory field. Cannot be blank.',
+                        errorDiv: "queryErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("query", "minlength", {
+                        args: "10",
+                        errorMessage: '<span class="arrow"></span>Min. 10 characters',
+                        errorDiv: "queryErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                    a.addRule("query", "maxlength", {
+                        args: "1000",
+                        errorMessage: '<span class="arrow"></span>Max. 1000 characters',
+                        errorDiv: "queryErr",
+                        failedDiv: "",
+                        okDiv: ""
+                    });
+                var i = new Validator(b,a);
+                i.method = TEXT;
+                var h = i.validate(true);
+                $("#userName").removeClass("borderErrRed");
+                $("#query").removeClass("borderErrRed");
+                if ($("#cityID").val() == 0) {
+                $("#cityNameErr").html("Please Enter Valid City").show();
+                return false
+            }
+            if (d != "") {
+                $("#contactMobileErr").html('<span class="arrow"></span>' + d);
+                $("#contactMobileErr").delay(5000).fadeOut("slow");
+                $("#contactMobileErr").show();
+                $("#phoneNumber").removeClass("borderErrRed");
+                if (document.getElementById("usernameErr").style.display == "none") {
+                    $("#phoneNumber").focus()
+                }
+                return false
+            }
+            if (h == "1") {
+                if (d == "") {
+                    var f = contextPath + "ajax/send-mobile-otp";
+                    var e = {
+                        emailid: $("#email").val().trim(),
+                        source: "D2B",
+                        mobileNumber: $("#contactMobile").val().trim(),
+                        name: $("#name").val().trim()
+                    };
+                    $.ajax({
+                        dataType: "json",
+                        type: "get",
+                        url: f,
+                        data: e,
+                        async: false,
+                        success: function(j) {
+                            if (j.generatedOTPStatus === true) {
+                                $("#displaymobile").html($("#contactMobile").val().trim());
+                                callback.verifyOTP("callBackSubmitPopup");
+                                startOtpTimer(j.remainingTime);
+                                return true
+                            }
+                        }
+                    })
+                }
+            }
+        }
+    
+    
+    });
+    </script>
+      <script>
+        $(document).ready(function() {
+            // Attach click event to the button
+            $("#callback_otp").click(function() {
+                // Call the validation function when the button is clicked
+                var form = document.getElementById("requestInfoForm");
+                if (form && validateRequestInfoForm(form)) {
+                    form.submit(); // Submit the form if validation passes
+                }
+            });
+        });
+    </script>
+
+   </body>
+</html>

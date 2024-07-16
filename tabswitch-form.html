@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+         body {
+         /* background: #191828; */
+         color: #000000;
+         font-family: "Roboto", Arial, Helvetica, sans-serif;
+         font-size: 16px;
+         font-weight: 300;
+         letter-spacing: 0.01em;
+         line-height: 1.6em;
+         margin: 0;
+         }
+         h1 {
+         font-size: 40px;
+         line-height: 0.8em;
+         color: rgba(255,255,255,0.2);}
+         .made-with {
+         background: #003159;
+         color: #fff;
+         display: block;
+         font-size: 12px;
+         line-height: 1em;
+         margin: 0;
+         padding: 5px 110px;
+         position: fixed;
+         top: 20px;
+         right: -100px;
+         text-align: center;
+         text-decoration: none;
+         transform: rotate(45deg);
+         }
+         .documentation {
+         color: #003159;
+         }
+         button:focus,
+         input:focus,
+         textarea:focus,
+         select:focus {
+         outline: none; }
+         .tabs {
+         display: block;
+         display: -webkit-flex;
+         display: -moz-flex;
+         display: flex;
+         -webkit-flex-wrap: wrap;
+         -moz-flex-wrap: wrap;
+         flex-wrap: wrap;
+         margin: 0;
+         overflow: hidden; }
+         .tabs [class^="tab"] label,
+         .tabs [class*=" tab"] label {
+            color: #000000;
+            cursor: pointer;
+            display: block;
+            font-size: 1.1em;
+            font-weight: 300;
+            line-height: 1em;
+            padding: 10px;
+            text-align: center;
+     }
+         .tabs [class^="tab"] [type="radio"],
+         .tabs [class*=" tab"] [type="radio"] {
+         border-bottom: 1px solid rgba(239, 237, 239, 0.5);
+         cursor: pointer;
+         -webkit-appearance: none;
+         -moz-appearance: none;
+         appearance: none;
+         display: block;
+         width: 100%;
+         -webkit-transition: all 0.3s ease-in-out;
+         -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+         transition: all 0.3s ease-in-out; }
+         .tabs [class^="tab"] [type="radio"]:hover, .tabs [class^="tab"] [type="radio"]:focus,
+         .tabs [class*=" tab"] [type="radio"]:hover,
+         .tabs [class*=" tab"] [type="radio"]:focus {
+         border-bottom: 1px solid #003159; }
+         .tabs [class^="tab"] [type="radio"]:checked,
+         .tabs [class*=" tab"] [type="radio"]:checked {
+         border-bottom: 2px solid #003159; }
+         .tabs [class^="tab"] [type="radio"]:checked + div,
+         .tabs [class*=" tab"] [type="radio"]:checked + div {
+         opacity: 1; }
+         .tabs [class^="tab"] [type="radio"] + div,
+         .tabs [class*=" tab"] [type="radio"] + div {
+         display: block;
+         opacity: 0;
+         padding: 2rem 0;
+         width: 90%;
+         -webkit-transition: all 0.3s ease-in-out;
+         -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+         transition: all 0.3s ease-in-out; }
+         .tabs .tab-2 {
+         width: 50%; }
+         .tabs .tab-2 [type="radio"] + div {
+         width: 200%;
+         margin-left: 200%; }
+         .tabs .tab-2 [type="radio"]:checked + div {
+         margin-left: 0; }
+         .tabs .tab-2:last-child [type="radio"] + div {
+         margin-left: 100%; }
+         .tabs .tab-2:last-child [type="radio"]:checked + div {
+         margin-left: -100%; }
+.name-ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    overflow-x: auto; 
+}
+
+.name-ul > div {
+    flex: 0 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    min-width: 236px;
+}
+
+.name-ul h4 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.name-ul ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.name-ul li {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+      </style>
+   </head>
+   <body>
+      <div class="tabs">
+         <div class="tab-2">
+            <label for="tab2-1">BUY</label>
+            <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
+            <div class="row">
+                <div class="col-12 name-ul">
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for BUY in Sarjapur</li>
+                            <li>Flat for BUY in JP Nagar</li>
+                            <li>Flat for BUY in Yelahanka</li>
+                            <li>Flat for BUY in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for BUY in Sarjapur</li>
+                            <li>Flat for BUY in JP Nagar</li>
+                            <li>Flat for BUY in Yelahanka</li>
+                            <li>Flat for BUY in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for BUY in Sarjapur</li>
+                            <li>Flat for BUY in JP Nagar</li>
+                            <li>Flat for BUY in Yelahanka</li>
+                            <li>Flat for BUY in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for BUY in Sarjapur</li>
+                            <li>Flat for BUY in JP Nagar</li>
+                            <li>Flat for BUY in Yelahanka</li>
+                            <li>Flat for BUY in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for BUY in Sarjapur</li>
+                            <li>Flat for BUY in JP Nagar</li>
+                            <li>Flat for BUY in Yelahanka</li>
+                            <li>Flat for BUY in Sarjapur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="tab-2">
+            <label for="tab2-2">Rent</label>
+            <input id="tab2-2" name="tabs-two" type="radio">
+            <div class="row">
+                <div class="col-12 name-ul">
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for Rent in Sarjapur</li>
+                            <li>Flat for Rent in JP Nagar</li>
+                            <li>Flat for Rent in Yelahanka</li>
+                            <li>Flat for Rent in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for Rent in Sarjapur</li>
+                            <li>Flat for Rent in JP Nagar</li>
+                            <li>Flat for Rent in Yelahanka</li>
+                            <li>Flat for Rent in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for Rent in Sarjapur</li>
+                            <li>Flat for Rent in JP Nagar</li>
+                            <li>Flat for Rent in Yelahanka</li>
+                            <li>Flat for Rent in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for Rent in Sarjapur</li>
+                            <li>Flat for Rent in JP Nagar</li>
+                            <li>Flat for Rent in Yelahanka</li>
+                            <li>Flat for Rent in Sarjapur</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Chhatarpur</h4>
+                        <ul>
+                            <li>Flat for Rent in Sarjapur</li>
+                            <li>Flat for Rent in JP Nagar</li>
+                            <li>Flat for Rent in Yelahanka</li>
+                            <li>Flat for Rent in Sarjapur</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

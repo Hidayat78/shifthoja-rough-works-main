@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+    data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+    data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>ShiftHoja</title>
+    <meta name="description"
+        content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
+    <meta name="keywords" content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5">
+
+    <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-laravel-admin-template/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="https://shifthoja.com/public/frontend/assets/images/shifthoja_logo.png" />
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css?id=87122b3a3900320673311cebdeb618da" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/fontawesome8a69.css?id=a2997cb6a1c98cc3c85f4c99cdea95b5" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/fonts/flag-icons80a8.css?id=121bcc3078c6c2f608037fb9ca8bce8d" />
+    <!-- Core CSS -->
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css?id=55b2a9dfaa009c41df62ca8d16e913a8"
+        class="template-customizer-core-css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css?id=9182924a7b965439eca5e189ba43eba1"
+        class="template-customizer-theme-css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/css/demob77a.css?id=69dfc5e48fce5a4ff55ff7b593cdf93d" />
+    <!-- Vendors CSS -->
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbare482.css?id=73d641bb8db2475ecafc6c68461ed01b" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead05d2.css?id=de339ead5e9c9e36f12e46cbef7aaffd" />
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.css" />
+    <link rel="stylesheet"
+        href="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/styles/index.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+        integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"
+        integrity="sha512-j+F4W//4Pu39at5I8HC8q2l1BNz4OF3ju39HyWeqKQagW6ww3ZF9gFcu8rzUbyTDY7gEo/vqqzGte0UPpo65QQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        window.templateCustomizer = new TemplateCustomizer({
+            cssPath: '',
+            themesPath: '',
+            defaultStyle: "light",
+            defaultShowDropdownOnHover: "true",
+            // true/false (for horizontal layout only)
+            displayCustomizer: "true",
+            lang: 'en',
+            pathResolver: function (path) {
+                var resolvedPaths = {
+                    // Core stylesheets
+                    'core.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core.css?id=55b2a9dfaa009c41df62ca8d16e913a8',
+                    'core-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/core-dark.css?id=d98ae2a03b5b1b05651411ee58ef81a6',
+                    // Themes
+                    'theme-default.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default.css?id=9182924a7b965439eca5e189ba43eba1',
+                    'theme-default-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-default-dark.css?id=ae30991ef3f62e7c03ca6f8930843e80',
+                    'theme-bordered.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered.css?id=a4f95a927b1e2bcdfd57a3bbfb2bd3d9',
+                    'theme-bordered-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-bordered-dark.css?id=2a668deb480284f975db82d0a7277156',
+                    'theme-semi-dark.css': 'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark.css?id=9c02fb39c47f91b2d198f343fa8b4df7',
+                    'theme-semi-dark-dark.css':
+                        'https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/vendor/css/rtl/theme-semi-dark-dark.css?id=c4b1950a14ffd431f752917b97a0ee51',
+                }
+                return resolvedPaths[path] || path;
+            },
+            'controls': ["rtl", "style", "headerType", "contentLayout", "layoutCollapsed", "layoutNavbarOptions", "themes"],
+        });
+    </script>
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/css/intlTelInput.min.css"
+        rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/intlTelInput.min.js"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css
+" rel="stylesheet">
+    <style>
+        body {
+            background: #ffffff;
+
+        }
+
+        .cat {
+            margin: 4px;
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            overflow: hidden;
+            float: left;
+            border-radius: 50px;
+        }
+
+        .cat label {
+            float: left;
+            width: auto;
+            height: 20px;
+            padding: 4px;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            /* display: none; */
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .iti,
+        .iti--allow-dropdown {
+            width: 100%;
+        }
+
+
+        /* Absolute Center Spinner */
+        .loading {
+            position: fixed;
+            z-index: 999;
+            height: 2em;
+            width: 2em;
+            overflow: show;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+
+            background: -webkit-radial-gradient(rgba(20, 20, 20, .8), rgba(0, 0, 0, .8));
+        }
+
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+        .loading:not(:required):after {
+            content: '';
+            display: block;
+            font-size: 10px;
+            width: 1em;
+            height: 1em;
+            margin-top: -0.5em;
+            -webkit-animation: spinner 150ms infinite linear;
+            -moz-animation: spinner 150ms infinite linear;
+            -ms-animation: spinner 150ms infinite linear;
+            -o-animation: spinner 150ms infinite linear;
+            animation: spinner 150ms infinite linear;
+            border-radius: 0.5em;
+            -webkit-box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+            box-shadow: rgba(255, 255, 255, 0.75) 1.5em 0 0 0, rgba(255, 255, 255, 0.75) 1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) 0 1.5em 0 0, rgba(255, 255, 255, 0.75) -1.1em 1.1em 0 0, rgba(255, 255, 255, 0.75) -1.5em 0 0 0, rgba(255, 255, 255, 0.75) -1.1em -1.1em 0 0, rgba(255, 255, 255, 0.75) 0 -1.5em 0 0, rgba(255, 255, 255, 0.75) 1.1em -1.1em 0 0;
+        }
+
+        /* Animation */
+
+        @-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        .cat {
+
+            border: 1px solid #a3daff;
+            font-weight: normal;
+            background: #f0f9ff;
+            width: 100%;
+            padding-top: 8px;
+        }
+
+        .cat label {
+            width: 100%;
+        }
+
+        .cat label span {
+            text-align: center;
+            padding: 3px 0;
+            display: block;
+        }
+
+        .cat label input {
+            position: absolute;
+            display: none;
+            color: #fff !important;
+
+        }
+
+        .cat label input+span {
+            color: #000;
+            font-size: 13px;
+        }
+
+        .cat input:checked+span {
+            color: #6d33ff;
+            font-weight: 600;
+
+        }
+
+
+
+        #rootwizard {
+
+            height: 600px;
+            overflow: scroll;
+
+        }
+
+        #rootwizard::-webkit-scrollbar {
+            width: 4px;
+            display: none;
+        }
+
+        #rootwizard::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .label {
+            background: #fff;
+            cursor: pointer;
+            box-shadow: 0px 0px 4px 1px #00000040;
+            font-size: 11px;
+            color: #7f7f7f;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: background 0.1s, color 0.1s;
+        }
+
+        .label:hover {
+            background: #d8d8d8;
+        }
+
+        .label:active {
+            background: #ccc;
+        }
+
+        /*.input:focus + .label {*/
+        /*	box-shadow: inset 0px 0px 0px 2px #fdc309;*/
+        /*	z-index: 1;*/
+        /*}*/
+
+        .input:checked+.label {
+            background: #7f7f7f;
+            color: #fff;
+
+        }
+
+        .label {
+            width: auto;
+            padding: 7px;
+        }
+
+
+        .form-control {
+            border: 1px solid #1c3b87 !important;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .service-image {
+            width: 47px;
+            margin-right: 13px;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .service-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin: -12px 0px 5px 0px;
+        }
+
+        .stepstowork {
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service-description {
+            font-size: 12px;
+            color: #000;
+        }
+
+        .service-login {
+            background-color: white;
+            box-shadow: 0 2px 6px 0 rgba(67, 89, 113, .12);
+        }
+
+        .card {
+            width: 390px;
+            background-clip: padding-box;
+            box-shadow: 0 2px 6px 0 rgba(67, 89, 113, .12);
+        }
+
+
+        .top-h3-p h3 {
+            font-size: 14px;
+        }
+
+        .bottom-h3-p h3 {
+            font-size: 14px;
+        }
+
+        .bottom-h3-p {
+            font-size: 9px;
+        }
+
+        .top-h3-p p {
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div wire:snapshot="{&quot;data&quot;:{&quot;name&quot;:null,&quot;number&quot;:null,&quot;property&quot;:null,&quot;list&quot;:null},&quot;memo&quot;:{&quot;id&quot;:&quot;Hx9eA1q2bB1FmNGLBJ6G&quot;,&quot;name&quot;:&quot;frontend.post-property&quot;,&quot;path&quot;:&quot;postproperty&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;84a37684afa0689b7cae4d7e264f639adca059d131245f65149c872af482f713&quot;}"
+        wire:effects="[]" wire:id="Hx9eA1q2bB1FmNGLBJ6G">
+        <div class="loading" style="display:none;">
+        </div>
+        <section class="container-fluid mt-5">
+            <div class="pt-0 row justify-content-center">
+                <div class="col-6">
+                    <div class="service-login">
+                        <div class="service-login" style="line-height: 15px;">
+                            <div class="loginservice-ul-bg">
+                                <div class="col-12 p-3">
+                                    <div class="top-h3-p">
+                                        <h3>How is shiftjoja.com work ?</h3>
+                                        <p>Steps for Listing Your Property</p>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <img src="assets/img/mob-service/login-verification.png"
+                                                alt="Service Image 1" class="service-image">
+                                            <div class="service-content">
+                                                <div class="stepstowork">Step 1</div>
+                                                <div class="service-title">User Verfication</div>
+                                                <div class="service-description">User verification for posting property
+                                                    involves confirming the identity and authenticity of the individual
+                                                    listing the property.</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/img/mob-service/property-details.png" alt="Service Image 2"
+                                                class="service-image">
+                                            <div class="service-content">
+                                                <div class="stepstowork">Step 2</div>
+                                                <div class="service-title">Post proprty -/ Proprty details</div>
+                                                <div class="service-description">Property details include location,
+                                                    size, amenities, price, and other relevant information.</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/img/mob-service/property-address.png" alt="Service Image 2"
+                                                class="service-image">
+                                            <div class="service-content">
+                                                <div class="stepstowork">Step 3</div>
+                                                <div class="service-title">Post proprty -/ Address</div>
+                                                <div class="service-description">The property address refers to its
+                                                    physical location, including street, city, and state.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/img/mob-service/property-price.png" alt="Service Image 2"
+                                                class="service-image">
+                                            <div class="service-content">
+                                                <div class="stepstowork">Step 4</div>
+                                                <div class="service-title">Post proprty -/ Pricing details</div>
+                                                <div class="service-description">Pricing details for a property include
+                                                    sale or rental price, taxes, fees, and payment terms.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <img src="assets/img/mob-service/property-img.png" alt="Service Image 2"
+                                                class="service-image">
+                                            <div class="service-content">
+                                                <div class="stepstowork">Step 5</div>
+                                                <div class="service-title">Post proprty -/ Upload proprty images</div>
+                                                <div class="service-description">
+                                                    Upload property images by selecting files from your device to
+                                                    showcase the property's features.
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="bottom-h3-p">
+                                        <h3>How is shiftjoja.com different ?</h3>
+                                        <p>Monthly 15 lakh people visit NestAway in Monthly 15 lakh people visit
+                                            NestAway in search search Monthly 15 lakh people visit
+                                            NestAway in search of houses on rent</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="OOmSY9FhETrHsrejNwxbDcsLaPvGRxoO80aYfSof"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+</body>
+<script>
+    window.addEventListener('swal', function (e) {
+        Swal.fire(e.detail);
+    });
+</script>
+
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyD-wGjSZm0OB_28P4wK2E7X8btavHIl_r8",
+        authDomain: "shifthoja-59d22.firebaseapp.com",
+        databaseURL: "https://shifthoja-59d22-default-rtdb.firebaseio.com",
+        projectId: "shifthoja-59d22",
+        storageBucket: "shifthoja-59d22.appspot.com",
+        messagingSenderId: "781878980591",
+        appId: "1:781878980591:web:63480cd34fb3cae9c2101a",
+        measurementId: "G-00SCM0QX14"
+    }
+    firebase.initializeApp(firebaseConfig);
+</script>
+
+<script>
+    window.onload = function () {
+        render();
+    };
+
+    function render() {
+        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+        recaptchaVerifier.render();
+    }
+
+    function SendCode() {
+        var number = $("#number").val();
+        if (isRecaptchaChecked()) {
+            $(".loading").show();
+            firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier)
+                .then(function (confirmationResult) {
+                    window.confirmationResult = confirmationResult;
+                    coderesult = confirmationResult;
+                    // $("#sentMessage").text("OTP Send Your Registered Mobile Number!!");
+
+
+                    Swal.fire({
+                        position: "top-end",
+                        title: "OTP Send Your Registered Mobile Number",
+                        showConfirmButton: false,
+                        icon: "success",
+                        timer: 1500,
+                    });
+
+                    $("#sentMessage").show();
+                    $("#shiftotp").show();
+                    $("#shifrdstr").hide();
+                })
+                .catch(function (error) {
+                    $("#error").text(error.message);
+                    $("#error").show();
+                })
+                .finally(function () {
+                    $(".loading").hide();
+                });
+        } else {
+            // reCAPTCHA is not checked, show an alert or message to the user
+            alert("Please check the reCAPTCHA checkbox before proceeding.");
+        }
+    }
+
+    function verify() {
+        var code = $("#verification").val();
+        var formData = {};
+        formData.name = $("#name").val();
+        formData.number = $("#number").val();
+        formData.listed = $("input[name='post']").val();
+        formData.property = $("input[name='property']").val();
+        // Validate the verification code
+        if (isValidVerificationCode(code)) {
+            $(".loading").show();
+            coderesult.confirm(code)
+                .then(function (result) {
+                    window.Livewire.find('Hx9eA1q2bB1FmNGLBJ6G').emit(formData);
+                    Swal.fire({
+                        position: "top-end",
+                        title: "your account has been verified",
+                        text: "please wait..!",
+                        showConfirmButton: false,
+                        icon: "success",
+                        timer: 1500,
+                    });
+                    // var user = result.user;
+                    // console.log(user);
+                    // $("#successOtpAuth").text("Continue");
+                    // $("#successOtpAuth").show();
+                })
+                .catch(function (error) {
+                    $("#error2").text(error.message);
+                    $("#error2").show();
+                })
+            // .finally(function () {
+            //     // Hide loading indicator regardless of success or failure
+            //     $(".loading").hide();
+            // });
+        } else {
+            alert("Please enter a valid 6 Digit Verification code.");
+        }
+    }
+
+    function isValidVerificationCode(code) {
+        // Validate that the code is not empty and contains exactly 6 digits
+        var isValid = /^\d{6}$/.test(code);
+        return isValid;
+    }
+
+    function isRecaptchaChecked() {
+        // Check if the reCAPTCHA checkbox is checked
+        return grecaptcha.getResponse() !== '';
+    }
+</script>
+
+
+<script>
+    $(document).ready(function () {
+        $("#startnow").click(function () {
+            let a = $("#name").val();
+            let b = $("#number").val();
+
+            if (!a || !b) {
+
+                Swal.fire({
+
+                    showConfirmButton: false,
+                    text: "All fields are Required",
+                    icon: "warning",
+                    timer: 1000,
+
+                });
+
+            } else {
+                SendCode();
+            }
+        });
+    });
+</script>
+<script>
+    var phone_number = window.intlTelInput(document.querySelector("#number"), {
+        separateDialCode: true,
+        preferredCountries: ["in"],
+        hiddenInput: "full",
+        utilsScript: "//cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.3/js/utils.js"
+    });
+
+    $("#startnow").click(function () {
+        var full_number = phone_number.getNumber(intlTelInputUtils.numberFormat.E164);
+        $("input[name='phone'").val(full_number);
+    });
+</script>
+
+
+<script>
+    document.addEventListener('livewire:load', function () {
+        var formData = getFormDataFromLocalStorage();
+
+        if (formData) {
+            // Emit the 'updateFormData' event with form data to the Livewire component
+            Livewire.emit('updateFormData', formData);
+        } else {
+            Livewire.emit('updateFormData', formData);
+        }
+    });
+
+    // Retrieve form data from local storage
+    function getFormDataFromLocalStorage() {
+        var storedData = localStorage.getItem('formData');
+
+        // Check if there is any stored data
+        if (storedData) {
+            return JSON.parse(storedData);
+        } else {
+            return null; // No stored data found
+        }
+    }
+</script>
+
+<!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/wizard/ex-create-deal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 10:50:47 GMT -->
+
+</html>

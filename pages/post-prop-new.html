@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr" data-theme="theme-default" data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/" data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1" data-framework="laravel" data-template="vertical-menu-theme-default-light">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>ShiftHoja</title>
+      <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" defer>
+      <link rel="stylesheet"  href="https://www.shifthoja.com/public/admin/assets/css/style.css"/>
+      <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+      <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css"/>
+      <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+      <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+      <!-- Livewire Styles -->
+      <style >[wire\:loading][wire\:loading], [wire\:loading\.delay][wire\:loading\.delay], [wire\:loading\.inline-block][wire\:loading\.inline-block], [wire\:loading\.inline][wire\:loading\.inline], [wire\:loading\.block][wire\:loading\.block], [wire\:loading\.flex][wire\:loading\.flex], [wire\:loading\.table][wire\:loading\.table], [wire\:loading\.grid][wire\:loading\.grid], [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {display: none;}[wire\:loading\.delay\.none][wire\:loading\.delay\.none], [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest], [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter], [wire\:loading\.delay\.short][wire\:loading\.delay\.short], [wire\:loading\.delay\.default][wire\:loading\.delay\.default], [wire\:loading\.delay\.long][wire\:loading\.delay\.long], [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer], [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {display: none;}[wire\:offline][wire\:offline] {display: none;}[wire\:dirty]:not(textarea):not(input):not(select) {display: none;}:root {--livewire-progress-bar-color: #2299dd;}[x-cloak] {display: none !important;}</style>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+      <style>
+         .overlay {
+         position: relative;
+         width: 100%;
+         }
+         .overlay-text {
+         position: absolute;
+         top: 163px;
+         width: 100%;
+         color: white;
+         font-size: 24px;
+         font-weight: bold;
+         }
+         .close-icon {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         cursor: pointer;
+         color: white;
+         font-size: 17px;
+         z-index: 1000;
+         background: #000;
+         padding: 2px 7px 4px 6px;
+         height: 29px;
+         border-radius: 50px;
+         }
+      </style>
+      <style>
+         .label {
+         background: #fff;
+         cursor: pointer;
+         border: 1px solid rgb(235, 235, 235);
+         font-weight: 500;
+         font-size: 14px;
+         color: rgb(34, 34, 34);
+         border-radius: 8px;
+         transition: background 0.1s, color 0.1s;
+         }
+         .label:hover {
+         background: rgb(231, 221, 251);
+         }
+         .label:active {
+         background: #ccc;
+         }
+         .input:checked+.label {
+         background: rgb(231, 221, 251);
+         color: rgb(94, 35, 220);
+         }
+         .label {
+         width: 100%;
+         padding: 12px 3px;
+         text-align: center;
+         }
+         .input {
+         position: absolute;
+         opacity: 0;
+         height: 0px;
+         top: 0px;
+         }
+         .title {
+         font-weight: 400;
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(118, 118, 118);
+         }
+         .mandatoryMarker {
+         color: red;
+         font-size: 18px;
+         font-weight: 400;
+         padding: 0 3px;
+         }
+         .group {
+         margin-top: 30px;
+         }       
+         .css-14n2nh0 {
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-top: 20px;
+         font-weight: 500;
+         font-size: 16px;
+         line-height: 20px;
+         color: rgb(67, 67, 67);
+         }
+         .css-v8jck {
+         border: 1px solid rgb(225, 226, 232) !important;
+         border-radius: 8px;
+         padding: 0px 20px 100px;
+         width: 100%;
+         height: 100vh;
+         overflow: hidden scroll;
+         }
+         /*.container{*/
+         /*     position: fixed;*/
+         /*}*/
+         .css-g56yay {
+         background: rgb(228, 229, 240);
+         border: 0px;
+         padding-top: 15px;
+         padding-left: 5px;
+         border-top-left-radius: 8px;
+         border-top-right-radius: 8px;
+         width: 100%;
+         height: 48px;
+         font-weight: 500;
+         line-height: 14px;
+         text-align: start;
+         color: rgb(0, 0, 0);
+         margin-top: 24px;
+         bottom: 0px;
+         box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 1px 0px inset;
+         }
+         .error{
+         color: #e02727;
+         font-family: Rubik, Helvetica, sans-serif;
+         padding: 5px 0 0 5px;
+         font-size: 10px;
+         }
+      </style>
+      <style>
+         .css-u4ug1l {
+         background: linear-gradient(191deg, rgb(243, 244, 255) 1.35%, rgb(255, 255, 255) 62.01%, rgb(255, 255, 255) 195.73%);
+         border: 1px solid rgb(225, 226, 232);
+         border-radius: 8px;
+         min-width: 100%;
+         height: 100%;
+         padding: 17px 10px 0px 21px;
+         display: flex;
+         flex-direction: column;
+         -webkit-box-pack: justify;
+         justify-content: space-between;
+         }
+         .css-ekfu91 {
+         font-weight: 500;
+         font-size: 11px;
+         line-height: 12px;
+         letter-spacing: 0.6px;
+         color: rgb(34, 34, 34);
+         mix-blend-mode: normal;
+         opacity: 0.7;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-bottom: 16px;
+         cursor: pointer;
+         }
+         .css-1wsvv7k {
+         font-style: normal;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 20px;
+         color: rgb(67, 67, 67);
+         margin-bottom: 4px;
+         }
+         .css-1au84r2 {
+         font-weight: 400;
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(34, 34, 34);
+         mix-blend-mode: normal;
+         opacity: 0.7;
+         margin-bottom: 10px;
+         }
+         .new-su-progress-bar {
+         font-weight: 500;
+         font-size: 8px;
+         line-height: 12px;
+         color: #767676;
+         }
+         .css-uvyn5o {
+         width: 100%;
+         margin-bottom: 30px;
+         }
+         .css-1sg2lsz {
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         }
+         .new-su-progress-bar .selfUploadPb {
+         border-radius: 100px;
+         overflow: hidden;
+         height: 8px;
+         }
+         .css-1mb7nyv {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .tickIcon {
+         content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%2336c991' d='M1024 512c0 282.77-229.23 512-512 512s-512-229.23-512-512c0-282.77 229.23-512 512-512s512 229.23 512 512z'%3E%3C/path%3E %3Cpath fill='%23fff' d='M764.015 374.514c12.497 12.497 12.497 32.758 0 45.255l-295.219 295.222-153.373-153.37c-12.497-12.497-12.497-32.759 0-45.257s32.758-12.497 45.255 0l108.118 108.117 249.967-249.968c12.497-12.497 32.755-12.497 45.252 0z'%3E%3C/path%3E %3C/svg%3E")
+         }
+         .pillStateIcon {
+         width: 30px;
+         height: 30px
+         }
+         .pill-state {
+         color: rgb(54, 201, 145);
+         background: rgb(213, 243, 232);
+         border: 0px;
+         }
+         .css-1mb7nyv .pill-checkbox {
+         background: rgb(54, 201, 145);
+         }
+         .css-s2fxx9 {
+         font-weight: 500;
+         font-size: 14px;
+         line-height: 16px;
+         color: rgb(67, 67, 67);
+         margin-bottom: 3px;
+         }
+         .css-1uhdbu5 {
+         background: rgb(255, 255, 255);
+         color: rgb(159, 159, 159);
+         border: 1px solid rgb(225, 226, 232);
+         border-radius: 30px;
+         padding: 5px 10px;
+         font-weight: 400;
+         font-size: 10px;
+         line-height: 12px;
+         letter-spacing: 0.6px;
+         width: fit-content;
+         }
+         .css-1mb7nyv .pill-state {
+         color: rgb(54, 201, 145);
+         background: rgb(213, 243, 232);
+         border: 0px;
+         }
+         .css-1lzmv4j {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-1lzmv4j .pill-checkbox {
+         border: 1px solid rgb(94, 35, 220);
+         background: rgb(255, 255, 255);
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .pill-checkbox .radioFilled {
+         content: url("data:image/svg+xml,%3C!-- Generated by IcoMoon.io --%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'%3E %3Ctitle%3E%3C/title%3E %3Cg id='icomoon-ignore'%3E %3C/g%3E %3Cpath fill='%235E23DC' d='M512 8.544c-277.344 0-503.456 226.144-503.456 503.456s226.144 503.456 503.456 503.456c277.344 0 503.456-226.144 503.456-503.456s-226.144-503.456-503.456-503.456zM512 972.8c-251.744 0-460.8-209.056-460.8-460.8s209.056-460.8 460.8-460.8 460.8 209.056 460.8 460.8-209.056 460.8-460.8 460.8z'%3E%3C/path%3E %3Cpath fill='%235E23DC' d='M512 145.056c-200.544 0-366.944 166.4-366.944 366.944s166.4 366.944 366.944 366.944c200.544 0 366.944-166.4 366.944-366.944s-166.4-366.944-366.944-366.944z'%3E%3C/path%3E %3C/svg%3E")
+         }
+         .css-1htmawk {
+         display: flex;
+         flex-direction: row;
+         cursor: pointer;
+         pointer-events: none;
+         }
+         .css-1onbx3g {
+         display: flex;
+         flex-direction: column;
+         -webkit-box-align: center;
+         align-items: center;
+         margin-right: 16px;
+         }
+         .css-zhkbv9 {
+         height: 30px;
+         width: 30px;
+         border-radius: 15px;
+         border: 0px;
+         display: flex;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         }
+         .pill-checkbox .pendingPill {
+         border-radius: 30px;
+         background: #eae4ff;
+         }
+         .pill-checkbox .pillStateIcon {
+         width: 30px;
+         height: 30px;
+         }
+         .css-10c1p1k {
+         height: 37px;
+         width: 0px;
+         border: 1px solid rgb(234, 228, 255);
+         margin: 5px 0px;
+         }
+         .css-1lzmv4j .pill-state {
+         background: rgb(234, 228, 255);
+         color: rgb(94, 35, 220);
+         border: 0px;
+         }
+         .css-6d93px {
+         width: 100%;
+         margin-top: 5px;
+         }
+         .css-17iu5z9 {
+         line-height: 16px;
+         letter-spacing: 0.2px;
+         color: rgb(118, 118, 118);
+         display: flex;
+         width: 100%;
+         background: rgba(255, 255, 255, 0.9);
+         padding: 8px 0px;
+         }
+         .menu-horizontal, .layout-menu-fixed-offcanvas .layout-horizontal .layout-page .menu-horizontal {
+         position: fixed;
+         }
+         .app-brand-text.demo {
+         font-size: x-large;
+         }
+         .first-inesell-rent{
+         font-weight: 500;
+         color: #000;
+         margin-top: 10px;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="layout-container">
+         <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme d-md-none" id="layout-navbar">
+            <div class="container-xxl">
+               <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none d-none" wire:ignore>
+                  <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+                  <i class="bx bx-menu bx-sm"></i>
+                  </a>
+               </div>
+               <div class="navbar-brand app-brand demo d-xl-flex py-0 me-4 d-none d-lg-flex">
+                  <a href="https://shifthoja.com/dashboard" class="app-brand-link gap-2">
+                     <span class="app-brand-logo demo">
+                        <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                           <defs>
+                              <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z" id="path-1"></path>
+                              <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z" id="path-3"></path>
+                              <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z" id="path-4"></path>
+                              <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z" id="path-5"></path>
+                           </defs>
+                           <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                              <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                                 <g id="Icon" transform="translate(27.000000, 15.000000)">
+                                    <g id="Mask" transform="translate(0.000000, 8.000000)">
+                                       <mask id="mask-2" fill="white">
+                                          <use xlink:href="#path-1"></use>
+                                       </mask>
+                                       <use fill="var(--bs-primary)" xlink:href="#path-1"></use>
+                                       <g id="Path-3" mask="url(#mask-2)">
+                                          <use fill="var(--bs-primary)" xlink:href="#path-3"></use>
+                                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                       </g>
+                                       <g id="Path-4" mask="url(#mask-2)">
+                                          <use fill="var(--bs-primary)" xlink:href="#path-4"></use>
+                                          <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                                       </g>
+                                    </g>
+                                    <g id="Triangle" transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                                       <use fill="var(--bs-primary)" xlink:href="#path-5"></use>
+                                       <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                                    </g>
+                                 </g>
+                              </g>
+                           </g>
+                        </svg>
+                     </span>
+                     <span class="app-brand-text demo menu-text fw-bold " style="text-transform:capitalize;">ShiftHoja.com</span>
+                  <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                  <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                  </a>
+               </div>
+               <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+               </div>
+            </div>
+         </nav>
+         <div class="layout-page">
+            <div class="content-wrapper">
+               <aside  wire:ignore id="layout-menu" class="layout-menu-horizontal menu menu-horizontal container-fluid flex-grow-0 bg-menu-theme p-md-2" data-bg-class="bg-menu-theme" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(0, 49, 89) !important;">
+                  <div class="container-xxl d-flex h-100">
+                     <a  class="menu-horizontal-wrapper">
+                     <img src="https://www.shifthoja.com/public/frontend/assets/img/shifthoja_logo.png" class="d-none d-lg-block p-md-2" style="width:170px;"> 
+                     </a>
+                     <a href="#" class="menu-horizontal-prev d-none">
+                     </a>
+                     <div class="menu-horizontal-wrapper">
+                        <ul class="menu-inner" style="margin-left: 0px;">
+                           <li class="menu-item">
+                              <a href="https://shifthoja.com/" class="menu-link">
+                                 <div>Home</div>
+                              </a>
+                           </li>
+                           <li class="menu-item">
+                              <a href="https://shifthoja.com/dashboard" class="menu-link">
+                                 <div>Login</div>
+                              </a>
+                           </li>
+                           <li class="menu-item">
+                              <a href="https://shifthoja.com/dashboard" class="menu-link">
+                                 <div>Privacy-policy</div>
+                              </a>
+                           </li>
+                        </ul>
+                     </div>
+                     <a href="#" class="menu-horizontal-next d-none"></a>
+                  </div>
+               </aside>
+               <div class="container-fluid flex-grow-1 container-p-y">
+                  <div wire:snapshot="{&quot;data&quot;:{&quot;shouldReInitSwiper&quot;:false,&quot;step&quot;:1,&quot;user_id&quot;:17,&quot;property_type&quot;:null,&quot;bhk_type&quot;:null,&quot;furnished_status&quot;:null,&quot;bedrooms&quot;:null,&quot;bathrooms&quot;:null,&quot;floor_no&quot;:null,&quot;total_floor_no&quot;:null,&quot;balcony&quot;:null,&quot;proprty_age&quot;:null,&quot;state&quot;:1,&quot;district&quot;:null,&quot;land_mark&quot;:null,&quot;pincode&quot;:null,&quot;complete_adress&quot;:null,&quot;expected_price&quot;:null,&quot;price_per_sqft&quot;:null,&quot;maintenance_charge&quot;:null,&quot;maintenence&quot;:null,&quot;show_price_as&quot;:null,&quot;price_includes&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;loan&quot;:&quot;no&quot;,&quot;building&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;bedroom&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;hall&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;kitchen&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;balconyimg&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;washroom&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;title&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;security&quot;:null,&quot;period&quot;:null,&quot;available&quot;:null,&quot;street_number&quot;:null,&quot;house_number&quot;:null,&quot;separate&quot;:null,&quot;covered_parking&quot;:null,&quot;open_parking&quot;:null,&quot;tenant_type&quot;:[[],{&quot;s&quot;:&quot;arr&quot;}],&quot;built_up_area&quot;:null,&quot;carpet_area&quot;:null,&quot;description&quot;:null,&quot;transaction_type&quot;:null,&quot;construction&quot;:null,&quot;properties&quot;:[[&quot;1 Rk&quot;,&quot;1 BHK&quot;,&quot;2 BHK&quot;,&quot;3 BHK&quot;],{&quot;s&quot;:&quot;arr&quot;}],&quot;property&quot;:&quot;residential&quot;,&quot;proprty_for&quot;:&quot;&quot;},&quot;memo&quot;:{&quot;id&quot;:&quot;THF4I9vWRVassppUTk35&quot;,&quot;name&quot;:&quot;user.home&quot;,&quot;path&quot;:&quot;user-post&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;6e16ef0b8007646246c2e2ead7db7ff921de0062cdb60d3ae7d348085e7d50e9&quot;}" wire:effects="{&quot;url&quot;:{&quot;property&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;},&quot;proprty_for&quot;:{&quot;as&quot;:null,&quot;use&quot;:&quot;replace&quot;,&quot;alwaysShow&quot;:false,&quot;except&quot;:&quot;&quot;}}}" wire:id="THF4I9vWRVassppUTk35">
+                     <div class="mt-md-5">
+                        <div class="row justify-content-center">
+                           <div class="col-md-10 col-12">
+                              <div class="card p-3">
+                                 <div class="row justify-content-center">
+                                    <div class="col-md-8 col-12">
+                                       <form wire:submit="postproprty">
+                                          <div  class="css-v8jck p-md-5 pt-md-2">
+                                             <div>
+                                                <div>
+                                                   <!-- <div class="first-inesell-rent"></div> -->
+                                                   <div class="css-14n2nh0">Sell or Rent Faster your property Now!</div>
+                                                   <div class="group">
+                                                      <div class="title no-bottom">You're A ?</div>
+                                                      <div class="tabs pt-2 d-flex gap-3">
+                                                         <div>
+                                                            <input class="input" type="radio" id="customRadioSell-1" name="plPropertysellRent" value="residential"  wire:model="property" >
+                                                            <label class="label p-2" for="customRadioSell-1">Agent</label>
+                                                         </div>
+                                                         <div>
+                                                            <input class="input" type="radio" id="customRadioSell-2" name="plPropertysellRent" value="commercial"  wire:model="property" >
+                                                            <label class="label p-2" for="customRadioSell-2">Owner</label>
+                                                         </div>
+                                                         <div>
+                                                            <input class="input" type="radio" id="Builder" name="Builder" value="Builder" >
+                                                            <label class="label p-2" for="Builder">Builder</label>
+                                                         </div>
+                                                         <div>
+                                                            <input class="input" type="radio" id="Flatmate" name="plPropertysellRent" value="Flatmate"  wire:model="property" >
+                                                            <label class="label p-2" for="Flatmate">Flatmate</label>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="group">
+                                                      <div class="title no-bottom">Property For ?
+                                                      </div>
+                                                      <div class="tabs pt-2 d-flex gap-3">
+                                                         <div> <input class="input" type="radio" id="proprty_for-1" name="proprty_for" value="rent" wire:model.live="proprty_for">
+                                                            <label class="label p-2" for="proprty_for-1">Rent/Lease</label>
+                                                         </div>
+                                                         <div>
+                                                            <input class="input" type="radio" id="proprty_for-2" name="proprty_for" value="sell"  wire:model.live="proprty_for">
+                                                            <label class="label p-2" for="proprty_for-2">Sell</label>
+                                                         </div>
+                                                         <div>
+                                                            <input class="input" type="radio" id="proprty_for-3" name="proprty_for" value="pg co-living"  wire:model.live="proprty_for">
+                                                            <label class="label p-2" for="proprty_for-3">PG</label>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                   <div class="group">
+                                                      <div class="title no-bottom mb-2">Your contact info for tenants ?</div>
+                                                      <input type="number" name="number" class="form-control" placeholder="1800 1111 22" maxlength="12">
+                                                   </div>
+                                                   <div class="group">
+                                                      <div class="title no-bottom mb-2">Contact Person ?</div>
+                                                      <input type="number" name="number" class="form-control" placeholder="1800 1111 22" maxlength="12">
+                                                   </div>
+                                                   <div class="row">
+                                                      <div class="col-md-12 d-flex justify-content-between mt-4">
+                                                         <button class="btn btn-next w-100 p-2 text-white"  type="button" style="background: rgb(54, 201, 145);">
+                                                         Start Now, it's FREE
+                                                         </button>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                       </form>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/js/config.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+      <script src="https://www.shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+      <script>
+         window.addEventListener('swal',function(e){
+                   Swal.fire(e.detail);
+               });
+      </script>
+      <!-- Livewire Scripts -->
+      <script src="/livewire/livewire.js?id=6b5eb707"   data-csrf="uUXtYDLlmcUWrfC2UXWqIu9YilunAePkForlOQDP" data-update-uri="/livewire/update" data-navigate-once="true"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+      <script>
+         document.addEventListener('livewire:init', () => {
+           Livewire.on('post-created', (event) => {
+             toastr.error(event.title, {timeOut: 10});
+           });
+         });
+         
+         
+         
+         
+         
+      </script>
+      <script>
+         Livewire.hook('request', ({ uri, options, payload, respond, succeed, fail }) => {
+          succeed(({ status, json }) => {
+          window.Livewire.find('THF4I9vWRVassppUTk35').emit();
+         })
+         });
+         
+      </script>
+      <script>
+         document.addEventListener('livewire:init', () => {
+           var swiper = new Swiper(".mySwiper", {
+             slidesPerView: 1.8,
+             spaceBetween: 30,
+             freeMode: true,
+             pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+             },
+                   breakpoints: {
+               "@0.00": {
+                 slidesPerView: 1.8,
+                  spaceBetween: 14,
+               },
+               "@0.75": {
+                 slidesPerView: 2.8,
+               },
+               "@1.00": {
+                 slidesPerView: 3,
+               },
+               "@1.50": {
+                 slidesPerView: 3.3,
+                 spaceBetween: 10,
+               },
+             },
+           });
+           
+           var swiper = new Swiper(".mySwiperbhk", {
+             slidesPerView: 2.6,
+             spaceBetween: 10,
+             freeMode: true,
+             pagination: {
+               el: ".swiper-pagination",
+               clickable: true,
+             },
+             
+             breakpoints: {
+               "@0.00": {
+                 slidesPerView: 2.7,
+                  spaceBetween: 10,
+               },
+               "@0.75": {
+                 slidesPerView: 3.8,
+               },
+               "@1.00": {
+                 slidesPerView: 5,
+               },
+               "@1.50": {
+                 slidesPerView: 5,
+               },
+             },
+             
+                 
+           });
+           
+          });
+           
+      </script>
+      <script>
+         // Livewire.hook('request', ({options, payload, respond, succeed }) => {
+          
+         //     succeed(({ status, json }) => {
+         //       console.log('oo');
+         //       bumit();
+         //     })
+             
+         // })
+         
+         
+         // function bumit(){
+             
+             
+         //   $("#state").select2();
+         //   $("#district").select2();
+           
+         //   $('#state').on('change', function(e){
+         // 		  let data = $('#state').select2('val');
+         //       window.Livewire.find('THF4I9vWRVassppUTk35').set('state', data)
+         // 	  });
+         
+         //     $('#district').on('change', function(e){
+         // 		  let data = $('#district').select2('val');
+         //       window.Livewire.find('THF4I9vWRVassppUTk35').set('district', data)
+         // 	  });
+         
+         // };
+         
+      </script>
+   </body>
+   <!-- Mirrored from demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/wizard/ex-create-deal by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Feb 2024 10:50:47 GMT -->
+</html>
