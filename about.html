@@ -201,9 +201,7 @@
 
         }
 
-        .row.no-gutters {
-            margin-top: 20px;
-        }
+        
 
         .row.featurette {
             height: 250px;
@@ -220,6 +218,9 @@
             font-size: 14px;
             height: 35px;
         }
+        .row.no-gutters {
+            margin-top: 20px;
+        }
        
             .back-gd-color {
             background-color: rgba(0, 0, 0, 0.4); 
@@ -228,7 +229,66 @@
             border-radius: 5px; 
             margin-bottom: 10px;
         }
-  
+        @media (max-width: 480px) {
+            .textmy4{
+                font-size: 11px;
+            }
+            .msgfrm-ceo{
+                font-size: 14px;
+            }
+            .row.no-gutters {
+            margin-top: 0px;
+        }
+            .elcm-shft-pa{
+                font-size: 11px;
+                text-align: justify;
+            }
+            p.column-lg-2.dropcap {
+                font-size: 11px;
+                text-align: justify;
+            }
+            .carousel.pointer-event{
+                margin-top: 0px;
+            }
+            .background-white.px-3.mt-6.px-0.py-5.px-lg-5.radius-secondary{
+                padding-top: 0px !important;
+            }
+            .blockquote.blockquote.my-5.ml-lg-6{
+                margin-top: 0px !important;
+                margin-bottom: 10px !important;
+            }
+        }
+        @media (min-width: 480px) and (max-width: 767px){
+            .textmy4{
+                font-size: 11px;
+            }
+            .msgfrm-ceo{
+                font-size: 14px;
+            }
+            .row.no-gutters {
+            margin-top: 0px;
+        }
+            .elcm-shft-pa{
+                font-size: 11px;
+                text-align: justify;
+            }
+            p.column-lg-2.dropcap {
+                font-size: 11px;
+                text-align: justify;
+            }
+            .carousel.pointer-event{
+                margin-top: 0px;
+            }
+            .background-white.px-3.mt-6.px-0.py-5.px-lg-5.radius-secondary{
+                padding-top: 0px !important;
+            }
+            .blockquote.blockquote.my-5.ml-lg-6{
+                padding-top: 0px !important;
+                margin-bottom: 10px !important;
+            }
+            
+        }
+    
     </style>
 </head>
 
@@ -274,7 +334,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
+                <img src="assets/img/handshake.png"
                     alt="Mumbai Skyline" width="100%" height="400px">
                 <div class="container">
                     <div class="carousel-caption text-start">
@@ -288,7 +348,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://img.freepik.com/free-photo/united-states-capitol-washington-dc_181624-52973.jpg?t=st=1714563698~exp=1714567298~hmac=2602b0fac28409fc6a53cdbfb8739818e50a7bc413539a816bdd98c894acab52"
+                <img src="assets/img/team-stand.png"
                     alt="Mumbai Skyline" width="100%" height="400px">
 
                 <div class="container">
@@ -302,7 +362,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
+                <img src="assets/img/teamdiscuss.png"
                     alt="Mumbai Skyline" width="100%" height="400px">
                 <div class="container">
                     <div class="carousel-caption text-end">
@@ -310,7 +370,7 @@
                             <h1>Our Strength.</h1>
                             <p>Some representative placeholder content for the third slide of this carousel.</p>
                         </div>
-                        <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Browse gallery</a></p>
+                        <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Browse more</a></p>
                     </div>
                 </div>
             </div>
@@ -326,19 +386,19 @@
     </div>
     <div class="container">
         <div class="row no-gutters">
-            <div class="col-lg-4 py-3 py-lg-0" style="min-height:400px; background-position: top">
+            <div class="col-lg-4 py-3 py-lg-0" style="background-position: top">
                 <div class="background-holder radius-tl-secondary radius-bl-lg-secondary radius-tr-secondary radius-tr-lg-0"
                     style="background-image:url(assets/img/boss.jpg);">
                     <img src="assets/img/boss.jpg" height="400px" width="400px">
                 </div>
             </div>
             <div
-                class="col-lg-8 px-5 py-6 my-lg-0 background-white radius-tr-lg-secondary radius-br-secondary radius-bl-secondary radius-bl-lg-0">
+                class="col-lg-8 py-6 my-lg-0 background-white radius-tr-lg-secondary radius-br-secondary radius-bl-secondary radius-bl-lg-0">
                 <div class="d-flex align-items-center">
                     <div data-zanim-timeline="{}">
-                        <h5 data-zanim="{&quot;delay&quot;:0}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                        <h5 class="msgfrm-ceo" data-zanim="{&quot;delay&quot;:0}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
                             Message From CEO</h5>
-                        <p class="my-4" data-zanim="{&quot;delay&quot;:0.1}"
+                        <p class="my-4 textmy4" data-zanim="{&quot;delay&quot;:0.1}"
                             style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Elixir co-operates with clients in
                             solving the hardest problems they face in their businesses—and the world. We do this by
                             channeling the diversity of our people and their thinking. </p><img
@@ -362,7 +422,7 @@
             <div class="col-12">
                 <div class="background-white px-3 mt-6 px-0 py-5 px-lg-5 radius-secondary">
                     <h5>Welcome to SHIFTHOJA.COM</h5>
-                    <p class="mt-3">Founded in 2022 and acquired by HDT India in 2017, SHIFTHOJA.COM is India’s most 
+                    <p class="mt-3 elcm-shft-pa">Founded in 2022 and acquired by HDT India in 2017, SHIFTHOJA.COM is India’s most 
                         innovative real estate advertising platform for homeowners, landlords, developers, and 
                         real estate brokers. The company offers listings for new homes, resale homes, rentals, 
                         plots and co-living spaces in India. Backed by strong research and analytics, the company’s 
@@ -371,7 +431,7 @@
                         content, home loans, end-to-end transaction services, and post-transaction services to 
                         consumers for both buying and renting.</p>
                     <blockquote class="blockquote my-5 ml-lg-6" style="max-width: 700px;">
-                        <h5 class="fw-500 ml-3 mb-0">Our vision is changing the way India experiences property…</h5>
+                        <h5 class="fw-500 ml-3 mb-0 ">Our vision is changing the way India experiences property</h5>
                     </blockquote>
                     <p class="column-lg-2 dropcap">And our mission is to be the first choice of our consumers and 
                         partners in discovering, renting, buying, selling, financing a home, and digitally enabling
@@ -380,106 +440,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-            
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle"
-                    src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
-                    alt="Placeholder: 140x140" width="140" height="140">
-
-                <h2>Service</h2>
-                <p>Some representative placeholder content for the three columns of text below the carousel. This is the
-                    first column.</p>
-                <p><a class="btn btn-primary" href="#">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle"
-                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
-                    alt="Placeholder: 140x140" width="140" height="140">
-
-                <h2>Service</h2>
-                <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second
-                    column.</p>
-                <p><a class="btn btn-primary" href="#">View details »</a></p>
-            </div>
-            <div class="col-lg-4">
-                <img class="bd-placeholder-img rounded-circle"
-                    src="https://img.freepik.com/free-photo/mumbai-skyline-skyscrapers-construction_469504-21.jpg?t=st=1714563443~exp=1714567043~hmac=17e1b6db101ff0073433138e2436653ab424fa9d376f91b5860b8a4eabfcf23c"
-                    alt="Placeholder: 140x140" width="140" height="140">
-                <h2>Service</h2>
-                <p>And lastly this, the third column of representative placeholder content. of representative
-                    placeholder content</p>
-                <p><a class="btn btn-primary" href="#">View details »</a></p>
-            </div>
-        </div>
-        <!-- START THE FEATURETTES -->
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
-                    alt="Placeholder: 500x500" width="500" height="250px">
-
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
-                    alt="Placeholder: 500x500" width="500" height="250px">
-
-            </div>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="row featurette">
-            <div class="col-md-7 order-md-2">
-                <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h2>
-                <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place.Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place Another featurette? Of course.
-                    More placeholder content here to give you an idea of how
-                    this layout would work with some actual real-world content in place</p>
-            </div>
-            <div class="col-md-5 order-md-1">
-                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                    src="https://img.freepik.com/free-photo/aerial-shot-adriatic-sea-cityscape-polignano-mare-town-apulia-southern-italy_181624-39298.jpg?t=st=1714563619~exp=1714567219~hmac=db33235c35476b3e33513d143507e68287039aa2af5eae539cfc2f5ead3757a8"
-                    alt="Placeholder: 500x500" width="500" height="250px">
-            </div>
-        </div>
-        <hr class="featurette-divider">
     </div>
 </body>
 
