@@ -612,12 +612,7 @@ ul#localitiesList {
            Livewire.on('post-created', (event) => {
              toastr.error(event.title, {timeOut: 10});
            });
-         });
-         
-         
-         
-         
-         
+         });   
       </script>
       <script>
          Livewire.hook('request', ({ uri, options, payload, respond, succeed, fail }) => {

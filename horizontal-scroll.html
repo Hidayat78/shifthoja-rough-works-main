@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Your Team</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.team-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.team-members {
+  display: flex;
+  width: fit-content;
+  animation: scrolling 200s linear infinite;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px #bcbcbc, -5px -5px 15px #ffffff;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="team-container">
+    <div class="team-members" id="teamMembers">
+      <!-- Team members go here -->
+      <div class="team-member">John Doe - Web Developer</div>
+      <div class="team-member">Jane Smith - UI/UX Designer</div>
+      <div class="team-member">Alice Johnson - Frontend Developer</div>
+      <div class="team-member">Bob Williams - Backend Developer</div>
+      <div class="team-member">Eva Davis - Graphic Designer</div>
+      <div class="team-member">Michael Brown - Project Manager</div>
+      <div class="team-member">Olivia Garcia - QA Engineer</div>
+      <div class="team-member">David Taylor - Mobile App Developer</div>
+      <div class="team-member">Sophia Clark - Marketing Specialist</div>
+      <div class="team-member">Daniel Turner - Data Analyst</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

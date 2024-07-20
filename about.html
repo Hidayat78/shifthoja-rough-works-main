@@ -288,11 +288,206 @@
             }
             
         }
-    
+
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul i {
+  color: #fff;
+  font-size: clamp(0.9rem, 0.825rem + 0.3vw, 1.2rem);
+}
+
+ul i:hover {
+  color: #f2709c;
+}
+
+.sectionn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding-block: min(20vh, 6rem);
+  text-align: center;
+  width: calc(min(90rem, 90%));
+  margin-inline: auto;
+}
+
+.sectionn span,
+.sectionn p,
+.sectionn h2,
+.sectionn h3 {
+  letter-spacing: 0.035rem;
+}
+
+.sectionn p {
+  line-height: 1.6;
+  color: #a3a3a3;
+  max-width: 50rem;
+  margin: 0 auto;
+  font-size: clamp(0.9rem, 0.825rem + 0.3vw, 1.2rem);
+}
+
+.sectionn .bg-watermark {
+  color: #1f1f1f;
+  font-size: clamp(6rem, 1.3333rem + 14.9333vw, 20rem);
+  font-weight: 800;
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%) translateY(-15%);
+  user-select: none;
+  letter-spacing: 0.5rem;
+}
+
+.sectionn span {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.2rem;
+  color: #a3a3a3;
+}
+
+.sectionn h2 {
+  font-size: clamp(3.5rem, 3rem + 1.6vw, 5rem);
+  margin-top: -0.625rem;
+  color: #fff;
+}
+
+.sectionn .cards-team {
+  margin-top: 7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: 2rem;
+}
+
+@media screen and (min-width: 51rem) {
+  .sectionn .cards-team {
+    gap: 0;
+    padding-bottom: 2.5rem;
+  }
+}
+
+.sectionn .cards-team .card-team {
+  position: relative;
+  cursor: pointer;
+}
+
+.sectionn .cards-team .card-team h3,
+.sectionn .cards-team .card-team p {
+  text-transform: capitalize;
+}
+
+.sectionn .cards-team .card-team h3 {
+  font-size: clamp(1rem, 0.9167rem + 0.2667vw, 1.25rem);
+  font-weight: 400;
+  color: #f6f6f6;
+}
+
+.sectionn .cards-team .card-team p {
+  font-size: clamp(0.85rem, 0.75rem + 0.32vw, 1.15rem);
+  letter-spacing: 0.12rem;
+  font-weight: 300;
+  max-width: 100%;
+}
+
+.sectionn .cards-team .card-team::before {
+  position: absolute;
+  content: "";
+  width: 5rem;
+  height: 6.25rem;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+  background: #f2709c;
+  background: -webkit-linear-gradient(to left, #ff9472, #f2709c);
+  background: linear-gradient(to left, #ff9472, #f2709c);
+  top: -0.375rem;
+  left: -0.375rem;
+}
+
+.sectionn .cards-team .card-team::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #232526;
+  background: -webkit-linear-gradient(
+    to bottom,
+    hsl(210deg 2.99% 26.27% / 20%),
+    hsl(0deg 0% 3.14% / 90%)
+  );
+  background: linear-gradient(
+    to bottom,
+    hsl(210deg 2.99% 26.27% / 20%),
+    hsl(0deg 0% 3.14% / 90%)
+  );
+}
+
+.sectionn .cards-team .card-team img {
+  filter: grayscale(100%);
+  transition: 0.5s ease;
+}
+
+.sectionn .cards-team .card-content {
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  padding: 1.875rem 1.25rem;
+  text-align: center;
+}
+
+.sectionn .cards-team .card-content ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.25rem;
+}
+
+.sectionn .cards-team .card-team:hover img {
+  filter: grayscale(0%);
+}
+
+.sectionn .cards-team .card-team:hover::before {
+  transform: scale(1.03);
+}
+
+.sectionn .cards-team .card-team:nth-child(1)::before {
+  top: -0.375rem;
+  left: -0.375rem;
+}
+
+@media screen and (min-width: 31.25rem) {
+  .sectionn .cards-team .card-team:nth-child(2) {
+    transform: translateY(15%);
+  }
+}
+
+.sectionn .cards-team .card-team:nth-child(2)::before {
+  bottom: -0.375rem;
+  left: -0.375rem;
+  top: auto;
+}
+
+.sectionn .cards-team .card-team:nth-child(3)::before {
+  top: -0.375rem;
+  left: -0.375rem;
+}
+
     </style>
 </head>
 
 <body>
+    <!-- https://codepen.io/kristen17/pen/QWParNm -->
     <nav class="navbar">
         <div class="logo">
             <img src="assets/img/shifthoja_logo.png" alt="Logo">
@@ -335,12 +530,13 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="assets/img/handshake.png"
-                    alt="Mumbai Skyline" width="100%" height="400px">
+                    alt="Mumbai Skyline" 
+                    style="width: 100%; height: 300px; ">
                 <div class="container">
                     <div class="carousel-caption text-start">
-                        <div class="back-gd-color">
+                        <div class="back-gd-color" >
                             <h1>Our Vision.</h1>
-                            <p>Some representative placeholder content for the first slide of the carousel.</p>
+                            <p >Some representative placeholder content for the first slide of the carousel.</p>
                         </div>
                         
                         <p><a class="btn btn-lg btn-primary norm-prim-btn" href="#">Sign up today</a></p>
@@ -441,6 +637,48 @@
             </div>
         </div>
     </div>
+
+   
+    <section class="sectionn" >
+        <span>Our Experts</span>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, praesentium veritatis voluptatibus ut consequuntur quas consequatur omnis id rem obcaecati.</p>
+        <span class="bg-watermark">team</span>
+        <div class="cards-team">
+          <div class="card-team">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Franklin Carlson">
+            <div class="card-content">
+              <h3>Virender Singh Negi</h3>
+              <p>Property Consultant</p>
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-team">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Antonia Moore">
+            <div class="card-content">
+              <h3>Gunjan Gupta</h3>
+              <p>Marketing Expert</p>
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-team">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Travis Lynch">
+            <div class="card-content">
+              <h3>Himanshu -Shera </h3>
+              <p>Property Dealer</p>
+              <ul>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
 </body>
 
 </html>
