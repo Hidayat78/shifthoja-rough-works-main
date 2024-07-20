@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .sf-home__owner-prop__card {
+            width: 250px;
+            height: 296px;
+            overflow: hidden;
+            border: #d7d7d7 solid 1px;
+            border-radius: 8px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .sf-home__owner-prop__card--graphic>img {
+            width: 100%;
+            height: 100%;
+            /*-o-object-fit: cover;*/
+            /*object-fit: cover;*/
+            transition: all 0.35s ease-in;
+        }
+
+        .sf-home__owner-prop__card--graphic {
+            width: 100%;
+            height: 156px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sf-home__owner-prop__card--pic-count {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 6px 0px 22px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #303030;
+            position: absolute;
+            left: 8px;
+            bottom: 12px;
+            border-radius: 4px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card--content {
+            width: 100%;
+            height: calc(100% - 156px);
+            padding: 12px 16px;
+            position: relative;
+            background-color: #fff;
+        }
+
+
+        .sf-home__owner-prop__card--pic-count:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710375018814/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -47px -891px;
+            left: 6px;
+            top: 7px;
+        }
+
+        .sf-home,
+        .sf-home * {
+            box-sizing: border-box;
+        }
+
+        .sf-home__owner-prop__card--type {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 2px;
+            text-transform: capitalize;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sf-home__owner-prop__card--price {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+
+        .sf-home .rupees {
+            font-family: Arial;
+            margin-right: 2px;
+            font-weight: normal;
+        }
+
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #303030;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        .sf-home__owner-prop__card--loc {
+            color: #606060;
+            font-size: 14px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            padding-bottom: 4px;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card .sf-home__action {
+            width: calc(100% - 32px);
+            position: absolute;
+            bottom: -100px;
+            transition: bottom 0.3s ease-out;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__action {
+            bottom: 16px;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--status {
+            opacity: 0;
+        }
+
+        .sf-home__action--btn.btn-red {
+            color: #fff;
+            background-color: #D8232A;
+            border: #D8232A solid 1px;
+            padding: 4px;
+        }
+
+        .sf-home__action--btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 16px;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+    
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home .push-right {
+            float: right;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--graphic>img {
+            transform: scale(1.1);
+        }
+
+        .sf-home__section__title--anchor-see-all:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 11px;
+            right: 0px;
+            top: 4px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710374415922/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -46px -668px;
+            transition: all 0.6s ease;
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .sf-homemdkc {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .justify-content-between {
+            justify-content: space-between !important;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+        @media (min-width: 992px) {
+            .container, .container-lg, .container-md, .container-sm {
+                max-width: 1048px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="sf-home__section__title d-flex justify-content-between">
+                <div class="sf-home__section__title--text1 strip-orange">2 BHK Sell in Chhatarpur in New Delhi</div>
+                <a href="https://shifthoja.com/property-for-rent/in-delhi/chhatarpur?property_type%5B0%5D=apartment&property_type%5B1%5D=independent+floor&property_type%5B2%5D=independent+house&property_type%5B3%5D=indpendent+apartment&status=&property=residential&furnished_status=&age=&floors=&parking=&property_type[0]=apartment&property_type[1]=independent+floor&property_type[2]=independent+house&property_type[3]=indpendent+apartment" class="sf-home__section__title--anchor-see-all push-right" onclick="fireDynamicPropSeeAllGTM(event,'Owner properties see all','ownerProp');seeAppPropertiesOpenUrl('ownerProp');">See
+                    all Properties</a>
+            </div>
+
+            <!-- Slider START -->
+            <div style="display: flex; gap: 10px;">
+            <div class="tiny-slider arrow-round arrow-blur arrow-hover home-slider mt-0">
+                
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property4.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">13</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>21 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371508763193.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">2 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a >
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371161066474.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">9</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800370650443852.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">10</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>45 Lac
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="sf-home__section__title d-flex justify-content-between">
+                <div class="sf-home__section__title--text1 strip-orange">3 BHK Sell in Chhatarpur in New Delhi</div>
+                <a href="https://shifthoja.com/property-for-rent/in-delhi/chhatarpur?property_type%5B0%5D=apartment&property_type%5B1%5D=independent+floor&property_type%5B2%5D=independent+house&property_type%5B3%5D=indpendent+apartment&status=&property=residential&furnished_status=&age=&floors=&parking=&property_type[0]=apartment&property_type[1]=independent+floor&property_type[2]=independent+house&property_type[3]=indpendent+apartment" class="sf-home__section__title--anchor-see-all push-right" onclick="fireDynamicPropSeeAllGTM(event,'Owner properties see all','ownerProp');seeAppPropertiesOpenUrl('ownerProp');">See
+                    all Properties</a>
+            </div>
+
+            <!-- Slider START -->
+            <div style="display: flex; gap: 10px;">
+            <div class="tiny-slider arrow-round arrow-blur arrow-hover home-slider mt-0">
+                
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property4.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">13</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>21 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371508763193.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">2 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a >
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371161066474.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">9</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800370650443852.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">10</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>45 Lac
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container">
+            <div class="sf-home__section__title d-flex justify-content-between">
+                <div class="sf-home__section__title--text1 strip-orange">1 BHK Sell in Chhatarpur in New Delhi</div>
+                <a href="https://shifthoja.com/property-for-rent/in-delhi/chhatarpur?property_type%5B0%5D=apartment&property_type%5B1%5D=independent+floor&property_type%5B2%5D=independent+house&property_type%5B3%5D=indpendent+apartment&status=&property=residential&furnished_status=&age=&floors=&parking=&property_type[0]=apartment&property_type[1]=independent+floor&property_type[2]=independent+house&property_type[3]=indpendent+apartment" class="sf-home__section__title--anchor-see-all push-right" onclick="fireDynamicPropSeeAllGTM(event,'Owner properties see all','ownerProp');seeAppPropertiesOpenUrl('ownerProp');">See
+                    all Properties</a>
+            </div>
+
+            <!-- Slider START -->
+            <div style="display: flex; gap: 10px;">
+            <div class="tiny-slider arrow-round arrow-blur arrow-hover home-slider mt-0">
+                
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="assets/img/property-1/property4.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">13</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>21 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371508763193.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">7</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">2 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a >
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800371161066474.png" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">9</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>17 k
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div><div class="tns-item tns-slide-cloned" aria-hidden="true" tabindex="-1">
+                        <div class="sf-home__owner-prop__card card-shadow">
+                            <a>
+                                <div class="sf-home__owner-prop__card--graphic">
+                                    <img class="swiper-lazy swiper-lazy-loaded" src="https://shifthoja.com/public/storage/proprty/hall/1800370650443852.jpg" width="294" height="156" alt="">
+
+                                    <span class="sf-home__owner-prop__card--pic-count">10</span>
+                                </div>
+                                <div class="sf-home__owner-prop__card--content">
+                                    <div class="sf-home__owner-prop__card--type">3 BHK apartment
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--price">
+                                        <span class="rupees">₹</span>45 Lac
+                                        <span class="sf-home__owner-prop__card--size"> sqft</span>
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--loc">
+                                       Chhatarpur, New Delhi
+                                    </div>
+                                    <div class="sf-home__owner-prop__card--status">
+                                        Ready to Move
+                                    </div>
+                                    <div class="sf-home__action">
+                                        <span class="sf-home__action--btn btn-red medium">View Details</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>                    
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
