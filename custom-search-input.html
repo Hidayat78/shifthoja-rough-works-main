@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Dropdown with Search</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+      <!-- jQuery (required for Select2) -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- Select2 JS -->
+      <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <style>
 .custom-select-container {
     position: relative;
@@ -59,6 +66,19 @@
         </div>
     </div>
 
+
+    <div class="col-md-4 product_category">
+        <select id="ProductCategory" class="form-select text-capitalize">
+            <option value="">Select Locality</option>
+            <option value="Chhatarpur">Chhatarpur</option>
+            <option value="Malvia Nagar">Malvia Nagar</option>
+            <option value="Saket">Saket</option>
+            <option value="Hauz khas">Hauz khas</option>
+            <option value="Okhla">Okhla</option>
+            <option value="Shahjhan pur">Shahjhan pur</option>
+            <option value="Sadbari">Sadbari</option>
+        </select>
+      </div>
     <script>
         document.getElementById('searchInput').addEventListener('focus', function () {
             document.getElementById('selectBox').classList.add('show');
@@ -95,5 +115,7 @@
             });
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- Livewire Scripts -->
 </body>
 </html>
