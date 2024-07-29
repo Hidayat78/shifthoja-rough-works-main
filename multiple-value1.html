@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://psstl.esri.com/loop-1.1.0/css/loop.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@10/public/assets/styles/choices.min.css">
+  <title>Your Project</title>
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    .choices__inner {
+      border-radius: 0px;
+    }
+    .choices__list--multiple .choices__item {
+      background-color: #0071BC;
+      border: 1px solid #0071BC;
+      border-radius: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="component__DeskSfInput" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
+       aria-expanded="false" aria-controls="collapseExample1">
+    <select id="selectedCities" multiple>
+      <!-- Placeholder options will be added dynamically -->
+    </select>
+  </div>
+  <ul id="locality-list"></ul> <!-- Locality suggestions list -->
+
+  <div class="container">
+    <h5>Province:</h5>
+    <select id="js-choice" multiple>
+      <option value="Sindh">Sindh</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Balochistan">Balochistan</option>
+      <option value="Fata">Fata</option>
+      <option value="Federal Capital Territory">Federal Capital Territory</option>
+      <option value="Khyber Pakhtunkhwa">Khyber Pakhtunkhwa</option>
+    </select>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@10/public/assets/scripts/choices.min.js"></script>
+  <script>
+    const locations = [
+      {
+        city: "Delhi",
+        locality_city: [
+          "Nerela",
+          "Burari",
+          "Timarpur",
+          "Adarsh Nagar",
+          "Badli",
+          "Rithala",
+          "Bawana",
+        ],
+      },
+      {
+        city: "Noida",
+        locality_city: [
+          "Harola Noida Sector 5",
+          "Jhundpura Noida Sector 11",
+        ],
+      },
+      {
+        city: "Gurugram",
+        locality_city: [
+          "Aklimpur",
+          "Babupur",
+          "Bajghera",
+        ],
+      },
+    ];
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Initialize Choices.js for Provinces
+      const provinceChoices = new Choices("#js-choice", {
+        removeItems: true,
+        removeItemButton: true
+      });
+
+      // Initialize Choices.js for Localities
+      const localityChoices = new Choices("#selectedCities", {
+        removeItems: true,
+        removeItemButton: true,
+        duplicateItemsAllowed: false,
+        searchResultLimit: 100,
+      });
+
+      // Update Locality Suggestions based on Input
+      const searchInput = document.querySelector('#selectedCities .choices__input--cloned');
+      searchInput.addEventListener("input", function () {
+        const inputValue = searchInput.value.toLowerCase();
+        const selectedCity = "Delhi";  // Default city, you can set it dynamically as needed
+        const selectedLocation = locations.find(location => location.city === selectedCity);
+        const localityList = document.getElementById("locality-list");
+
+        localityList.innerHTML = "";
+
+        if (selectedLocation && inputValue.trim() !== "") {
+          const localities = selectedLocation.locality_city;
+          localities.forEach(locality => {
+            if (locality.toLowerCase().includes(inputValue)) {
+              const listItem = document.createElement("li");
+              listItem.textContent = locality;
+              listItem.addEventListener("click", function () {
+                localityChoices.setChoiceByValue(locality);
+                searchInput.value = "";
+                localityList.innerHTML = "";
+              });
+              localityList.appendChild(listItem);
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
