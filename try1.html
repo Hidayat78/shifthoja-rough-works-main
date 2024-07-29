@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden; /* Prevents horizontal scrollbar */
+        }
+        .swiper-container {
+            width: 80%;
+            height: 450px; /* Increased height to accommodate 400px images */
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s, filter 0.3s;
+            height: 100%; /* Ensure slide takes full height */
+            z-index: 1; /* Default z-index */
+        }
+        .swiper-slide img {
+            border-radius: 10px;
+            transition: width 0.3s, height 0.3s; /* Smooth transition for resizing */
+        }
+        .swiper-slide-prev, .swiper-slide-next {
+            filter: blur(2px);
+            transform: scale(0.8);
+        }
+        .swiper-slide-active {
+            z-index: 2; /* Higher z-index for active slide */
+        }
+        .swiper-slide-active img {
+            width: 400px;
+            height: 400px;
+        }
+        .swiper-slide:not(.swiper-slide-active) img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 3,
+            centeredSlides: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                slideChangeTransitionEnd: function () {
+                    let slides = document.querySelectorAll('.swiper-slide');
+                    slides.forEach(slide => {
+                        slide.classList.remove('swiper-slide-prev', 'swiper-slide-next', 'swiper-slide-active');
+                    });
+                    let prevSlide = swiper.slides[swiper.activeIndex - 1];
+                    let nextSlide = swiper.slides[swiper.activeIndex + 1];
+                    if (prevSlide) prevSlide.classList.add('swiper-slide-prev');
+                    if (nextSlide) nextSlide.classList.add('swiper-slide-next');
+                    swiper.slides[swiper.activeIndex].classList.add('swiper-slide-active');
+                }
+            }
+        });
+
+        // Initial state setting
+        swiper.on('init', function () {
+            let slides = document.querySelectorAll('.swiper-slide');
+            let prevSlide = swiper.slides[swiper.activeIndex - 1];
+            let nextSlide = swiper.slides[swiper.activeIndex + 1];
+            if (prevSlide) prevSlide.classList.add('swiper-slide-prev');
+            if (nextSlide) nextSlide.classList.add('swiper-slide-next');
+            swiper.slides[swiper.activeIndex].classList.add('swiper-slide-active');
+        });
+        swiper.init();
+    </script>
+</body>
+</html>

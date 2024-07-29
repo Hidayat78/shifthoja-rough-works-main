@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Design</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+        }
+        .left-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .text-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .text-info h2{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .text-info p{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            background-color: #eee;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .contact-seller {
+            background-color: #00c851;
+            color: white;
+        }
+        .progress-bar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .progress-bar {
+            height: 5px;
+            width: 100px;
+            background-color: #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        .progress-bar div {
+            height: 100%;
+            width: 20%;
+            background-color: #00c851;
+            border-radius: 5px;
+        }
+        .right-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .date {
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="text-info">
+                <h2>Hidayat Urban Key Homes</h2>
+                <p>&#8377;3.0 Cr - 5.0 Cr</p>
+            </div>
+            <div class="buttons">
+                <button>Share</button>
+                <button>Save</button>
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="progress-bar-container">
+                <div class="date">7/29</div>
+                <div class="progress-bar">
+                    <div></div>
+                </div>
+            </div>
+            <button class="contact-seller">Contact Seller</button>
+        </div>
+    </div>
+</body>
+</html>
