@@ -1,236 +1,154 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Slider in HTML CSS and JavaScript</title>
-    <!-- Google Fonts Link For Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <!-- Include Slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <!-- Include Slick theme CSS (optional) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-   <style>
-/* Projects in High demand start */
-.card-phd {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px;
-  width: 350px;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-.tag-container-phd {
-  display: flex;
-  position: absolute;
-}
+        .filter-container {
+            padding: 20px;
+            background-color: #fff;
+        }
 
-.tag-phd {
-  background-color: #ffffff;
-  color: #fff;
-  padding: 5px;
-  margin-right: 155px;
-  text-transform: uppercase;
-  padding-right: 0px;
-  padding-left: 0.61px;
-  color: rgb(9, 30, 66);
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: bold;
-  font-style: normal;
-  padding-top: 1px;
-}
+        .toggle-buttons, .category-buttons, .status-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
 
-.super-prtdiv {
-  margin-top: 27px;
-}
-.project-container-phd {
-  display: flex;
-  align-items: center;
-  margin-top: -37;
-}
+        /* .toggle-buttons {
+            border-bottom: 2px solid #6f23ff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        } */
+        .toggle-buttons {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+            padding: 5px;
+        }
 
-.image-prop-phd {
-  width: auto;
-  height: 100px;
-}
+        .toggle-button, .category-button, .status-button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
 
-.project-name-phd {
-  font-size: 11px;
-  font-weight: bold;
-}
+        .toggle-button.active, .category-button.active, .status-button.active {
+            background-color: #6f23ff;
+            color: #fff;
+        }
 
-.possession-phd {
-  color: #666;
-}
+        .toggle-buttons .toggle-button:first-child {
+            margin-right: 10px;
+        }
 
-.price-increase-phd {
-  color: green;
-}
+        .category-buttons {
+            /* border-bottom: 2px solid #6f23ff; */
+            margin-bottom: 10px;
+            /* padding-bottom: 15px; */
+            background-color: #f2f2f2;
+            border-radius: 20px;
+        }
 
-.price-change-text-phd,
-.location-text-phd {
-  margin-right: 4px;
-}
+        .status-buttons {
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+        }
 
-.dashed-line-container-phd {
-  position: relative;
-  width: 100%;
-}
+        .status-button {
+            margin-right: 10px;
+        }
 
-.dashed-line-phd {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  right: 14px;
-  height: 2px;
-  background-repeat: repeat-x;
-}
+        .status-buttons .status-button:last-child {
+            margin-right: 0;
+        }
+        .res-mlfwem{
+            background-color: #f2f2f2;
+            border-radius: 20px;
+        }
+        button.toggle-button.tglres {
+            padding: 10px 47px;
+        }
+        .toggle-button {
+            border: none;
+            padding: 10px 47px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            flex: 1;
+            margin: 0 5px;
+        }
 
-.dashed-line-img-phd {
-  display: none;
-}
-.offer-container-phd {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 5px;
-}
-
-.offer-icon-phd img {
-  width: 23px;
-  height: auto;
-}
-
-.offer-text-phd {
-  flex-grow: 1;
-  margin-left: 8px;
-}
-
-.offer-description-phd {
-  font-size: 10px;
-  color: #333;
-}
-
-.cta-button-phd {
-  padding: 6px 6px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 10px;
-  cursor: pointer;
-  width: 112px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button-phd:hover {
-  background-color: #0056b3; /* Darker color on hover */
-}
-
-.offer-tag-phd-phd {
-  background-image: url("https://static.99acres.com/universalapp/img/NL_Tag.png");
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-.view-number-btn-phd {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.view-number-btn-phd:hover {
-  background-color: #0056b3;
-}
-.icon-img-wishlist{
-    display: flex;
-}
-.icon-img-wishlist ul li{
-    list-style: none;
-    display: inline;
-}
-.project-name-phd-prices-phd-icon-img-wishlist{
-    display: flex;
-}
-/* Projects in High demand end */
+        .toggle-button.active {
+            background-color: #6f23ff;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
- 
-
-    <!-- Housing card copy start-->
-    
-        <div class="row card-phd">
-          
-            <div class="col-4">
-                <img src="assets/img/mob-service/phd-image.png" alt="Project Image-phd" height="100px"
-                    class="image-propertyoo">
-            </div>
-            <div class="col-8">
-                    <div class="project-name-phd">
-                        <div class="prices-phd">Rs- 98 Cr</div>
-                        <div class="">
-                            <div><i class="bi bi-share-fill"></i></div>
-                            <div><i class="bi bi-heart"></i></div>
-                        </div>
-                    </div>
-               
-                <div class="location-phd">Whitefield, Bangalore East</div>
-                <div class="price-phd">₹ 1.96 - 3.5 Cr</div>
-                <div class="config-phd">3, 4 BHK Apartment</div>
-                <div class="possession-phd">
-                    <span class="price-increase-phd">23.4%</span>
-                    <span class="price-change-text-phd">price increase in last 1 year in</span>
-                    <span class="location-text-phd">Whitefield, Bangalore East</span>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="dashed-line-container-phd">
-                    <div class="dashed-line-phd"></div>
-                    <img src="assets/img/mob-service/Dashed_Line.png" alt="Dashed Line Image"
-                        class="dashed-line-img-phd">
-                </div>
-                <div class="offer-container-phd">
-                    <div class="offer-icon-phd">
-                        <img src="assets/img/mob-service/NL_Tag.png" alt="Offer Icon">
-                    </div>
-                    <div class="offer-text-phd">
-                        <span class="offer-description-phd">Get preferred options @zero brokerage</span>
-                    </div>
-                    <div class="cta-button-phd">
-                        <div class="trackGAClick-phd" data-testid="NLP_EOI_CTA" data-galabel="NL_TUPLE.EOI">View
-                            Number
-                        </div>
-                    </div>
-                </div>
+        <div class="filter-container">
+            <div class="toggle-buttons res-mlfwem">
+                <button class="toggle-button tglres active">Residential</button>
+                <button class="toggle-button tglres">Commercial</button>
             </div>
         </div>
-    
-    <!-- Housing card copy end-->
+        <div class="category-buttons">
+            <button class="category-button active">Buy (10)</button>
+            <button class="category-button">Rent (290)</button>
+            <button class="category-button">PG (0)</button>
+        </div>
+        <div class="status-buttons">
+            <button class="status-button">All (10)</button>
+            <button class="status-button">Reported (0)</button>
+            <button class="status-button active">Active (0)</button>
+            <button class="status-button">Expired (1)</button>
+            <button class="status-button">Deleted (10)</button>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const statusButtons = document.querySelectorAll('.status-button');
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <!-- Include jQuery (required for Slick) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Include Slick JavaScript -->
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            statusButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    statusButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-

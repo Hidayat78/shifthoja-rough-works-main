@@ -3,42 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Continuous Loading Animation</title>
+    <title>Filter Design</title>
     <style>
-        .box-empty {
-            width: 600px;
-            height: 500px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 50px auto; /* Centering the box for demonstration */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-container {
+            padding: 4px;
+            background-color: #fff;
+        }
+
+        .res-mlfwem, .category-buttons, .status-buttons {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #f0f0f0; /* Just to visualize the div */
+            justify-content: space-between;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+            padding: 5px;
         }
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: #000;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
+
+        .toggle-button, .category-button, .status-button {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            color: #333;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
         }
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+
+        .toggle-button.active, .category-button.active, .status-button.active {
+            background-color: #6f23ff;
+            color: #fff;
         }
-        
+
+        .status-buttons {
+            overflow-x: auto;
+            white-space: nowrap;
+            background-color: #f2f2f2;
+            border-radius: 20px;
+        }
+
+        .status-button {
+            margin-right: 10px;
+        }
+
+        .status-buttons .status-button:last-child {
+            margin-right: 0;
+        }
+                
+        .status-buttons {
+            overflow-x: auto;
+            white-space: nowrap;
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
+
+        .status-buttons::-webkit-scrollbar {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <div class="filter-container">
+        <div class="toggle-buttons res-mlfwem">
+            <button class="toggle-button active">Residential</button>
+            <button class="toggle-button">Commercial</button>
+        </div>
+    </div>
 
-<div class="box-empty" id="lazyBox">
-    <div class="spinner"></div>
-</div>
+    <div class="filter-container">
+        <div class="category-buttons">
+            <button class="category-button active">Buy (10)</button>
+            <button class="category-button">Rent (290)</button>
+            <button class="category-button">PG (0)</button>
+        </div>
+    </div>
 
+    <div class="filter-container">
+        <div class="status-buttons">
+            <button class="status-button">All (10)</button>
+            <button class="status-button">Reported (0)</button>
+            <button class="status-button active">Active (0)</button>
+            <button class="status-button">Expired (1)</button>
+            <button class="status-button">Deleted (10)</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-button');
+            const categoryButtons = document.querySelectorAll('.category-button');
+            const statusButtons = document.querySelectorAll('.status-button');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    toggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            statusButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    statusButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+        });
+    </script>
 </body>
 </html>

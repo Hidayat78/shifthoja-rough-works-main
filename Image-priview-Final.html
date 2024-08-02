@@ -7,7 +7,6 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-       
         html, body {
             margin: 0;
             padding: 0;
@@ -162,19 +161,52 @@
             color: white;
             font-size: 16px;
         }
+        @media (min-width: 480px) and (max-width: 767px){
+            .text-info-view h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 15px;
+        }
+        .text-info-view p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 20px;
+        }
+        .contact-seller{
+            font-size: 12px;
+        }
+        .right-section {
+            margin-right: 30px;
+        }
+        }
+        
+        @media (max-width: 480px){
+            .text-info-view h2{
+                font-size: 15px;
+            } 
+
+            .text-info-view p{
+                font-size: 20px;
+            }
+            .right-section {
+            margin-right: 30px;
+        }
+        }
     </style>
 </head>
 <body>
     <div class="container-head-view">
         <div class="left-section-view">
             <div class="text-info-view">
-                <h2>Hidayat Urban Key Homes</h2>
-                <p>&#8377;3.0 Cr - 5.0 Cr</p>
+                <h2 id="property-title">Hidayat Urban Key Homes</h2>
+                <p id="property-price">&#8377;3.0 Cr - 5.0 Cr</p>
             </div>
-            <div class="buttons-view">
+            <!-- <div class="buttons-view">
                 <button>Share</button>
                 <button>Save</button>
-            </div>
+            </div> -->
         </div>
         <div class="right-section">
             <div class="progress-bar-container-head-view">
@@ -183,7 +215,7 @@
                     <div id="progress-bar-fill"></div>
                 </div>
             </div>
-            <button class="contact-seller">Contact Seller</button>
+            <button class="contact-seller" onclick="sendWhatsAppDetails()">Contact Seller</button>
             <button class="contact-seller" style="background-color: white; color: black;">X</button>
         </div>
     </div>
@@ -209,21 +241,19 @@
 
     <!-- Fullscreen Modal -->
     <div class="fullscreen" id="fullscreenModal">
-        <button class="close-btn" onclick="closeFullscreen()">×</button>
+        <button class="close-btn" onclick="closeFullscreen()">&times;</button>
         <img id="fullscreenImage" src="" alt="Fullscreen Image">
         <div class="image-caption" id="imageCaption"></div>
     </div>
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <!-- Initialize Swiper -->
     <script>
-        const swiper = new Swiper('.swiper-container', {
-            loop: false,
-            spaceBetween: 10,
-            slidesPerView: 3,
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: '3',
             centeredSlides: true,
+            spaceBetween: 30,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -233,44 +263,42 @@
                 prevEl: '.swiper-button-prev',
             },
             on: {
-                slideChangeTransitionEnd: function () {
-                    updateProgress(swiper.realIndex + 1);
+                slideChange: function() {
+                    var totalSlides = this.slides.length;
+                    var currentIndex = this.realIndex + 1;
+                    document.getElementById('current-slide').textContent = currentIndex + '/' + totalSlides;
+
+                    var fillWidth = (currentIndex / totalSlides) * 100;
+                    document.getElementById('progress-bar-fill').style.width = fillWidth + '%';
                 }
             }
         });
 
-        // Initial state setting
-        swiper.on('init', function () {
-            updateProgress(swiper.realIndex + 1);
-        });
-        swiper.init();
+        var fullscreenModal = document.getElementById('fullscreenModal');
+        var fullscreenImage = document.getElementById('fullscreenImage');
+        var imageCaption = document.getElementById('imageCaption');
 
         document.querySelectorAll('.swiper-slide img').forEach(img => {
-            img.addEventListener('click', function() {
-                openFullscreen(this.src, this.dataset.caption);
+            img.addEventListener('click', () => {
+                if (img.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
+                    fullscreenImage.src = img.src;
+                    imageCaption.textContent = img.getAttribute('data-caption');
+                    fullscreenModal.style.display = 'flex';
+                }
             });
         });
 
-        function openFullscreen(src, caption) {
-            const modal = document.getElementById('fullscreenModal');
-            const fullscreenImage = document.getElementById('fullscreenImage');
-            const imageCaption = document.getElementById('imageCaption');
-
-            fullscreenImage.src = src;
-            imageCaption.innerText = caption;
-            modal.style.display = 'flex';
-        }
-
         function closeFullscreen() {
-            document.getElementById('fullscreenModal').style.display = 'none';
+            fullscreenModal.style.display = 'none';
         }
-
-        function updateProgress(currentSlideIndex) {
-            const totalSlides = document.querySelectorAll('.swiper-slide').length;
-            // const totalSlides = swiper.slides.length - swiper.loopedSlides * 2;
-            const progressPercentage = (currentSlideIndex / totalSlides) * 100;
-            document.getElementById('current-slide').innerText = `${currentSlideIndex}/${totalSlides}`;
-            document.getElementById('progress-bar-fill').style.width = `${progressPercentage}%`;
+        
+        function sendWhatsAppDetails() {
+            var propertyTitle = document.getElementById('property-title').textContent;
+            var propertyPrice = document.getElementById('property-price').textContent;
+            var whatsappNumber = '+919504245461';
+            var message = `Hello, I am interested in the property: ${propertyTitle} with price ${propertyPrice}. Please provide more details.`;
+            var whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
         }
     </script>
 </body>
