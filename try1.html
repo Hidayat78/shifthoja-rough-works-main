@@ -17,28 +17,30 @@
 
         .swiper-container {
             width: 100%;
-            height: 450px; /* Increased height to accommodate 400px images */
-            overflow: hidden; /* Prevent scrollbar */
+            height: 450px;
+            overflow: hidden; 
         }
         .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
             transition: transform 0.3s, filter 0.3s;
-            height: 100%; /* Ensure slide takes full height */
-            z-index: 1; /* Default z-index */
+            height: 100%;
+            z-index: 1; 
         }
         .swiper-slide img {
             border-radius: 10px;
-            transition: width 0.3s, height 0.3s; /* Smooth transition for resizing */
-            cursor: pointer;
+            transition: width 0.3s, height 0.3s; 
         }
         .swiper-slide-prev, .swiper-slide-next {
             filter: blur(2px);
             transform: scale(0.8);
         }
+        .swiper-slide-active img {
+    cursor: pointer;
+}
         .swiper-slide-active {
-            z-index: 2; /* Higher z-index for active slide */
+            z-index: 2; 
         }
         .swiper-slide-active img {
             width: 400px;
@@ -158,18 +160,78 @@
             color: white;
             font-size: 16px;
         }
+        @media (min-width: 480px) and (max-width: 767px){
+                .text-info-view h2 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: white;
+                font-size: 15px;
+            }
+            .text-info-view p {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: white;
+                font-size: 20px;
+            }
+            .contact-seller{
+                font-size: 12px;
+            }
+            .right-section {
+                margin-right: 30px;
+            }
+             .swiper-button-next,
+              .swiper-button-prev {
+                top: 50%;
+                transform: translateY(-50%);
+              }
+
+              .swiper-button-prev {
+                left: 10px;
+              }
+
+              .swiper-button-next {
+                right: 10px;
+              }
+            
+    
+        }
+        
+        @media (max-width: 480px){
+            .text-info-view h2{
+                font-size: 15px;
+            } 
+
+            .text-info-view p{
+                font-size: 20px;
+            }
+            .right-section {
+            margin-right: 30px;
+        }
+        .button{
+             padding: 10px 20px;
+            font-size: 11px;
+        }
+         .swiper-button-next,.swiper-button-prev {
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+              .swiper-button-prev {
+                left: 10px; 
+              }
+
+              .swiper-button-next {
+                right: 10px;
+              }
+        }
     </style>
 </head>
 <body>
     <div class="container-head-view">
         <div class="left-section-view">
             <div class="text-info-view">
-                <h2>Hidayat Urban Key Homes</h2>
+                <h2>Hidayat Homes</h2>
                 <p>&#8377;3.0 Cr - 5.0 Cr</p>
-            </div>
-            <div class="buttons-view">
-                <button>Share</button>
-                <button>Save</button>
             </div>
         </div>
         <div class="right-section">
@@ -179,7 +241,7 @@
                     <div></div>
                 </div>
             </div>
-            <button class="contact-seller">Contact Seller</button>
+            <button class="contact-seller">Contact</button>
         </div>
     </div>
     <!-- Swiper -->
@@ -215,7 +277,7 @@
     <!-- Initialize Swiper -->
     <script>
         const swiper = new Swiper('.swiper-container', {
-            loop: true,
+            loop: false,
             spaceBetween: 10,
             slidesPerView: 3,
             centeredSlides: true,
@@ -255,7 +317,9 @@
 
         document.querySelectorAll('.swiper-slide img').forEach(img => {
             img.addEventListener('click', function() {
-                openFullscreen(this.src, this.dataset.caption);
+                if (this.closest('.swiper-slide').classList.contains('swiper-slide-active')) {
+                    openFullscreen(this.src, this.dataset.caption);
+                }
             });
         });
 
