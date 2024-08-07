@@ -3203,118 +3203,118 @@
       
      <script>
          const inputField = document.getElementById('selectedCities');
-const valueContainer = document.getElementById('valueContainer');
-const addMoreButton = document.getElementById('addMoreButton');
-let values = [];  // Stores the entered values in an array
-let moreCount = 0;  // Counter for additional localities
+      const valueContainer = document.getElementById('valueContainer');
+      const addMoreButton = document.getElementById('addMoreButton');
+      let values = [];  // Stores the entered values in an array
+      let moreCount = 0;  // Counter for additional localities
 
-function enableInput() {
-    inputField.classList.remove('hidden');
-    addMoreButton.classList.add('hidden');
-    inputField.focus();
-    toggleChipsVisibility(false);
-}
+      function enableInput() {
+         inputField.classList.remove('hidden');
+         addMoreButton.classList.add('hidden');
+         inputField.focus();
+         toggleChipsVisibility(false);
+      }
 
-function handleKeyPress(event) {
-    if (event.key === 'Enter' && inputField.value.trim() !== '') {
-        addValue(inputField.value.trim());
-        inputField.value = '';
-        inputField.classList.add('hidden');
-        addMoreButton.classList.remove('hidden');
-        toggleChipsVisibility(true);
-    }
-}
+      function handleKeyPress(event) {
+         if (event.key === 'Enter' && inputField.value.trim() !== '') {
+            addValue(inputField.value.trim());
+            inputField.value = '';
+            inputField.classList.add('hidden');
+            addMoreButton.classList.remove('hidden');
+            toggleChipsVisibility(true);
+         }
+      }
 
-function addValue(value) {
-    values.push(value);
-    if (values.length === 1) {
-        createValueChip(values[0]);
-    } else {
-        moreCount++;
-        updateMoreChip();
-    }
-}
+      function addValue(value) {
+         values.push(value);
+         if (values.length === 1) {
+            createValueChip(values[0]);
+         } else {
+            moreCount++;
+            updateMoreChip();
+         }
+      }
 
-function createValueChip(value) {
-    const valueDiv = document.createElement('div');
-    valueDiv.classList.add('value-chip');
-    valueDiv.innerHTML = `${value} <span onclick="removeValue(this)">x</span>`;
-    valueContainer.appendChild(valueDiv);
+      function createValueChip(value) {
+         const valueDiv = document.createElement('div');
+         valueDiv.classList.add('value-chip');
+         valueDiv.innerHTML = `${value} <span onclick="removeValue(this)">x</span>`;
+         valueContainer.appendChild(valueDiv);
 
-    if (moreCount > 0) {
-        updateMoreChip();
-    }
-}
+         if (moreCount > 0) {
+            updateMoreChip();
+         }
+      }
 
-function updateMoreChip() {
-    let moreDiv = document.getElementById('moreChip');
-    if (!moreDiv) {
-        moreDiv = document.createElement('div');
-        moreDiv.id = 'moreChip';
-        moreDiv.classList.add('value-chip');
-        valueContainer.appendChild(moreDiv);
-    }
-    moreDiv.innerHTML = `(+${moreCount} more) <span onclick="removeMoreValues()">x</span>`;
-}
+      function updateMoreChip() {
+         let moreDiv = document.getElementById('moreChip');
+         if (!moreDiv) {
+            moreDiv = document.createElement('div');
+            moreDiv.id = 'moreChip';
+            moreDiv.classList.add('value-chip');
+            valueContainer.appendChild(moreDiv);
+         }
+         moreDiv.innerHTML = `(+${moreCount} more) <span onclick="removeMoreValues()">x</span>`;
+      }
 
-function removeValue(element) {
-    const valueDiv = element.parentElement;
-    const valueText = valueDiv.textContent.replace(' x', '').replace(/ \(\+\d+ more\)$/, '');
-    
-    // Remove the value from the array
-    const index = values.indexOf(valueText);
-    if (index > -1) {
-        values.splice(index, 1);
-    }
+      function removeValue(element) {
+         const valueDiv = element.parentElement;
+         const valueText = valueDiv.textContent.replace(' x', '').replace(/ \(\+\d+ more\)$/, '');
+         
+         // Remove the value from the array
+         const index = values.indexOf(valueText);
+         if (index > -1) {
+            values.splice(index, 1);
+         }
 
-    // Update the display
-    if (values.length > 0) {
-        if (index === 0) {
-            // Update the first value chip
-            const firstChip = valueContainer.querySelector('.value-chip');
-            if (firstChip) {
-                firstChip.innerHTML = `${values[0]} <span onclick="removeValue(this)">x</span>`;
+         // Update the display
+         if (values.length > 0) {
+            if (index === 0) {
+                  // Update the first value chip
+                  const firstChip = valueContainer.querySelector('.value-chip');
+                  if (firstChip) {
+                     firstChip.innerHTML = `${values[0]} <span onclick="removeValue(this)">x</span>`;
+                  }
             }
-        }
 
-        // Update the more count and chip
-        moreCount = values.length - 1;
-        updateMoreChip();
-    } else {
-        // If no values are left, clear the container
-        valueContainer.innerHTML = '';
-        enableInput();
-    }
+            // Update the more count and chip
+            moreCount = values.length - 1;
+            updateMoreChip();
+         } else {
+            // If no values are left, clear the container
+            valueContainer.innerHTML = '';
+            enableInput();
+         }
 
-    // Remove the value chip
-    valueContainer.removeChild(valueDiv);
+         // Remove the value chip
+         valueContainer.removeChild(valueDiv);
 
-    if (valueContainer.children.length === 0) {
-        enableInput();
-        valueContainer.classList.add('hidden');
-    }
-}
+         if (valueContainer.children.length === 0) {
+            enableInput();
+            valueContainer.classList.add('hidden');
+         }
+      }
 
-function removeMoreValues() {
-    moreCount = 0;
-    values = values.slice(0, 1); // Keep only the first value
-    const moreChip = document.getElementById('moreChip');
-    if (moreChip) {
-        valueContainer.removeChild(moreChip);
-    }
-}
+      function removeMoreValues() {
+         moreCount = 0;
+         values = values.slice(0, 1); // Keep only the first value
+         const moreChip = document.getElementById('moreChip');
+         if (moreChip) {
+            valueContainer.removeChild(moreChip);
+         }
+      }
 
-function toggleChipsVisibility(visible) {
-    const chips = document.querySelectorAll('.value-chip');
-    chips.forEach(chip => {
-        chip.style.display = visible ? 'flex' : 'none';
-    });
-}
+      function toggleChipsVisibility(visible) {
+         const chips = document.querySelectorAll('.value-chip');
+         chips.forEach(chip => {
+            chip.style.display = visible ? 'flex' : 'none';
+         });
+      }
 
-// Initially show the input field
-inputField.classList.remove('hidden');
-addMoreButton.classList.add('hidden');
-toggleChipsVisibility(false);
+      // Initially show the input field
+      inputField.classList.remove('hidden');
+      addMoreButton.classList.add('hidden');
+      toggleChipsVisibility(false);
 
      </script>
 

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .hidden {
+      display: none;
+    }
+    .value-chip {
+      display: inline-block;
+      margin: 5px;
+      padding: 5px 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+    }
+    .value-chip .remove {
+      margin-left: 10px;
+      color: red;
+      cursor: pointer;
+    }
+    .selectedLocalities {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .more-chip {
+      background-color: #800080;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-cstm-srch cstmcity-wdth" wire:ignore>
+    <div class="searchInput">
+      <input type="text" placeholder="Search City" id="citySearch">
+      <div class="resultBox">
+        <!-- City list inserted from JavaScript -->
+      </div>
+      <div class="icon"><i class="bi bi-houses"></i></div>
+    </div>
+  </div>
+  <div class="container-cstm-srch" wire:ignore>
+    <div class="searchInput" id="localityContainer">
+      <div id="selectedLocalities" class="selectedLocalities"></div>
+      <input type="text" placeholder="Search Locality" id="localitySearch">
+      <div class="resultBox">
+        <!-- Locality list inserted from JavaScript -->
+      </div>
+      <div class="icon"><i class="bi bi-search"></i></div>
+    </div>
+  </div>
+
+  <script>
+    const citySearchInput = document.getElementById('citySearch');
+    const localitySearchInput = document.getElementById('localitySearch');
+    const selectedLocalitiesContainer = document.getElementById('selectedLocalities');
+    let localitySuggestions = [];
+    let selectedLocalities = [];
+
+    const locations = [
+      { city: "Delhi", locality_city: ["Delhi1", "Delhi2", "Delhi3", "Delhi4", "Delhi5"] },
+      { city: "Noida", locality_city: ["Noida Sector 1", "Noida Sector 2", "Noida Sector 3", "Noida Sector 4"] },
+      { city: "Gurugram", locality_city: ["Gurugram1", "Gurugram2", "Gurugram3", "Gurugram4", "Gurugram5"] }
+    ];
+
+    citySearchInput.addEventListener('keyup', function () {
+      const inputValue = this.value.toLowerCase();
+      const resultBox = this.parentElement.querySelector(".resultBox");
+      if (inputValue) {
+        const filteredCities = locations.map(loc => loc.city).filter(city => city.toLowerCase().startsWith(inputValue));
+        showSuggestions(resultBox, filteredCities, selectCity);
+      } else {
+        resultBox.innerHTML = '';
+      }
+    });
+
+    localitySearchInput.addEventListener('keyup', function () {
+      const inputValue = this.value.toLowerCase();
+      const resultBox = this.parentElement.querySelector(".resultBox");
+      if (inputValue) {
+        const filteredLocalities = localitySuggestions.filter(locality => locality.toLowerCase().startsWith(inputValue));
+        showSuggestions(resultBox, filteredLocalities, selectLocality);
+      } else {
+        resultBox.innerHTML = '';
+      }
+    });
+
+    function showSuggestions(resultBox, suggestions, onClickHandler) {
+      resultBox.innerHTML = suggestions.length ? suggestions.map(item => `<li onclick="${onClickHandler.name}(this)">${item}</li>`).join('') : '<li>No results found</li>';
+    }
+
+    function selectCity(element) {
+      const selectedCity = element.textContent.trim();
+      citySearchInput.value = selectedCity;
+      citySearchInput.parentElement.querySelector(".resultBox").innerHTML = '';
+      const selectedLocation = locations.find(location => location.city === selectedCity);
+      localitySuggestions = selectedLocation ? selectedLocation.locality_city : [];
+      localitySearchInput.focus();
+    }
+
+    function selectLocality(element) {
+      const selectedLocality = element.textContent.trim();
+      addLocality(selectedLocality);
+      localitySearchInput.value = '';
+      localitySearchInput.focus();
+    }
+
+    function addLocality(locality) {
+      selectedLocalities.push(locality);
+      updateLocalitiesDisplay();
+    }
+
+    function updateLocalitiesDisplay() {
+      selectedLocalitiesContainer.innerHTML = '';
+
+      if (selectedLocalities.length > 0) {
+        createLocalityChip(selectedLocalities[0]);
+      }
+      
+      if (selectedLocalities.length > 1) {
+        const moreDiv = document.createElement('div');
+        moreDiv.classList.add('value-chip', 'more-chip');
+        moreDiv.innerHTML = `+${selectedLocalities.length - 1} more <span class="remove" onclick="removeMoreValues()">x</span>`;
+        selectedLocalitiesContainer.appendChild(moreDiv);
+      }
+    }
+
+    function createLocalityChip(locality) {
+      const localityDiv = document.createElement('div');
+      localityDiv.classList.add('value-chip');
+      localityDiv.innerHTML = `${locality} <span class="remove" onclick="removeLocality('${locality}')">x</span>`;
+      selectedLocalitiesContainer.appendChild(localityDiv);
+    }
+
+    function removeLocality(locality) {
+      selectedLocalities = selectedLocalities.filter(l => l !== locality);
+      updateLocalitiesDisplay();
+    }
+
+    function removeMoreValues() {
+      selectedLocalities = selectedLocalities.slice(0, 1);
+      updateLocalitiesDisplay();
+    }
+  </script>
+</body>
+</html>
