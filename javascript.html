@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+
+        // const arry=[1,2,3,4,5];
+        // const doubltA=arry.map((ele,ind,Ar)=>{
+        //     return ele*3 + ind
+        // })
+        // console.log(doubltA)
+
+        // const array=[1,2,3,4,5,6,6,2,2,3]
+        // const filterd= array.filter((ele)=>{
+        //    return ele >2;
+        // })
+        // console.log(filterd)
+
+        // const array=[2,3,4,5,6,7,8];
+        // const reducd=array.reduce((acc,cur,ind,ar)=>{
+        //     return acc+cur 
+        // },0)
+        // console.log(reducd);
+
+
+
+        // PolyFill for map
+
+        // Array.prototype.myMap= function(cb){
+        //     let temp =[];
+        //     for(let ind =0; ind < this.length; ind++){
+        //         temp.push(cb(this[ind], ind,this));
+        //     }
+        //     return temp;
+        // }
+        
+        // const arry=[1,2,3,4,5];
+        // const doubltA=arry.myMap((ele,ind,Ar)=>{
+        //     return ele*3 + ind
+        // })
+        // console.log(doubltA)
+
+
+        // polyFill for filter
+
+        // Array.prototype.myFilter = function(cb){
+        //     let temp=[];
+        //     for(let ind=0; ind < this.length; ind++){
+        //         if(cb(this[ind],ind,this)) temp.push(this[ind]);
+        //     }
+        //     return temp
+        // }
+        //  const array=[1,2,3,4,5,6,6,2,2,3]
+        // const filterd= array.myFilter((ele)=>{
+        //    return ele >2;
+        // })
+        // console.log(filterd)
+
+
+
+        //PloyFill Reduce
+        // Array.prototype.MyReduce= function(cb,initialValue){
+        //     var accumulator = initialValue;
+        //     for(let ind = 0; ind < this.length; ind++){
+        //         accumulator = accumulator ? cb(accumulator, this[ind],ind, this): this[ind];
+        //     }
+        //     return accumulator
+        // }
+        //         const array=[2,3,4,5,6,7,8];
+        // const reducd=array.MyReduce((acc,cur,ind,ar)=>{
+        //     return acc+cur 
+        // },0)
+        // console.log(reducd);
+
+        let students = [
+            
+        {name:"hidyat", rollNumber:31, marks:80},
+        {name:"sarfraz", rollNumber:21, marks:90},
+        {name:"Chaman", rollNumber:11, marks:60},
+        {name:"Nahid", rollNumber:1, marks:110},
+        ];
+
+        // let names=[]
+        // for(let i=0; i < students.length; i++){
+        //     names.push(students[i].name.toUpperCase());
+        // }
+        // console.log(names);
+
+        // const stude = students.map((ellm)=>ellm.name.toUpperCase());
+        // console.log(stude);
+        // const details= students.filter((elm)=> elm.marks >100)
+        // console.log(details)
+
+        // const totalMark= students.reduce((acc, cur)=>acc +cur.marks, 0)
+        // console.log(totalMark);
+        // Retun only name who score more then 80
+
+        // const gdStudent = students.filter((elm)=> elm.marks > 80).map((stu)=> stu.name);
+        // console.log(gdStudent);
+
+        // const incMark =  students.map((elm) => {
+        //     if(elm.marks > 90 ){
+        //         elm.marks += 20;
+        //     }
+        //     return elm;
+        // })
+        // console.log(incMark);
+
+
+        // First class function 
+        // function square(num){
+        //     return num*num
+        // }
+        // function displaySquare(fn){
+        //     console.log("Square of" + fn(5));
+        // }
+        // displaySquare(square);
+
+
+        //         if (true) {
+        //         var c = 30;
+        //     console.log(c); // 30
+        // }
+
+        // console.log(c); 
+
+                //         const  d = 40;
+
+                // function shadowingExample() {
+                //     const d = 50; // Yeh inner `d` outer `d` ko shadow kar raha hai
+                //     console.log(d); // 50
+                // }
+
+                // shadowingExample();
+                // console.log(d); // 40
+
+                
+                if (true) {
+                    var b = 30;
+                    var b = 20;
+                    
+                }
+            console.log(b); // 20
+
+    </script>
+</body>
+</html>
