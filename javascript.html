@@ -10,6 +10,7 @@
 
 
 
+  
 
 
 
@@ -166,12 +167,58 @@
                 // console.log(d); // 40
 
                 
-                if (true) {
-                    var b = 30;
-                    var b = 20;
+            //     if (true) {
+            //         var b = 30;
+            //         var b = 20;
                     
+            //     }
+            // console.log(b); // 20
+
+
+            function createCounter() {
+                var count = 0;
+
+                return function() {
+                    count++;
+                    console.log(count);
                 }
-            console.log(b); // 20
+            }
+
+            var counter1 = createCounter();
+            counter1(); // 1
+            counter1(); // 2
+            counter1();
+            counter1();
+            counter1();
+        //     var counter2 = createCounter();
+        //     counter2(); // 1
+        //     counter2(); // 2
+        //    var counter1 = createCounter();
+
+// Is line mein, createCounter function call hota hai aur uske andar count variable ko 0 initialize kiya jata hai.
+// Phir, createCounter ek function return karta hai jo counter1 variable mein store hota hai.
+// Ab counter1 ke paas ek closure hai jo count variable ko access kar sakta hai.
+// Step 2: counter1();
+
+// Jab aap counter1() call karte ho, count increment hota hai, aur 1 print hota hai.
+// Is waqt, counter1 ka closure count ki value ko 1 store kar ke rakhta hai.
+// Step 3: counter1();
+
+// Phir se counter1() call hota hai, count phir increment hota hai aur ab 2 print hota hai.
+// counter1 ke closure mein count ki value ab 2 ho chuki hai.
+// Step 4: var counter2 = createCounter();
+
+// Jab aap counter2 create karte ho, createCounter function phir se call hota hai.
+// Is baar ek naya closure banta hai jisme count variable phir se 0 se start hota hai.
+// Ab counter2 ke paas apna closure hai jo counter1 se alag hai.
+// Step 5: counter2();
+
+// Jab aap counter2() call karte ho, count increment hota hai aur 1 print hota hai.
+// counter2 ka closure ab count ki value 1 store kar ke rakhta hai.
+// Step 6: counter2();
+
+// Phir se counter2() call karte ho, count increment hota hai aur 2 print hota hai.
+// counter2 ke closure mein count ki value ab 2 ho chuki hai.
 
     </script>
 </body>
