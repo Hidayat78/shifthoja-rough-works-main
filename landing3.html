@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>Document</title>
+
+    <style>
+      
+        .justify-content-between {
+            display: flex;
+            -webkit-box-pack: justify !important;
+            -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+        }
+        .sf-home__owner-prop__card {
+            width: 100%;
+            height: 296px;
+            overflow: hidden;
+            border: #d7d7d7 solid 1px;
+            border-radius: 8px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .sf-home__owner-prop__card--graphic>img {
+            /* width: 100%; */
+            height: 100%;
+            transition: all 0.35s ease-in;
+        }
+
+        .sf-home__owner-prop__card--graphic {
+            /* width: 100%; */
+            height: 156px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .sf-home__owner-prop__card--pic-count {
+            width: auto;
+            height: 24px;
+            line-height: 24px;
+            padding: 0px 6px 0px 22px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 600;
+            background-color: #303030;
+            position: absolute;
+            left: 8px;
+            bottom: 12px;
+            border-radius: 4px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card--content {
+            width: 100%;
+            height: calc(100% - 156px);
+            padding: 12px 16px;
+            position: relative;
+            background-color: #fff;
+        }
+
+        .sf-home__owner-prop__card--pic-count:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: url(https://cdn.staticmb.com/magicservicestatic/1710375018814/images/mb-home-web/mb-home-sprite-web.svg) no-repeat;
+            background-position: -47px -891px;
+            left: 6px;
+            top: 7px;
+        }
+
+        .sf-home,
+        .sf-home * {
+            box-sizing: border-box;
+        }
+
+        .sf-home__owner-prop__card--type {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+            padding-bottom: 2px;
+            text-transform: capitalize;
+            line-height: 20px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sf-home__owner-prop__card--price {
+            color: #303030;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            padding-bottom: 8px;
+        }
+
+        .sf-home .rupees {
+            font-family: Arial;
+            margin-right: 2px;
+            font-weight: normal;
+        }
+
+        .sf-home__owner-prop__card--size:before {
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 14px;
+            background-color: #303030;
+            margin-right: 12px;
+            vertical-align: 0px;
+        }
+
+        .sf-home__owner-prop__card--loc {
+            color: #606060;
+            font-size: 14px;
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 20px;
+            padding-bottom: 4px;
+        }
+
+        .sf-home__owner-prop__card--status {
+            color: #303030;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .sf-home__owner-prop__card .sf-home__action {
+            width: calc(100% - 32px);
+            position: absolute;
+            bottom: -100px;
+            transition: bottom 0.3s ease-out;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__action {
+            bottom: 16px;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--status {
+            opacity: 0;
+        }
+
+        .sf-home__action--btn.btn-red {
+            color: #fff;
+            background-color: #D8232A;
+            border: #D8232A solid 1px;
+            padding: 4px;
+        }
+
+        .sf-home__action--btn {
+            width: auto;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: 16px;
+            background-clip: padding-box;
+            transition: all 0.3s ease;
+        }
+
+        .sf-home__section__title {
+            padding-bottom: 24px;
+        }
+
+        .sf-home__section__title--text1 {
+            color: #303030;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 32px;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sf-home .push-right {
+            float: right;
+        }
+
+        .sf-home__section__title--anchor-see-all {
+            color: #D8232A;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding-right: 20px;
+            margin-top: 8px;
+            position: relative;
+            text-decoration: none; /* Remove underline */
+        }
+
+        .sf-home__section__title--text1.strip-orange:after {
+            background-color: #FFC72C;
+        }
+
+        .sf-home__section__title--text1:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            left: 0px;
+            bottom: -10px;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .sf-home__owner-prop__card>a:hover .sf-home__owner-prop__card--graphic>img {
+            transform: scale(1.1);
+        }
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Hide horizontal scrollbar */
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+        }
+
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+        }
+
+        .example {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Additional style to ensure no scrollbar */
+        body, html {
+            overflow-x: hidden;
+        }
+
+        .container-lg {
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-family: swiper-icons;
+            font-size: 21px !important;
+            text-transform: none !important;
+            letter-spacing: 0;
+            font-variant: initial;
+            line-height: 1;
+            background: #33333369;
+            border-radius: 11px;
+            padding: 11px;
+            color: #fff;
+            display: none;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust to the exact center */
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .swiper-button-next {
+            right: 10px; /* Adjust the horizontal position as needed */
+        }
+
+        .swiper-button-prev {
+            left: 10px; /* Adjust the horizontal position as needed */
+        }
+
+        @media (max-width: 480px) {
+            .sf-home__section__title--text1 {
+                font-size: 12.5px !important;
+                line-height: 15px !important;
+                margin-top: 0px !important;
+                margin-bottom: 14px;
+            }
+            .sf-home__section__title {
+            padding-bottom: 8px;
+            }
+            .sf-home__section__title--anchor-see-all{
+                margin-top: 0px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <section style="margin-bottom: 20px;">
+        <div class="container-lg">
+           <div class="sf-home__section__title d-flex justify-content-between">
+              <div class="sf-home__section__title--text1 strip-orange">
+                 <b>2 BHK Flat for</b> Sell in <b>Chhatarpur</b> New Delhi
+              </div>
+              <a href="/2-bhk/properties-for-sale-in-chhatarpur-delhi" class="sf-home__section__title--anchor-see-all push-right">See all</a>
+           </div>
+           <div class="swiper-container">
+              <div class="swiper-wrapper">
+                 <!-- Slide 1 -->
+                 <div class="swiper-slide">
+                    <div class="sf-home__owner-prop__card card-shadow">
+                       <a href="/property-1-details">
+                          <div class="sf-home__owner-prop__card--graphic">
+                             <img class="swiper-lazy swiper-lazy-loaded" 
+                                src="assets/img/demo/property-1.jpg" 
+                                width="294" height="156" alt="Property Image 1">
+                             <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                             <span class="sf-home__owner-prop__card--pic-count">5</span>
+                          </div>
+                          <div class="sf-home__owner-prop__card--content">
+                             <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                             <div class="sf-home__owner-prop__card--price">
+                                <span class="rupees">₹</span>75,00,000
+                                <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                             </div>
+                             <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                             <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+                 <!-- Repeat for other slides -->
+                     <!-- Slide 1 -->
+                 <div class="swiper-slide">
+                    <div class="sf-home__owner-prop__card card-shadow">
+                       <a href="/property-1-details">
+                          <div class="sf-home__owner-prop__card--graphic">
+                             <img class="swiper-lazy swiper-lazy-loaded" 
+                             src="assets/img/demo/property-2.jpg" 
+                                width="294" height="156" alt="Property Image 1">
+                             <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                             <span class="sf-home__owner-prop__card--pic-count">5</span>
+                          </div>
+                          <div class="sf-home__owner-prop__card--content">
+                             <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                             <div class="sf-home__owner-prop__card--price">
+                                <span class="rupees">₹</span>75,00,000
+                                <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                             </div>
+                             <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                             <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+                 <!-- Repeat for other slides -->
+                     <!-- Slide 1 -->
+                 <div class="swiper-slide">
+                    <div class="sf-home__owner-prop__card card-shadow">
+                       <a href="/property-1-details">
+                          <div class="sf-home__owner-prop__card--graphic">
+                             <img class="swiper-lazy swiper-lazy-loaded" 
+                             src="assets/img/demo/property-3.jpg" 
+                                width="294" height="156" alt="Property Image 1">
+                             <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                             <span class="sf-home__owner-prop__card--pic-count">5</span>
+                          </div>
+                          <div class="sf-home__owner-prop__card--content">
+                             <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                             <div class="sf-home__owner-prop__card--price">
+                                <span class="rupees">₹</span>75,00,000
+                                <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                             </div>
+                             <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                             <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+                 <!-- Repeat for other slides -->
+                     <!-- Slide 1 -->
+                 <div class="swiper-slide">
+                    <div class="sf-home__owner-prop__card card-shadow">
+                       <a href="/property-1-details">
+                          <div class="sf-home__owner-prop__card--graphic">
+                             <img class="swiper-lazy swiper-lazy-loaded" 
+                             src="assets/img/demo/property-4.jpg" 
+                                width="294" height="156" alt="Property Image 1">
+                             <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                             <span class="sf-home__owner-prop__card--pic-count">5</span>
+                          </div>
+                          <div class="sf-home__owner-prop__card--content">
+                             <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                             <div class="sf-home__owner-prop__card--price">
+                                <span class="rupees">₹</span>75,00,000
+                                <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                             </div>
+                             <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                             <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+                 <!-- Repeat for other slides -->
+                     <!-- Slide 1 -->
+                 <div class="swiper-slide">
+                    <div class="sf-home__owner-prop__card card-shadow">
+                       <a href="/property-1-details">
+                          <div class="sf-home__owner-prop__card--graphic">
+                             <img class="swiper-lazy swiper-lazy-loaded" 
+                             src="assets/img/demo/property-5.jpg" 
+                                width="294" height="156" alt="Property Image 1">
+                             <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                             <span class="sf-home__owner-prop__card--pic-count">5</span>
+                          </div>
+                          <div class="sf-home__owner-prop__card--content">
+                             <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                             <div class="sf-home__owner-prop__card--price">
+                                <span class="rupees">₹</span>75,00,000
+                                <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                             </div>
+                             <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                             <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                          </div>
+                       </a>
+                    </div>
+                 </div>
+                 <!-- Repeat for other slides -->
+              </div>
+              <!-- Remove Pagination -->
+              <!-- <div class="swiper-pagination"></div> -->
+              <!-- Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+           </div>
+        </div>
+     </section>
+<!-- 3 BHK -->
+
+<section style="margin-bottom: 20px;">
+    <div class="container-lg">
+       <div class="sf-home__section__title d-flex justify-content-between">
+          <div class="sf-home__section__title--text1 strip-orange">
+             <b>3 BHK Flat for</b> Sell in <b>Chhatarpur</b> New Delhi
+          </div>
+          <a href="/2-bhk/properties-for-sale-in-chhatarpur-delhi" class="sf-home__section__title--anchor-see-all push-right">See all</a>
+       </div>
+       <div class="swiper-container">
+          <div class="swiper-wrapper">
+             <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                            src="assets/img/demo/property-1.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-2.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-3.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-4.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-5.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+          </div>
+          <!-- Remove Pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+          <!-- Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+       </div>
+    </div>
+</section>
+
+ <!-- 1 BHK -->
+
+ <section >
+    <div class="container-lg">
+       <div class="sf-home__section__title d-flex justify-content-between">
+          <div class="sf-home__section__title--text1 strip-orange">
+             <b>3 BHK Flat for</b> Sell in <b>Chhatarpur</b> New Delhi
+          </div>
+          <a href="/2-bhk/properties-for-sale-in-chhatarpur-delhi" class="sf-home__section__title--anchor-see-all push-right">See all</a>
+       </div>
+       <div class="swiper-container">
+          <div class="swiper-wrapper">
+             <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                            src="assets/img/demo/property-1.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-2.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-3.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-4.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+                 <!-- Slide 1 -->
+             <div class="swiper-slide">
+                <div class="sf-home__owner-prop__card card-shadow">
+                   <a href="/property-1-details">
+                      <div class="sf-home__owner-prop__card--graphic">
+                         <img class="swiper-lazy swiper-lazy-loaded" 
+                         src="assets/img/demo/property-5.jpg" 
+                            width="294" height="156" alt="Property Image 1">
+                         <!-- <span class="sf-home__owner-prop__card--pic-verified">Verified</span> -->
+                         <span class="sf-home__owner-prop__card--pic-count">5</span>
+                      </div>
+                      <div class="sf-home__owner-prop__card--content">
+                         <div class="sf-home__owner-prop__card--type">2 BHK Apartment</div>
+                         <div class="sf-home__owner-prop__card--price">
+                            <span class="rupees">₹</span>75,00,000
+                            <span class="sf-home__owner-prop__card--size">1000 sqft</span>
+                         </div>
+                         <div class="sf-home__owner-prop__card--loc">Chhatarpur, New Delhi</div>
+                         <div class="sf-home__owner-prop__card--status">Ready to Move</div>
+                      </div>
+                   </a>
+                </div>
+             </div>
+             <!-- Repeat for other slides -->
+          </div>
+          <!-- Remove Pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+          <!-- Navigation -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+       </div>
+    </div>
+ </section>
+     <!-- Swiper JS -->
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+     <script>
+        window.onload = function() {
+            var swiper = new Swiper('.swiper-container', {
+               slidesPerView: 4,
+               spaceBetween: 30,
+               loop: true,
+               lazy: true,
+               observer: true, // Enable Swiper Observer
+               observeParents: true,
+               autoplay: {
+                  delay: 2500,
+                  disableOnInteraction: false,
+               },
+               navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+               },
+               // Pagination disabled
+               // pagination: {
+               //    el: '.swiper-pagination',
+               //    clickable: true,
+               // },
+               breakpoints: {
+                  1024: {
+                     slidesPerView: 4,
+                     spaceBetween: 20,
+                  },
+                  768: {
+                     slidesPerView: 3,
+                     spaceBetween: 15,
+                  },
+                  640: {
+                     slidesPerView: 2,
+                     spaceBetween: 10,
+                  },
+                  320: {
+                     slidesPerView: 1,
+                     spaceBetween: 5,
+                  }
+               }
+            });
+            setTimeout(() => {
+            swiper.update();
+            }, 200);
+        }
+     </script>
+</body>
+</html>
