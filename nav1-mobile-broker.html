@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .agent-dtl {
+        width: 100%;
+        height: auto;
+        background-color: #fff;
+    }
+    .agent-dtl, .agent-dtl * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-weight: 400;
+    }
+    .agent-dtl__data {
+        color: #303030;
+        padding: 16px;
+        background-image: linear-gradient(65deg, rgba(243, 152, 152, .2) 21%, rgba(2, 193, 212, .2) 95%);
+    }
+    .agent-dtl__data__inf {
+        display: flex;
+        gap: 10px;
+    }
+    .agent-dtl__data__lft {
+        width: 98px;
+        height: auto;
+        object-fit: contain;
+        background-image: linear-gradient(180deg, #02c1d4 0, #70afb9);
+        padding: 4px 4px 0;
+        flex-shrink: 0;
+        position: relative;
+        border-radius: 4px 4px 0 0;
+    }
+    .agent-dtl__data__lft__photo {
+        height: 100%;
+        overflow: hidden;
+        background: #fff;
+        border-radius: 4px 4px 0 0;
+    }
+    .agent-dtl__data__lft__photo--user {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .agent-dtl__data__rgt {
+        width: calc(100% - 108px);
+        line-height: 20px;
+    }
+    .agent-dtl__data__rgt--name, .agent-dtl__data__rgt--pos {
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .agent-dtl__data__rgt--pos {
+        font-size: 12px;
+    }
+    .agent-dtl__data__rgt--rera, .agent-dtl__data__rgt--year {
+        font-size: 12px;
+        color: #606060;
+    }
+    .agent-dtl__data__crt {
+        font-size: 10px;
+        line-height: normal;
+        display: flex;
+        gap: 12px;
+        text-align: center;
+    }
+    .agent-dtl__data__crt__bg {
+        width: 98px;
+        flex-shrink: 0;
+        background-image: linear-gradient(45deg, #f39898, #02c1d4);
+        padding: 0 4px 4px;
+        border-radius: 0 0 4px 4px;
+    }
+    .agent-dtl__data__crt__brand {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 0 0 4px 4px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .agent-dtl__data__crt__brand--logo {
+        width: 100%;
+        height: 100%;
+        max-width: 60px;
+        max-height: 46px;
+        object-fit: contain;
+    }
+    .agent-dtl__data__crt__pref {
+        max-width: 90px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+        position: relative;
+        top: 4px;
+    }
+    .agent-dtl__data__crt__pref--img {
+        width: 50px;
+        height: 38px;
+        background: url(../images/agent-page/agent-detail-sprite-mobile.svg) no-repeat 0 0;
+    }
+    .agent-dtl__data__stats {
+        display: flex;
+        gap: 30px;
+        border-top: 1px solid #d7d7d7;
+        border-bottom: 1px solid #d7d7d7;
+        padding: 12px 0;
+        margin-top: 16px;
+    }
+    .agent-dtl__data__stats__col--val {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 0 4px;
+    }
+    .agent-dtl__data__stats__col--txt {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .agent-dtl__data__stats__col--val {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 0 4px;
+    }
+    .agent-dtl__data__stats__col--txt {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .agent-dtl__data__stats__col--val {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 0 0 4px;
+    }
+    .agent-dtl__data__stats__col--txt {
+        font-size: 12px;
+        line-height: 14px;
+    }.agent-dtl__data__lst {
+        padding: 16px 0 0;
+    }
+    .agent-dtl__data__itm:not(:last-child) {
+        padding: 0 0 16px;
+    }
+    .agent-dtl__data__itm {
+        font-size: 12px;
+    }
+    .agent-dtl__data__itm--head {
+        font-weight: 600;
+        padding: 0 0 2px;
+    }
+    .agent-dtl__data__itm--txt {
+        color: #303030;
+    }
+    .agent-dtl__data__itm {
+        font-size: 12px;
+    }
+    .agent-dtl__data__itm--head {
+        font-weight: 600;
+        padding: 0 0 2px;
+    }
+    .agent-dtl__data__itm--txt {
+        color: #303030;
+    }
+    .agent-dtl__data__action {
+        padding: 12px 16px 14px;
+        background-color: #e8e8e8;
+        display: flex;
+        gap: 14px;
+        margin: 0 0 28px;
+    }
+    .agent-dtl__data__action--white {
+        color: #d8232a;
+        background-color: #fff;
+    }
+    .agent-dtl__data__action--cta {
+        width: calc(50% - 7px);
+        height: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 30px;
+        border: 1px solid #d8232a;
+        text-align: center;
+        padding: 0 8px;
+        border-radius: 16px;
+    }
+    .agent-dtl__data__action--red {
+        color: #fff;
+        background-color: #d8232a;
+    }
+
+    .agent-dtl__data__action--cta {
+        width: calc(50% - 7px);
+        height: 32px;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 30px;
+        border: 1px solid #d8232a;
+        text-align: center;
+        padding: 0 8px;
+        border-radius: 16px;
+    }
+    .agent-dtl__about {
+        width: 100%;
+        height: auto;
+        padding: 20px 10px 10px
+    }
+
+    .agent-dtl__about__title {
+        font-size: 16px;
+        color: #000;
+        font-weight: 600;
+        padding-bottom: 10px
+    }
+
+    .agent-dtl__about__content {
+        color: #303030;
+        font-size: 12px;
+        line-height: 16px;
+        padding-bottom: 10px
+    }
+
+    .agent-dtl__about__content>a.link-more {
+        color: #303030;
+        font-size: 10px;
+        text-decoration: none
+    }
+
+    .agent-dtl__about__table {
+        width: 100%;
+        height: auto;
+        display: table
+    }
+
+    .agent-dtl__about__row {
+        width: 100%;
+        height: auto;
+        display: table-row
+    }
+
+    .agent-dtl__about__col {
+        width: auto;
+        height: auto;
+        display: table-cell;
+        vertical-align: top;
+        padding-bottom: 10px;
+        line-height: 16px;
+        color: #303030;
+        font-size: 12px
+    }
+
+    .agent-dtl__about__col__social {
+        font-size: 10px;
+        color: #303030;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px
+    }
+
+    .agent-dtl__about__col__social .social__icon {
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        margin-right: 4px;
+        top: -2px;
+        background: url(../../searchstatic/images/agent-page/agnetlandingsprite.svg) no-repeat
+    }
+
+    .agent-dtl__about__col__social .social__icon.fb {
+        background-position: -17px -171px
+    }
+
+    .agent-dtl__about__col__social .social__icon.li {
+        background-position: -17px -201px
+    }
+
+    .agent-dtl__about__col__social:last-child {
+        margin-right: 0
+    }
+
+    .agent-dtl__about__col:first-child {
+        width: 110px
+    }
+    .agent-dtl__about__row {
+        width: 100%;
+        height: auto;
+        display: table-row
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="agent-dtl" data-screenname="agent-detail">
+        <div class="agent-dtl__data">
+            <div class="agent-dtl__data__inf">
+                <div class="agent-dtl__data__lft">
+                    <div class="agent-dtl__data__lft__photo">
+                        <img src="assets/img/shera.jpeg"
+                            class="agent-dtl__data__lft__photo--user">
+                    </div>
+                </div>
+                <div class="agent-dtl__data__rgt">
+                    <div class="agent-dtl__data__rgt--name">Shera</div>
+                    <div class="agent-dtl__data__rgt--pos">Shera properties Pvt. Ltd.</div>
+                    <div class="agent-dtl__data__rgt--year">Operating since: 2016</div>
+                </div>
+            </div>
+            <div class="agent-dtl__data__crt">
+                <div class="agent-dtl__data__crt__bg">
+                    <div class="agent-dtl__data__crt__brand">
+                        <img src="https://img.staticmb.com/mbimages/user/Photo_h75_w75/6366266_kunallogo_75_75.jpg"
+                            class="agent-dtl__data__crt__brand--logo" alt="">
+                    </div>
+                </div>
+                <div class="agent-dtl__data__crt__pref">
+                    <div class="agent-dtl__data__crt__pref--img"></div>
+                    <div class="agent-dtl__data__crt__pref--cont">Trusted by<br> Many Users</div>
+                </div>
+            </div>
+            <div class="agent-dtl__data__stats">
+                <div class="agent-dtl__data__stats__col">
+                    <div class="agent-dtl__data__stats__col--val">33</div>
+                    <div class="agent-dtl__data__stats__col--txt">Properties For Sale</div>
+                </div>
+                <div class="agent-dtl__data__stats__col">
+                    <div class="agent-dtl__data__stats__col--val">4</div>
+                    <div class="agent-dtl__data__stats__col--txt">Properties For rent</div>
+                </div>
+                <div class="agent-dtl__data__stats__col">
+                    <div class="agent-dtl__data__stats__col--val">2</div>
+                    <div class="agent-dtl__data__stats__col--txt">Team Members</div>
+                </div>
+            </div>
+            <div class="agent-dtl__data__lst">
+                <div class="agent-dtl__data__itm">
+                    <div class="agent-dtl__data__itm--head">Deals in</div>
+                    <div class="agent-dtl__data__itm--txt">Rent/Lease , Original Booking , Resale , Others</div>
+                </div>
+                <div class="agent-dtl__data__itm">
+                    <div class="agent-dtl__data__itm--head">Operates in</div>
+                    <div class="agent-dtl__data__itm--txt">
+                        <span class="visibleDesc">
+                            Safdarjung Enclave, Greater Kailash 2, Neeti Bagh, Block C Anand Niketan, Vasant Vihar,
+                            Green Park E
+                        </span>
+                        <span class="hiddenDesc" style="display:none">
+                            xtension, Greater Kailash 1, Greater Kailash Part 3, Jangpura, Hauz Khas, Geetanjali Enclave
+                            Malviya Nagar, Sarvodaya Enclave, Green Park, Hauz Khas Enclave, Navjeevan Vihar, Anand Lok,
+                            Block E Greater Kailash 2
+                        </span>
+                        <span class="prfsrp__data__showmore"
+                            onclick="event.stopPropagation(); showmoredata(this,event,'','6366266','More', 'Kunal Gupta','','Y', '','','','new-delhi','','Greater Kailash 1',''); ">More</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="agent-dtl__data__action">
+            <a href="javascript://" onclick="goProperties('#propertyForSale');"
+                class="agent-dtl__data__action--cta agent-dtl__data__action--white">View Properties</a>
+            <a href="javascript://" class="agent-dtl__data__action--cta agent-dtl__data__action--red"
+               >Contact
+                Agent</a>
+            <input type="hidden" name="agentDetailPageContact" id="agentDetailPageContact6366266"
+                value="AgentProfileContact">
+        </div>
+        <div class="contactForms">
+            <div class="contactForm contactAgentFormLeftPos formsWrap" id="aboveContactAgentForm6366266"
+                onclick="stopPage=true;" style="display: none;"></div>
+        </div>
+        <section class="agent-dtl__about">
+            <div class="agent-dtl__about__title">About Shera properties Pvt. Ltd.</div>
+            <div class="agent-dtl__about__content">
+                We are one of the oldest and most reliable Real Estate Consultants network in Delhi/NCR. Our management
+                team consists of a strong team of people with more than 15+ years of experience in the real estate
+                industry.
+            </div>
+            <div class="agent-dtl__about__table">
+                <div class="agent-dtl__about__row">
+                    <div class="agent-dtl__about__col">Team Size</div>
+                    <div class="agent-dtl__about__col">2 people</div>
+                </div>
+                <div class="agent-dtl__about__row">
+                    <div class="agent-dtl__about__col">Address</div>
+                    <div class="agent-dtl__about__col">R-135, Basement, Chhatarpu, New Delhi, Delhi</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
