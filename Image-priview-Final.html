@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,46 +8,55 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
-            overflow-x: hidden; 
+            overflow-x: hidden;
             background-color: black;
         }
 
         .swiper-container {
             width: 100%;
-            height: 450px; 
-            overflow: hidden; 
+            height: 450px;
+            overflow: hidden;
         }
+
         .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
             transition: transform 0.3s, filter 0.3s;
-            height: 100%; 
-            z-index: 1; 
+            height: 100%;
+            z-index: 1;
         }
+
         .swiper-slide img {
             border-radius: 10px;
-            transition: width 0.3s, height 0.3s; 
+            transition: width 0.3s, height 0.3s;
             cursor: pointer;
         }
-        .swiper-slide-prev, .swiper-slide-next {
+
+        .swiper-slide-prev,
+        .swiper-slide-next {
             filter: blur(2px);
             transform: scale(0.8);
         }
+
         .swiper-slide-active {
-            z-index: 2; 
+            z-index: 2;
         }
+
         .swiper-slide-active img {
             width: 400px;
             height: 400px;
         }
+
         .swiper-slide:not(.swiper-slide-active) img {
             width: 300px;
             height: 300px;
         }
+
         .fullscreen {
             position: fixed;
             top: 0;
@@ -59,10 +69,12 @@
             align-items: center;
             z-index: 1000;
         }
+
         .fullscreen img {
             max-width: 90%;
             max-height: 90%;
         }
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -73,9 +85,11 @@
             color: white;
             cursor: pointer;
         }
+
         .close-btn:hover {
             color: red;
         }
+
         .image-caption {
             position: absolute;
             bottom: 20px;
@@ -100,25 +114,30 @@
             align-items: center;
             gap: 20px;
         }
+
         .text-info-view {
             display: flex;
             flex-direction: column;
         }
+
         .text-info-view h2 {
             margin-top: 5px;
             margin-bottom: 5px;
             color: white;
         }
+
         .text-info-view p {
             margin-top: 5px;
             margin-bottom: 5px;
             color: white;
             font-size: 30px;
         }
+
         .buttons-view {
             display: flex;
             gap: 10px;
         }
+
         button {
             background-color: #eee;
             border: none;
@@ -127,16 +146,19 @@
             font-size: 16px;
             border-radius: 5px;
         }
+
         .contact-seller {
             background-color: #00c851;
             color: white;
         }
+
         .progress-bar-container-head-view {
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 5px;
         }
+
         .progress-bar {
             height: 5px;
             width: 100px;
@@ -145,57 +167,66 @@
             position: relative;
             overflow: hidden;
         }
+
         .progress-bar div {
             height: 100%;
-            width: 0%; 
+            width: 0%;
             background-color: #00c851;
             border-radius: 5px;
-            transition: width 0.3s; 
+            transition: width 0.3s;
         }
+
         .right-section {
             display: flex;
             align-items: center;
             gap: 20px;
         }
+
         .date {
             color: white;
             font-size: 16px;
         }
-        @media (min-width: 480px) and (max-width: 767px){
-            .text-info-view h2 {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            color: white;
-            font-size: 15px;
-        }
-        .text-info-view p {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            color: white;
-            font-size: 20px;
-        }
-        .contact-seller{
-            font-size: 12px;
-        }
-        .right-section {
-            margin-right: 30px;
-        }
-        }
-        
-        @media (max-width: 480px){
-            .text-info-view h2{
-                font-size: 15px;
-            } 
 
-            .text-info-view p{
+        @media (min-width: 480px) and (max-width: 767px) {
+            .text-info-view h2 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: white;
+                font-size: 15px;
+            }
+
+            .text-info-view p {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: white;
                 font-size: 20px;
             }
+
+            .contact-seller {
+                font-size: 12px;
+            }
+
             .right-section {
-            margin-right: 30px;
+                margin-right: 30px;
+            }
         }
+
+        @media (max-width: 480px) {
+            .text-info-view h2 {
+                font-size: 15px;
+            }
+
+            .text-info-view p {
+                font-size: 20px;
+            }
+
+            .right-section {
+                margin-right: 30px;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="container-head-view">
         <div class="left-section-view">
@@ -220,17 +251,26 @@
         </div>
     </div>
     <!-- Swiper -->
-    <div class="swiper-container">
+    <div class="swiper-container" id="swpr-cont">
         <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1" data-caption="Cover Image"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2" data-caption="Urban Key Homes Construction Status July-24"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3" data-caption="Urban Key Homes Construction Status July-24"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1" data-caption="Cover Image"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2" data-caption="Urban Key Homes Construction Status July-24"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3" data-caption="Urban Key Homes Construction Status July-24"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1" data-caption="Cover Image"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2" data-caption="Urban Key Homes Construction Status July-24"></div>
-            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3" data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"
+                    data-caption="Cover Image"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"
+                    data-caption="Cover Image"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property1.jpg" alt="Image 1"
+                    data-caption="Cover Image"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property2.jpg" alt="Image 2"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
+            <div class="swiper-slide"><img src="assets/img/property-1/property3.jpg" alt="Image 3"
+                    data-caption="Urban Key Homes Construction Status July-24"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -263,7 +303,7 @@
                 prevEl: '.swiper-button-prev',
             },
             on: {
-                slideChange: function() {
+                slideChange: function () {
                     var totalSlides = this.slides.length;
                     var currentIndex = this.realIndex + 1;
                     document.getElementById('current-slide').textContent = currentIndex + '/' + totalSlides;
@@ -291,7 +331,7 @@
         function closeFullscreen() {
             fullscreenModal.style.display = 'none';
         }
-        
+
         function sendWhatsAppDetails() {
             var propertyTitle = document.getElementById('property-title').textContent;
             var propertyPrice = document.getElementById('property-price').textContent;
@@ -302,4 +342,5 @@
         }
     </script>
 </body>
+
 </html>
