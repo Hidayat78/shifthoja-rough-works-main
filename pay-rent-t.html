@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Rent and Fees with Credit Card</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container-rent {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #303890;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .scroll-container-rent {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 10px;
+        }
+
+        .content {
+            flex: 0 0 auto;
+            width: 280px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .offer-image {
+            max-width: 45%;
+            border-radius: 5px;
+        }
+
+        .text-Cashback {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-Cashback h2 {
+            font-size: 18px;
+            color: #2b2b2b;
+            margin: 0;
+        }
+
+        .text-Cashback p {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0 0 0;
+        }
+
+        .offer-text {
+            max-width: 50%;
+            margin-left: 10px;
+        }
+
+        .image-container-Cashback {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container-Cashback::before {
+            content: "";
+            position: absolute;
+            bottom: -50%;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background-color: white;
+        }
+
+        .image-container-Cashback img {
+            width: 80px;
+            height: auto;
+        }
+
+
+        .offer-text p {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .cta-button {
+            display: block;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #4876ef;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #29317d;
+            border-radius: 10px;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .footer-icon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .card-Cashback-1 {
+            background: linear-gradient(135deg, #d4edda, #a5d6a7);
+        }
+
+        .card-Cashback-2 {
+            background: linear-gradient(135deg, #fff3cd, #ffeeba);
+        }
+
+        .card-Cashback-3 {
+            background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+        }
+    </style>
+    <style>
+        /* Reset some basic elements */
+        body,
+        html,
+        form,
+        input,
+        select,
+        button,
+        label {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container-rent {
+            width: 90%;
+            max-width: 500px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group-rent {
+            margin-bottom: 20px;
+        }
+
+        .form-group-rent label {
+            color: black;
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .dropdown select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .phone-input {
+            display: flex;
+        }
+
+        #country-code {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+        }
+
+        #phone {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .whatsapp-option {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .whatsapp-option label {
+            display: flex;
+            align-items: center;
+            color: black;
+            margin-left: 10px;
+        }
+
+        .whatsapp-option span {
+            color: #25D366;
+            /* WhatsApp green */
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            border-radius: 34px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked+.slider {
+            background-color: #25D366;
+            /* WhatsApp green */
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(20px);
+        }
+
+        .terms {
+            display: flex;
+            align-items: center;
+        }
+
+        .terms input {
+            margin-right: 10px;
+        }
+
+        .terms a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #69b9fb;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0078DB;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .form-container-rent {
+                margin-left: -2px;
+                margin-top: 20px;
+            }
+
+            .calendar-container {
+                width: 320px !important;
+            }
+
+            .whatsapp-option label {
+                font-size: 14px;
+            }
+
+            .form-group-rent label {
+                font-size: 14px;
+            }
+
+            .phone-input {
+                display: flex;
+            }
+
+            /* .phone-input {
+                    flex-direction: column;
+                } */
+
+            #country-code,
+            #phone {
+                border-radius: 4px;
+                border-right: 1px solid #ccc;
+            }
+
+            #phone {
+                margin-top: 0px;
+            }
+        }
+    </style>
+    <style>
+        .reminder-container {
+            max-width: 405px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .calendar-container {
+            height: auto;
+            width: 377px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        .calendar-week {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            padding-inline-start: 0px;
+        }
+
+        .calendar-week-day {
+            max-width: 57.1px;
+            width: 100%;
+            text-align: center;
+            color: #525659;
+        }
+
+        .calendar-days {
+            margin-top: 14px;
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 4px;
+            padding-inline-start: 0px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            color: #525659;
+        }
+
+        .calendar-month-arrow-container {
+            display: flex;
+            align-items: center;
+            /* justify-content: space-between; */
+        }
+
+        .calendar-month-year-container {
+            padding: 10px 10px 20px 10px;
+            color: #525659;
+            cursor: pointer;
+        }
+
+        .calendar-arrow-container {
+            margin-top: -5px;
+        }
+
+        .calendar-left-arrow,
+        .calendar-right-arrow {
+            height: 30px;
+            width: 30px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #525659;
+        }
+
+        .calendar-today-button {
+            margin-top: -10px;
+            border-radius: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #525659;
+            padding: 5px 10px;
+        }
+
+        .calendar-today-button {
+            height: 27px;
+            margin-right: 10px;
+            background-color: #0078DB;
+            color: white;
+        }
+
+        .calendar-months,
+        .calendar-years {
+            flex: 1;
+            border-radius: 10px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            color: #525659;
+            font-size: 15px;
+        }
+
+        .calendar-day-active {
+            background-color: #0078DB;
+            color: white;
+            border-radius: 12%;
+        }
+    </style>
+    <style>
+        .reminder-container {
+            margin-top: 16px;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .input-group-text {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
+            border-radius: 4px 0 0 4px;
+            padding: 10px;
+            color: black;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .form-control {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .calendar-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .calendar-month-arrow-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .calendar-month-year-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .calendar-month-year-container select {
+            font-size: 16px;
+            padding: 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .calendar-arrow-container {
+            display: flex;
+            gap: 5px;
+        }
+
+        .calendar-arrow-container button {
+            border: none;
+            background-color: #0078DB;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .calendar-week,
+        .calendar-days {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+
+        .calendar-week {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .calendar-week-day {
+            width: calc(100% / 7);
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .calendar-days {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .calendar-day {
+            width: calc(100% / 7);
+            padding: 10px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        .calendar-day-active {
+            background-color: #0078DB;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .calendar-today-button {
+            display: block;
+            margin: 10px auto;
+            background-color: #0078DB;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: #5a6268;
+        }
+
+        p.text-center {
+            color: black;
+            font-size: 14px;
+        }
+    </style>
+    <style>
+        /* Modal styles */
+        #reminderModal {
+            display: none;
+            /* Start hidden */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black with opacity */
+        }
+
+        .reminder-container {
+            margin: 15% auto;
+            padding: 20px;
+            max-width: 320px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .rent-close-modal {
+            float: right;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Rest of the styles */
+        /* (include your input, calendar, and button styles here) */
+
+
+        /* Ensure the section is only visible on mobile screens */
+        @media (max-width: 768px) {
+
+            /* Adjust the max-width value to fit your mobile breakpoint */
+            .payment-companies {
+                height: 66px;
+                margin-top: 16px;
+                overflow: hidden;
+                background-color: #f8f9fa;
+                padding: 10px;
+                border-radius: 12px;
+            }
+
+            .payment-companies-container {
+                display: flex;
+                height: 100%;
+                overflow-x: auto;
+                /* Enable horizontal scrolling */
+                scroll-behavior: smooth;
+                /* Smooth scrolling */
+                white-space: nowrap;
+                /* Ensure images stay in a single row */
+            }
+
+            .company-logo {
+                height: 60px;
+                width: 60px;
+                /* Ensure logos take up the full height of the container */
+                margin-right: 10px;
+                /* Space between logos */
+                object-fit: contain;
+                /* Ensure logos are not cropped */
+            }
+
+            .payment-companies::-webkit-scrollbar {
+                display: none;
+                /* Hide scrollbar for a cleaner look */
+            }
+        }
+
+
+        .testimonial-container {
+            background-color: #393E46;
+            color: #fff;
+            border-radius: 5px;
+            margin: 20px auto;
+            padding: 50px 80px;
+            max-width: 768px;
+            position: relative;
+        }
+
+        .fa-quote {
+            color: #FFD369;
+            font-size: 28px;
+            position: absolute;
+            top: 70px;
+        }
+
+        .fa-quote-right {
+            left: 40px;
+        }
+
+        .fa-quote-left {
+            right: 40px;
+        }
+
+        .testimonial {
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .user .user-image {
+            border-radius: 50%;
+            border: 3px solid #FFD369;
+            height: 75px;
+            width: 75px;
+            object-fit: cover;
+        }
+
+        .user .user-details {
+            margin-left: 10px;
+        }
+
+        .user .username {
+            margin: 0;
+        }
+
+        .user .role {
+            font-weight: normal;
+            margin: 10px 0;
+        }
+
+        .progress-bar {
+            background-color: #FFD369;
+            height: 4px;
+            width: 100%;
+            margin-bottom: 40px;
+            animation: grow 10s linear infinite;
+            transform-origin: left;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scaleX(0);
+            }
+        }
+
+
+
+
+        @media(max-width: 768px) {
+            .testimonial-container {
+                padding: 20px 30px;
+                border-radius: 12px;
+            }
+
+            .fa-quote {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-rent">
+        <section>
+            <div class="header">Pay Rent and Fees with Credit Card</div>
+
+            <div class="scroll-container-rent">
+                <div class="content card-Cashback-1">
+                    <div class="text-Cashback">
+                        <h2>Get Upto ₹5 Lakhs Instant Cash</h2>
+                        <p>in your bank a/c within minutes</p>
+                    </div>
+                    <div class="image-container-Cashback">
+                        <img src="https://cdn-icons-png.freepik.com/256/2953/2953423.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                            alt="Cash Image">
+                    </div>
+                </div>
+                <div class="content card-Cashback-2 ">
+                    <div class="text-Cashback">
+                        <h2>Get upto 100% Fees as CashBack!</h2>
+                        <p>Risk hai bhai</p>
+                    </div>
+                    <div class="image-container-Cashback">
+                        <img src="https://cdn-icons-png.freepik.com/256/1289/1289596.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                            alt="Cashback Image">
+                    </div>
+                </div>
+                <div class="content card-Cashback-3">
+                    <div class="text-Cashback">
+                        <h2>It's raining Cashback!!</h2>
+                        <p>Every 100th user gets ₹100 or ₹1000 Cashback</p>
+                    </div>
+                    <div class="image-container-Cashback">
+                        <img src="https://cdn-icons-png.freepik.com/256/2355/2355428.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                            alt="Thumbs Up Image">
+                    </div>
+                </div>
+                <!-- Add more .content sections as needed -->
+            </div>
+
+            <a href="#" class="cta-button">4 Offers Available on Cards</a>
+
+            <div class="footer">
+                <div class="footer-text">Lowest Charges. Instant Transfers.</div>
+                <div class="footer-icon">⚡</div>
+            </div>
+        </section>
+        <section>
+            <div class="form-container-rent">
+                <form>
+                    <div class="form-group-rent">
+                        <label for="payment-type-rent">Payment Type</label>
+                        <div class="dropdown">
+                            <select id="payment-type-rent">
+                                <option value="house-rent">🏠 House Rent</option>
+                                <option value="office-rent">🏢 Office Rent</option>
+                                <option value="plot-rent">🌳 Plot Rent</option>
+                                <option value="farm-rent">🚜 Farm Rent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group-rent">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+
+                    <div class="form-group-rent">
+                        <label for="phone">Mobile Number</label>
+                        <div class="phone-input">
+                            <select id="country-code">
+                                <option value="+91">🇮🇳 +91</option>
+                            </select>
+                            <input type="text" id="phone" placeholder="9504245461">
+                        </div>
+                        <div class="whatsapp-option">
+                            <input type="checkbox" id="whatsapp-updates">
+                            <label for="whatsapp-updates">Get payment updates on <span>WhatsApp</span></label>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="whatsapp-switch">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group-rent">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="Enter email address">
+                    </div>
+
+                    <div class="form-group-rent terms">
+                        <input type="checkbox" id="terms">
+                        <label for="terms">I agree to the SHIFTHOJA <a href="#">Terms and Conditions</a></label>
+                    </div>
+                    <button type="submit" class="submit-btn">Get Started</button>
+                </form>
+            </div>
+        </section>
+        <section id="reminderModal" class="modal">
+            <div class="reminder-container">
+                <div style="display: flex; justify-content: space-between;">
+                    <p style="font-size: 14px;" class="text-center">Get benefits of a credit card rent payment from next
+                        month. Set a rent payment
+                        reminder!
+                    </p>
+                    <span class="rent-close-modal" style="color: black;font-size: 18px;cursor: pointer;">X</span>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">🇮🇳 +91</span>
+                    <input type="text" class="form-control" placeholder="Enter phone number">
+                </div>
+                <!-- Calendar Container -->
+                <div class="calendar-container">
+                    <div class="calendar-month-arrow-container">
+                        <div class="calendar-month-year-container">
+                            <select class="calendar-months"></select>
+                            <select class="calendar-years"></select>
+                        </div>
+                        <div class="calendar-arrow-container">
+                            <button class="calendar-left-arrow">←</button>
+                            <button class="calendar-right-arrow">→</button>
+                        </div>
+                    </div>
+                    <button class="calendar-today-button"></button>
+                    <ul class="calendar-week">
+                        <!-- Week days will be injected here -->
+                    </ul>
+                    <ul class="calendar-days">
+                        <!-- Calendar days will be injected here -->
+                    </ul>
+                </div>
+                <!-- Submit Button -->
+                <button class="btn-submit">Submit</button>
+            </div>
+        </section>
+        <section class="payment-companies">
+            <div class="payment-companies-container">
+                <img src="https://cdn-icons-png.freepik.com/256/11024/11024119.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 1" class="company-logo">
+                <img src="https://cdn-icons-png.freepik.com/256/11041/11041080.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 2" class="company-logo">
+                <img src="https://cdn-icons-png.freepik.com/256/6124/6124998.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 3" class="company-logo">
+                <img src="https://cdn-icons-png.freepik.com/256/11024/11024119.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 1" class="company-logo">
+                <img src="https://cdn-icons-png.freepik.com/256/11041/11041080.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 2" class="company-logo">
+                <img src="https://cdn-icons-png.freepik.com/256/6124/6124998.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Company 3" class="company-logo">
+            </div>
+        </section>
+        <section>
+            <div class="testimonial-container">
+                <div class="progress-bar"></div>
+                <div class="fas fa-quote-right fa-quote"></div>
+                <div class="fas fa-quote-left fa-quote"></div>
+                <p class="testimonial">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia repellendus, vitae
+                    suscipit
+                    culpa molestiae possimus voluptate consequuntur odit nulla saepe obcaecati dolorem laudantium
+                    praesentium
+                    aspernatur mollitia aperiam laborum rem cum commodi doloremque asperiores officia hic similique.
+                    Sint ad nobis
+                    quos?</p>
+                <div class="user">
+                    <img src="https://randomuser.me/api/portraits/women/46.jpg" alt="user" class="user-image">
+                    <div class="user-details">
+                        <h4 class="username">Aman Gola</h4>
+                        <p class="role">Marketing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script>
+        //50 projects in 50 days Udemy
+
+        const testimonialsContainer = document.querySelector('.testimonials-container');
+        const testimonial = document.querySelector('.testimonial');
+        const userImage = document.querySelector('.user-image');
+        const username = document.querySelector('.username');
+        const role = document.querySelector('.role');
+
+        const testimonials = [
+            {
+                name: 'Mariya khan',
+                position: 'Marketing',
+                photo:
+                    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6',
+                text:
+                    "I've worked with literally hundreds of HTML/CSS developers and I have to say the top spot goes to this guy. This guy is an amazing developer. He stresses on good, clean code and pays heed to the details. I love developers who respect each and every aspect of a throughly thought out design and do their best to put it in code. He goes over and beyond and transforms ART into PIXELS - without a glitch, every time.",
+            },
+            {
+                name: 'Sabiha khan',
+                position: 'Software Engineer',
+                photo: 'https://randomuser.me/api/portraits/women/44.jpg',
+                text:
+                    'This guy is an amazing frontend developer that delivered the task exactly how we need it, do your self a favor and hire him, you will not be disappointed by the work delivered. He will go the extra mile to make sure that you are happy with your project. I will surely work again with him!',
+            },
+            {
+                name: 'Mawo khan',
+                position: 'Data Entry',
+                photo: 'https://randomuser.me/api/portraits/women/68.jpg',
+                text:
+                    "This guy is a hard worker. Communication was also very good with him and he was very responsive all the time, something not easy to find in many freelancers. We'll definitely repeat with him.",
+            },
+            {
+                name: 'Subu khan',
+                position: 'Receptionist',
+                photo: 'https://randomuser.me/api/portraits/women/65.jpg',
+                text:
+                    "This guy does everything he can to get the job done and done right. This is the second time I've hired him, and I'll hire him again in the future.",
+            },
+            {
+                name: 'Annie khan',
+                position: 'Graphic Designer',
+                photo: 'https://randomuser.me/api/portraits/men/43.jpg',
+                text:
+                    "I had my concerns that due to a tight deadline this project can't be done. But this guy proved me wrong not only he delivered an outstanding work but he managed to deliver 1 day prior to the deadline. And when I asked for some revisions he made them in MINUTES. I'm looking forward to work with him again and I totally recommend him. Thanks again!",
+            },
+            {
+                name: 'Anaida Rawat',
+                position: 'Accountant',
+                photo:
+                    'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb',
+                text:
+                    'This guy is a top notch designer and front end developer. He communicates well, works fast and produces quality work. We have been lucky to work with him!',
+            },
+            {
+                name: 'Swati Pandey',
+                position: 'Director',
+                photo: 'https://randomuser.me/api/portraits/men/97.jpg',
+                text:
+                    'This guy is a young and talented IT professional, proactive and responsible, with a strong work ethic. He is very strong in PSD2HTML conversions and HTML/CSS technology. He is a quick learner, eager to learn new technologies. He is focused and has the good dynamics to achieve due dates and outstanding results.',
+            },
+        ]
+
+
+        let idx = 1;
+
+        function updateTestimonials() {
+            const { name, position, photo, text } = testimonials[idx];
+
+            testimonial.innerHTML = text;
+            userImage.src = photo;
+            username.innerHTML = name;
+            role.innerHTML = position;
+
+            idx++;
+
+            if (idx > testimonials.length - 1) {
+                idx = 0;
+            }
+        }
+
+        setInterval(updateTestimonials, 10000);
+    </script>
+    <script>
+        // JavaScript to handle modal display
+        var modal = document.getElementById("reminderModal");
+        var span = document.querySelector(".rent-close-modal");
+
+        // Show the modal 6 seconds after the DOM is fully loaded
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () {
+                modal.style.display = "block";
+            }, 6000); // 6000 milliseconds = 6 seconds
+        });
+
+
+        // When the user clicks on <span> (X), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        const weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const monthArray = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        const current = new Date();
+        const todaysDate = current.getDate();
+        const currentYear = current.getFullYear();
+        const currentMonth = current.getMonth();
+
+        window.onload = function () {
+            const currentDate = new Date();
+            generateCalendarDays(currentDate);
+
+            const calendarWeek = document.querySelector(".calendar-week");
+            const calendarTodayButton = document.querySelector(".calendar-today-button");
+            calendarTodayButton.textContent = `Today ${todaysDate}`;
+
+            calendarTodayButton.addEventListener("click", () => {
+                generateCalendarDays(currentDate);
+            });
+
+            weekArray.forEach((week) => {
+                let li = document.createElement("li");
+                li.textContent = week;
+                li.classList.add("calendar-week-day");
+                calendarWeek.appendChild(li);
+            });
+
+            const calendarMonths = document.querySelector(".calendar-months");
+            const calendarYears = document.querySelector(".calendar-years");
+
+            monthArray.forEach((month, index) => {
+                let option = document.createElement("option");
+                option.textContent = month;
+                option.value = index;
+                option.selected = index === currentMonth;
+                calendarMonths.appendChild(option);
+            });
+
+            for (let year = currentYear - 60; year <= currentYear + 60; year++) {
+                let option = document.createElement("option");
+                option.textContent = year;
+                option.value = year;
+                option.selected = year === currentYear;
+                calendarYears.appendChild(option);
+            }
+
+            document.querySelector(".calendar-left-arrow").addEventListener("click", () => {
+                navigateMonth(-1);
+            });
+
+            document.querySelector(".calendar-right-arrow").addEventListener("click", () => {
+                navigateMonth(1);
+            });
+
+            calendarMonths.addEventListener("change", () => {
+                updateCalendar();
+            });
+
+            calendarYears.addEventListener("change", () => {
+                updateCalendar();
+            });
+        };
+
+        function generateCalendarDays(date) {
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            const totalDaysInMonth = getTotalDaysInAMonth(year, month);
+            const firstDayOfWeek = getFirstDayOfWeek(year, month);
+            const calendarDays = document.querySelector(".calendar-days");
+
+            calendarDays.innerHTML = "";
+
+            for (let i = 0; i < firstDayOfWeek; i++) {
+                const li = document.createElement("li");
+                calendarDays.appendChild(li);
+            }
+
+            for (let day = 1; day <= totalDaysInMonth; day++) {
+                const li = document.createElement("li");
+                li.textContent = day;
+                li.classList.add("calendar-day");
+                if (todaysDate === day && currentMonth === month && currentYear === year) {
+                    li.classList.add("calendar-day-active");
+                }
+                calendarDays.appendChild(li);
+            }
+
+            document.querySelector(".calendar-months").value = month;
+            document.querySelector(".calendar-years").value = year;
+        }
+
+        function updateCalendar() {
+            const month = document.querySelector(".calendar-months").value;
+            const year = document.querySelector(".calendar-years").value;
+            generateCalendarDays(new Date(year, month, 1));
+        }
+
+        function navigateMonth(change) {
+            const monthSelect = document.querySelector(".calendar-months");
+            const yearSelect = document.querySelector(".calendar-years");
+            let month = parseInt(monthSelect.value);
+            let year = parseInt(yearSelect.value);
+
+            month += change;
+            if (month > 11) {
+                month = 0;
+                year += 1;
+            } else if (month < 0) {
+                month = 11;
+                year -= 1;
+            }
+
+            monthSelect.value = month;
+            yearSelect.value = year;
+            generateCalendarDays(new Date(year, month, 1));
+        }
+
+        function getTotalDaysInAMonth(year, month) {
+            return new Date(year, month + 1, 0).getDate();
+        }
+
+        function getFirstDayOfWeek(year, month) {
+            return new Date(year, month, 1).getDay();
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const whatsappSwitch = document.getElementById('whatsapp-switch');
+            const whatsappCheckbox = document.getElementById('whatsapp-updates');
+
+            whatsappSwitch.addEventListener('change', () => {
+                whatsappCheckbox.checked = whatsappSwitch.checked;
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

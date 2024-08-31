@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashback Offer Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card-Cashback {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            transition: transform 0.2s;
+        }
+
+        .card-Cashback:hover {
+            transform: translateY(-5px);
+        }
+
+        .content-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text-Cashback {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-Cashback h2 {
+            font-size: 18px;
+            color: #2b2b2b;
+            margin: 0;
+        }
+
+        .text-Cashback p {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0 0 0;
+        }
+
+        .image-container-Cashback {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container-Cashback::before {
+            content: "";
+            position: absolute;
+            bottom: -50%;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background-color: white;
+        }
+
+        .image-container-Cashback img {
+            width: 80px;
+            height: auto;
+        }
+
+        .card-Cashback-1 {
+            background: linear-gradient(135deg, #d4edda, #a5d6a7);
+        }
+
+        .card-Cashback-2 {
+            background: linear-gradient(135deg, #fff3cd, #ffeeba);
+        }
+
+        .card-Cashback-3 {
+            background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-Cashback card-Cashback-1">
+        <div class="content-row">
+            <div class="text-Cashback">
+                <h2>Get Upto ₹5 Lakhs Instant Cash</h2>
+                <p>in your bank a/c within minutes</p>
+            </div>
+            <div class="image-container-Cashback">
+                <img src="https://cdn-icons-png.freepik.com/256/2953/2953423.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Cash Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-Cashback card-Cashback-2">
+        <div class="content-row">
+            <div class="text-Cashback">
+                <h2>Get upto 100% Fees as CashBack!</h2>
+                <p>Risk hai bhai</p>
+            </div>
+            <div class="image-container-Cashback">
+                <img src="https://cdn-icons-png.freepik.com/256/1289/1289596.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Cashback Image">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-Cashback card-Cashback-3">
+        <div class="content-row">
+            <div class="text-Cashback">
+                <h2>It's raining Cashback!!</h2>
+                <p>Every 100th user gets ₹100 or ₹1000 Cashback</p>
+            </div>
+            <div class="image-container-Cashback">
+                <img src="https://cdn-icons-png.freepik.com/256/2355/2355428.png?ga=GA1.1.705197994.1724139581&semt=ais_hybrid"
+                    alt="Thumbs Up Image">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
