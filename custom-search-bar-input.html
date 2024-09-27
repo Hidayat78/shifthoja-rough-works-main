@@ -1,154 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-::selection{
-  color: #fff;
-  background: #19181b;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ::selection {
+      color: #fff;
+      background: #19181b;
+    }
 
-.container-cstm-srch{
-  max-width: 300px;
-}
+    .container-cstm-srch {
+      max-width: 300px;
+    }
 
-.container-cstm-srch .searchInput{
-  background: #fff;
-  width: 100%;
-  border-radius: 5px;
-  position: relative;
-  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-}
+    .container-cstm-srch .searchInput {
+      background: #fff;
+      width: 100%;
+      border-radius: 5px;
+      position: relative;
+      box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+    }
 
-.searchInput input{
-  height: 38px;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  padding: 0 60px 0 20px;
-  font-size: 18px;
-  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-}
+    .searchInput input {
+      height: 38px;
+      width: 100%;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      padding: 0 60px 0 20px;
+      font-size: 18px;
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    }
 
-.searchInput.active input{
-  border-radius: 5px 5px 0 0;
-}
+    .searchInput.active input {
+      border-radius: 5px 5px 0 0;
+    }
 
-.searchInput .resultBox{
-  padding: 0;
-  opacity: 0;
-  pointer-events: none;
-  max-height: 280px;
-  overflow-y: auto;
-}
+    .searchInput .resultBox {
+      padding: 0;
+      opacity: 0;
+      pointer-events: none;
+      max-height: 280px;
+      overflow-y: auto;
+    }
 
-.searchInput.active .resultBox{
-  padding: 10px 8px;
-  opacity: 1;
-  pointer-events: auto;
-}
+    .searchInput.active .resultBox {
+      padding: 10px 8px;
+      opacity: 1;
+      pointer-events: auto;
+    }
 
-.resultBox li{
-  list-style: none;
-  display: none;
-  width: 100%;
-  cursor: default;
-  border-radius: 3px;
-}
+    .resultBox li {
+      list-style: none;
+      display: none;
+      width: 100%;
+      cursor: default;
+      border-radius: 3px;
+    }
 
-.searchInput.active .resultBox li{
-  display: block;
-}
-.resultBox li:hover{
-  background: #efefef;
-}
+    .searchInput.active .resultBox li {
+      display: block;
+    }
 
-.searchInput .icon{
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  height: 55px;
-  width: 55px;
-  text-align: center;
-  line-height: 55px;
-  font-size: 20px;
-  color: #644bff;
-  cursor: pointer;
-}
-    </style>
+    .resultBox li:hover {
+      background: #efefef;
+    }
+
+    .searchInput .icon {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      height: 55px;
+      width: 55px;
+      text-align: center;
+      line-height: 55px;
+      font-size: 20px;
+      color: #644bff;
+      cursor: pointer;
+    }
+  </style>
 </head>
-<body>
-      <div class="container-cstm-srch">
-        <div class="searchInput">
-          <input type="text" placeholder="Search Locality">
-          <div class="resultBox">
-            <!-- here list are inserted from javascript -->
-          </div>
-          <div class="icon"></div>
-        </div>
-      </div>
 
-      <script>
-        let suggestions = [
-            "Chhatarpur",
-            "Saket",
-            "Okhla",
-            "Batlahouse",
-            "Saheen bhag",
-            "Julena",
-            "New Friends clony"
-        ];
-    
-        const searchInput = document.querySelector(".searchInput");
-        const input = searchInput.querySelector("input");
-        const resultBox = searchInput.querySelector(".resultBox");
-        const icon = searchInput.querySelector(".icon");
-        let linkTag = searchInput.querySelector("a");
-        let webLink;
-    
-        input.onkeyup = (e) => {
-            let userData = e.target.value; 
-            console.log("User input:", userData); // Debugging: Log user input
-            let emptyArray = [];
-            if (userData) {
-                emptyArray = suggestions.filter((data) => {
-                    return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase()); 
-                });
-                console.log("Filtered suggestions:", emptyArray); // Debugging: Log filtered suggestions
-                emptyArray = emptyArray.map((data) => {
-                    return '<li>' + data + '</li>';
-                });
-                searchInput.classList.add("active"); 
-                showSuggestions(emptyArray);
-                let allList = resultBox.querySelectorAll("li");
-                for (let i = 0; i < allList.length; i++) {
-                    allList[i].setAttribute("onclick", "select(this)");
-                }
-            } else {
-                searchInput.classList.remove("active"); 
-            }
+<body>
+  <div class="container-cstm-srch">
+    <div class="searchInput">
+      <input type="text" placeholder="Search Locality">
+      <div class="resultBox">
+        <!-- here list are inserted from javascript -->
+      </div>
+      <div class="icon"></div>
+    </div>
+  </div>
+
+  <script>
+    let suggestions = [
+      "Chhatarpur",
+      "Saket",
+      "Okhla",
+      "Batlahouse",
+      "Saheen bhag",
+      "Julena",
+      "New Friends clony"
+    ];
+
+    const searchInput = document.querySelector(".searchInput");
+    const input = searchInput.querySelector("input");
+    const resultBox = searchInput.querySelector(".resultBox");
+    const icon = searchInput.querySelector(".icon");
+    let linkTag = searchInput.querySelector("a");
+    let webLink;
+
+    input.onkeyup = (e) => {
+      let userData = e.target.value;
+      console.log("User input:", userData); // Debugging: Log user input
+      let emptyArray = [];
+      if (userData) {
+        emptyArray = suggestions.filter((data) => {
+          return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+        });
+        console.log("Filtered suggestions:", emptyArray); // Debugging: Log filtered suggestions
+        emptyArray = emptyArray.map((data) => {
+          return '<li>' + data + '</li>';
+        });
+        searchInput.classList.add("active");
+        showSuggestions(emptyArray);
+        let allList = resultBox.querySelectorAll("li");
+        for (let i = 0; i < allList.length; i++) {
+          allList[i].setAttribute("onclick", "select(this)");
         }
-    
-        function showSuggestions(list) {
-            let listData;
-            if (!list.length) {
-                userValue = inputBox.value;
-                listData = '<li>' + userValue + '</li>';
-            } else {
-                listData = list.join('');
-            }
-            console.log("Suggestions to display:", listData); // Debugging: Log suggestions being displayed
-            resultBox.innerHTML = listData;
-        }
-    
-        function select(element) {
-            console.log("Selected suggestion:", element.textContent.trim()); // Debugging: Log selected suggestion
-            // Add your functionality here to handle the selected suggestion
-        }
-    </script>
-    
+      } else {
+        searchInput.classList.remove("active");
+      }
+    }
+
+    function showSuggestions(list) {
+      let listData;
+      if (!list.length) {
+        userValue = inputBox.value;
+        listData = '<li>' + userValue + '</li>';
+      } else {
+        listData = list.join('');
+      }
+      console.log("Suggestions to display:", listData); // Debugging: Log suggestions being displayed
+      resultBox.innerHTML = listData;
+    }
+
+    function select(element) {
+      console.log("Selected suggestion:", element.textContent.trim()); // Debugging: Log selected suggestion
+      // Add your functionality here to handle the selected suggestion
+    }
+  </script>
+
 </body>
+
 </html>

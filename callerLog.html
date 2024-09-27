@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+    data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+    data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ShiftHoja</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/style.css" />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+    <link rel="stylesheet" defer
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .d-flex.col-12.col-lg-5.col-xl-4.align-items-center.authentication-bg.p-sm-12.p-6 {
+            background-color: white;
+        }
+
+        .my-8 {
+            padding: 15px;
+        }
+
+        html:not([dir=rtl]) .text-center {
+            text-align: center !important;
+            margin-top: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <div class="authentication-inner row m-0">
+        <!-- /Left Text -->
+        <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
+            <div class="w-100 d-flex justify-content-center">
+                <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/illustrations/boy-with-rocket-light.png"
+                    class="img-fluid" alt="Login image" width="700"
+                    data-app-dark-img="illustrations/boy-with-rocket-dark.png"
+                    data-app-light-img="illustrations/boy-with-rocket-light.png">
+            </div>
+        </div>
+        <!-- /Left Text -->
+
+        <!-- Login -->
+        <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-12 p-6">
+            <div class="w-px-400 mx-auto mt-12 pt-5">
+                <h4 class="mb-1">Welcome Callers! 👋</h4>
+                <p class="mb-6">Please sign-in to your account and start the adventure</p>
+
+                <form id="formAuthentication" class="mb-6 fv-plugins-bootstrap5 fv-plugins-framework"
+                    action="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+                    method="GET" novalidate="novalidate">
+                    <div class="mb-6 fv-plugins-icon-container">
+                        <label for="email" class="form-label">Email or Username</label>
+                        <input type="text" class="form-control" id="email" name="email-username"
+                            placeholder="Enter your email or username" autofocus="">
+                        <div
+                            class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
+                    </div>
+                    <div class="mb-6 form-password-toggle fv-plugins-icon-container">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-group input-group-merge has-validation">
+                            <input type="password" id="password" class="form-control" name="password"
+                                placeholder="············" aria-describedby="password">
+                            <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        </div>
+                        <div
+                            class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback">
+                        </div>
+                    </div>
+                    <div class="my-8">
+                        <div class="d-flex justify-content-between">
+                            <div class="form-check mb-0 ms-2">
+                                <input class="form-check-input" type="checkbox" id="remember-me">
+                                <label class="form-check-label" for="remember-me">
+                                    Remember Me
+                                </label>
+                            </div>
+                            <a
+                                href="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/auth/forgot-password-cover">
+                                <p class="mb-0">Forgot Password?</p>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary d-grid w-100">
+                        Sign in
+                    </button>
+                    <input type="hidden">
+                </form>
+
+                <p class="text-center">
+                    <span>New on our platform?</span>
+                    <a
+                        href="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1/auth/register-cover">
+                        <span>Create an account</span>
+                    </a>
+                </p>
+
+                <div class="divider my-6">
+                    <div class="divider-text">or</div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-facebook me-1_5">
+                        <i class="bx bxl-facebook-circle"></i>
+                    </a>
+
+                    <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-twitter me-1_5">
+                        <i class="tf-icons bx bxl-twitter"></i>
+                    </a>
+
+                    <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-github me-1_5">
+                        <i class="bx bxl-github"></i>
+                    </a>
+
+                    <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-google-plus">
+                        <i class="tf-icons bx bxl-google"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /Login -->
+    </div>
+    </div>
+
+
+
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="Ft6IDnKAl5gimklKNLCzR1MbQG3167vgoHDMOG0f"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+</body>
+
+</html>

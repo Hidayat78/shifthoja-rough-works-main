@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ShiftHoja</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/style.css" />
+    <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+    <link rel="stylesheet" defer
+        href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+    <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+    <style>
+        .row.mx-1 {
+            height: 70px;
+        }
+
+        .row.mx-2 {
+            margin-top: 25px;
+        }
+
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            height: 36px;
+        }
+
+        .select2-container--default .select2-selection--single {
+            background-color: #fff;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            height: 36px;
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control:before,
+        table.dataTable.dtr-column>tbody>tr>th.control:before {
+            position: absolute;
+            line-height: .9em;
+            font-weight: 500;
+            height: .85em;
+            width: .85em;
+            color: #fff;
+            border-radius: 1em;
+            box-sizing: content-box;
+            text-align: center;
+            font-family: Courier New, Courier, monospace;
+            content: "+";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control,
+        table.dataTable.dtr-column>tbody>tr>th.control {
+            position: relative;
+        }
+
+        .blurred {
+            filter: blur(5px);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @media (max-width: 550px) {
+            .row.mx-1 {
+                height: 165px;
+            }
+
+            table#DataTables_Table_0 {
+                display: none;
+            }
+
+            .row.mx-2 {
+                margin-top: 25px;
+                display: none;
+            }
+
+        }
+
+        @media (min-width: 480px) and (max-width: 767px) {
+            .row.mx-1 {
+                height: 165px;
+            }
+        }
+
+        .bhk-dropdown .form-check {
+            margin-right: 15px;
+        }
+
+        .bhk-dropdown .form-check-inline {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .key-infodisplaynone {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .key-info {
+            background-color: #f7f1f9;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            margin: auto;
+            font-size: 12px;
+        }
+
+        .key-info h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-row .label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .info-row .value {
+            color: #000;
+        }
+
+        @media (min-width: 550px) {
+            .key-infodisplaynone {
+                display: none;
+            }
+        }
+
+        .feedback-container {
+            padding: 10px;
+            /* Add some padding for better appearance */
+            border: 1px solid #ccc;
+            /* Optional border for better visibility */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color */
+            display: flex;
+            /* Flexbox layout */
+            align-items: center;
+            /* Center items vertically */
+            cursor: pointer;
+            /* Pointer cursor for clickability */
+            transition: background-color 0.3s;
+            /* Smooth background color change */
+        }
+
+        .feedback-container:hover {
+            background-color: #e9ecef;
+            /* Change background on hover */
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .label {
+            margin-right: 5px;
+            /* Space between label and value */
+            color: #000;
+            /* Change color as needed */
+        }
+
+        .value {
+            font-size: 1.2em;
+            /* Adjust size for the "+" */
+            color: #007bff;
+            /* Change color as needed */
+        }
+
+        .value i {
+            color: #fff;
+            /* Icon color */
+            background-color: #007bff;
+            /* Background color for button-like appearance */
+            border-radius: 50%;
+            /* Round appearance */
+            padding: 0.2em;
+            /* Padding for circle */
+        }
+
+        span.viewnumber {
+            display: inline-flex;
+            /* Make it behave like a button */
+            align-items: center;
+            /* Center the icon vertically */
+            justify-content: center;
+            color: white;
+            /* Original border */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: #007bff;
+            /* Background color */
+            color: #fff;
+            /* Text color */
+            padding: 5px 8px;
+            /* Padding */
+            cursor: pointer;
+            /* Pointer cursor for clickability */
+            transition: background-color 0.3s, transform 0.2s;
+            /* Smooth transitions */
+        }
+
+        /* Hover effect */
+        span.viewnumber:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+
+        /* Active effect */
+        span.viewnumber:active {
+            transform: scale(0.95);
+            /* Slightly shrink on click */
+        }
+
+        span.value.viewnumber {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-xxl flex-grow-1 container-p-y">
+
+        <h4 class="py-3 mb-4">
+            <span class="text-muted fw-light">Dashboard/</span>Calling
+        </h4>
+
+        <!-- Invoice List Widget -->
+
+        <div class="card mb-4">
+            <div class="card-widget-separator-wrapper">
+                <div class="card-body card-widget-separator">
+                    <div class="row gy-4 gy-sm-1">
+                        <div class="col-sm-6 col-lg-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start card-widget-1 border-end pb-3 pb-sm-0">
+                                <div>
+                                    <h3 class="mb-1">24</h3>
+                                    <p class="mb-0">Till Now</p>
+                                </div>
+                                <div class="avatar me-sm-4">
+                                    <span class="avatar-initial rounded bg-label-secondary">
+                                        <i class="bx bx-check-double bx-sm"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="d-none d-sm-block d-lg-none me-4">
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start card-widget-2 border-end pb-3 pb-sm-0">
+                                <div>
+                                    <h3 class="mb-1">165</h3>
+                                    <p class="mb-0">Todays Target</p>
+                                </div>
+                                <div class="avatar me-lg-4">
+                                    <span class="avatar-initial rounded bg-label-secondary">
+                                        <i class="bx bx-file bx-sm"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <hr class="d-none d-sm-block d-lg-none">
+                        </div>
+                        <div class="col-sm-6 col-lg-4">
+                            <div
+                                class="d-flex justify-content-between align-items-start border-end pb-3 pb-sm-0 card-widget-3">
+                                <div>
+                                    <h3 class="mb-1">246</h3>
+                                    <p class="mb-0">Total Clients at This location</p>
+                                </div>
+                                <div class="avatar me-sm-4">
+                                    <span class="avatar-initial rounded bg-label-secondary">
+                                        <i class="bx bx-user bx-sm"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Invoice List Table -->
+        <div class="card">
+            <div class="card-datatable table-responsive">
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+
+                    <div class="row mx-1">
+                        <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
+                            <div class="col-md-4 product_status">
+                                <select id="ProductStatus" class="form-select text-capitalize">
+                                    <option value="">Select City</option>
+                                    <option value="Scheduled">Delhi</option>
+                                    <option value="Publish">Noida</option>
+                                    <option value="Inactive">Gurugram</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 product_category">
+                                <select id="ProductCategory" class="form-select text-capitalize">
+                                    <option value="">Select Locality</option>
+                                    <option value="Household">Chhatarpur</option>
+                                    <option value="Office">Malvia Nagar</option>
+                                    <option value="Electronics">Saket</option>
+                                    <option value="Shoes">Hauz khas</option>
+                                    <option value="Accessories">Okhla</option>
+                                    <option value="Game">Shahjhan pur</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 product_stock">
+                                <select id="ProductStock" class="form-select text-capitalize">
+                                    <option value="">Select Sub Locality</option>
+                                    <option value="Phase I">Phase I</option>
+                                    <option value="JBTS">JBTS</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
+                        id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                        <thead>
+                            <tr>
+                                <th class="control sorting dtr-hidden" tabindex="0" aria-controls="DataTables_Table_0"
+                                    rowspan="1" colspan="1" style="width: 0px; display: none;"
+                                    aria-label=": activate to sort column ascending">
+                                </th>
+                                <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0"
+                                    rowspan="1" colspan="1" style="width: 64px;"
+                                    aria-label="#ID: activate to sort column ascending" aria-sort="descending">#ID</th>
+
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 266px;"
+                                    aria-label="Client: activate to sort column ascending">Name</th>
+
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 266px;"
+                                    aria-label="Client: activate to sort column ascending">Locality
+                                </th>
+
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 266px;"
+                                    aria-label="Client: activate to sort column ascending">Sub-Locality
+                                </th>
+
+
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 266px;"
+                                    aria-label="Client: activate to sort column ascending">Address
+                                </th>
+
+
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                    colspan="1" style="width: 67px;"
+                                    aria-label="Total: activate to sort column ascending">Phone no</th>
+
+
+                                <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 76px;"
+                                    aria-label="Actions">Actions</th>
+
+                                <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 76px;"
+                                    aria-label="Actions">Feedback</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="odd">
+                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                <td class="sorting_1"><a><span class="fw-medium">01</span></a></td>
+                                <td>
+                                    <div class="d-flex justify-content-start align-items-center">
+                                        <div class="d-flex flex-column"><a class="text-body text-truncate"><span
+                                                    class="fw-medium">Hidayat</span></a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="d-flex justify-content-start align-items-center">
+                                        <div class="d-flex flex-column"><a class="text-body text-truncate"><span
+                                                    class="fw-medium">Okhla</span></a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="d-flex justify-content-start align-items-center">
+                                        <div class="d-flex flex-column"><a class="text-body text-truncate"><span
+                                                    class="fw-medium">Jamia
+                                                    NAgar</span></a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="d-flex justify-content-start align-items-center">
+
+                                        <div class="d-flex flex-column"><small class="text-truncate text-muted">O-46
+                                                Jamia
+                                                Nagar Batlahouse Okhla</small></div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="d-flex justify-content-start align-items-center">
+                                        <div class="d-flex flex-column">
+                                            <small id="phoneNumberTd" class="text-truncate text-muted">
+                                                9504<span class="blurred" id="blurTd">245461</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="#" id="toggleIconTd" class="text-body" data-bs-toggle="tooltip"
+                                            data-bs-placement="top">
+                                            <i class="bx bx-hide mx-1"></i>
+                                        </a>
+                                    </div>
+                                </td>
+
+                                <td class="control" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="key-infodisplaynone">
+                        <div class="key-info">
+                            <h3>Flats1</h3>
+                            <div class="info-row">
+                                <span class="label">ID</span>
+                                <span class="value">0111</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Name</span>
+                                <span class="value">Hidayat</span>
+                            </div>
+
+                            <div class="info-row">
+                                <span class="label">Locality</span>
+                                <span class="value">Okhla</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Sub Locality</span>
+                                <span class="value">Jamia Nagar</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Address</span>
+                                <span class="value">O-42, Jmia Nagar okhla</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Phone no</span>
+                                <span class="value">95042<span class="blurred" id="blurDiv">45461</span></span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Action</span>
+                                <a href="#" id="toggleIconDiv" class="text-body" data-bs-toggle="tooltip"
+                                    data-bs-placement="top">
+                                    <i class="bx bx-hide mx-1"></i>
+                                </a>
+                            </div>
+                            <div class="feedback-container" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                <div class="info-row">
+                                    <span class="label">Feedback</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="key-info">
+                            <h3>Flats2</h3>
+                            <div class="info-row">
+                                <span class="label">ID</span>
+                                <span class="value">0111</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Name</span>
+                                <span class="value">Hidayat</span>
+                            </div>
+
+                            <div class="info-row">
+                                <span class="label">Locality</span>
+                                <span class="value">Okhla</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Sub Locality</span>
+                                <span class="value">Jamia Nagar</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Address</span>
+                                <span class="value">O-42, Jmia Nagar okhla</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Phone no</span>
+                                <span class="value">95042<span class="blurred" id="blurDiv">45461</span></span>
+                            </div>
+                            <div class="info-row">
+                                <span class="label">Action</span>
+                                <a href="#" id="toggleIconDiv" class="text-body" data-bs-toggle="tooltip"
+                                    data-bs-placement="top">
+                                    <i class="bx bx-hide mx-1"></i>
+                                </a>
+                            </div>
+                            <div class="feedback-container" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                <div class="info-row">
+                                    <span class="label">Feedback</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Feed Back</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="bhkDropdown" class="form-label">Calling Status</label>
+                                            <div class="bhk-dropdown">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="calling-donre"
+                                                        value="calling done">
+                                                    <label class="form-check-label" for="calling-donre">call
+                                                        Done</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="Rong no"
+                                                        value="1 BHK">
+                                                    <label class="form-check-label" for="Rong no">Rong no</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="not_reachable"
+                                                        value="2 BHK">
+                                                    <label class="form-check-label" for="not_reachable">Not
+                                                        Reachable</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="Didn't-receved"
+                                                        value="3 BHK">
+                                                    <label class="form-check-label" for="Didn't-receved">Didn't
+                                                        Receved</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Is the Flat Available?</label>
+                                            <div class="d-flex">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="flatAvailability"
+                                                        id="flatAvailableYes" value="Yes">
+                                                    <label class="form-check-label" for="flatAvailableYes">
+                                                        Yes
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flatAvailability"
+                                                        id="flatAvailableNo" value="No">
+                                                    <label class="form-check-label" for="flatAvailableNo">
+                                                        No
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="dropdown1" class="form-label">Properties are</label>
+                                            <select class="form-select" id="dropdown1">
+                                                <option value="1" selected>Residential</option>
+                                                <option value="2">Commercial</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="dropdown2" class="form-label">Properties For</label>
+                                            <select class="form-select" id="dropdown2">
+                                                <option selected>Choose...</option>
+                                                <option value="1">Rent</option>
+                                                <option value="2">Sell</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="flatpickr-time" class="form-label">Available From</label>
+                                            <input class="form-control" type="date" value="2021-06-18"
+                                                id="html5-date-input">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="messageTextarea" class="form-label">Message</label>
+                                            <textarea class="form-control" id="messageTextarea" rows="4"
+                                                placeholder="Enter your message here..."></textarea>
+                                        </div>
+
+
+
+                                        <div class="mb-3" id="bhkDropdown">
+                                            <label for="bhkDropdown" class="form-label">Flats Available are</label>
+                                            <div class="bhk-dropdown">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="bhk1"
+                                                        value="1 BHK">
+                                                    <label class="form-check-label" for="bhk1">1 BHK</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="bhk2"
+                                                        value="2 BHK">
+                                                    <label class="form-check-label" for="bhk2">2 BHK</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="bhk3"
+                                                        value="3 BHK">
+                                                    <label class="form-check-label" for="bhk3">3 BHK</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="bhk4"
+                                                        value="4 BHK">
+                                                    <label class="form-check-label" for="bhk4">4 BHK</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="mb-3" id="commercialProperties" style="display: none;">
+                                            <label for="propertyDropdown" class="form-label">Commercial Properties
+                                                are</label>
+                                            <div class="property-dropdown">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="office"
+                                                        value="Office">
+                                                    <label class="form-check-label" for="office">Office</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="coOffice"
+                                                        value="Co-office">
+                                                    <label class="form-check-label" for="coOffice">Co-office</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="plot"
+                                                        value="Plot">
+                                                    <label class="form-check-label" for="plot">Plot</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="shop"
+                                                        value="Shop">
+                                                    <label class="form-check-label" for="shop">Shop</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save Feedback</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mx-2">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                                Showing 1
+                                to 10 of 50 entries</div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button page-item previous disabled"
+                                        id="DataTables_Table_0_previous"><a aria-controls="DataTables_Table_0"
+                                            aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0"
+                                            class="page-link">Previous</a></li>
+                                    <li class="paginate_button page-item active"><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" aria-current="page"
+                                            data-dt-idx="0" tabindex="0" class="page-link">1</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="1" tabindex="0"
+                                            class="page-link">2</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="2" tabindex="0"
+                                            class="page-link">3</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="3" tabindex="0"
+                                            class="page-link">4</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="4" tabindex="0"
+                                            class="page-link">5</a></li>
+                                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="next"
+                                            tabindex="0" class="page-link">Next</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        // Function to handle dropdown change
+        function updateDropdown() {
+            var selectedValue = document.getElementById('dropdown1').value;
+            var bhkDropdown = document.getElementById('bhkDropdown');
+            var commercialProperties = document.getElementById('commercialProperties');
+
+            // Show or hide sections based on selection
+            if (selectedValue === '2') {
+                bhkDropdown.style.display = 'none'; // Hide flats available
+                commercialProperties.style.display = 'block'; // Show commercial properties
+            } else {
+                bhkDropdown.style.display = 'block'; // Show flats available
+                commercialProperties.style.display = 'none'; // Hide commercial properties
+            }
+        }
+
+        // Event listener for dropdown change
+        document.getElementById('dropdown1').addEventListener('change', updateDropdown);
+
+        // Initial call to set the correct display on page load
+        updateDropdown();
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#ProductStatus').select2({
+                placeholder: "Select City"
+            });
+            $('#ProductCategory').select2({
+                placeholder: "Select Locality"
+            });
+            $('#ProductStock').select2({
+                placeholder: "Sub Locality"
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Initialize Select2 for multiple select
+            $('#select2Primary').select2({
+                placeholder: "Select options",  // Optional placeholder
+                width: '100%'  // Ensures the width is responsive
+            });
+        });
+    </script>
+
+    <!-- <script>
+        document.getElementById('toggleIcon').addEventListener('click', function (event) {
+            event.preventDefault(); // Yeh page ko reload hone se rokega
+            var icon = this.querySelector('i');
+            if (icon.classList.contains('bx-show')) {
+                icon.classList.remove('bx-show');
+                icon.classList.add('bx-hide');
+            } else {
+                icon.classList.remove('bx-hide');
+                icon.classList.add('bx-show');
+            }
+        });
+    </script> -->
+    <script>
+        // Function to toggle blur
+        function toggleBlur(iconElement, blurredElement) {
+            var icon = iconElement.querySelector('i');
+
+            // Toggle blur on the phone number
+            if (icon.classList.contains('bx-hide')) {
+                icon.classList.remove('bx-hide');
+                icon.classList.add('bx-show');
+                blurredElement.style.filter = 'none'; // Remove blur
+            } else {
+                icon.classList.remove('bx-show');
+                icon.classList.add('bx-hide');
+                blurredElement.style.filter = 'blur(5px)'; // Apply blur
+            }
+        }
+
+        // For table row (td section)
+        document.getElementById('toggleIconTd').addEventListener('click', function (event) {
+            event.preventDefault();
+            var blurredElement = document.getElementById('blurTd');
+            toggleBlur(this, blurredElement);
+        });
+
+        // For div section (info-row)
+        // document.getElementById('toggleIconDiv').addEventListener('click', function (event) {
+        //     event.preventDefault();
+        //     var blurredElement = document.getElementById('blurDiv');
+        //     toggleBlur(this, blurredElement);
+        // });
+        document.querySelectorAll('#toggleIconDiv').forEach(function (iconDiv) {
+            iconDiv.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent default anchor behavior (stop scroll to top)
+
+                var blurredElement = this.closest('.key-info').querySelector('.blurred');
+                toggleBlur(this, blurredElement);
+            });
+        });
+
+
+    </script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/js/config.js"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script
+        src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+</body>
+
+</html>
