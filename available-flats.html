@@ -69,7 +69,7 @@
             border-radius: 1em;
             box-sizing: content-box;
             text-align: center;
-            font-family: Courier New, Courier, monospace;
+            font-family: 'Open Sans', sans-serif;
             content: "+";
             top: 50%;
             left: 50%;
@@ -86,10 +86,6 @@
             user-select: none;
             pointer-events: none;
         }
-
-
-
-
 
         .key-info {
             background-color: #f7f1f9;
@@ -110,7 +106,7 @@
         .info-row {
             display: flex;
             justify-content: space-between;
-            margin-right: 10px;
+            margin-right: 5px;
         }
 
         .info-row .label {
@@ -228,6 +224,85 @@
             .key-infodisplaynone {
                 display: none;
             }
+
+            .export-btn {
+                display: none;
+            }
+        }
+
+        .export-btn {
+            margin-top: 13px;
+            margin-left: 4px;
+        }
+
+        /* General styling for the info-row */
+        .info-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        /* Style for the label */
+        .label {
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Style for the value container */
+        .value {
+            display: inline-block;
+        }
+
+        /* Styling the checkbox */
+        .value input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Optional: Customize the appearance of the checkbox */
+        .value input[type="checkbox"] {
+            -webkit-appearance: none;
+            /* Remove default checkbox styling */
+            appearance: none;
+            background-color: #f0f0f0;
+            border: 2px solid #ccc;
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* Checkmark styles */
+        .value input[type="checkbox"]:checked {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .value input[type="checkbox"]:checked:before {
+            content: '✔';
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top: -2px;
+            left: 2px;
+        }
+
+        /* Style for the date picker */
+        .date-picker {
+            padding: 6px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Change border color on focus */
+        .date-picker:focus {
+            border-color: #4CAF50;
         }
     </style>
 </head>
@@ -348,6 +423,17 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row export-btn">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                                <button
+                                    class="btn btn-secondary buttons-collection dropdown-toggle btn-label-secondary me-4"
+                                    tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog"
+                                    aria-expanded="false"><span><i class="bx bx-export me-2 bx-xs"></i>Export</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -359,6 +445,23 @@
                             <span class="label">ID</span>
                             <span class="value">0111</span>
                         </div>
+                        <div class="info-row">
+                            <span class="label">BHK</span>
+                            <span class="value"><b>2 BHK</b></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Rent out</span>
+                            <span class="value">
+                                <input type="checkbox" id="rentOutCheckbox">
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Select rent out date</span>
+                            <span class="value">
+                                <input type="date" id="rentOutDate" class="date-picker">
+                            </span>
+                        </div>
+
                         <div class="info-row">
                             <span class="label">Name</span>
                             <span class="value">Hidayat</span>
@@ -392,6 +495,23 @@
                             <span class="label">ID</span>
                             <span class="value">0111</span>
                         </div>
+                        <div class="info-row">
+                            <span class="label">BHK</span>
+                            <span class="value"><b>2 BHK</b></span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Rent out</span>
+                            <span class="value">
+                                <input type="checkbox" id="rentOutCheckbox">
+                            </span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Select rent out date</span>
+                            <span class="value">
+                                <input type="date" id="rentOutDate" class="date-picker">
+                            </span>
+                        </div>
+
                         <div class="info-row">
                             <span class="label">Name</span>
                             <span class="value">Hidayat</span>
@@ -453,6 +573,13 @@
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 style="width: 67px;" aria-label="Total: activate to sort column ascending">Phone no</th>
 
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Rented</th>
+
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Rent out Date
+                            </th>
+
                             <th class="sorting available-column" tabindex="0" aria-controls="DataTables_Table_0"
                                 rowspan="1" colspan="1" style="width: 67px;"
                                 aria-label="Total: activate to sort column ascending">
@@ -493,78 +620,99 @@
                             <td>
                                 <div class="d-flex justify-content-start align-items-center">
 
-                                    <div class="d-flex flex-column"><small class="text-truncate text-muted">O-46
-                                            Jamia
-                                            Nagar Batlahouse Okhla</small></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
                                     <div class="d-flex flex-column">
-                                        <small id="phoneNumber" class="text-truncate text-muted">
-                                            9504245461</span>
+                                        <small class="text-truncate text-muted">O-46
+                                            Jamia
+                                            Nagar Batlahouse Okhla
                                         </small>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <div class="">
-                                    <small class="text-muted">2021-06-18</small>
-                                </div>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
-
-                <div class="row mx-2">
-                    <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                            Showing 1
-                            to 10 of 50 entries</div>
+                                <a>
+                                    <div class="d-flex justify-content-start align-items-center"></div>
+                                    <div class="d-flex flex-column">
+                                        <small id="phoneNumber" class="text-truncate text-muted">
+                                            9504245461</span>
+                                        </small>
+                                    </div>
+            </div></a>
+            </td>
+            <!-- First TD for Checkbox -->
+            <td>
+                <div class="d-flex justify-content-start align-items-center">
+                    <div class="d-flex flex-column">
+                        <input type="checkbox" id="rentOutCheckbox">
                     </div>
-                    <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled"
-                                    id="DataTables_Table_0_previous"><a aria-controls="DataTables_Table_0"
-                                        aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0"
-                                        class="page-link">Previous</a></li>
-                                <li class="paginate_button page-item active"><a href="#"
-                                        aria-controls="DataTables_Table_0" role="link" aria-current="page"
-                                        data-dt-idx="0" tabindex="0" class="page-link">1</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="3" tabindex="0" class="page-link">4</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="4" tabindex="0" class="page-link">5</a></li>
-                                <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
-                                        aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0"
-                                        class="page-link">Next</a></li>
-                            </ul>
+                </div>
+            </td>
 
-                        </div>
-
+            <!-- Second TD for Date Picker -->
+            <td>
+                <div class="d-flex justify-content-start align-items-center">
+                    <div class="d-flex flex-column">
+                        <input type="date" id="rentOutDate" class="date-picker">
                     </div>
-                    <div class="col-sm-12 col-md-2">
-                        <div class="btn-group"><button
-                                class="btn btn-secondary buttons-collection dropdown-toggle btn-label-secondary me-4"
-                                tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog"
-                                aria-expanded="false"><span><i
-                                        class="bx bx-export me-2 bx-xs"></i>Export</span></button>
-                        </div>
+                </div>
+            </td>
+
+            <td>
+                <div class="">
+                    <small class="text-muted">2021-06-18</small>
+                </div>
+            </td>
+            </tr>
+
+            </tbody>
+            </table>
+
+            <div class="row mx-2">
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                        Showing 1
+                        to 10 of 50 entries</div>
+                </div>
+                <div class="col-sm-12 col-md-5">
+                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                        <ul class="pagination">
+                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a
+                                    aria-controls="DataTables_Table_0" aria-disabled="true" role="link"
+                                    data-dt-idx="previous" tabindex="0" class="page-link">Previous</a></li>
+                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0"
+                                    role="link" aria-current="page" data-dt-idx="0" tabindex="0" class="page-link">1</a>
+                            </li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                    role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                    role="link" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                    role="link" data-dt-idx="3" tabindex="0" class="page-link">4</a></li>
+                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                    role="link" data-dt-idx="4" tabindex="0" class="page-link">5</a></li>
+                            <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                                    aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0"
+                                    class="page-link">Next</a></li>
+                        </ul>
+
                     </div>
 
                 </div>
-
-
-
+                <div class="col-sm-12 col-md-2">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary buttons-collection dropdown-toggle btn-label-secondary me-4"
+                            tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog"
+                            aria-expanded="false"><span><i class="bx bx-export me-2 bx-xs"></i>Export</span>
+                        </button>
+                    </div>
+                </div>
 
             </div>
+
+
+
+
         </div>
+    </div>
     </div>
     </div>
 

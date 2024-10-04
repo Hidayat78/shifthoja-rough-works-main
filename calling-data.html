@@ -110,7 +110,7 @@
             box-sizing: content-box;
             text-align: center;
             font-family: Courier New, Courier, monospace;
-            content: "+";
+            content: "📞";
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -231,7 +231,10 @@
             display: flex;
             align-items: center;
             font-weight: 500;
-            font-family: "Courier New", Courier, monospace;
+            /* font-family: "Courier New", Courier, monospace; */
+            font-family: 'Open Sans', sans-serif;
+
+
         }
 
         .label {
@@ -295,6 +298,13 @@
 
         span.value.viewnumber {
             color: white;
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control:before,
+        table.dataTable.dtr-column>tbody>tr>th.control:before {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -437,11 +447,11 @@
                                     aria-label="Total: activate to sort column ascending">Phone no</th>
 
 
-                                <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 76px;"
-                                    aria-label="Actions">Actions</th>
+                                <!-- <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 76px;"
+                                    aria-label="Actions">Actions</th> -->
 
                                 <th class="cell-fit sorting_disabled" rowspan="1" colspan="1" style="width: 76px;"
-                                    aria-label="Actions">Feedback</th>
+                                    aria-label="Actions">Take Call</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -468,7 +478,7 @@
                                     <div class="d-flex justify-content-start align-items-center">
                                         <div class="d-flex flex-column"><a class="text-body text-truncate"><span
                                                     class="fw-medium">Jamia
-                                                    NAgar</span></a>
+                                                    Nagar</span></a>
                                         </div>
                                     </div>
                                 </td>
@@ -491,14 +501,14 @@
                                     </div>
                                 </td>
 
-                                <td>
+                                <!-- <td>
                                     <div class="d-flex align-items-center">
                                         <a href="#" id="toggleIconTd" class="text-body" data-bs-toggle="tooltip"
                                             data-bs-placement="top">
                                             <i class="bx bx-hide mx-1"></i>
                                         </a>
                                     </div>
-                                </td>
+                                </td> -->
 
                                 <td class="control" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
@@ -534,19 +544,19 @@
                             </div>
                             <div class="info-row">
                                 <span class="label">Phone no</span>
-                                <span class="value">95042<span class="blurred" id="blurDiv">45461</span></span>
+                                <a><span class="value">95042<span class="blurred" id="blurDiv">45461</span></span></a>
                             </div>
-                            <div class="info-row">
+                            <!-- <div class="info-row">
                                 <span class="label">Action</span>
                                 <a href="#" id="toggleIconDiv" class="text-body" data-bs-toggle="tooltip"
                                     data-bs-placement="top">
                                     <i class="bx bx-hide mx-1"></i>
                                 </a>
-                            </div>
+                            </div> -->
                             <div class="feedback-container" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 <div class="info-row">
-                                    <span class="label">Feedback</span>
+                                    <span class="label">Tack Call</span>
                                 </div>
                             </div>
                         </div>
@@ -576,24 +586,24 @@
                             </div>
                             <div class="info-row">
                                 <span class="label">Phone no</span>
-                                <span class="value">95042<span class="blurred" id="blurDiv">45461</span></span>
+                                <a><span class="value">95042<span class="blurred" id="blurDiv">45461</span></span></a>
                             </div>
-                            <div class="info-row">
+                            <!-- <div class="info-row">
                                 <span class="label">Action</span>
                                 <a href="#" id="toggleIconDiv" class="text-body" data-bs-toggle="tooltip"
                                     data-bs-placement="top">
                                     <i class="bx bx-hide mx-1"></i>
                                 </a>
-                            </div>
+                            </div> -->
+
                             <div class="feedback-container" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 <div class="info-row">
-                                    <span class="label">Feedback</span>
+                                    <span class="label">Tack Call</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -607,46 +617,60 @@
                                 <div class="modal-body">
                                     <form>
                                         <div class="mb-3">
-                                            <label for="bhkDropdown" class="form-label">Calling Status</label>
+                                            <div class="col-xxl-8 mb-6 order-0">
+                                                <div class="card">
+                                                    <div class="d-flex align-items-start row">
+                                                        <div class="col-sm-7">
+                                                            <div class="card-body" style="padding: 10px;">
+                                                                <h5 class="card-title text-primary mb-1"> 9504345461
+                                                                </h5>
+                                                                <p class="mb-10">O42- Jamia Nagar okhla new Delhi-25</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <label for="callingStatus" style="margin-top: 15px;"
+                                                class="form-label">Calling Status</label>
                                             <div class="bhk-dropdown">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="calling-donre"
-                                                        value="calling done">
-                                                    <label class="form-check-label" for="calling-donre">call
-                                                        Done</label>
+                                                    <input class="form-check-input" type="radio" name="callingStatus"
+                                                        id="callingDone" value="calling done" checked>
+                                                    <label class="form-check-label" for="callingDone">Call Done</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="Rong no"
-                                                        value="1 BHK">
-                                                    <label class="form-check-label" for="Rong no">Rong no</label>
+                                                    <input class="form-check-input" type="radio" name="callingStatus"
+                                                        id="rongNo" value="rong no">
+                                                    <label class="form-check-label" for="rongNo">Wrong No</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="not_reachable"
-                                                        value="2 BHK">
-                                                    <label class="form-check-label" for="not_reachable">Not
+                                                    <input class="form-check-input" type="radio" name="callingStatus"
+                                                        id="notReachable" value="not reachable">
+                                                    <label class="form-check-label" for="notReachable">Not
                                                         Reachable</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="Didn't-receved"
-                                                        value="3 BHK">
-                                                    <label class="form-check-label" for="Didn't-receved">Didn't
-                                                        Receved</label>
+                                                    <input class="form-check-input" type="radio" name="callingStatus"
+                                                        id="didNotReceive" value="didn't received">
+                                                    <label class="form-check-label" for="didNotReceive">Didn't
+                                                        Received</label>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
+
+                                        <div class="mb-3" id="prop-yes-no">
                                             <label class="form-label">Is the Flat Available?</label>
                                             <div class="d-flex">
                                                 <div class="form-check me-3">
-                                                    <input class="form-check-input" type="radio" name="flatAvailability"
-                                                        id="flatAvailableYes" value="Yes">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="flatAvailabilityYesNo" id="flatAvailableYes" value="Yes">
                                                     <label class="form-check-label" for="flatAvailableYes">
                                                         Yes
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flatAvailability"
-                                                        id="flatAvailableNo" value="No">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="flatAvailabilityYesNo" id="flatAvailableNo" value="No">
                                                     <label class="form-check-label" for="flatAvailableNo">
                                                         No
                                                     </label>
@@ -654,36 +678,54 @@
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label for="dropdown1" class="form-label">Properties are</label>
-                                            <select class="form-select" id="dropdown1">
-                                                <option value="1" selected>Residential</option>
-                                                <option value="2">Commercial</option>
-                                            </select>
+                                        <div class="mb-3" id="prop-rent-sell">
+                                            <label class="form-label">Is the Flat Available for Rent or Sale?</label>
+                                            <div class="d-flex">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="flatAvailabilityRentSell" id="flatAvailableRent"
+                                                        value="Rent">
+                                                    <label class="form-check-label" for="flatAvailableRent">
+                                                        For Rent
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio"
+                                                        name="flatAvailabilityRentSell" id="flatAvailableSell"
+                                                        value="Sell">
+                                                    <label class="form-check-label" for="flatAvailableSell">
+                                                        For Sale
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="dropdown2" class="form-label">Properties For</label>
-                                            <select class="form-select" id="dropdown2">
-                                                <option selected>Choose...</option>
-                                                <option value="1">Rent</option>
-                                                <option value="2">Sell</option>
-                                            </select>
+
+                                        <div class="mb-3" id="prop-resi-comm">
+                                            <label class="form-label">Properties are</label>
+                                            <div class="d-flex">
+                                                <div class="form-check me-3">
+                                                    <input class="form-check-input" type="radio" name="propertyType"
+                                                        id="propertyResidential" value="Residential" checked>
+                                                    <label class="form-check-label" for="propertyResidential">
+                                                        Residential
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="propertyType"
+                                                        id="propertyCommercial" value="Commercial">
+                                                    <label class="form-check-label" for="propertyCommercial">
+                                                        Commercial
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-3" id="avl-dates">
                                             <label for="flatpickr-time" class="form-label">Available From</label>
                                             <input class="form-control" type="date" value="2021-06-18"
                                                 id="html5-date-input">
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="messageTextarea" class="form-label">Message</label>
-                                            <textarea class="form-control" id="messageTextarea" rows="4"
-                                                placeholder="Enter your message here..."></textarea>
-                                        </div>
-
-
-
                                         <div class="mb-3" id="bhkDropdown">
-                                            <label for="bhkDropdown" class="form-label">Flats Available are</label>
+                                            <label for="bhkDropdown" class="form-label">BHK Available are</label>
                                             <div class="bhk-dropdown">
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="bhk1"
@@ -707,8 +749,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
                                         <div class="mb-3" id="commercialProperties" style="display: none;">
                                             <label for="propertyDropdown" class="form-label">Commercial Properties
                                                 are</label>
@@ -735,17 +775,20 @@
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
+                                        <div class="mb-3">
+                                            <label for="messageTextarea" class="form-label">Message</label>
+                                            <textarea class="form-control" id="messageTextarea" rows="4"
+                                                placeholder="Enter your message here..."></textarea>
+                                        </div>
 
                                     </form>
                                 </div>
-                                <div class="modal-footer">
+                                <div class="modal-footer" style="display: flex; justify-content: flex-start;">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Edit</button>
                                     <button type="button" class="btn btn-secondary"
                                         data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save Feedback</button>
+                                    <button type="button" class="btn btn-primary">Save</button>
                                 </div>
                             </div>
                         </div>
@@ -792,28 +835,63 @@
 
     </div>
     <script>
-        // Function to handle dropdown change
-        function updateDropdown() {
-            var selectedValue = document.getElementById('dropdown1').value;
-            var bhkDropdown = document.getElementById('bhkDropdown');
-            var commercialProperties = document.getElementById('commercialProperties');
+        // Function to handle callingStatus radio button change
+        function updateFeedbackForm() {
+            // Get selected calling status value
+            var selectedCallingStatus = document.querySelector('input[name="callingStatus"]:checked').value;
 
-            // Show or hide sections based on selection
-            if (selectedValue === '2') {
-                bhkDropdown.style.display = 'none'; // Hide flats available
-                commercialProperties.style.display = 'block'; // Show commercial properties
+            // IDs of elements to hide or show
+            var elementsToToggle = [
+                'prop-yes-no', 'prop-rent-sell', 'prop-resi-comm', 'avl-dates',
+                'bhkDropdown', 'commercialProperties'
+            ];
+
+            // Hide all the elements if calling status is "rong no", "not reachable" or "didn't received"
+            if (selectedCallingStatus === 'rong no' || selectedCallingStatus === 'not reachable' || selectedCallingStatus === "didn't received") {
+                elementsToToggle.forEach(function (id) {
+                    document.getElementById(id).style.display = 'none';
+                });
             } else {
-                bhkDropdown.style.display = 'block'; // Show flats available
-                commercialProperties.style.display = 'none'; // Hide commercial properties
+                // Show all the elements if calling status is "calling done"
+                elementsToToggle.forEach(function (id) {
+                    document.getElementById(id).style.display = 'block';
+                });
             }
         }
 
-        // Event listener for dropdown change
-        document.getElementById('dropdown1').addEventListener('change', updateDropdown);
+        // Event listener for callingStatus radio buttons
+        document.querySelectorAll('input[name="callingStatus"]').forEach(function (radio) {
+            radio.addEventListener('change', updateFeedbackForm);
+        });
 
         // Initial call to set the correct display on page load
-        updateDropdown();
+        updateFeedbackForm();
+
+        // Function to handle property type change
+        function updatePropertyType() {
+            var selectedValue = document.querySelector('input[name="propertyType"]:checked').value;
+            var bhkDropdown = document.getElementById('bhkDropdown');
+            var commercialProperties = document.getElementById('commercialProperties');
+
+            if (selectedValue === 'Commercial') {
+                bhkDropdown.style.display = 'none';
+                commercialProperties.style.display = 'block';
+            } else {
+                bhkDropdown.style.display = 'block';
+                commercialProperties.style.display = 'none';
+            }
+        }
+
+        // Event listener for propertyType radio buttons
+        document.querySelectorAll('input[name="propertyType"]').forEach(function (radio) {
+            radio.addEventListener('change', updatePropertyType);
+        });
+
+        // Initial call to set correct display on page load
+        updatePropertyType();
     </script>
+
+
     <script>
         $(document).ready(function () {
             $('#ProductStatus').select2({
