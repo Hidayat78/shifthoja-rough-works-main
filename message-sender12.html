@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Message Sender UI</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eef2f7;
+        }
+
+        .bulk-message-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid #ddd;
+        }
+
+        .nav-tabs .nav-link {
+            font-size: 15px;
+            padding: 10px;
+            border: none;
+        }
+
+        .nav-tabs .nav-link.active {
+            border-bottom: 2px solid #007bff;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            padding: 7px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        textarea.form-control {
+            height: 100px;
+        }
+
+        .form-text {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .btn-send,
+        .btn-schedule {
+            width: 45%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-send {
+            background-color: #28a745;
+            color: white;
+            border: none;
+        }
+
+        .btn-send:hover {
+            background-color: #218838;
+        }
+
+        .btn-schedule {
+            background-color: white;
+            border: 1px solid #28a745;
+            color: #28a745;
+        }
+
+        .btn-schedule:hover {
+            background-color: #f8f9fa;
+        }
+
+        .d-flex {
+            margin-top: 20px;
+        }
+
+        .file-upload-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Custom success and error messages */
+        .alert {
+            display: none;
+            margin-top: 15px;
+        }
+
+        /* Tab pane styling */
+        #numbers-file {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            /* White background for the tab */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Label styling */
+        .file-upload-label {
+            font-weight: bold;
+            color: #25D366;
+            /* WhatsApp green */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Input styling */
+        .form-control-file {
+            padding: 10px;
+            border: 2px solid #25D366;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control-file:hover {
+            border-color: #128C7E;
+            /* Darker green on hover */
+        }
+
+        .form-control-file:focus {
+            border-color: #075E54;
+            /* Even darker green on focus */
+            outline: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            #numbers-file {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container bulk-message-container">
+        <h3>Send Message To:</h3>
+
+        <!-- Tabs for number input methods -->
+        <ul class="nav nav-tabs" id="messageTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="enter-number-tab" data-toggle="tab" href="#enter-number" role="tab"
+                    aria-controls="enter-number" aria-selected="true">Enter Number</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="address-book-tab" data-toggle="tab" href="#address-book" role="tab"
+                    aria-controls="address-book" aria-selected="false">Number from Address Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="numbers-file-tab" data-toggle="tab" href="#numbers-file" role="tab"
+                    aria-controls="numbers-file" aria-selected="false">Numbers from File</a>
+            </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content" id="messageTabContent">
+            <div class="tab-pane fade show active" id="enter-number" role="tabpanel" aria-labelledby="enter-number-tab">
+                <div class="form-group mt-3">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone-number" placeholder="+91 9504245461">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="address-book" role="tabpanel" aria-labelledby="address-book-tab">
+                <div class="form-group mt-3">
+                    <label for="address-book-select">Select from Address Book</label>
+                    <select class="form-control" id="address-book-select">
+                        <option>Select from your Address Book</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="numbers-file" role="tabpanel" aria-labelledby="numbers-file-tab">
+                <div class="form-group mt-3">
+                    <label class="file-upload-label" for="file-upload">Upload a file with numbers</label>
+                    <input type="file" class="form-control-file" id="file-upload">
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Text -->
+        <div class="form-group mt-3">
+            <label for="message-text">The Text of Your Message</label>
+            <textarea class="form-control" id="message-text" placeholder="Enter your message here"></textarea>
+            <small class="form-text text-muted" id="char-count">0 characters/160</small>
+        </div>
+
+        <!-- Sender Selection -->
+        <div class="form-group">
+            <label for="sender-select">Select a Sender</label>
+            <select class="form-control" id="sender-select">
+                <option>Select a sender</option>
+            </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-schedule">Schedule</button>
+            <button type="button" class="btn btn-send" onclick="sendMessage()">Send</button>
+        </div>
+
+        <!-- Alert Messages -->
+        <div id="success-alert" class="alert alert-success" role="alert">
+            Message sent successfully!
+        </div>
+        <div id="error-alert" class="alert alert-danger" role="alert">
+            Please fill in all fields correctly.
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Update character count for the message text area
+        document.getElementById('message-text').addEventListener('input', function () {
+            const charCount = this.value.length;
+            document.getElementById('char-count').textContent = `${charCount} characters/160`;
+        });
+
+        // Function to handle CSV file upload and parse phone numbers
+        document.getElementById('file-upload').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    const phoneNumbers = parseCSV(content);  // Parse the CSV content
+                    console.log('Parsed Phone Numbers:', phoneNumbers);
+                };
+                reader.readAsText(file);
+            }
+        });
+
+        // Function to parse the CSV file and extract phone numbers
+        function parseCSV(data) {
+            const rows = data.split('\n');
+            const phoneNumbers = rows.slice(1).map(row => row.trim()).filter(Boolean);  // Remove empty lines and headers
+            return phoneNumbers;
+        }
+
+        // Send Message function with validation and sending to multiple numbers
+        function sendMessage() {
+            const phoneNumberInput = document.getElementById('phone-number').value;
+            const messageText = document.getElementById('message-text').value;
+            let phoneNumbers = [];
+
+            // Check if file upload is used
+            const fileInput = document.getElementById('file-upload');
+            if (fileInput.files.length > 0) {
+                // Assume CSV file upload has been processed already
+                phoneNumbers = parseCSVFromFile();  // Function to retrieve parsed numbers from file
+            } else if (phoneNumberInput) {
+                phoneNumbers.push(phoneNumberInput);  // If manual number entry is used
+            }
+
+            if (phoneNumbers.length > 0 && messageText) {
+                // Simulate a successful message send (WhatsApp API can be integrated here)
+                document.getElementById('success-alert').style.display = 'block';
+                document.getElementById('error-alert').style.display = 'none';
+
+                // Log phone numbers and message to console (for testing)
+                console.log('Sending message to:', phoneNumbers);
+                console.log('Message:', messageText);
+
+                setTimeout(() => {
+                    document.getElementById('success-alert').style.display = 'none';
+                }, 3000);
+            } else {
+                // Show error if fields are empty
+                document.getElementById('error-alert').style.display = 'block';
+                document.getElementById('success-alert').style.display = 'none';
+            }
+        }
+
+        // Helper function to retrieve parsed numbers from file
+        function parseCSVFromFile() {
+            // You can enhance this function by storing parsed CSV data and returning it here
+            const fileInput = document.getElementById('file-upload');
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = e.target.result;
+                    const phoneNumbers = parseCSV(content);  // Reuse parseCSV function to extract numbers
+                    return phoneNumbers;
+                };
+                reader.readAsText(file);
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

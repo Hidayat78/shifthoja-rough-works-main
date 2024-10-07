@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulk Message Sender UI</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f3f3f3;
+        }
+
+        .bulk-message-container {
+            max-width: 500px;
+            /* Set width to match the example closely */
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            /* Slight shadow to give depth */
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            /* Similar heading style */
+        }
+
+        .nav-tabs {
+            border-bottom: 2px solid #ddd;
+        }
+
+        .nav-tabs .nav-link {
+            font-size: 14px;
+            padding: 10px;
+            border: none;
+        }
+
+        .nav-tabs .nav-link.active {
+            border-bottom: 2px solid #007bff;
+            /* Same active blue underline */
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        textarea.form-control {
+            height: 100px;
+            /* Adjust text area height */
+        }
+
+        .form-text {
+            font-size: 12px;
+            color: #888;
+        }
+
+        select.form-control {
+            height: 40px;
+            font-size: 14px;
+        }
+
+        .btn-send,
+        .btn-schedule {
+            width: 45%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        .btn-send {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+
+        .btn-send:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-schedule {
+            background-color: white;
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+
+        .btn-schedule:hover {
+            background-color: #f8f8f8;
+        }
+
+        .d-flex {
+            margin-top: 20px;
+        }
+
+        .file-upload-label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container bulk-message-container">
+        <h3>Send Message To:</h3>
+
+        <!-- Tabs for number input methods -->
+        <ul class="nav nav-tabs" id="messageTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="enter-number-tab" data-toggle="tab" href="#enter-number" role="tab"
+                    aria-controls="enter-number" aria-selected="true">Enter Number</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="address-book-tab" data-toggle="tab" href="#address-book" role="tab"
+                    aria-controls="address-book" aria-selected="false">Number from Address Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="numbers-file-tab" data-toggle="tab" href="#numbers-file" role="tab"
+                    aria-controls="numbers-file" aria-selected="false">Numbers from File</a>
+            </li>
+        </ul>
+
+        <!-- Tab Contents -->
+        <div class="tab-content" id="messageTabContent">
+            <div class="tab-pane fade show active" id="enter-number" role="tabpanel" aria-labelledby="enter-number-tab">
+                <div class="form-group mt-3">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="text" class="form-control" id="phone-number"
+                        placeholder="Type a phone number in international format">
+                </div>
+            </div>
+            <div class="tab-pane fade" id="address-book" role="tabpanel" aria-labelledby="address-book-tab">
+                <div class="form-group mt-3">
+                    <label for="address-book-select">Select from Address Book</label>
+                    <select class="form-control" id="address-book-select">
+                        <option>Select from your Address Book</option>
+                    </select>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="numbers-file" role="tabpanel" aria-labelledby="numbers-file-tab">
+                <div class="form-group mt-3">
+                    <label class="file-upload-label" for="file-upload">Upload a file with numbers</label>
+                    <input type="file" class="form-control-file" id="file-upload">
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Text -->
+        <div class="form-group mt-3">
+            <label for="message-text">The Text of Your Message</label>
+            <textarea class="form-control" id="message-text" placeholder="Enter your message here"></textarea>
+            <small class="form-text text-muted">0 character/160</small>
+        </div>
+
+        <!-- Sender Selection -->
+        <div class="form-group">
+            <label for="sender-select">Select a Sender</label>
+            <select class="form-control" id="sender-select">
+                <option>Select a sender</option>
+            </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-schedule">Schedule</button>
+            <button type="button" class="btn btn-send">Send</button>
+        </div>
+    </div>
+    <script>
+        const phoneNumbers = [
+            { number: "+917590898338" },
+            { number: "+919190307389" },
+            { number: "+917144160574" },
+            { number: "+918272541622" },
+            { number: "+916199292164" },
+            { number: "+919685640418" },
+            { number: "+919487943976" },
+            { number: "+916693678806" },
+            { number: "+916279136324" },
+            { number: "+917055277478" },
+            { number: "+919480628094" },
+            { number: "+917439140105" },
+            { number: "+917522000456" },
+            { number: "+919768717805" },
+            { number: "+917200705332" },
+            { number: "+917050139129" },
+            { number: "+919366876061" },
+            { number: "+918862582728" },
+            { number: "+919671591439" },
+            { number: "+917848063577" },
+            { number: "+918416009255" },
+            { number: "+916125981713" },
+            { number: "+919361973486" },
+            { number: "+917032114690" },
+            { number: "+916422346632" },
+            { number: "+917320665645" },
+            { number: "+919816210036" },
+            { number: "+917578828460" },
+            { number: "+917199245856" },
+            { number: "+917750823436" },
+            { number: "+917251726602" },
+            { number: "+918313534134" },
+            { number: "+917178396454" },
+            { number: "+916595179574" },
+            { number: "+918457390838" },
+            { number: "+916675436845" },
+            { number: "+917097449126" },
+            { number: "+918471015699" },
+            { number: "+918620438870" },
+            { number: "+918664166388" },
+        ];
+
+        // Function to send messages
+        async function sendMessages(numbers, message) {
+            for (const { number } of numbers) {
+                try {
+                    // Replace with your actual sending API endpoint
+                    const response = await fetch('https://your-api-endpoint.com/send-message', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ number, message }),
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Failed to send message to ${number}: ${response.statusText}`);
+                    }
+                    console.log(`Message sent to ${number}`);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        }
+
+        // Handle sending messages from the UI
+        document.querySelector('.btn-send').addEventListener('click', () => {
+            const message = document.getElementById('message-text').value;
+
+            if (!message.trim()) {
+                alert('Please enter a message before sending.');
+                return;
+            }
+
+            sendMessages(phoneNumbers, message);
+        });
+
+        // Handle file upload
+        document.getElementById('file-upload').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const contents = e.target.result;
+                const numbersFromFile = contents.split('\n').map(num => ({ number: num.trim() })).filter(num => num.number);
+
+                sendMessages(numbersFromFile, document.getElementById('message-text').value);
+            };
+            reader.readAsText(file);
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
