@@ -307,6 +307,35 @@
             box-shadow: none;
         }
     </style>
+    <style>
+        .increment-decrement {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .btn-increment,
+        .btn-decrement {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .btn-increment:hover,
+        .btn-decrement:hover {
+            color: #007bff;
+            /* Change color on hover */
+        }
+
+        #bhk1Value,
+        #bhk2Value,
+        #bhk3Value,
+        #bhk4Value {
+            margin: 0 5px;
+        }
+    </style>
 </head>
 
 <body>
@@ -486,9 +515,10 @@
                                 <td>
                                     <div class="d-flex justify-content-start align-items-center">
 
-                                        <div class="d-flex flex-column"><small class="text-truncate text-muted">O-46
-                                                Jamia
-                                                Nagar Batlahouse Okhla</small></div>
+                                        <div class="d-flex flex-column">
+                                            <small class="text-truncate text-muted" id="addressText">O-46 Jamia Nagar
+                                                Batlahouse Okhla erjfvnwe ruifvwerifv nwnveii</small>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -582,7 +612,7 @@
                             </div>
                             <div class="info-row">
                                 <span class="label">Address</span>
-                                <span class="value">O-42, Jmia Nagar okhla</span>
+                                <span class="value" id="addressText">O-42, Jmia Nagar okhla</span>
                             </div>
                             <div class="info-row">
                                 <span class="label">Phone no</span>
@@ -605,6 +635,7 @@
                         </div>
                     </div>
                     <!-- Modal -->
+
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
@@ -657,7 +688,16 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="mb-3" id="prop-avail">
+                                            <label class="form-label">Owner's Property Availability</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="ownerNotProviding"
+                                                    value="Not providing">
+                                                <label class="form-check-label" for="ownerNotProviding">
+                                                    The Owner does not provide property for rent or sale
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="mb-3" id="prop-yes-no">
                                             <label class="form-label">Is the Flat Available?</label>
                                             <div class="d-flex">
@@ -676,6 +716,12 @@
                                                     </label>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <!-- New Full Address Field -->
+                                        <div class="mb-3" id="fulladdress">
+                                            <label for="fullAddress" class="form-label">Full Address of Property</label>
+                                            <input type="text" class="form-control" id="fullAddress"
+                                                placeholder="O-42 Pase2 Chhatarpur ">
                                         </div>
 
                                         <div class="mb-3" id="prop-rent-sell">
@@ -717,13 +763,20 @@
                                                         Commercial
                                                     </label>
                                                 </div>
+
                                             </div>
                                         </div>
+
+
+
+
                                         <div class="mb-3" id="avl-dates">
                                             <label for="flatpickr-time" class="form-label">Available From</label>
                                             <input class="form-control" type="date" value="2021-06-18"
                                                 id="html5-date-input">
                                         </div>
+
+
                                         <div class="mb-3" id="bhkDropdown">
                                             <label for="bhkDropdown" class="form-label">BHK Available are</label>
                                             <div class="bhk-dropdown">
@@ -731,25 +784,59 @@
                                                     <input class="form-check-input" type="checkbox" id="bhk1"
                                                         value="1 BHK">
                                                     <label class="form-check-label" for="bhk1">1 BHK</label>
+                                                    <div class="increment-decrement">
+                                                        <span id="bhk1Value">0</span>
+                                                        <button type="button" class="btn-increment"
+                                                            onclick="incrementBhk('bhk1Value')">▲</button>
+                                                        <button type="button" class="btn-decrement"
+                                                            onclick="decrementBhk('bhk1Value')">▼</button>
+                                                    </div>
                                                 </div>
+
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="bhk2"
                                                         value="2 BHK">
                                                     <label class="form-check-label" for="bhk2">2 BHK</label>
+                                                    <div class="increment-decrement">
+                                                        <span id="bhk2Value">0</span>
+                                                        <button type="button" class="btn-increment"
+                                                            onclick="incrementBhk('bhk2Value')">▲</button>
+                                                        <button type="button" class="btn-decrement"
+                                                            onclick="decrementBhk('bhk2Value')">▼</button>
+                                                    </div>
                                                 </div>
+
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="bhk3"
                                                         value="3 BHK">
                                                     <label class="form-check-label" for="bhk3">3 BHK</label>
+                                                    <div class="increment-decrement">
+                                                        <span id="bhk3Value">0</span>
+                                                        <button type="button" class="btn-increment"
+                                                            onclick="incrementBhk('bhk3Value')">▲</button>
+                                                        <button type="button" class="btn-decrement"
+                                                            onclick="decrementBhk('bhk3Value')">▼</button>
+                                                    </div>
                                                 </div>
+
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="bhk4"
                                                         value="4 BHK">
                                                     <label class="form-check-label" for="bhk4">4 BHK</label>
+                                                    <div class="increment-decrement">
+                                                        <span id="bhk4Value">0</span>
+                                                        <button type="button" class="btn-increment"
+                                                            onclick="incrementBhk('bhk4Value')">▲</button>
+                                                        <button type="button" class="btn-decrement"
+                                                            onclick="decrementBhk('bhk4Value')">▼</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="mb-3" id="commercialProperties" style="display: none;">
+
+
+
+                                        <div class="mb-3" id="commercialProperties" style="display: none !important;">
                                             <label for="propertyDropdown" class="form-label">Commercial Properties
                                                 are</label>
                                             <div class="property-dropdown">
@@ -780,7 +867,6 @@
                                             <textarea class="form-control" id="messageTextarea" rows="4"
                                                 placeholder="Enter your message here..."></textarea>
                                         </div>
-
                                     </form>
                                 </div>
                                 <div class="modal-footer" style="display: flex; justify-content: flex-start;">
@@ -793,6 +879,8 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="row mx-2">
                         <div class="col-sm-12 col-md-6">
                             <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
@@ -835,26 +923,48 @@
 
     </div>
     <script>
+        // Owner not providing checkbox handler
+        const checkbox = document.getElementById('ownerNotProviding');
+        const elementsToHide = [
+            'prop-yes-no',
+            'fulladdress',
+            'prop-rent-sell',
+            'prop-resi-comm',
+            'avl-dates',
+            'bhkDropdown'
+        ];
+
+        checkbox.addEventListener('change', function () {
+            const shouldHide = checkbox.checked;
+
+            elementsToHide.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.style.display = shouldHide ? 'none' : 'block';
+                }
+            });
+        });
+
         // Function to handle callingStatus radio button change
         function updateFeedbackForm() {
-            // Get selected calling status value
             var selectedCallingStatus = document.querySelector('input[name="callingStatus"]:checked').value;
 
-            // IDs of elements to hide or show
             var elementsToToggle = [
                 'prop-yes-no', 'prop-rent-sell', 'prop-resi-comm', 'avl-dates',
-                'bhkDropdown', 'commercialProperties'
+                'bhkDropdown', 'commercialProperties', 'fulladdress', 'prop-avail'
             ];
 
-            // Hide all the elements if calling status is "rong no", "not reachable" or "didn't received"
             if (selectedCallingStatus === 'rong no' || selectedCallingStatus === 'not reachable' || selectedCallingStatus === "didn't received") {
                 elementsToToggle.forEach(function (id) {
                     document.getElementById(id).style.display = 'none';
                 });
             } else {
-                // Show all the elements if calling status is "calling done"
                 elementsToToggle.forEach(function (id) {
-                    document.getElementById(id).style.display = 'block';
+                    const element = document.getElementById(id);
+                    // Only show if the ownerNotProviding checkbox is not checked
+                    if (!checkbox.checked) {
+                        element.style.display = 'block';
+                    }
                 });
             }
         }
@@ -867,16 +977,20 @@
         // Initial call to set the correct display on page load
         updateFeedbackForm();
 
-        // Function to handle property type change
+        // Function to handle propertyType radio button change
         function updatePropertyType() {
-            var selectedValue = document.querySelector('input[name="propertyType"]:checked').value;
-            var bhkDropdown = document.getElementById('bhkDropdown');
-            var commercialProperties = document.getElementById('commercialProperties');
+            const residentialRadio = document.getElementById('propertyResidential');
+            const commercialRadio = document.getElementById('propertyCommercial');
 
-            if (selectedValue === 'Commercial') {
+            const bhkDropdown = document.getElementById('bhkDropdown');
+            const commercialProperties = document.getElementById('commercialProperties');
+
+            if (commercialRadio.checked) {
+                // Hide BHK dropdown and show Commercial Properties
                 bhkDropdown.style.display = 'none';
                 commercialProperties.style.display = 'block';
-            } else {
+            } else if (residentialRadio.checked) {
+                // Show BHK dropdown and hide Commercial Properties
                 bhkDropdown.style.display = 'block';
                 commercialProperties.style.display = 'none';
             }
@@ -889,6 +1003,29 @@
 
         // Initial call to set correct display on page load
         updatePropertyType();
+
+
+
+        function truncateAddress(address) {
+            // Check if the length of the address is more than 28 characters
+            if (address.length > 28) {
+                // Return the first 28 characters and add "..." at the end
+                return address.substring(0, 29) + '...';
+            }
+            // If address is already 28 characters or less, return it as is
+            return address;
+        }
+
+        // Get the full address from the small tag
+        const addressElement = document.getElementById('addressText');
+        const fullAddress = addressElement.textContent.trim();  // Remove extra whitespace
+
+        // Truncate the address if necessary
+        const truncatedAddress = truncateAddress(fullAddress);
+
+        // Set the truncated address back to the small tag
+        addressElement.textContent = truncatedAddress;
+
     </script>
 
 

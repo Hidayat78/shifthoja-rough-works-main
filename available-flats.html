@@ -621,9 +621,8 @@
                                 <div class="d-flex justify-content-start align-items-center">
 
                                     <div class="d-flex flex-column">
-                                        <small class="text-truncate text-muted">O-46
-                                            Jamia
-                                            Nagar Batlahouse Okhla
+                                        <small class="text-truncate text-muted" id="addressText">O-46 Jamia Nagar
+                                            Batlahouse Okhla
                                         </small>
                                     </div>
                                 </div>
@@ -715,7 +714,27 @@
     </div>
     </div>
     </div>
+    <script>
+        function truncateAddress(address) {
+            // Check if the length of the address is more than 28 characters
+            if (address.length > 28) {
+                // Return the first 28 characters and add "..." at the end
+                return address.substring(0, 29) + '...';
+            }
+            // If address is already 28 characters or less, return it as is
+            return address;
+        }
 
+        // Get the full address from the small tag
+        const addressElement = document.getElementById('addressText');
+        const fullAddress = addressElement.textContent.trim();  // Remove extra whitespace
+
+        // Truncate the address if necessary
+        const truncatedAddress = truncateAddress(fullAddress);
+
+        // Set the truncated address back to the small tag
+        addressElement.textContent = truncatedAddress;
+    </script>
     <script>
         $(document).ready(function () {
             $('#ProductStatus').select2({
