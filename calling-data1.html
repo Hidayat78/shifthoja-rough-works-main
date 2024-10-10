@@ -31,9 +31,6 @@
 
     <!-- Select2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
     <!-- Livewire Styles -->
     <style>
@@ -113,7 +110,7 @@
             box-sizing: content-box;
             text-align: center;
             font-family: Courier New, Courier, monospace;
-            content: "+";
+            content: "📞";
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -135,6 +132,15 @@
                 height: 165px;
             }
 
+            table#DataTables_Table_0 {
+                display: none;
+            }
+
+            .row.mx-2 {
+                margin-top: 25px;
+                display: none;
+            }
+
         }
 
         @media (min-width: 480px) and (max-width: 767px) {
@@ -150,6 +156,184 @@
         .bhk-dropdown .form-check-inline {
             display: inline-block;
             margin-bottom: 10px;
+        }
+
+        .key-infodisplaynone {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .key-info {
+            background-color: #f7f1f9;
+            padding: 20px;
+            border-radius: 8px;
+            width: 100%;
+            margin: auto;
+            font-size: 12px;
+        }
+
+        .key-info h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-row .label {
+            font-weight: bold;
+            color: #444;
+        }
+
+        .info-row .value {
+            color: #000;
+        }
+
+        @media (min-width: 550px) {
+            .key-infodisplaynone {
+                display: none;
+            }
+        }
+
+        .feedback-container {
+            padding: 10px;
+            /* Add some padding for better appearance */
+            border: 1px solid #ccc;
+            /* Optional border for better visibility */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: #f9f9f9;
+            /* Background color */
+            display: flex;
+            /* Flexbox layout */
+            align-items: center;
+            /* Center items vertically */
+            cursor: pointer;
+            /* Pointer cursor for clickability */
+            transition: background-color 0.3s;
+            /* Smooth background color change */
+        }
+
+        .feedback-container:hover {
+            background-color: #e9ecef;
+            /* Change background on hover */
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            /* font-family: "Courier New", Courier, monospace; */
+            font-family: 'Open Sans', sans-serif;
+
+
+        }
+
+        .label {
+            margin-right: 5px;
+            /* Space between label and value */
+            color: #000;
+            /* Change color as needed */
+        }
+
+        .value {
+            font-size: 1.2em;
+            /* Adjust size for the "+" */
+            color: #007bff;
+            /* Change color as needed */
+        }
+
+        .value i {
+            color: #fff;
+            /* Icon color */
+            background-color: #007bff;
+            /* Background color for button-like appearance */
+            border-radius: 50%;
+            /* Round appearance */
+            padding: 0.2em;
+            /* Padding for circle */
+        }
+
+        span.viewnumber {
+            display: inline-flex;
+            /* Make it behave like a button */
+            align-items: center;
+            /* Center the icon vertically */
+            justify-content: center;
+            color: white;
+            /* Original border */
+            border-radius: 5px;
+            /* Rounded corners */
+            background-color: #007bff;
+            /* Background color */
+            color: #fff;
+            /* Text color */
+            padding: 5px 8px;
+            /* Padding */
+            cursor: pointer;
+            /* Pointer cursor for clickability */
+            transition: background-color 0.3s, transform 0.2s;
+            /* Smooth transitions */
+        }
+
+        /* Hover effect */
+        span.viewnumber:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+
+        /* Active effect */
+        span.viewnumber:active {
+            transform: scale(0.95);
+            /* Slightly shrink on click */
+        }
+
+        span.value.viewnumber {
+            color: white;
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control:before,
+        table.dataTable.dtr-column>tbody>tr>th.control:before {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+    </style>
+    <style>
+        .increment-decrement {
+            display: inline-flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        .btn-increment,
+        .btn-decrement {
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 0 5px;
+        }
+
+        .btn-increment:hover,
+        .btn-decrement:hover {
+            color: #007bff;
+            /* Change color on hover */
+        }
+
+        #bhk1Value,
+        #bhk2Value,
+        #bhk3Value,
+        #bhk4Value {
+            margin: 0 5px;
         }
     </style>
 </head>
@@ -222,7 +406,7 @@
             <div class="card-datatable table-responsive">
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
 
-                    <div class="row mx-1" style="display: none;">
+                    <div class="row mx-1">
                         <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
                             <div class="col-md-4 product_status">
                                 <select id="ProductStatus" class="form-select text-capitalize">
@@ -253,266 +437,48 @@
                         </div>
 
                     </div>
-
-
-                    <div class="card mb-4"></div>
-                    <div class="card-header">
-                        <h5 class="card-title m-0">Send Leads</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row g-3">
-                            <div class="col-12 col-md-4">
-                                <label class="form-label mb-0" for="business-name">Name</label>
-                                <input type="text" id="business-name" class="form-control" placeholder="Full Name">
-                            </div>
-                            <div class="col-12 col-md-4" data-select2-id="13">
-                                <label class="form-label mb-0" for="country_region">Select BHK</label>
-                                <div class="position-relative" data-select2-id="12">
-                                    <select id="country_region" class="select2 form-select select2-hidden-accessible"
-                                        data-placeholder="United States" data-select2-id="country_region" tabindex="-1"
-                                        aria-hidden="true">
-                                        <option value="" data-select2-id="2">1 BHK</option>
-                                        <option value="Australia" data-select2-id="24">2 BHK</option>
-                                        <option value="United States" data-select2-id="47">3 BHK</option>
-                                        <option value="United States" data-select2-id="47">3 BHK+</option>
-                                    </select>
-                                    <span
-                                        class="select2 select2-container select2-container--default select2-container--below"
-                                        dir="ltr" data-select2-id="1" style="width: 281.104px;">
-                                        <span class="selection">
-                                            <span class="select2-selection select2-selection--single" role="combobox"
-                                                aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                aria-disabled="false"
-                                                aria-labelledby="select2-country_region-container">
-                                                <span class="select2-selection__rendered"
-                                                    id="select2-country_region-container" role="textbox"
-                                                    aria-readonly="true">
-
-                                                </span>
-                                                <span class="select2-selection__arrow" role="presentation">
-                                                    <b role="presentation"></b>
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4" data-select2-id="13">
-                                <label class="form-label mb-0" for="country_region">Leads From</label>
-                                <div class="position-relative" data-select2-id="12">
-                                    <select id="country_region" class="select2 form-select select2-hidden-accessible"
-                                        data-placeholder="United States" data-select2-id="country_region" tabindex="-1"
-                                        aria-hidden="true">
-                                        <option value="Housing" data-select2-id="2">Housing</option>
-                                        <option value="FaceBook" data-select2-id="24">FaceBook</option>
-                                        <option value="OLX" data-select2-id="47">OLX</option>
-
-                                    </select>
-                                    <span
-                                        class="select2 select2-container select2-container--default select2-container--below"
-                                        dir="ltr" data-select2-id="1" style="width: 281.104px;">
-                                        <span class="selection">
-                                            <span class="select2-selection select2-selection--single" role="combobox"
-                                                aria-haspopup="true" aria-expanded="false" tabindex="0"
-                                                aria-disabled="false"
-                                                aria-labelledby="select2-country_region-container">
-                                                <span class="select2-selection__rendered"
-                                                    id="select2-country_region-container" role="textbox"
-                                                    aria-readonly="true">
-
-                                                </span>
-                                                <span class="select2-selection__arrow" role="presentation">
-                                                    <b role="presentation"></b>
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <span class="dropdown-wrapper" aria-hidden="true"></span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <label class="form-label mb-0" for="bill_city">Phone no</label>
-                                <input type="number" id="bill_city" class="form-control" placeholder="Phone no">
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <label class="form-label mb-0" for="bill_state">Locality</label>
-                                <input type="text" id="bill_state" class="form-control" placeholder="  Enter Locality">
-                            </div>
-                            <div class="col-12 col-md-4">
-                                <label class="form-label mb-0" for="bill_pincode">Sub-Locality</label>
-                                <input type="text" id="bill_pincode" class="form-control" placeholder="Sub-Locality">
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <label for="flatpickr-time" class="form-label">Pick Date</label>
-                                <input class="form-control" type="date" value="2021-06-18" id="html5-date-input">
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <label for="flatpickr-time" class="form-label">Expected Time</label>
-                                <input type="text" class="form-control flatpickr-input" placeholder="HH:MM PM"
-                                    id="flatpickr-time">
-                            </div>
-                            <div class="col-12">
-                                <button type="button" class="btn btn-primary">Send Leads</button>
-                            </div>
+                    <!-- Modal -->
+                    <div class="row mx-2">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                                Showing 1
+                                to 10 of 50 entries</div>
                         </div>
-                    </div>
-                </div>
-
-                <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
-                    id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-                    <thead>
-                        <tr>
-                            <th class="control sorting dtr-hidden" tabindex="0" aria-controls="DataTables_Table_0"
-                                rowspan="1" colspan="1" style="width: 0px; display: none;"
-                                aria-label=": activate to sort column ascending">
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                colspan="1" style="width: 64px;" aria-label="#ID: activate to sort column ascending"
-                                aria-sort="descending">#ID</th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Name</th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Locality
-                            </th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">
-                                Sub-Locality
-                            </th>
-
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Address
-                            </th>
-
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Phone no</th>
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="odd">
-                            <td class="  control" tabindex="0" style="display: none;"></td>
-                            <td class="sorting_1"><a><span class="fw-medium">01</span></a></td>
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Hidayat</span></a>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Okhla</span></a>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Jamia
-                                                NAgar</span></a>
-                                    </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-
-                                    <div class="d-flex flex-column"><small class="text-truncate text-muted">O-46
-                                            Jamia
-                                            Nagar Batlahouse Okhla</small></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column">
-                                        <small id="phoneNumber" class="text-truncate text-muted">
-                                            9504245461
-
-                                        </small>
-                                    </div>
-                                </div>
-                            </td>
-
-
-                        </tr>
-
-                    </tbody>
-                </table>
-
-
-                <div class="row mx-2">
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                            Showing 1
-                            to 10 of 50 entries</div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                            <ul class="pagination">
-                                <li class="paginate_button page-item previous disabled"
-                                    id="DataTables_Table_0_previous"><a aria-controls="DataTables_Table_0"
-                                        aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0"
-                                        class="page-link">Previous</a></li>
-                                <li class="paginate_button page-item active"><a href="#"
-                                        aria-controls="DataTables_Table_0" role="link" aria-current="page"
-                                        data-dt-idx="0" tabindex="0" class="page-link">1</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="3" tabindex="0" class="page-link">4</a></li>
-                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                        role="link" data-dt-idx="4" tabindex="0" class="page-link">5</a></li>
-                                <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
-                                        aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0"
-                                        class="page-link">Next</a></li>
-                            </ul>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                                <ul class="pagination">
+                                    <li class="paginate_button page-item previous disabled"
+                                        id="DataTables_Table_0_previous"><a aria-controls="DataTables_Table_0"
+                                            aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0"
+                                            class="page-link">Previous</a></li>
+                                    <li class="paginate_button page-item active"><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" aria-current="page"
+                                            data-dt-idx="0" tabindex="0" class="page-link">1</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="1" tabindex="0"
+                                            class="page-link">2</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="2" tabindex="0"
+                                            class="page-link">3</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="3" tabindex="0"
+                                            class="page-link">4</a></li>
+                                    <li class="paginate_button page-item "><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="4" tabindex="0"
+                                            class="page-link">5</a></li>
+                                    <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                                            aria-controls="DataTables_Table_0" role="link" data-dt-idx="next"
+                                            tabindex="0" class="page-link">Next</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
 
 
-    <script>
-        // Function to handle dropdown change
-        function updateDropdown() {
-            var selectedValue = document.getElementById('dropdown1').value;
-            var bhkDropdown = document.getElementById('bhkDropdown');
-            var commercialProperties = document.getElementById('commercialProperties');
-
-            // Show or hide sections based on selection
-            if (selectedValue === '2') {
-                bhkDropdown.style.display = 'none'; // Hide flats available
-                commercialProperties.style.display = 'block'; // Show commercial properties
-            } else {
-                bhkDropdown.style.display = 'block'; // Show flats available
-                commercialProperties.style.display = 'none'; // Hide commercial properties
-            }
-        }
-
-        // Event listener for dropdown change
-        document.getElementById('dropdown1').addEventListener('change', updateDropdown);
-
-        // Initial call to set the correct display on page load
-        updateDropdown();
-    </script>
     <script>
         $(document).ready(function () {
             $('#ProductStatus').select2({
@@ -535,9 +501,6 @@
             });
         });
     </script>
-
-
-
 
 
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
