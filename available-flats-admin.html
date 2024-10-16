@@ -97,10 +97,10 @@
         }
 
         .key-info h3 {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: bold;
-            margin-bottom: 15px;
-            color: #333;
+            margin-bottom: 7px;
+            color: #ffffff;
         }
 
         .info-row {
@@ -299,6 +299,68 @@
         .date-picker:focus {
             border-color: #4CAF50;
         }
+
+
+
+        .button-edit {
+            display: inline-block;
+            /* Makes the element behave like a button */
+            padding: 10px 20px;
+            /* Adds some padding */
+            background-color: #007bff;
+            /* Button background color */
+            color: white;
+            /* Text color */
+            text-align: center;
+            /* Center the text */
+            border-radius: 5px;
+            /* Rounded corners */
+            text-decoration: none;
+            /* Removes underline */
+            font-size: 16px;
+            /* Font size */
+            cursor: pointer;
+            /* Changes cursor to pointer */
+            border: none;
+            /* Removes default border */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        .button-edit:hover {
+            background-color: #0056b3;
+            /* Darker shade on hover */
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control:before,
+        table.dataTable.dtr-column>tbody>tr>th.control:before {
+            background-color: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control:before,
+        table.dataTable.dtr-column>tbody>tr>th.control:before {
+            position: absolute;
+            line-height: .9em;
+            font-weight: 500;
+            height: .85em;
+            width: .85em;
+            color: #fff;
+            border-radius: 1em;
+            box-sizing: content-box;
+            text-align: center;
+            font-family: Courier New, Courier, monospace;
+            content: "✏️";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        table.dataTable.dtr-column>tbody>tr>td.control,
+        table.dataTable.dtr-column>tbody>tr>th.control {
+            position: relative;
+        }
     </style>
 </head>
 
@@ -311,14 +373,14 @@
                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                     <div class="row mx-1">
                         <div class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-                            <div class="col-md-4 product_status">
+                            <!-- <div class="col-md-4 product_status">
                                 <select id="ProductStatus" class="form-select text-capitalize">
                                     <option value="">Select City</option>
                                     <option value="Scheduled">Delhi</option>
                                     <option value="Publish">Noida</option>
                                     <option value="Inactive">Gurugram</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="col-md-4 product_category">
                                 <select id="ProductCategory" class="form-select text-capitalize">
                                     <option value="">Select Locality</option>
@@ -336,6 +398,45 @@
                                     <option value="Phase I">Phase I</option>
                                     <option value="JBTS">JBTS</option>
                                 </select>
+                            </div>
+                            <div class="col-md-4 product_category">
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle w-100" type="button"
+                                        id="productCategoryDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Today Calls Status
+                                    </button>
+                                    <ul class="dropdown-menu p-3 w-100">
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Call-done"
+                                                    value="Call done">
+                                                <label class="form-check-label" for="Call-done">Call done</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Didn-t-Received"
+                                                    value="Sell">
+                                                <label class="form-check-label" for="Didn-t-Received">Didn't
+                                                    Received</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="Block-Calls"
+                                                    value="Residential">
+                                                <label class="form-check-label" for="Block-Calls">Block Calls</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="FollowUp"
+                                                    value="Commercial">
+                                                <label class="form-check-label" for="FollowUp">FollowUp</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -491,7 +592,7 @@
 
                 <div class="key-infodisplaynone">
                     <div class="key-info">
-                        <h3>Flats</h3>
+                        <h3 class="button-edit" id="editBtn">Edit</h3>
                         <div class="info-row">
                             <span class="label">ID</span>
                             <span class="value">0111</span>
@@ -538,10 +639,14 @@
                             <span class="label">Availability</span>
                             <span class="value">27/07/2024</span>
                         </div>
+                        <div class="info-row">
+                            <span class="label">Rent</span>
+                            <span class="value">34k</span>
+                        </div>
                     </div>
 
                     <div class="key-info">
-                        <h3>Flats</h3>
+                        <h3 class="button-edit" id="editBtn">Edit</h3>
                         <div class="info-row">
                             <span class="label">ID</span>
                             <span class="value">0111</span>
@@ -588,6 +693,10 @@
                             <span class="label">Updated at</span>
                             <span class="value">27/07/2024</span>
                         </div>
+                        <div class="info-row">
+                            <span class="label">Rent</span>
+                            <span class="value">34k</span>
+                        </div>
                     </div>
                 </div>
 
@@ -612,7 +721,7 @@
 
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 style="width: 266px;" aria-label="Client: activate to sort column ascending">
-                                Sub-Locality
+                                Sub-loc
                             </th>
 
 
@@ -623,9 +732,9 @@
 
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 style="width: 67px;" aria-label="Total: activate to sort column ascending">Phone no</th>
-
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Rented</th>
+                                style="width: 67px;" aria-label="Total: activate to sort column ascending">BHK</th>
+
 
                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
                                 style="width: 67px;" aria-label="Total: activate to sort column ascending">Rent out Date
@@ -636,7 +745,14 @@
                                 aria-label="Total: activate to sort column ascending">
                                 Available
                             </th>
+                            <th class="sorting available-column" tabindex="0" aria-controls="DataTables_Table_0"
+                                rowspan="1" colspan="1" style="width: 67px;"
+                                aria-label="Total: activate to sort column ascending">
+                                Rent
+                            </th>
 
+                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
+                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -688,14 +804,16 @@
                                     </div>
             </div></a>
             </td>
-            <!-- First TD for Checkbox -->
             <td>
                 <div class="d-flex justify-content-start align-items-center">
+
                     <div class="d-flex flex-column">
-                        <input type="checkbox" id="rentOutCheckbox">
+                        <small class="text-truncate text-muted" id="addressText">34K
+                        </small>
                     </div>
                 </div>
             </td>
+
 
             <!-- Second TD for Date Picker -->
             <td>
@@ -711,10 +829,84 @@
                     <small class="text-muted">2021-06-18</small>
                 </div>
             </td>
+            <td>
+                <div class="">
+                    <small class="text-muted">34K</small>
+                </div>
+            </td>
+            <td class="control" id="editBtn" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+            </td>
             </tr>
 
             </tbody>
             </table>
+
+
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <!-- BHK -->
+                                <div class="mb-3">
+                                    <label for="bhkInput" class="form-label">BHK</label>
+                                    <input type="text" class="form-control" id="bhkInput" value="2 BHK">
+                                </div>
+                                <!-- Name -->
+                                <div class="mb-3">
+                                    <label for="nameInput" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="nameInput" value="Hidayat">
+                                </div>
+                                <!-- Locality -->
+                                <div class="mb-3">
+                                    <label for="localityInput" class="form-label">Locality</label>
+                                    <input type="text" class="form-control" id="localityInput" value="Okhla">
+                                </div>
+                                <!-- Sub Locality -->
+                                <div class="mb-3">
+                                    <label for="subLocalityInput" class="form-label">Sub Locality</label>
+                                    <input type="text" class="form-control" id="subLocalityInput" value="Jamia Nagar">
+                                </div>
+                                <!-- Address -->
+                                <div class="mb-3">
+                                    <label for="addressInput" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="addressInput"
+                                        value="O-42, Jamia Nagar Okhla">
+                                </div>
+                                <!-- Phone -->
+                                <div class="mb-3">
+                                    <label for="phoneInput" class="form-label">Phone no</label>
+                                    <input type="text" class="form-control" id="phoneInput" value="9504245461">
+                                </div>
+                                <!-- Availability -->
+                                <div class="mb-3">
+                                    <label for="availabilityInput" class="form-label">Availability</label>
+                                    <input type="date" class="form-control" id="availabilityInput" value="2024-07-27">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="rentInput" class="form-label">Rent</label>
+                                    <input type="text" class="form-control" id="rentInput">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer" style="display: flex; justify-content: flex-start;">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
 
             <div class="row mx-2">
                 <div class="col-sm-12 col-md-5">
@@ -765,6 +957,42 @@
     </div>
     </div>
     </div>
+    <script>
+        // Open modal when 'Edit' button is clicked
+        document.getElementById('editBtn').addEventListener('click', function () {
+            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            myModal.show();
+        });
+
+        // Save changes from modal to the key-info display
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            // Get input values
+            const bhk = document.getElementById('bhkInput').value;
+            const name = document.getElementById('nameInput').value;
+            const locality = document.getElementById('localityInput').value;
+            const subLocality = document.getElementById('subLocalityInput').value;
+            const address = document.getElementById('addressInput').value;
+            const phone = document.getElementById('phoneInput').value;
+            const availability = document.getElementById('availabilityInput').value;
+            const rentInput = document.getElementById('rentInput').value;
+
+
+            // Update the display with the new values
+            document.getElementById('bhkDisplay').innerHTML = '<b>' + bhk + '</b>';
+            document.getElementById('nameDisplay').textContent = name;
+            document.getElementById('localityDisplay').textContent = locality;
+            document.getElementById('subLocalityDisplay').textContent = subLocality;
+            document.getElementById('addressDisplay').textContent = address;
+            document.getElementById('phoneDisplay').textContent = phone;
+            document.getElementById('availabilityDisplay').textContent = availability;
+            document.getElementById('rentInput').textContent = rentInput;
+
+            // Close modal
+            var myModalEl = document.getElementById('exampleModal');
+            var modal = bootstrap.Modal.getInstance(myModalEl);
+            modal.hide();
+        });
+    </script>
     <script>
         function truncateAddress(address) {
             // Check if the length of the address is more than 28 characters
