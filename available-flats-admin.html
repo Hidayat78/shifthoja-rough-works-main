@@ -700,261 +700,116 @@
                     </div>
                 </div>
 
-                <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
-                    id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-                    <thead>
-                        <tr>
-                            <th class="control sorting dtr-hidden" tabindex="0" aria-controls="DataTables_Table_0"
-                                rowspan="1" colspan="1" style="width: 0px; display: none;"
-                                aria-label=": activate to sort column ascending">
-                            </th>
-                            <th class="sorting sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
-                                colspan="1" style="width: 64px;" aria-label="#ID: activate to sort column ascending"
-                                aria-sort="descending">#ID</th>
 
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Name</th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Locality
-                            </th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">
-                                Sub-loc
-                            </th>
-
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 266px;" aria-label="Client: activate to sort column ascending">Address
-                            </th>
-
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Phone no</th>
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">BHK</th>
-
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Rent out Date
-                            </th>
-
-                            <th class="sorting available-column" tabindex="0" aria-controls="DataTables_Table_0"
-                                rowspan="1" colspan="1" style="width: 67px;"
-                                aria-label="Total: activate to sort column ascending">
-                                Available
-                            </th>
-                            <th class="sorting available-column" tabindex="0" aria-controls="DataTables_Table_0"
-                                rowspan="1" colspan="1" style="width: 67px;"
-                                aria-label="Total: activate to sort column ascending">
-                                Rent
-                            </th>
-
-                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"
-                                style="width: 67px;" aria-label="Total: activate to sort column ascending">Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="odd">
-                            <td class="  control" tabindex="0" style="display: none;"></td>
-                            <td class="sorting_1"><a><span class="fw-medium">01</span></a></td>
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Hidayat</span></a>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="bhkInput" class="form-label">BHK</label>
+                                        <input type="text" class="form-control" id="bhkInput" value="2 BHK">
                                     </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Okhla</span></a>
+                                    <div class="mb-3">
+                                        <label for="nameInput" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="nameInput" value="Hidayat">
                                     </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-                                    <div class="d-flex flex-column"><a class="text-body text-truncate"><span
-                                                class="fw-medium">Jamia
-                                                NAgar</span></a>
+                                    <div class="mb-3">
+                                        <label for="localityInput" class="form-label">Locality</label>
+                                        <input type="text" class="form-control" id="localityInput" value="Okhla">
                                     </div>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="d-flex justify-content-start align-items-center">
-
-                                    <div class="d-flex flex-column">
-                                        <small class="text-truncate text-muted" id="addressText">O-46 Jamia Nagar
-                                            Batlahouse Okhla
-                                        </small>
+                                    <div class="mb-3">
+                                        <label for="subLocalityInput" class="form-label">Sub Locality</label>
+                                        <input type="text" class="form-control" id="subLocalityInput"
+                                            value="Jamia Nagar">
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                <a>
-                                    <div class="d-flex justify-content-start align-items-center"></div>
-                                    <div class="d-flex flex-column">
-                                        <small id="phoneNumber" class="text-truncate text-muted">
-                                            9504245461</span>
-                                        </small>
+                                    <div class="mb-3">
+                                        <label for="addressInput" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="addressInput"
+                                            value="O-42, Jamia Nagar Okhla">
                                     </div>
-            </div></a>
-            </td>
-            <td>
-                <div class="d-flex justify-content-start align-items-center">
-
-                    <div class="d-flex flex-column">
-                        <small class="text-truncate text-muted" id="addressText">34K
-                        </small>
-                    </div>
-                </div>
-            </td>
-
-
-            <!-- Second TD for Date Picker -->
-            <td>
-                <div class="d-flex justify-content-start align-items-center">
-                    <div class="d-flex flex-column">
-                        <input type="date" id="rentOutDate" class="date-picker">
-                    </div>
-                </div>
-            </td>
-
-            <td>
-                <div class="">
-                    <small class="text-muted">2021-06-18</small>
-                </div>
-            </td>
-            <td>
-                <div class="">
-                    <small class="text-muted">34K</small>
-                </div>
-            </td>
-            <td class="control" id="editBtn" tabindex="0" style="cursor: pointer;" data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-            </td>
-            </tr>
-
-            </tbody>
-            </table>
-
-
-
-
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Edit Details</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <!-- BHK -->
-                                <div class="mb-3">
-                                    <label for="bhkInput" class="form-label">BHK</label>
-                                    <input type="text" class="form-control" id="bhkInput" value="2 BHK">
-                                </div>
-                                <!-- Name -->
-                                <div class="mb-3">
-                                    <label for="nameInput" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="nameInput" value="Hidayat">
-                                </div>
-                                <!-- Locality -->
-                                <div class="mb-3">
-                                    <label for="localityInput" class="form-label">Locality</label>
-                                    <input type="text" class="form-control" id="localityInput" value="Okhla">
-                                </div>
-                                <!-- Sub Locality -->
-                                <div class="mb-3">
-                                    <label for="subLocalityInput" class="form-label">Sub Locality</label>
-                                    <input type="text" class="form-control" id="subLocalityInput" value="Jamia Nagar">
-                                </div>
-                                <!-- Address -->
-                                <div class="mb-3">
-                                    <label for="addressInput" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="addressInput"
-                                        value="O-42, Jamia Nagar Okhla">
-                                </div>
-                                <!-- Phone -->
-                                <div class="mb-3">
-                                    <label for="phoneInput" class="form-label">Phone no</label>
-                                    <input type="text" class="form-control" id="phoneInput" value="9504245461">
-                                </div>
-                                <!-- Availability -->
-                                <div class="mb-3">
-                                    <label for="availabilityInput" class="form-label">Availability</label>
-                                    <input type="date" class="form-control" id="availabilityInput" value="2024-07-27">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="rentInput" class="form-label">Rent</label>
-                                    <input type="text" class="form-control" id="rentInput">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer" style="display: flex; justify-content: flex-start;">
-                            <button type="button" class="btn btn-primary">Save</button>
+                                    <div class="mb-3">
+                                        <label for="phoneInput" class="form-label">Phone no</label>
+                                        <input type="text" class="form-control" id="phoneInput" value="9504245461">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="availabilityInput" class="form-label">Availability</label>
+                                        <input type="date" class="form-control" id="availabilityInput"
+                                            value="2024-07-27">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="rentInput" class="form-label">Rent</label>
+                                        <input type="text" value="30k" class="form-control" id="rentInput">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer" style="display: flex; justify-content: flex-start;">
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
 
 
 
-            <div class="row mx-2">
-                <div class="col-sm-12 col-md-5">
-                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
-                        Showing 1
-                        to 10 of 50 entries</div>
-                </div>
-                <div class="col-sm-12 col-md-5">
-                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
-                        <ul class="pagination">
-                            <li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a
-                                    aria-controls="DataTables_Table_0" aria-disabled="true" role="link"
-                                    data-dt-idx="previous" tabindex="0" class="page-link">Previous</a></li>
-                            <li class="paginate_button page-item active"><a href="#" aria-controls="DataTables_Table_0"
-                                    role="link" aria-current="page" data-dt-idx="0" tabindex="0" class="page-link">1</a>
-                            </li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                    role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                    role="link" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                    role="link" data-dt-idx="3" tabindex="0" class="page-link">4</a></li>
-                            <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
-                                    role="link" data-dt-idx="4" tabindex="0" class="page-link">5</a></li>
-                            <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
-                                    aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0"
-                                    class="page-link">Next</a></li>
-                        </ul>
+                <div class="row mx-2">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">
+                            Showing 1
+                            to 10 of 50 entries</div>
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button page-item previous disabled"
+                                    id="DataTables_Table_0_previous"><a aria-controls="DataTables_Table_0"
+                                        aria-disabled="true" role="link" data-dt-idx="previous" tabindex="0"
+                                        class="page-link">Previous</a></li>
+                                <li class="paginate_button page-item active"><a href="#"
+                                        aria-controls="DataTables_Table_0" role="link" aria-current="page"
+                                        data-dt-idx="0" tabindex="0" class="page-link">1</a>
+                                </li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                        role="link" data-dt-idx="1" tabindex="0" class="page-link">2</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                        role="link" data-dt-idx="2" tabindex="0" class="page-link">3</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                        role="link" data-dt-idx="3" tabindex="0" class="page-link">4</a></li>
+                                <li class="paginate_button page-item "><a href="#" aria-controls="DataTables_Table_0"
+                                        role="link" data-dt-idx="4" tabindex="0" class="page-link">5</a></li>
+                                <li class="paginate_button page-item next" id="DataTables_Table_0_next"><a href="#"
+                                        aria-controls="DataTables_Table_0" role="link" data-dt-idx="next" tabindex="0"
+                                        class="page-link">Next</a></li>
+                            </ul>
 
+                        </div>
+
+                    </div>
+                    <div class="col-sm-12 col-md-2">
+                        <div class="btn-group">
+                            <button
+                                class="btn btn-secondary buttons-collection dropdown-toggle btn-label-secondary me-4"
+                                tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog"
+                                aria-expanded="false"><span><i class="bx bx-export me-2 bx-xs"></i>Export</span>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
-                <div class="col-sm-12 col-md-2">
-                    <div class="btn-group">
-                        <button class="btn btn-secondary buttons-collection dropdown-toggle btn-label-secondary me-4"
-                            tabindex="0" aria-controls="DataTables_Table_0" type="button" aria-haspopup="dialog"
-                            aria-expanded="false"><span><i class="bx bx-export me-2 bx-xs"></i>Export</span>
-                        </button>
-                    </div>
-                </div>
+
+
+
 
             </div>
-
-
-
-
         </div>
-    </div>
     </div>
     </div>
     <script>
