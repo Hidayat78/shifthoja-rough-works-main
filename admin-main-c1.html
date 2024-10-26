@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+    data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+    data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ShiftHoja</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/style.css" />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+    <link rel="stylesheet" defer
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+    <!-- Include Select2 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .menu-horizontal-next,
+        .menu-horizontal-prev {
+            display: none !important;
+        }
+
+        ul.menu-inner.py-1 .bg-menu-theme .menu-sub>.menu-item>.menu-link:before {
+            background-color: none !important;
+        }
+    </style>
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+    <style>
+        .label {
+            background: #fff;
+            cursor: pointer;
+            border: 1px solid rgb(235, 235, 235);
+            font-weight: 400;
+            font-size: 12px;
+            color: rgb(34, 34, 34);
+            border-radius: 8px;
+            transition: background 0.1s, color 0.1s;
+        }
+
+        .label:hover {
+            background: rgb(231, 221, 251);
+        }
+
+        .label:active {
+            background: #ccc;
+        }
+
+        .input:checked+.label {
+            background: rgb(231, 221, 251);
+
+            color: rgb(94, 35, 220);
+        }
+
+        .label {
+            width: 100%;
+            padding: 12px 3px;
+            text-align: center;
+        }
+
+
+        .input {
+            position: absolute;
+            opacity: 0;
+            height: 0px;
+            top: 0px;
+        }
+
+        .table>:not(caption)>*>* {
+
+            padding: 10px 12px;
+        }
+
+        /* Styling for the table head */
+        table th {
+            background-color: #f5f5f5;
+            /* Light gray background */
+            color: #333;
+            /* Darker text color */
+            font-weight: bold;
+            /* Bold text for better emphasis */
+            text-align: center;
+            /* Center align text */
+            padding: 12px;
+            /* Add some padding for spacing */
+            border-bottom: 2px solid #ddd;
+            /* Bottom border to distinguish the header */
+            font-size: 16px;
+            /* Increase font size for readability */
+        }
+
+        /* Add borders around the table */
+        table {
+            width: 100%;
+            /* Full width table */
+            border-collapse: collapse;
+            /* Remove double border spacing */
+            margin-top: 20px;
+            /* Space from the top */
+        }
+
+        /* General table cell styling */
+        table td,
+        table th {
+            border: 1px solid #ddd;
+            /* Border around each cell */
+        }
+
+        /* Add a hover effect to table rows */
+        table tr:hover {
+            background-color: #f1f1f1;
+            /* Light background on hover */
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 600px) {
+            .invoice-list-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            /* Hide the table header on mobile */
+            .invoice-list-table thead {
+                display: none;
+            }
+
+            /* Each row as a block */
+            .invoice-list-table tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            /* Each cell in a row */
+            .invoice-list-table tbody td {
+                display: flex;
+                justify-content: flex-end;
+                /* Align content to the right */
+                text-align: right;
+                /* Align text inside the cell to the right */
+                padding: 8px;
+                font-size: 14px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            /* Label before data using pseudo-element */
+            .invoice-list-table tbody td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 10px;
+                text-align: left;
+                flex-basis: 50%;
+            }
+
+            /* Ensure the actual data value is wrapped in a span for styling */
+            .invoice-list-table tbody td span {
+                flex: 1;
+                text-align: right;
+                /* Ensure values are aligned to the right */
+            }
+
+            /* Remove the bottom border from the last cell of each row */
+            .invoice-list-table tbody td:last-child {
+                border-bottom: none;
+            }
+
+            table.dataTable.dtr-column>tbody>tr>td.control:before,
+            table.dataTable.dtr-column>tbody>tr>th.control:before {
+                content: "Action";
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="layout-container">
+        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme d-md-none"
+            id="layout-navbar">
+            <div class="container-xxl">
+
+                <!--  Brand demo (display only for navbar-full and hide on below xl) -->
+
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none d-none"
+                    wire:ignore>
+
+
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+
+                        <i class="bx bx-menu bx-sm"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-brand app-brand demo d-xl-flex py-0 me-4 d-none d-lg-flex">
+                    <a href="https://shifthoja.com/dashboard" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
+                            <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <path
+                                        d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                                        id="path-1"></path>
+                                    <path
+                                        d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                                        id="path-3"></path>
+                                    <path
+                                        d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                                        id="path-4"></path>
+                                    <path
+                                        d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                                        id="path-5"></path>
+                                </defs>
+                                <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                                        <g id="Icon" transform="translate(27.000000, 15.000000)">
+                                            <g id="Mask" transform="translate(0.000000, 8.000000)">
+                                                <mask id="mask-2" fill="white">
+                                                    <use xlink:href="#path-1"></use>
+                                                </mask>
+                                                <use fill="var(--bs-primary)" xlink:href="#path-1"></use>
+                                                <g id="Path-3" mask="url(#mask-2)">
+                                                    <use fill="var(--bs-primary)" xlink:href="#path-3"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                                </g>
+                                                <g id="Path-4" mask="url(#mask-2)">
+                                                    <use fill="var(--bs-primary)" xlink:href="#path-4"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                                                </g>
+                                            </g>
+                                            <g id="Triangle"
+                                                transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                                                <use fill="var(--bs-primary)" xlink:href="#path-5"></use>
+                                                <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="app-brand-text demo menu-text fw-bold "
+                            style="text-transform:capitalize;">admin</span>
+                    </a>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <!-- User -->
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/avatars/1.png"
+                                        alt="" class="w-px-40 h-auto rounded-circle">
+
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="https://shifthoja.com/dashboard">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+
+
+                                                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/avatars/1.png"
+                                                        alt="" class="w-px-40 h-auto rounded-circle">
+
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-medium d-block">
+
+
+                                                    admin
+                                                </span>
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://shifthoja.com/user-profile">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+
+                                    <form action="https://shifthoja.com/logout" method="POST">
+                                        <input type="hidden" name="_token"
+                                            value="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL" autocomplete="off"> <button
+                                            type="submit" class="dropdown-item  bg-transparent border-0">
+                                            <span>Log out</span></button>
+                                    </form>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ User -->
+                    </ul>
+                </div>
+
+                <!-- Search Small Screens -->
+                <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
+                    <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input
+                            type="text" class="form-control search-input border-0 container-xxl tt-input"
+                            placeholder="Search..." aria-label="Search..." autocomplete="off" spellcheck="false"
+                            dir="auto" style="position: relative; vertical-align: top;">
+                        <pre aria-hidden="true"
+                            style="position: absolute; visibility: hidden; white-space: pre; font-family: Public Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                        <div class="tt-menu navbar-search-suggestion ps"
+                            style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+                            <div class="tt-dataset tt-dataset-pages"></div>
+                            <div class="tt-dataset tt-dataset-files"></div>
+                            <div class="tt-dataset tt-dataset-members"></div>
+                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                            </div>
+                            <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                            </div>
+                        </div>
+                    </span>
+                    <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <div class="layout-page">
+            <div class="content-wrapper">
+
+
+
+                <aside wire:ignore id="layout-menu"
+                    class="layout-menu-horizontal menu menu-horizontal container-fluid flex-grow-0 bg-menu-theme p-md-2"
+                    data-bg-class="bg-menu-theme"
+                    style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(0, 49, 89) !important;">
+                    <div class="container-xxl d-flex h-100">
+
+                        <a class="menu-horizontal-wrapper">
+                            <img src="https://shifthoja.com/public/frontend/assets/img/shifthoja_logo.png"
+                                class="d-none d-lg-block p-md-2" style="width:170px;">
+                        </a>
+                        <!--<a href="#" class="menu-horizontal-prev d-none">-->
+
+                        <!--</a>-->
+
+
+                        <div class="">
+
+                            <ul class="menu-inner" style="margin-left: 0px;">
+
+                                <li class="menu-item">
+                                    <a href="/admin-main-c.html" class="menu-link">
+                                        <div>Dashboards</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/admin-main-c1.html" class="menu-link">
+                                        <div>Prop Avail</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/admin-main-callers.html" class="menu-link">
+                                        <div>Callers</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" class="menu-link">
+
+                                        <div>Send Leads</div>
+                                    </a>
+
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" class="menu-link">
+                                        <div>Packages</div>
+                                    </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                        <div>More</div>
+                                    </a>
+
+
+                                    <ul class="menu-sub">
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">My profile</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">Change Password</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+
+                                            <form action="https://shifthoja.com/logout" method="POST">
+                                                <input type="hidden" name="_token"
+                                                    value="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL" autocomplete="off">
+                                                <button type="submit" class="menu-link  bg-transparent border-0">
+                                                    <span>Log Out</span></button>
+                                            </form>
+
+                                        </li>
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com" class="menu-link">
+                                                <div style="color:#000;">Go to Sicthoja.com</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--<a href="#" class=" d-none"></a>-->
+                    </div>
+                </aside>
+
+                <div class="container-fluid flex-grow-1 container-p-y">
+                    <div wire:snapshot="{data:{property:residential,property_for:rent,property_type:[[],{s:arr}],type:[[1 bhk],{s:arr}]},memo:{id:zi5GtBRQIscPJjs2YSur,name:user.leads,path:leads,method:GET,children:[],scripts:[],assets:[],errors:[],locale:en},checksum:e7669a3697f41a8234624f9b51fe98fcb8d3f3c092e14cc4d076d25070495d01}"
+                        wire:effects="{url:{property:{as:null,use:push,alwaysShow:true,except:null},property_for:{as:null,use:push,alwaysShow:true,except:null},property_type:{as:null,use:push,alwaysShow:true,except:null},type:{as:null,use:push,alwaysShow:true,except:null}}}"
+                        wire:id="zi5GtBRQIscPJjs2YSur">
+
+                        <div class="container-fluid">
+                            <div class="row g-3">
+                                <div class="col-md-4 col-lg-3">
+
+                                    <div class="accordion" id="accordionExample" wire:ignore.self>
+
+                                        <!--[if BLOCK]><![endif]-->
+                                        <div class="card accordion-item active">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button type="button" class="accordion-button" data-bs-toggle="collapse"
+                                                    data-bs-target="#accordionOne" aria-expanded="true"
+                                                    aria-controls="accordionOne">
+                                                    Filters
+                                                </button>
+                                            </h2>
+
+                                            <div id="accordionOne" class="accordion-collapse collapse show"
+                                                data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+
+                                                    <p class="small fw-bold">Filters Applied</p>
+                                                    <div class="small">No filters selected yet</div>
+                                                    <hr>
+
+
+                                                    <div>
+                                                        <div class="group mt-2">
+                                                            <div class="group">
+                                                                <div class="title no-bottom small">Search and
+                                                                    Select<span
+                                                                        class="mandatoryMarker text-danger">*</span>
+                                                                </div>
+                                                                <select id="SearchSelect" class="form-select">
+                                                                    <option value="">Select Locality</option>
+                                                                    <option value="Chhatarpur">Chhatarpur</option>
+                                                                    <option value="Malvia Nagar">Malvia Nagar</option>
+                                                                    <option value="Saket">Saket</option>
+                                                                    <option value="Hauz khas">Hauz Khas</option>
+                                                                    <option value="Okhla">Okhla</option>
+                                                                    <option value="Shahjhan pur">Shahjhan Pur</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group mt-2">
+                                                            <div class="group">
+                                                                <div class="title no-bottom small">Select Call
+                                                                    status<span
+                                                                        class="mandatoryMarker text-danger">*</span>
+                                                                </div>
+                                                                <select id="SearchSelect1" class="form-select">
+                                                                    <option value="">Call status</option>
+                                                                    <option value="Alka">Call done</option>
+                                                                    <option value="Nancy">Didn't receive</option>
+                                                                    <option value="Mansi">Wrong number</option>
+                                                                    <option value="Nisha">Not reachable</option>
+                                                                    <option value="SunitaG">Doesn't have property
+                                                                    </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                        <div class="group mt-2">
+                                                            <div class="title no-bottom small">Sector<span
+                                                                    class="mandatoryMarker text-danger">*</span></div>
+                                                            <div class="tabs pt-2 d-flex gap-3">
+                                                                <div> <input class="input" type="radio" id="sector-1"
+                                                                        name="sector" value="residential"
+                                                                        wire:model.live="property">
+                                                                    <label class="label p-2"
+                                                                        for="sector-1">Residential</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input class="input" type="radio" id="sector-2"
+                                                                        name="sector" value="commercial"
+                                                                        wire:model.live="property">
+                                                                    <label class="label p-2"
+                                                                        for="sector-2">Commercial</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="group mt-3">
+                                                            <div class="title no-bottom small">Service<span
+                                                                    class="mandatoryMarker text-danger">*</span></div>
+                                                            <div class="tabs pt-2 d-flex gap-3">
+                                                                <div>
+                                                                    <input class="input" type="radio" id="service-1"
+                                                                        name="service" value="sell"
+                                                                        wire:model.live="property_for">
+                                                                    <label class="label p-2 w-auto"
+                                                                        for="service-1">Buy</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input class="input" type="radio" id="service-2"
+                                                                        name="service" value="rent"
+                                                                        wire:model.live="property_for">
+                                                                    <label class="label p-2 w-auto"
+                                                                        for="service-2">Rent</label>
+                                                                </div>
+
+
+                                                            </div>
+
+                                                        </div>
+
+
+
+                                                        <div class="group mt-3">
+                                                            <div class="title no-bottom small">BHK<span
+                                                                    class="mandatoryMarker text-danger">*</span></div>
+                                                            <div class="tabs pt-2 row g-2">
+
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="type-1"
+                                                                        name="type" value="1 bhk"
+                                                                        wire:model.live="type">
+                                                                    <label class="label p-1" for="type-1">1 Bhk</label>
+                                                                </div>
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="type-2"
+                                                                        name="type" value="2 bhk"
+                                                                        wire:model.live="type">
+                                                                    <label class="label p-1" for="type-2">2 Bhk</label>
+                                                                </div>
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="type-3"
+                                                                        name="type" value="3 bhk"
+                                                                        wire:model.live="type">
+                                                                    <label class="label p-1" for="type-3">3 Bhk</label>
+                                                                </div>
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="type-4"
+                                                                        name="type" value="4 bhk"
+                                                                        wire:model.live="type">
+                                                                    <label class="label p-1" for="type-4">4 Bhk</label>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="group mt-3">
+                                                            <div class="title no-bottom small">More Filter<span
+                                                                    class="mandatoryMarker text-danger">*</span></div>
+                                                            <div class="tabs pt-2 row g-2">
+
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="bses"
+                                                                        name="BSES" value="BSES" wire:model.live="type">
+                                                                    <label class="label p-1" for="bses">BSES</label>
+                                                                </div>
+                                                                <div class="col col-md-3">
+                                                                    <input class="input" type="checkbox" id="lift"
+                                                                        name="type" value="Lift" wire:model.live="type">
+                                                                    <label class="label p-1" for="lift">Lift</label>
+                                                                </div>
+                                                                <div class="col col-md-4">
+                                                                    <input class="input" type="checkbox" id="Balconi"
+                                                                        name="Balconi" value="Balconi"
+                                                                        wire:model.live="balconi">
+                                                                    <label class="label p-1"
+                                                                        for="alconi">Balconi</label>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--[if ENDBLOCK]><![endif]-->
+
+                                    </div>
+
+
+
+
+                                </div>
+                                <div class="col-md-8 col-lg-9">
+                                    <!-- Table data -->
+                                    <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
+                                        id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Locality</th>
+                                                <th>Sub-loc</th>
+                                                <th>Phone no</th>
+                                                <th>BHK</th>
+                                                <th>Rent</th>
+                                                <th>Available</th>
+                                                <th>Edit</th>
+                                                <th>Feedback</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-label="Name">
+                                                    <span>Hidayat</span>
+                                                </td>
+                                                <td data-label="Locality">
+                                                    <span>Okhla</span>
+                                                </td>
+                                                <td data-label="Sub-loc">
+                                                    <span>Jamia Nagar</span>
+                                                </td>
+                                                <td data-label="Phone no">
+                                                    <span>9504245461</span>
+                                                </td>
+                                                <td data-label="BHK">
+                                                    <span>7 BHK</span>
+                                                </td>
+                                                <td data-label="Rent">
+                                                    <span>34K</span>
+                                                </td>
+                                                <td data-label="Available">
+                                                    <span>2021-06-18</span>
+                                                </td>
+                                                <td data-label="Edit">
+                                                    <span class="control" id="editBtn" tabindex="0"
+                                                        style="cursor: pointer;" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">Edit</span>
+                                                </td>
+                                                <td data-label="show-feedbak" style="cursor: pointer;"
+                                                    id="showFeedback">
+                                                    <span>Show</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Feed Back</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <!-- BHK -->
+                                                    <div class="mb-3">
+                                                        <label for="bhkInput" class="form-label">BHK</label>
+                                                        <input type="text" class="form-control" id="bhkInput"
+                                                            value="2 BHK">
+                                                    </div>
+                                                    <!-- Name -->
+                                                    <div class="mb-3">
+                                                        <label for="nameInput" class="form-label">Name</label>
+                                                        <input type="text" class="form-control" id="nameInput"
+                                                            value="Hidayat">
+                                                    </div>
+                                                    <!-- Locality -->
+                                                    <div class="mb-3">
+                                                        <label for="localityInput" class="form-label">Locality</label>
+                                                        <input type="text" class="form-control" id="localityInput"
+                                                            value="Okhla">
+                                                    </div>
+                                                    <!-- Sub Locality -->
+                                                    <div class="mb-3">
+                                                        <label for="subLocalityInput" class="form-label">Sub
+                                                            Locality</label>
+                                                        <input type="text" class="form-control" id="subLocalityInput"
+                                                            value="Jamia Nagar">
+                                                    </div>
+                                                    <!-- Phone -->
+                                                    <div class="mb-3">
+                                                        <label for="phoneInput" class="form-label">Phone no</label>
+                                                        <input type="tel" class="form-control" id="phoneInput"
+                                                            value="9504245461">
+                                                    </div>
+                                                    <!-- Rent -->
+                                                    <div class="mb-3">
+                                                        <label for="rentInput" class="form-label">Rent</label>
+                                                        <input type="number" class="form-control" id="rentInput">
+                                                    </div>
+                                                    <!-- Rent Out Property Checkbox -->
+                                                    <div class="form-check mb-3">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="rentOutCheckbox">
+                                                        <label class="form-check-label" for="rentOutCheckbox">Rent Out
+                                                            Property</label>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer"
+                                                style="display: flex; justify-content: flex-start;">
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- The Modal -->
+                                <div class="modal fade" id="feedbackModal" tabindex="-1"
+                                    aria-labelledby="feedbackModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- Display feedback and address text -->
+                                                <p id="feedbackText">Aj property loge to 2 din ki brockrage kam milega
+                                                    or kal loge to yhi property me 30
+                                                    din ka lghega</p>
+                                                <span>Address: <p id="addressText">O-42, jamia nagar okhla 110025</p>
+                                                    </span>
+
+                                                <!-- Text areas for editing (hidden initially) -->
+                                                <div id="editFields" style="display: none;">
+                                                    <label for="feedbackInput" class="form-label">Edit Feedback:</label>
+                                                    <textarea id="feedbackInput" class="form-control mb-2"
+                                                        rows="3">Aj property loge to 2 din ki brockrage kam milega or kal loge to yhi property me 30 din ka lghega</textarea>
+
+                                                    <label for="addressInput" class="form-label">Edit Address:</label>
+                                                    <textarea id="addressInput" class="form-control"
+                                                        rows="3">O-42, jamia nagar okhla 110025</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary" id="editButton">Edit</button>
+                                                <button class="btn btn-success" id="saveButton"
+                                                    style="display: none;">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+    <script>
+        const editButton = document.getElementById('editButton');
+        const saveButton = document.getElementById('saveButton');
+        const editFields = document.getElementById('editFields');
+        const feedbackText = document.getElementById('feedbackText');
+        const addressText = document.getElementById('addressText');
+        const feedbackInput = document.getElementById('feedbackInput');
+        const addressInput = document.getElementById('addressInput');
+
+        editButton.addEventListener('click', () => {
+            feedbackText.style.display = 'none';
+            addressText.style.display = 'none';
+            editFields.style.display = 'block';
+            editButton.style.display = 'none';
+            saveButton.style.display = 'inline-block';
+        });
+
+        saveButton.addEventListener('click', () => {
+            feedbackText.textContent = feedbackInput.value;
+            addressText.textContent = addressInput.value;
+            feedbackText.style.display = 'block';
+            addressText.style.display = 'block';
+            editFields.style.display = 'none';
+            editButton.style.display = 'inline-block';
+            saveButton.style.display = 'none';
+        });
+    </script>
+    <!-- Include jQuery and Select2 JS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Apply Select2 on both fields
+            $('#SearchSelect').select2({
+                placeholder: "Search and select a locality",
+                allowClear: true
+            });
+            $('#SearchSelect1').select2({
+                placeholder: "Search and select a call status",
+                allowClear: true
+            });
+        });
+    </script>
+    <script>
+        // Add event listener to the "Show" td element
+        document.getElementById('showFeedback').addEventListener('click', function () {
+            // Console log for testing
+            console.log("Modal triggered by Show Feedback button");
+
+            // Open the modal
+            var myModal = new bootstrap.Modal(document.getElementById('feedbackModal'), {
+                keyboard: false
+            });
+            myModal.show();
+        });
+
+    </script>
+
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+</body>
+
+</html>

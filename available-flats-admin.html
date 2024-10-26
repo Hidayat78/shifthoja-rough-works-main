@@ -5,35 +5,35 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>ShiftHoja</title>
+
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
-        rel="stylesheet" defer>
+        rel="stylesheet">
+
+    <!-- Style CSS -->
     <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/style.css" />
-    <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
-    <link rel="stylesheet" defer
-        href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
-    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" defer />
-    <link rel="stylesheet" defer href="https://www.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/css/demob77a.css" />
+    <link rel="stylesheet" href="https://www.shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+
+    <!-- Boxicons Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.0/css/boxicons.min.css">
+
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 
     <!-- Select2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
     <!-- Select2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" defer></script>
 
-    <!-- Select2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-
-    <!-- Select2 JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Toastr CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
     <style>
         .row.mx-1 {
@@ -42,13 +42,6 @@
 
         .row.mx-2 {
             margin-top: 25px;
-        }
-
-        .select2-container--default .select2-selection--single {
-            background-color: #fff;
-            border: 1px solid #aaa;
-            border-radius: 4px;
-            height: 36px;
         }
 
         .select2-container--default .select2-selection--single {
@@ -81,42 +74,6 @@
             position: relative;
         }
 
-        .blurred {
-            filter: blur(5px);
-            user-select: none;
-            pointer-events: none;
-        }
-
-        .key-info {
-            background-color: #f7f1f9;
-            padding: 20px;
-            border-radius: 8px;
-            width: 100%;
-            margin: auto;
-            font-size: 12px;
-        }
-
-        .key-info h3 {
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 7px;
-            color: #ffffff;
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            margin-right: 5px;
-        }
-
-        .info-row .label {
-            font-weight: bold;
-            color: #444;
-        }
-
-        .info-row .value {
-            color: #000;
-        }
 
 
 
@@ -130,9 +87,7 @@
                 border-top: 1px solid #d9dee3 !important;
             }
 
-            table#DataTables_Table_0 {
-                display: none;
-            }
+
 
             .row.mx-2 {
                 margin-top: 25px;
@@ -152,9 +107,7 @@
                 border-top: 1px solid #d9dee3 !important;
             }
 
-            table#DataTables_Table_0 {
-                display: none;
-            }
+
 
             .row.mx-2 {
                 margin-top: 25px;
@@ -217,9 +170,7 @@
         }
 
         @media (min-width: 550px) {
-            .key-infodisplaynone {
-                display: none;
-            }
+
 
             .export-btn {
                 display: none;
@@ -231,106 +182,7 @@
             margin-left: 4px;
         }
 
-        /* General styling for the info-row */
-        .info-row {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
 
-        /* Style for the label */
-        .label {
-            margin-right: 10px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* Style for the value container */
-        .value {
-            display: inline-block;
-        }
-
-        /* Styling the checkbox */
-        .value input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        /* Optional: Customize the appearance of the checkbox */
-        .value input[type="checkbox"] {
-            -webkit-appearance: none;
-            appearance: none;
-            background-color: #f0f0f0;
-            border: 2px solid #ccc;
-            width: 18px;
-            height: 18px;
-            border-radius: 3px;
-            position: relative;
-            cursor: pointer;
-        }
-
-        /* Checkmark styles */
-        .value input[type="checkbox"]:checked {
-            background-color: #4CAF50;
-            border-color: #4CAF50;
-        }
-
-        .value input[type="checkbox"]:checked:before {
-            content: '✔';
-            color: white;
-            font-size: 14px;
-            position: absolute;
-            top: -2px;
-            left: 2px;
-        }
-
-        /* Style for the date picker */
-        .date-picker {
-            padding: 6px 12px;
-            font-size: 14px;
-            border: none;
-            border-radius: 4px;
-            outline: none;
-            cursor: pointer;
-        }
-
-        /* Change border color on focus */
-        .date-picker:focus {
-            border-color: #4CAF50;
-        }
-
-
-
-        .button-edit {
-            display: inline-block;
-            /* Makes the element behave like a button */
-            padding: 10px 20px;
-            /* Adds some padding */
-            background-color: #007bff;
-            /* Button background color */
-            color: white;
-            /* Text color */
-            text-align: center;
-            /* Center the text */
-            border-radius: 5px;
-            /* Rounded corners */
-            text-decoration: none;
-            /* Removes underline */
-            font-size: 16px;
-            /* Font size */
-            cursor: pointer;
-            /* Changes cursor to pointer */
-            border: none;
-            /* Removes default border */
-            transition: background-color 0.3s;
-            /* Smooth transition for hover effect */
-        }
-
-        .button-edit:hover {
-            background-color: #0056b3;
-            /* Darker shade on hover */
-        }
 
         table.dataTable.dtr-column>tbody>tr>td.control:before,
         table.dataTable.dtr-column>tbody>tr>th.control:before {
@@ -360,6 +212,58 @@
         table.dataTable.dtr-column>tbody>tr>td.control,
         table.dataTable.dtr-column>tbody>tr>th.control {
             position: relative;
+        }
+
+        input#rentOutDate {
+            border: none !important;
+        }
+
+        .table>:not(caption)>*>* {
+            padding: 10px 12px;
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 600px) {
+            .invoice-list-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .invoice-list-table thead {
+                display: none;
+                /* Hide the header row */
+            }
+
+            .invoice-list-table tbody tr {
+                display: block;
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .invoice-list-table tbody td {
+                display: flex;
+                justify-content: space-between;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                padding: 8px;
+                font-size: 14px;
+            }
+
+            .invoice-list-table tbody td:last-child {
+                border-bottom: none;
+            }
+
+            .invoice-list-table tbody td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                flex: 1;
+            }
+
+            .invoice-list-table tbody td span {
+                flex: 1;
+            }
         }
     </style>
 </head>
@@ -410,7 +314,7 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" id="Call-done"
                                                     value="Call done">
-                                                <label class="form-check-label" for="Call-done">Call done</label>
+                                                <label class="form-check-label" for="Call-done">Avail Flats</label>
                                             </div>
                                         </li>
                                         <li>
@@ -590,115 +494,64 @@
 
 
 
-                <div class="key-infodisplaynone">
-                    <div class="key-info">
-                        <h3 class="button-edit" id="editBtn">Edit</h3>
-                        <div class="info-row">
-                            <span class="label">ID</span>
-                            <span class="value">0111</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">BHK</span>
-                            <span class="value"><b>2 BHK</b></span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Rent out</span>
-                            <span class="value">
-                                <input type="checkbox" id="rentOutCheckbox">
-                            </span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Select rent out date</span>
-                            <span class="value">
-                                <input type="date" id="rentOutDate" class="date-picker">
-                            </span>
-                        </div>
 
-                        <div class="info-row">
-                            <span class="label">Name</span>
-                            <span class="value">Hidayat</span>
-                        </div>
 
-                        <div class="info-row">
-                            <span class="label">Locality</span>
-                            <span class="value">Okhla</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Sub Locality</span>
-                            <span class="value">Jamia Nagar</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Address</span>
-                            <span class="value">O-42, Jmia Nagar okhla</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Phone no</span>
-                            <span class="value">9504245461</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Availability</span>
-                            <span class="value">27/07/2024</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Rent</span>
-                            <span class="value">34k</span>
-                        </div>
-                    </div>
+                <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
+                    id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Locality</th>
+                            <th>Sub-loc</th>
+                            <th>Address</th>
+                            <th>Phone no</th>
+                            <th>BHK</th>
+                            <th>Rent</th>
+                            <th>Rent out Date</th>
+                            <th>Available</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Name">
+                                <span>Hidayat</span>
+                            </td>
+                            <td data-label="Locality">
+                                <span>Okhla</span>
+                            </td>
+                            <td data-label="Sub-loc">
+                                <span>Jamia Nagar</span>
+                            </td>
+                            <td data-label="Address">
+                                <span>O-46 Jamia Nagar Batlahouse Okhla</span>
+                            </td>
+                            <td data-label="Phone no">
+                                <span>9504245461</span>
+                            </td>
+                            <td data-label="BHK">
+                                <span>7 BHK</span>
+                            </td>
+                            <td data-label="Rent">
+                                <span>34K</span>
+                            </td>
+                            <td data-label="Rent out Date">
+                                <span><input type="date" id="rentOutDate" class="date-picker"></span>
+                            </td>
+                            <td data-label="Available">
+                                <span>2021-06-18</span>
+                            </td>
+                            <td data-label="Edit">
+                                <span class="control" id="editBtn" tabindex="0" style="cursor: pointer;"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <div class="key-info">
-                        <h3 class="button-edit" id="editBtn">Edit</h3>
-                        <div class="info-row">
-                            <span class="label">ID</span>
-                            <span class="value">0111</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">BHK</span>
-                            <span class="value"><b>2 BHK</b></span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Rent out</span>
-                            <span class="value">
-                                <input type="checkbox" id="rentOutCheckbox">
-                            </span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Select rent out date</span>
-                            <span class="value">
-                                <input type="date" id="rentOutDate" class="date-picker">
-                            </span>
-                        </div>
 
-                        <div class="info-row">
-                            <span class="label">Name</span>
-                            <span class="value">Hidayat</span>
-                        </div>
 
-                        <div class="info-row">
-                            <span class="label">Locality</span>
-                            <span class="value">Okhla</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Sub Locality</span>
-                            <span class="value">Jamia Nagar</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Address</span>
-                            <span class="value">O-42, Jmia Nagar okhla</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Phone no</span>
-                            <span class="value">9504245461</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Updated at</span>
-                            <span class="value">27/07/2024</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">Rent</span>
-                            <span class="value">34k</span>
-                        </div>
-                    </div>
-                </div>
+
 
 
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -712,40 +565,48 @@
                             </div>
                             <div class="modal-body">
                                 <form>
+                                    <!-- BHK -->
                                     <div class="mb-3">
                                         <label for="bhkInput" class="form-label">BHK</label>
                                         <input type="text" class="form-control" id="bhkInput" value="2 BHK">
                                     </div>
+                                    <!-- Name -->
                                     <div class="mb-3">
                                         <label for="nameInput" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="nameInput" value="Hidayat">
                                     </div>
+                                    <!-- Locality -->
                                     <div class="mb-3">
                                         <label for="localityInput" class="form-label">Locality</label>
                                         <input type="text" class="form-control" id="localityInput" value="Okhla">
                                     </div>
+                                    <!-- Sub Locality -->
                                     <div class="mb-3">
                                         <label for="subLocalityInput" class="form-label">Sub Locality</label>
                                         <input type="text" class="form-control" id="subLocalityInput"
                                             value="Jamia Nagar">
                                     </div>
+                                    <!-- Address -->
                                     <div class="mb-3">
                                         <label for="addressInput" class="form-label">Address</label>
                                         <input type="text" class="form-control" id="addressInput"
                                             value="O-42, Jamia Nagar Okhla">
                                     </div>
+                                    <!-- Phone -->
                                     <div class="mb-3">
                                         <label for="phoneInput" class="form-label">Phone no</label>
-                                        <input type="text" class="form-control" id="phoneInput" value="9504245461">
+                                        <input type="tel" class="form-control" id="phoneInput" value="9504245461">
                                     </div>
+                                    <!-- Availability -->
                                     <div class="mb-3">
                                         <label for="availabilityInput" class="form-label">Availability</label>
                                         <input type="date" class="form-control" id="availabilityInput"
                                             value="2024-07-27">
                                     </div>
+                                    <!-- Rent -->
                                     <div class="mb-3">
                                         <label for="rentInput" class="form-label">Rent</label>
-                                        <input type="text" value="30k" class="form-control" id="rentInput">
+                                        <input type="number" class="form-control" id="rentInput">
                                     </div>
                                 </form>
                             </div>
@@ -813,41 +674,43 @@
     </div>
     </div>
     <script>
-        // Open modal when 'Edit' button is clicked
-        document.getElementById('editBtn').addEventListener('click', function () {
-            var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            myModal.show();
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            // Open modal when 'Edit' button is clicked
+            document.getElementById('editBtn').addEventListener('click', function () {
+                var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+                myModal.show();
+            });
 
-        // Save changes from modal to the key-info display
-        document.getElementById('saveBtn').addEventListener('click', function () {
-            // Get input values
-            const bhk = document.getElementById('bhkInput').value;
-            const name = document.getElementById('nameInput').value;
-            const locality = document.getElementById('localityInput').value;
-            const subLocality = document.getElementById('subLocalityInput').value;
-            const address = document.getElementById('addressInput').value;
-            const phone = document.getElementById('phoneInput').value;
-            const availability = document.getElementById('availabilityInput').value;
-            const rentInput = document.getElementById('rentInput').value;
+            // Save changes from modal to the key-info display
+            document.getElementById('saveBtn').addEventListener('click', function () {
+                // Get input values
+                const bhk = document.getElementById('bhkInput').value;
+                const name = document.getElementById('nameInput').value;
+                const locality = document.getElementById('localityInput').value;
+                const subLocality = document.getElementById('subLocalityInput').value;
+                const address = document.getElementById('addressInput').value;
+                const phone = document.getElementById('phoneInput').value;
+                const availability = document.getElementById('availabilityInput').value;
+                const rentInput = document.getElementById('rentInput').value;
 
+                // Update the display with the new values
+                document.getElementById('bhkDisplay').innerHTML = '<b>' + bhk + '</b>';
+                document.getElementById('nameDisplay').textContent = name;
+                document.getElementById('localityDisplay').textContent = locality;
+                document.getElementById('subLocalityDisplay').textContent = subLocality;
+                document.getElementById('addressDisplay').textContent = address;
+                document.getElementById('phoneDisplay').textContent = phone;
+                document.getElementById('availabilityDisplay').textContent = availability;
+                document.getElementById('rentDisplay').textContent = rentInput;
 
-            // Update the display with the new values
-            document.getElementById('bhkDisplay').innerHTML = '<b>' + bhk + '</b>';
-            document.getElementById('nameDisplay').textContent = name;
-            document.getElementById('localityDisplay').textContent = locality;
-            document.getElementById('subLocalityDisplay').textContent = subLocality;
-            document.getElementById('addressDisplay').textContent = address;
-            document.getElementById('phoneDisplay').textContent = phone;
-            document.getElementById('availabilityDisplay').textContent = availability;
-            document.getElementById('rentInput').textContent = rentInput;
-
-            // Close modal
-            var myModalEl = document.getElementById('exampleModal');
-            var modal = bootstrap.Modal.getInstance(myModalEl);
-            modal.hide();
+                // Close modal
+                var myModalEl = document.getElementById('exampleModal');
+                var modal = bootstrap.Modal.getInstance(myModalEl);
+                modal.hide();
+            });
         });
     </script>
+
     <script>
         function truncateAddress(address) {
             // Check if the length of the address is more than 28 characters
@@ -869,6 +732,7 @@
         // Set the truncated address back to the small tag
         addressElement.textContent = truncatedAddress;
     </script>
+
     <script>
         $(document).ready(function () {
             $('#ProductStatus').select2({
@@ -883,23 +747,18 @@
         });
     </script>
 
+    <!-- External JS Files -->
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/js/config.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js"></script>
     <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
@@ -907,14 +766,14 @@
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
     <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/@form-validation/umd/bundle/popular.min.js"></script>
     <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/@form-validation/umd/plugin-bootstrap5/index.min.js"></script>
     <script
-        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
-    <script
-        src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+        src="https://www.shifthoja.com/public/admin/assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://www.shifthoja.com/public/admin/assets/js/maind63d.js"></script>
     <script src="https://www.shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
 </body>
 
 </html>

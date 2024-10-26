@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+<html lang="en" class="light-style layout-compact layout-navbar-fixed layout-menu-fixe" dir="ltr"
+    data-theme="theme-default"
+    data-assets-path="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/"
+    data-base-url="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo-1"
+    data-framework="laravel" data-template="vertical-menu-theme-default-light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ShiftHoja</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap"
+        rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/style.css" />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/corea8ac.css" />
+    <link rel="stylesheet" defer
+        href="https://shifthoja.com/public/admin/assets/vendor/css/rtl/theme-default4c4b.css" />
+    <link rel="stylesheet" href="https://shifthoja.com/public/admin/assets/css/demob77a.css" defer />
+    <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style>
+        .menu-horizontal-next,
+        .menu-horizontal-prev {
+            display: none !important;
+        }
+
+        ul.menu-inner.py-1 .bg-menu-theme .menu-sub>.menu-item>.menu-link:before {
+            background-color: none !important;
+        }
+    </style>
+    <!-- Livewire Styles -->
+    <style>
+        [wire\:loading][wire\:loading],
+        [wire\:loading\.delay][wire\:loading\.delay],
+        [wire\:loading\.inline-block][wire\:loading\.inline-block],
+        [wire\:loading\.inline][wire\:loading\.inline],
+        [wire\:loading\.block][wire\:loading\.block],
+        [wire\:loading\.flex][wire\:loading\.flex],
+        [wire\:loading\.table][wire\:loading\.table],
+        [wire\:loading\.grid][wire\:loading\.grid],
+        [wire\:loading\.inline-flex][wire\:loading\.inline-flex] {
+            display: none;
+        }
+
+        [wire\:loading\.delay\.none][wire\:loading\.delay\.none],
+        [wire\:loading\.delay\.shortest][wire\:loading\.delay\.shortest],
+        [wire\:loading\.delay\.shorter][wire\:loading\.delay\.shorter],
+        [wire\:loading\.delay\.short][wire\:loading\.delay\.short],
+        [wire\:loading\.delay\.default][wire\:loading\.delay\.default],
+        [wire\:loading\.delay\.long][wire\:loading\.delay\.long],
+        [wire\:loading\.delay\.longer][wire\:loading\.delay\.longer],
+        [wire\:loading\.delay\.longest][wire\:loading\.delay\.longest] {
+            display: none;
+        }
+
+        [wire\:offline][wire\:offline] {
+            display: none;
+        }
+
+        [wire\:dirty]:not(textarea):not(input):not(select) {
+            display: none;
+        }
+
+        :root {
+            --livewire-progress-bar-color: #2299dd;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+    <style>
+        .container-dask {
+            max-width: 100%;
+            margin: auto;
+        }
+
+        .container-item {
+            max-width: 36vh;
+            margin: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+
+        .flex-container .item:first-child {
+            margin-left: auto;
+        }
+
+        .flex-container .item:last-child {
+            margin-right: auto;
+        }
+
+        .item {
+            margin: 4px;
+            border-radius: 10rem;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .css-1pnfsw7 ul li {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            text-wrap: wrap !important;
+        }
+
+        .d-flex.justify-content-between.align-items-center {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 767px) {
+            .small-label {
+                font-size: 0.8rem;
+            }
+
+            .date-input {
+                font-size: 0.85rem;
+                padding: 0.3rem 0.5rem;
+            }
+
+            .css-4enxc3 {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="layout-container">
+        <nav class="layout-navbar navbar navbar-expand-xl align-items-center bg-navbar-theme d-md-none"
+            id="layout-navbar">
+            <div class="container-xxl">
+
+                <!--  Brand demo (display only for navbar-full and hide on below xl) -->
+
+                <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none d-none"
+                    wire:ignore>
+
+
+                    <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+
+                        <i class="bx bx-menu bx-sm"></i>
+                    </a>
+                </div>
+
+                <div class="navbar-brand app-brand demo d-xl-flex py-0 me-4 d-none d-lg-flex">
+                    <a href="https://shifthoja.com/dashboard" class="app-brand-link gap-2">
+                        <span class="app-brand-logo demo">
+                            <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <defs>
+                                    <path
+                                        d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z"
+                                        id="path-1"></path>
+                                    <path
+                                        d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z"
+                                        id="path-3"></path>
+                                    <path
+                                        d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z"
+                                        id="path-4"></path>
+                                    <path
+                                        d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z"
+                                        id="path-5"></path>
+                                </defs>
+                                <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+                                        <g id="Icon" transform="translate(27.000000, 15.000000)">
+                                            <g id="Mask" transform="translate(0.000000, 8.000000)">
+                                                <mask id="mask-2" fill="white">
+                                                    <use xlink:href="#path-1"></use>
+                                                </mask>
+                                                <use fill="var(--bs-primary)" xlink:href="#path-1"></use>
+                                                <g id="Path-3" mask="url(#mask-2)">
+                                                    <use fill="var(--bs-primary)" xlink:href="#path-3"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>
+                                                </g>
+                                                <g id="Path-4" mask="url(#mask-2)">
+                                                    <use fill="var(--bs-primary)" xlink:href="#path-4"></use>
+                                                    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
+                                                </g>
+                                            </g>
+                                            <g id="Triangle"
+                                                transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
+                                                <use fill="var(--bs-primary)" xlink:href="#path-5"></use>
+                                                <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="app-brand-text demo menu-text fw-bold "
+                            style="text-transform:capitalize;">admin</span>
+                    </a>
+
+                    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-xl-none">
+                        <i class="bx bx-chevron-left bx-sm align-middle"></i>
+                    </a>
+                </div>
+                <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+                    <ul class="navbar-nav flex-row align-items-center ms-auto">
+                        <!-- User -->
+                        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                data-bs-toggle="dropdown">
+                                <div class="avatar avatar-online">
+                                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/avatars/1.png"
+                                        alt="" class="w-px-40 h-auto rounded-circle">
+
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" href="https://shifthoja.com/dashboard">
+                                        <div class="d-flex">
+                                            <div class="flex-shrink-0 me-3">
+                                                <div class="avatar avatar-online">
+
+
+                                                    <img src="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template/demo/assets/img/avatars/1.png"
+                                                        alt="" class="w-px-40 h-auto rounded-circle">
+
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1">
+                                                <span class="fw-medium d-block">
+                                                    admin
+                                                </span>
+                                                <small class="text-muted"></small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="https://shifthoja.com/user-profile">
+                                        <i class="bx bx-user me-2"></i>
+                                        <span class="align-middle">My Profile</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <div class="dropdown-divider"></div>
+                                </li>
+                                <li>
+
+                                    <form action="https://shifthoja.com/logout" method="POST">
+                                        <input type="hidden" name="_token"
+                                            value="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL" autocomplete="off"> <button
+                                            type="submit" class="dropdown-item  bg-transparent border-0">
+                                            <span>Log out</span></button>
+                                    </form>
+
+                                </li>
+                            </ul>
+                        </li>
+                        <!--/ User -->
+                    </ul>
+                </div>
+
+                <!-- Search Small Screens -->
+                <div class="navbar-search-wrapper search-input-wrapper container-xxl d-none">
+                    <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input
+                            type="text" class="form-control search-input border-0 container-xxl tt-input"
+                            placeholder="Search..." aria-label="Search..." autocomplete="off" spellcheck="false"
+                            dir="auto" style="position: relative; vertical-align: top;">
+                        <pre aria-hidden="true"
+                            style="position: absolute; visibility: hidden; white-space: pre; font-size: 15px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                        <div class="tt-menu navbar-search-suggestion ps"
+                            style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+                            <div class="tt-dataset tt-dataset-pages"></div>
+                            <div class="tt-dataset tt-dataset-files"></div>
+                            <div class="tt-dataset tt-dataset-members"></div>
+                            <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                            </div>
+                            <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                            </div>
+                        </div>
+                    </span>
+                    <i class="bx bx-x bx-sm search-toggler cursor-pointer"></i>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <div class="layout-page">
+            <div class="content-wrapper">
+
+
+
+                <aside wire:ignore id="layout-menu"
+                    class="layout-menu-horizontal menu menu-horizontal container-fluid flex-grow-0 bg-menu-theme p-md-2"
+                    data-bg-class="bg-menu-theme"
+                    style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); background-color: rgb(0, 49, 89) !important;">
+                    <div class="container-xxl d-flex h-100">
+
+                        <a class="menu-horizontal-wrapper">
+                            <img src="https://shifthoja.com/public/frontend/assets/img/shifthoja_logo.png"
+                                class="d-none d-lg-block p-md-2" style="width:170px;">
+                        </a>
+                        <!--<a href="#" class="menu-horizontal-prev d-none">-->
+
+                        <!--</a>-->
+
+
+                        <div class="">
+
+                            <ul class="menu-inner" style="margin-left: 0px;">
+
+                                <li class="menu-item">
+                                    <a href="/admin-main-c.html" class="menu-link">
+                                        <div>Dashboards</div>
+                                    </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="/admin-main-c1.html" class="menu-link">
+                                        <div>PropAvail</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="/admin-main-callers.html" class="menu-link">
+                                        <div>Callers</div>
+                                    </a>
+                                </li>
+
+                                <li class="menu-item">
+                                    <a href="#" class="menu-link">
+
+                                        <div>Send Leads</div>
+                                    </a>
+
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#" class="menu-link">
+                                        <div>Packages</div>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                        <div>More</div>
+                                    </a>
+
+
+                                    <ul class="menu-sub">
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">My profile</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">Change Password</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+
+                                            <form action="https://shifthoja.com/logout" method="POST">
+                                                <input type="hidden" name="_token"
+                                                    value="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL" autocomplete="off">
+                                                <button type="submit" class="menu-link  bg-transparent border-0">
+                                                    <span>Log Out</span></button>
+                                            </form>
+
+                                        </li>
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com" class="menu-link">
+                                                <div style="color:#000;">Go to Sicthoja.com</div>
+                                            </a>
+                                        </li>
+
+
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <!--<a href="#" class=" d-none"></a>-->
+                    </div>
+                </aside>
+
+                <div class="container-fluid flex-grow-1 container-p-y">
+                    <div wire:snapshot="{&quot;data&quot;:[],&quot;memo&quot;:{&quot;id&quot;:&quot;IIH6pSL7fZcvIAj1RjgR&quot;,&quot;name&quot;:&quot;user.dashboard&quot;,&quot;path&quot;:&quot;dashboard&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;children&quot;:[],&quot;scripts&quot;:[],&quot;assets&quot;:[],&quot;errors&quot;:[],&quot;locale&quot;:&quot;en&quot;},&quot;checksum&quot;:&quot;8b46298ccffd1e73e2f6b97dcc994e0cd4ad46a7b72b2d44dfdbdf297f98329e&quot;}"
+                        wire:effects="[]" wire:id="IIH6pSL7fZcvIAj1RjgR">
+                        <div class="row justify-content-center">
+                            <div class="col-md-7">
+                                <div class="profile-box-container css-a87ccm">
+                                    <div class="css-19se5vt">
+                                        <div class=" css-16e7p2l"
+                                            style="background: url(&quot;https://is1-3.housingcdn.com/fb15c03b/7b5467febbc97e6f3360e6fc9681b371/v0/thumb.jpg&quot;) center center / cover no-repeat;">
+                                            <div class="profile-box--pinkBadge css-1bhml4x">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="css-1sg2lsz">
+                                                <div class="css-jd11lb">Hi admin</div>
+                                            </div>
+                                            <div class="css-141atoy">Hope you’re having a great day!</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+                                <div class="css-c70kwa mb-3">
+                                    <div class="css-1lup0nr row g-3">
+
+                                        <div class="col-md-1 col-2">
+                                            <svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                                height="40" width="40">
+                                                <path
+                                                    d="m9.1024 2.8743c0.09097 0 0.17815 0.03646 0.24204 0.10122l2.0448 2.0727c0.1318 0.13368 0.1304 0.34895-0.0033 0.48083-0.1337 0.13187-0.349 0.13041-0.4808-0.00327l-1.8028-1.8274-5.4618 5.5365h0.53143c0.18778 0 0.34 0.15222 0.34 0.34v5.0851h1.5744v-5.0106c0-0.18777 0.15222-0.34 0.34-0.34h1.619c0.18778 0 0.34 0.15223 0.34 0.34v5.0106h1.4318v-5.0106c0-0.18777 0.15222-0.34 0.33995-0.34h1.6212c0.1877 0 0.34 0.15223 0.34 0.34v5.0106h1.4362l0.0669-5.0896c0.0024-0.18602 0.1539-0.33553 0.34-0.33553h0.601l-2.4945-2.5304c-0.1319-0.13372-0.1303-0.34899 0.0034-0.48082 0.1337-0.13182 0.349-0.13028 0.4808 0.00344l3.065 3.1091c0.0962 0.09761 0.1244 0.24347 0.0715 0.36992s-0.1766 0.20877-0.3136 0.20877h-1.0781l-0.0669 5.0896c-0.0024 0.186-0.1539 0.3355-0.34 0.3355h-2.1117c-0.1878 0-0.34-0.1522-0.34-0.34v-5.0106h-0.9411v5.0106c0 0.1878-0.1523 0.34-0.3401 0.34h-2.1117c-0.18778 0-0.34-0.1522-0.34-0.34v-5.0106h-0.93895v5.0106c0 0.1878-0.15222 0.34-0.34 0.34h-2.2544c-0.18778 0-0.34-0.1522-0.34-0.34v-5.0851h-1.0044c-0.1371 0-0.26078-0.08234-0.31368-0.20882-0.05289-0.12649-0.02465-0.27236 0.07163-0.36996l6.2748-6.3606c0.06389-0.06476 0.15107-0.10122 0.24205-0.10122z"
+                                                    clip-rule="evenodd" fill="#000000" fill-rule="evenodd"></path>
+                                                <path
+                                                    d="m6.0666 0.12086c-0.03836-0.038363-0.08374-0.068805-0.13365-0.089554-0.05033-0.020749-0.10395-0.031391-0.15799-0.031308h-3.3c-0.05404-8.25e-5 -0.10766 0.01056-0.15799 0.031308-0.04991 0.020749-0.09529 0.051191-0.13365 0.089554l-2.0625 2.0625c-0.038362 0.03824-0.068892 0.0837-0.089517 0.13373-0.020625 0.05008-0.031345 0.10375-0.031345 0.15791v3.3c0 0.10972 0.043312 0.2145 0.12086 0.29164l2.0625 2.0625c0.03836 0.03836 0.08374 0.0688 0.13365 0.08955 0.05033 0.02075 0.10395 0.03139 0.15799 0.03131h3.3c0.10972 0 0.2145-0.04331 0.29164-0.12086l2.0625-2.0625c0.03836-0.03824 0.06889-0.0837 0.08951-0.13374 0.02063-0.05007 0.03135-0.10374 0.03135-0.1579v-3.3c0-0.05416-0.01072-0.10783-0.03135-0.15791-0.02062-0.05003-0.05115-0.09549-0.08951-0.13373l-2.0625-2.0625z"
+                                                    fill="#000000"></path>
+                                                <g fill="#fff">
+                                                    <path d="m3.6667 5.9584h0.91666v-0.825h-0.91666v0.825z"></path>
+                                                    <path d="m3.6667 4.3084h0.91666v-2.475h-0.91666v2.475z"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="col">
+                                            <div class="css-cwsr4f">
+                                                <div class="css-sat5e1"><span>Total Call till know</span>
+                                                </div>
+                                                <div class="css-1j5tksj">
+                                                    <span>400 calls are done out of 3000, 200 numbers are block , 560
+                                                        owners are not proving property</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2 col-12">
+                                            <div class="css-pvpqae">
+                                                <a class="css-1zm0zy">Know More</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="  container-dask ">
+                                        <div class="flex-container">
+                                            <!--[if BLOCK]><![endif]--><!--[if ENDBLOCK]><![endif]-->
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="row g-4 mb-3">
+                                    <div class="col-md-12">
+                                        <div class="lead-summary css-c70kwa">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="fw-bold d-none d-md-block">Calls Status</div>
+                                                <!-- Hidden on mobile -->
+
+                                                <div class="d-flex align-items-center flex-wrap flex-md-nowrap">
+                                                    <label for="fromDate" class="me-2 small-label">From:</label>
+                                                    <input type="date" id="fromDate" name="fromDate"
+                                                        class="form-control me-3 date-input">
+
+                                                    <label for="toDate" class="me-2 small-label">To:</label>
+                                                    <input type="date" id="toDate" name="toDate"
+                                                        class="form-control date-input">
+                                                </div>
+                                            </div>
+                                            <div class="css-1t745a5">
+                                                <div class="row gap-2">
+                                                    <a class="css-wrwrrq col" href="#">
+                                                        <div class="css-ov1ktg">
+                                                            <div class="lead-summary--home-icon css-wsmr3h"></div>
+                                                            <div>
+                                                                <div class="css-fghy0b">0</div>
+                                                                <div class="css-4enxc3">Residential</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="css-wrwrrq col" href="/leads?property=commercial">
+                                                        <div class="css-ov1ktg">
+                                                            <div class="lead-summary--commercial-icon css-wsmr3h"></div>
+                                                            <div>
+                                                                <div class="css-fghy0b">0</div>
+                                                                <div class="css-4enxc3">Commercial</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row g-4 mb-3">
+                                    <div class="col-md-12">
+                                        <div class="lead-summary css-c70kwa">
+                                            <div class="css-1n1mhnw">Today Calls Status</div>
+                                            <div class="css-1t745a5">
+                                                <div class="row gap-2">
+                                                    <a class="css-wrwrrq col" href="#">
+                                                        <div class="css-ov1ktg">
+                                                            <div class="lead-summary--home-icon css-wsmr3h"></div>
+                                                            <div>
+                                                                <div class="css-fghy0b">0</div>
+                                                                <div class="css-4enxc3">Residential</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                    <a class="css-wrwrrq col" href="#">
+                                                        <div class="css-ov1ktg">
+                                                            <div class="lead-summary--commercial-icon css-wsmr3h">
+                                                            </div>
+                                                            <div>
+                                                                <div class="css-fghy0b">0</div>
+                                                                <div class="css-4enxc3">Commercial</div>
+                                                            </div>
+                                                        </div>
+                                                        <i class="icon-arrow-right lead-summary--arrow-icon"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="css-c70kwa mb-3 pb-1">
+                                    <div class="tenants-buyers">
+                                        <div class="cardPackers">
+                                            <div class="contentPackers mb-4 row">
+
+                                                <div class="col-md-3 col">
+                                                    <div class="imagePackers">
+                                                        <img src="https://shifthoja.com/public/frontend/mob-service/no-img.jpg"
+                                                            class="w-100" style="border-radius: 13px;">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col">
+                                                    <div class="">
+                                                        <div class="tent-buy-span">Looking for
+                                                            <span class="font-bold">Tenants / Buyers ?</span>
+                                                        </div>
+                                                        <p class="tent-buy-text">Faster
+                                                            &amp; Verified Tenants/Buyers</p>
+
+                                                        <div class="style__postContainer">
+                                                            <div onclick="location.href='/postproperty'">
+                                                                <b class="post">Post property</b>
+                                                            </div>
+                                                            <div style="width: 36px; height: 15px"
+                                                                class="style__shimmer">
+                                                                <div class="style__shimmer"
+                                                                    style="width: 36px; height: 20px">
+                                                                    <div class="style__free text-white"
+                                                                        style="font-size: 10px">FREE</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row g-4 pt-2">
+                                    <div class="col-md-5">
+                                        <div class="css-jcp8d6">
+                                            <div class="css-1hodl7">Have Questions?</div>
+                                            <div class="css-1adnyc5">Explore our FAQ section for commonly asked
+                                                questions</div>
+                                            <a href="" class="css-lv7xo0">Explore FAQ’s</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="css-gh3l07">
+                                            <div class="css-1hodl7">Customer Support</div>
+                                            <div class="css-jjrt2c row gap-3 mt-2">
+
+                                                <div class="css-1b04ggw col">
+                                                    <div class="support-card--call-icon css-1x56kdi"></div>
+                                                    <div>
+                                                        <div class="css-1c789oo">Call Us</div>
+                                                        <div class="css-1rct10z">7618-229-512</div>
+                                                    </div>
+                                                </div>
+                                                <div class="css-1b04ggw col">
+                                                    <div class="support-card--mail-icon css-1x56kdi"></div>
+                                                    <div>
+                                                        <div class="css-1c789oo">Email Us</div>
+                                                        <div class="css-1rct10z">support@shifthoja.com</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-rv23jb">Call Support Available from 10 AM to 6 PM (Mon to
+                                                Sat)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mt-3">
+                                    <a href="" target="_blank">
+                                        <img class="edge_hook_banner">
+                                    </a>
+                                </div>
+
+                                <div class="AddCommercialPropertyCard-root">
+                                    <div class="AddCommercialPropertyCard-bannerImageContainer">
+                                        <img class="AddCommercialPropertyCard-bannerImage">
+                                    </div>
+                                    <div class="AddCommercialPropertyCard-content">
+                                        <div class="AddCommercialPropertyCard-heading fw-bold">
+                                            List Commercial Property For Free</div>
+                                        <div class="AddCommercialPropertyCard-subheading">Get 100% leads at zero cost
+                                        </div>
+                                        <div
+                                            class="AddCommercialPropertyCard-addCommercialPropertyButton AddCommercialPropertyCard-addCommercialPropertyButtonPlain">
+                                            Add Commercial Property &gt;
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+    <!-- Include jQuery and Select2 JS CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Optional: jQuery for searchable dropdowns -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            // Apply Select2 on both fields
+            $('#SearchSelect').select2({
+                placeholder: "Search and select a locality",
+                allowClear: true
+            });
+            $('#SearchSelect1').select2({
+                placeholder: "Search and select a call status",
+                allowClear: true
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.dropdown-menu li').forEach(function (item) {
+            item.addEventListener('click', function () {
+                // Get the selected value
+                var selectedValue = this.getAttribute('data-value');
+                // Update the <span> with the selected value
+                document.getElementById('selectedValue').innerText = selectedValue;
+                // Hide the dropdown menu after selection
+                document.querySelector('.dropdown-menu').style.display = 'none';
+            });
+        });
+
+        document.querySelector('.dropdown-header').addEventListener('click', function () {
+            // Toggle the dropdown menu visibility
+            var dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+    </script>
+
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/helpers.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/js/template-customizer.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/config.js"></script>
+
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/jquery/jquery1e84.js?id=0f7eb1f3a93e3e19e8505fd8c175925a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/popper/popper0a73.js?id=baf82d96b7771efbcc05c3b77135d24c"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/bootstrapcfc4.js?id=4648227467e3fd3f4cf976cfb0e43aea"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar6188.js?id=44b8e955848dc0c56597c09f6aebf89a"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/hammer/hammer2de0.js?id=0a520e103384b609e3c9eb3b732d1be8"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/typeahead-js/typeahead60e7.js?id=f6bda588c16867a6cc4158cb4ed37ec6"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/js/menu2dc9.js?id=c6ce30ded4234d0c4ca0fb5f2a2990d8"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/bs-stepper/bs-stepper.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/select2/select2.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/tagify/tagify.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/bundle/popular.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-bootstrap5/index.min.js"></script>
+    <script
+        src="https://shifthoja.com/public/admin/assets/vendor/libs/%40form-validation/umd/plugin-auto-focus/index.min.js"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/maind63d.js?id=6bea3f2e092d5fe7327c226f3242f31b"></script>
+    <script src="https://shifthoja.com/public/admin/assets/js/wizard-ex-property-listing.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- Livewire Scripts -->
+    <script src="/livewire/livewire.js?id=6b5eb707" data-csrf="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL"
+        data-update-uri="/livewire/update" data-navigate-once="true"></script>
+
+
+</body>
+
+</html>
