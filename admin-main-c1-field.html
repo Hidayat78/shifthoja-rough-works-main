@@ -22,8 +22,9 @@
     <link rel="stylesheet" defer href="https://shifthoja.com/public/admin/assets/vendor/fonts/boxiconsc4a7.css" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
+    <!-- Include Select2 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         .menu-horizontal-next,
         .menu-horizontal-prev {
@@ -222,30 +223,82 @@
                 border: none !important;
                 box-shadow: none !important;
             }
+
+
         }
-    </style>
-    <style>
-        .d-flex.justify-content-between.align-items-center {
+
+
+
+
+        .preview-container {
+            max-height: 150px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-container img {
+            max-height: 100%;
+            max-width: 100%;
+        }
+
+        /* Set the input width */
+        .custom-input {
+            width: 240px;
+            /* Set width to 240px */
+        }
+
+        .delete-icon {
+            position: absolute;
+            top: 40px;
+            right: 5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .preview-container {
+            max-height: 500px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        input.form-control.custom-input {
             margin-bottom: 10px;
         }
 
-        @media (max-width: 767px) {
-            .small-label {
-                font-size: 0.8rem;
-            }
+        #videoSection .preview-container video {
+            width: 100%;
+            /* Video width set to full width of container */
+            height: auto;
+            /* Maintains aspect ratio */
+            max-height: 500px;
+            /* Set a max height for larger screens */
+            border-radius: 8px;
+            /* Optional: rounded corners for aesthetic */
+        }
 
-            .date-input {
-                font-size: 0.85rem;
-                padding: 0.3rem 0.5rem;
+        @media (max-width: 768px) {
+            #videoSection .preview-container video {
+                max-height: 250px;
+                /* Adjust max height for tablets and smaller screens */
             }
+        }
 
-            .css-4enxc3 {
-                font-size: 0.8rem;
+        @media (max-width: 480px) {
+            #videoSection .preview-container video {
+                max-height: 200px;
+                /* Adjust max height for mobile screens */
             }
         }
     </style>
-
-
 
 </head>
 
@@ -439,35 +492,80 @@
 
                             <ul class="menu-inner" style="margin-left: 0px;">
 
-                                <li class="menu-item">
+                                <!-- <li class="menu-item">
                                     <a href="/admin-main-c.html" class="menu-link">
                                         <div>Dashboards</div>
                                     </a>
-                                </li>
+                                </li> -->
                                 <li class="menu-item">
-                                    <a href="/admin-main-c1.html" class="menu-link">
+                                    <a href="/admin-main-c1-field.html" class="menu-link">
                                         <div>Prop Avail</div>
                                     </a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="admin-main-callers.html" class="menu-link">
+                                <!-- <li class="menu-item">
+                                    <a href="/admin-main-callers.html" class="menu-link">
                                         <div>Callers</div>
                                     </a>
-                                </li>
-                                <li class="menu-item">
+                                </li> -->
+                                <!-- <li class="menu-item">
                                     <a href="#" class="menu-link">
 
                                         <div>Send Leads</div>
                                     </a>
 
+                                </li> -->
+
+                                <li class="menu-item">
+                                    <a href="/admn-main-c1-field-per.html" class="menu-link">
+
+                                        <div>Personal</div>
+                                    </a>
+
                                 </li>
-                                <li class="menu-item" style="margin-right: 80px;">
+                                <li class="menu-item" style="margin-right: 20px;">
                                     <a href="#" class="menu-link">
-                                        <div>Packages</div>
+                                        <div>LogOut</div>
                                     </a>
                                 </li>
+                                <!-- <li class="menu-item">
+                                    <a href="javascript:void(0);" class="menu-link menu-toggle">
+                                        <div>More</div>
+                                    </a>
 
 
+                                    <ul class="menu-sub">
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">My profile</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com/user-profile" class="menu-link">
+                                                <div style="color:#000;">Change Password</div>
+                                            </a>
+                                        </li>
+
+
+                                        <li class="menu-item">
+
+                                            <form action="https://shifthoja.com/logout" method="POST">
+                                                <input type="hidden" name="_token"
+                                                    value="IKuE6nrHOzKaF6S8T7FWOEoaXij04oh3R17DVmHL" autocomplete="off">
+                                                <button type="submit" class="menu-link  bg-transparent border-0">
+                                                    <span>Log Out</span></button>
+                                            </form>
+
+                                        </li>
+
+                                        <li class="menu-item">
+                                            <a href="https://shifthoja.com" class="menu-link">
+                                                <div style="color:#000;">Go to Sicthoja.com</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li> -->
                             </ul>
                         </div>
                         <!--<a href="#" class=" d-none"></a>-->
@@ -505,35 +603,60 @@
 
 
                                                     <div>
-
                                                         <div class="group mt-2">
-                                                            <div class="title no-bottom small">Search and Select<span
-                                                                    class="mandatoryMarker text-danger">*</span></div>
-                                                            <!-- Searchable Select Dropdown for Locality -->
-                                                            <select id="SearchSelect" class="form-select">
-                                                                <option value="">Select Locality</option>
-                                                                <option value="Chhatarpur">Chhatarpur</option>
-                                                                <option value="Malvia Nagar">Malvia Nagar</option>
-                                                                <option value="Saket">Saket</option>
-                                                                <option value="Hauz khas">Hauz Khas</option>
-                                                                <option value="Okhla">Okhla</option>
-                                                                <option value="Shahjhan pur">Shahjhan Pur</option>
-                                                            </select>
+                                                            <div class="group">
+                                                                <div class="title no-bottom small">Locality<span
+                                                                        class="mandatoryMarker text-danger">*</span>
+                                                                </div>
+                                                                <select id="SearchSelect" class="form-select">
+                                                                    <option value="">Select Locality</option>
+                                                                    <option value="Chhatarpur">Chhatarpur</option>
+                                                                    <option value="Malvia Nagar">Malvia Nagar</option>
+                                                                    <option value="Saket">Saket</option>
+                                                                    <option value="Hauz khas">Hauz Khas</option>
+                                                                    <option value="Okhla">Okhla</option>
+                                                                    <option value="Shahjhan pur">Shahjhan Pur</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="group mt-2">
+                                                            <div class="group">
+                                                                <div class="title no-bottom small">Sub Locality<span
+                                                                        class="mandatoryMarker text-danger">*</span>
+                                                                </div>
+                                                                <select id="SearchSelect1" class="form-select">
+                                                                    <option value="">Phase I</option>
+                                                                    <option value="Phase II">Phase II</option>
+                                                                    <option value="JBTS">JBTS</option>
+                                                                    <option value="Mansi">Hauz Rani</option>
+                                                                    <option value="Nisha">Fredom Fighter</option>
+
+                                                                </select>
+                                                            </div>
                                                         </div>
 
+
+
                                                         <div class="group mt-2">
-                                                            <!-- Searchable Select Dropdown for Callers -->
-                                                            <div class="title no-bottom small">Select Callers<span
+                                                            <div class="title no-bottom small">Sector<span
                                                                     class="mandatoryMarker text-danger">*</span></div>
-                                                            <select id="SearchSelect1" class="form-select">
-                                                                <option value="">Select Callers</option>
-                                                                <option value="Alka">Alka</option>
-                                                                <option value="Nancy">Nancy</option>
-                                                                <option value="Mansi">Mansi</option>
-                                                                <option value="Nisha">Nisha</option>
-                                                                <option value="SunitaG">Sunita G</option>
-                                                            </select>
+                                                            <div class="tabs pt-2 d-flex gap-3">
+                                                                <div> <input class="input" type="radio" id="sector-1"
+                                                                        name="sector" value="residential"
+                                                                        wire:model.live="property">
+                                                                    <label class="label p-2"
+                                                                        for="sector-1">Residential</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input class="input" type="radio" id="sector-2"
+                                                                        name="sector" value="commercial"
+                                                                        wire:model.live="property">
+                                                                    <label class="label p-2"
+                                                                        for="sector-2">Commercial</label>
+                                                                </div>
+                                                            </div>
                                                         </div>
+
 
                                                         <div class="group mt-3">
                                                             <div class="title no-bottom small">Service<span
@@ -637,127 +760,121 @@
 
                                 </div>
                                 <div class="col-md-8 col-lg-9">
-                                    <div class="row g-4 mb-3">
-                                        <div class="col-md-12">
-                                            <div class="lead-summary css-c70kwa">
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div class="fw-bold d-none d-md-block">Calls Status</div>
-                                                    <!-- Hidden on mobile -->
+                                    <!-- Table data -->
+                                    <table class="invoice-list-table table border-top dataTable no-footer dtr-column"
+                                        id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Locality</th>
+                                                <th>Sub-loc</th>
 
-                                                    <div class="d-flex align-items-center flex-wrap flex-md-nowrap">
-                                                        <label for="fromDate" class="me-2 small-label">From:</label>
-                                                        <input type="date" id="fromDate" name="fromDate"
-                                                            class="form-control me-3 date-input">
+                                                <th>BHK</th>
+                                                <th>Rent</th>
+                                                <th>Available</th>
+                                                <th>Edit</th>
+                                                <th>Feedback</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-label="Name">
+                                                    <span>Hidayat</span>
+                                                </td>
+                                                <td data-label="Locality">
+                                                    <span>Okhla</span>
+                                                </td>
+                                                <td data-label="Sub-loc">
+                                                    <span>Jamia Nagar</span>
+                                                </td>
+                                                <td data-label="BHK">
+                                                    <span>7 BHK</span>
+                                                </td>
+                                                <td data-label="Rent">
+                                                    <span>34K</span>
+                                                </td>
+                                                <td data-label="Available">
+                                                    <span>2021-06-18</span>
+                                                </td>
+                                                <td data-label="Edit">
+                                                    <span class="control" id="editBtn" tabindex="0"
+                                                        style="cursor: pointer;" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">Upload</span>
+                                                </td>
+                                                <td data-label="show-feedbak" style="cursor: pointer;"
+                                                    id="showFeedback">
+                                                    <span>Show</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                                                        <label for="toDate" class="me-2 small-label">To:</label>
-                                                        <input type="date" id="toDate" name="toDate"
-                                                            class="form-control date-input">
-                                                    </div>
-                                                </div>
-                                                <div class="css-1t745a5">
-                                                    <div class="row gap-2">
-                                                        <a class="css-wrwrrq col" href="admin-main-c1.html">
-                                                            <div class="css-ov1ktg">
-                                                                <div class="lead-summary--home-icon css-wsmr3h"></div>
-                                                                <div>
-                                                                    <div class="css-fghy0b">0</div>
-                                                                    <div class="css-4enxc3">Residential</div>
-                                                                </div>
-                                                            </div>
-                                                            <!-- <div class="css-1e6iw7q"><span>1 Today
-                                                                                                <i
-                                                                                                    class="icon-arrow-right lead-summary--today-lead-arrow-icon"></i></span>
-                                                                                        </div> -->
-                                                        </a>
-                                                        <a class="css-wrwrrq col" href="/admin-main-c1.html">
-                                                            <div class="css-ov1ktg">
-                                                                <div class="lead-summary--commercial-icon css-wsmr3h">
-                                                                </div>
-                                                                <div>
-                                                                    <div class="css-fghy0b">0</div>
-                                                                    <div class="css-4enxc3">Commercial</div>
-                                                                </div>
-                                                            </div>
-                                                            <i class="icon-arrow-right lead-summary--arrow-icon"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-
-
-
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Property Photos</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                             </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row g-4 mb-3">
-                                        <div class="col-md-12">
-                                            <div class="lead-summary css-c70kwa">
-                                                <div class="css-1n1mhnw">Today Calls Status</div>
-                                                <div class="css-1t745a5">
-                                                    <div class="row gap-2">
-                                                        <a class="css-wrwrrq col" href="/admin-main-c1.html">
-                                                            <div class="css-ov1ktg">
-                                                                <div class="lead-summary--home-icon css-wsmr3h"></div>
-                                                                <div>
-                                                                    <div class="css-fghy0b">0</div>
-                                                                    <div class="css-4enxc3">Residential</div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <a class="css-wrwrrq col" href="/admin-main-c1.html">
-                                                            <div class="css-ov1ktg">
-                                                                <div class="lead-summary--commercial-icon css-wsmr3h">
-                                                                </div>
-                                                                <div>
-                                                                    <div class="css-fghy0b">0</div>
-                                                                    <div class="css-4enxc3">Commercial</div>
-                                                                </div>
-                                                            </div>
-                                                            <i class="icon-arrow-right lead-summary--arrow-icon"></i>
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="row g-4 mb-3">
-                                        <div class="avtr-img">
-
-                                        </div>
-                                        <div class="container my-3 p-3"
-                                            style="background-color: white; border-radius: 10px;">
-
-                                            <div class="css-1n1mhnw">Assign Works</div>
-                                            <!-- Second Row for Locality, Sub-Locality, Callers, and Assign Work Button -->
-                                            <div class="row g-4 mb-3">
-                                                <div
-                                                    class="d-flex justify-content-between align-items-center row py-3 gap-3 gap-md-0">
-                                                    <!-- Locality Dropdown with Search -->
-
-
-                                                    <!-- Sub-Locality Dropdown with Search -->
-                                                    <div class="col-md-3 col-12 mb-3 mb-md-0">
-                                                        <div class="title no-bottom small">Select Sub Locality
+                                            <div class="modal-body">
+                                                <form id="propertyPhotosForm">
+                                                    <!-- Bedroom Section -->
+                                                    <div class="row" id="bedroomSection">
+                                                        <div
+                                                            class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                                                            <label class="form-label">Bedroom</label>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                onclick="addImageField('bedroom')">Add Image</button>
                                                         </div>
-                                                        <select id="ProductStock" class="form-select text-capitalize">
-                                                            <option value="">Select Sub Locality</option>
-                                                            <option value="Phase I">Phase I</option>
-                                                            <option value="Phase II">Phase II</option>
-                                                        </select>
                                                     </div>
 
-
-
-                                                    <!-- Assign Work Button -->
-                                                    <div
-                                                        class="col-md-3 col-12 d-flex align-items-center justify-content-end">
-                                                        <button class="btn btn-primary w-100">Assign Work</button>
+                                                    <!-- Hall Section -->
+                                                    <div class="row" id="hallSection">
+                                                        <div
+                                                            class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                                                            <label class="form-label">Hall</label>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                onclick="addImageField('hall')">Add
+                                                                Image</button>
+                                                        </div>
                                                     </div>
-                                                </div>
+
+                                                    <!-- Kitchen Section -->
+                                                    <div class="row" id="kitchenSection">
+                                                        <div
+                                                            class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                                                            <label class="form-label">Kitchen</label>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                onclick="addImageField('kitchen')">Add Image</button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Bathroom Section -->
+                                                    <div class="row" id="bathroomSection">
+                                                        <div
+                                                            class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                                                            <label class="form-label">Bathroom</label>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                onclick="addImageField('bathroom')">Add Image</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div
+                                                            class="col-12 mb-3 d-flex justify-content-between align-items-center">
+                                                            <label class="form-label">Video</label>
+                                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                                onclick="addVideoField()">Add Video</button>
+                                                        </div>
+                                                        <div class="col-12" id="videoSection"></div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary">Save</button>
                                             </div>
                                         </div>
                                     </div>
@@ -765,6 +882,42 @@
 
 
 
+
+                                <!-- The Modal -->
+                                <div class="modal fade" id="feedbackModal" tabindex="-1"
+                                    aria-labelledby="feedbackModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p id="feedbackText">
+                                                    <!-- The 30-word paragraph or address will be displayed here -->
+                                                    Aj property loge to 2 din ki brockrage kam milega or kal loge to yhi
+                                                    property me 30 din ka lghega
+                                                </p>
+                                                <span>Address:
+                                                    <p>
+                                                        O-42, jamia nagar okhla 110025
+                                                    </p>
+                                                </span>
+
+                                                <span>Phone:
+                                                    <p>
+                                                        9504245461
+                                                    </p>
+                                                </span>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary">Edit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -782,17 +935,101 @@
 
 
 
+
     </div>
+    <!-- Include jQuery and Select2 JS CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
-        // Initialize searchable dropdowns
-        $(document).ready(function () {
-            $('#ProductCategory').select2({ placeholder: "Select Locality" });
-            $('#ProductStock').select2({ placeholder: "Select Sub Locality" });
-            $('#ProductCallers').select2({ placeholder: "Select Callers" });
-        });
+        function addImageField(section) {
+            const sectionDiv = document.getElementById(section + 'Section');
+
+            const inputDiv = document.createElement('div');
+            inputDiv.classList.add('mb-3', 'col-12', 'position-relative', 'preview-container');
+
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.classList.add('form-control', 'custom-input');
+            input.accept = 'image/*';
+            input.onchange = function (event) {
+                previewImage(event.target.files[0], inputDiv);
+            };
+
+            inputDiv.appendChild(input);
+            sectionDiv.appendChild(inputDiv);
+        }
+
+        function addVideoField() {
+            const videoSection = document.getElementById('videoSection');
+
+            const inputDiv = document.createElement('div');
+            inputDiv.classList.add('mb-3', 'col-12', 'position-relative', 'preview-container');
+
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.classList.add('form-control', 'custom-input');
+            input.accept = 'video/*';
+            input.onchange = function (event) {
+                previewVideo(event.target.files[0], inputDiv);
+            };
+
+            inputDiv.appendChild(input);
+            videoSection.appendChild(inputDiv);
+        }
+
+        function previewImage(file, container) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.classList.add('img-fluid', 'rounded');
+
+                // Clear previous previews if any
+                container.querySelectorAll('img').forEach(img => img.remove());
+                container.querySelectorAll('.delete-icon').forEach(icon => icon.remove());
+
+                const deleteIcon = document.createElement('span');
+                deleteIcon.classList.add('delete-icon');
+                deleteIcon.innerHTML = 'X';
+                deleteIcon.onclick = function () {
+                    container.remove(); // Remove the input field and its preview
+                };
+
+                container.appendChild(img);
+                container.appendChild(deleteIcon);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function previewVideo(file, container) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const video = document.createElement('video');
+                video.src = e.target.result;
+                video.controls = true;
+                video.classList.add('img-fluid', 'rounded');
+
+                // Clear previous previews if any
+                container.querySelectorAll('video').forEach(video => video.remove());
+                container.querySelectorAll('.delete-icon').forEach(icon => icon.remove());
+
+                const deleteIcon = document.createElement('span');
+                deleteIcon.classList.add('delete-icon');
+                deleteIcon.innerHTML = 'X';
+                deleteIcon.onclick = function () {
+                    container.remove(); // Remove the input field and its preview
+                };
+
+                container.appendChild(video);
+                container.appendChild(deleteIcon);
+            };
+            reader.readAsDataURL(file);
+        }
     </script>
+
+
+
+
     <script>
         $(document).ready(function () {
             // Apply Select2 on both fields
@@ -801,7 +1038,7 @@
                 allowClear: true
             });
             $('#SearchSelect1').select2({
-                placeholder: "Search and select a caller",
+                placeholder: "Search and select a call status",
                 allowClear: true
             });
         });
