@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Responsive Contact Us Page</title>
-  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
@@ -16,19 +18,19 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    body {
+    .bosy-section {
       min-height: 100vh;
       width: 100%;
-      display: flex;
+      /* display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: center; */
       background-image: url(https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
       background-size: cover;
       background-position: center;
       position: relative;
     }
 
-    body::after {
+    /* .bosy-section::after {
       content: "";
       position: absolute;
       top: 0;
@@ -36,11 +38,11 @@
       height: 100%;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.8);
-    }
+    } */
 
     section {
       position: relative;
-      z-index: 3;
+      /* z-index: 3; */
       padding-top: 50px;
       padding-bottom: 50px;
     }
@@ -66,7 +68,7 @@
     }
 
     .section-header p {
-      color: #FFF;
+      color: #000000;
       font-size: 14px;
     }
 
@@ -109,11 +111,12 @@
     }
 
     .contact-info-content p {
-      color: #FFF;
+      color: #000000;
       font-size: 14px;
     }
 
     .contact-form {
+      border-radius: 10px;
       background-color: #fff;
       padding: 40px;
       width: 45%;
@@ -205,7 +208,7 @@
 
 <body>
 
-  <section>
+  <section class="bosy-section">
     <div class="section-header">
       <div class="container">
         <h2>Contact Us</h2>
@@ -221,7 +224,7 @@
         <div class="contact-info">
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <i class="fas fa-home"></i>
+              <i class="bi bi-houses-fill"></i>
             </div>
 
             <div class="contact-info-content">
@@ -233,7 +236,7 @@
 
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <i class="fas fa-phone"></i>
+              <i class="bi bi-telephone-inbound-fill"></i>
             </div>
 
             <div class="contact-info-content">
@@ -244,7 +247,7 @@
 
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <i class="fas fa-envelope"></i>
+              <i class="bi bi-envelope-at-fill"></i>
             </div>
 
             <div class="contact-info-content">
@@ -258,17 +261,17 @@
           <form action="" id="contact-form">
             <h2>Send Message</h2>
             <div class="input-box">
-              <input type="text" required="true" name="">
+              <input type="text" required="true" id="full-name" name="full-name">
               <span>Full Name</span>
             </div>
 
             <div class="input-box">
-              <input type="email" required="true" name="">
+              <input type="email" required="true" id="email" name="email">
               <span>Email</span>
             </div>
 
             <div class="input-box">
-              <textarea required="true" name=""></textarea>
+              <textarea required="true" id="message" name="message"></textarea>
               <span>Type your Message...</span>
             </div>
 
@@ -276,11 +279,40 @@
               <input type="submit" value="Send" name="">
             </div>
           </form>
+
         </div>
 
       </div>
     </div>
   </section>
+
+  <script>
+    // Wait for the DOM to load before adding event listeners
+    document.addEventListener("DOMContentLoaded", function () {
+      const form = document.getElementById('contact-form');
+
+      form.addEventListener('submit', function (event) {
+        // Prevent the form from being submitted (i.e., page reload)
+        event.preventDefault();
+
+        // Get the values from the form inputs
+        const fullName = document.getElementById('full-name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Log the form data to the console
+        console.log('Full Name:', fullName);
+        console.log('Email:', email);
+        console.log('Message:', message);
+
+        // Clear the input fields after submission
+        document.getElementById('full-name').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('message').value = '';
+      });
+    });
+
+  </script>
 
 </body>
 
