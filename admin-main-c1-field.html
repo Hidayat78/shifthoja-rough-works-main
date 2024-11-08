@@ -676,14 +676,8 @@
                                                                     <label class="label p-2 w-auto"
                                                                         for="service-2">Rent</label>
                                                                 </div>
-
-
                                                             </div>
-
                                                         </div>
-
-
-
                                                         <div class="group mt-3">
                                                             <div class="title no-bottom small">BHK<span
                                                                     class="mandatoryMarker text-danger">*</span></div>
@@ -713,9 +707,7 @@
                                                                         wire:model.live="type">
                                                                     <label class="label p-1" for="type-4">4 Bhk</label>
                                                                 </div>
-
                                                             </div>
-
                                                         </div>
                                                         <div class="group mt-3">
                                                             <div class="title no-bottom small">More Filter<span
@@ -768,7 +760,6 @@
                                                 <th>Name</th>
                                                 <th>Locality</th>
                                                 <th>Sub-loc</th>
-
                                                 <th>BHK</th>
                                                 <th>Rent</th>
                                                 <th>Available</th>
@@ -808,6 +799,19 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <nav aria-label="Page navigation example text-end">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <button class="page-link" id="prevBtn" disabled>Previous</button>
+                                            </li>
+                                            <li class="page-item disabled">
+                                                <span class="page-link" id="pageNumber">Page 1</span>
+                                            </li>
+                                            <li class="page-item">
+                                                <button class="page-link" id="nextBtn">Next</button>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
 
                                 <!-- Modal -->

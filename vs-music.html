@@ -4,23 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Music Card</title>
+    <title>Music Card</title>
     <style>
-        /* Background Style */
         body {
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #3a3a3a, #000000);
             font-family: Arial, sans-serif;
+            position: relative;
+            background: linear-gradient(135deg, #3a3a3a, #000000);
+            background-image: url(./assets/img/bg-blur.png);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Background Overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Black overlay with 60% opacity */
+            z-index: -1;
         }
 
         /* Card Style */
         .card {
-            width: 90%;
-            max-width: 400px;
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            overflow-y: auto;
+            /* Makes the card scrollable */
             background-color: #fff;
             border-radius: 15px;
             overflow: hidden;
@@ -36,7 +56,7 @@
 
         /* Title and Subtitle */
         .card-content {
-            padding: 16px;
+            padding: 5px;
         }
 
         .song-title {
@@ -52,6 +72,7 @@
             margin-bottom: 16px;
         }
 
+        /* Music Service List */
         .music-services {
             list-style-type: none;
             padding: 0;
@@ -61,6 +82,8 @@
             border-radius: 8px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
+            margin-top: 20px;
+            /* Add some space above the list */
         }
 
         .music-services li {
@@ -80,7 +103,7 @@
             border-bottom: none;
         }
 
-        /* Logo and service name styling */
+        /* Logo and Button Styling */
         .music-logo {
             display: flex;
             align-items: center;
@@ -95,7 +118,6 @@
             margin-right: 10px;
         }
 
-        /* Button styling */
         .play-button {
             padding: 5px 15px;
             font-size: 14px;
@@ -112,80 +134,238 @@
             background-color: #333;
             color: #fff;
         }
+
+        .search-container {
+            display: none;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            box-shadow: 0px 1px 6px rgba(32, 33, 36, 0.28);
+            outline: none;
+            margin-right: 30px;
+        }
+
+        .search-button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 24px;
+            cursor: pointer;
+            font-size: 14px;
+            width: 132px;
+        }
+
+        .footer-disclaimer {
+            text-align: center;
+            width: 320px;
+            z-index: 11;
+            font-size: 12px;
+            font-weight: 500;
+            margin: 0 auto;
+            color: #fff;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .footer-disclaimer p {
+            opacity: .6;
+        }
+
+        .footer-policy {
+            margin-top: 10px;
+        }
+
+        .report-a-problem-btn {
+            text-align: center;
+            position: relative;
+            line-height: 1.4;
+            z-index: 11;
+            width: 100%;
+            margin: 0 auto 12px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+        .manage-privacy {
+            display: block;
+            margin-top: 3px;
+            padding-bottom: 20px;
+        }
+
+        .report-a-problem-btn[data-v-f0797ed2] {
+            text-align: center;
+            position: relative;
+            line-height: 1.4;
+            z-index: 11;
+            width: 100%;
+            margin: 0 auto 12px;
+        }
+
+        .main-p {
+            max-width: 350px;
+            margin-top: 20px !important;
+        }
     </style>
 </head>
 
 <body>
+    <div class="main-p">
+        <div class="card">
+            <!-- Image Section -->
+            <img src="./assets/img/bg-img-m.jpg" alt="Ram Aaye Hain Album Cover">
 
-    <div class="card">
-        <!-- Image Section -->
-        <img src="./assets/img/bg-img-m.jpg" alt="Ram Aaye Hain Album Cover">
+            <!-- Card Content -->
+            <div class="card-content">
+                <div class="song-title">Geet Sagar - Ram Aaye Hain</div>
+                <div class="song-subtitle">Choose your preferred music service</div>
+            </div>
 
-        <!-- Card Content -->
-        <div class="card-content">
-            <div class="song-title">Geet Sagar - Ram Aaye Hain</div>
-            <div class="song-subtitle">Choose your preferred music service</div>
+            <ul class="music-services">
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/spotyfy.jpg" alt="Spotify">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_jiosaavn.jpg" alt="JioSaavn">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_itunes.png" alt="Apple Music">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_gaana.jpg" alt="Gaana">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/spotyfy.jpg" alt="Spotify">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_jiosaavn.jpg" alt="JioSaavn">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_itunes.png" alt="Apple Music">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="music-logo">
+                        <img src="./assets/img/music-service_gaana.jpg" alt="Gaana">
+                    </div>
+                    <button class="play-button">Add link</button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Add link">
+                        <button class="search-button">Add</button>
+                    </div>
+                </li>
+            </ul>
+
         </div>
-
-        <ul class="music-services">
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/spotyfy.jpg" alt="Spotify">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_jiosaavn.jpg" alt="JioSaavn">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_itunes.png" alt="Apple Music">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_gaana.jpg" alt="Gaana">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/spotyfy.jpg" alt="Spotify">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_jiosaavn.jpg" alt="JioSaavn">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_itunes.png" alt="Apple Music">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-            <li>
-                <div class="music-logo">
-                    <img src="./assets/img/music-service_gaana.jpg" alt="Gaana">
-
-                </div>
-                <button class="play-button">Play</button>
-            </li>
-        </ul>
+        <div class="footer-disclaimer">
+            <!---->
+            <p class="footer-policy">
+                By using this service you agree to our
+                <a href="" target="_blank" style="font-weight: bold">Privacy
+                    Policy</a>
+                and
+                <a href="" target="_blank" style="font-weight: bold">Terms Of
+                    Use</a>.
+                <span class="manage-privacy"><span><a>Manage</a> your permissions
+                    </span></span>
+            </p>
+            <div class="report-a-problem-btn">
+                <a class="report-a-problem-button"><span>Report a Problem</span></a>
+            </div>
+        </div>
     </div>
+
+
+    <script>
+        // Toggle function for each "Add link" button
+        document.querySelectorAll('.play-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const listItem = this.closest('li');
+                const musicLogo = listItem.querySelector('.music-logo');
+                const searchContainer = listItem.querySelector('.search-container');
+
+                // Hide logo and button, show input and "Add" button
+                musicLogo.style.display = 'none';
+                this.style.display = 'none';
+                searchContainer.style.display = 'flex';
+            });
+        });
+
+        // Add functionality to close search input
+        document.querySelectorAll('.search-button').forEach(button => {
+            button.addEventListener('click', function () {
+                const listItem = this.closest('li');
+                const musicLogo = listItem.querySelector('.music-logo');
+                const playButton = listItem.querySelector('.play-button');
+                const searchContainer = listItem.querySelector('.search-container');
+
+                // Hide search input and button, show logo and "Add link" button
+                searchContainer.style.display = 'none';
+                musicLogo.style.display = 'flex';
+                playButton.style.display = 'inline-block';
+            });
+        });
+    </script>
 
 </body>
 
