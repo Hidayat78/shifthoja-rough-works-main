@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 22px;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .pricing-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .left-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-button {
+            position: relative;
+            margin-right: 10px;
+        }
+
+        .radio-button input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .radio-button .checkmark {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ff5e6c;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .radio-button input[type="radio"]:checked+.checkmark::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #ff5e6c;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+        }
+
+        .details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unit {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .discount {
+            background-color: #ff5e6c;
+            color: #fff;
+            font-size: 0.75em;
+            padding: 0.2em 0.5em;
+            border-radius: 3px;
+        }
+
+        .price-type {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 2px;
+        }
+
+        .right-section {
+            text-align: right;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .original-price {
+            color: #ccc;
+            text-decoration: line-through;
+            font-size: 0.9em;
+        }
+    </style>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .bodp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .pricing-cardp {
+            position: relative;
+            width: 400px;
+            border: 2px solid #ff5e6c;
+            border-radius: 5px;
+            background-color: #fff0f3;
+            padding: 1em;
+            margin-top: 20px;
+            /* Add margin for visibility */
+        }
+
+
+
+
+        .tagg {
+            position: absolute;
+            top: -11px;
+            left: 66%;
+            background-color: #ff5e6c;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+            padding: 5px 10px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tagg::before,
+        .tagg::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            /* border-width: 10px 7px 4px 9px; */
+            border-width: 10px 0 0 10px;
+            /* Triangle size */
+            border-color: #d94e5c transparent transparent transparent;
+            /* Darker pink color for triangles */
+        }
+
+        .tagg::before {
+            left: -9px;
+            /* Adjust to position left triangle */
+            transform: rotate(92deg);
+        }
+
+        .tagg::after {
+            right: -9px;
+            /* Adjust to position right triangle */
+            transform: rotate(177deg);
+        }
+
+        .contentt {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+
+        .left-sectionn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .radio-button {
+            display: flex;
+            /* Aligns checkmark to be vertically centered */
+            align-items: center;
+            position: relative;
+            margin-right: 5px;
+            /* Adjust spacing if needed */
+        }
+
+        .radio-button input[type="radio"] {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .radio-button .checkmark {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ff5e6c;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+        }
+
+        .radio-button input[type="radio"]:checked+.checkmark::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background-color: #ff5e6c;
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 3px;
+        }
+
+        .detailss {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .unit {
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        .discount {
+            background-color: #ff5e6c;
+            color: #fff;
+            font-size: 0.75em;
+            padding: 0.2em 0.5em;
+            border-radius: 3px;
+            margin-top: 2px;
+        }
+
+        .right-sectionn {
+            text-align: right;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .original-price {
+            color: #ccc;
+            text-decoration: line-through;
+            font-size: 0.9em;
+        }
+
+        .optionss {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+        }
+
+        .option-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .option-label {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .dropdown {
+            padding: 0.3em;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 0.9em;
+            width: 100px;
+        }
+
+        /* Initial state: box-one visible, box-two hidden */
+        .pricing-card {
+            display: block;
+        }
+
+        .hoverrtoshow {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main-prtyy">
+        <div class="pricing-card" id="pricing-card">
+            <div class="left-section">
+                <label class="radio-button">
+                    <input type="radio" name="unit" checked>
+                    <span class="checkmark"></span>
+                </label>
+                <div class="details">
+                    <span class="unit">1 Unit</span>
+                    <span class="discount">10% Off</span>
+                    <div class="price-type">Standard Price</div>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="price">$10.00 USD</div>
+                <div class="original-price">$24.00 USD</div>
+            </div>
+        </div>
+        <div class="hoverrtoshow" id="hoverrtoshow">
+            <div class="bodp">
+                <div class="pricing-cardp">
+                    <div class="tagg">MOST POPULAR</div>
+
+                    <div class="contentt">
+                        <div class="left-sectionn">
+                            <label class="radio-button">
+                                <input type="radio" name="unit">
+                                <span class="checkmark"></span>
+                            </label>
+                            <div class="detailss">
+                                <span class="unit">1 Unit</span>
+                                <span class="discount">20% Off</span>
+                            </div>
+                        </div>
+                        <div class="right-sectionn">
+                            <div class="price">$18.00 USD</div>
+                            <div class="original-price">$24.00 USD</div>
+                        </div>
+                    </div>
+
+                    <div class="optionss">
+                        <div class="option-row">
+                            <div class="option-label">#1</div>
+                            <select class="dropdown">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                            </select>
+                            <select class="dropdown">
+                                <option>Black</option>
+                                <option>White</option>
+                                <option>Blue</option>
+                            </select>
+                        </div>
+                        <div class="option-row">
+                            <div class="option-label">#2</div>
+                            <select class="dropdown">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                            </select>
+                            <select class="dropdown">
+                                <option>Colour</option>
+                                <option>Black</option>
+                                <option>White</option>
+                                <option>Blue</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        // Get references to the boxes by their IDs
+        const boxOne = document.getElementById('pricing-card');
+        const boxTwo = document.getElementById('hoverrtoshow');
+
+        // Toggle boxes when box one is clicked
+        boxOne.addEventListener('click', function (event) {
+            event.stopPropagation();  // Prevent the click from bubbling up to the document
+            toggleBoxes();
+        });
+
+        // Toggle boxes when box two is clicked
+        boxTwo.addEventListener('click', function (event) {
+            event.stopPropagation();  // Prevent the click from bubbling up to the document
+            toggleBoxes();
+        });
+
+        // Hide box two and show box one when clicking anywhere outside the boxes
+        document.addEventListener('click', function () {
+            boxOne.style.display = 'block';
+            boxTwo.style.display = 'none';
+        });
+
+        // Toggle function to switch the display of box-one and box-two
+        function toggleBoxes() {
+            if (boxOne.style.display === 'block') {
+                boxOne.style.display = 'none';
+                boxTwo.style.display = 'block';
+            } else {
+                boxOne.style.display = 'block';
+                boxTwo.style.display = 'none';
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
